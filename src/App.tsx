@@ -5,7 +5,6 @@ import {
   Landmark,
   Mail,
   Menu,
-  Scale,
 } from "lucide-react";
 import { VueIsland } from "./components/VueIsland";
 
@@ -68,9 +67,7 @@ function App() {
     <div className="site-shell">
       <header className="site-header">
         <a className="brand" href="/" aria-label="公民秩序主义首页">
-          <span className="brand-mark">
-            <Scale size={28} strokeWidth={1.35} />
-          </span>
+          <span className="brand-mark" aria-hidden="true" />
           <span>
             <strong>公民秩序主义</strong>
             <small>CIVIC ORDERISM</small>
