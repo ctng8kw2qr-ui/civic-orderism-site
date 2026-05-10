@@ -9,6 +9,7 @@ export default defineConfig({
         main: "index.html",
         articles: "articles.html",
         internalChangeExternalChange: "articles/internal-change-external-change.html",
+        partyPoliticsLowDimensionalFunction: "articles/party-politics-low-dimensional-function.html",
       },
     },
   },
