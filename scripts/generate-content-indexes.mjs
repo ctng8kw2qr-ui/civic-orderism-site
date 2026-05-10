@@ -107,7 +107,11 @@ ${homeLatest || "暂无文章。"}
 
 - 秩序 ORDER
 - 自由 LIBERTY
-- 平等 EQUALITY`,
+- 平等 EQUALITY
+
+## 联系方式
+
+citizenorder@proton.me`,
 )
 
 writeFile(

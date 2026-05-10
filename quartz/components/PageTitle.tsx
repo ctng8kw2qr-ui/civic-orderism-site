@@ -26,16 +26,23 @@ PageTitle.css = `
 .page-title .site-brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.85rem;
 }
 
 .page-title .site-brand img {
-  width: 2.35rem;
-  height: 2.35rem;
+  width: 3.6rem;
+  height: 3.6rem;
   object-fit: contain;
   display: block;
   margin: 0;
   border-radius: 0;
+}
+
+@media (max-width: 800px) {
+  .page-title .site-brand img {
+    width: 3rem;
+    height: 3rem;
+  }
 }
 `
 
