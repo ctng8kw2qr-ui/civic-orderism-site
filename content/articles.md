@@ -10,10 +10,15 @@ tags:
 
 ## 分类目录
 
+- [[civic-orderism|公民秩序主义]]
 - [[theory|理论总纲]]
 - [[reality|现实解析]]
 - [[institution|制度设计]]
 - [[china|中国观察]]
+
+## 公民秩序主义
+
+暂无文章。
 
 ## 理论总纲
 

@@ -5,6 +5,7 @@ import matter from "gray-matter"
 const contentDir = path.resolve("content")
 
 const categories = [
+  ["civic-orderism", "公民秩序主义", "公民秩序主义的核心理论、原则、制度设计、运行流程与权力监督机制。"],
   ["theory", "理论总纲", "理论框架、概念模型与制度判断。"],
   ["reality", "现实解析", "现实政治、公共事件与结构性问题分析。"],
   ["institution", "制度设计", "制度结构、治理机制与组织方案。"],
@@ -66,7 +67,9 @@ function articleLine(article) {
 }
 
 function writeFile(filePath, body) {
-  fs.writeFileSync(path.join(contentDir, filePath), `${body.trimEnd()}\n`, "utf8")
+  const targetPath = path.join(contentDir, filePath)
+  fs.mkdirSync(path.dirname(targetPath), { recursive: true })
+  fs.writeFileSync(targetPath, `${body.trimEnd()}\n`, "utf8")
 }
 
 const articles = walk(contentDir)
