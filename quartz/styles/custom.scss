@@ -1,0 +1,50 @@
+@use "./base.scss";
+
+body {
+  letter-spacing: 0;
+}
+
+.page-title a {
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+article {
+  max-width: 780px;
+}
+
+article h1 {
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+article h2 {
+  margin-top: 3.2rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--lightgray);
+  font-weight: 500;
+}
+
+article h3 {
+  margin-top: 2rem;
+  font-weight: 500;
+}
+
+article p,
+article li {
+  line-height: 1.95;
+}
+
+article .subtitle,
+article blockquote {
+  color: var(--darkgray);
+}
+
+.explorer,
+.search {
+  font-size: 0.92rem;
+}
+
+.content-meta {
+  color: var(--gray);
+}

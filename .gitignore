@@ -1,5 +1,7 @@
 node_modules/
 dist/
+public/
 .npm-cache/
+.quartz-cache/
 *.tsbuildinfo
 .DS_Store
