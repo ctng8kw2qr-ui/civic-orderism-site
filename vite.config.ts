@@ -9,6 +9,7 @@ export default defineConfig({
         main: "index.html",
         articles: "articles.html",
         internalChangeExternalChange: "articles/internal-change-external-change.html",
+        modernSocialSyndrome: "articles/modern-social-syndrome.html",
         partyPoliticsLowDimensionalFunction: "articles/party-politics-low-dimensional-function.html",
         proceduralAccountabilityOrganizedPower: "articles/procedural-accountability-organized-power.html",
         trappedByProcess: "articles/trapped-by-process.html",
