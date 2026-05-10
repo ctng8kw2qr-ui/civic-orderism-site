@@ -110,17 +110,28 @@ const primaryLinks = [
 ].join("\n")
 const recommendedReading = [
   articleLink("公民秩序主义说明书", () => findArticleBySlug("civic-orderism/civic-orderism-manual")),
-  "[[theory|理论总纲]]",
   articleLink("什么是委员会", () => findArticleBySlug("civic-orderism/what-is-committee-system")),
   articleLink("公民秩序主义下的选举逻辑", () => findArticleBySlug("civic-orderism/election-logic-under-civic-orderism")),
-  articleLink("公民秩序主义对后台系统的重视", () =>
-    findArticleBySlug("civic-orderism/backend-system-under-civic-orderism"),
-  ),
   articleLink("公民秩序主义下国家运行的大概流程", () =>
     findArticleBySlug("civic-orderism/state-operation-process-under-civic-orderism"),
   ),
+  articleLink("委员会和行政机关的激励结构完全相反的意义", () =>
+    findArticleBySlug("civic-orderism/committee-administration-opposite-incentives"),
+  ),
+  articleLink("公民秩序主义对后台系统的重视", () =>
+    findArticleBySlug("civic-orderism/backend-system-under-civic-orderism"),
+  ),
+  articleLink("公民秩序主义下顶层权力结构的布局", () =>
+    findArticleBySlug("civic-orderism/top-level-power-structure-under-civic-orderism"),
+  ),
+  articleLink("为什么公民秩序主义强调履历、经验", () =>
+    findArticleBySlug("civic-orderism/why-civic-orderism-emphasizes-experience-and-records"),
+  ),
   articleLink("公民秩序主义最终要解决的问题", () =>
     findArticleBySlug("civic-orderism/what-civic-orderism-ultimately-solves"),
+  ),
+  articleLink("为什么公民秩序主义在未来接替难度最小", () =>
+    findArticleBySlug("civic-orderism/why-civic-orderism-is-easier-to-succeed"),
   ),
 ]
   .map((item, index) => `${index + 1}. ${item}`)

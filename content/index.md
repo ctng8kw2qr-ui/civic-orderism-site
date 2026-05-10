@@ -46,12 +46,15 @@ status: published
 ## 推荐阅读
 
 1. [[civic-orderism/civic-orderism-manual|公民秩序主义说明书]]
-2. [[theory|理论总纲]]
-3. [[civic-orderism/what-is-committee-system|什么是委员会]]
-4. [[civic-orderism/election-logic-under-civic-orderism|公民秩序主义下的选举逻辑]]
-5. [[civic-orderism/backend-system-under-civic-orderism|公民秩序主义对后台系统的重视]]
-6. [[civic-orderism/state-operation-process-under-civic-orderism|公民秩序主义下国家运行的大概流程]]
-7. [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题]]
+2. [[civic-orderism/what-is-committee-system|什么是委员会]]
+3. [[civic-orderism/election-logic-under-civic-orderism|公民秩序主义下的选举逻辑]]
+4. [[civic-orderism/state-operation-process-under-civic-orderism|公民秩序主义下国家运行的大概流程]]
+5. [[civic-orderism/committee-administration-opposite-incentives|委员会和行政机关的激励结构完全相反的意义]]
+6. [[civic-orderism/backend-system-under-civic-orderism|公民秩序主义对后台系统的重视]]
+7. [[civic-orderism/top-level-power-structure-under-civic-orderism|公民秩序主义下顶层权力结构的布局]]
+8. [[civic-orderism/why-civic-orderism-emphasizes-experience-and-records|为什么公民秩序主义强调履历、经验]]
+9. [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题]]
+10. [[civic-orderism/why-civic-orderism-is-easier-to-succeed|为什么公民秩序主义在未来接替难度最小]]
 
 ## 最新文章
 
