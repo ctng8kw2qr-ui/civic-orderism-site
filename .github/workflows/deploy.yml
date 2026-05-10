@@ -36,13 +36,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: |
-          npm run build
-          mkdir -p dist/articles
-          cp articles/*.html dist/articles/
-          cp articles.html dist/
-          cp styles.css dist/
-          cp logo.png dist/
+        run: npm run build
 
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'
