@@ -1,16 +1,16 @@
 ---
-title: "中国观察"
+title: "解析中共"
 date: 2026-05-10
-category: "中国观察"
+category: "解析中共"
 tags:
   - china
-description: "中国社会、政治与治理结构观察。"
+description: "中共的组织结构、权力逻辑、官僚系统与结构性失效分析。"
 status: published
 ---
 
-# 中国观察
+# 解析中共
 
-中国社会、政治与治理结构观察。
+中共的组织结构、权力逻辑、官僚系统与结构性失效分析。
 
 ## 文章列表
 

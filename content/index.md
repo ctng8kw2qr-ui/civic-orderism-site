@@ -30,7 +30,9 @@ status: published
 
 - **[[civic-orderism/civic-orderism-manual|了解公民秩序主义]]**
 - **[[theory|阅读理论总纲]]**
-- **[[reality|查看现实解析]]**
+- **[[china|解析中共]]**
+
+  先理解中共的组织结构、权力逻辑、官僚系统与结构性失效，再理解公民秩序主义为什么需要作为替代性的公共秩序方案出现。
 
 ## 核心概念
 
@@ -67,7 +69,7 @@ status: published
 - [[theory|理论总纲]]
 - [[reality|现实解析]]
 - [[institution|制度设计]]
-- [[china|中国观察]]
+- [[china|解析中共]]
 
 ## 联系方式
 

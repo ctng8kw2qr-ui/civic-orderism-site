@@ -18,7 +18,7 @@ status: published
 - [[theory|理论总纲]]
 - [[reality|现实解析]]
 - [[institution|制度设计]]
-- [[china|中国观察]]
+- [[china|解析中共]]
 
 ## 公民秩序主义
 
@@ -67,7 +67,7 @@ status: published
 
 - [[institution/despotism-cancer-ming-1566|专制之癌：从《大明王朝1566》到结构性腐败的宿命]]（2026-05-10）
 
-## 中国观察
+## 解析中共
 
 - [[china/ccp-2018-new-reform-opening|2018新“改革开放”：从开放社会到封闭风险]]（2026-05-10）
 - [[china/propaganda-system-hollowing-out|不是不会宣传，而是不敢承担：中宣系统“翻车常态化”背后的空心化逻辑]]（2026-05-10）

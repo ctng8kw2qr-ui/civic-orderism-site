@@ -9,7 +9,7 @@ const categories = [
   ["theory", "理论总纲", "理论框架、概念模型与制度判断。"],
   ["reality", "现实解析", "现实政治、公共事件与结构性问题分析。"],
   ["institution", "制度设计", "制度结构、治理机制与组织方案。"],
-  ["china", "中国观察", "中国社会、政治与治理结构观察。"],
+  ["china", "解析中共", "中共的组织结构、权力逻辑、官僚系统与结构性失效分析。"],
 ]
 
 function walk(dir) {
@@ -107,7 +107,7 @@ const homeLatest = articles.slice(0, 8).map(articleLine).join("\n")
 const primaryLinks = [
   `- **${articleLink("了解公民秩序主义", () => findArticleBySlug("civic-orderism/civic-orderism-manual"))}**`,
   `- **[[theory|阅读理论总纲]]**`,
-  `- **[[reality|查看现实解析]]**`,
+  `- **[[china|解析中共]]**\n\n  先理解中共的组织结构、权力逻辑、官僚系统与结构性失效，再理解公民秩序主义为什么需要作为替代性的公共秩序方案出现。`,
 ].join("\n")
 const recommendedReading = [
   articleLink("公民秩序主义说明书", () => findArticleBySlug("civic-orderism/civic-orderism-manual")),
