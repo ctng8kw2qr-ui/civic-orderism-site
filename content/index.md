@@ -19,6 +19,8 @@ CIVIC ORDERISM
 - [[east-asia|东亚局势]]
 - [[society|社会结构]]
 
-## 写作方式
+## 核心概念
 
-以后只需要在 Obsidian 中把 Markdown 放入 `content/` 对应栏目，推送后网站会自动生成文章页、栏目页、标签页、搜索索引、RSS 和站点地图。
+- 秩序 ORDER
+- 自由 LIBERTY
+- 平等 EQUALITY
