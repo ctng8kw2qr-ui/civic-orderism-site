@@ -14,5 +14,4 @@ tags:
 - [[reality|现实解析]]
 - [[institution|制度设计]]
 - [[china|中国观察]]
-- [[east-asia|东亚局势]]
 - [[society|社会结构]]

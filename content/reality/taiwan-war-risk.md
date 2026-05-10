@@ -3,7 +3,6 @@ title: "台海是否会走向战争：基于战争四驱动的组织决策风险
 date: 2026-05-10
 tags:
   - reality
-  - east-asia
   - security
 aliases:
   - articles/taiwan-war-risk
