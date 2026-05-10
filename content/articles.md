@@ -77,6 +77,7 @@ status: published
 - [[china/xi-solved-organization-not-reality|习近平解决了组织的问题，却解决不了组织面临的问题]]（2026-05-10）
 - [[china/xi-power-centralization|习近平权力集中背后的系统逻辑]]（2026-05-10）
 - [[china/chicken-and-cage|养鸡与换笼：民营经济被整肃的结构逻辑]]（2026-05-10）
+- [[china/maginot-line-of-stability-maintenance|一个难以言说的防线：从“液压维稳”到当代的马其诺防线]]（2026-05-10）
 - [[china/ccp-reform-political-balance-deadlock|中共的真正死局：改革未必救经济，却一定先打破政治平衡]]（2026-05-10）
 - [[china/xi-succession-crisis-gray-rhino|中共高层政治的灰犀牛：习近平交权困境与继承危机]]（2026-05-10）
 - [[china/organization-credit-retired-officials|组织信用的最后一关：退休官员、终身承诺与中共的功能性衰竭]]（2026-05-10）

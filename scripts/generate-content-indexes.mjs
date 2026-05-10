@@ -102,7 +102,11 @@ for (const article of articles) {
   byCategory.get(article.category)?.push(article)
 }
 
-const homeLatest = articles.slice(0, 8).map(articleLine).join("\n")
+const homeLatest = articles
+  .filter((article) => article.category === "china")
+  .slice(0, 8)
+  .map(articleLine)
+  .join("\n")
 const primaryLinks = [
   `- **[[china|解析中共]]**  \n  理解中共的组织结构、权力逻辑与系统性失效。`,
   `- **[[theory|阅读理论总纲]]**  \n  诊断现实局势，理解制度运行规律，判断未来秩序方向。`,
