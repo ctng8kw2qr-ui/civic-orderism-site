@@ -7,7 +7,6 @@ const contentDir = path.resolve("content")
 const categories = [
   ["civic-orderism", "公民秩序主义", "公民秩序主义的核心理论、原则、制度设计、运行流程与权力监督机制。"],
   ["theory", "理论总纲", "理论框架、概念模型与制度判断。"],
-  ["reality", "现实解析", "现实政治、公共事件与结构性问题分析。"],
   ["institution", "制度设计", "制度结构、治理机制与组织方案。"],
   ["china", "解析中共", "中共的组织结构、权力逻辑、官僚系统与结构性失效分析。"],
 ]

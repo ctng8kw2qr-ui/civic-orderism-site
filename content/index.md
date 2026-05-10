@@ -68,7 +68,6 @@ status: published
 
 - [[civic-orderism|公民秩序主义]]
 - [[theory|理论总纲]]
-- [[reality|现实解析]]
 - [[institution|制度设计]]
 - [[china|解析中共]]
 

@@ -16,7 +16,6 @@ status: published
 
 - [[civic-orderism|公民秩序主义]]
 - [[theory|理论总纲]]
-- [[reality|现实解析]]
 - [[institution|制度设计]]
 - [[china|解析中共]]
 
@@ -49,6 +48,7 @@ status: published
 ## 理论总纲
 
 - [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]（2026-05-10）
+- [[theory/overseas-political-movements-fail|海外政治运动为什么一事无成？]]（2026-05-10）
 - [[theory/high-rigidity-system-ccp|解析高刚性体制：中共无以为继的结构性根因]]（2026-05-10）
 - [[theory/internal-change-external-change|内变引外变：现代政治为何走到十字路口]]（2026-05-10）
 - [[theory/ccp-high-fragility-dysfunction|它还在，但越来越靠不住：为什么中共更可能“失灵”而非“倒台”]]（2026-05-10）
@@ -58,10 +58,6 @@ status: published
 - [[theory/trapped-by-process|我们不是被贫穷困住，而是被流程困住]]（2026-05-10）
 - [[theory/modern-social-syndrome|现代社会候群症]]（2026-05-10）
 - [[theory/ai-monitoring-organizational-friction|AI监控并不降低组织摩擦：一份冷静推演]]（2026-05-10）
-
-## 现实解析
-
-- [[reality/overseas-political-movements-fail|海外政治运动为什么一事无成？]]（2026-05-10）
 
 ## 制度设计
 
