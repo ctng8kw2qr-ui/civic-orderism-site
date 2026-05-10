@@ -18,11 +18,16 @@ article h1 {
   letter-spacing: 0;
 }
 
+article .home-hero-heading {
+  margin-bottom: 1.3rem;
+}
+
 article .home-hero-title {
   display: flex;
   align-items: center;
   gap: 0.9rem;
   line-height: 1.1;
+  margin-bottom: 0.35rem;
 }
 
 article .home-hero-title img {
@@ -34,6 +39,18 @@ article .home-hero-title img {
 
 article .home-hero-title span {
   min-width: 0;
+}
+
+article .home-hero-contact {
+  display: inline-block;
+  color: var(--gray);
+  font-size: 0.88rem;
+  font-weight: 400;
+  opacity: 0.78;
+}
+
+article .home-hero-contact .external-icon {
+  display: none;
 }
 
 article h2 {
@@ -76,5 +93,9 @@ article blockquote {
     width: 34px;
     height: 34px;
     flex-basis: 34px;
+  }
+
+  article .home-hero-contact {
+    font-size: 0.84rem;
   }
 }

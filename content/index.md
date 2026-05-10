@@ -8,10 +8,13 @@ description: "公民秩序主义网站首页。"
 status: published
 ---
 
-<h1 class="home-hero-title">
-  <img src="static/logo.png" alt="公民秩序主义 Logo" />
-  <span>公民秩序主义</span>
-</h1>
+<div class="home-hero-heading">
+  <h1 class="home-hero-title">
+    <img src="static/logo.png" alt="公民秩序主义 Logo" />
+    <span>公民秩序主义</span>
+  </h1>
+  <a class="home-hero-contact" href="mailto:citizenorder@proton.me">citizenorder@proton.me</a>
+</div>
 
 ## CIVIC ORDERISM
 
