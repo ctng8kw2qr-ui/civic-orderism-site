@@ -199,7 +199,9 @@ ${categories.map(([key, label]) => `- [[${key}|${label}]]`).join("\n")}
 
 ## 联系方式
 
-citizenorder@proton.me`,
+如需反馈、讨论或提供资料，可通过以下邮箱联系：
+
+[citizenorder@proton.me](mailto:citizenorder@proton.me)`,
 )
 
 writeFile(
