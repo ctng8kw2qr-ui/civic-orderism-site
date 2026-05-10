@@ -105,9 +105,9 @@ for (const article of articles) {
 
 const homeLatest = articles.slice(0, 8).map(articleLine).join("\n")
 const primaryLinks = [
-  `- **${articleLink("了解公民秩序主义", () => findArticleBySlug("civic-orderism/civic-orderism-manual"))}**`,
-  `- **[[theory|阅读理论总纲]]**`,
-  `- **[[china|解析中共]]**\n\n  先理解中共的组织结构、权力逻辑、官僚系统与结构性失效，再理解公民秩序主义为什么需要作为替代性的公共秩序方案出现。`,
+  `- **第一步：${articleLink("了解公民秩序主义", () => findArticleBySlug("civic-orderism/civic-orderism-manual"))}**  \n  理解这套理论的基本问题、核心立场与现实指向。`,
+  `- **第二步：[[theory|阅读理论总纲]]**  \n  诊断现实局势，理解制度运行规律，判断未来秩序方向。`,
+  `- **第三步：[[china|解析中共]]**  \n  理解中共的组织结构、权力逻辑与系统性失效。`,
 ].join("\n")
 const recommendedReading = [
   articleLink("公民秩序主义说明书", () => findArticleBySlug("civic-orderism/civic-orderism-manual")),
