@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: "index.html",
         articles: "articles.html",
+        internalChangeExternalChange: "articles/internal-change-external-change.html",
         theoryOutline: "articles/theory-outline.html",
       },
     },
