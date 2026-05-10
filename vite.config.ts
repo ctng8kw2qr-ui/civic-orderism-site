@@ -10,6 +10,7 @@ export default defineConfig({
         articles: "articles.html",
         internalChangeExternalChange: "articles/internal-change-external-change.html",
         partyPoliticsLowDimensionalFunction: "articles/party-politics-low-dimensional-function.html",
+        proceduralAccountabilityOrganizedPower: "articles/procedural-accountability-organized-power.html",
         trappedByProcess: "articles/trapped-by-process.html",
       },
     },

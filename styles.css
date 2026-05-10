@@ -224,6 +224,19 @@ footer {
   font-size: 18px;
   line-height: 2;
 }
+.post ul,
+.post ol {
+  max-width: 700px;
+  margin: 0 0 26px 22px;
+  padding: 0;
+  color: #2f384d;
+  font-size: 18px;
+  line-height: 1.95;
+}
+.post li {
+  margin: 0 0 8px;
+  padding-left: 4px;
+}
 .post > p:first-of-type {
   margin-bottom: 28px;
   color: #16223b;
@@ -273,6 +286,7 @@ footer {
   .post .subtitle { margin: -18px 0 34px; font-size: 18px; }
   .post h2 { margin-top: 52px; padding-top: 24px; }
   .post p { font-size: 17px; line-height: 1.95; }
+  .post ul, .post ol { margin-left: 20px; font-size: 17px; line-height: 1.9; }
   .post > p:first-of-type { font-size: 19px; line-height: 1.85; }
 }
 
