@@ -66,6 +66,19 @@ function articleLine(article) {
   return `- [[${article.slug}|${article.title}]]${date}`
 }
 
+function findArticleBySlug(slug) {
+  return articles.find((article) => article.slug === slug)
+}
+
+function findArticleByTitle(title) {
+  return articles.find((article) => article.title.includes(title))
+}
+
+function articleLink(label, finder) {
+  const article = finder()
+  return article ? `[[${article.slug}|${label}]]` : label
+}
+
 function writeFile(filePath, body) {
   const targetPath = path.join(contentDir, filePath)
   fs.mkdirSync(path.dirname(targetPath), { recursive: true })
@@ -91,6 +104,28 @@ for (const article of articles) {
 }
 
 const homeLatest = articles.slice(0, 8).map(articleLine).join("\n")
+const primaryLinks = [
+  `- **${articleLink("了解公民秩序主义", () => findArticleBySlug("civic-orderism/civic-orderism-manual"))}**`,
+  `- **${articleLink("阅读理论总纲", () => findArticleByTitle("公民秩序主义理论总纲"))}**`,
+  `- **[[reality|查看现实解析]]**`,
+].join("\n")
+const recommendedReading = [
+  articleLink("公民秩序主义说明书", () => findArticleBySlug("civic-orderism/civic-orderism-manual")),
+  articleLink("公民秩序主义理论总纲", () => findArticleByTitle("公民秩序主义理论总纲")),
+  articleLink("什么是委员会", () => findArticleBySlug("civic-orderism/what-is-committee-system")),
+  articleLink("公民秩序主义下的选举逻辑", () => findArticleBySlug("civic-orderism/election-logic-under-civic-orderism")),
+  articleLink("公民秩序主义对后台系统的重视", () =>
+    findArticleBySlug("civic-orderism/backend-system-under-civic-orderism"),
+  ),
+  articleLink("公民秩序主义下国家运行的大概流程", () =>
+    findArticleBySlug("civic-orderism/state-operation-process-under-civic-orderism"),
+  ),
+  articleLink("公民秩序主义最终要解决的问题", () =>
+    findArticleBySlug("civic-orderism/what-civic-orderism-ultimately-solves"),
+  ),
+]
+  .map((item, index) => `${index + 1}. ${item}`)
+  .join("\n")
 writeFile(
   "index.md",
   `---
@@ -105,23 +140,45 @@ status: published
 
 # 公民秩序主义
 
-CIVIC ORDERISM
+## CIVIC ORDERISM
 
-解释结构性问题，不参与情绪化舆论构建。
+一套面向中国现实与信息化时代的现代国家治理理论。
 
-## 栏目
+公民秩序主义关心的不是谁掌握权力，也不是哪一种口号取得胜利，而是国家能否成为一套可进入、可解释、可纠错、可追责的公共秩序系统。
 
-${categories.map(([key, label]) => `- [[${key}|${label}]]`).join("\n")}
+它试图回答三个问题：
+
+- 普通人遇到制度问题时，是否有门可进？
+- 公共权力作出决定时，是否有理可讲？
+- 国家面对错误和风险时，是否有能力纠偏？
+
+公民秩序主义主张：
+
+国家不是人民之上的神圣机器，而是服务公民生活秩序的公共系统。制度的价值，不在于制造服从，而在于降低社会摩擦、保障基本尊严、形成可持续的公共信任。
+
+## 主要入口
+
+${primaryLinks}
+
+## 核心概念
+
+- 秩序 ORDER
+- 尊严 DIGNITY
+- 自由 LIBERTY
+- 平等 EQUALITY
+- 责任 ACCOUNTABILITY
+
+## 推荐阅读
+
+${recommendedReading}
 
 ## 最新文章
 
 ${homeLatest || "暂无文章。"}
 
-## 核心概念
+## 栏目
 
-- 秩序 ORDER
-- 自由 LIBERTY
-- 平等 EQUALITY
+${categories.map(([key, label]) => `- [[${key}|${label}]]`).join("\n")}
 
 ## 联系方式
 
