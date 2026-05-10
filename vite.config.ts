@@ -10,6 +10,7 @@ export default defineConfig({
         articles: "articles.html",
         internalChangeExternalChange: "articles/internal-change-external-change.html",
         modernSocialSyndrome: "articles/modern-social-syndrome.html",
+        noAccountabilityLieFlatMentality: "articles/no-accountability-lie-flat-mentality.html",
         partyPoliticsLowDimensionalFunction: "articles/party-politics-low-dimensional-function.html",
         proceduralAccountabilityOrganizedPower: "articles/procedural-accountability-organized-power.html",
         trappedByProcess: "articles/trapped-by-process.html",

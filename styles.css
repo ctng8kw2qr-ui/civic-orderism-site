@@ -217,6 +217,14 @@ footer {
   line-height: 1.42;
   font-weight: 400;
 }
+.post h3 {
+  max-width: 740px;
+  margin: 34px 0 14px;
+  color: #16223b;
+  font-size: 20px;
+  line-height: 1.55;
+  font-weight: 500;
+}
 .post p {
   max-width: 740px;
   margin: 0 0 22px;
@@ -285,6 +293,7 @@ footer {
   .post h1 { margin-bottom: 34px; }
   .post .subtitle { margin: -18px 0 34px; font-size: 18px; }
   .post h2 { margin-top: 52px; padding-top: 24px; }
+  .post h3 { margin-top: 28px; font-size: 18px; }
   .post p { font-size: 17px; line-height: 1.95; }
   .post ul, .post ol { margin-left: 20px; font-size: 17px; line-height: 1.9; }
   .post > p:first-of-type { font-size: 19px; line-height: 1.85; }
