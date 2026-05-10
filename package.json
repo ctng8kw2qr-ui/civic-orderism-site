@@ -13,9 +13,10 @@
   },
   "scripts": {
     "quartz": "./quartz/bootstrap-cli.mjs",
-    "dev": "node ./quartz/bootstrap-cli.mjs build --serve",
-    "build": "node ./quartz/bootstrap-cli.mjs build",
-    "preview": "node ./quartz/bootstrap-cli.mjs build --serve",
+    "generate:indexes": "node ./scripts/generate-content-indexes.mjs",
+    "dev": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build --serve",
+    "build": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build",
+    "preview": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build --serve",
     "docs": "node ./quartz/bootstrap-cli.mjs build --serve -d docs",
     "check": "tsc --noEmit && npx prettier . --check",
     "format": "npx prettier . --write",
