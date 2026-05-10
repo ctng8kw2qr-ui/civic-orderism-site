@@ -4,7 +4,6 @@ date: 2026-05-10
 tags:
   - theory
   - process
-  - society
 aliases:
   - articles/trapped-by-process
 description: "高生产力时代的制度摩擦与生活窒息"

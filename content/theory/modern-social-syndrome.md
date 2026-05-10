@@ -3,7 +3,6 @@ title: "现代社会候群症"
 date: 2026-05-10
 tags:
   - theory
-  - society
   - platform-power
 aliases:
   - articles/modern-social-syndrome
