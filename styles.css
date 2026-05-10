@@ -202,6 +202,12 @@ footer {
   font-weight: 400;
   letter-spacing: 0;
 }
+.post .subtitle {
+  margin: -24px 0 42px;
+  color: #6d7482;
+  font-size: 22px;
+  line-height: 1.7;
+}
 .post h2 {
   margin: 66px 0 22px;
   padding-top: 28px;
@@ -264,6 +270,7 @@ footer {
   .post { margin: 58px 0 78px; }
   .post-meta { margin-bottom: 18px; font-size: 12px; }
   .post h1 { margin-bottom: 34px; }
+  .post .subtitle { margin: -18px 0 34px; font-size: 18px; }
   .post h2 { margin-top: 52px; padding-top: 24px; }
   .post p { font-size: 17px; line-height: 1.95; }
   .post > p:first-of-type { font-size: 19px; line-height: 1.85; }
