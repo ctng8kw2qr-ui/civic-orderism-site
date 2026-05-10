@@ -148,7 +148,10 @@ description: "公民秩序主义网站首页。"
 status: published
 ---
 
-# 公民秩序主义
+<h1 class="home-hero-title">
+  <img src="static/logo.png" alt="公民秩序主义 Logo" />
+  <span>公民秩序主义</span>
+</h1>
 
 ## CIVIC ORDERISM
 

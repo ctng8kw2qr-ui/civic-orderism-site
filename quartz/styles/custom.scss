@@ -18,6 +18,24 @@ article h1 {
   letter-spacing: 0;
 }
 
+article .home-hero-title {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  line-height: 1.1;
+}
+
+article .home-hero-title img {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  object-fit: contain;
+}
+
+article .home-hero-title span {
+  min-width: 0;
+}
+
 article h2 {
   margin-top: 3.2rem;
   padding-top: 1.4rem;
@@ -47,4 +65,16 @@ article blockquote {
 
 .content-meta {
   color: var(--gray);
+}
+
+@media (max-width: 600px) {
+  article .home-hero-title {
+    gap: 0.75rem;
+  }
+
+  article .home-hero-title img {
+    width: 34px;
+    height: 34px;
+    flex-basis: 34px;
+  }
 }
