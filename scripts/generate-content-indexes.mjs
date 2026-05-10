@@ -30,6 +30,11 @@ function isIndexPage(relativePath) {
   return relativePath === "index.md" || relativePath === "articles.md" || relativePath.endsWith("/index.md")
 }
 
+function isTemporaryDraft(relativePath) {
+  const filename = path.basename(relativePath).toLowerCase()
+  return filename === "未命名.md" || filename === "untitled.md"
+}
+
 function slugFor(relativePath) {
   return relativePath.replace(/\.md$/, "")
 }
@@ -43,6 +48,7 @@ function normalizeDate(value) {
 function parseArticle(filePath) {
   const relativePath = toPosix(path.relative(contentDir, filePath))
   const raw = fs.readFileSync(filePath, "utf8")
+  if (raw.trim() === "") return undefined
   const parsed = matter(raw)
   const category = relativePath.split("/")[0]
   const slug = slugFor(relativePath)
@@ -67,7 +73,9 @@ function writeFile(filePath, body) {
 const articles = walk(contentDir)
   .map((filePath) => [filePath, toPosix(path.relative(contentDir, filePath))])
   .filter(([, relativePath]) => !isIndexPage(relativePath))
+  .filter(([, relativePath]) => !isTemporaryDraft(relativePath))
   .map(([filePath]) => parseArticle(filePath))
+  .filter(Boolean)
   .filter((article) => categories.some(([key]) => key === article.category))
   .sort((a, b) => {
     const dateCompare = b.date.localeCompare(a.date)

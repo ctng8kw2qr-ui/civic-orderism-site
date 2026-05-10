@@ -15,7 +15,7 @@ const config: QuartzConfig = {
     analytics: null,
     locale: "zh-CN",
     baseUrl: "civicorderism.com",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    ignorePatterns: ["private", "templates", ".obsidian", "**/未命名.md", "**/Untitled.md", "**/untitled.md"],
     defaultDateType: "published",
     theme: {
       fontOrigin: "local",
