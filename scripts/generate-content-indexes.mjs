@@ -106,12 +106,12 @@ for (const article of articles) {
 const homeLatest = articles.slice(0, 8).map(articleLine).join("\n")
 const primaryLinks = [
   `- **${articleLink("了解公民秩序主义", () => findArticleBySlug("civic-orderism/civic-orderism-manual"))}**`,
-  `- **${articleLink("阅读理论总纲", () => findArticleByTitle("公民秩序主义理论总纲"))}**`,
+  `- **[[theory|阅读理论总纲]]**`,
   `- **[[reality|查看现实解析]]**`,
 ].join("\n")
 const recommendedReading = [
   articleLink("公民秩序主义说明书", () => findArticleBySlug("civic-orderism/civic-orderism-manual")),
-  articleLink("公民秩序主义理论总纲", () => findArticleByTitle("公民秩序主义理论总纲")),
+  "[[theory|理论总纲]]",
   articleLink("什么是委员会", () => findArticleBySlug("civic-orderism/what-is-committee-system")),
   articleLink("公民秩序主义下的选举逻辑", () => findArticleBySlug("civic-orderism/election-logic-under-civic-orderism")),
   articleLink("公民秩序主义对后台系统的重视", () =>

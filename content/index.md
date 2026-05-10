@@ -29,7 +29,7 @@ status: published
 ## 主要入口
 
 - **[[civic-orderism/civic-orderism-manual|了解公民秩序主义]]**
-- **阅读理论总纲**
+- **[[theory|阅读理论总纲]]**
 - **[[reality|查看现实解析]]**
 
 ## 核心概念
@@ -43,7 +43,7 @@ status: published
 ## 推荐阅读
 
 1. [[civic-orderism/civic-orderism-manual|公民秩序主义说明书]]
-2. 公民秩序主义理论总纲
+2. [[theory|理论总纲]]
 3. [[civic-orderism/what-is-committee-system|什么是委员会]]
 4. [[civic-orderism/election-logic-under-civic-orderism|公民秩序主义下的选举逻辑]]
 5. [[civic-orderism/backend-system-under-civic-orderism|公民秩序主义对后台系统的重视]]
