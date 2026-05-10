@@ -95,8 +95,12 @@ writeFile(
   "index.md",
   `---
 title: "公民秩序主义"
+date: 2026-05-10
+category: "首页"
 tags:
   - index
+description: "公民秩序主义网站首页。"
+status: published
 ---
 
 # 公民秩序主义
@@ -128,8 +132,12 @@ writeFile(
   "articles.md",
   `---
 title: "文章目录"
+date: 2026-05-10
+category: "索引"
 tags:
   - index
+description: "按栏目自动生成的全站文章目录。"
+status: published
 ---
 
 # 文章目录
@@ -154,8 +162,12 @@ for (const [key, label, description] of categories) {
     `${key}/index.md`,
     `---
 title: "${label}"
+date: 2026-05-10
+category: "${label}"
 tags:
   - ${key}
+description: "${description}"
+status: published
 ---
 
 # ${label}

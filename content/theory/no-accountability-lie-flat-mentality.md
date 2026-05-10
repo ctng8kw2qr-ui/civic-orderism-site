@@ -1,15 +1,16 @@
 ---
-title: "为什么“无人担责的躺平心态”会从根本上摧毁一个超大型执政组织"
-date: 2026-05-10
+title: 为什么“无人担责的躺平心态”会从根本上摧毁一个超大型执政组织
+date: '2026-05-10'
+category: 理论总纲
 tags:
-  - theory
-  - governance
-  - organization
+  - 理论总纲
+  - 国家治理
+  - 组织诊断
+description: 现代社会的日常问题洪流、传染机制与三段式阈值模型
+status: published
 aliases:
   - articles/no-accountability-lie-flat-mentality
-description: "现代社会的日常问题洪流、传染机制与三段式阈值模型"
 ---
-
 # 为什么“无人担责的躺平心态”会从根本上摧毁一个超大型执政组织
 
 > 现代社会的日常问题洪流、传染机制与三段式阈值模型

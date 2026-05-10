@@ -1,7 +1,11 @@
 ---
 title: "文章目录"
+date: 2026-05-10
+category: "索引"
 tags:
   - index
+description: "按栏目自动生成的全站文章目录。"
+status: published
 ---
 
 # 文章目录

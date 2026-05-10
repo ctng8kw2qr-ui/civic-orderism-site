@@ -1,7 +1,11 @@
 ---
 title: "中国观察"
+date: 2026-05-10
+category: "中国观察"
 tags:
   - china
+description: "中国社会、政治与治理结构观察。"
+status: published
 ---
 
 # 中国观察

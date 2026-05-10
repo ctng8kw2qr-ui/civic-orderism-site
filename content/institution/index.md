@@ -1,7 +1,11 @@
 ---
 title: "制度设计"
+date: 2026-05-10
+category: "制度设计"
 tags:
   - institution
+description: "制度结构、治理机制与组织方案。"
+status: published
 ---
 
 # 制度设计

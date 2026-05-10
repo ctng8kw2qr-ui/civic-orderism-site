@@ -1,7 +1,11 @@
 ---
 title: "公民秩序主义"
+date: 2026-05-10
+category: "公民秩序主义"
 tags:
   - civic-orderism
+description: "公民秩序主义的核心理论、原则、制度设计、运行流程与权力监督机制。"
+status: published
 ---
 
 # 公民秩序主义

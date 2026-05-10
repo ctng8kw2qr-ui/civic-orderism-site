@@ -1,14 +1,16 @@
 ---
-title: "内变引外变：现代政治为何走到十字路口"
-date: 2026-05-10
+title: 内变引外变：现代政治为何走到十字路口
+date: '2026-05-10'
+category: 理论总纲
 tags:
-  - theory
-  - international-order
-  - modern-politics
+  - 理论总纲
+  - 国际秩序
+  - 现代政治
+description: 现代政治已经走到了一个历史性的十字路口。
+status: published
 aliases:
   - articles/internal-change-external-change
 ---
-
 # 内变引外变：现代政治为何走到十字路口
 
 现代政治已经走到了一个历史性的十字路口。

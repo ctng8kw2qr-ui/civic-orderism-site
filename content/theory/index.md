@@ -1,7 +1,11 @@
 ---
 title: "理论总纲"
+date: 2026-05-10
+category: "理论总纲"
 tags:
   - theory
+description: "理论框架、概念模型与制度判断。"
+status: published
 ---
 
 # 理论总纲

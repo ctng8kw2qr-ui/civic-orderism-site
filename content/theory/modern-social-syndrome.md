@@ -1,14 +1,15 @@
 ---
-title: "现代社会候群症"
-date: 2026-05-10
+title: 现代社会候群症
+date: '2026-05-10'
+category: 理论总纲
 tags:
-  - theory
-  - platform-power
+  - 理论总纲
+  - 平台权力
+description: 当权力从“城堡”变成“网”，普通人为何越来越无力
+status: published
 aliases:
   - articles/modern-social-syndrome
-description: "当权力从“城堡”变成“网”，普通人为何越来越无力"
 ---
-
 # 现代社会候群症
 
 > 当权力从“城堡”变成“网”，普通人为何越来越无力

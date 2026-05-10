@@ -1,14 +1,15 @@
 ---
-title: "我们不是被贫穷困住，而是被流程困住"
-date: 2026-05-10
+title: 我们不是被贫穷困住，而是被流程困住
+date: '2026-05-10'
+category: 理论总纲
 tags:
-  - theory
-  - process
+  - 理论总纲
+  - 流程
+description: 高生产力时代的制度摩擦与生活窒息
+status: published
 aliases:
   - articles/trapped-by-process
-description: "高生产力时代的制度摩擦与生活窒息"
 ---
-
 # 我们不是被贫穷困住，而是被流程困住
 
 > 高生产力时代的制度摩擦与生活窒息

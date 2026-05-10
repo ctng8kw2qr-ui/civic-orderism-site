@@ -1,15 +1,16 @@
 ---
-title: "为什么程序性问责，常常敌不过组织化权力"
-date: 2026-05-10
+title: 为什么程序性问责，常常敌不过组织化权力
+date: '2026-05-10'
+category: 理论总纲
 tags:
-  - theory
-  - accountability
-  - representative-politics
+  - 理论总纲
+  - 问责机制
+  - 代议政治
+description: 加拿大式代议政治的深层困境
+status: published
 aliases:
   - articles/procedural-accountability-organized-power
-description: "加拿大式代议政治的深层困境"
 ---
-
 # 为什么程序性问责，常常敌不过组织化权力
 
 > 加拿大式代议政治的深层困境

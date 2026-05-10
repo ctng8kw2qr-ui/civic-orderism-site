@@ -1,15 +1,16 @@
 ---
-title: "养鸡与换笼：民营经济被整肃的结构逻辑"
-date: 2026-05-10
+title: 养鸡与换笼：民营经济被整肃的结构逻辑
+date: '2026-05-10'
+category: 中国观察
 tags:
-  - reality
-  - china
-  - private-economy
+  - 中国观察
+  - 现实解析
+  - 民营经济
+description: 本文从中央—地方关系、官商共生、财政金融通道与组织控制逻辑出发，分析中共整肃民营经济背后的结构动因。
+status: published
 aliases:
   - articles/chicken-and-cage
-description: "本文从中央—地方关系、官商共生、财政金融通道与组织控制逻辑出发，分析中共整肃民营经济背后的结构动因。"
 ---
-
 # 养鸡与换笼
 
 > ——民营经济被整肃的结构逻辑

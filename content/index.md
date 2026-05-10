@@ -1,7 +1,11 @@
 ---
 title: "公民秩序主义"
+date: 2026-05-10
+category: "首页"
 tags:
   - index
+description: "公民秩序主义网站首页。"
+status: published
 ---
 
 # 公民秩序主义
