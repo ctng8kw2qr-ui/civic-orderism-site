@@ -15,7 +15,7 @@
     "quartz": "./quartz/bootstrap-cli.mjs",
     "generate:indexes": "node ./scripts/generate-content-indexes.mjs",
     "dev": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build --serve",
-    "build": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build",
+    "build": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build && node ./scripts/generate-static-security-files.mjs",
     "preview": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build --serve",
     "docs": "node ./quartz/bootstrap-cli.mjs build --serve -d docs",
     "check": "tsc --noEmit && npx prettier . --check",
