@@ -1,87 +1,97 @@
-import fs from "node:fs"
-import path from "node:path"
-import matter from "gray-matter"
+import fs from "node:fs";
+import path from "node:path";
+import matter from "gray-matter";
 
-const contentDir = path.resolve("content")
+const contentDir = path.resolve("content");
 
 const categories = [
-  ["civic-orderism", "公民秩序主义", "公民秩序主义的核心理论、原则、制度设计、运行流程与权力监督机制。"],
+  [
+    "civic-orderism",
+    "公民秩序主义",
+    "公民秩序主义的核心理论、原则、制度设计、运行流程与权力监督机制。",
+  ],
   ["theory", "理论总纲", "理论框架、概念模型与制度判断。"],
   ["institution", "制度设计", "制度结构、治理机制与组织方案。"],
   ["china", "解析中共", "中共的组织结构、权力逻辑、官僚系统与结构性失效分析。"],
-]
+];
 
 function walk(dir) {
-  if (!fs.existsSync(dir)) return []
+  if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
-    const fullPath = path.join(dir, entry.name)
-    if (entry.isDirectory()) return walk(fullPath)
-    if (entry.isFile() && entry.name.endsWith(".md")) return [fullPath]
-    return []
-  })
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) return walk(fullPath);
+    if (entry.isFile() && entry.name.endsWith(".md")) return [fullPath];
+    return [];
+  });
 }
 
 function toPosix(filePath) {
-  return filePath.split(path.sep).join("/")
+  return filePath.split(path.sep).join("/");
 }
 
 function isIndexPage(relativePath) {
-  return relativePath === "index.md" || relativePath === "articles.md" || relativePath.endsWith("/index.md")
+  return (
+    relativePath === "index.md" ||
+    relativePath === "articles.md" ||
+    relativePath.endsWith("/index.md")
+  );
 }
 
 function isTemporaryDraft(relativePath) {
-  const filename = path.basename(relativePath).toLowerCase()
-  return filename === "未命名.md" || filename === "untitled.md"
+  const filename = path.basename(relativePath).toLowerCase();
+  return filename === "未命名.md" || filename === "untitled.md";
 }
 
 function slugFor(relativePath) {
-  return relativePath.replace(/\.md$/, "")
+  return relativePath.replace(/\.md$/, "");
 }
 
 function normalizeDate(value) {
-  if (!value) return "2026-05-10"
-  if (value instanceof Date) return value.toISOString().slice(0, 10)
-  return String(value).slice(0, 10)
+  if (!value) return "2026-05-10";
+  if (value instanceof Date) return value.toISOString().slice(0, 10);
+  return String(value).slice(0, 10);
 }
 
 function parseArticle(filePath) {
-  const relativePath = toPosix(path.relative(contentDir, filePath))
-  const raw = fs.readFileSync(filePath, "utf8")
-  if (raw.trim() === "") return undefined
-  const parsed = matter(raw)
-  const category = relativePath.split("/")[0]
-  const slug = slugFor(relativePath)
+  const relativePath = toPosix(path.relative(contentDir, filePath));
+  const raw = fs.readFileSync(filePath, "utf8");
+  if (raw.trim() === "") return undefined;
+  const parsed = matter(raw);
+  const category = relativePath.split("/")[0];
+  const slug = slugFor(relativePath);
   return {
     category,
     date: normalizeDate(parsed.data.date),
     description: parsed.data.description ? String(parsed.data.description) : "",
     slug,
-    title: parsed.data.title ? String(parsed.data.title) : path.basename(relativePath, ".md"),
-  }
+    title: parsed.data.title
+      ? String(parsed.data.title)
+      : path.basename(relativePath, ".md"),
+  };
 }
 
 function articleLine(article) {
-  const date = article.date ? `（${article.date}）` : ""
-  return `- [[${article.slug}|${article.title}]]${date}`
+  const date = article.date ? `（${article.date}）` : "";
+  return `- [[${article.slug}|${article.title}]]${date}`;
 }
 
 function findArticleBySlug(slug) {
-  return articles.find((article) => article.slug === slug)
+  return articles.find((article) => article.slug === slug);
 }
 
 function findArticleByTitle(title) {
-  return articles.find((article) => article.title.includes(title))
+  return articles.find((article) => article.title.includes(title));
 }
 
 function articleLink(label, finder) {
-  const article = finder()
-  return article ? `[[${article.slug}|${label}]]` : label
+  const article = finder();
+  return article ? `[[${article.slug}|${label}]]` : label;
 }
 
 function writeFile(filePath, body) {
-  const targetPath = path.join(contentDir, filePath)
-  fs.mkdirSync(path.dirname(targetPath), { recursive: true })
-  fs.writeFileSync(targetPath, `${body.trimEnd()}\n`, "utf8")
+  const targetPath = path.join(contentDir, filePath);
+  fs.mkdirSync(path.dirname(targetPath), { recursive: true });
+  fs.writeFileSync(targetPath, `${body.trimEnd()}\n`, "utf8");
 }
 
 const articles = walk(contentDir)
@@ -92,54 +102,210 @@ const articles = walk(contentDir)
   .filter(Boolean)
   .filter((article) => categories.some(([key]) => key === article.category))
   .sort((a, b) => {
-    const dateCompare = b.date.localeCompare(a.date)
-    if (dateCompare !== 0) return dateCompare
-    return a.title.localeCompare(b.title, "zh-CN")
-  })
+    const dateCompare = b.date.localeCompare(a.date);
+    if (dateCompare !== 0) return dateCompare;
+    return a.title.localeCompare(b.title, "zh-CN");
+  });
 
-const byCategory = new Map(categories.map(([key]) => [key, []]))
+const byCategory = new Map(categories.map(([key]) => [key, []]));
 for (const article of articles) {
-  byCategory.get(article.category)?.push(article)
+  byCategory.get(article.category)?.push(article);
 }
 
 const homeLatest = articles
   .filter((article) => article.category === "china")
   .slice(0, 8)
   .map(articleLine)
-  .join("\n")
+  .join("\n");
 const primaryLinks = [
-  `- **[[china|解析中共]]**  \n  理解中共的组织结构、权力逻辑与系统性失效。`,
-  `- **[[theory|阅读理论总纲]]**  \n  诊断现实局势，理解制度运行规律，判断未来秩序方向。`,
-  `- **${articleLink("了解公民秩序主义", () => findArticleBySlug("civic-orderism/civic-orderism-manual"))}**  \n  理解这套理论的基本问题、核心立场与现实指向。`,
-].join("\n")
+  `- **[[start-here|从这里开始阅读]]**  \n  按阅读路径理解公民秩序主义的基本立场、制度结构与现实指向。`,
+  `- **[[civic-orderism|了解公民秩序主义]]**  \n  阅读这套理论的基本理念、制度骨架和国家运行方式。`,
+  `- **[[china|理解中国现实与中共组织失效]]**  \n  从组织结构、权力激励和制度失效角度理解中国现实。`,
+].join("\n");
 const recommendedReading = [
-  articleLink("公民秩序主义说明书", () => findArticleBySlug("civic-orderism/civic-orderism-manual")),
-  articleLink("什么是委员会", () => findArticleBySlug("civic-orderism/what-is-committee-system")),
-  articleLink("公民秩序主义下的选举逻辑", () => findArticleBySlug("civic-orderism/election-logic-under-civic-orderism")),
-  articleLink("公民秩序主义下国家运行的大概流程", () =>
-    findArticleBySlug("civic-orderism/state-operation-process-under-civic-orderism"),
-  ),
-  articleLink("委员会和行政机关的激励结构完全相反的意义", () =>
-    findArticleBySlug("civic-orderism/committee-administration-opposite-incentives"),
-  ),
-  articleLink("公民秩序主义对后台系统的重视", () =>
-    findArticleBySlug("civic-orderism/backend-system-under-civic-orderism"),
-  ),
-  articleLink("公民秩序主义下顶层权力结构的布局", () =>
-    findArticleBySlug("civic-orderism/top-level-power-structure-under-civic-orderism"),
-  ),
-  articleLink("为什么公民秩序主义强调履历、经验", () =>
-    findArticleBySlug("civic-orderism/why-civic-orderism-emphasizes-experience-and-records"),
+  articleLink("公民秩序主义说明书", () =>
+    findArticleBySlug("civic-orderism/civic-orderism-manual"),
   ),
   articleLink("公民秩序主义最终要解决的问题", () =>
     findArticleBySlug("civic-orderism/what-civic-orderism-ultimately-solves"),
   ),
-  articleLink("为什么公民秩序主义在未来接替难度最小", () =>
-    findArticleBySlug("civic-orderism/why-civic-orderism-is-easier-to-succeed"),
+  articleLink("什么是委员会", () =>
+    findArticleBySlug("civic-orderism/what-is-committee-system"),
+  ),
+  articleLink("公民秩序主义下国家运行的大概流程", () =>
+    findArticleBySlug(
+      "civic-orderism/state-operation-process-under-civic-orderism",
+    ),
+  ),
+  articleLink("党国系统的结构性失效：一个组织诊断", () =>
+    findArticleBySlug("theory/party-state-structural-failure"),
   ),
 ]
   .map((item, index) => `${index + 1}. ${item}`)
-  .join("\n")
+  .join("\n");
+
+const themedReading = [
+  [
+    "入门说明",
+    [
+      articleLink("公民秩序主义说明书", () =>
+        findArticleBySlug("civic-orderism/civic-orderism-manual"),
+      ),
+      articleLink("公民秩序主义最终要解决的问题", () =>
+        findArticleBySlug(
+          "civic-orderism/what-civic-orderism-ultimately-solves",
+        ),
+      ),
+      articleLink("为什么公民秩序主义不纠结于左右、民主专制之争", () =>
+        findArticleBySlug(
+          "civic-orderism/why-not-left-right-democracy-autocracy",
+        ),
+      ),
+      articleLink(
+        "为什么公民秩序主义反对道德叙事，也反对对公职人员的道德审判",
+        () => findArticleBySlug("civic-orderism/why-against-moral-narrative"),
+      ),
+    ],
+  ],
+  [
+    "制度骨架",
+    [
+      articleLink("什么是委员会", () =>
+        findArticleBySlug("civic-orderism/what-is-committee-system"),
+      ),
+      articleLink("公民秩序主义下国家运行的大概流程", () =>
+        findArticleBySlug(
+          "civic-orderism/state-operation-process-under-civic-orderism",
+        ),
+      ),
+      articleLink("公民秩序主义下顶层权力结构的布局", () =>
+        findArticleBySlug(
+          "civic-orderism/top-level-power-structure-under-civic-orderism",
+        ),
+      ),
+      articleLink("为什么公民秩序主义必须采取委员会—行政双轨制", () =>
+        findArticleBySlug(
+          "civic-orderism/why-dual-track-committee-administration",
+        ),
+      ),
+      articleLink("委员会与行政机关激励结构相反的意义", () =>
+        findArticleBySlug(
+          "civic-orderism/committee-administration-opposite-incentives",
+        ),
+      ),
+    ],
+  ],
+  [
+    "选举与授权",
+    [
+      articleLink("公民秩序主义下的选举逻辑", () =>
+        findArticleBySlug("civic-orderism/election-logic-under-civic-orderism"),
+      ),
+      articleLink("为什么公民秩序主义下的选举会天然排斥政治献金", () =>
+        findArticleBySlug(
+          "civic-orderism/why-elections-reject-political-donations",
+        ),
+      ),
+      articleLink("为什么议员主要应采取兼职制，而非全职制", () =>
+        findArticleBySlug("civic-orderism/why-part-time-representatives"),
+      ),
+      articleLink("弱化政党政治之后，公共政治如何继续存在", () =>
+        findArticleBySlug(
+          "civic-orderism/public-politics-without-party-dominance",
+        ),
+      ),
+      articleLink("为什么议案应主要来自社会组织", () =>
+        findArticleBySlug(
+          "civic-orderism/why-proposals-from-social-organizations",
+        ),
+      ),
+    ],
+  ],
+  [
+    "国家后台系统",
+    [
+      articleLink("公民秩序主义对后台系统的重视", () =>
+        findArticleBySlug("civic-orderism/backend-system-under-civic-orderism"),
+      ),
+      articleLink("为什么公民秩序主义强调信息透明及信息发布", () =>
+        findArticleBySlug("civic-orderism/why-information-transparency"),
+      ),
+      articleLink("为什么公民秩序主义强调履历、经验", () =>
+        findArticleBySlug(
+          "civic-orderism/why-civic-orderism-emphasizes-experience-and-records",
+        ),
+      ),
+      articleLink("为什么更加注意现代社会的隐形权力节点", () =>
+        findArticleBySlug("civic-orderism/why-focus-on-invisible-power-nodes"),
+      ),
+      articleLink("为什么公民秩序主义强调司法是为现实服务的", () =>
+        findArticleBySlug("civic-orderism/why-justice-serves-reality"),
+      ),
+    ],
+  ],
+  [
+    "中共组织诊断",
+    [
+      articleLink("党国系统的结构性失效：一个组织诊断", () =>
+        findArticleBySlug("theory/party-state-structural-failure"),
+      ),
+      articleLink("解析高刚性体制：中共无以为继的结构性根因", () =>
+        findArticleBySlug("theory/high-rigidity-system-ccp"),
+      ),
+      articleLink("为什么中共更可能“失灵”而非“倒台”", () =>
+        findArticleBySlug("theory/ccp-high-fragility-dysfunction"),
+      ),
+      articleLink("为什么“无人担责的躺平心态”会摧毁超大型执政组织", () =>
+        findArticleBySlug("theory/no-accountability-lie-flat-mentality"),
+      ),
+      articleLink("为什么程序性问责，常常敌不过组织化权力", () =>
+        findArticleBySlug("theory/procedural-accountability-organized-power"),
+      ),
+    ],
+  ],
+  [
+    "现实观察与案例分析",
+    [
+      articleLink("2018新“改革开放”：从开放社会到封闭风险", () =>
+        findArticleBySlug("china/ccp-2018-new-reform-opening"),
+      ),
+      articleLink("中宣系统“翻车常态化”背后的空心化逻辑", () =>
+        findArticleBySlug("china/propaganda-system-hollowing-out"),
+      ),
+      articleLink("中共官僚体系为何陷入双重死结", () =>
+        findArticleBySlug("china/ccp-bureaucracy-double-deadlock"),
+      ),
+      articleLink("当高位者也不再安全", () =>
+        findArticleBySlug(
+          "china/when-high-ranking-officials-are-no-longer-safe",
+        ),
+      ),
+      articleLink("台海是否会走向战争", () =>
+        findArticleBySlug("china/taiwan-war-risk"),
+      ),
+    ],
+  ],
+]
+  .map(
+    ([heading, items]) =>
+      `<section class="article-category-card">\n\n### ${heading}\n\n${items.map((item) => `- ${item}`).join("\n")}\n\n</section>`,
+  )
+  .join("\n\n");
+
+const categoryIntroductions = new Map([
+  [
+    "civic-orderism",
+    `本栏目集中说明公民秩序主义的基本理念、制度结构和国家运行方式。如果你是第一次了解这套理论，建议先阅读${articleLink("公民秩序主义说明书", () => findArticleBySlug("civic-orderism/civic-orderism-manual"))}、${articleLink("什么是委员会", () => findArticleBySlug("civic-orderism/what-is-committee-system"))}、${articleLink("国家运行的大概流程", () => findArticleBySlug("civic-orderism/state-operation-process-under-civic-orderism"))}三篇。`,
+  ],
+  [
+    "china",
+    "本栏目不是单纯评论中共新闻，而是从组织结构、官僚系统、权力激励和制度失效角度，解释中共为什么越来越难以处理自身制造的问题。如果你想理解公民秩序主义为什么认为中国需要新的公共秩序系统，可以从本栏目开始。",
+  ],
+  [
+    "theory",
+    "本栏目用于整理公民秩序主义背后的理论判断，包括现代国家、政党政治、组织失灵、程序问责、技术治理与社会摩擦等问题。这里不是具体制度方案，而是理解制度方案背后的分析框架。",
+  ],
+]);
 writeFile(
   "index.md",
   `---
@@ -176,7 +342,7 @@ status: published
 
 国家不是人民之上的神圣机器，而是服务公民生活秩序的公共系统。制度的价值，不在于制造服从，而在于降低社会摩擦、保障基本尊严、形成可持续的公共信任。
 
-## 主要入口
+## 新读者从这里开始
 
 ${primaryLinks}
 
@@ -188,9 +354,17 @@ ${primaryLinks}
 - 平等 EQUALITY
 - 责任 ACCOUNTABILITY
 
-## 推荐阅读
+## 第一次阅读建议
 
 ${recommendedReading}
+
+## 按主题阅读
+
+<div class="article-category-grid">
+
+${themedReading}
+
+</div>
 
 ## 最新文章
 
@@ -205,7 +379,7 @@ ${categories.map(([key, label]) => `- [[${key}|${label}]]`).join("\n")}
 如需反馈、讨论或提供资料，可通过以下邮箱联系：
 
 [citizenorder@proton.me](mailto:citizenorder@proton.me)`,
-)
+);
 
 writeFile(
   "articles.md",
@@ -229,14 +403,14 @@ ${categories.map(([key, label]) => `- [[${key}|${label}]]`).join("\n")}
 
 ${categories
   .map(([key, label]) => {
-    const items = byCategory.get(key) ?? []
-    return `## ${label}\n\n${items.length ? items.map(articleLine).join("\n") : "暂无文章。"}`
+    const items = byCategory.get(key) ?? [];
+    return `## ${label}\n\n${items.length ? items.map(articleLine).join("\n") : "暂无文章。"}`;
   })
   .join("\n\n")}`,
-)
+);
 
 for (const [key, label, description] of categories) {
-  const items = byCategory.get(key) ?? []
+  const items = byCategory.get(key) ?? [];
   writeFile(
     `${key}/index.md`,
     `---
@@ -253,10 +427,10 @@ status: published
 
 ${description}
 
-## 文章列表
+${categoryIntroductions.get(key) ? `${categoryIntroductions.get(key)}\n\n` : ""}## 文章列表
 
 ${items.length ? items.map(articleLine).join("\n") : "暂无文章。"}`,
-  )
+  );
 }
 
-console.log(`Generated indexes for ${articles.length} articles.`)
+console.log(`Generated indexes for ${articles.length} articles.`);

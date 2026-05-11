@@ -32,14 +32,14 @@ status: published
 
 国家不是人民之上的神圣机器，而是服务公民生活秩序的公共系统。制度的价值，不在于制造服从，而在于降低社会摩擦、保障基本尊严、形成可持续的公共信任。
 
-## 主要入口
+## 新读者从这里开始
 
-- **[[china|解析中共]]**  
-  理解中共的组织结构、权力逻辑与系统性失效。
-- **[[theory|阅读理论总纲]]**  
-  诊断现实局势，理解制度运行规律，判断未来秩序方向。
-- **[[civic-orderism/civic-orderism-manual|了解公民秩序主义]]**  
-  理解这套理论的基本问题、核心立场与现实指向。
+- **[[start-here|从这里开始阅读]]**  
+  按阅读路径理解公民秩序主义的基本立场、制度结构与现实指向。
+- **[[civic-orderism|了解公民秩序主义]]**  
+  阅读这套理论的基本理念、制度骨架和国家运行方式。
+- **[[china|理解中国现实与中共组织失效]]**  
+  从组织结构、权力激励和制度失效角度理解中国现实。
 
 ## 核心概念
 
@@ -49,18 +49,90 @@ status: published
 - 平等 EQUALITY
 - 责任 ACCOUNTABILITY
 
-## 推荐阅读
+## 第一次阅读建议
 
 1. [[civic-orderism/civic-orderism-manual|公民秩序主义说明书]]
-2. [[civic-orderism/what-is-committee-system|什么是委员会]]
-3. [[civic-orderism/election-logic-under-civic-orderism|公民秩序主义下的选举逻辑]]
+2. [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题]]
+3. [[civic-orderism/what-is-committee-system|什么是委员会]]
 4. [[civic-orderism/state-operation-process-under-civic-orderism|公民秩序主义下国家运行的大概流程]]
-5. [[civic-orderism/committee-administration-opposite-incentives|委员会和行政机关的激励结构完全相反的意义]]
-6. [[civic-orderism/backend-system-under-civic-orderism|公民秩序主义对后台系统的重视]]
-7. [[civic-orderism/top-level-power-structure-under-civic-orderism|公民秩序主义下顶层权力结构的布局]]
-8. [[civic-orderism/why-civic-orderism-emphasizes-experience-and-records|为什么公民秩序主义强调履历、经验]]
-9. [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题]]
-10. [[civic-orderism/why-civic-orderism-is-easier-to-succeed|为什么公民秩序主义在未来接替难度最小]]
+5. [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]
+
+## 按主题阅读
+
+<div class="article-category-grid">
+
+<section class="article-category-card">
+
+### 入门说明
+
+- [[civic-orderism/civic-orderism-manual|公民秩序主义说明书]]
+- [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题]]
+- [[civic-orderism/why-not-left-right-democracy-autocracy|为什么公民秩序主义不纠结于左右、民主专制之争]]
+- [[civic-orderism/why-against-moral-narrative|为什么公民秩序主义反对道德叙事，也反对对公职人员的道德审判]]
+
+</section>
+
+<section class="article-category-card">
+
+### 制度骨架
+
+- [[civic-orderism/what-is-committee-system|什么是委员会]]
+- [[civic-orderism/state-operation-process-under-civic-orderism|公民秩序主义下国家运行的大概流程]]
+- [[civic-orderism/top-level-power-structure-under-civic-orderism|公民秩序主义下顶层权力结构的布局]]
+- [[civic-orderism/why-dual-track-committee-administration|为什么公民秩序主义必须采取委员会—行政双轨制]]
+- [[civic-orderism/committee-administration-opposite-incentives|委员会与行政机关激励结构相反的意义]]
+
+</section>
+
+<section class="article-category-card">
+
+### 选举与授权
+
+- [[civic-orderism/election-logic-under-civic-orderism|公民秩序主义下的选举逻辑]]
+- [[civic-orderism/why-elections-reject-political-donations|为什么公民秩序主义下的选举会天然排斥政治献金]]
+- [[civic-orderism/why-part-time-representatives|为什么议员主要应采取兼职制，而非全职制]]
+- [[civic-orderism/public-politics-without-party-dominance|弱化政党政治之后，公共政治如何继续存在]]
+- [[civic-orderism/why-proposals-from-social-organizations|为什么议案应主要来自社会组织]]
+
+</section>
+
+<section class="article-category-card">
+
+### 国家后台系统
+
+- [[civic-orderism/backend-system-under-civic-orderism|公民秩序主义对后台系统的重视]]
+- [[civic-orderism/why-information-transparency|为什么公民秩序主义强调信息透明及信息发布]]
+- [[civic-orderism/why-civic-orderism-emphasizes-experience-and-records|为什么公民秩序主义强调履历、经验]]
+- [[civic-orderism/why-focus-on-invisible-power-nodes|为什么更加注意现代社会的隐形权力节点]]
+- [[civic-orderism/why-justice-serves-reality|为什么公民秩序主义强调司法是为现实服务的]]
+
+</section>
+
+<section class="article-category-card">
+
+### 中共组织诊断
+
+- [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]
+- [[theory/high-rigidity-system-ccp|解析高刚性体制：中共无以为继的结构性根因]]
+- [[theory/ccp-high-fragility-dysfunction|为什么中共更可能“失灵”而非“倒台”]]
+- [[theory/no-accountability-lie-flat-mentality|为什么“无人担责的躺平心态”会摧毁超大型执政组织]]
+- [[theory/procedural-accountability-organized-power|为什么程序性问责，常常敌不过组织化权力]]
+
+</section>
+
+<section class="article-category-card">
+
+### 现实观察与案例分析
+
+- [[china/ccp-2018-new-reform-opening|2018新“改革开放”：从开放社会到封闭风险]]
+- [[china/propaganda-system-hollowing-out|中宣系统“翻车常态化”背后的空心化逻辑]]
+- [[china/ccp-bureaucracy-double-deadlock|中共官僚体系为何陷入双重死结]]
+- [[china/when-high-ranking-officials-are-no-longer-safe|当高位者也不再安全]]
+- [[china/taiwan-war-risk|台海是否会走向战争]]
+
+</section>
+
+</div>
 
 ## 最新文章
 

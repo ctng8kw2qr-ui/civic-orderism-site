@@ -65,6 +65,28 @@ article h3 {
   font-weight: 500;
 }
 
+article .article-category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+article .article-category-card {
+  border: 1px solid var(--lightgray);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+}
+
+article .article-category-card h3 {
+  margin-top: 0;
+}
+
+article .article-category-card ul {
+  margin-bottom: 0;
+  padding-left: 1.1rem;
+}
+
 article p,
 article li {
   line-height: 1.95;

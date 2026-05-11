@@ -12,6 +12,8 @@ status: published
 
 公民秩序主义的核心理论、原则、制度设计、运行流程与权力监督机制。
 
+本栏目集中说明公民秩序主义的基本理念、制度结构和国家运行方式。如果你是第一次了解这套理论，建议先阅读[[civic-orderism/civic-orderism-manual|公民秩序主义说明书]]、[[civic-orderism/what-is-committee-system|什么是委员会]]、[[civic-orderism/state-operation-process-under-civic-orderism|国家运行的大概流程]]三篇。
+
 ## 文章列表
 
 - [[civic-orderism/backend-system-under-civic-orderism|公民秩序主义对后台系统的重视：为什么培训、秘书处、专业事务与留痕系统，是现代国家真正的底座]]（2026-05-10）
