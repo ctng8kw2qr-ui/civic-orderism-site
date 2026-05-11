@@ -61,10 +61,10 @@ status: published
 
 ## 七、阅读中国现实与系统风险
 
+- [[china/ccp-collapse-three-triggers-social-security-healthcare-finance|中共崩解的三大导火索：社保、医保与金融系统]]
 - [[china/ccp-2018-new-reform-opening|2018新“改革开放”：从开放社会到封闭风险]]
 - [[china/chicken-and-cage|养鸡与换笼：民营经济被整肃的结构逻辑]]
 - [[china/ccp-reform-political-balance-deadlock|中共的真正死局：改革未必救经济，却一定先打破政治平衡]]
-- [[china/ccp-bureaucracy-double-deadlock|不抓人就躺平，一抓人就失真：中共官僚体系为何陷入双重死结]]
 - [[china/maginot-line-of-stability-maintenance|一个难以言说的防线：从“液压维稳”到当代的马其诺防线]]
 
 ## 八、阅读外交、战争与国际秩序

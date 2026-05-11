@@ -301,6 +301,11 @@ const themedReading = [
     "中国现实",
     "社保、医保、金融、社会压力与系统风险。",
     [
+      articleLink("中共崩解的三大导火索：社保、医保与金融系统", () =>
+        findArticleBySlug(
+          "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+        ),
+      ),
       articleLink("2018新“改革开放”：从开放社会到封闭风险", () =>
         findArticleBySlug("china/ccp-2018-new-reform-opening"),
       ),
@@ -309,9 +314,6 @@ const themedReading = [
       ),
       articleLink("中共的真正死局：改革未必救经济，却一定先打破政治平衡", () =>
         findArticleBySlug("china/ccp-reform-political-balance-deadlock"),
-      ),
-      articleLink("中共官僚体系为何陷入双重死结", () =>
-        findArticleBySlug("china/ccp-bureaucracy-double-deadlock"),
       ),
       articleLink("从“液压维稳”到当代的马其诺防线", () =>
         findArticleBySlug("china/maginot-line-of-stability-maintenance"),

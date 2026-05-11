@@ -152,10 +152,10 @@ status: published
 
 <p class="article-category-description">社保、医保、金融、社会压力与系统风险。</p>
 
+- [[china/ccp-collapse-three-triggers-social-security-healthcare-finance|中共崩解的三大导火索：社保、医保与金融系统]]
 - [[china/ccp-2018-new-reform-opening|2018新“改革开放”：从开放社会到封闭风险]]
 - [[china/chicken-and-cage|养鸡与换笼：民营经济被整肃的结构逻辑]]
 - [[china/ccp-reform-political-balance-deadlock|中共的真正死局：改革未必救经济，却一定先打破政治平衡]]
-- [[china/ccp-bureaucracy-double-deadlock|中共官僚体系为何陷入双重死结]]
 - [[china/maginot-line-of-stability-maintenance|从“液压维稳”到当代的马其诺防线]]
 
 </section>
@@ -191,6 +191,7 @@ status: published
 
 ## 最新文章
 
+- [[china/ccp-collapse-three-triggers-social-security-healthcare-finance|中共崩解的三大导火索：社保、医保与金融系统]]（2026-05-11）
 - [[china/ccp-2018-new-reform-opening|2018新“改革开放”：从开放社会到封闭风险]]（2026-05-10）
 - [[china/propaganda-system-hollowing-out|不是不会宣传，而是不敢承担：中宣系统“翻车常态化”背后的空心化逻辑]]（2026-05-10）
 - [[china/ccp-bureaucracy-double-deadlock|不抓人就躺平，一抓人就失真：中共官僚体系为何陷入双重死结]]（2026-05-10）
@@ -198,7 +199,6 @@ status: published
 - [[china/ccp-bureaucracy-historical-bill|当历史总账开始结算：高刚性官僚体系如何把系统性责任层层压向中基层]]（2026-05-10）
 - [[china/elite-sandification-ming-bureaucrats-ccp|沙化的忠诚：中共精英原子化与明代士大夫的历史镜像]]（2026-05-10）
 - [[china/taiwan-war-risk|台海是否会走向战争：基于战争四驱动的组织决策风险评估]]（2026-05-10）
-- [[china/diplomacy-root|外交的根源：从中共内政逻辑看其外交激进化]]（2026-05-10）
 
 ## 栏目
 

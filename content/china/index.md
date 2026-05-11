@@ -16,6 +16,7 @@ status: published
 
 ## 文章列表
 
+- [[china/ccp-collapse-three-triggers-social-security-healthcare-finance|中共崩解的三大导火索：社保、医保与金融系统]]（2026-05-11）
 - [[china/ccp-2018-new-reform-opening|2018新“改革开放”：从开放社会到封闭风险]]（2026-05-10）
 - [[china/propaganda-system-hollowing-out|不是不会宣传，而是不敢承担：中宣系统“翻车常态化”背后的空心化逻辑]]（2026-05-10）
 - [[china/ccp-bureaucracy-double-deadlock|不抓人就躺平，一抓人就失真：中共官僚体系为何陷入双重死结]]（2026-05-10）
