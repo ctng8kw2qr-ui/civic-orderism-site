@@ -147,6 +147,7 @@ const recommendedReading = [
 const themedReading = [
   [
     "入门说明",
+    "公民秩序主义是什么，解决什么问题。",
     [
       articleLink("公民秩序主义说明书", () =>
         findArticleBySlug("civic-orderism/civic-orderism-manual"),
@@ -168,20 +169,11 @@ const themedReading = [
     ],
   ],
   [
-    "制度骨架",
+    "委员会制度",
+    "公共判断、监督、反馈和责任如何形成。",
     [
       articleLink("什么是委员会", () =>
         findArticleBySlug("civic-orderism/what-is-committee-system"),
-      ),
-      articleLink("公民秩序主义下国家运行的大概流程", () =>
-        findArticleBySlug(
-          "civic-orderism/state-operation-process-under-civic-orderism",
-        ),
-      ),
-      articleLink("公民秩序主义下顶层权力结构的布局", () =>
-        findArticleBySlug(
-          "civic-orderism/top-level-power-structure-under-civic-orderism",
-        ),
       ),
       articleLink("为什么公民秩序主义必须采取委员会—行政双轨制", () =>
         findArticleBySlug(
@@ -193,10 +185,46 @@ const themedReading = [
           "civic-orderism/committee-administration-opposite-incentives",
         ),
       ),
+      articleLink("为什么议案应主要来自社会组织", () =>
+        findArticleBySlug(
+          "civic-orderism/why-proposals-from-social-organizations",
+        ),
+      ),
+      articleLink("为什么更加注意现代社会的隐形权力节点", () =>
+        findArticleBySlug("civic-orderism/why-focus-on-invisible-power-nodes"),
+      ),
+    ],
+  ],
+  [
+    "国家运行",
+    "行政系统、权力结构和国家机器如何运转。",
+    [
+      articleLink("公民秩序主义下国家运行的大概流程", () =>
+        findArticleBySlug(
+          "civic-orderism/state-operation-process-under-civic-orderism",
+        ),
+      ),
+      articleLink("公民秩序主义下顶层权力结构的布局", () =>
+        findArticleBySlug(
+          "civic-orderism/top-level-power-structure-under-civic-orderism",
+        ),
+      ),
+      articleLink("为什么公民秩序主义不采取简单的三权分立", () =>
+        findArticleBySlug("civic-orderism/why-not-simple-separation-of-powers"),
+      ),
+      articleLink("为什么公民秩序主义议会不采取上下两院制", () =>
+        findArticleBySlug("civic-orderism/why-no-bicameral-parliament"),
+      ),
+      articleLink("为什么公民秩序主义在未来接替难度最小", () =>
+        findArticleBySlug(
+          "civic-orderism/why-civic-orderism-is-easier-to-succeed",
+        ),
+      ),
     ],
   ],
   [
     "选举与授权",
+    "公共政治、路线差异和治理更替如何实现。",
     [
       articleLink("公民秩序主义下的选举逻辑", () =>
         findArticleBySlug("civic-orderism/election-logic-under-civic-orderism"),
@@ -214,15 +242,19 @@ const themedReading = [
           "civic-orderism/public-politics-without-party-dominance",
         ),
       ),
-      articleLink("为什么议案应主要来自社会组织", () =>
+      articleLink("公民秩序主义为什么刻意弱化政党政治", () =>
+        findArticleBySlug("civic-orderism/why-weaken-party-politics"),
+      ),
+      articleLink("为什么公民秩序主义强调履历、经验", () =>
         findArticleBySlug(
-          "civic-orderism/why-proposals-from-social-organizations",
+          "civic-orderism/why-civic-orderism-emphasizes-experience-and-records",
         ),
       ),
     ],
   ],
   [
-    "国家后台系统",
+    "后台系统",
+    "信息化、司法、数据、流程和技术治理。",
     [
       articleLink("公民秩序主义对后台系统的重视", () =>
         findArticleBySlug("civic-orderism/backend-system-under-civic-orderism"),
@@ -230,21 +262,20 @@ const themedReading = [
       articleLink("为什么公民秩序主义强调信息透明及信息发布", () =>
         findArticleBySlug("civic-orderism/why-information-transparency"),
       ),
-      articleLink("为什么公民秩序主义强调履历、经验", () =>
-        findArticleBySlug(
-          "civic-orderism/why-civic-orderism-emphasizes-experience-and-records",
-        ),
-      ),
-      articleLink("为什么更加注意现代社会的隐形权力节点", () =>
-        findArticleBySlug("civic-orderism/why-focus-on-invisible-power-nodes"),
-      ),
       articleLink("为什么公民秩序主义强调司法是为现实服务的", () =>
         findArticleBySlug("civic-orderism/why-justice-serves-reality"),
+      ),
+      articleLink("我们不是被贫穷困住，而是被流程困住", () =>
+        findArticleBySlug("theory/trapped-by-process"),
+      ),
+      articleLink("AI监控并不降低组织摩擦", () =>
+        findArticleBySlug("theory/ai-monitoring-organizational-friction"),
       ),
     ],
   ],
   [
-    "中共组织诊断",
+    "中共诊断",
+    "党国系统、官僚体系和权力结构的失效。",
     [
       articleLink("党国系统的结构性失效：一个组织诊断", () =>
         findArticleBySlug("theory/party-state-structural-failure"),
@@ -261,34 +292,77 @@ const themedReading = [
       articleLink("为什么程序性问责，常常敌不过组织化权力", () =>
         findArticleBySlug("theory/procedural-accountability-organized-power"),
       ),
+      articleLink("习近平权力集中背后的系统逻辑", () =>
+        findArticleBySlug("china/xi-power-centralization"),
+      ),
     ],
   ],
   [
-    "现实观察与案例分析",
+    "中国现实",
+    "社保、医保、金融、社会压力与系统风险。",
     [
       articleLink("2018新“改革开放”：从开放社会到封闭风险", () =>
         findArticleBySlug("china/ccp-2018-new-reform-opening"),
       ),
-      articleLink("中宣系统“翻车常态化”背后的空心化逻辑", () =>
-        findArticleBySlug("china/propaganda-system-hollowing-out"),
+      articleLink("养鸡与换笼：民营经济被整肃的结构逻辑", () =>
+        findArticleBySlug("china/chicken-and-cage"),
+      ),
+      articleLink("中共的真正死局：改革未必救经济，却一定先打破政治平衡", () =>
+        findArticleBySlug("china/ccp-reform-political-balance-deadlock"),
       ),
       articleLink("中共官僚体系为何陷入双重死结", () =>
         findArticleBySlug("china/ccp-bureaucracy-double-deadlock"),
+      ),
+      articleLink("从“液压维稳”到当代的马其诺防线", () =>
+        findArticleBySlug("china/maginot-line-of-stability-maintenance"),
+      ),
+    ],
+  ],
+  [
+    "国际秩序",
+    "外交、台海、战争与东北亚稳定。",
+    [
+      articleLink("外交的根源：从中共内政逻辑看其外交激进化", () =>
+        findArticleBySlug("china/diplomacy-root"),
+      ),
+      articleLink("台海是否会走向战争", () =>
+        findArticleBySlug("china/taiwan-war-risk"),
+      ),
+      articleLink("外界对解放军的迷思", () =>
+        findArticleBySlug("china/pla-political-subject-myth"),
+      ),
+      articleLink("内变引外变：现代政治为何走到十字路口", () =>
+        findArticleBySlug("theory/internal-change-external-change"),
+      ),
+    ],
+  ],
+  [
+    "案例分析",
+    "历史、影视、现实事件与结构性解释。",
+    [
+      articleLink("专制之癌：从《大明王朝1566》到结构性腐败的宿命", () =>
+        findArticleBySlug("institution/despotism-cancer-ming-1566"),
+      ),
+      articleLink("沙化的忠诚：中共精英原子化与明代士大夫的历史镜像", () =>
+        findArticleBySlug("china/elite-sandification-ming-bureaucrats-ccp"),
+      ),
+      articleLink("中宣系统“翻车常态化”背后的空心化逻辑", () =>
+        findArticleBySlug("china/propaganda-system-hollowing-out"),
       ),
       articleLink("当高位者也不再安全", () =>
         findArticleBySlug(
           "china/when-high-ranking-officials-are-no-longer-safe",
         ),
       ),
-      articleLink("台海是否会走向战争", () =>
-        findArticleBySlug("china/taiwan-war-risk"),
+      articleLink("海外政治运动为什么一事无成？", () =>
+        findArticleBySlug("theory/overseas-political-movements-fail"),
       ),
     ],
   ],
 ]
   .map(
-    ([heading, items]) =>
-      `<section class="article-category-card">\n\n### ${heading}\n\n${items.map((item) => `- ${item}`).join("\n")}\n\n</section>`,
+    ([heading, description, items]) =>
+      `<section class="article-category-card">\n\n### ${heading}\n\n<p class="article-category-description">${description}</p>\n\n${items.map((item) => `- ${item}`).join("\n")}\n\n</section>`,
   )
   .join("\n\n");
 

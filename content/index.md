@@ -65,6 +65,8 @@ status: published
 
 ### 入门说明
 
+<p class="article-category-description">公民秩序主义是什么，解决什么问题。</p>
+
 - [[civic-orderism/civic-orderism-manual|公民秩序主义说明书]]
 - [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题]]
 - [[civic-orderism/why-not-left-right-democracy-autocracy|为什么公民秩序主义不纠结于左右、民主专制之争]]
@@ -74,13 +76,29 @@ status: published
 
 <section class="article-category-card">
 
-### 制度骨架
+### 委员会制度
+
+<p class="article-category-description">公共判断、监督、反馈和责任如何形成。</p>
 
 - [[civic-orderism/what-is-committee-system|什么是委员会]]
-- [[civic-orderism/state-operation-process-under-civic-orderism|公民秩序主义下国家运行的大概流程]]
-- [[civic-orderism/top-level-power-structure-under-civic-orderism|公民秩序主义下顶层权力结构的布局]]
 - [[civic-orderism/why-dual-track-committee-administration|为什么公民秩序主义必须采取委员会—行政双轨制]]
 - [[civic-orderism/committee-administration-opposite-incentives|委员会与行政机关激励结构相反的意义]]
+- [[civic-orderism/why-proposals-from-social-organizations|为什么议案应主要来自社会组织]]
+- [[civic-orderism/why-focus-on-invisible-power-nodes|为什么更加注意现代社会的隐形权力节点]]
+
+</section>
+
+<section class="article-category-card">
+
+### 国家运行
+
+<p class="article-category-description">行政系统、权力结构和国家机器如何运转。</p>
+
+- [[civic-orderism/state-operation-process-under-civic-orderism|公民秩序主义下国家运行的大概流程]]
+- [[civic-orderism/top-level-power-structure-under-civic-orderism|公民秩序主义下顶层权力结构的布局]]
+- [[civic-orderism/why-not-simple-separation-of-powers|为什么公民秩序主义不采取简单的三权分立]]
+- [[civic-orderism/why-no-bicameral-parliament|为什么公民秩序主义议会不采取上下两院制]]
+- [[civic-orderism/why-civic-orderism-is-easier-to-succeed|为什么公民秩序主义在未来接替难度最小]]
 
 </section>
 
@@ -88,47 +106,84 @@ status: published
 
 ### 选举与授权
 
+<p class="article-category-description">公共政治、路线差异和治理更替如何实现。</p>
+
 - [[civic-orderism/election-logic-under-civic-orderism|公民秩序主义下的选举逻辑]]
 - [[civic-orderism/why-elections-reject-political-donations|为什么公民秩序主义下的选举会天然排斥政治献金]]
 - [[civic-orderism/why-part-time-representatives|为什么议员主要应采取兼职制，而非全职制]]
 - [[civic-orderism/public-politics-without-party-dominance|弱化政党政治之后，公共政治如何继续存在]]
-- [[civic-orderism/why-proposals-from-social-organizations|为什么议案应主要来自社会组织]]
+- [[civic-orderism/why-weaken-party-politics|公民秩序主义为什么刻意弱化政党政治]]
+- [[civic-orderism/why-civic-orderism-emphasizes-experience-and-records|为什么公民秩序主义强调履历、经验]]
 
 </section>
 
 <section class="article-category-card">
 
-### 国家后台系统
+### 后台系统
+
+<p class="article-category-description">信息化、司法、数据、流程和技术治理。</p>
 
 - [[civic-orderism/backend-system-under-civic-orderism|公民秩序主义对后台系统的重视]]
 - [[civic-orderism/why-information-transparency|为什么公民秩序主义强调信息透明及信息发布]]
-- [[civic-orderism/why-civic-orderism-emphasizes-experience-and-records|为什么公民秩序主义强调履历、经验]]
-- [[civic-orderism/why-focus-on-invisible-power-nodes|为什么更加注意现代社会的隐形权力节点]]
 - [[civic-orderism/why-justice-serves-reality|为什么公民秩序主义强调司法是为现实服务的]]
+- [[theory/trapped-by-process|我们不是被贫穷困住，而是被流程困住]]
+- [[theory/ai-monitoring-organizational-friction|AI监控并不降低组织摩擦]]
 
 </section>
 
 <section class="article-category-card">
 
-### 中共组织诊断
+### 中共诊断
+
+<p class="article-category-description">党国系统、官僚体系和权力结构的失效。</p>
 
 - [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]
 - [[theory/high-rigidity-system-ccp|解析高刚性体制：中共无以为继的结构性根因]]
 - [[theory/ccp-high-fragility-dysfunction|为什么中共更可能“失灵”而非“倒台”]]
 - [[theory/no-accountability-lie-flat-mentality|为什么“无人担责的躺平心态”会摧毁超大型执政组织]]
 - [[theory/procedural-accountability-organized-power|为什么程序性问责，常常敌不过组织化权力]]
+- [[china/xi-power-centralization|习近平权力集中背后的系统逻辑]]
 
 </section>
 
 <section class="article-category-card">
 
-### 现实观察与案例分析
+### 中国现实
+
+<p class="article-category-description">社保、医保、金融、社会压力与系统风险。</p>
 
 - [[china/ccp-2018-new-reform-opening|2018新“改革开放”：从开放社会到封闭风险]]
-- [[china/propaganda-system-hollowing-out|中宣系统“翻车常态化”背后的空心化逻辑]]
+- [[china/chicken-and-cage|养鸡与换笼：民营经济被整肃的结构逻辑]]
+- [[china/ccp-reform-political-balance-deadlock|中共的真正死局：改革未必救经济，却一定先打破政治平衡]]
 - [[china/ccp-bureaucracy-double-deadlock|中共官僚体系为何陷入双重死结]]
-- [[china/when-high-ranking-officials-are-no-longer-safe|当高位者也不再安全]]
+- [[china/maginot-line-of-stability-maintenance|从“液压维稳”到当代的马其诺防线]]
+
+</section>
+
+<section class="article-category-card">
+
+### 国际秩序
+
+<p class="article-category-description">外交、台海、战争与东北亚稳定。</p>
+
+- [[china/diplomacy-root|外交的根源：从中共内政逻辑看其外交激进化]]
 - [[china/taiwan-war-risk|台海是否会走向战争]]
+- [[china/pla-political-subject-myth|外界对解放军的迷思]]
+- [[theory/internal-change-external-change|内变引外变：现代政治为何走到十字路口]]
+
+</section>
+
+<section class="article-category-card">
+
+### 案例分析
+
+<p class="article-category-description">历史、影视、现实事件与结构性解释。</p>
+
+- [[institution/despotism-cancer-ming-1566|专制之癌：从《大明王朝1566》到结构性腐败的宿命]]
+- [[china/elite-sandification-ming-bureaucrats-ccp|沙化的忠诚：中共精英原子化与明代士大夫的历史镜像]]
+- [[china/propaganda-system-hollowing-out|中宣系统“翻车常态化”背后的空心化逻辑]]
+- [[china/when-high-ranking-officials-are-no-longer-safe|当高位者也不再安全]]
+- [[theory/overseas-political-movements-fail|海外政治运动为什么一事无成？]]
 
 </section>
 
