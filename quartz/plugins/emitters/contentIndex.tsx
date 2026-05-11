@@ -41,14 +41,30 @@ const defaultOptions: Options = {
 
 function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndexMap): string {
   const base = cfg.baseUrl ?? ""
-  const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => `<url>
-    <loc>https://${joinSegments(base, encodeURI(slug))}</loc>
-    ${content.date && `<lastmod>${content.date.toISOString()}</lastmod>`}
+  const defaultLastMod = new Date().toISOString()
+  const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => `  <url>
+    <loc>${escapeHTML(`https://${joinSegments(base, encodeURI(slug))}`)}</loc>
+    <lastmod>${content.date?.toISOString() ?? defaultLastMod}</lastmod>
   </url>`
-  const urls = Array.from(idx)
+  const sitemapEntries = new Map(idx)
+  sitemapEntries.set("tags" as FullSlug, {
+    slug: "tags" as FullSlug,
+    filePath: "tags/index.md" as FilePath,
+    title: "Tags",
+    links: [],
+    tags: [],
+    content: "",
+  })
+
+  const urls = Array.from(sitemapEntries)
     .map(([slug, content]) => createURLEntry(simplifySlug(slug), content))
-    .join("")
-  return `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${urls}</urlset>`
+    .join("\n")
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls}
+</urlset>
+`
 }
 
 function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndexMap, limit?: number): string {
