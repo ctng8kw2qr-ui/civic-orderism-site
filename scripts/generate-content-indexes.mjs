@@ -148,7 +148,7 @@ date: 2026-05-10
 category: "首页"
 tags:
   - index
-description: "公民秩序主义网站首页。"
+description: "公民秩序主义是一套面向现代社会的国家治理理论，强调秩序、尊严、责任、程序、自由与公共权力的可追责运行。"
 status: published
 ---
 

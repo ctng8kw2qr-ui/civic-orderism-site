@@ -12,6 +12,8 @@ tags:
   - 责任链
   - 现代国家
 description: 公民秩序主义最终要解决的问题，不是简单的“谁上台”，也不是抽象的“要不要民主”“要不要自由”“要不要强政府”。
+aliases:
+  - civic-orderism/what-civic-orderism-solves
 status: published
 ---
 # 公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系

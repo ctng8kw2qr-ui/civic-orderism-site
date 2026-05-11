@@ -99,3 +99,46 @@ article blockquote {
     font-size: 0.84rem;
   }
 }
+
+@media (max-width: 800px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .page,
+  .page > #quartz-body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .page > #quartz-body .sidebar.left {
+    overflow: hidden;
+  }
+
+  .explorer .explorer-content {
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .explorer.collapsed > .explorer-content {
+    display: none;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(-100%);
+  }
+
+  .explorer:not(.collapsed) > .explorer-content {
+    display: block;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}

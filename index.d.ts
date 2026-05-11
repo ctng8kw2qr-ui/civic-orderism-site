@@ -11,5 +11,12 @@ interface CustomEventMap {
   readermodechange: CustomEvent<{ mode: "on" | "off" }>
 }
 
+interface DocumentEventMap extends CustomEventMap {}
+
+interface Window {
+  addCleanup(fn: () => void): void
+  spaNavigate(url: URL, isBack?: boolean): Promise<void>
+}
+
 type ContentIndex = Record<FullSlug, ContentDetails>
 declare const fetchData: Promise<ContentIndex>

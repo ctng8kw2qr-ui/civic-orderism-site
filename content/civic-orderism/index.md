@@ -22,6 +22,7 @@ status: published
 - [[civic-orderism/top-level-power-structure-under-civic-orderism|公民秩序主义下顶层权力结构的布局：为什么国家最高层不能只有一个权力中心，也不能碎片化成互相消耗的多头政治]]（2026-05-10）
 - [[civic-orderism/state-operation-process-under-civic-orderism|公民秩序主义下国家运行的大概流程：从普通人的问题，到国家的判断、执行与纠偏]]（2026-05-10）
 - [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]（2026-05-10）
+- [[civic-orderism/public-politics-without-party-dominance|弱化政党政治之后，公共政治如何继续存在]]（2026-05-10）
 - [[civic-orderism/what-is-committee-system|什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构]]（2026-05-10）
 - [[civic-orderism/committee-administration-opposite-incentives|委员会与行政机关激励结构相反的意义：为什么公民秩序主义必须把“做事的人”和“看事的人”分开]]（2026-05-10）
 - [[civic-orderism/why-dual-track-committee-administration|为什么公民秩序主义必须采取委员会—行政双轨制，但最终仍由民选政治官员统合国家]]（2026-05-10）

@@ -42,10 +42,13 @@ const defaultOptions: Options = {
 function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndexMap): string {
   const base = cfg.baseUrl ?? ""
   const defaultLastMod = new Date().toISOString()
-  const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => `  <url>
-    <loc>${escapeHTML(`https://${joinSegments(base, encodeURI(slug))}`)}</loc>
+  const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => {
+    const sitemapSlug = slug === "tags" ? ("tags/" as SimpleSlug) : slug
+    return `  <url>
+    <loc>${escapeHTML(`https://${joinSegments(base, encodeURI(sitemapSlug))}`)}</loc>
     <lastmod>${content.date?.toISOString() ?? defaultLastMod}</lastmod>
   </url>`
+  }
   const sitemapEntries = new Map(idx)
   sitemapEntries.set("tags" as FullSlug, {
     slug: "tags" as FullSlug,
