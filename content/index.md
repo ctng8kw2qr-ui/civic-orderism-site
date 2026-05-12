@@ -4,7 +4,7 @@ date: 2026-05-10
 category: "首页"
 tags:
   - index
-description: "公民秩序主义是一套面向现代社会的国家治理理论，强调秩序、尊严、责任、程序、自由与公共权力的可追责运行。"
+description: "公民秩序主义是一份以长文与条目组织的现代国家治理与制度思想资料库，面向中国现实与信息化时代，强调秩序、尊严、责任、程序、自由与公共权力的可追责运行。"
 status: published
 ---
 
@@ -13,7 +13,6 @@ status: published
     <img src="static/logo.png" alt="公民秩序主义 Logo" />
     <span>公民秩序主义</span>
   </h1>
-  <a class="home-hero-contact" href="mailto:citizenorder@proton.me">citizenorder@proton.me</a>
 </div>
 
 ## CIVIC ORDERISM
@@ -32,7 +31,18 @@ status: published
 
 国家不是人民之上的神圣机器，而是服务公民生活秩序的公共系统。制度的价值，不在于制造服从，而在于降低社会摩擦、保障基本尊严、形成可持续的公共信任。
 
+如果你第一次来到这里，可以先把公民秩序主义理解为一个问题：
+当旧有治理方式越来越难以处理现代社会的复杂矛盾时，普通人如何重新进入公共事务，权力如何被解释、被监督、被纠错？
+
 ## 新读者从这里开始
+
+如果你第一次接触公民秩序主义，可以先从以下几篇文章开始。它们分别回答基本问题意识、制度框架和现实背景。
+
+1. [[civic-orderism/civic-orderism-manual|公民秩序主义说明书]]
+2. [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题]]
+3. [[civic-orderism/what-is-committee-system|什么是委员会]]
+4. [[civic-orderism/state-operation-process-under-civic-orderism|公民秩序主义下国家运行的大概流程]]
+5. [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]
 
 - **[[start-here|从这里开始阅读]]**  
   按阅读路径理解公民秩序主义的基本立场、制度结构与现实指向。
@@ -49,14 +59,6 @@ status: published
 - 平等 EQUALITY
 - 责任 ACCOUNTABILITY
 
-## 第一次阅读建议
-
-1. [[civic-orderism/civic-orderism-manual|公民秩序主义说明书]]
-2. [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题]]
-3. [[civic-orderism/what-is-committee-system|什么是委员会]]
-4. [[civic-orderism/state-operation-process-under-civic-orderism|公民秩序主义下国家运行的大概流程]]
-5. [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]
-
 ## 按主题阅读
 
 <div class="article-category-grid">
@@ -70,7 +72,8 @@ status: published
 - [[civic-orderism/civic-orderism-manual|公民秩序主义说明书]]
 - [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题]]
 - [[civic-orderism/why-not-left-right-democracy-autocracy|为什么公民秩序主义不纠结于左右、民主专制之争]]
-- [[civic-orderism/why-against-moral-narrative|为什么公民秩序主义反对道德叙事，也反对对公职人员的道德审判]]
+
+- [[civic-orderism|查看更多 →]]
 
 </section>
 
@@ -83,8 +86,8 @@ status: published
 - [[civic-orderism/what-is-committee-system|什么是委员会]]
 - [[civic-orderism/why-dual-track-committee-administration|为什么公民秩序主义必须采取委员会—行政双轨制]]
 - [[civic-orderism/committee-administration-opposite-incentives|委员会与行政机关激励结构相反的意义]]
-- [[civic-orderism/why-proposals-from-social-organizations|为什么议案应主要来自社会组织]]
-- [[civic-orderism/why-focus-on-invisible-power-nodes|为什么更加注意现代社会的隐形权力节点]]
+
+- [[civic-orderism|查看更多 →]]
 
 </section>
 
@@ -97,8 +100,8 @@ status: published
 - [[civic-orderism/why-dual-track-committee-administration|为什么公民秩序主义必须采取委员会—行政双轨制]]
 - [[civic-orderism/state-operation-process-under-civic-orderism|公民秩序主义下国家运行的大概流程]]
 - [[civic-orderism/top-level-power-structure-under-civic-orderism|公民秩序主义下顶层权力结构的布局]]
-- [[civic-orderism/why-not-simple-separation-of-powers|为什么公民秩序主义不采取简单的三权分立]]
-- [[civic-orderism/why-no-bicameral-parliament|为什么公民秩序主义议会不采取上下两院制]]
+
+- [[civic-orderism|查看更多 →]]
 
 </section>
 
@@ -111,9 +114,8 @@ status: published
 - [[civic-orderism/election-logic-under-civic-orderism|公民秩序主义下的选举逻辑]]
 - [[civic-orderism/why-elections-reject-political-donations|为什么公民秩序主义下的选举会天然排斥政治献金]]
 - [[civic-orderism/why-part-time-representatives|为什么议员主要应采取兼职制，而非全职制]]
-- [[civic-orderism/public-politics-without-party-dominance|弱化政党政治之后，公共政治如何继续存在]]
-- [[civic-orderism/why-weaken-party-politics|公民秩序主义为什么刻意弱化政党政治]]
-- [[civic-orderism/why-civic-orderism-emphasizes-experience-and-records|为什么公民秩序主义强调履历、经验]]
+
+- [[civic-orderism|查看更多 →]]
 
 </section>
 
@@ -126,7 +128,8 @@ status: published
 - [[theory/us-industrial-system-cannot-carry-information-age|美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代]]
 - [[theory/information-age-erodes-us-integrative-capacity|为什么信息化时代正在系统性瓦解美国的统合能力]]
 - [[theory/us-separation-of-powers-integrative-capacity-crisis|美国三权分立的真正危机，不是分权，而是失去统合能力]]
-- [[theory/us-supreme-court-partisan-final-battleground|美国最高法院为何滑向党争终局战场]]
+
+- [[theory|查看更多 →]]
 
 </section>
 
@@ -139,8 +142,8 @@ status: published
 - [[theory/costly-industrial-governance-information-age|一套正在变贵的管理方式]]
 - [[civic-orderism/backend-system-under-civic-orderism|公民秩序主义对后台系统的重视]]
 - [[civic-orderism/why-information-transparency|为什么公民秩序主义强调信息透明及信息发布]]
-- [[civic-orderism/why-justice-serves-reality|为什么公民秩序主义强调司法是为现实服务的]]
-- [[theory/trapped-by-process|我们不是被贫穷困住，而是被流程困住]]
+
+- [[articles|查看更多 →]]
 
 </section>
 
@@ -153,9 +156,8 @@ status: published
 - [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]
 - [[theory/high-rigidity-system-ccp|解析高刚性体制：中共无以为继的结构性根因]]
 - [[theory/ccp-high-fragility-dysfunction|为什么中共更可能“失灵”而非“倒台”]]
-- [[theory/no-accountability-lie-flat-mentality|为什么“无人担责的躺平心态”会摧毁超大型执政组织]]
-- [[theory/procedural-accountability-organized-power|为什么程序性问责，常常敌不过组织化权力]]
-- [[china/xi-power-centralization|习近平权力集中背后的系统逻辑]]
+
+- [[theory|查看更多 →]]
 
 </section>
 
@@ -168,8 +170,8 @@ status: published
 - [[china/ccp-collapse-three-triggers-social-security-healthcare-finance|中共崩解的三大导火索：社保、医保与金融系统]]
 - [[china/ccp-2018-new-reform-opening|2018新“改革开放”：从开放社会到封闭风险]]
 - [[china/chicken-and-cage|养鸡与换笼：民营经济被整肃的结构逻辑]]
-- [[china/ccp-reform-political-balance-deadlock|中共的真正死局：改革未必救经济，却一定先打破政治平衡]]
-- [[china/maginot-line-of-stability-maintenance|从“液压维稳”到当代的马其诺防线]]
+
+- [[china|查看更多 →]]
 
 </section>
 
@@ -182,7 +184,8 @@ status: published
 - [[china/diplomacy-root|外交的根源：从中共内政逻辑看其外交激进化]]
 - [[china/taiwan-war-risk|台海是否会走向战争]]
 - [[china/pla-political-subject-myth|外界对解放军的迷思]]
-- [[theory/internal-change-external-change|内变引外变：现代政治为何走到十字路口]]
+
+- [[china|查看更多 →]]
 
 </section>
 
@@ -195,8 +198,8 @@ status: published
 - [[institution/despotism-cancer-ming-1566|专制之癌：从《大明王朝1566》到结构性腐败的宿命]]
 - [[china/elite-sandification-ming-bureaucrats-ccp|沙化的忠诚：中共精英原子化与明代士大夫的历史镜像]]
 - [[china/propaganda-system-hollowing-out|中宣系统“翻车常态化”背后的空心化逻辑]]
-- [[china/when-high-ranking-officials-are-no-longer-safe|当高位者也不再安全]]
-- [[theory/overseas-political-movements-fail|海外政治运动为什么一事无成？]]
+
+- [[articles|查看更多 →]]
 
 </section>
 
@@ -222,6 +225,6 @@ status: published
 
 ## 联系方式
 
-如需反馈、讨论或提供资料，可通过以下邮箱联系：
+严肃交流：[citizenorder@proton.me](mailto:citizenorder@proton.me)
 
-[citizenorder@proton.me](mailto:citizenorder@proton.me)
+请先阅读基础文章后再联系。

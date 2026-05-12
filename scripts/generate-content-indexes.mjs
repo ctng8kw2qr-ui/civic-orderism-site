@@ -88,6 +88,18 @@ function articleLink(label, finder) {
   return article ? `[[${article.slug}|${label}]]` : label;
 }
 
+function renderThemeCard(heading, description, items, moreSlug) {
+  const visible = items.slice(0, 3);
+  const bulletBlock = visible.map((item) => `- ${item}`).join("\n");
+  const more =
+    items.length > 3
+      ? moreSlug
+        ? `\n\n- [[${moreSlug}|查看更多 →]]`
+        : "\n\n- 查看更多 →"
+      : "";
+  return `<section class="article-category-card">\n\n### ${heading}\n\n<p class="article-category-description">${description}</p>\n\n${bulletBlock}${more}\n\n</section>`;
+}
+
 function writeFile(filePath, body) {
   const targetPath = path.join(contentDir, filePath);
   fs.mkdirSync(path.dirname(targetPath), { recursive: true });
@@ -167,6 +179,7 @@ const themedReading = [
         () => findArticleBySlug("civic-orderism/why-against-moral-narrative"),
       ),
     ],
+    "civic-orderism",
   ],
   [
     "委员会制度",
@@ -194,6 +207,7 @@ const themedReading = [
         findArticleBySlug("civic-orderism/why-focus-on-invisible-power-nodes"),
       ),
     ],
+    "civic-orderism",
   ],
   [
     "国家运行",
@@ -221,6 +235,7 @@ const themedReading = [
         findArticleBySlug("civic-orderism/why-no-bicameral-parliament"),
       ),
     ],
+    "civic-orderism",
   ],
   [
     "选举与授权",
@@ -251,6 +266,7 @@ const themedReading = [
         ),
       ),
     ],
+    "civic-orderism",
   ],
   [
     "美国制度危机",
@@ -277,6 +293,7 @@ const themedReading = [
         ),
       ),
     ],
+    "theory",
   ],
   [
     "后台系统",
@@ -300,6 +317,7 @@ const themedReading = [
         findArticleBySlug("theory/trapped-by-process"),
       ),
     ],
+    "articles",
   ],
   [
     "中共诊断",
@@ -324,6 +342,7 @@ const themedReading = [
         findArticleBySlug("china/xi-power-centralization"),
       ),
     ],
+    "theory",
   ],
   [
     "中国现实",
@@ -347,6 +366,7 @@ const themedReading = [
         findArticleBySlug("china/maginot-line-of-stability-maintenance"),
       ),
     ],
+    "china",
   ],
   [
     "国际秩序",
@@ -365,6 +385,7 @@ const themedReading = [
         findArticleBySlug("theory/internal-change-external-change"),
       ),
     ],
+    "china",
   ],
   [
     "案例分析",
@@ -388,11 +409,11 @@ const themedReading = [
         findArticleBySlug("theory/overseas-political-movements-fail"),
       ),
     ],
+    "articles",
   ],
 ]
-  .map(
-    ([heading, description, items]) =>
-      `<section class="article-category-card">\n\n### ${heading}\n\n<p class="article-category-description">${description}</p>\n\n${items.map((item) => `- ${item}`).join("\n")}\n\n</section>`,
+  .map(([heading, description, items, moreSlug]) =>
+    renderThemeCard(heading, description, items, moreSlug),
   )
   .join("\n\n");
 
@@ -418,7 +439,7 @@ date: 2026-05-10
 category: "首页"
 tags:
   - index
-description: "公民秩序主义是一套面向现代社会的国家治理理论，强调秩序、尊严、责任、程序、自由与公共权力的可追责运行。"
+description: "公民秩序主义是一份以长文与条目组织的现代国家治理与制度思想资料库，面向中国现实与信息化时代，强调秩序、尊严、责任、程序、自由与公共权力的可追责运行。"
 status: published
 ---
 
@@ -427,7 +448,6 @@ status: published
     <img src="static/logo.png" alt="公民秩序主义 Logo" />
     <span>公民秩序主义</span>
   </h1>
-  <a class="home-hero-contact" href="mailto:citizenorder@proton.me">citizenorder@proton.me</a>
 </div>
 
 ## CIVIC ORDERISM
@@ -446,7 +466,14 @@ status: published
 
 国家不是人民之上的神圣机器，而是服务公民生活秩序的公共系统。制度的价值，不在于制造服从，而在于降低社会摩擦、保障基本尊严、形成可持续的公共信任。
 
+如果你第一次来到这里，可以先把公民秩序主义理解为一个问题：
+当旧有治理方式越来越难以处理现代社会的复杂矛盾时，普通人如何重新进入公共事务，权力如何被解释、被监督、被纠错？
+
 ## 新读者从这里开始
+
+如果你第一次接触公民秩序主义，可以先从以下几篇文章开始。它们分别回答基本问题意识、制度框架和现实背景。
+
+${recommendedReading}
 
 ${primaryLinks}
 
@@ -457,10 +484,6 @@ ${primaryLinks}
 - 自由 LIBERTY
 - 平等 EQUALITY
 - 责任 ACCOUNTABILITY
-
-## 第一次阅读建议
-
-${recommendedReading}
 
 ## 按主题阅读
 
@@ -480,9 +503,9 @@ ${categories.map(([key, label]) => `- [[${key}|${label}]]`).join("\n")}
 
 ## 联系方式
 
-如需反馈、讨论或提供资料，可通过以下邮箱联系：
+严肃交流：[citizenorder@proton.me](mailto:citizenorder@proton.me)
 
-[citizenorder@proton.me](mailto:citizenorder@proton.me)`,
+请先阅读基础文章后再联系。`,
 );
 
 writeFile(
