@@ -48,6 +48,7 @@ status: published
 
 ## 理论总纲
 
+- [[theory/costly-industrial-governance-information-age|一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价]]（2026-05-11）
 - [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]（2026-05-10）
 - [[theory/overseas-political-movements-fail|海外政治运动为什么一事无成？]]（2026-05-10）
 - [[theory/high-rigidity-system-ccp|解析高刚性体制：中共无以为继的结构性根因]]（2026-05-10）

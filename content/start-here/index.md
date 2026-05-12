@@ -45,11 +45,11 @@ status: published
 
 ## 五、理解后台系统与信息化治理
 
+- [[theory/costly-industrial-governance-information-age|一套正在变贵的管理方式]]
 - [[civic-orderism/backend-system-under-civic-orderism|公民秩序主义对后台系统的重视]]
 - [[civic-orderism/why-information-transparency|为什么公民秩序主义强调信息透明及信息发布]]
 - [[civic-orderism/why-justice-serves-reality|为什么公民秩序主义强调司法是为现实服务的]]
 - [[theory/trapped-by-process|我们不是被贫穷困住，而是被流程困住]]
-- [[theory/ai-monitoring-organizational-friction|AI监控并不降低组织摩擦：一份冷静推演]]
 
 ## 六、理解中共组织失效
 

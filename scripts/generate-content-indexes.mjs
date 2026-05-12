@@ -256,6 +256,11 @@ const themedReading = [
     "后台系统",
     "信息化、司法、数据、流程和技术治理。",
     [
+      articleLink("一套正在变贵的管理方式", () =>
+        findArticleBySlug(
+          "theory/costly-industrial-governance-information-age",
+        ),
+      ),
       articleLink("公民秩序主义对后台系统的重视", () =>
         findArticleBySlug("civic-orderism/backend-system-under-civic-orderism"),
       ),
@@ -267,9 +272,6 @@ const themedReading = [
       ),
       articleLink("我们不是被贫穷困住，而是被流程困住", () =>
         findArticleBySlug("theory/trapped-by-process"),
-      ),
-      articleLink("AI监控并不降低组织摩擦", () =>
-        findArticleBySlug("theory/ai-monitoring-organizational-friction"),
       ),
     ],
   ],
