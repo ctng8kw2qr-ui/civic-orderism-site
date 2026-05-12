@@ -25,6 +25,7 @@ article .home-hero-heading {
 article .home-hero-title {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.9rem;
   line-height: 1.1;
   margin-bottom: 0.35rem;
@@ -72,6 +73,16 @@ article .article-category-grid {
   margin-top: 1.2rem;
 }
 
+article .article-category-grid.home-themed-reading-grid {
+  gap: 1.1rem;
+}
+
+@media (min-width: 720px) {
+  article .article-category-grid.home-themed-reading-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 article .article-category-card {
   border: 1px solid var(--lightgray);
   border-radius: 8px;
@@ -92,6 +103,28 @@ article .article-category-card .article-category-description {
 article .article-category-card ul {
   margin-bottom: 0;
   padding-left: 1.1rem;
+}
+
+article .article-category-card li {
+  word-break: break-word;
+}
+
+article .home-first-reading h3 {
+  margin-top: 2rem;
+  font-size: 1.05rem;
+}
+
+article .home-first-reading h3:first-of-type {
+  margin-top: 1rem;
+}
+
+article .home-first-reading > p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.65rem;
+}
+
+article .home-first-reading ul {
+  margin-bottom: 1.25rem;
 }
 
 article p,
