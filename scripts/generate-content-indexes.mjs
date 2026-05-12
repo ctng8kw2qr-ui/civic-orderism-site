@@ -253,6 +253,32 @@ const themedReading = [
     ],
   ],
   [
+    "美国制度危机",
+    "从三权分立、信息化冲击和国家统合能力角度，理解美国制度的结构性失配。",
+    [
+      articleLink("美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代", () =>
+        findArticleBySlug(
+          "theory/us-industrial-system-cannot-carry-information-age",
+        ),
+      ),
+      articleLink("为什么信息化时代正在系统性瓦解美国的统合能力", () =>
+        findArticleBySlug(
+          "theory/information-age-erodes-us-integrative-capacity",
+        ),
+      ),
+      articleLink("美国三权分立的真正危机，不是分权，而是失去统合能力", () =>
+        findArticleBySlug(
+          "theory/us-separation-of-powers-integrative-capacity-crisis",
+        ),
+      ),
+      articleLink("美国最高法院为何滑向党争终局战场", () =>
+        findArticleBySlug(
+          "theory/us-supreme-court-partisan-final-battleground",
+        ),
+      ),
+    ],
+  ],
+  [
     "后台系统",
     "信息化、司法、数据、流程和技术治理。",
     [

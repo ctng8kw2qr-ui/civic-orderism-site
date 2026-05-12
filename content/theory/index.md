@@ -16,6 +16,9 @@ status: published
 
 ## 文章列表
 
+- [[theory/us-industrial-system-cannot-carry-information-age|美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代]]（2026-05-12）
+- [[theory/us-separation-of-powers-integrative-capacity-crisis|美国三权分立的真正危机，不是分权，而是失去统合能力]]（2026-05-12）
+- [[theory/information-age-erodes-us-integrative-capacity|为什么信息化时代正在系统性瓦解美国的统合能力]]（2026-05-12）
 - [[theory/us-supreme-court-partisan-final-battleground|美国最高法院为何滑向党争终局战场]]（2026-05-11）
 - [[theory/costly-industrial-governance-information-age|一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价]]（2026-05-11）
 - [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]（2026-05-10）
