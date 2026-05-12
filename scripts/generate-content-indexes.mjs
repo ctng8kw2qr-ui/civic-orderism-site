@@ -473,8 +473,6 @@ status: published
 
 # 文章目录
 
-网站已改为 Markdown 驱动，文章按栏目自动生成。旧文章入口保留在这里，避免旧链接失效。
-
 ## 分类目录
 
 ${categories.map(([key, label]) => `- [[${key}|${label}]]`).join("\n")}
