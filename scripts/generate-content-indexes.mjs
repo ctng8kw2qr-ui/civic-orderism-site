@@ -199,9 +199,9 @@ const themedReading = [
     "国家运行",
     "行政系统、权力结构和国家机器如何运转。",
     [
-      articleLink("美国最高法院为何滑向党争终局战场", () =>
+      articleLink("为什么公民秩序主义必须采取委员会—行政双轨制", () =>
         findArticleBySlug(
-          "theory/us-supreme-court-partisan-final-battleground",
+          "civic-orderism/why-dual-track-committee-administration",
         ),
       ),
       articleLink("公民秩序主义下国家运行的大概流程", () =>
