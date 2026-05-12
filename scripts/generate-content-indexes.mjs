@@ -199,6 +199,11 @@ const themedReading = [
     "国家运行",
     "行政系统、权力结构和国家机器如何运转。",
     [
+      articleLink("美国最高法院为何滑向党争终局战场", () =>
+        findArticleBySlug(
+          "theory/us-supreme-court-partisan-final-battleground",
+        ),
+      ),
       articleLink("公民秩序主义下国家运行的大概流程", () =>
         findArticleBySlug(
           "civic-orderism/state-operation-process-under-civic-orderism",
@@ -214,11 +219,6 @@ const themedReading = [
       ),
       articleLink("为什么公民秩序主义议会不采取上下两院制", () =>
         findArticleBySlug("civic-orderism/why-no-bicameral-parliament"),
-      ),
-      articleLink("为什么公民秩序主义在未来接替难度最小", () =>
-        findArticleBySlug(
-          "civic-orderism/why-civic-orderism-is-easier-to-succeed",
-        ),
       ),
     ],
   ],

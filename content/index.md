@@ -94,11 +94,11 @@ status: published
 
 <p class="article-category-description">行政系统、权力结构和国家机器如何运转。</p>
 
+- [[theory/us-supreme-court-partisan-final-battleground|美国最高法院为何滑向党争终局战场]]
 - [[civic-orderism/state-operation-process-under-civic-orderism|公民秩序主义下国家运行的大概流程]]
 - [[civic-orderism/top-level-power-structure-under-civic-orderism|公民秩序主义下顶层权力结构的布局]]
 - [[civic-orderism/why-not-simple-separation-of-powers|为什么公民秩序主义不采取简单的三权分立]]
 - [[civic-orderism/why-no-bicameral-parliament|为什么公民秩序主义议会不采取上下两院制]]
-- [[civic-orderism/why-civic-orderism-is-easier-to-succeed|为什么公民秩序主义在未来接替难度最小]]
 
 </section>
 
