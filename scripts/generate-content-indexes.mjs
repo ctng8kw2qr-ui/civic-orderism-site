@@ -158,6 +158,65 @@ function buildChinaThemedArticleList(chinaArticles) {
   return out;
 }
 
+function buildCivicOrderismThemedArticleList(civicOrderismArticles) {
+  const sections = [
+    {
+      title: "一、入门说明",
+      body: "这一组文章用于帮助第一次接触本站的读者理解公民秩序主义是什么，它为什么不是普通政治口号，也不是简单的政权替换想象，而是一套面向中国现实与信息化时代的现代国家治理方案。",
+      slugs: [
+        "civic-orderism/civic-orderism-manual",
+        "civic-orderism/what-civic-orderism-ultimately-solves",
+        "civic-orderism/why-civic-orderism-is-easier-to-succeed",
+        "civic-orderism/why-against-moral-narrative",
+        "civic-orderism/why-not-left-right-democracy-autocracy",
+      ],
+    },
+    {
+      title: "二、国家如何运行",
+      body: "这一组文章用于说明公民秩序主义下国家如何实际运转，包括委员会制度、国家运行流程、顶层权力结构、委员会—行政双轨制，以及公共问题如何进入国家系统。",
+      slugs: [
+        "civic-orderism/what-is-committee-system",
+        "civic-orderism/state-operation-process-under-civic-orderism",
+        "civic-orderism/top-level-power-structure-under-civic-orderism",
+        "civic-orderism/why-dual-track-committee-administration",
+        "civic-orderism/committee-administration-opposite-incentives",
+      ],
+    },
+    {
+      title: "三、制度如何保障",
+      body: "这一组文章用于解释公民秩序主义如何通过选举、公共政治、后台系统、信息透明、履历经验和司法现实主义来保障制度长期运行，而不是停留在口号和道德表态上。",
+      slugs: [
+        "civic-orderism/election-logic-under-civic-orderism",
+        "civic-orderism/public-politics-without-party-dominance",
+        "civic-orderism/backend-system-under-civic-orderism",
+        "civic-orderism/why-information-transparency",
+        "civic-orderism/why-civic-orderism-emphasizes-experience-and-records",
+        "civic-orderism/why-justice-serves-reality",
+      ],
+    },
+  ];
+
+  const used = new Set();
+  let out = "";
+  for (const sec of sections) {
+    const block = articleLinesForSlugs(sec.slugs);
+    for (const slug of sec.slugs) {
+      const a = findArticleBySlug(slug);
+      if (a) used.add(a.slug);
+    }
+    out += `### ${sec.title}\n\n${sec.body}\n\n${block}\n\n`;
+  }
+
+  const others = civicOrderismArticles.filter((a) => !used.has(a.slug));
+  if (others.length) {
+    out += "### 其他文章\n\n以下文章暂未归入上述主题，仍按写作时间整理。\n\n";
+    out += `${others.map(articleLine).join("\n")}\n\n`;
+  }
+
+  out += `此栏目共收录 ${civicOrderismArticles.length} 篇文章。`;
+  return out;
+}
+
 function findArticleByTitle(title) {
   return articles.find((article) => article.title.includes(title));
 }
@@ -696,9 +755,11 @@ for (const [key, label, description] of categories) {
   const articleListSection =
     key === "china"
       ? buildChinaThemedArticleList(items)
-      : items.length
-        ? items.map(articleLine).join("\n")
-        : "暂无文章。";
+      : key === "civic-orderism"
+        ? buildCivicOrderismThemedArticleList(items)
+        : items.length
+          ? items.map(articleLine).join("\n")
+          : "暂无文章。";
 
   writeFile(
     `${key}/index.md`,
