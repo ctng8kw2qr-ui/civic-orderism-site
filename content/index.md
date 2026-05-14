@@ -77,6 +77,7 @@ status: published
 
 - [[start-here|从这里开始阅读公民秩序主义]]
 - [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]
+- [[china/ccp-power-network-not-line|中共的权力布局不是一条线，而是一张网]]
 - [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]
 
 - [[start-here|查看更多 →]]

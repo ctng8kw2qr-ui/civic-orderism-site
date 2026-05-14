@@ -400,17 +400,17 @@ const themedReading = [
       articleLink("党国系统的结构性失效：一个组织诊断", () =>
         findArticleBySlug("theory/party-state-structural-failure"),
       ),
+      articleLink("中共的权力布局不是一条线，而是一张网", () =>
+        findArticleBySlug("china/ccp-power-network-not-line"),
+      ),
       articleLink(
         "公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系",
         () =>
           findArticleBySlug("civic-orderism/what-civic-orderism-ultimately-solves"),
       ),
-      articleLink("公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案", () =>
-        findArticleBySlug("civic-orderism/civic-orderism-manual"),
-      ),
     ],
     "start-here",
-    3,
+    4,
   ],
   [
     "理解中共组织失效",
