@@ -86,11 +86,15 @@ article .article-category-grid.home-themed-reading-grid {
 article .article-category-card {
   border: 1px solid var(--lightgray);
   border-radius: 8px;
-  padding: 1rem 1.1rem;
+  padding: 1.3rem 1.4rem;
+  line-height: 1.7;
+  background-color: #fafafa;
 }
 
 article .article-category-card h3 {
   margin-top: 0;
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
 }
 
 article .article-category-card .article-category-description {
@@ -107,6 +111,17 @@ article .article-category-card ul {
 
 article .article-category-card li {
   word-break: break-word;
+  margin-bottom: 0.5rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+article .article-category-card ul {
+  margin-bottom: 0.7rem;
+}
+
+article .article-category-card li:last-child {
+  margin-bottom: 0.2rem;
 }
 
 article .home-first-reading h3 {
