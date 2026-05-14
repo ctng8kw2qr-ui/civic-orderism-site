@@ -115,6 +115,7 @@ function buildChinaThemedArticleList(chinaArticles) {
         "china/organization-credit-retired-officials",
         "china/Macro Narratives, Opportunity Incentives, and High Fragility",
         "china/xi-succession-crisis-gray-rhino",
+        "china/ccp-power-network-not-line",
       ],
     },
     {

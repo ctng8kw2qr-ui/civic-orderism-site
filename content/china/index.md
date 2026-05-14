@@ -21,6 +21,7 @@ status: published
 这一组文章用于解释中共不是一个简单的个人权力问题，而是一个组织结构、反馈机制、责任系统和权力逻辑逐步失效的问题。
 
 - [[china/Macro Narratives, Opportunity Incentives, and High Fragility|宏观叙事、机会激励与高脆弱态：中共为何更可能“失灵”而非“倒台”]]（2026-05-13）
+- [[china/ccp-power-network-not-line|中共的权力布局不是一条线，而是一张网]]（2026-05-13）
 - [[china/ccp-collapse-three-triggers-social-security-healthcare-finance|中共崩解的三大导火索：社保、医保与金融系统]]（2026-05-11）
 - [[china/xi-solved-organization-not-reality|习近平解决了组织的问题，却解决不了组织面临的问题]]（2026-05-10）
 - [[china/xi-power-centralization|习近平权力集中背后的系统逻辑]]（2026-05-10）
@@ -60,4 +61,4 @@ status: published
 - [[china/diplomacy-root|外交的根源：从中共内政逻辑看其外交激进化]]（2026-05-10）
 - [[china/pla-political-subject-myth|外界对解放军的迷思：把“军”当成政治主体，是第一层误判]]（2026-05-10）
 
-此栏目共收录 19 篇文章。
+此栏目共收录 20 篇文章。

@@ -107,6 +107,7 @@ status: published
 
 - [[china/ccp-from-faith-community-to-black-box-post|从“信仰共同体”到“黑箱岗位”：中共内部成员心态的三次断裂]]（2026-05-13）
 - [[china/Macro Narratives, Opportunity Incentives, and High Fragility|宏观叙事、机会激励与高脆弱态：中共为何更可能“失灵”而非“倒台”]]（2026-05-13）
+- [[china/ccp-power-network-not-line|中共的权力布局不是一条线，而是一张网]]（2026-05-13）
 - [[theory/us-supreme-court-partisan-final-battleground|美国最高法院为何滑向党争终局战场]]（2026-05-11）
 - [[china/ccp-2018-new-reform-opening|2018新“改革开放”：从开放社会到封闭风险]]（2026-05-10）
 - [[china/ccp-bureaucracy-double-deadlock|不抓人就躺平，一抓人就失真：中共官僚体系为何陷入双重死结]]（2026-05-10）
@@ -124,4 +125,4 @@ status: published
 - [[institution/despotism-cancer-ming-1566|专制之癌：从《大明王朝1566》到结构性腐败的宿命]]（2026-05-10）
 - [[china/organization-credit-retired-officials|组织信用的最后一关：退休官员、终身承诺与中共的功能性衰竭]]（2026-05-10）
 
-本站共收录 60 篇文章。以上按主题推荐阅读；这些文章不是散的，而是一套解释系统。
+本站共收录 61 篇文章。以上按主题推荐阅读；这些文章不是散的，而是一套解释系统。
