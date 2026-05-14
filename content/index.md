@@ -151,8 +151,8 @@ status: published
 
 - [[theory/us-industrial-system-cannot-carry-information-age|美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代]]
 - [[theory/information-age-erodes-us-integrative-capacity|为什么信息化时代正在系统性瓦解美国的统合能力]]
+- [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]
 - [[theory/us-separation-of-powers-integrative-capacity-crisis|美国三权分立的真正危机，不是分权，而是失去统合能力]]
-- [[china/diplomacy-root|外交的根源：从中共内政逻辑看其外交激进化]]
 
 - [[articles|查看更多 →]]
 

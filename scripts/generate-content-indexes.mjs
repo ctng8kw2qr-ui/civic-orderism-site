@@ -546,22 +546,19 @@ const themedReading = [
           "theory/information-age-erodes-us-integrative-capacity",
         ),
       ),
+      articleLink("为什么政党政治越来越像低维函数", () =>
+        findArticleBySlug("theory/why-party-politics-is-becoming-a-low-dimensional-function"),
+      ),
       articleLink("美国三权分立的真正危机，不是分权，而是失去统合能力", () =>
         findArticleBySlug(
           "theory/us-separation-of-powers-integrative-capacity-crisis",
         ),
-      ),
-      articleLink("外交的根源：从中共内政逻辑看其外交激进化", () =>
-        findArticleBySlug("china/diplomacy-root"),
       ),
       articleLink("专制之癌：从《大明王朝1566》到结构性腐败的宿命", () =>
         findArticleBySlug("institution/despotism-cancer-ming-1566"),
       ),
       articleLink("海外政治运动为什么一事无成？", () =>
         findArticleBySlug("theory/overseas-political-movements-fail"),
-      ),
-      articleLink("为什么政党政治越来越像低维函数", () =>
-        findArticleBySlug("theory/why-party-politics-is-becoming-a-low-dimensional-function"),
       ),
     ],
     "articles",
