@@ -118,7 +118,7 @@ status: published
 
 ## 十、近期文章
 
-- [[theory/party-politics-low-dimensional-function|为什么政党政治越来越像低维函数]]（2026-05-10）
+
 
 ## 按写作时间查阅：其余篇目
 

@@ -587,6 +587,8 @@ const categoryIntroductions = new Map([
 
 function buildArticlesThemedBody() {
   const used = new Set();
+  // 明确排除旧版本的"为什么政党政治越来越像低维函数"文章，避免重复显示
+  used.add("theory/party-politics-low-dimensional-function");
 
   function maybeLine(slug) {
     const article = findArticleBySlug(slug);
