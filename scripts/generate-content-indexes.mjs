@@ -99,6 +99,8 @@ function buildChinaThemedArticleList(chinaArticles) {
         "china/xi-power-centralization",
         "china/ccp-reform-political-balance-deadlock",
         "china/organization-credit-retired-officials",
+        "china/Macro Narratives, Opportunity Incentives, and High Fragility",
+        "china/xi-succession-crisis-gray-rhino",
       ],
     },
     {
@@ -108,6 +110,7 @@ function buildChinaThemedArticleList(chinaArticles) {
         "china/ccp-bureaucracy-double-deadlock",
         "china/ccp-bureaucracy-historical-bill",
         "china/chicken-and-cage",
+        "china/when-high-ranking-officials-are-no-longer-safe",
       ],
     },
     {
