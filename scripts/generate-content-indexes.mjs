@@ -597,96 +597,130 @@ function buildArticlesThemedBody() {
 
   let out = `## 分类目录\n\n${categories.map(([key, label]) => `- [[${key}|${label}]]`).join("\n")}\n\n`;
 
-  out += `## 一、公民秩序主义入门\n\n`;
+  out += `## 一、旧世界为什么失效\n\n`;
   out +=
-    "这一组文章用于帮助第一次接触本站的读者理解：什么是公民秩序主义，它为什么不是普通的政治口号，也不是简单的政权替换想象，而是一套面向中国现实与信息化时代的现代国家治理方案。\n\n";
-  out += `- [[start-here|从这里开始阅读公民秩序主义]]\n`;
+    "\n";
+  out += maybeLine("theory/why-party-politics-is-becoming-a-low-dimensional-function");
+  out += maybeLine("theory/costly-industrial-governance-information-age");
+  out += maybeLine("theory/us-industrial-system-cannot-carry-information-age");
+  out += maybeLine("theory/information-age-erodes-us-integrative-capacity");
+  out += maybeLine("theory/us-separation-of-powers-integrative-capacity-crisis");
+  out += maybeLine("theory/us-supreme-court-partisan-final-battleground");
+  out += maybeLine("theory/modern-social-syndrome");
+  out += maybeLine("theory/trapped-by-process");
+  out += maybeLine("theory/ai-monitoring-organizational-friction");
+  out += "\n";
+
+  out += `## 二、旧组织为什么走向失灵\n\n`;
+  out +=
+    "\n";
+  out += maybeLine("theory/party-state-structural-failure");
+  out += maybeLine("china/xi-power-centralization");
+  out += maybeLine("china/xi-solved-organization-not-reality");
+  out += maybeLine("china/ccp-power-network-not-line");
+  out += maybeLine("theory/high-rigidity-system-ccp");
+  out += maybeLine("china/ccp-bureaucracy-double-deadlock");
+  out += maybeLine("theory/no-accountability-lie-flat-mentality");
+  out += maybeLine("china/organization-credit-retired-officials");
+  out += maybeLine("china/elite-sandification-ming-bureaucrats-ccp");
+  out += maybeLine("china/propaganda-system-hollowing-out");
+  out += maybeLine("china/ccp-bureaucracy-historical-bill");
+  out += "\n";
+
+  out += `## 三、中国正在进入什么阶段\n\n`;
+  out +=
+    "\n";
+  out += maybeLine("china/ccp-2018-new-reform-opening");
+  out += maybeLine("theory/internal-change-external-change");
+  out += maybeLine("china/ccp-from-faith-community-to-black-box-post");
+  out += maybeLine("china/Macro Narratives, Opportunity Incentives, and High Fragility");
+  out += maybeLine("theory/ccp-high-fragility-dysfunction");
+  out += maybeLine("china/ccp-collapse-three-triggers-social-security-healthcare-finance");
+  out += maybeLine("china/when-high-ranking-officials-are-no-longer-safe");
+  out += maybeLine("china/xi-succession-crisis-gray-rhino");
+  out += maybeLine("china/ccp-reform-political-balance-deadlock");
+  out += maybeLine("china/chicken-and-cage");
+  out += maybeLine("china/maginot-line-of-stability-maintenance");
+  out += "\n";
+
+  out += `## 四、外部误判、国际风险与案例\n\n`;
+  out +=
+    "\n";
+  out += maybeLine("china/taiwan-war-risk");
+  out += maybeLine("china/diplomacy-root");
+  out += maybeLine("china/pla-political-subject-myth");
+  out += maybeLine("theory/overseas-political-movements-fail");
+  out += maybeLine("institution/despotism-cancer-ming-1566");
+  out += "\n";
+
+  out += `## 五、为什么需要新的制度通道\n\n`;
+  out +=
+    "\n";
   out += maybeLine("civic-orderism/civic-orderism-manual");
   out += maybeLine("civic-orderism/what-civic-orderism-ultimately-solves");
-  out += `- [[theory|理论总纲（栏目入口）]]\n`;
   out += maybeLine("civic-orderism/why-not-left-right-democracy-autocracy");
   out += maybeLine("civic-orderism/why-civic-orderism-is-easier-to-succeed");
+  out += maybeLine("civic-orderism/why-against-moral-narrative");
+  out += maybeLine("civic-orderism/why-emphasize-reciprocity-and-equality");
   out += "\n";
 
-  out += `## 二、委员会制度与公共判断机制\n\n`;
+  out += `## 六、新制度如何运行\n\n`;
   out +=
-    "这一组文章用于解释公民秩序主义的核心制度装置：委员会。委员会不是传统意义上的议会，也不是行政机关，而是承担公共判断、问题进入、责任评价、社会反馈和制度纠错的公共机制。\n\n";
-  out += maybeLine("civic-orderism/what-is-committee-system");
-  out += maybeLine("civic-orderism/why-dual-track-committee-administration");
-  out += maybeLine("civic-orderism/committee-administration-opposite-incentives");
-  out += maybeLine("civic-orderism/why-proposals-from-social-organizations");
-  out += maybeLine("civic-orderism/why-focus-on-invisible-power-nodes");
-  out += "\n";
-
-  out += `## 三、国家运行与制度流程\n\n`;
-  out +=
-    "这一组文章用于说明公民秩序主义下国家如何实际运转，包括国家运行流程、中央与地方关系、行政系统、委员会系统、反馈系统和后台系统之间的关系。\n\n";
+    "\n";
   out += maybeLine("civic-orderism/state-operation-process-under-civic-orderism");
   out += maybeLine("civic-orderism/top-level-power-structure-under-civic-orderism");
   out += maybeLine("civic-orderism/why-not-simple-separation-of-powers");
   out += maybeLine("civic-orderism/why-no-bicameral-parliament");
   out += maybeLine("civic-orderism/why-information-transparency");
+  out += maybeLine("civic-orderism/why-dual-track-committee-administration");
   out += "\n";
 
-  out += `## 四、选举、授权与责任更替\n\n`;
+  out += `## 七、委员会与公共判断机制\n\n`;
   out +=
-    "这一组文章用于解释公民秩序主义如何处理公共路线差异、社会利益冲突、重大政策合法性和治理团队更替问题。它不是取消政治，而是把政治从政党垄断、流量表演和永久竞选中重新拉回公共责任与制度程序。\n\n";
+    "\n";
+  out += maybeLine("civic-orderism/what-is-committee-system");
+  out += maybeLine("civic-orderism/committee-administration-opposite-incentives");
+  out += maybeLine("civic-orderism/why-proposals-from-social-organizations");
+  out += maybeLine("civic-orderism/why-focus-on-invisible-power-nodes");
+  out += "\n";
+
+  out += `## 八、选举、授权与责任更替\n\n`;
+  out +=
+    "\n";
   out += maybeLine("civic-orderism/public-politics-without-party-dominance");
   out += maybeLine("civic-orderism/why-weaken-party-politics");
   out += maybeLine("civic-orderism/election-logic-under-civic-orderism");
   out += maybeLine("civic-orderism/why-elections-reject-political-donations");
   out += maybeLine("civic-orderism/why-part-time-representatives");
   out += maybeLine("civic-orderism/why-civic-orderism-emphasizes-experience-and-records");
+  out += maybeLine("theory/procedural-accountability-organized-power");
   out += "\n";
 
-  out += `## 五、治理后台、教育与执行系统\n\n`;
+  out += `## 九、后台系统、司法与执行底座\n\n`;
   out +=
-    "这一组文章用于说明公民秩序主义为什么重视后台系统、制度训练、公共数据、行政执行能力和长期教育投入。现代国家不能只靠口号和选票运转，必须拥有稳定、专业、可追踪、可纠错的治理后台。\n\n";
+    "\n";
   out += maybeLine("civic-orderism/backend-system-under-civic-orderism");
   out += maybeLine("civic-orderism/why-justice-serves-reality");
   out += maybeLine("theory/trapped-by-process");
   out += maybeLine("theory/ai-monitoring-organizational-friction");
-  out += maybeLine("civic-orderism/why-emphasize-reciprocity-and-equality");
-  out += "\n";
-
-  out += `## 六、中共组织诊断\n\n`;
-  out +=
-    "这一组文章用于解释旧秩序为什么失效。本站并不把中国问题简单理解为某一个人的问题，而是从党国系统、官僚结构、反馈失真、权力集中、组织信用破产和高刚性体制失灵等角度分析中共。\n\n";
-  out += maybeLine("theory/party-state-structural-failure");
-  out += maybeLine("china/xi-power-centralization");
-  out += maybeLine("china/when-high-ranking-officials-are-no-longer-safe");
-  out += maybeLine("china/ccp-reform-political-balance-deadlock");
-  out += maybeLine("china/elite-sandification-ming-bureaucrats-ccp");
-  out += maybeLine("theory/high-rigidity-system-ccp");
-  out += "\n";
-
-  out += `## 七、现实问题与社会成本\n\n`;
-  out +=
-    "这一组文章用于解释中共组织失效如何外溢为普通人的现实困境，包括社保、医保、金融、基层治理、民营经济、社会成本上升和公共系统失去解释能力等问题。\n\n";
-  out += maybeLine(
-    "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
-  );
-  out += maybeLine("china/chicken-and-cage");
-  out += maybeLine("china/propaganda-system-hollowing-out");
-  out += maybeLine("theory/costly-industrial-governance-information-age");
-  out += maybeLine("china/ccp-bureaucracy-historical-bill");
-  out += "\n";
-
-  out += `## 八、国际秩序与制度案例\n\n`;
-  out +=
-    "这一组文章用于通过美国制度危机、国际秩序、台海风险、战争判断和比较制度案例，说明现代国家治理问题并不只存在于中国，也存在于全球制度转型之中。\n\n";
-  out += maybeLine("theory/us-industrial-system-cannot-carry-information-age");
-  out += maybeLine("theory/information-age-erodes-us-integrative-capacity");
-  out += maybeLine("theory/us-separation-of-powers-integrative-capacity-crisis");
-  out += maybeLine("china/taiwan-war-risk");
-  out += maybeLine("china/diplomacy-root");
-  out += maybeLine("china/pla-political-subject-myth");
   out += "\n";
 
   const rest = articles.filter((article) => !used.has(article.slug));
+  
+  // 获取最近的20篇文章作为近期文章
+  const recentArticles = [...rest]
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 20);
+  
+  out += `## 十、近期文章\n\n`;
+  out += recentArticles.map(articleLine).join("\n");
+  out += "\n\n";
+  
+  // 剩余文章放入"按写作时间查阅：其余篇目"
+  const remainingArticles = rest.filter(article => !recentArticles.some(recent => recent.slug === article.slug));
   out += `## 按写作时间查阅：其余篇目\n\n`;
-  out += rest.length
-    ? rest.map(articleLine).join("\n")
+  out += remainingArticles.length
+    ? remainingArticles.map(articleLine).join("\n")
     : "_（暂无其余篇目。）_";
   out += `\n\n本站共收录 ${articles.length} 篇文章。以上按主题推荐阅读；这些文章不是散的，而是一套解释系统。\n`;
 
