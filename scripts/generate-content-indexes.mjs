@@ -560,9 +560,12 @@ const themedReading = [
       articleLink("海外政治运动为什么一事无成？", () =>
         findArticleBySlug("theory/overseas-political-movements-fail"),
       ),
+      articleLink("为什么政党政治越来越像低维函数", () =>
+        findArticleBySlug("theory/why-party-politics-is-becoming-a-low-dimensional-function"),
+      ),
     ],
     "articles",
-    3,
+    4,
   ],
 ]
   .map(([heading, description, items, moreSlug, maxVisible = 5]) =>

@@ -105,6 +105,7 @@ status: published
 
 ## 按写作时间查阅：其余篇目
 
+- [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]（2026-05-14）
 - [[china/ccp-from-faith-community-to-black-box-post|从“信仰共同体”到“黑箱岗位”：中共内部成员心态的三次断裂]]（2026-05-13）
 - [[china/Macro Narratives, Opportunity Incentives, and High Fragility|宏观叙事、机会激励与高脆弱态：中共为何更可能“失灵”而非“倒台”]]（2026-05-13）
 - [[china/ccp-power-network-not-line|中共的权力布局不是一条线，而是一张网]]（2026-05-13）
@@ -125,4 +126,4 @@ status: published
 - [[institution/despotism-cancer-ming-1566|专制之癌：从《大明王朝1566》到结构性腐败的宿命]]（2026-05-10）
 - [[china/organization-credit-retired-officials|组织信用的最后一关：退休官员、终身承诺与中共的功能性衰竭]]（2026-05-10）
 
-本站共收录 61 篇文章。以上按主题推荐阅读；这些文章不是散的，而是一套解释系统。
+本站共收录 62 篇文章。以上按主题推荐阅读；这些文章不是散的，而是一套解释系统。
