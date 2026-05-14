@@ -76,29 +76,29 @@ status: published
 
 <section class="article-category-card">
 
-### 从这里开始
+### 旧世界失效
 
-<p class="article-category-description">先理解中共组织失效，再进入公民秩序主义。</p>
+<p class="article-category-description">解释政党政治、工业型治理、三权分立和旧制度模型，为什么越来越难处理信息化时代的高耦合社会。</p>
 
-- [[start-here|从这里开始阅读公民秩序主义]]
-- [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]
-- [[china/ccp-power-network-not-line|中共的权力布局不是一条线，而是一张网]]
-- [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]
+- [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]
+- [[theory/costly-industrial-governance-information-age|一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价]]
+- [[theory/us-industrial-system-cannot-carry-information-age|美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代]]
+- [[theory/information-age-erodes-us-integrative-capacity|为什么信息化时代正在系统性瓦解美国的统合能力]]
 
-- [[start-here|查看更多 →]]
+- [[articles|查看更多 →]]
 
 </section>
 
 <section class="article-category-card">
 
-### 理解中共组织失效
+### 旧组织失灵
 
-<p class="article-category-description">解释党国系统、权力集中、官僚体系、反馈失真、组织安全承诺破产，以及社保、医保、金融、基层治理等现实问题如何成为组织失效的外部表现。</p>
+<p class="article-category-description">分析中共作为超大型执政组织，如何在权力集中、反馈失真、责任不透明和组织信用衰减中走向失灵。</p>
 
 - [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]
-- [[china/ccp-collapse-three-triggers-social-security-healthcare-finance|中共崩解的三大导火索：社保、医保与金融系统]]
 - [[china/xi-power-centralization|习近平权力集中背后的系统逻辑]]
-- [[china/when-high-ranking-officials-are-no-longer-safe|当高位者也不再安全：这不是普通反腐，而是权力的深度焦虑]]
+- [[china/ccp-power-network-not-line|中共的权力布局不是一条线，而是一张网]]
+- [[china/ccp-bureaucracy-double-deadlock|不抓人就躺平，一抓人就失真：中共官僚体系为何陷入双重死结]]
 
 - [[china|查看更多 →]]
 
@@ -113,6 +113,7 @@ status: published
 - [[china/ccp-collapse-three-triggers-social-security-healthcare-finance|中共崩解的三大导火索：社保、医保与金融系统]]
 - [[china/chicken-and-cage|养鸡与换笼：民营经济被整肃的结构逻辑]]
 - [[china/maginot-line-of-stability-maintenance|一个难以言说的防线：从“液压维稳”到当代的马其诺防线]]
+- [[china/ccp-bureaucracy-historical-bill|当历史总账开始结算：高刚性官僚体系如何把系统性责任层层压向中基层]]
 
 - [[china|查看更多 →]]
 
@@ -120,14 +121,14 @@ status: published
 
 <section class="article-category-card">
 
-### 理解公民秩序主义
+### 新制度通道
 
-<p class="article-category-description">解释委员会制度、公共判断机制、行政与委员会双轨、国家运行流程。</p>
+<p class="article-category-description">说明公民秩序主义为什么不是简单反对旧制度，而是为现代国家建立新的公共判断机制、责任通道和秩序关系。</p>
 
+- [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]
 - [[civic-orderism/civic-orderism-manual|公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案]]
-- [[civic-orderism/what-is-committee-system|什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构]]
-- [[civic-orderism/why-dual-track-committee-administration|为什么公民秩序主义必须采取委员会—行政双轨制，但最终仍由民选政治官员统合国家]]
-- [[civic-orderism/committee-administration-opposite-incentives|委员会与行政机关激励结构相反的意义：为什么公民秩序主义必须把“做事的人”和“看事的人”分开]]
+- [[civic-orderism/why-not-left-right-democracy-autocracy|为什么公民秩序主义不纠结于左右、民主专制之争]]
+- [[civic-orderism/why-civic-orderism-is-easier-to-succeed|为什么公民秩序主义在未来接替难度最小：它不是推倒国家，而是接管、校正和重组国家运行系统]]
 
 - [[civic-orderism|查看更多 →]]
 
@@ -135,16 +136,16 @@ status: published
 
 <section class="article-category-card">
 
-### 制度设计
+### 制度运行机制
 
-<p class="article-category-description">解释选举、监督、财政、教育、后台系统、反腐机制。</p>
+<p class="article-category-description">解释委员会、选举、监督、后台系统和国家运行流程，展示公民秩序主义如何从理念进入可运行的制度结构。</p>
 
+- [[civic-orderism/what-is-committee-system|什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构]]
+- [[civic-orderism/state-operation-process-under-civic-orderism|公民秩序主义下国家运行的大概流程：从普通人的问题，到国家的判断、执行与纠偏]]
 - [[civic-orderism/election-logic-under-civic-orderism|公民秩序主义下的选举逻辑：它与传统选举的区别，以及制度优势]]
-- [[civic-orderism/why-elections-reject-political-donations|为什么公民秩序主义下的选举会天然排斥政治献金]]
 - [[civic-orderism/backend-system-under-civic-orderism|公民秩序主义对后台系统的重视：为什么培训、秘书处、专业事务与留痕系统，是现代国家真正的底座]]
-- [[civic-orderism/why-information-transparency|为什么公民秩序主义强调信息透明及信息发布]]
 
-- [[articles|查看更多 →]]
+- [[civic-orderism|查看更多 →]]
 
 </section>
 
@@ -152,12 +153,12 @@ status: published
 
 ### 国际与案例
 
-<p class="article-category-description">解释美国制度危机、国际秩序、比较制度案例。</p>
+<p class="article-category-description">解释美国制度危机、国际秩序、外交逻辑、台海风险和比较制度案例。</p>
 
-- [[theory/us-industrial-system-cannot-carry-information-age|美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代]]
-- [[theory/information-age-erodes-us-integrative-capacity|为什么信息化时代正在系统性瓦解美国的统合能力]]
-- [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]
-- [[theory/us-separation-of-powers-integrative-capacity-crisis|美国三权分立的真正危机，不是分权，而是失去统合能力]]
+- [[china/diplomacy-root|外交的根源：从中共内政逻辑看其外交激进化]]
+- [[china/taiwan-war-risk|台海是否会走向战争：基于战争四驱动的组织决策风险评估]]
+- [[china/pla-political-subject-myth|外界对解放军的迷思：把“军”当成政治主体，是第一层误判]]
+- [[institution/despotism-cancer-ming-1566|专制之癌：从《大明王朝1566》到结构性腐败的宿命]]
 
 - [[articles|查看更多 →]]
 

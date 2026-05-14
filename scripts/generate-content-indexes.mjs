@@ -410,45 +410,40 @@ const firstReadingSection = `<div class="home-first-reading">
 
 const themedReading = [
   [
-    "从这里开始",
-    "先理解中共组织失效，再进入公民秩序主义。",
+    "旧世界失效",
+    "解释政党政治、工业型治理、三权分立和旧制度模型，为什么越来越难处理信息化时代的高耦合社会。",
     [
-      `[[start-here|从这里开始阅读公民秩序主义]]`,
-      articleLink("党国系统的结构性失效：一个组织诊断", () =>
-        findArticleBySlug("theory/party-state-structural-failure"),
+      articleLink("为什么政党政治越来越像低维函数", () =>
+        findArticleBySlug("theory/why-party-politics-is-becoming-a-low-dimensional-function"),
       ),
-      articleLink("中共的权力布局不是一条线，而是一张网", () =>
-        findArticleBySlug("china/ccp-power-network-not-line"),
+      articleLink("一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价", () =>
+        findArticleBySlug("theory/costly-industrial-governance-information-age"),
       ),
-      articleLink(
-        "公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系",
-        () =>
-          findArticleBySlug("civic-orderism/what-civic-orderism-ultimately-solves"),
+      articleLink("美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代", () =>
+        findArticleBySlug("theory/us-industrial-system-cannot-carry-information-age"),
+      ),
+      articleLink("为什么信息化时代正在系统性瓦解美国的统合能力", () =>
+        findArticleBySlug("theory/information-age-erodes-us-integrative-capacity"),
       ),
     ],
-    "start-here",
+    "articles",
     4,
   ],
   [
-    "理解中共组织失效",
-    "解释党国系统、权力集中、官僚体系、反馈失真、组织安全承诺破产，以及社保、医保、金融、基层治理等现实问题如何成为组织失效的外部表现。",
+    "旧组织失灵",
+    "分析中共作为超大型执政组织，如何在权力集中、反馈失真、责任不透明和组织信用衰减中走向失灵。",
     [
       articleLink("党国系统的结构性失效：一个组织诊断", () =>
         findArticleBySlug("theory/party-state-structural-failure"),
-      ),
-      articleLink("中共崩解的三大导火索：社保、医保与金融系统", () =>
-        findArticleBySlug(
-          "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
-        ),
       ),
       articleLink("习近平权力集中背后的系统逻辑", () =>
         findArticleBySlug("china/xi-power-centralization"),
       ),
-      articleLink("当高位者也不再安全：这不是普通反腐，而是权力的深度焦虑", () =>
-        findArticleBySlug("china/when-high-ranking-officials-are-no-longer-safe"),
+      articleLink("中共的权力布局不是一条线，而是一张网", () =>
+        findArticleBySlug("china/ccp-power-network-not-line"),
       ),
-      articleLink("中共的真正死局：改革未必救经济，却一定先打破政治平衡", () =>
-        findArticleBySlug("china/ccp-reform-political-balance-deadlock"),
+      articleLink("不抓人就躺平，一抓人就失真：中共官僚体系为何陷入双重死结", () =>
+        findArticleBySlug("china/ccp-bureaucracy-double-deadlock"),
       ),
     ],
     "china",
@@ -469,113 +464,68 @@ const themedReading = [
       articleLink("一个难以言说的防线：从“液压维稳”到当代的马其诺防线", () =>
         findArticleBySlug("china/maginot-line-of-stability-maintenance"),
       ),
+      articleLink("当历史总账开始结算：高刚性官僚体系如何把系统性责任层层压向中基层", () =>
+        findArticleBySlug("china/ccp-bureaucracy-historical-bill"),
+      ),
     ],
     "china",
-    3,
+    4,
   ],
   [
-    "理解公民秩序主义",
-    "解释委员会制度、公共判断机制、行政与委员会双轨、国家运行流程。",
+    "新制度通道",
+    "说明公民秩序主义为什么不是简单反对旧制度，而是为现代国家建立新的公共判断机制、责任通道和秩序关系。",
     [
+      articleLink("公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系", () =>
+        findArticleBySlug("civic-orderism/what-civic-orderism-ultimately-solves"),
+      ),
       articleLink("公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案", () =>
         findArticleBySlug("civic-orderism/civic-orderism-manual"),
       ),
-      articleLink("什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构", () =>
-        findArticleBySlug("civic-orderism/what-is-committee-system"),
+      articleLink("为什么公民秩序主义不纠结于左右、民主专制之争", () =>
+        findArticleBySlug("civic-orderism/why-not-left-right-democracy-autocracy"),
       ),
-      articleLink(
-        "为什么公民秩序主义必须采取委员会—行政双轨制，但最终仍由民选政治官员统合国家",
-        () =>
-          findArticleBySlug(
-            "civic-orderism/why-dual-track-committee-administration",
-          ),
-      ),
-      articleLink(
-        "委员会与行政机关激励结构相反的意义：为什么公民秩序主义必须把“做事的人”和“看事的人”分开",
-        () =>
-          findArticleBySlug(
-            "civic-orderism/committee-administration-opposite-incentives",
-          ),
-      ),
-      articleLink(
-        "公民秩序主义下国家运行的大概流程：从普通人的问题，到国家的判断、执行与纠偏",
-        () =>
-          findArticleBySlug(
-            "civic-orderism/state-operation-process-under-civic-orderism",
-          ),
-      ),
-      articleLink(
-        "公民秩序主义下顶层权力结构的布局：为什么国家最高层不能只有一个权力中心，也不能碎片化成互相消耗的多头政治",
-        () =>
-          findArticleBySlug(
-            "civic-orderism/top-level-power-structure-under-civic-orderism",
-          ),
+      articleLink("为什么公民秩序主义在未来接替难度最小：它不是推倒国家，而是接管、校正和重组国家运行系统", () =>
+        findArticleBySlug("civic-orderism/why-civic-orderism-is-easier-to-succeed"),
       ),
     ],
     "civic-orderism",
     4,
   ],
   [
-    "制度设计",
-    "解释选举、监督、财政、教育、后台系统、反腐机制。",
+    "制度运行机制",
+    "解释委员会、选举、监督、后台系统和国家运行流程，展示公民秩序主义如何从理念进入可运行的制度结构。",
     [
-      articleLink(
-        "公民秩序主义下的选举逻辑：它与传统选举的区别，以及制度优势",
-        () =>
-          findArticleBySlug("civic-orderism/election-logic-under-civic-orderism"),
+      articleLink("什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构", () =>
+        findArticleBySlug("civic-orderism/what-is-committee-system"),
       ),
-      articleLink("为什么公民秩序主义下的选举会天然排斥政治献金", () =>
-        findArticleBySlug(
-          "civic-orderism/why-elections-reject-political-donations",
-        ),
+      articleLink("公民秩序主义下国家运行的大概流程：从普通人的问题，到国家的判断、执行与纠偏", () =>
+        findArticleBySlug("civic-orderism/state-operation-process-under-civic-orderism"),
       ),
-      articleLink(
-        "公民秩序主义对后台系统的重视：为什么培训、秘书处、专业事务与留痕系统，是现代国家真正的底座",
-        () =>
-          findArticleBySlug("civic-orderism/backend-system-under-civic-orderism"),
+      articleLink("公民秩序主义下的选举逻辑：它与传统选举的区别，以及制度优势", () =>
+        findArticleBySlug("civic-orderism/election-logic-under-civic-orderism"),
       ),
-      articleLink("为什么公民秩序主义强调信息透明及信息发布", () =>
-        findArticleBySlug("civic-orderism/why-information-transparency"),
-      ),
-      articleLink("为什么公民秩序主义强调司法是为现实服务的", () =>
-        findArticleBySlug("civic-orderism/why-justice-serves-reality"),
-      ),
-      articleLink("我们不是被贫穷困住，而是被流程困住", () =>
-        findArticleBySlug("theory/trapped-by-process"),
+      articleLink("公民秩序主义对后台系统的重视：为什么培训、秘书处、专业事务与留痕系统，是现代国家真正的底座", () =>
+        findArticleBySlug("civic-orderism/backend-system-under-civic-orderism"),
       ),
     ],
-    "articles",
+    "civic-orderism",
     4,
   ],
   [
     "国际与案例",
-    "解释美国制度危机、国际秩序、比较制度案例。",
+    "解释美国制度危机、国际秩序、外交逻辑、台海风险和比较制度案例。",
     [
-      articleLink(
-        "美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代",
-        () =>
-          findArticleBySlug(
-            "theory/us-industrial-system-cannot-carry-information-age",
-          ),
+      articleLink("外交的根源：从中共内政逻辑看其外交激进化", () =>
+        findArticleBySlug("china/diplomacy-root"),
       ),
-      articleLink("为什么信息化时代正在系统性瓦解美国的统合能力", () =>
-        findArticleBySlug(
-          "theory/information-age-erodes-us-integrative-capacity",
-        ),
+      articleLink("台海是否会走向战争：基于战争四驱动的组织决策风险评估", () =>
+        findArticleBySlug("china/taiwan-war-risk"),
       ),
-      articleLink("为什么政党政治越来越像低维函数", () =>
-        findArticleBySlug("theory/why-party-politics-is-becoming-a-low-dimensional-function"),
-      ),
-      articleLink("美国三权分立的真正危机，不是分权，而是失去统合能力", () =>
-        findArticleBySlug(
-          "theory/us-separation-of-powers-integrative-capacity-crisis",
-        ),
+      articleLink("外界对解放军的迷思：把“军”当成政治主体，是第一层误判", () =>
+        findArticleBySlug("china/pla-political-subject-myth"),
       ),
       articleLink("专制之癌：从《大明王朝1566》到结构性腐败的宿命", () =>
         findArticleBySlug("institution/despotism-cancer-ming-1566"),
-      ),
-      articleLink("海外政治运动为什么一事无成？", () =>
-        findArticleBySlug("theory/overseas-political-movements-fail"),
       ),
     ],
     "articles",
