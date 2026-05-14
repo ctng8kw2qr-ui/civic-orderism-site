@@ -88,6 +88,20 @@ function articleLinesForSlugs(slugs) {
   return lines.join("\n");
 }
 
+function articleLinesForSlugsSorted(slugs) {
+  const articles = [];
+  for (const slug of slugs) {
+    const article = findArticleBySlug(slug);
+    if (article) articles.push(article);
+  }
+  articles.sort((a, b) => {
+    const dateCompare = b.date.localeCompare(a.date);
+    if (dateCompare !== 0) return dateCompare;
+    return a.title.localeCompare(b.title, "zh-CN");
+  });
+  return articles.map(articleLine).join("\n");
+}
+
 function buildChinaThemedArticleList(chinaArticles) {
   const sections = [
     {
@@ -144,7 +158,7 @@ function buildChinaThemedArticleList(chinaArticles) {
   const used = new Set();
   let out = "";
   for (const sec of sections) {
-    const block = articleLinesForSlugs(sec.slugs);
+    const block = articleLinesForSlugsSorted(sec.slugs);
     for (const slug of sec.slugs) {
       const a = findArticleBySlug(slug);
       if (a) used.add(a.slug);
@@ -203,7 +217,7 @@ function buildCivicOrderismThemedArticleList(civicOrderismArticles) {
   const used = new Set();
   let out = "";
   for (const sec of sections) {
-    const block = articleLinesForSlugs(sec.slugs);
+    const block = articleLinesForSlugsSorted(sec.slugs);
     for (const slug of sec.slugs) {
       const a = findArticleBySlug(slug);
       if (a) used.add(a.slug);
