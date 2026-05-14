@@ -111,6 +111,7 @@ function buildChinaThemedArticleList(chinaArticles) {
         "china/ccp-bureaucracy-historical-bill",
         "china/chicken-and-cage",
         "china/when-high-ranking-officials-are-no-longer-safe",
+        "china/ccp-from-faith-community-to-black-box-post",
       ],
     },
     {

@@ -36,6 +36,7 @@ status: published
 - [[china/ccp-bureaucracy-historical-bill|当历史总账开始结算：高刚性官僚体系如何把系统性责任层层压向中基层]]（2026-05-10）
 - [[china/chicken-and-cage|养鸡与换笼：民营经济被整肃的结构逻辑]]（2026-05-10）
 - [[china/when-high-ranking-officials-are-no-longer-safe|当高位者也不再安全：这不是普通反腐，而是权力的深度焦虑]]（2026-05-10）
+- [[china/ccp-from-faith-community-to-black-box-post|从“信仰共同体”到“黑箱岗位”：中共内部成员心态的三次断裂]]（2026-05-13）
 
 ### 三、宣传系统与解释能力衰退
 
@@ -59,4 +60,4 @@ status: published
 - [[china/diplomacy-root|外交的根源：从中共内政逻辑看其外交激进化]]（2026-05-10）
 - [[china/pla-political-subject-myth|外界对解放军的迷思：把“军”当成政治主体，是第一层误判]]（2026-05-10）
 
-此栏目共收录 18 篇文章。
+此栏目共收录 19 篇文章。
