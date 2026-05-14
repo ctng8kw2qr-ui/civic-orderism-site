@@ -21,3 +21,8 @@ credentials.json
 content/**/未命名.md
 content/**/Untitled.md
 content/**/untitled.md
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
