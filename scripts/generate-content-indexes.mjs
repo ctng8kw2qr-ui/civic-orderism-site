@@ -369,42 +369,15 @@ const firstReadingSection = `<div class="home-first-reading">
 
 ## 第一次阅读建议
 
-如果你是第一次来到本站，建议不要先从立场进入，而是先从一个更基础的问题开始：旧世界为什么越来越失效。
+如果你是第一次来到本站，建议先从旧世界为什么失效开始读起。本站的路径不是先要求读者接受一种新理论，而是先解释旧制度为何越来越难以处理信息化时代的复杂社会，再理解中共组织结构的失灵，最后进入公民秩序主义作为一种新的公共秩序方案。
 
-本站的阅读路径不是先要求读者接受一种新理论，而是先解释旧政治模型、旧组织结构和旧国家治理方式为什么越来越难以处理信息化时代的高耦合社会，然后再说明公民秩序主义如何作为一种新的公共秩序方案回应这些问题。
-
-### 一、先理解旧世界为什么失效
-
-旧世界的失效，不只是某个国家、某个政党、某个领导人的问题，而是工业时代形成的政治模型、治理方式和制度容量，越来越难以处理信息化时代的高耦合社会。
-
-- [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]
-- [[theory/costly-industrial-governance-information-age|一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价]]
-- [[theory/us-industrial-system-cannot-carry-information-age|美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代]]
-
-### 二、再理解中共组织结构为什么走向失灵
-
-理解中国今天的问题，不能只停留在某个领导人、某项政策或某次危机上，而要看到党国系统本身的反馈失真、责任不透明、权力集中和纠错能力下降。
-
-- [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]
-- [[china/xi-power-centralization|习近平权力集中背后的系统逻辑]]
-- [[china/ccp-power-network-not-line|中共的权力布局不是一条线，而是一张网]]
-
-### 三、理解中国现实问题如何累积
-
-中国现实问题不是孤立事件，而是系统失效在社保、医保、金融、基层治理、社会成本和普通人生活压力中的外部表现。
-
-- [[china/ccp-collapse-three-triggers-social-security-healthcare-finance|中共崩解的三大导火索：社保、医保与金融系统]]
-- [[theory/internal-change-external-change|内变引外变：现代政治为何走到十字路口]]
-- [[theory/ccp-high-fragility-dysfunction|它还在，但越来越靠不住：为什么中共更可能"失灵"而非"倒台"]]
-
-### 四、最后进入公民秩序主义
-
-公民秩序主义不是从立场出发，也不是为了换一批人掌权，而是试图为信息化时代的国家治理，建立新的公共判断机制、责任链条和制度通道。
-
-- [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]
-- [[civic-orderism/civic-orderism-manual|公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案]]
-- [[civic-orderism/what-is-committee-system|什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构]]
-- [[civic-orderism/state-operation-process-under-civic-orderism|公民秩序主义下国家运行的大概流程：从普通人的问题，到国家的判断、执行与纠偏]]
+1. [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]
+2. [[theory/us-industrial-system-cannot-carry-information-age|美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代]]
+3. [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]
+4. [[china/xi-power-centralization|习近平权力集中背后的系统逻辑]]
+5. [[theory/ccp-high-fragility-dysfunction|它还在，但越来越靠不住：为什么中共更可能"失灵"而非"倒台"]]
+6. [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]
+7. [[civic-orderism/what-is-committee-system|什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构]]
 
 </div>`;
 
