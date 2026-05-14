@@ -16,12 +16,13 @@
     "generate:indexes": "node ./scripts/generate-content-indexes.mjs",
     "dev": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build --serve",
     "build": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build && node ./scripts/generate-static-security-files.mjs",
-    "preview": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build --serve",
+    "preview": "wrangler dev",
     "docs": "node ./quartz/bootstrap-cli.mjs build --serve -d docs",
     "check": "tsc --noEmit && npx prettier . --check",
     "format": "npx prettier . --write",
     "test": "tsx --test",
-    "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1"
+    "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1",
+    "deploy": "wrangler deploy"
   },
   "engines": {
     "npm": ">=10.9.2",
@@ -113,6 +114,7 @@
     "esbuild": "^0.27.2",
     "prettier": "^3.8.1",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "wrangler": "^4.90.1"
   }
 }
