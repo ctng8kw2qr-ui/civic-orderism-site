@@ -729,7 +729,8 @@ ${homeCategoryLinks.map(([key, label]) => `- [[${key}|${label}]]`).join("\n")}
 ## 联系方式
 
 严肃交流、资料反馈与建设性讨论，可联系：
-[citizenorder@proton.me](mailto:citizenorder@proton.me)
+邮箱：[citizenorder@proton.me](mailto:citizenorder@proton.me)
+X 平台：[@CivicOrderism](https://x.com/CivicOrderism)
 
 为便于有效沟通，建议先阅读“第一次阅读建议”中的基础文章。`,
 );
