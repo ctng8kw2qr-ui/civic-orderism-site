@@ -1,5 +1,6 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
+import { RootStatic } from "./quartz/plugins/emitters/rootStatic"
 
 /**
  * Quartz 4 Configuration
@@ -97,6 +98,7 @@ const config: QuartzConfig = {
       Plugin.Assets(),
       Plugin.Static(),
       Plugin.Favicon(),
+      RootStatic(),
       Plugin.NotFoundPage(),
     ],
   },
