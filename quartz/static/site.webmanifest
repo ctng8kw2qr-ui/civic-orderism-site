@@ -1,26 +1,24 @@
 {
-  "name": "公民秩序主义",
+  "name": "Civic Orderism",
   "short_name": "Civic Orderism",
-  "description": "公民秩序主义：从理解旧秩序的失效出发，整理现代国家治理与制度思想文本；面向中国现实与信息化时代，强调可进入、可解释、可纠错、可追责的公共秩序。",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#f8f8f6",
-  "theme_color": "#111111",
   "icons": [
     {
-      "src": "/icon-192.png?v=2",
+      "src": "/icon-192.png?v=3",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/icon-512.png?v=2",
+      "src": "/icon-512.png?v=3",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "/apple-touch-icon.png?v=2",
+      "src": "/apple-touch-icon.png?v=3",
       "sizes": "180x180",
       "type": "image/png"
     }
-  ]
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
 }
