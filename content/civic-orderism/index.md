@@ -31,6 +31,7 @@ status: published
 
 这一组文章用于说明公民秩序主义下国家如何实际运转，包括委员会制度、国家运行流程、顶层权力结构、委员会—行政双轨制，以及公共问题如何进入国家系统。
 
+- [[civic-orderism/why-committees-cannot-directly-take-cases|为什么委员会不能直接接案：公民秩序主义中“入口权”与“判断权”必须分开]]（2026-05-17）
 - [[civic-orderism/top-level-power-structure-under-civic-orderism|公民秩序主义下顶层权力结构的布局：为什么国家最高层不能只有一个权力中心，也不能碎片化成互相消耗的多头政治]]（2026-05-10）
 - [[civic-orderism/state-operation-process-under-civic-orderism|公民秩序主义下国家运行的大概流程：从普通人的问题，到国家的判断、执行与纠偏]]（2026-05-10）
 - [[civic-orderism/what-is-committee-system|什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构]]（2026-05-10）
@@ -61,4 +62,4 @@ status: published
 - [[civic-orderism/why-proposals-from-social-organizations|为什么议案应主要来自社会组织，而不是某个议员、某个人]]（2026-05-10）
 - [[civic-orderism/why-part-time-representatives|为什么议员主要应采取兼职制，而非全职制]]（2026-05-10）
 
-此栏目共收录 25 篇文章。
+此栏目共收录 26 篇文章。

@@ -108,6 +108,7 @@ status: published
 
 - [[civic-orderism/what-is-committee-system|什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构]]（2026-05-10）
 - [[civic-orderism/committee-administration-opposite-incentives|委员会与行政机关激励结构相反的意义：为什么公民秩序主义必须把“做事的人”和“看事的人”分开]]（2026-05-10）
+- [[civic-orderism/why-committees-cannot-directly-take-cases|为什么委员会不能直接接案：公民秩序主义中“入口权”与“判断权”必须分开]]（2026-05-17）
 
 ## 八、选举、授权与责任更替
 
@@ -127,4 +128,4 @@ status: published
 
 _（暂无未归入前九个栏目的近期文章。）_
 
-本站共收录 62 篇文章。以上按主题推荐阅读；这些文章不是散的，而是一套解释系统。
+本站共收录 63 篇文章。以上按主题推荐阅读；这些文章不是散的，而是一套解释系统。

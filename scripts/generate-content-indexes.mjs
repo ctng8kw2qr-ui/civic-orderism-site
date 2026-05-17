@@ -200,6 +200,7 @@ function buildCivicOrderismThemedArticleList(civicOrderismArticles) {
         "civic-orderism/top-level-power-structure-under-civic-orderism",
         "civic-orderism/why-dual-track-committee-administration",
         "civic-orderism/committee-administration-opposite-incentives",
+        "civic-orderism/why-committees-cannot-directly-take-cases",
       ],
     },
     {
@@ -702,6 +703,7 @@ function buildArticlesThemedBody() {
     "\n";
   out += maybeLine("civic-orderism/what-is-committee-system");
   out += maybeLine("civic-orderism/committee-administration-opposite-incentives");
+  out += maybeLine("civic-orderism/why-committees-cannot-directly-take-cases");
   out += "\n";
 
   out += `## 八、选举、授权与责任更替\n\n`;
