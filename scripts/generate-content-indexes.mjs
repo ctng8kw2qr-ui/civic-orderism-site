@@ -245,11 +245,11 @@ function articleLink(label, finder) {
   return article ? `[[${article.slug}|${label}]]` : label;
 }
 
-function renderThemeCard(heading, description, items, moreSlug, maxVisible = 5) {
+function renderThemeCard(heading, description, items, moreSlug, moreLabel = "查看更多 →", maxVisible = 5) {
   const cap = Math.min(items.length, Math.max(1, maxVisible));
   const visible = items.slice(0, cap);
   const bulletBlock = visible.map((item) => `- ${item}`).join("\n");
-  const moreLine = moreSlug ? `\n\n- [[${moreSlug}|查看更多 →]]` : "";
+  const moreLine = moreSlug ? `\n\n- [[${moreSlug}|${moreLabel}]]` : "";
   return `<section class="article-category-card">\n\n### ${heading}\n\n<p class="article-category-description">${description}</p>\n\n${bulletBlock}${moreLine}\n\n</section>`;
 }
 
@@ -399,6 +399,7 @@ const themedReading = [
       ),
     ],
     "articles",
+    "查看更多旧世界失效文章 →",
     4,
   ],
   [
@@ -419,6 +420,7 @@ const themedReading = [
       ),
     ],
     "china",
+    "查看更多解析中共文章 →",
     4,
   ],
   [
@@ -441,6 +443,7 @@ const themedReading = [
       ),
     ],
     "china",
+    "查看更多现实问题文章 →",
     4,
   ],
   [
@@ -461,6 +464,7 @@ const themedReading = [
       ),
     ],
     "civic-orderism",
+    "查看更多公民秩序主义文章 →",
     4,
   ],
   [
@@ -481,6 +485,7 @@ const themedReading = [
       ),
     ],
     "civic-orderism",
+    "查看更多制度设计文章 →",
     4,
   ],
   [
@@ -501,11 +506,12 @@ const themedReading = [
       ),
     ],
     "articles",
+    "查看更多国际与案例文章 →",
     4,
   ],
 ]
-  .map(([heading, description, items, moreSlug, maxVisible = 5]) =>
-    renderThemeCard(heading, description, items, moreSlug, maxVisible),
+  .map(([heading, description, items, moreSlug, moreLabel, maxVisible = 5]) =>
+    renderThemeCard(heading, description, items, moreSlug, moreLabel, maxVisible),
   )
   .join("\n\n");
 
