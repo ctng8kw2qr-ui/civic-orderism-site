@@ -287,7 +287,10 @@ function renderThemeCard(heading, description, items, moreSlug, moreLabel = "查
   const cap = Math.min(items.length, Math.max(1, maxVisible));
   const visible = items.slice(0, cap);
   const bulletBlock = visible.map((item) => `- ${item}`).join("\n");
-  const moreLine = moreSlug ? `\n\n- [[${moreSlug}|${moreLabel}]]` : "";
+  const moreLink = moreSlug?.includes("#")
+    ? `[${moreLabel}](${moreSlug})`
+    : `[[${moreSlug}|${moreLabel}]]`;
+  const moreLine = moreSlug ? `\n\n- ${moreLink}` : "";
   return `<section class="article-category-card">\n\n### ${heading}\n\n<p class="article-category-description">${description}</p>\n\n${bulletBlock}${moreLine}\n\n</section>`;
 }
 
@@ -450,7 +453,7 @@ const themedReading = [
         findArticleBySlug("theory/information-age-erodes-us-integrative-capacity"),
       ),
     ],
-    "articles",
+    "theory",
     "查看更多旧世界失效文章 →",
     4,
   ],
@@ -494,7 +497,7 @@ const themedReading = [
         findArticleBySlug("china/ccp-bureaucracy-historical-bill"),
       ),
     ],
-    "china",
+    "articles#三中国正在进入什么阶段",
     "查看更多现实问题文章 →",
     4,
   ],
@@ -541,7 +544,7 @@ const themedReading = [
         findArticleBySlug("civic-orderism/backend-system-under-civic-orderism"),
       ),
     ],
-    "civic-orderism",
+    "institution",
     "查看更多制度设计文章 →",
     4,
   ],
@@ -562,7 +565,7 @@ const themedReading = [
         findArticleBySlug("institution/despotism-cancer-ming-1566"),
       ),
     ],
-    "articles",
+    "articles#四外部误判国际风险与案例",
     "查看更多国际与案例文章 →",
     4,
   ],
@@ -599,7 +602,20 @@ function buildArticlesThemedBody() {
     return `${articleLine(article)}\n`;
   }
 
-  let out = `## 分类目录\n\n${categories.map(([key, label]) => `- [[${key}|${label}]]`).join("\n")}\n\n`;
+  const articleDirectoryLinks = [
+    ["旧世界为什么失效", "#一旧世界为什么失效"],
+    ["旧组织为什么走向失灵", "#二旧组织为什么走向失灵"],
+    ["中国正在进入什么阶段", "#三中国正在进入什么阶段"],
+    ["外部误判、国际风险与案例", "#四外部误判国际风险与案例"],
+    ["为什么需要新的制度通道", "#五为什么需要新的制度通道"],
+    ["新制度如何运行", "#六新制度如何运行"],
+    ["委员会与公共判断机制", "#七委员会与公共判断机制"],
+    ["选举、授权与责任更替", "#八选举授权与责任更替"],
+    ["后台系统、司法与执行底座", "#九后台系统司法与执行底座"],
+    ["近期文章", "#十近期文章"],
+  ];
+
+  let out = `## 分类目录\n\n${articleDirectoryLinks.map(([label, href]) => `- [${label}](${href})`).join("\n")}\n\n`;
 
   out += `## 一、旧世界为什么失效\n\n`;
   out +=

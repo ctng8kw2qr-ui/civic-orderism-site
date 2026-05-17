@@ -59,7 +59,7 @@ status: published
 - [[theory/us-industrial-system-cannot-carry-information-age|美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代]]
 - [[theory/information-age-erodes-us-integrative-capacity|为什么信息化时代正在系统性瓦解美国的统合能力]]
 
-- [[articles|查看更多旧世界失效文章 →]]
+- [[theory|查看更多旧世界失效文章 →]]
 
 </section>
 
@@ -89,7 +89,7 @@ status: published
 - [[china/maginot-line-of-stability-maintenance|一个难以言说的防线：从“液压维稳”到当代的马其诺防线]]
 - [[china/ccp-bureaucracy-historical-bill|当历史总账开始结算：高刚性官僚体系如何把系统性责任层层压向中基层]]
 
-- [[china|查看更多现实问题文章 →]]
+- [查看更多现实问题文章 →](articles#三中国正在进入什么阶段)
 
 </section>
 
@@ -119,7 +119,7 @@ status: published
 - [[civic-orderism/election-logic-under-civic-orderism|公民秩序主义下的选举逻辑：它与传统选举的区别，以及制度优势]]
 - [[civic-orderism/backend-system-under-civic-orderism|公民秩序主义对后台系统的重视：为什么培训、秘书处、专业事务与留痕系统，是现代国家真正的底座]]
 
-- [[civic-orderism|查看更多制度设计文章 →]]
+- [[institution|查看更多制度设计文章 →]]
 
 </section>
 
@@ -134,7 +134,7 @@ status: published
 - [[china/pla-political-subject-myth|外界对解放军的迷思：把“军”当成政治主体，是第一层误判]]
 - [[institution/despotism-cancer-ming-1566|专制之癌：从《大明王朝1566》到结构性腐败的宿命]]
 
-- [[articles|查看更多国际与案例文章 →]]
+- [查看更多国际与案例文章 →](articles#四外部误判国际风险与案例)
 
 </section>
 

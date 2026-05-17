@@ -26,6 +26,8 @@ const config: QuartzConfig = {
       "**/* 2.md",
       "**/* 2.mdx",
       "**/* 2.html",
+      "article_priority_index.md",
+      "article_summaries.md",
     ],
     defaultDateType: "published",
     theme: {
