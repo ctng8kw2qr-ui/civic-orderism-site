@@ -289,10 +289,11 @@ const homeLatest = articles
   .join("\n");
 
 const homeCategoryLinks = [
+  ["theory", "旧秩序失效"],
   ["china", "解析中共"],
   ["civic-orderism", "公民秩序主义"],
   ["institution", "制度设计"],
-  ["theory", "理论总纲"],
+  ["articles", "文章总览"],
 ];
 
 const firstReadingGroup1Bullets = [
