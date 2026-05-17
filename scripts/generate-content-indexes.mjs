@@ -546,7 +546,7 @@ const themedReading = [
   ],
   [
     "国际与案例",
-    "通过美国制度危机、外交逻辑、台海风险、解放军误判和历史案例，说明制度失效如何在不同场景中表现出来。",
+    "通过美国制度危机、外交逻辑、台海风险和历史案例，说明制度失效如何在不同场景中表现出来。",
     [
       articleLink("美国三权分立的真正危机，不是分权，而是失去统合能力", () =>
         findArticleBySlug("theory/us-separation-of-powers-integrative-capacity-crisis"),

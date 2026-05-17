@@ -126,7 +126,7 @@ status: published
 
 ### 国际与案例
 
-<p class="article-category-description">通过美国制度危机、外交逻辑、台海风险、解放军误判和历史案例，说明制度失效如何在不同场景中表现出来。</p>
+<p class="article-category-description">通过美国制度危机、外交逻辑、台海风险和历史案例，说明制度失效如何在不同场景中表现出来。</p>
 
 - [[theory/us-separation-of-powers-integrative-capacity-crisis|美国三权分立的真正危机，不是分权，而是失去统合能力]]
 - [[china/diplomacy-root|外交的根源：从中共内政逻辑看其外交激进化]]
