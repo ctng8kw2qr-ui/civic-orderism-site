@@ -775,7 +775,7 @@ ${themedReading}
 
 </div>
 
-## 近期文章
+## 近期补充文章
 
 ${homeLatest || "暂无文章。"}
 

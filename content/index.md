@@ -139,7 +139,7 @@ status: published
 
 </div>
 
-## 近期文章
+## 近期补充文章
 
 - [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]（2026-05-14）
 - [[china/ccp-from-faith-community-to-black-box-post|从“信仰共同体”到“黑箱岗位”：中共内部成员心态的三次断裂]]（2026-05-13）
