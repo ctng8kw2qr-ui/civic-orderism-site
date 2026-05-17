@@ -51,7 +51,7 @@ status: published
 
 ### 旧世界失效
 
-<p class="article-category-description">解释政党政治、工业型治理、三权分立和旧制度模型，为什么越来越难处理信息化时代的高耦合社会。</p>
+<p class="article-category-description">解释政党政治、工业型治理、美国制度和程序问责，为什么越来越难以处理信息化时代的高耦合社会。</p>
 
 - [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]
 - [[theory/costly-industrial-governance-information-age|一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价]]
@@ -73,7 +73,7 @@ status: published
 - [[china/ccp-bureaucracy-double-deadlock|不抓人就躺平，一抓人就失真：中共官僚体系为何陷入双重死结]]
 - [[china/ccp-from-faith-community-to-black-box-post|从“信仰共同体”到“黑箱岗位”：中共内部成员心态的三次断裂]]
 
-- [[china|查看更多解析中共文章 →]]
+- [[china|查看更多旧组织失灵文章 →]]
 
 </section>
 
@@ -88,7 +88,7 @@ status: published
 - [[china/maginot-line-of-stability-maintenance|一个难以言说的防线：从“液压维稳”到当代的马其诺防线]]
 - [[china/ccp-bureaucracy-historical-bill|当历史总账开始结算：高刚性官僚体系如何把系统性责任层层压向中基层]]
 
-- [查看更多现实问题文章 →](articles#三中国正在进入什么阶段)
+- [查看更多中国阶段判断文章 →](articles#三中国正在进入什么阶段)
 
 </section>
 
@@ -96,14 +96,14 @@ status: published
 
 ### 新制度通道
 
-<p class="article-category-description">说明公民秩序主义为什么不是简单反对旧制度，而是为现代国家建立新的公共判断机制、责任通道和秩序关系。</p>
+<p class="article-category-description">说明公民秩序主义为什么不是简单反对旧制度，而是为现代国家重建新的公共判断机制、责任通道和制度关系。</p>
 
 - [[civic-orderism/what-civic-orderism-solves-if-you-read-only-one|如果你只读一篇：公民秩序主义到底想解决什么]]
 - [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]
 - [[civic-orderism/why-not-left-right-democracy-autocracy|为什么公民秩序主义不纠结于左右、民主专制之争]]
 - [[civic-orderism/why-civic-orderism-is-easier-to-succeed|为什么公民秩序主义在未来接替难度最小：它不是推倒国家，而是接管、校正和重组国家运行系统]]
 
-- [[civic-orderism|查看更多公民秩序主义文章 →]]
+- [[civic-orderism|查看更多新制度通道文章 →]]
 
 </section>
 
@@ -113,12 +113,12 @@ status: published
 
 <p class="article-category-description">解释委员会、选举、监督、后台系统和国家运行流程，展示公民秩序主义如何从理念进入可运行的制度结构。</p>
 
+- [[civic-orderism/civic-orderism-manual|公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案]]
 - [[civic-orderism/what-is-committee-system|什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构]]
 - [[civic-orderism/state-operation-process-under-civic-orderism|公民秩序主义下国家运行的大概流程：从普通人的问题，到国家的判断、执行与纠偏]]
 - [[civic-orderism/election-logic-under-civic-orderism|公民秩序主义下的选举逻辑：它与传统选举的区别，以及制度优势]]
-- [[civic-orderism/backend-system-under-civic-orderism|公民秩序主义对后台系统的重视：为什么培训、秘书处、专业事务与留痕系统，是现代国家真正的底座]]
 
-- [[institution|查看更多制度设计文章 →]]
+- [查看更多制度运行机制文章 →](articles#六新制度如何运行)
 
 </section>
 
@@ -126,7 +126,7 @@ status: published
 
 ### 国际与案例
 
-<p class="article-category-description">解释美国制度危机、国际秩序、外交逻辑、台海风险和比较制度案例。</p>
+<p class="article-category-description">通过美国制度危机、外交逻辑、台海风险、解放军误判和历史案例，说明制度失效如何在不同场景中表现出来。</p>
 
 - [[theory/us-separation-of-powers-integrative-capacity-crisis|美国三权分立的真正危机，不是分权，而是失去统合能力]]
 - [[china/diplomacy-root|外交的根源：从中共内政逻辑看其外交激进化]]
@@ -139,7 +139,7 @@ status: published
 
 </div>
 
-## 近期补充文章
+## 近期文章
 
 - [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]（2026-05-14）
 - [[china/ccp-from-faith-community-to-black-box-post|从“信仰共同体”到“黑箱岗位”：中共内部成员心态的三次断裂]]（2026-05-13）

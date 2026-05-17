@@ -3,7 +3,9 @@ import * as Component from "./quartz/components"
 
 const publicExplorerOptions = {
   filterFn: (node: any) =>
-    node.slugSegment !== "tags" && !node.slugSegment.startsWith("article_"),
+    node.slugSegment !== "tags" &&
+    node.slugSegment !== "articles.md" &&
+    !node.slugSegment.startsWith("article_"),
   mapFn: (node: any) => {
     if (node.slugSegment === "start-here") node.displayName = "从这里开始"
     if (node.slugSegment === "theory") node.displayName = "旧秩序失效"
