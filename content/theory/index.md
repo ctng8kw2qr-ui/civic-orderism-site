@@ -29,7 +29,6 @@ status: published
 - [[theory/ccp-high-fragility-dysfunction|它还在，但越来越靠不住：为什么中共更可能“失灵”而非“倒台”]]（2026-05-10）
 - [[theory/no-accountability-lie-flat-mentality|为什么“无人担责的躺平心态”会从根本上摧毁一个超大型执政组织]]（2026-05-10）
 - [[theory/procedural-accountability-organized-power|为什么程序性问责，常常敌不过组织化权力]]（2026-05-10）
-- [[theory/party-politics-low-dimensional-function|为什么政党政治越来越像低维函数]]（2026-05-10）
 - [[theory/trapped-by-process|我们不是被贫穷困住，而是被流程困住]]（2026-05-10）
 - [[theory/modern-social-syndrome|现代社会候群症]]（2026-05-10）
 - [[theory/ai-monitoring-organizational-friction|AI监控并不降低组织摩擦：一份冷静推演]]（2026-05-10）

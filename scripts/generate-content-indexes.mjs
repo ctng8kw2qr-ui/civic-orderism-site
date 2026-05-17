@@ -278,7 +278,6 @@ for (const article of articles) {
 }
 
 const homeLatest = articles
-  .filter((article) => article.category === "china")
   .slice(0, 8)
   .map(articleLine)
   .join("\n");
