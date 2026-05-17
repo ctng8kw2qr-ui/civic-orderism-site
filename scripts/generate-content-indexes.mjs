@@ -324,7 +324,7 @@ const homeLatest = articles
       article.slug !==
       "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
   )
-  .slice(0, 8)
+  .slice(0, 5)
   .map(articleLine)
   .join("\n");
 
@@ -427,11 +427,10 @@ const firstReadingSection = `<div class="home-first-reading">
 1. [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]
 2. [[theory/us-industrial-system-cannot-carry-information-age|美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代]]
 3. [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]
-4. [[china/xi-power-centralization|习近平权力集中背后的系统逻辑]]
+4. [[china/ccp-power-network-not-line|中共的权力布局不是一条线，而是一张网]]
 5. [[theory/ccp-high-fragility-dysfunction|它还在，但越来越靠不住：为什么中共更可能"失灵"而非"倒台"]]
 6. [[civic-orderism/what-civic-orderism-solves-if-you-read-only-one|如果你只读一篇：公民秩序主义到底想解决什么]]
-7. [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]
-8. [[civic-orderism/what-is-committee-system|什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构]]
+7. [[civic-orderism/what-is-committee-system|什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构]]
 
 </div>`;
 
@@ -464,14 +463,14 @@ const themedReading = [
       articleLink("党国系统的结构性失效：一个组织诊断", () =>
         findArticleBySlug("theory/party-state-structural-failure"),
       ),
-      articleLink("习近平权力集中背后的系统逻辑", () =>
-        findArticleBySlug("china/xi-power-centralization"),
-      ),
       articleLink("中共的权力布局不是一条线，而是一张网", () =>
         findArticleBySlug("china/ccp-power-network-not-line"),
       ),
       articleLink("不抓人就躺平，一抓人就失真：中共官僚体系为何陷入双重死结", () =>
         findArticleBySlug("china/ccp-bureaucracy-double-deadlock"),
+      ),
+      articleLink("从“信仰共同体”到“黑箱岗位”：中共内部成员心态的三次断裂", () =>
+        findArticleBySlug("china/ccp-from-faith-community-to-black-box-post"),
       ),
     ],
     "china",
@@ -479,7 +478,7 @@ const themedReading = [
     4,
   ],
   [
-    "现实问题与社会成本",
+    "中国正在进入什么阶段",
     "解释社保、医保、金融、基层治理、社会成本与普通人困境，如何成为组织失效在社会层面的外部表现。",
     [
       articleLink("中共崩解的三大导火索：社保、医保与金融系统", () =>
@@ -512,9 +511,6 @@ const themedReading = [
       ),
       articleLink("公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系", () =>
         findArticleBySlug("civic-orderism/what-civic-orderism-ultimately-solves"),
-      ),
-      articleLink("公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案", () =>
-        findArticleBySlug("civic-orderism/civic-orderism-manual"),
       ),
       articleLink("为什么公民秩序主义不纠结于左右、民主专制之争", () =>
         findArticleBySlug("civic-orderism/why-not-left-right-democracy-autocracy"),
@@ -552,14 +548,14 @@ const themedReading = [
     "国际与案例",
     "解释美国制度危机、国际秩序、外交逻辑、台海风险和比较制度案例。",
     [
+      articleLink("美国三权分立的真正危机，不是分权，而是失去统合能力", () =>
+        findArticleBySlug("theory/us-separation-of-powers-integrative-capacity-crisis"),
+      ),
       articleLink("外交的根源：从中共内政逻辑看其外交激进化", () =>
         findArticleBySlug("china/diplomacy-root"),
       ),
       articleLink("台海是否会走向战争：基于战争四驱动的组织决策风险评估", () =>
         findArticleBySlug("china/taiwan-war-risk"),
-      ),
-      articleLink("外界对解放军的迷思：把“军”当成政治主体，是第一层误判", () =>
-        findArticleBySlug("china/pla-political-subject-myth"),
       ),
       articleLink("专制之癌：从《大明王朝1566》到结构性腐败的宿命", () =>
         findArticleBySlug("institution/despotism-cancer-ming-1566"),
@@ -789,7 +785,7 @@ ${themedReading}
 
 </div>
 
-## 最新文章
+## 近期补充文章
 
 ${homeLatest || "暂无文章。"}
 
