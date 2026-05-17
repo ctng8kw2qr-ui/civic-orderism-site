@@ -237,6 +237,43 @@ function buildCivicOrderismThemedArticleList(civicOrderismArticles) {
   return out;
 }
 
+function buildTheoryThemedArticleList() {
+  const sections = [
+    {
+      title: "一、工业时代制度为什么失效",
+      slugs: [
+        "theory/why-party-politics-is-becoming-a-low-dimensional-function",
+        "theory/costly-industrial-governance-information-age",
+        "theory/modern-social-syndrome",
+        "theory/internal-change-external-change",
+      ],
+    },
+    {
+      title: "二、美国制度危机与统合能力下降",
+      slugs: [
+        "theory/us-industrial-system-cannot-carry-information-age",
+        "theory/information-age-erodes-us-integrative-capacity",
+        "theory/us-separation-of-powers-integrative-capacity-crisis",
+        "theory/us-supreme-court-partisan-final-battleground",
+      ],
+    },
+    {
+      title: "三、组织权力、程序问责与治理摩擦",
+      slugs: [
+        "theory/party-state-structural-failure",
+        "theory/procedural-accountability-organized-power",
+        "theory/ai-monitoring-organizational-friction",
+        "theory/ccp-high-fragility-dysfunction",
+        "theory/no-accountability-lie-flat-mentality",
+      ],
+    },
+  ];
+
+  return sections
+    .map((section) => `### ${section.title}\n\n${articleLinesForSlugs(section.slugs)}`)
+    .join("\n\n");
+}
+
 function findArticleByTitle(title) {
   return articles.find((article) => article.title.includes(title));
 }
@@ -779,27 +816,35 @@ for (const [key, label, description] of categories) {
       ? buildChinaThemedArticleList(items)
       : key === "civic-orderism"
         ? buildCivicOrderismThemedArticleList(items)
-        : items.length
-          ? items.map(articleLine).join("\n")
-          : "暂无文章。";
+        : key === "theory"
+          ? buildTheoryThemedArticleList()
+          : items.length
+            ? items.map(articleLine).join("\n")
+            : "暂无文章。";
+
+  const pageLabel = key === "theory" ? "旧秩序失效" : label;
+  const pageDescription =
+    key === "theory"
+      ? "解释工业时代形成的政党政治、官僚体系和治理模式，为什么在信息化时代越来越难以承载复杂社会。"
+      : description;
 
   writeFile(
     `${key}/index.md`,
     `---
-title: "${label}"
+title: "${pageLabel}"
 date: 2026-05-10
 category: "${label}"
 tags:
   - ${key}
-description: "${description}"
+description: "${pageDescription}"
 status: published
 ---
 
-# ${label}
+# ${pageLabel}
 
-${description}
+${pageDescription}
 
-${categoryIntroductions.get(key) ? `${categoryIntroductions.get(key)}\n\n` : ""}## 文章列表
+${key !== "theory" && categoryIntroductions.get(key) ? `${categoryIntroductions.get(key)}\n\n` : ""}## 文章列表
 
 ${articleListSection}`,
   );
