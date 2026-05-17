@@ -74,6 +74,7 @@ status: published
 ## 五、为什么需要新的制度通道
 
 
+- [[civic-orderism/what-civic-orderism-solves-if-you-read-only-one|如果你只读一篇：公民秩序主义到底想解决什么]]（2026-05-14）
 - [[civic-orderism/civic-orderism-manual|公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案]]（2026-05-10）
 - [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]（2026-05-10）
 - [[civic-orderism/why-not-left-right-democracy-autocracy|为什么公民秩序主义不纠结于左右、民主专制之争]]（2026-05-10）
@@ -124,4 +125,4 @@ status: published
 
 _（暂无其余篇目。）_
 
-本站共收录 61 篇文章。以上按主题推荐阅读；这些文章不是散的，而是一套解释系统。
+本站共收录 62 篇文章。以上按主题推荐阅读；这些文章不是散的，而是一套解释系统。

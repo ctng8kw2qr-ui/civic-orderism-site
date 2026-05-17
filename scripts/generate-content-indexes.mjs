@@ -183,6 +183,7 @@ function buildCivicOrderismThemedArticleList(civicOrderismArticles) {
       title: "一、入门说明",
       body: "这一组文章用于帮助第一次接触本站的读者理解公民秩序主义是什么，它为什么不是普通政治口号，也不是简单的政权替换想象，而是一套面向中国现实与信息化时代的现代国家治理方案。",
       slugs: [
+        "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
         "civic-orderism/civic-orderism-manual",
         "civic-orderism/what-civic-orderism-ultimately-solves",
         "civic-orderism/why-civic-orderism-is-easier-to-succeed",
@@ -278,6 +279,11 @@ for (const article of articles) {
 }
 
 const homeLatest = articles
+  .filter(
+    (article) =>
+      article.slug !==
+      "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+  )
   .slice(0, 8)
   .map(articleLine)
   .join("\n");
@@ -341,6 +347,13 @@ const firstReadingGroup3Bullets = [
     findArticleBySlug("civic-orderism/civic-orderism-manual"),
   ),
   articleLink(
+    "如果你只读一篇：公民秩序主义到底想解决什么",
+    () =>
+      findArticleBySlug(
+        "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+      ),
+  ),
+  articleLink(
     "公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系",
     () => findArticleBySlug("civic-orderism/what-civic-orderism-ultimately-solves"),
   ),
@@ -375,8 +388,9 @@ const firstReadingSection = `<div class="home-first-reading">
 3. [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]
 4. [[china/xi-power-centralization|习近平权力集中背后的系统逻辑]]
 5. [[theory/ccp-high-fragility-dysfunction|它还在，但越来越靠不住：为什么中共更可能"失灵"而非"倒台"]]
-6. [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]
-7. [[civic-orderism/what-is-committee-system|什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构]]
+6. [[civic-orderism/what-civic-orderism-solves-if-you-read-only-one|如果你只读一篇：公民秩序主义到底想解决什么]]
+7. [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]
+8. [[civic-orderism/what-is-committee-system|什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构]]
 
 </div>`;
 
@@ -450,6 +464,11 @@ const themedReading = [
     "新制度通道",
     "说明公民秩序主义为什么不是简单反对旧制度，而是为现代国家建立新的公共判断机制、责任通道和秩序关系。",
     [
+      articleLink("如果你只读一篇：公民秩序主义到底想解决什么", () =>
+        findArticleBySlug(
+          "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+        ),
+      ),
       articleLink("公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系", () =>
         findArticleBySlug("civic-orderism/what-civic-orderism-ultimately-solves"),
       ),
@@ -603,6 +622,7 @@ function buildArticlesThemedBody() {
   out += `## 五、为什么需要新的制度通道\n\n`;
   out +=
     "\n";
+  out += maybeLine("civic-orderism/what-civic-orderism-solves-if-you-read-only-one");
   out += maybeLine("civic-orderism/civic-orderism-manual");
   out += maybeLine("civic-orderism/what-civic-orderism-ultimately-solves");
   out += maybeLine("civic-orderism/why-not-left-right-democracy-autocracy");

@@ -20,6 +20,7 @@ status: published
 
 这一组文章用于帮助第一次接触本站的读者理解公民秩序主义是什么，它为什么不是普通政治口号，也不是简单的政权替换想象，而是一套面向中国现实与信息化时代的现代国家治理方案。
 
+- [[civic-orderism/what-civic-orderism-solves-if-you-read-only-one|如果你只读一篇：公民秩序主义到底想解决什么]]（2026-05-14）
 - [[civic-orderism/civic-orderism-manual|公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案]]（2026-05-10）
 - [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]（2026-05-10）
 - [[civic-orderism/why-not-left-right-democracy-autocracy|为什么公民秩序主义不纠结于左右、民主专制之争]]（2026-05-10）
@@ -60,4 +61,4 @@ status: published
 - [[civic-orderism/why-proposals-from-social-organizations|为什么议案应主要来自社会组织，而不是某个议员、某个人]]（2026-05-10）
 - [[civic-orderism/why-part-time-representatives|为什么议员主要应采取兼职制，而非全职制]]（2026-05-10）
 
-此栏目共收录 24 篇文章。
+此栏目共收录 25 篇文章。
