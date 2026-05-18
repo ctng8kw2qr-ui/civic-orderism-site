@@ -108,13 +108,10 @@ function buildChinaThemedArticleList(chinaArticles) {
       title: "一、组织结构与系统失效",
       body: "这一组文章用于解释中共不是一个简单的个人权力问题，而是一个组织结构、反馈机制、责任系统和权力逻辑逐步失效的问题。",
       slugs: [
-        "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
         "china/xi-solved-organization-not-reality",
         "china/xi-power-centralization",
-        "china/ccp-reform-political-balance-deadlock",
-        "china/organization-credit-retired-officials",
-        "china/Macro Narratives, Opportunity Incentives, and High Fragility",
         "china/xi-succession-crisis-gray-rhino",
+        "china/ccp-2018-new-reform-opening",
         "china/ccp-power-network-not-line",
       ],
     },
@@ -122,11 +119,11 @@ function buildChinaThemedArticleList(chinaArticles) {
       title: "二、官僚体系与责任压缩",
       body: "这一组文章用于解释中共官僚系统如何在高压、追责、忠诚表演和责任下沉中逐渐失去真实治理能力。",
       slugs: [
+        "china/bureaucratic-system-under-purges",
+        "china/when-high-ranking-officials-are-no-longer-safe",
+        "china/organization-credit-retired-officials",
         "china/ccp-bureaucracy-double-deadlock",
         "china/ccp-bureaucracy-historical-bill",
-        "china/chicken-and-cage",
-        "china/when-high-ranking-officials-are-no-longer-safe",
-        "china/bureaucratic-system-under-purges",
         "china/ccp-from-faith-community-to-black-box-post",
       ],
     },
@@ -135,7 +132,6 @@ function buildChinaThemedArticleList(chinaArticles) {
       body: "这一组文章用于解释中共为什么越来越依赖宣传和话语控制，却越来越难以解释现实、吸收反馈和形成有效判断。",
       slugs: [
         "china/propaganda-system-hollowing-out",
-        "china/ccp-2018-new-reform-opening",
       ],
     },
     {
@@ -155,12 +151,22 @@ function buildChinaThemedArticleList(chinaArticles) {
         "china/pla-political-subject-myth",
       ],
     },
+    {
+      title: "六、经济、社会与信心收缩",
+      body: "这一组文章用于解释中共经济压力、社会预期、财政金融风险和民间信心收缩，如何反过来加速组织系统的防御化。",
+      slugs: [
+        "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+        "china/ccp-reform-political-balance-deadlock",
+        "china/chicken-and-cage",
+        "china/Macro Narratives, Opportunity Incentives, and High Fragility",
+      ],
+    },
   ];
 
   const used = new Set();
   let out = "";
   for (const sec of sections) {
-    const block = articleLinesForSlugsSorted(sec.slugs);
+    const block = articleLinesForSlugs(sec.slugs);
     for (const slug of sec.slugs) {
       const a = findArticleBySlug(slug);
       if (a) used.add(a.slug);
