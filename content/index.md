@@ -31,15 +31,23 @@ status: published
 
 ## 第一次阅读建议
 
-如果你是第一次来到本站，建议先从旧世界为什么失效开始读起。本站的路径不是先要求读者接受一种新理论，而是先解释旧制度为何越来越难以处理信息化时代的复杂社会，再理解中共组织结构的失灵，最后进入公民秩序主义作为一种新的公共秩序方案。
+如果你第一次来到这里，不必从全部理论读起。建议先按下面顺序阅读：先理解旧秩序为何失效，再理解中共组织为何失灵，最后理解公民秩序主义想解决什么。
 
-1. [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]
-2. [[theory/us-industrial-system-cannot-carry-information-age|美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代]]
-3. [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]
-4. [[china/ccp-power-network-not-line|中共的权力布局不是一条线，而是一张网]]
-5. [[theory/ccp-high-fragility-dysfunction|它还在，但越来越靠不住：为什么中共更可能"失灵"而非"倒台"]]
-6. [[civic-orderism/what-civic-orderism-solves-if-you-read-only-one|如果你只读一篇：公民秩序主义到底想解决什么]]
-7. [[civic-orderism/what-is-committee-system|什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构]]
+### 第一步：先理解旧秩序为什么失效
+
+- [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]
+- [[theory/us-industrial-system-cannot-carry-information-age|美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代]]
+
+### 第二步：再理解中共为什么失灵
+
+- [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]
+- [[china/ccp-power-network-not-line|中共的权力布局不是一条线，而是一张网]]
+- [[theory/ccp-high-fragility-dysfunction|它还在，但越来越靠不住：为什么中共更可能"失灵"而非"倒台"]]
+
+### 第三步：最后理解公民秩序主义
+
+- [[civic-orderism/what-civic-orderism-solves-if-you-read-only-one|如果你只读一篇：公民秩序主义到底想解决什么]]
+- [[civic-orderism/what-is-committee-system|什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构]]
 
 </div>
 
@@ -49,7 +57,7 @@ status: published
 
 <section class="article-category-card">
 
-### 旧世界失效
+### 旧秩序失效
 
 <p class="article-category-description">解释政党政治、工业型治理、美国制度和程序问责，为什么越来越难以处理信息化时代的高耦合社会。</p>
 
@@ -64,7 +72,7 @@ status: published
 
 <section class="article-category-card">
 
-### 旧组织失灵
+### 中共组织失灵
 
 <p class="article-category-description">分析中共作为超大型执政组织，如何在权力集中、反馈失真、责任不透明和组织信用衰减中走向失灵。</p>
 
@@ -139,7 +147,7 @@ status: published
 
 </div>
 
-## 近期补充文章
+## 近期新增
 
 - [[china/bureaucratic-system-under-purges|高位清洗如何改变中共官僚系统]]（2026-05-17）
 - [[civic-orderism/why-committees-cannot-directly-take-cases|为什么委员会不能直接接案：公民秩序主义中“入口权”与“判断权”必须分开]]（2026-05-17）

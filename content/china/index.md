@@ -60,7 +60,7 @@ status: published
 
 ### 六、经济、社会与信心收缩
 
-这一组文章用于解释中共经济压力、社会预期、财政金融风险和民间信心收缩，如何反过来加速组织系统的防御化。
+这一组文章用于解释经济压力、社会预期、财政金融风险和民间信心收缩，如何反过来加速中共组织系统的防御化。
 
 - [[china/ccp-collapse-three-triggers-social-security-healthcare-finance|中共崩解的三大导火索：社保、医保与金融系统]]（2026-05-11）
 - [[china/ccp-reform-political-balance-deadlock|中共的真正死局：改革未必救经济，却一定先打破政治平衡]]（2026-05-10）
