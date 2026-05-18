@@ -33,6 +33,7 @@ status: published
 
 这一组文章用于解释中共官僚系统如何在高压、追责、忠诚表演和责任下沉中逐渐失去真实治理能力。
 
+- [[china/bureaucratic-system-under-purges|高位清洗如何改变中共官僚系统]]（2026-05-17）
 - [[china/ccp-from-faith-community-to-black-box-post|从“信仰共同体”到“黑箱岗位”：中共内部成员心态的三次断裂]]（2026-05-13）
 - [[china/ccp-bureaucracy-double-deadlock|不抓人就躺平，一抓人就失真：中共官僚体系为何陷入双重死结]]（2026-05-10）
 - [[china/when-high-ranking-officials-are-no-longer-safe|当高位者也不再安全：这不是普通反腐，而是权力的深度焦虑]]（2026-05-10）
@@ -61,4 +62,4 @@ status: published
 - [[china/diplomacy-root|外交的根源：从中共内政逻辑看其外交激进化]]（2026-05-10）
 - [[china/pla-political-subject-myth|外界对解放军的迷思：把“军”当成政治主体，是第一层误判]]（2026-05-10）
 
-此栏目共收录 20 篇文章。
+此栏目共收录 21 篇文章。

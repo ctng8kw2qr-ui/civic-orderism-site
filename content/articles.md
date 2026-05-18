@@ -51,6 +51,7 @@ status: published
 - [[theory/ccp-high-fragility-dysfunction|它还在，但越来越靠不住：为什么中共更可能“失灵”而非“倒台”]]（2026-05-10）
 - [[china/ccp-reform-political-balance-deadlock|中共的真正死局：改革未必救经济，却一定先打破政治平衡]]（2026-05-10）
 - [[china/when-high-ranking-officials-are-no-longer-safe|当高位者也不再安全：这不是普通反腐，而是权力的深度焦虑]]（2026-05-10）
+- [[china/bureaucratic-system-under-purges|高位清洗如何改变中共官僚系统]]（2026-05-17）
 - [[china/xi-succession-crisis-gray-rhino|中共高层政治的灰犀牛：习近平交权困境与继承危机]]（2026-05-10）
 - [[china/ccp-from-faith-community-to-black-box-post|从“信仰共同体”到“黑箱岗位”：中共内部成员心态的三次断裂]]（2026-05-13）
 - [[china/elite-sandification-ming-bureaucrats-ccp|沙化的忠诚：中共精英原子化与明代士大夫的历史镜像]]（2026-05-10）
@@ -128,4 +129,4 @@ status: published
 
 _（暂无未归入前九个栏目的近期文章。）_
 
-本站共收录 63 篇文章。以上按主题推荐阅读；这些文章不是散的，而是一套解释系统。
+本站共收录 64 篇文章。以上按主题推荐阅读；这些文章不是散的，而是一套解释系统。

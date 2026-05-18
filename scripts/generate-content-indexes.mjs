@@ -126,6 +126,7 @@ function buildChinaThemedArticleList(chinaArticles) {
         "china/ccp-bureaucracy-historical-bill",
         "china/chicken-and-cage",
         "china/when-high-ranking-officials-are-no-longer-safe",
+        "china/bureaucratic-system-under-purges",
         "china/ccp-from-faith-community-to-black-box-post",
       ],
     },
@@ -641,6 +642,7 @@ function buildArticlesThemedBody() {
   out += maybeLine("theory/ccp-high-fragility-dysfunction");
   out += maybeLine("china/ccp-reform-political-balance-deadlock");
   out += maybeLine("china/when-high-ranking-officials-are-no-longer-safe");
+  out += maybeLine("china/bureaucratic-system-under-purges");
   out += maybeLine("china/xi-succession-crisis-gray-rhino");
   out += maybeLine("china/ccp-from-faith-community-to-black-box-post");
   out += maybeLine("china/elite-sandification-ming-bureaucrats-ccp");
