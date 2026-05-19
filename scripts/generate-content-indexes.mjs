@@ -47,7 +47,7 @@ function slugFor(relativePath) {
 }
 
 function normalizeDate(value) {
-  if (!value) return "2026-05-10";
+  if (!value) return "";
   if (value instanceof Date) return value.toISOString().slice(0, 10);
   return String(value).slice(0, 10);
 }
@@ -62,6 +62,7 @@ function parseArticle(filePath) {
   return {
     category,
     date: normalizeDate(parsed.data.date),
+    hasDate: Boolean(parsed.data.date),
     description: parsed.data.description ? String(parsed.data.description) : "",
     slug,
     title: parsed.data.title
@@ -71,7 +72,7 @@ function parseArticle(filePath) {
 }
 
 function articleLine(article) {
-  const date = article.date ? `（${article.date}）` : "";
+  const date = article.hasDate && article.date ? `（${article.date}）` : "";
   return `- [[${article.slug}|${article.title}]]${date}`;
 }
 
@@ -100,6 +101,13 @@ function articleLinesForSlugsSorted(slugs) {
     return a.title.localeCompare(b.title, "zh-CN");
   });
   return articles.map(articleLine).join("\n");
+}
+
+function compareArticlesByDateDesc(a, b) {
+  if (a.hasDate && !b.hasDate) return -1;
+  if (!a.hasDate && b.hasDate) return 1;
+  if (!a.hasDate && !b.hasDate) return 0;
+  return b.date.localeCompare(a.date);
 }
 
 function buildChinaThemedArticleList(chinaArticles) {
@@ -608,11 +616,18 @@ function buildArticlesThemedBody() {
   // 明确排除旧版本的"为什么政党政治越来越像低维函数"文章，避免重复显示
   used.add("theory/party-politics-low-dimensional-function");
 
-  function maybeLine(slug) {
-    const article = findArticleBySlug(slug);
-    if (!article || used.has(article.slug)) return "";
-    used.add(article.slug);
-    return `${articleLine(article)}\n`;
+  function sectionByDate(title, slugs) {
+    const sectionArticles = slugs
+      .map((slug) => findArticleBySlug(slug))
+      .filter((article) => article && !used.has(article.slug))
+      .sort(compareArticlesByDateDesc);
+
+    for (const article of sectionArticles) {
+      used.add(article.slug);
+    }
+
+    const lines = sectionArticles.map(articleLine).join("\n");
+    return `## ${title}\n\n\n${lines}\n\n`;
   }
 
   const articleDirectoryLinks = [
@@ -630,115 +645,97 @@ function buildArticlesThemedBody() {
 
   let out = `## 分类目录\n\n${articleDirectoryLinks.map(([label, href]) => `- [${label}](${href})`).join("\n")}\n\n`;
 
-  out += `## 一、旧世界为什么失效\n\n`;
-  out +=
-    "\n";
-  out += maybeLine("theory/why-party-politics-is-becoming-a-low-dimensional-function");
-  out += maybeLine("theory/costly-industrial-governance-information-age");
-  out += maybeLine("theory/us-industrial-system-cannot-carry-information-age");
-  out += maybeLine("theory/information-age-erodes-us-integrative-capacity");
-  out += maybeLine("theory/us-separation-of-powers-integrative-capacity-crisis");
-  out += maybeLine("theory/us-supreme-court-partisan-final-battleground");
-  out += maybeLine("theory/internal-change-external-change");
-  out += maybeLine("theory/modern-social-syndrome");
-  out += maybeLine("theory/procedural-accountability-organized-power");
-  out += maybeLine("theory/ai-monitoring-organizational-friction");
-  out += "\n";
+  out += sectionByDate("一、旧世界为什么失效", [
+    "theory/why-party-politics-is-becoming-a-low-dimensional-function",
+    "theory/costly-industrial-governance-information-age",
+    "theory/us-industrial-system-cannot-carry-information-age",
+    "theory/information-age-erodes-us-integrative-capacity",
+    "theory/us-separation-of-powers-integrative-capacity-crisis",
+    "theory/us-supreme-court-partisan-final-battleground",
+    "theory/internal-change-external-change",
+    "theory/modern-social-syndrome",
+    "theory/procedural-accountability-organized-power",
+    "theory/ai-monitoring-organizational-friction",
+  ]);
 
-  out += `## 二、旧组织为什么走向失灵\n\n`;
-  out +=
-    "\n";
-  out += maybeLine("theory/party-state-structural-failure");
-  out += maybeLine("theory/high-rigidity-system-ccp");
-  out += maybeLine("china/xi-power-centralization");
-  out += maybeLine("china/xi-solved-organization-not-reality");
-  out += maybeLine("china/ccp-power-network-not-line");
-  out += maybeLine("china/ccp-bureaucracy-double-deadlock");
-  out += maybeLine("theory/ccp-high-fragility-dysfunction");
-  out += maybeLine("china/ccp-reform-political-balance-deadlock");
-  out += maybeLine("china/when-high-ranking-officials-are-no-longer-safe");
-  out += maybeLine("china/bureaucratic-system-under-purges");
-  out += maybeLine("china/xi-succession-crisis-gray-rhino");
-  out += maybeLine("china/ccp-from-faith-community-to-black-box-post");
-  out += maybeLine("china/elite-sandification-ming-bureaucrats-ccp");
-  out += maybeLine("china/organization-credit-retired-officials");
-  out += maybeLine("china/ccp-2018-new-reform-opening");
-  out += maybeLine("china/Macro Narratives, Opportunity Incentives, and High Fragility");
-  out += maybeLine("china/propaganda-system-hollowing-out");
-  out += "\n";
+  out += sectionByDate("二、旧组织为什么走向失灵", [
+    "theory/party-state-structural-failure",
+    "theory/high-rigidity-system-ccp",
+    "china/xi-power-centralization",
+    "china/xi-solved-organization-not-reality",
+    "china/ccp-power-network-not-line",
+    "china/ccp-bureaucracy-double-deadlock",
+    "theory/ccp-high-fragility-dysfunction",
+    "china/ccp-reform-political-balance-deadlock",
+    "china/when-high-ranking-officials-are-no-longer-safe",
+    "china/bureaucratic-system-under-purges",
+    "china/xi-succession-crisis-gray-rhino",
+    "china/ccp-from-faith-community-to-black-box-post",
+    "china/elite-sandification-ming-bureaucrats-ccp",
+    "china/organization-credit-retired-officials",
+    "china/ccp-2018-new-reform-opening",
+    "china/Macro Narratives, Opportunity Incentives, and High Fragility",
+    "china/propaganda-system-hollowing-out",
+  ]);
 
-  out += `## 三、中国正在进入什么阶段\n\n`;
-  out +=
-    "\n";
-  out += maybeLine("china/ccp-collapse-three-triggers-social-security-healthcare-finance");
-  out += maybeLine("china/chicken-and-cage");
-  out += maybeLine("china/maginot-line-of-stability-maintenance");
-  out += maybeLine("china/ccp-bureaucracy-historical-bill");
-  out += maybeLine("theory/no-accountability-lie-flat-mentality");
-  out += maybeLine("theory/trapped-by-process");
-  out += "\n";
+  out += sectionByDate("三、中国正在进入什么阶段", [
+    "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+    "china/chicken-and-cage",
+    "china/maginot-line-of-stability-maintenance",
+    "china/ccp-bureaucracy-historical-bill",
+    "theory/no-accountability-lie-flat-mentality",
+    "theory/trapped-by-process",
+  ]);
 
-  out += `## 四、外部误判、国际风险与案例\n\n`;
-  out +=
-    "\n";
-  out += maybeLine("china/diplomacy-root");
-  out += maybeLine("china/taiwan-war-risk");
-  out += maybeLine("china/taiwan-war-controllable-escalation-illusion");
-  out += maybeLine("china/pla-political-subject-myth");
-  out += maybeLine("theory/overseas-political-movements-fail");
-  out += maybeLine("institution/despotism-cancer-ming-1566");
-  out += "\n";
+  out += sectionByDate("四、外部误判、国际风险与案例", [
+    "china/diplomacy-root",
+    "china/taiwan-war-risk",
+    "china/taiwan-war-controllable-escalation-illusion",
+    "china/pla-political-subject-myth",
+    "theory/overseas-political-movements-fail",
+    "institution/despotism-cancer-ming-1566",
+  ]);
 
-  out += `## 五、为什么需要新的制度通道\n\n`;
-  out +=
-    "\n";
-  out += maybeLine("civic-orderism/what-civic-orderism-solves-if-you-read-only-one");
-  out += maybeLine("civic-orderism/what-civic-orderism-ultimately-solves");
-  out += maybeLine("civic-orderism/why-not-left-right-democracy-autocracy");
-  out += maybeLine("civic-orderism/why-civic-orderism-is-easier-to-succeed");
-  out += maybeLine("civic-orderism/why-weaken-party-politics");
-  out += maybeLine("civic-orderism/public-politics-without-party-dominance");
-  out += maybeLine("civic-orderism/why-against-moral-narrative");
-  out += maybeLine("civic-orderism/why-emphasize-reciprocity-and-equality");
-  out += maybeLine("civic-orderism/why-proposals-from-social-organizations");
-  out += maybeLine("civic-orderism/why-focus-on-invisible-power-nodes");
-  out += "\n";
+  out += sectionByDate("五、为什么需要新的制度通道", [
+    "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+    "civic-orderism/what-civic-orderism-ultimately-solves",
+    "civic-orderism/why-not-left-right-democracy-autocracy",
+    "civic-orderism/why-civic-orderism-is-easier-to-succeed",
+    "civic-orderism/why-weaken-party-politics",
+    "civic-orderism/public-politics-without-party-dominance",
+    "civic-orderism/why-against-moral-narrative",
+    "civic-orderism/why-emphasize-reciprocity-and-equality",
+    "civic-orderism/why-proposals-from-social-organizations",
+    "civic-orderism/why-focus-on-invisible-power-nodes",
+  ]);
 
-  out += `## 六、新制度如何运行\n\n`;
-  out +=
-    "\n";
-  out += maybeLine("civic-orderism/civic-orderism-manual");
-  out += maybeLine("civic-orderism/state-operation-process-under-civic-orderism");
-  out += maybeLine("civic-orderism/why-dual-track-committee-administration");
-  out += maybeLine("civic-orderism/top-level-power-structure-under-civic-orderism");
-  out += maybeLine("civic-orderism/why-not-simple-separation-of-powers");
-  out += maybeLine("civic-orderism/why-no-bicameral-parliament");
-  out += maybeLine("civic-orderism/why-civic-orderism-emphasizes-experience-and-records");
-  out += "\n";
+  out += sectionByDate("六、新制度如何运行", [
+    "civic-orderism/civic-orderism-manual",
+    "civic-orderism/state-operation-process-under-civic-orderism",
+    "civic-orderism/why-dual-track-committee-administration",
+    "civic-orderism/top-level-power-structure-under-civic-orderism",
+    "civic-orderism/why-not-simple-separation-of-powers",
+    "civic-orderism/why-no-bicameral-parliament",
+    "civic-orderism/why-civic-orderism-emphasizes-experience-and-records",
+  ]);
 
-  out += `## 七、委员会与公共判断机制\n\n`;
-  out +=
-    "\n";
-  out += maybeLine("civic-orderism/what-is-committee-system");
-  out += maybeLine("civic-orderism/committee-administration-opposite-incentives");
-  out += maybeLine("civic-orderism/why-committees-cannot-directly-take-cases");
-  out += "\n";
+  out += sectionByDate("七、委员会与公共判断机制", [
+    "civic-orderism/what-is-committee-system",
+    "civic-orderism/committee-administration-opposite-incentives",
+    "civic-orderism/why-committees-cannot-directly-take-cases",
+  ]);
 
-  out += `## 八、选举、授权与责任更替\n\n`;
-  out +=
-    "\n";
-  out += maybeLine("civic-orderism/election-logic-under-civic-orderism");
-  out += maybeLine("civic-orderism/why-elections-reject-political-donations");
-  out += maybeLine("civic-orderism/why-part-time-representatives");
-  out += "\n";
+  out += sectionByDate("八、选举、授权与责任更替", [
+    "civic-orderism/election-logic-under-civic-orderism",
+    "civic-orderism/why-elections-reject-political-donations",
+    "civic-orderism/why-part-time-representatives",
+  ]);
 
-  out += `## 九、后台系统、司法与执行底座\n\n`;
-  out +=
-    "\n";
-  out += maybeLine("civic-orderism/backend-system-under-civic-orderism");
-  out += maybeLine("civic-orderism/why-information-transparency");
-  out += maybeLine("civic-orderism/why-justice-serves-reality");
-  out += "\n";
+  out += sectionByDate("九、后台系统、司法与执行底座", [
+    "civic-orderism/backend-system-under-civic-orderism",
+    "civic-orderism/why-information-transparency",
+    "civic-orderism/why-justice-serves-reality",
+  ]);
 
   const rest = articles.filter((article) => !used.has(article.slug));
   
