@@ -55,6 +55,7 @@ status: published
 这一组文章用于解释中共内部组织逻辑如何外溢到外交、台海、战争判断和外界误判之中。
 
 - [[china/taiwan-war-risk|台海是否会走向战争：基于战争四驱动的组织决策风险评估]]（2026-05-10）
+- [[china/taiwan-war-controllable-escalation-illusion|台海战争的真正危险：可控升级的幻觉]]（2026-05-19）
 - [[china/diplomacy-root|外交的根源：从中共内政逻辑看其外交激进化]]（2026-05-10）
 - [[china/pla-political-subject-myth|外界对解放军的迷思：把“军”当成政治主体，是第一层误判]]（2026-05-10）
 
@@ -67,4 +68,4 @@ status: published
 - [[china/chicken-and-cage|养鸡与换笼：民营经济被整肃的结构逻辑]]（2026-05-10）
 - [[china/Macro Narratives, Opportunity Incentives, and High Fragility|宏观叙事、机会激励与高脆弱态：中共为何更可能“失灵”而非“倒台”]]（2026-05-13）
 
-此栏目共收录 21 篇文章。
+此栏目共收录 22 篇文章。

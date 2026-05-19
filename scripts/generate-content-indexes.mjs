@@ -147,6 +147,7 @@ function buildChinaThemedArticleList(chinaArticles) {
       body: "这一组文章用于解释中共内部组织逻辑如何外溢到外交、台海、战争判断和外界误判之中。",
       slugs: [
         "china/taiwan-war-risk",
+        "china/taiwan-war-controllable-escalation-illusion",
         "china/diplomacy-root",
         "china/pla-political-subject-myth",
       ],
@@ -682,6 +683,7 @@ function buildArticlesThemedBody() {
     "\n";
   out += maybeLine("china/diplomacy-root");
   out += maybeLine("china/taiwan-war-risk");
+  out += maybeLine("china/taiwan-war-controllable-escalation-illusion");
   out += maybeLine("china/pla-political-subject-myth");
   out += maybeLine("theory/overseas-political-movements-fail");
   out += maybeLine("institution/despotism-cancer-ming-1566");

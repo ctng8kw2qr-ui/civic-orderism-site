@@ -75,6 +75,7 @@ status: published
 
 - [[china/diplomacy-root|外交的根源：从中共内政逻辑看其外交激进化]]（2026-05-10）
 - [[china/taiwan-war-risk|台海是否会走向战争：基于战争四驱动的组织决策风险评估]]（2026-05-10）
+- [[china/taiwan-war-controllable-escalation-illusion|台海战争的真正危险：可控升级的幻觉]]（2026-05-19）
 - [[china/pla-political-subject-myth|外界对解放军的迷思：把“军”当成政治主体，是第一层误判]]（2026-05-10）
 - [[theory/overseas-political-movements-fail|海外政治运动为什么一事无成？]]（2026-05-10）
 - [[institution/despotism-cancer-ming-1566|专制之癌：从《大明王朝1566》到结构性腐败的宿命]]（2026-05-10）
@@ -129,4 +130,4 @@ status: published
 
 _（暂无未归入前九个栏目的近期文章。）_
 
-本站共收录 64 篇文章。以上按主题推荐阅读；这些文章不是散的，而是一套解释系统。
+本站共收录 65 篇文章。以上按主题推荐阅读；这些文章不是散的，而是一套解释系统。
