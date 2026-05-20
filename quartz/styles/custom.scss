@@ -186,8 +186,45 @@ article blockquote {
 
   .page,
   .page > #quartz-body {
+    width: 100%;
     max-width: 100%;
     overflow-x: clip;
+  }
+
+  .page > #quartz-body {
+    grid-template-columns: minmax(0, 1fr);
+    box-sizing: border-box;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .page > #quartz-body .center,
+  .page > #quartz-body .page-header,
+  .page > #quartz-body footer {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  body:not([data-slug="index"]) .page > #quartz-body .center > article,
+  body:not([data-slug="index"]) article {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    box-sizing: border-box;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  body:not([data-slug="index"]) article p,
+  body:not([data-slug="index"]) article li {
+    font-size: 17px;
+    line-height: 1.9;
+  }
+
+  .page > #quartz-body .sidebar.right {
+    display: none;
   }
 
   .page > #quartz-body .sidebar.left {
