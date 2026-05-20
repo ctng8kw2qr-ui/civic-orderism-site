@@ -142,9 +142,16 @@ article .home-first-reading ul {
   margin-bottom: 1.25rem;
 }
 
-article p,
-article li {
-  line-height: 1.95;
+body:not([data-slug="index"]) article p {
+  line-height: 1.8;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+body:not([data-slug="index"]) article li {
+  line-height: 1.75;
+  margin-top: 0.35em;
+  margin-bottom: 0.35em;
 }
 
 article .subtitle,
@@ -220,12 +227,18 @@ article blockquote {
   body:not([data-slug="index"]) article p,
   body:not([data-slug="index"]) article li {
     font-size: 16px;
-    line-height: 1.75;
   }
 
   body:not([data-slug="index"]) article p {
-    margin-top: 0.85em;
-    margin-bottom: 0.85em;
+    line-height: 1.75;
+    margin-top: 0.9em;
+    margin-bottom: 0.9em;
+  }
+
+  body:not([data-slug="index"]) article li {
+    line-height: 1.7;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
   }
 
   body:not([data-slug="index"]) article h1 {
