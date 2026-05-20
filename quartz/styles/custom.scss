@@ -282,4 +282,59 @@ article blockquote {
     visibility: visible;
     transform: translateX(0);
   }
+
+  body:not([data-slug="index"]) .page {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body:not([data-slug="index"]) .page > #quartz-body {
+    display: block !important;
+    grid-template: none !important;
+    grid-template-columns: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  body:not([data-slug="index"]) .page > #quartz-body .center,
+  body:not([data-slug="index"]) main {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    box-sizing: border-box !important;
+  }
+
+  body:not([data-slug="index"]) .page > #quartz-body .center > article,
+  body:not([data-slug="index"]) article,
+  body:not([data-slug="index"]) .popover-hint {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  body:not([data-slug="index"]) .right,
+  body:not([data-slug="index"]) .sidebar.right,
+  body:not([data-slug="index"]) .toc {
+    display: none !important;
+    width: 0 !important;
+    max-width: 0 !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 }
