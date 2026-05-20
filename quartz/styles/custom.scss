@@ -219,8 +219,35 @@ article blockquote {
 
   body:not([data-slug="index"]) article p,
   body:not([data-slug="index"]) article li {
-    font-size: 17px;
-    line-height: 1.9;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  body:not([data-slug="index"]) article p {
+    margin-top: 0.85em;
+    margin-bottom: 0.85em;
+  }
+
+  body:not([data-slug="index"]) article h1 {
+    font-size: 1.75rem;
+    line-height: 1.35;
+    margin-top: 1.2em;
+    margin-bottom: 0.8em;
+  }
+
+  body:not([data-slug="index"]) article h2 {
+    font-size: 1.35rem;
+    line-height: 1.4;
+    margin-top: 1.6em;
+    margin-bottom: 0.7em;
+    padding-top: 1em;
+  }
+
+  body:not([data-slug="index"]) article h3 {
+    font-size: 1.15rem;
+    line-height: 1.4;
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
   }
 
   .page > #quartz-body .sidebar.right {
