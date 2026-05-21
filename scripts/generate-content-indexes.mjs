@@ -76,38 +76,39 @@ function articleLine(article) {
   return `- [[${article.slug}|${article.title}]]${date}`;
 }
 
+function compareArticlesByDateDesc(a, b) {
+  if (a.hasDate && !b.hasDate) return -1;
+  if (!a.hasDate && b.hasDate) return 1;
+  if (a.hasDate && b.hasDate) {
+    const dateCompare = b.date.localeCompare(a.date);
+    if (dateCompare !== 0) return dateCompare;
+  }
+  return a.title.localeCompare(b.title, "zh-CN");
+}
+
 function findArticleBySlug(slug) {
   return articles.find((article) => article.slug === slug);
 }
 
+function articlesForSlugsSorted(slugs) {
+  const matched = [];
+  for (const slug of slugs) {
+    const article = findArticleBySlug(slug);
+    if (article) matched.push(article);
+  }
+  return matched.sort(compareArticlesByDateDesc);
+}
+
 function articleLinesForSlugs(slugs) {
-  const lines = [];
-  for (const slug of slugs) {
-    const article = findArticleBySlug(slug);
-    if (article) lines.push(articleLine(article));
-  }
-  return lines.join("\n");
+  return articlesForSlugsSorted(slugs).map(articleLine).join("\n");
 }
 
-function articleLinesForSlugsSorted(slugs) {
-  const articles = [];
-  for (const slug of slugs) {
-    const article = findArticleBySlug(slug);
-    if (article) articles.push(article);
-  }
-  articles.sort((a, b) => {
-    const dateCompare = b.date.localeCompare(a.date);
-    if (dateCompare !== 0) return dateCompare;
-    return a.title.localeCompare(b.title, "zh-CN");
-  });
-  return articles.map(articleLine).join("\n");
+function articleLinksForSlugs(slugs) {
+  return articlesForSlugsSorted(slugs).map((article) => `[[${article.slug}|${article.title}]]`);
 }
 
-function compareArticlesByDateDesc(a, b) {
-  if (a.hasDate && !b.hasDate) return -1;
-  if (!a.hasDate && b.hasDate) return 1;
-  if (!a.hasDate && !b.hasDate) return 0;
-  return b.date.localeCompare(a.date);
+function bulletList(items) {
+  return items.map((item) => `- ${item}`).join("\n");
 }
 
 function buildChinaThemedArticleList(chinaArticles) {
@@ -237,7 +238,7 @@ function buildCivicOrderismThemedArticleList(civicOrderismArticles) {
   const used = new Set();
   let out = "";
   for (const sec of sections) {
-    const block = articleLinesForSlugsSorted(sec.slugs);
+    const block = articleLinesForSlugs(sec.slugs);
     for (const slug of sec.slugs) {
       const a = findArticleBySlug(slug);
       if (a) used.add(a.slug);
@@ -325,11 +326,7 @@ const articles = walk(contentDir)
   .map(([filePath]) => parseArticle(filePath))
   .filter(Boolean)
   .filter((article) => categories.some(([key]) => key === article.category))
-  .sort((a, b) => {
-    const dateCompare = b.date.localeCompare(a.date);
-    if (dateCompare !== 0) return dateCompare;
-    return a.title.localeCompare(b.title, "zh-CN");
-  });
+  .sort(compareArticlesByDateDesc);
 
 const byCategory = new Map(categories.map(([key]) => [key, []]));
 for (const article of articles) {
@@ -354,88 +351,6 @@ const homeCategoryLinks = [
   ["articles", "文章总览"],
 ];
 
-const firstReadingGroup1Bullets = [
-  articleLink("党国系统的结构性失效：一个组织诊断", () =>
-    findArticleBySlug("theory/party-state-structural-failure"),
-  ),
-  articleLink("习近平权力集中背后的系统逻辑", () =>
-    findArticleBySlug("china/xi-power-centralization"),
-  ),
-  articleLink("当高位者也不再安全：这不是普通反腐，而是权力的深度焦虑", () =>
-    findArticleBySlug("china/when-high-ranking-officials-are-no-longer-safe"),
-  ),
-  articleLink("中共的真正死局：改革未必救经济，却一定先打破政治平衡", () =>
-    findArticleBySlug("china/ccp-reform-political-balance-deadlock"),
-  ),
-  articleLink("沙化的忠诚：中共精英原子化与明代士大夫的历史镜像", () =>
-    findArticleBySlug("china/elite-sandification-ming-bureaucrats-ccp"),
-  ),
-]
-  .map((item) => `- ${item}`)
-  .join("\n");
-
-const firstReadingGroup2Bullets = [
-  articleLink("中共崩解的三大导火索：社保、医保与金融系统", () =>
-    findArticleBySlug(
-      "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
-    ),
-  ),
-  articleLink(
-    "公民秩序主义最终要解决的问题（普通人难以进入制度、影响制度与纠正制度）",
-    () => findArticleBySlug("civic-orderism/what-civic-orderism-ultimately-solves"),
-  ),
-  articleLink(
-    "不是不会宣传，而是不敢承担：中宣系统“翻车常态化”背后的空心化逻辑（信息涌入、判断冻结）",
-    () => findArticleBySlug("china/propaganda-system-hollowing-out"),
-  ),
-  articleLink(
-    "内变引外变：现代政治为何走到十字路口（旧框架难以解释新问题）",
-    () => findArticleBySlug("theory/internal-change-external-change"),
-  ),
-  articleLink(
-    "一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价",
-    () =>
-      findArticleBySlug("theory/costly-industrial-governance-information-age"),
-  ),
-]
-  .map((item) => `- ${item}`)
-  .join("\n");
-
-const firstReadingGroup3Bullets = [
-  articleLink("公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案", () =>
-    findArticleBySlug("civic-orderism/civic-orderism-manual"),
-  ),
-  articleLink(
-    "如果你只读一篇：公民秩序主义到底想解决什么",
-    () =>
-      findArticleBySlug(
-        "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
-      ),
-  ),
-  articleLink(
-    "公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系",
-    () => findArticleBySlug("civic-orderism/what-civic-orderism-ultimately-solves"),
-  ),
-  articleLink(
-    "什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构",
-    () => findArticleBySlug("civic-orderism/what-is-committee-system"),
-  ),
-  articleLink(
-    "公民秩序主义下国家运行的大概流程：从普通人的问题，到国家的判断、执行与纠偏",
-    () =>
-      findArticleBySlug(
-        "civic-orderism/state-operation-process-under-civic-orderism",
-      ),
-  ),
-  articleLink(
-    "公民秩序主义下的选举逻辑：它与传统选举的区别，以及制度优势",
-    () =>
-      findArticleBySlug("civic-orderism/election-logic-under-civic-orderism"),
-  ),
-]
-  .map((item) => `- ${item}`)
-  .join("\n");
-
 const firstReadingSection = `<div class="home-first-reading">
 
 ## 第一次阅读建议
@@ -444,19 +359,25 @@ const firstReadingSection = `<div class="home-first-reading">
 
 ### 第一步：先理解旧秩序为什么失效
 
-- [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]
-- [[theory/us-industrial-system-cannot-carry-information-age|美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代]]
+${bulletList(articleLinksForSlugs([
+  "theory/why-party-politics-is-becoming-a-low-dimensional-function",
+  "theory/us-industrial-system-cannot-carry-information-age",
+]))}
 
 ### 第二步：再理解中共为什么失灵
 
-- [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]
-- [[china/ccp-power-network-not-line|中共的权力布局不是一条线，而是一张网]]
-- [[theory/ccp-high-fragility-dysfunction|它还在，但越来越靠不住：为什么中共更可能"失灵"而非"倒台"]]
+${bulletList(articleLinksForSlugs([
+  "theory/party-state-structural-failure",
+  "china/ccp-power-network-not-line",
+  "theory/ccp-high-fragility-dysfunction",
+]))}
 
 ### 第三步：最后理解公民秩序主义
 
-- [[civic-orderism/what-civic-orderism-solves-if-you-read-only-one|如果你只读一篇：公民秩序主义到底想解决什么]]
-- [[civic-orderism/what-is-committee-system|什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构]]
+${bulletList(articleLinksForSlugs([
+  "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+  "civic-orderism/what-is-committee-system",
+]))}
 
 </div>`;
 
@@ -464,20 +385,12 @@ const themedReading = [
   [
     "旧秩序失效",
     "解释政党政治、工业型治理、美国制度和程序问责，为什么越来越难以处理信息化时代的高耦合社会。",
-    [
-      articleLink("为什么政党政治越来越像低维函数", () =>
-        findArticleBySlug("theory/why-party-politics-is-becoming-a-low-dimensional-function"),
-      ),
-      articleLink("一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价", () =>
-        findArticleBySlug("theory/costly-industrial-governance-information-age"),
-      ),
-      articleLink("美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代", () =>
-        findArticleBySlug("theory/us-industrial-system-cannot-carry-information-age"),
-      ),
-      articleLink("为什么信息化时代正在系统性瓦解美国的统合能力", () =>
-        findArticleBySlug("theory/information-age-erodes-us-integrative-capacity"),
-      ),
-    ],
+    articleLinksForSlugs([
+      "theory/why-party-politics-is-becoming-a-low-dimensional-function",
+      "theory/costly-industrial-governance-information-age",
+      "theory/us-industrial-system-cannot-carry-information-age",
+      "theory/information-age-erodes-us-integrative-capacity",
+    ]),
     "theory",
     "查看更多旧世界失效文章 →",
     4,
@@ -485,20 +398,12 @@ const themedReading = [
   [
     "中共组织失灵",
     "分析中共作为超大型执政组织，如何在权力集中、反馈失真、责任不透明和组织信用衰减中走向失灵。",
-    [
-      articleLink("党国系统的结构性失效：一个组织诊断", () =>
-        findArticleBySlug("theory/party-state-structural-failure"),
-      ),
-      articleLink("中共的权力布局不是一条线，而是一张网", () =>
-        findArticleBySlug("china/ccp-power-network-not-line"),
-      ),
-      articleLink("不抓人就躺平，一抓人就失真：中共官僚体系为何陷入双重死结", () =>
-        findArticleBySlug("china/ccp-bureaucracy-double-deadlock"),
-      ),
-      articleLink("从“信仰共同体”到“黑箱岗位”：中共内部成员心态的三次断裂", () =>
-        findArticleBySlug("china/ccp-from-faith-community-to-black-box-post"),
-      ),
-    ],
+    articleLinksForSlugs([
+      "theory/party-state-structural-failure",
+      "china/ccp-power-network-not-line",
+      "china/ccp-bureaucracy-double-deadlock",
+      "china/ccp-from-faith-community-to-black-box-post",
+    ]),
     "china",
     "查看更多旧组织失灵文章 →",
     4,
@@ -506,22 +411,12 @@ const themedReading = [
   [
     "中国正在进入什么阶段",
     "解释社保、医保、金融、基层治理、社会成本与普通人困境，如何成为组织失效在社会层面的外部表现。",
-    [
-      articleLink("中共崩解的三大导火索：社保、医保与金融系统", () =>
-        findArticleBySlug(
-          "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
-        ),
-      ),
-      articleLink("养鸡与换笼：民营经济被整肃的结构逻辑", () =>
-        findArticleBySlug("china/chicken-and-cage"),
-      ),
-      articleLink("一个难以言说的防线：从“液压维稳”到当代的马其诺防线", () =>
-        findArticleBySlug("china/maginot-line-of-stability-maintenance"),
-      ),
-      articleLink("当历史总账开始结算：高刚性官僚体系如何把系统性责任层层压向中基层", () =>
-        findArticleBySlug("china/ccp-bureaucracy-historical-bill"),
-      ),
-    ],
+    articleLinksForSlugs([
+      "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+      "china/chicken-and-cage",
+      "china/maginot-line-of-stability-maintenance",
+      "china/ccp-bureaucracy-historical-bill",
+    ]),
     "articles#三中国正在进入什么阶段",
     "查看更多中国阶段判断文章 →",
     4,
@@ -529,22 +424,12 @@ const themedReading = [
   [
     "新制度通道",
     "说明公民秩序主义为什么不是简单反对旧制度，而是为现代国家重建新的公共判断机制、责任通道和制度关系。",
-    [
-      articleLink("如果你只读一篇：公民秩序主义到底想解决什么", () =>
-        findArticleBySlug(
-          "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
-        ),
-      ),
-      articleLink("公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系", () =>
-        findArticleBySlug("civic-orderism/what-civic-orderism-ultimately-solves"),
-      ),
-      articleLink("为什么公民秩序主义不纠结于左右、民主专制之争", () =>
-        findArticleBySlug("civic-orderism/why-not-left-right-democracy-autocracy"),
-      ),
-      articleLink("为什么公民秩序主义在未来接替难度最小：它不是推倒国家，而是接管、校正和重组国家运行系统", () =>
-        findArticleBySlug("civic-orderism/why-civic-orderism-is-easier-to-succeed"),
-      ),
-    ],
+    articleLinksForSlugs([
+      "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+      "civic-orderism/what-civic-orderism-ultimately-solves",
+      "civic-orderism/why-not-left-right-democracy-autocracy",
+      "civic-orderism/why-civic-orderism-is-easier-to-succeed",
+    ]),
     "civic-orderism",
     "查看更多新制度通道文章 →",
     4,
@@ -552,20 +437,12 @@ const themedReading = [
   [
     "制度运行机制",
     "解释委员会、选举、监督、后台系统和国家运行流程，展示公民秩序主义如何从理念进入可运行的制度结构。",
-    [
-      articleLink("公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案", () =>
-        findArticleBySlug("civic-orderism/civic-orderism-manual"),
-      ),
-      articleLink("什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构", () =>
-        findArticleBySlug("civic-orderism/what-is-committee-system"),
-      ),
-      articleLink("公民秩序主义下国家运行的大概流程：从普通人的问题，到国家的判断、执行与纠偏", () =>
-        findArticleBySlug("civic-orderism/state-operation-process-under-civic-orderism"),
-      ),
-      articleLink("公民秩序主义下的选举逻辑：它与传统选举的区别，以及制度优势", () =>
-        findArticleBySlug("civic-orderism/election-logic-under-civic-orderism"),
-      ),
-    ],
+    articleLinksForSlugs([
+      "civic-orderism/civic-orderism-manual",
+      "civic-orderism/what-is-committee-system",
+      "civic-orderism/state-operation-process-under-civic-orderism",
+      "civic-orderism/election-logic-under-civic-orderism",
+    ]),
     "articles#六新制度如何运行",
     "查看更多制度运行机制文章 →",
     4,
@@ -573,20 +450,12 @@ const themedReading = [
   [
     "国际与案例",
     "通过美国制度危机、外交逻辑、台海风险和历史案例，说明制度失效如何在不同场景中表现出来。",
-    [
-      articleLink("美国三权分立的真正危机，不是分权，而是失去统合能力", () =>
-        findArticleBySlug("theory/us-separation-of-powers-integrative-capacity-crisis"),
-      ),
-      articleLink("外交的根源：从中共内政逻辑看其外交激进化", () =>
-        findArticleBySlug("china/diplomacy-root"),
-      ),
-      articleLink("台海是否会走向战争：基于战争四驱动的组织决策风险评估", () =>
-        findArticleBySlug("china/taiwan-war-risk"),
-      ),
-      articleLink("专制之癌：从《大明王朝1566》到结构性腐败的宿命", () =>
-        findArticleBySlug("institution/despotism-cancer-ming-1566"),
-      ),
-    ],
+    articleLinksForSlugs([
+      "theory/us-separation-of-powers-integrative-capacity-crisis",
+      "china/diplomacy-root",
+      "china/taiwan-war-risk",
+      "institution/despotism-cancer-ming-1566",
+    ]),
     "articles#四外部误判国际风险与案例",
     "查看更多国际与案例文章 →",
     4,
@@ -631,19 +500,6 @@ function buildArticlesThemedBody() {
     return `## ${title}\n\n\n${lines}\n\n`;
   }
 
-  function sectionInOrder(title, slugs) {
-    const sectionArticles = slugs
-      .map((slug) => findArticleBySlug(slug))
-      .filter((article) => article && !used.has(article.slug));
-
-    for (const article of sectionArticles) {
-      used.add(article.slug);
-    }
-
-    const lines = sectionArticles.map(articleLine).join("\n");
-    return `## ${title}\n\n\n${lines}\n\n`;
-  }
-
   const articleDirectoryLinks = [
     ["旧世界为什么失效", "#一旧世界为什么失效"],
     ["旧组织为什么走向失灵", "#二旧组织为什么走向失灵"],
@@ -672,7 +528,7 @@ function buildArticlesThemedBody() {
     "theory/ai-monitoring-organizational-friction",
   ]);
 
-  out += sectionInOrder("二、旧组织为什么走向失灵", [
+  out += sectionByDate("二、旧组织为什么走向失灵", [
     "theory/party-state-structural-failure",
     "china/information-age-impact-on-ccp-mechanisms",
     "theory/high-rigidity-system-ccp",
@@ -756,7 +612,7 @@ function buildArticlesThemedBody() {
   
   // 获取最近的5篇未归入前九个栏目的文章，避免重复展示
   const recentArticles = [...rest]
-    .sort((a, b) => b.date.localeCompare(a.date))
+    .sort(compareArticlesByDateDesc)
     .slice(0, 5);
   
   out += `## 十、近期文章\n\n`;
