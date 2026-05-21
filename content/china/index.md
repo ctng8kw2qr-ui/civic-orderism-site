@@ -25,6 +25,7 @@ status: published
 - [[china/xi-succession-crisis-gray-rhino|中共高层政治的灰犀牛：习近平交权困境与继承危机]]（2026-05-10）
 - [[china/ccp-2018-new-reform-opening|2018新“改革开放”：从开放社会到封闭风险]]（2026-05-10）
 - [[china/ccp-power-network-not-line|中共的权力布局不是一条线，而是一张网]]（2026-05-13）
+- [[china/information-age-impact-on-ccp-mechanisms|信息化时代冲击中共的机制]]（2026-05-19）
 
 ### 二、官僚体系与责任压缩
 
@@ -68,4 +69,4 @@ status: published
 - [[china/chicken-and-cage|养鸡与换笼：民营经济被整肃的结构逻辑]]（2026-05-10）
 - [[china/Macro Narratives, Opportunity Incentives, and High Fragility|宏观叙事、机会激励与高脆弱态：中共为何更可能“失灵”而非“倒台”]]（2026-05-13）
 
-此栏目共收录 22 篇文章。
+此栏目共收录 23 篇文章。

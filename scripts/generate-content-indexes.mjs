@@ -121,6 +121,7 @@ function buildChinaThemedArticleList(chinaArticles) {
         "china/xi-succession-crisis-gray-rhino",
         "china/ccp-2018-new-reform-opening",
         "china/ccp-power-network-not-line",
+        "china/information-age-impact-on-ccp-mechanisms",
       ],
     },
     {
@@ -630,6 +631,19 @@ function buildArticlesThemedBody() {
     return `## ${title}\n\n\n${lines}\n\n`;
   }
 
+  function sectionInOrder(title, slugs) {
+    const sectionArticles = slugs
+      .map((slug) => findArticleBySlug(slug))
+      .filter((article) => article && !used.has(article.slug));
+
+    for (const article of sectionArticles) {
+      used.add(article.slug);
+    }
+
+    const lines = sectionArticles.map(articleLine).join("\n");
+    return `## ${title}\n\n\n${lines}\n\n`;
+  }
+
   const articleDirectoryLinks = [
     ["旧世界为什么失效", "#一旧世界为什么失效"],
     ["旧组织为什么走向失灵", "#二旧组织为什么走向失灵"],
@@ -658,8 +672,9 @@ function buildArticlesThemedBody() {
     "theory/ai-monitoring-organizational-friction",
   ]);
 
-  out += sectionByDate("二、旧组织为什么走向失灵", [
+  out += sectionInOrder("二、旧组织为什么走向失灵", [
     "theory/party-state-structural-failure",
+    "china/information-age-impact-on-ccp-mechanisms",
     "theory/high-rigidity-system-ccp",
     "china/xi-power-centralization",
     "china/xi-solved-organization-not-reality",
