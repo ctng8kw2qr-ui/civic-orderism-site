@@ -385,80 +385,78 @@ const themedReading = [
   [
     "旧秩序失效",
     "解释政党政治、工业型治理、美国制度和程序问责，为什么越来越难以处理信息化时代的高耦合社会。",
-    articleLinksForSlugs([
-      "theory/why-party-politics-is-becoming-a-low-dimensional-function",
-      "theory/costly-industrial-governance-information-age",
-      "theory/us-industrial-system-cannot-carry-information-age",
-      "theory/information-age-erodes-us-integrative-capacity",
-    ]),
+    [
+      articleLink("为什么政党政治越来越像低维函数", () =>
+        findArticleBySlug("theory/why-party-politics-is-becoming-a-low-dimensional-function"),
+      ),
+      articleLink("美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代", () =>
+        findArticleBySlug("theory/us-industrial-system-cannot-carry-information-age"),
+      ),
+      articleLink("一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价", () =>
+        findArticleBySlug("theory/costly-industrial-governance-information-age"),
+      ),
+    ],
     "theory",
-    "查看更多旧世界失效文章 →",
-    4,
+    "查看更多 →",
+    3,
   ],
   [
     "中共组织失灵",
     "分析中共作为超大型执政组织，如何在权力集中、反馈失真、责任不透明和组织信用衰减中走向失灵。",
-    articleLinksForSlugs([
-      "theory/party-state-structural-failure",
-      "china/ccp-power-network-not-line",
-      "china/ccp-bureaucracy-double-deadlock",
-      "china/ccp-from-faith-community-to-black-box-post",
-    ]),
+    [
+      articleLink("党国系统的结构性失效：一个组织诊断", () =>
+        findArticleBySlug("theory/party-state-structural-failure"),
+      ),
+      articleLink("中共的权力布局不是一条线，而是一张网", () =>
+        findArticleBySlug("china/ccp-power-network-not-line"),
+      ),
+      articleLink("高位清洗如何改变中共官僚系统", () =>
+        findArticleBySlug("china/bureaucratic-system-under-purges"),
+      ),
+    ],
     "china",
-    "查看更多旧组织失灵文章 →",
-    4,
+    "查看更多 →",
+    3,
   ],
   [
     "中国正在进入什么阶段",
     "解释社保、医保、金融、基层治理、社会成本与普通人困境，如何成为组织失效在社会层面的外部表现。",
-    articleLinksForSlugs([
-      "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
-      "china/chicken-and-cage",
-      "china/maginot-line-of-stability-maintenance",
-      "china/ccp-bureaucracy-historical-bill",
-    ]),
-    "articles#三中国正在进入什么阶段",
-    "查看更多中国阶段判断文章 →",
-    4,
+    [
+      articleLink("中共崩解的三大导火索：社保、医保与金融系统", () =>
+        findArticleBySlug(
+          "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+        ),
+      ),
+      articleLink("中共的真正死局：改革未必救经济，却一定先打破政治平衡", () =>
+        findArticleBySlug("china/ccp-reform-political-balance-deadlock"),
+      ),
+      articleLink("当历史总账开始结算：高刚性官僚体系如何把系统性责任层层压向中基层", () =>
+        findArticleBySlug("china/ccp-bureaucracy-historical-bill"),
+      ),
+    ],
+    "china",
+    "查看更多 →",
+    3,
   ],
   [
-    "新制度通道",
-    "说明公民秩序主义为什么不是简单反对旧制度，而是为现代国家重建新的公共判断机制、责任通道和制度关系。",
-    articleLinksForSlugs([
-      "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
-      "civic-orderism/what-civic-orderism-ultimately-solves",
-      "civic-orderism/why-not-left-right-democracy-autocracy",
-      "civic-orderism/why-civic-orderism-is-easier-to-succeed",
-    ]),
+    "公民秩序主义回应什么",
+    "说明公民秩序主义不是简单换人掌权，而是试图重建国家与普通人之间的秩序关系、责任结构和制度通道。",
+    [
+      articleLink("如果你只读一篇：公民秩序主义到底想解决什么", () =>
+        findArticleBySlug(
+          "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+        ),
+      ),
+      articleLink("公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案", () =>
+        findArticleBySlug("civic-orderism/civic-orderism-manual"),
+      ),
+      articleLink("什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构", () =>
+        findArticleBySlug("civic-orderism/what-is-committee-system"),
+      ),
+    ],
     "civic-orderism",
-    "查看更多新制度通道文章 →",
-    4,
-  ],
-  [
-    "制度运行机制",
-    "解释委员会、选举、监督、后台系统和国家运行流程，展示公民秩序主义如何从理念进入可运行的制度结构。",
-    articleLinksForSlugs([
-      "civic-orderism/civic-orderism-manual",
-      "civic-orderism/what-is-committee-system",
-      "civic-orderism/state-operation-process-under-civic-orderism",
-      "civic-orderism/election-logic-under-civic-orderism",
-    ]),
-    "articles#六新制度如何运行",
-    "查看更多制度运行机制文章 →",
-    4,
-  ],
-  [
-    "国际与案例",
-    "通过美国制度危机、外交逻辑、台海风险和历史案例，说明制度失效如何在不同场景中表现出来。",
-    articleLinksForSlugs([
-      "theory/us-separation-of-powers-integrative-capacity-crisis",
-      "china/diplomacy-root",
-      "china/taiwan-war-risk",
-      "institution/despotism-cancer-ming-1566",
-    ]),
-    "articles#四外部误判国际风险与案例",
-    "查看更多国际与案例文章 →",
-    4,
+    "查看更多 →",
+    3,
   ],
 ]
   .map(([heading, description, items, moreSlug, moreLabel, maxVisible = 5]) =>
