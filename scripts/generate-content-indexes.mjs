@@ -655,6 +655,8 @@ ${firstReadingSection}
 
 ## 按主题阅读
 
+<p class="home-themed-reading-note">从旧秩序失效，到中共组织失灵，再到新的制度回应。</p>
+
 <div class="article-category-grid home-themed-reading-grid">
 
 ${themedReading}
