@@ -3,6 +3,8 @@ import path from "node:path";
 import matter from "gray-matter";
 
 const contentDir = path.resolve("content");
+const siteDescription =
+  "公民秩序主义关注工业时代旧秩序在信息化时代的失效，并尝试提出一种面向中国现实、可进入、可解释、可纠错、可追责的公共秩序方案。";
 
 const categories = [
   [
@@ -339,7 +341,7 @@ const homeLatest = articles
       article.slug !==
       "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
   )
-  .slice(0, 5)
+  .slice(0, 3)
   .map(articleLine)
   .join("\n");
 
@@ -355,7 +357,7 @@ const firstReadingSection = `<div class="home-first-reading">
 
 ## 第一次阅读建议
 
-如果你第一次来到这里，不必从全部理论读起。建议先按下面顺序阅读：先理解旧秩序为何失效，再理解中共组织为何失灵，最后理解公民秩序主义想解决什么。
+如果你第一次来到这里，建议按这个顺序阅读：先理解旧秩序为何失效，再理解中共组织为何失灵，最后进入公民秩序主义的制度回应。
 
 ### 第一步：先理解旧秩序为什么失效
 
@@ -439,7 +441,7 @@ const themedReading = [
     3,
   ],
   [
-    "公民秩序主义回应什么",
+    "公民秩序主义的制度回应",
     "说明公民秩序主义不是简单换人掌权，而是试图重建国家与普通人之间的秩序关系、责任结构和制度通道。",
     [
       articleLink("如果你只读一篇：公民秩序主义到底想解决什么", () =>
@@ -628,7 +630,7 @@ date: 2026-05-10
 category: "首页"
 tags:
   - index
-description: "公民秩序主义：从理解旧秩序的失效出发，整理现代国家治理与制度思想文本；面向中国现实与信息化时代，强调可进入、可解释、可纠错、可追责的公共秩序。"
+description: "${siteDescription}"
 status: published
 ---
 
@@ -663,17 +665,18 @@ ${themedReading}
 
 </div>
 
-## 近期新增
+## 近期补充文章
 
 ${homeLatest || "暂无文章。"}
 
-## 栏目
+## 全部栏目
 
 ${homeCategoryLinks.map(([key, label]) => `- [[${key}|${label}]]`).join("\n")}
 
 ## 联系方式
 
-严肃交流、资料反馈与建设性讨论，可联系：
+严肃交流、资料反馈与建设性讨论，可通过以下方式联系：
+
 邮箱：[citizenorder@proton.me](mailto:citizenorder@proton.me)
 X 平台：[@CivicOrderism](https://x.com/CivicOrderism)
 

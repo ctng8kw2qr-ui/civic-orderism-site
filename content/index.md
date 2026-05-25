@@ -4,7 +4,7 @@ date: 2026-05-10
 category: "首页"
 tags:
   - index
-description: "公民秩序主义：从理解旧秩序的失效出发，整理现代国家治理与制度思想文本；面向中国现实与信息化时代，强调可进入、可解释、可纠错、可追责的公共秩序。"
+description: "公民秩序主义关注工业时代旧秩序在信息化时代的失效，并尝试提出一种面向中国现实、可进入、可解释、可纠错、可追责的公共秩序方案。"
 status: published
 ---
 
@@ -31,7 +31,7 @@ status: published
 
 ## 第一次阅读建议
 
-如果你第一次来到这里，不必从全部理论读起。建议先按下面顺序阅读：先理解旧秩序为何失效，再理解中共组织为何失灵，最后理解公民秩序主义想解决什么。
+如果你第一次来到这里，建议按这个顺序阅读：先理解旧秩序为何失效，再理解中共组织为何失灵，最后进入公民秩序主义的制度回应。
 
 ### 第一步：先理解旧秩序为什么失效
 
@@ -101,7 +101,7 @@ status: published
 
 <section class="article-category-card">
 
-### 公民秩序主义回应什么
+### 公民秩序主义的制度回应
 
 <p class="article-category-description">说明公民秩序主义不是简单换人掌权，而是试图重建国家与普通人之间的秩序关系、责任结构和制度通道。</p>
 
@@ -115,15 +115,13 @@ status: published
 
 </div>
 
-## 近期新增
+## 近期补充文章
 
 - [[china/taiwan-war-controllable-escalation-illusion|台海战争的真正危险：可控升级的幻觉]]（2026-05-19）
 - [[china/information-age-impact-on-ccp-mechanisms|信息化时代冲击中共的机制]]（2026-05-19）
 - [[china/bureaucratic-system-under-purges|高位清洗如何改变中共官僚系统]]（2026-05-17）
-- [[civic-orderism/why-committees-cannot-directly-take-cases|为什么委员会不能直接接案：公民秩序主义中“入口权”与“判断权”必须分开]]（2026-05-17）
-- [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]（2026-05-14）
 
-## 栏目
+## 全部栏目
 
 - [[theory|旧秩序失效]]
 - [[china|解析中共]]
@@ -133,7 +131,8 @@ status: published
 
 ## 联系方式
 
-严肃交流、资料反馈与建设性讨论，可联系：
+严肃交流、资料反馈与建设性讨论，可通过以下方式联系：
+
 邮箱：[citizenorder@proton.me](mailto:citizenorder@proton.me)
 X 平台：[@CivicOrderism](https://x.com/CivicOrderism)
 
