@@ -69,4 +69,10 @@ status: published
 - [[china/chicken-and-cage|养鸡与换笼：民营经济被整肃的结构逻辑]]（2026-05-10）
 - [[china/ccp-reform-political-balance-deadlock|中共的真正死局：改革未必救经济，却一定先打破政治平衡]]（2026-05-10）
 
-此栏目共收录 23 篇文章。
+### 其他观察
+
+以下文章暂未归入上述主题，仍按写作时间整理。
+
+- [[china/industrial-system-failure-in-information-age|中共基于工业化的社会制度，在信息化时代的必然失效]]（2026-05-28）
+
+此栏目共收录 24 篇文章。
