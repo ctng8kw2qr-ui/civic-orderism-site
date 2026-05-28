@@ -20,6 +20,7 @@ status: published
 
 这一组文章用于解释中共不是一个简单的个人权力问题，而是一个组织结构、反馈机制、责任系统和权力逻辑逐步失效的问题。
 
+- [[china/industrial-system-failure-in-information-age|中共基于工业化的社会制度，在信息化时代的必然失效]]（2026-05-28）
 - [[china/information-age-impact-on-ccp-mechanisms|信息化时代冲击中共的机制]]（2026-05-19）
 - [[china/ccp-power-network-not-line|中共的权力布局不是一条线，而是一张网]]（2026-05-13）
 - [[china/ccp-2018-new-reform-opening|2018新“改革开放”：从开放社会到封闭风险]]（2026-05-10）
@@ -68,11 +69,5 @@ status: published
 - [[china/ccp-collapse-three-triggers-social-security-healthcare-finance|中共崩解的三大导火索：社保、医保与金融系统]]（2026-05-11）
 - [[china/chicken-and-cage|养鸡与换笼：民营经济被整肃的结构逻辑]]（2026-05-10）
 - [[china/ccp-reform-political-balance-deadlock|中共的真正死局：改革未必救经济，却一定先打破政治平衡]]（2026-05-10）
-
-### 其他观察
-
-以下文章暂未归入上述主题，仍按写作时间整理。
-
-- [[china/industrial-system-failure-in-information-age|中共基于工业化的社会制度，在信息化时代的必然失效]]（2026-05-28）
 
 此栏目共收录 24 篇文章。

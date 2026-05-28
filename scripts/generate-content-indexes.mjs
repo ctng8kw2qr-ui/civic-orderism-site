@@ -125,6 +125,7 @@ function buildChinaThemedArticleList(chinaArticles) {
         "china/ccp-2018-new-reform-opening",
         "china/ccp-power-network-not-line",
         "china/information-age-impact-on-ccp-mechanisms",
+        "china/industrial-system-failure-in-information-age",
       ],
     },
     {

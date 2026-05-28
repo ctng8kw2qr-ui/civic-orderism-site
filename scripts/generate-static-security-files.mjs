@@ -25,4 +25,11 @@ for (const [filename, body] of Object.entries(files)) {
   fs.writeFileSync(path.join(outputDir, filename), body, "utf8")
 }
 
+const articlesHtml = path.join(outputDir, "articles.html")
+if (fs.existsSync(articlesHtml)) {
+  const articlesDir = path.join(outputDir, "articles")
+  fs.mkdirSync(articlesDir, { recursive: true })
+  fs.copyFileSync(articlesHtml, path.join(articlesDir, "index.html"))
+}
+
 console.log("Generated static security files.")
