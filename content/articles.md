@@ -34,6 +34,7 @@ status: published
 - [[theory/information-age-erodes-us-integrative-capacity|为什么信息化时代正在系统性瓦解美国的统合能力]]（2026-05-12）
 - [[theory/us-supreme-court-partisan-final-battleground|美国最高法院为何滑向党争终局战场]]（2026-05-11）
 - [[theory/costly-industrial-governance-information-age|一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价]]（2026-05-11）
+- [[china/industrial-system-failure-in-information-age|中共基于工业化的社会制度，在信息化时代的必然失效]]（2026-05-28）
 - [[theory/internal-change-external-change|内变引外变：现代政治为何走到十字路口]]（2026-05-10）
 - [[theory/procedural-accountability-organized-power|为什么程序性问责，常常敌不过组织化权力]]（2026-05-10）
 - [[theory/modern-social-syndrome|现代社会候群症]]（2026-05-10）
@@ -44,7 +45,6 @@ status: published
 
 - [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]（2026-05-10）
 - [[china/information-age-impact-on-ccp-mechanisms|信息化时代冲击中共的机制]]（2026-05-19）
-- [[china/industrial-system-failure-in-information-age|中共基于工业化的社会制度，在信息化时代的必然失效]]（2026-05-28）
 - [[theory/high-rigidity-system-ccp|解析高刚性体制：中共无以为继的结构性根因]]（2026-05-10）
 - [[china/xi-power-centralization|习近平权力集中背后的系统逻辑]]（2026-05-10）
 - [[china/xi-solved-organization-not-reality|习近平解决了组织的问题，却解决不了组织面临的问题]]（2026-05-10）

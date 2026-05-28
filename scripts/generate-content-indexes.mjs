@@ -528,23 +528,23 @@ function buildArticlesThemedBody() {
 
   let out = `## 分类目录\n\n${articleDirectoryLinks.map(([label, href]) => `- [${label}](${href})`).join("\n")}\n\n`;
 
-  out += sectionByDate("一、旧世界为什么失效", [
+  out += sectionByOrder("一、旧世界为什么失效", [
     "theory/why-party-politics-is-becoming-a-low-dimensional-function",
-    "theory/costly-industrial-governance-information-age",
     "theory/us-industrial-system-cannot-carry-information-age",
-    "theory/information-age-erodes-us-integrative-capacity",
     "theory/us-separation-of-powers-integrative-capacity-crisis",
+    "theory/information-age-erodes-us-integrative-capacity",
     "theory/us-supreme-court-partisan-final-battleground",
+    "theory/costly-industrial-governance-information-age",
+    "china/industrial-system-failure-in-information-age",
     "theory/internal-change-external-change",
-    "theory/modern-social-syndrome",
     "theory/procedural-accountability-organized-power",
+    "theory/modern-social-syndrome",
     "theory/ai-monitoring-organizational-friction",
   ]);
 
   out += sectionByOrder("二、旧组织为什么走向失灵", [
     "theory/party-state-structural-failure",
     "china/information-age-impact-on-ccp-mechanisms",
-    "china/industrial-system-failure-in-information-age",
     "theory/high-rigidity-system-ccp",
     "china/xi-power-centralization",
     "china/xi-solved-organization-not-reality",
