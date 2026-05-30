@@ -178,7 +178,10 @@ function buildChinaThemedArticleList(chinaArticles) {
     },
   ];
 
-  const used = new Set();
+  const hiddenFromChinaIndex = new Set([
+    "china/ccp-completed-historical-task-refuses-exit",
+  ]);
+  const used = new Set(hiddenFromChinaIndex);
   let out = "";
   for (const sec of sections) {
     const block = articleLinesForSlugs(sec.slugs);
@@ -195,7 +198,8 @@ function buildChinaThemedArticleList(chinaArticles) {
     out += `${others.map(articleLine).join("\n")}\n\n`;
   }
 
-  out += `此栏目共收录 ${chinaArticles.length} 篇文章。`;
+  const visibleCount = chinaArticles.filter((article) => !hiddenFromChinaIndex.has(article.slug)).length;
+  out += `此栏目共收录 ${visibleCount} 篇文章。`;
   return out;
 }
 
@@ -539,6 +543,7 @@ function buildArticlesThemedBody() {
     "theory/us-supreme-court-partisan-final-battleground",
     "theory/costly-industrial-governance-information-age",
     "china/industrial-system-failure-in-information-age",
+    "china/ccp-completed-historical-task-refuses-exit",
     "theory/internal-change-external-change",
     "theory/procedural-accountability-organized-power",
     "theory/modern-social-syndrome",

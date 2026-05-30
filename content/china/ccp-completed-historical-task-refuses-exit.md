@@ -4,12 +4,12 @@ date: 2026-05-30
 category: 解析中共
 tags:
   - 解析中共
-  - 信息化时代
-  - 工业时代制度
+  - 工业化
+section: 旧世界为什么失效
 slug: china/ccp-completed-historical-task-refuses-exit
 summary: 本文从文明发展史角度分析中共作为中国迟到工业化高压组织工具的历史功能，以及它在信息化时代拒绝退场后如何从历史工具变成文明阻碍。
 status: published
-listed: false
+folderListed: false
 ---
 
 # 中共完成了历史任务，但拒绝被历史淘汰

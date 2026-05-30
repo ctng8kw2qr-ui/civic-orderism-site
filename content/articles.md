@@ -35,6 +35,7 @@ status: published
 - [[theory/us-supreme-court-partisan-final-battleground|美国最高法院为何滑向党争终局战场]]（2026-05-11）
 - [[theory/costly-industrial-governance-information-age|一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价]]（2026-05-11）
 - [[china/industrial-system-failure-in-information-age|中共基于工业化的社会制度，在信息化时代的必然失效]]（2026-05-28）
+- [[china/ccp-completed-historical-task-refuses-exit|中共完成了历史任务，但拒绝被历史淘汰]]（2026-05-30）
 - [[theory/internal-change-external-change|内变引外变：现代政治为何走到十字路口]]（2026-05-10）
 - [[theory/procedural-accountability-organized-power|为什么程序性问责，常常敌不过组织化权力]]（2026-05-10）
 - [[theory/modern-social-syndrome|现代社会候群症]]（2026-05-10）
@@ -132,4 +133,4 @@ status: published
 
 _（暂无未归入前九个栏目的近期文章。）_
 
-本站共收录 67 篇文章。以上按主题推荐阅读；这些文章不是散的，而是一套解释系统。
+本站共收录 68 篇文章。以上按主题推荐阅读；这些文章不是散的，而是一套解释系统。
