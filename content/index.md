@@ -65,7 +65,7 @@ status: published
 
 - [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]
 - [[theory/us-industrial-system-cannot-carry-information-age|美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代]]
-- [[theory/costly-industrial-governance-information-age|一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价]]
+- [[china/ccp-completed-historical-task-refuses-exit|中共完成了历史任务，但拒绝被历史淘汰]]
 
 - [[theory|查看更多 →]]
 

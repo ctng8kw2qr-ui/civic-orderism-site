@@ -401,8 +401,8 @@ const themedReading = [
       articleLink("美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代", () =>
         findArticleBySlug("theory/us-industrial-system-cannot-carry-information-age"),
       ),
-      articleLink("一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价", () =>
-        findArticleBySlug("theory/costly-industrial-governance-information-age"),
+      articleLink("中共完成了历史任务，但拒绝被历史淘汰", () =>
+        findArticleBySlug("china/ccp-completed-historical-task-refuses-exit"),
       ),
     ],
     "theory",
