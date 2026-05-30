@@ -66,6 +66,7 @@ function parseArticle(filePath) {
     date: normalizeDate(parsed.data.date),
     hasDate: Boolean(parsed.data.date),
     description: parsed.data.description ? String(parsed.data.description) : "",
+    listed: parsed.data.listed !== false,
     slug,
     title: parsed.data.title
       ? String(parsed.data.title)
@@ -328,6 +329,7 @@ const articles = walk(contentDir)
   .filter(([, relativePath]) => !isTemporaryDraft(relativePath))
   .map(([filePath]) => parseArticle(filePath))
   .filter(Boolean)
+  .filter((article) => article.listed)
   .filter((article) => categories.some(([key]) => key === article.category))
   .sort(compareArticlesByDateDesc);
 
