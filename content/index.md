@@ -65,7 +65,7 @@ status: published
 
 - [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]
 - [[theory/us-industrial-system-cannot-carry-information-age|美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代]]
-- [[china/ccp-completed-historical-task-refuses-exit|中共完成了历史任务，但拒绝被历史淘汰]]
+- [[theory/ccp-completed-historical-task-refuses-exit|中共完成了历史任务，但拒绝被历史淘汰]]
 
 - [[theory|查看更多 →]]
 
@@ -117,7 +117,7 @@ status: published
 
 ## 近期补充文章
 
-- [[china/ccp-completed-historical-task-refuses-exit|中共完成了历史任务，但拒绝被历史淘汰]]（2026-05-30）
+- [[theory/ccp-completed-historical-task-refuses-exit|中共完成了历史任务，但拒绝被历史淘汰]]（2026-05-30）
 - [[china/industrial-system-failure-in-information-age|中共基于工业化的社会制度，在信息化时代的必然失效]]（2026-05-28）
 - [[china/taiwan-war-controllable-escalation-illusion|台海战争的真正危险：可控升级的幻觉]]（2026-05-19）
 

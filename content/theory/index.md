@@ -16,6 +16,7 @@ status: published
 
 ### 一、工业时代制度为什么失效
 
+- [[theory/ccp-completed-historical-task-refuses-exit|中共完成了历史任务，但拒绝被历史淘汰]]（2026-05-30）
 - [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]（2026-05-14）
 - [[theory/costly-industrial-governance-information-age|一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价]]（2026-05-11）
 - [[theory/internal-change-external-change|内变引外变：现代政治为何走到十字路口]]（2026-05-10）

@@ -178,9 +178,7 @@ function buildChinaThemedArticleList(chinaArticles) {
     },
   ];
 
-  const hiddenFromChinaIndex = new Set([
-    "china/ccp-completed-historical-task-refuses-exit",
-  ]);
+  const hiddenFromChinaIndex = new Set();
   const used = new Set(hiddenFromChinaIndex);
   let out = "";
   for (const sec of sections) {
@@ -271,6 +269,7 @@ function buildTheoryThemedArticleList() {
       slugs: [
         "theory/why-party-politics-is-becoming-a-low-dimensional-function",
         "theory/costly-industrial-governance-information-age",
+        "theory/ccp-completed-historical-task-refuses-exit",
         "theory/modern-social-syndrome",
         "theory/internal-change-external-change",
       ],
@@ -402,7 +401,7 @@ const themedReading = [
         findArticleBySlug("theory/us-industrial-system-cannot-carry-information-age"),
       ),
       articleLink("中共完成了历史任务，但拒绝被历史淘汰", () =>
-        findArticleBySlug("china/ccp-completed-historical-task-refuses-exit"),
+        findArticleBySlug("theory/ccp-completed-historical-task-refuses-exit"),
       ),
     ],
     "theory",
@@ -543,7 +542,7 @@ function buildArticlesThemedBody() {
     "theory/us-supreme-court-partisan-final-battleground",
     "theory/costly-industrial-governance-information-age",
     "china/industrial-system-failure-in-information-age",
-    "china/ccp-completed-historical-task-refuses-exit",
+    "theory/ccp-completed-historical-task-refuses-exit",
     "theory/internal-change-external-change",
     "theory/procedural-accountability-organized-power",
     "theory/modern-social-syndrome",

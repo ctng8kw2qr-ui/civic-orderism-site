@@ -6,7 +6,7 @@ tags:
   - 工业化
   - 旧秩序失效
 section: 旧世界为什么失效
-slug: china/ccp-completed-historical-task-refuses-exit
+slug: theory/ccp-completed-historical-task-refuses-exit
 summary: 本文从文明发展史角度重新定位中共，认为它不是中国历史的偶然灾难，而是中国迟到工业化过程中形成的高压组织工具。它曾经完成把农业中国压入工业时代的历史任务，但在信息化时代拒绝退场，因此从历史工具变成文明阻碍。
 status: published
 folderListed: false
