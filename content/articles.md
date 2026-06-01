@@ -52,6 +52,7 @@ status: published
 - [[china/xi-solved-organization-not-reality|习近平解决了组织的问题，却解决不了组织面临的问题]]（2026-05-10）
 - [[china/ccp-power-network-not-line|中共的权力布局不是一条线，而是一张网]]（2026-05-13）
 - [[china/political-machine-rewards-and-limits|机器的奖赏与机器的尽头]]（2026-05-30）
+- [[china/emotional-link-breakdown-and-regime-collapse|情感链接的断裂与体制坍塌机制]]（2026-05-30）
 - [[china/ccp-bureaucracy-double-deadlock|不抓人就躺平，一抓人就失真：中共官僚体系为何陷入双重死结]]（2026-05-10）
 - [[theory/ccp-high-fragility-dysfunction|它还在，但越来越靠不住：为什么中共更可能“失灵”而非“倒台”]]（2026-05-10）
 - [[china/ccp-reform-political-balance-deadlock|中共的真正死局：改革未必救经济，却一定先打破政治平衡]]（2026-05-10）
@@ -135,4 +136,4 @@ status: published
 
 _（暂无未归入前九个栏目的近期文章。）_
 
-本站共收录 70 篇文章。以上按主题推荐阅读；这些文章不是散的，而是一套解释系统。
+本站共收录 71 篇文章。以上按主题推荐阅读；这些文章不是散的，而是一套解释系统。

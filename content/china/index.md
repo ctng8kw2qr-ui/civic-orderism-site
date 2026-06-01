@@ -21,6 +21,7 @@ status: published
 这一组文章用于解释中共不是一个简单的个人权力问题，而是一个组织结构、反馈机制、责任系统和权力逻辑逐步失效的问题。
 
 - [[china/political-machine-rewards-and-limits|机器的奖赏与机器的尽头]]（2026-05-30）
+- [[china/emotional-link-breakdown-and-regime-collapse|情感链接的断裂与体制坍塌机制]]（2026-05-30）
 - [[china/industrial-system-failure-in-information-age|中共基于工业化的社会制度，在信息化时代的必然失效]]（2026-05-28）
 - [[china/information-age-impact-on-ccp-mechanisms|信息化时代冲击中共的机制]]（2026-05-19）
 - [[china/ccp-power-network-not-line|中共的权力布局不是一条线，而是一张网]]（2026-05-13）
@@ -71,4 +72,4 @@ status: published
 - [[china/chicken-and-cage|养鸡与换笼：民营经济被整肃的结构逻辑]]（2026-05-10）
 - [[china/ccp-reform-political-balance-deadlock|中共的真正死局：改革未必救经济，却一定先打破政治平衡]]（2026-05-10）
 
-此栏目共收录 25 篇文章。
+此栏目共收录 26 篇文章。
