@@ -31,6 +31,7 @@ status: published
 
 ### 三、组织权力、程序问责与治理摩擦
 
+- [[theory/social-change-dynamics-when-system-no-longer-worth-it|社会变革动力学：当所有人都觉得“不值了”]]（2026-05-30）
 - [[theory/organizational-collapse-begins-with-loss-of-institutional-trust|组织的坍塌，始于制度信任的瓦解]]（2026-05-30）
 - [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]（2026-05-10）
 - [[theory/ccp-high-fragility-dysfunction|它还在，但越来越靠不住：为什么中共更可能“失灵”而非“倒台”]]（2026-05-10）
