@@ -117,9 +117,9 @@ status: published
 
 ## 近期补充文章
 
+- [[china/political-machine-rewards-and-limits|机器的奖赏与机器的尽头]]（2026-05-30）
 - [[theory/ccp-completed-historical-task-refuses-exit|中共完成了历史任务，但拒绝被历史淘汰]]（2026-05-30）
 - [[theory/organizational-collapse-begins-with-loss-of-institutional-trust|组织的坍塌，始于制度信任的瓦解]]（2026-05-30）
-- [[china/industrial-system-failure-in-information-age|中共基于工业化的社会制度，在信息化时代的必然失效]]（2026-05-28）
 
 ## 全部栏目
 
