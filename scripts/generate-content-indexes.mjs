@@ -288,6 +288,7 @@ function buildTheoryThemedArticleList() {
       slugs: [
         "theory/party-state-structural-failure",
         "theory/procedural-accountability-organized-power",
+        "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
         "theory/ai-monitoring-organizational-friction",
         "theory/ccp-high-fragility-dysfunction",
         "theory/no-accountability-lie-flat-mentality",
@@ -545,6 +546,7 @@ function buildArticlesThemedBody() {
     "theory/ccp-completed-historical-task-refuses-exit",
     "theory/internal-change-external-change",
     "theory/procedural-accountability-organized-power",
+    "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
     "theory/modern-social-syndrome",
     "theory/ai-monitoring-organizational-friction",
   ]);
