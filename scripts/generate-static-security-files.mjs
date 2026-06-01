@@ -19,6 +19,9 @@ Sitemap: https://civicorderism.com/sitemap.xml
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
   X-Frame-Options: DENY
 `,
+  _redirects: `/article_priority_index  /  301
+/article_summaries       /  301
+`,
 }
 
 for (const [filename, body] of Object.entries(files)) {
