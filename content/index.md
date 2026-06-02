@@ -43,22 +43,21 @@ status: published
 
 </div>
 
-## 按问题进入
+## 按主题阅读
 
-<p class="home-themed-reading-note">不用从几十篇文章里找入口。先选你想解决的问题，再沿着问题往下读。</p>
+<p class="home-themed-reading-note">从旧秩序失效，到中共组织失灵，再到现实阶段判断、理论入口和制度机制。</p>
 
 <div class="article-category-grid home-themed-reading-grid">
 
 <section class="article-category-card">
 
-### 想理解现代制度为什么失效
+### 旧秩序失效
 
-<p class="article-category-description">从政党政治、工业型治理和美国制度困境进入。</p>
+<p class="article-category-description">解释政党政治、工业型治理、美国制度和程序问责，为什么越来越难以处理信息化时代的高耦合社会。</p>
 
 - [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]
 - [[theory/us-industrial-system-cannot-carry-information-age|美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代]]
-- [[theory/costly-industrial-governance-information-age|一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价]]
-- [[theory/procedural-accountability-organized-power|为什么程序性问责，常常敌不过组织化权力]]
+- [[theory/ccp-completed-historical-task-refuses-exit|中共完成了历史任务，但拒绝被历史淘汰]]
 
 - [[theory|查看更多 →]]
 
@@ -66,13 +65,12 @@ status: published
 
 <section class="article-category-card">
 
-### 想理解中共为什么不是简单的强人问题
+### 解析中共
 
-<p class="article-category-description">把中共作为组织、权力网络、官僚系统和责任结构来读。</p>
+<p class="article-category-description">分析中共作为超大型执政组织，如何在权力集中、反馈失真、责任不透明和组织信用衰减中走向失灵。</p>
 
 - [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]
 - [[china/ccp-power-network-not-line|中共的权力布局不是一条线，而是一张网]]
-- [[china/xi-solved-organization-not-reality|习近平解决了组织的问题，却解决不了组织面临的问题]]
 - [[china/bureaucratic-system-under-purges|高位清洗如何改变中共官僚系统]]
 
 - [[china|查看更多 →]]
@@ -81,14 +79,13 @@ status: published
 
 <section class="article-category-card">
 
-### 想理解中国正在进入什么阶段
+### 中国阶段判断
 
-<p class="article-category-description">从社保、医保、金融、基层治理和普通人压力进入制度结构。</p>
+<p class="article-category-description">解释社保、医保、金融、基层治理、社会成本与普通人困境，如何成为组织失效在社会层面的外部表现。</p>
 
 - [[china/ccp-collapse-three-triggers-social-security-healthcare-finance|中共崩解的三大导火索：社保、医保与金融系统]]
 - [[china/ccp-reform-political-balance-deadlock|中共的真正死局：改革未必救经济，却一定先打破政治平衡]]
 - [[china/ccp-bureaucracy-historical-bill|当历史总账开始结算：高刚性官僚体系如何把系统性责任层层压向中基层]]
-- [[theory/social-change-dynamics-when-system-no-longer-worth-it|社会变革动力学：当所有人都觉得“不值了”]]
 
 - [[china-stage|查看更多 →]]
 
@@ -96,14 +93,13 @@ status: published
 
 <section class="article-category-card">
 
-### 想理解公民秩序主义到底主张什么
+### 公民秩序主义
 
-<p class="article-category-description">先读理论入口，再读它与旧民主、政党政治和换人掌权想象的区别。</p>
+<p class="article-category-description">说明公民秩序主义不是简单换人掌权，而是试图重建国家与普通人之间的秩序关系、责任结构和制度通道。</p>
 
 - [[civic-orderism/what-civic-orderism-solves-if-you-read-only-one|如果你只读一篇：公民秩序主义到底想解决什么]]
 - [[civic-orderism/civic-orderism-manual|公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案]]
-- [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]
-- [[civic-orderism/why-not-left-right-democracy-autocracy|为什么公民秩序主义不纠结于左右、民主专制之争]]
+- [[civic-orderism/what-is-committee-system|什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构]]
 
 - [[civic-orderism|查看更多 →]]
 
@@ -111,16 +107,28 @@ status: published
 
 <section class="article-category-card">
 
-### 想理解这套制度具体怎么运行
+### 制度机制
 
-<p class="article-category-description">进入委员会、行政、选举、司法、后台系统和信息透明机制。</p>
+<p class="article-category-description">集中说明公民秩序主义的具体运行机制：问题如何进入系统，责任如何被追踪，权力如何被限制，错误如何被纠正。</p>
 
-- [[civic-orderism/what-is-committee-system|什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构]]
 - [[civic-orderism/why-dual-track-committee-administration|为什么公民秩序主义必须采取委员会—行政双轨制，但最终仍由民选政治官员统合国家]]
-- [[civic-orderism/backend-system-under-civic-orderism|公民秩序主义对后台系统的重视：为什么培训、秘书处、专业事务与留痕系统，是现代国家真正的底座]]
+- [[civic-orderism/committee-administration-opposite-incentives|委员会与行政机关激励结构相反的意义：为什么公民秩序主义必须把“做事的人”和“看事的人”分开]]
 - [[civic-orderism/why-information-transparency|为什么公民秩序主义强调信息透明及信息发布]]
 
 - [[institution|查看更多 →]]
+
+</section>
+
+<section class="article-category-card">
+
+### 阅读地图
+
+<p class="article-category-description">不是按发布时间排列文章，而是按照问题路径组织阅读：从旧秩序失效，到中共组织失灵，再到公民秩序主义的制度回应。</p>
+
+- [旧世界为什么失效](articles#一旧世界为什么失效)
+- [中共这个组织为什么走向失灵](articles#二中共这个组织为什么走向失灵)
+- [公民秩序主义的基本理论](articles#六公民秩序主义的基本理论)
+- [进入阅读地图 →](articles)
 
 </section>
 

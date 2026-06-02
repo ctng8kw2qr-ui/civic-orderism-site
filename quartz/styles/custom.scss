@@ -99,12 +99,18 @@ article .article-category-grid {
 
 article .article-category-grid.home-themed-reading-grid {
   align-items: stretch;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1rem;
+}
+
+@media (max-width: 1020px) {
+  article .article-category-grid.home-themed-reading-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 760px) {

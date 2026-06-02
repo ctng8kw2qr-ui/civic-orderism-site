@@ -99,9 +99,13 @@ function bulletList(items) {
 }
 
 function renderCard(heading, description, slugs, moreSlug) {
-  const links = articleLinks(slugs).slice(0, 5);
+  const links = articleLinks(slugs).slice(0, 3);
   const moreLine = moreSlug ? `\n\n- [[${moreSlug}|查看更多 →]]` : "";
   return `<section class="article-category-card">\n\n### ${heading}\n\n<p class="article-category-description">${description}</p>\n\n${bulletList(links)}${moreLine}\n\n</section>`;
+}
+
+function renderLinkCard(heading, description, items) {
+  return `<section class="article-category-card">\n\n### ${heading}\n\n<p class="article-category-description">${description}</p>\n\n${bulletList(items)}\n\n</section>`;
 }
 
 function writeFile(filePath, body) {
@@ -215,64 +219,71 @@ ${bulletList(articleLinks([
 
 </div>`;
 
-const problemEntry = [
+const themedReading = [
   [
-    "想理解现代制度为什么失效",
-    "从政党政治、工业型治理和美国制度困境进入。",
+    "旧秩序失效",
+    "解释政党政治、工业型治理、美国制度和程序问责，为什么越来越难以处理信息化时代的高耦合社会。",
     [
       "theory/why-party-politics-is-becoming-a-low-dimensional-function",
       "theory/us-industrial-system-cannot-carry-information-age",
-      "theory/costly-industrial-governance-information-age",
-      "theory/procedural-accountability-organized-power",
+      "theory/ccp-completed-historical-task-refuses-exit",
     ],
     "theory",
   ],
   [
-    "想理解中共为什么不是简单的强人问题",
-    "把中共作为组织、权力网络、官僚系统和责任结构来读。",
+    "解析中共",
+    "分析中共作为超大型执政组织，如何在权力集中、反馈失真、责任不透明和组织信用衰减中走向失灵。",
     [
       "theory/party-state-structural-failure",
       "china/ccp-power-network-not-line",
-      "china/xi-solved-organization-not-reality",
       "china/bureaucratic-system-under-purges",
     ],
     "china",
   ],
   [
-    "想理解中国正在进入什么阶段",
-    "从社保、医保、金融、基层治理和普通人压力进入制度结构。",
+    "中国阶段判断",
+    "解释社保、医保、金融、基层治理、社会成本与普通人困境，如何成为组织失效在社会层面的外部表现。",
     [
       "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
       "china/ccp-reform-political-balance-deadlock",
       "china/ccp-bureaucracy-historical-bill",
-      "theory/social-change-dynamics-when-system-no-longer-worth-it",
     ],
     "china-stage",
   ],
   [
-    "想理解公民秩序主义到底主张什么",
-    "先读理论入口，再读它与旧民主、政党政治和换人掌权想象的区别。",
+    "公民秩序主义",
+    "说明公民秩序主义不是简单换人掌权，而是试图重建国家与普通人之间的秩序关系、责任结构和制度通道。",
     [
       "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
       "civic-orderism/civic-orderism-manual",
-      "civic-orderism/what-civic-orderism-ultimately-solves",
-      "civic-orderism/why-not-left-right-democracy-autocracy",
+      "civic-orderism/what-is-committee-system",
     ],
     "civic-orderism",
   ],
   [
-    "想理解这套制度具体怎么运行",
-    "进入委员会、行政、选举、司法、后台系统和信息透明机制。",
+    "制度机制",
+    "集中说明公民秩序主义的具体运行机制：问题如何进入系统，责任如何被追踪，权力如何被限制，错误如何被纠正。",
     [
-      "civic-orderism/what-is-committee-system",
       "civic-orderism/why-dual-track-committee-administration",
-      "civic-orderism/backend-system-under-civic-orderism",
+      "civic-orderism/committee-administration-opposite-incentives",
       "civic-orderism/why-information-transparency",
     ],
     "institution",
   ],
 ]
   .map(([heading, description, items, moreSlug]) => renderCard(heading, description, items, moreSlug))
+  .concat([
+    renderLinkCard(
+      "阅读地图",
+      "不是按发布时间排列文章，而是按照问题路径组织阅读：从旧秩序失效，到中共组织失灵，再到公民秩序主义的制度回应。",
+      [
+        "[旧世界为什么失效](articles#一旧世界为什么失效)",
+        "[中共这个组织为什么走向失灵](articles#二中共这个组织为什么走向失灵)",
+        "[公民秩序主义的基本理论](articles#六公民秩序主义的基本理论)",
+        "[进入阅读地图 →](articles)",
+      ],
+    ),
+  ])
   .join("\n\n");
 
 const homeLatest = articles
@@ -314,13 +325,13 @@ status: published
 
 ${firstReadingSection}
 
-## 按问题进入
+## 按主题阅读
 
-<p class="home-themed-reading-note">不用从几十篇文章里找入口。先选你想解决的问题，再沿着问题往下读。</p>
+<p class="home-themed-reading-note">从旧秩序失效，到中共组织失灵，再到现实阶段判断、理论入口和制度机制。</p>
 
 <div class="article-category-grid home-themed-reading-grid">
 
-${problemEntry}
+${themedReading}
 
 </div>
 
