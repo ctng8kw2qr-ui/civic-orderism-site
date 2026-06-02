@@ -4,14 +4,27 @@ import * as Component from "./quartz/components"
 const publicExplorerOptions = {
   filterFn: (node: any) =>
     node.slugSegment !== "tags" &&
-    node.slugSegment !== "articles.md" &&
     !node.slugSegment.startsWith("article_"),
   mapFn: (node: any) => {
     if (node.slugSegment === "start-here") node.displayName = "从这里开始"
     if (node.slugSegment === "theory") node.displayName = "旧秩序失效"
+    if (node.slugSegment === "china") node.displayName = "解析中共"
+    if (node.slugSegment === "china-stage") node.displayName = "中国阶段判断"
+    if (node.slugSegment === "civic-orderism") node.displayName = "公民秩序主义"
+    if (node.slugSegment === "institution") node.displayName = "制度机制"
+    if (node.slugSegment === "articles.md") node.displayName = "阅读地图"
   },
   sortFn: (a: any, b: any) => {
-    const order = ["start-here", "theory", "china", "civic-orderism", "institution", "articles"]
+    const order = [
+      "index.md",
+      "theory",
+      "china",
+      "china-stage",
+      "civic-orderism",
+      "institution",
+      "articles.md",
+      "start-here",
+    ]
     const ai = order.indexOf(a.slugSegment)
     const bi = order.indexOf(b.slugSegment)
     if (ai !== -1 || bi !== -1) {
