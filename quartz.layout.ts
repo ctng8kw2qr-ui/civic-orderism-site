@@ -33,7 +33,23 @@ const publicExplorerOptions = {
       return ai - bi
     }
 
+    const getDateTime = (node: any) => {
+      const rawDate = node.data?.date
+      if (!rawDate) return undefined
+      const value = rawDate instanceof Date ? rawDate : new Date(rawDate)
+      const time = value.getTime()
+      return Number.isNaN(time) ? undefined : time
+    }
+
     if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
+      const aTime = getDateTime(a)
+      const bTime = getDateTime(b)
+      if (aTime !== undefined || bTime !== undefined) {
+        if (aTime === undefined) return 1
+        if (bTime === undefined) return -1
+        if (aTime !== bTime) return bTime - aTime
+      }
+
       return a.displayName.localeCompare(b.displayName, undefined, {
         numeric: true,
         sensitivity: "base",

@@ -35,7 +35,8 @@ function slugFor(relativePath) {
 function normalizeDate(value) {
   if (!value) return "";
   if (value instanceof Date) return value.toISOString().slice(0, 10);
-  return String(value).slice(0, 10);
+  const match = String(value).match(/\d{4}-\d{2}-\d{2}/);
+  return match ? match[0] : "";
 }
 
 function parseArticle(filePath) {
@@ -87,11 +88,16 @@ function articleLines(slugs, { sort = "date" } = {}) {
   return matched.map(articleLine).join("\n") || "暂无文章。";
 }
 
-function articleLinks(slugs) {
-  return slugs
+function articlesForSlugs(slugs, { sort = "date" } = {}) {
+  const matched = slugs
     .map(findArticleBySlug)
-    .filter(Boolean)
-    .map((article) => `[[${article.slug}|${article.title}]]`);
+    .filter(Boolean);
+  if (sort === "date") matched.sort(compareArticlesByDateDesc);
+  return matched;
+}
+
+function articleLinks(slugs, options = {}) {
+  return articlesForSlugs(slugs, options).map((article) => `[[${article.slug}|${article.title}]]`);
 }
 
 function bulletList(items) {
@@ -99,7 +105,7 @@ function bulletList(items) {
 }
 
 function renderCard(heading, description, slugs, moreSlug) {
-  const links = articleLinks(slugs).slice(0, 3);
+  const links = articleLinks(slugs, { sort: "date" }).slice(0, 3);
   const moreLine = moreSlug ? `\n\n- [[${moreSlug}|查看更多 →]]` : "";
   return `<section class="article-category-card">\n\n### ${heading}\n\n<p class="article-category-description">${description}</p>\n\n${bulletList(links)}${moreLine}\n\n</section>`;
 }
@@ -384,7 +390,7 @@ ${articleLines([
   "china/industrial-system-failure-in-information-age",
   "theory/ccp-completed-historical-task-refuses-exit",
   "theory/modern-social-syndrome",
-], { sort: "manual" })}
+])}
 
 ### 二、西方制度困境与美国政治
 
@@ -393,7 +399,7 @@ ${articleLines([
   "theory/us-separation-of-powers-integrative-capacity-crisis",
   "theory/information-age-erodes-us-integrative-capacity",
   "theory/us-supreme-court-partisan-final-battleground",
-], { sort: "manual" })}
+])}
 
 ### 三、组织权力、程序问责与治理摩擦
 
@@ -403,7 +409,7 @@ ${articleLines([
   "theory/internal-change-external-change",
   "theory/ai-monitoring-organizational-friction",
   "institution/despotism-cancer-ming-1566",
-], { sort: "manual" })}`,
+])}`,
 );
 
 writeFile(
@@ -433,7 +439,7 @@ ${articleLines([
   "china/xi-solved-organization-not-reality",
   "china/xi-succession-crisis-gray-rhino",
   "china/ccp-2018-new-reform-opening",
-], { sort: "manual" })}
+])}
 
 ### 二、从增长型组织到防御型组织
 
@@ -445,7 +451,7 @@ ${articleLines([
   "china/party-power-logic-and-ccp-goal-vacuum",
   "china/emotional-link-breakdown-and-regime-collapse",
   "china/Macro Narratives, Opportunity Incentives, and High Fragility",
-], { sort: "manual" })}
+])}
 
 ### 三、官僚系统、宣传系统与责任压缩
 
@@ -456,7 +462,7 @@ ${articleLines([
   "china/ccp-from-faith-community-to-black-box-post",
   "china/organization-credit-retired-officials",
   "china/propaganda-system-hollowing-out",
-], { sort: "manual" })}
+])}
 
 ### 四、历史比较、外交外溢与误判风险
 
@@ -466,7 +472,7 @@ ${articleLines([
   "china/pla-political-subject-myth",
   "china/taiwan-war-risk",
   "china/taiwan-war-controllable-escalation-illusion",
-], { sort: "manual" })}`,
+])}`,
 );
 
 writeFile(
@@ -493,7 +499,7 @@ ${articleLines([
   "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
   "china/ccp-reform-political-balance-deadlock",
   "china/ccp-bureaucracy-historical-bill",
-], { sort: "manual" })}
+])}
 
 ### 二、基层治理、普通人压力与社会心理
 
@@ -502,14 +508,14 @@ ${articleLines([
   "theory/no-accountability-lie-flat-mentality",
   "china/chicken-and-cage",
   "china/maginot-line-of-stability-maintenance",
-], { sort: "manual" })}
+])}
 
 ### 三、社会变革动力与历史总账
 
 ${articleLines([
   "theory/social-change-dynamics-when-system-no-longer-worth-it",
   "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
-], { sort: "manual" })}`,
+])}`,
 );
 
 writeFile(
@@ -536,7 +542,7 @@ ${articleLines([
   "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
   "civic-orderism/civic-orderism-manual",
   "civic-orderism/what-civic-orderism-ultimately-solves",
-], { sort: "manual" })}
+])}
 
 ### 二、基本原则
 
@@ -546,14 +552,14 @@ ${articleLines([
   "civic-orderism/public-politics-without-party-dominance",
   "civic-orderism/why-against-moral-narrative",
   "civic-orderism/why-emphasize-reciprocity-and-equality",
-], { sort: "manual" })}
+])}
 
 ### 三、为什么不是旧方案的替代包装
 
 ${articleLines([
   "civic-orderism/why-civic-orderism-is-easier-to-succeed",
   "civic-orderism/why-focus-on-invisible-power-nodes",
-], { sort: "manual" })}`,
+])}`,
 );
 
 writeFile(
@@ -583,7 +589,7 @@ ${articleLines([
   "civic-orderism/committee-administration-opposite-incentives",
   "civic-orderism/why-committees-cannot-directly-take-cases",
   "civic-orderism/top-level-power-structure-under-civic-orderism",
-], { sort: "manual" })}
+])}
 
 ### 二、选举、议会、授权与责任更替
 
@@ -593,7 +599,7 @@ ${articleLines([
   "civic-orderism/why-part-time-representatives",
   "civic-orderism/why-proposals-from-social-organizations",
   "civic-orderism/why-no-bicameral-parliament",
-], { sort: "manual" })}
+])}
 
 ### 三、司法、信息透明与后台系统
 
@@ -603,10 +609,10 @@ ${articleLines([
   "civic-orderism/why-justice-serves-reality",
   "civic-orderism/why-civic-orderism-emphasizes-experience-and-records",
   "civic-orderism/why-not-simple-separation-of-powers",
-], { sort: "manual" })}`,
+])}`,
 );
 
-function mapSection(title, sectionSlugs, { sort = "manual" } = {}) {
+function mapSection(title, sectionSlugs, { sort = "date" } = {}) {
   return `## ${title}\n\n${articleLines(sectionSlugs, { sort })}\n\n`;
 }
 

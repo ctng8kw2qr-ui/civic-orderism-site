@@ -17,13 +17,13 @@ status: published
 ### 一、财政、社保、医保与金融压力
 
 - [[china/ccp-collapse-three-triggers-social-security-healthcare-finance|中共崩解的三大导火索：社保、医保与金融系统]]（2026-05-11）
-- [[china/ccp-reform-political-balance-deadlock|中共的真正死局：改革未必救经济，却一定先打破政治平衡]]（2026-05-10）
 - [[china/ccp-bureaucracy-historical-bill|当历史总账开始结算：高刚性官僚体系如何把系统性责任层层压向中基层]]（2026-05-10）
+- [[china/ccp-reform-political-balance-deadlock|中共的真正死局：改革未必救经济，却一定先打破政治平衡]]（2026-05-10）
 
 ### 二、基层治理、普通人压力与社会心理
 
-- [[theory/trapped-by-process|我们不是被贫穷困住，而是被流程困住]]（2026-05-10）
 - [[theory/no-accountability-lie-flat-mentality|为什么“无人担责的躺平心态”会从根本上摧毁一个超大型执政组织]]（2026-05-10）
+- [[theory/trapped-by-process|我们不是被贫穷困住，而是被流程困住]]（2026-05-10）
 - [[china/chicken-and-cage|养鸡与换笼：民营经济被整肃的结构逻辑]]（2026-05-10）
 - [[china/maginot-line-of-stability-maintenance|一个难以言说的防线：从“液压维稳”到当代的马其诺防线]]（2026-05-10）
 
