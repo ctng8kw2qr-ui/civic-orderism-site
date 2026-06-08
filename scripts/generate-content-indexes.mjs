@@ -123,6 +123,7 @@ function writeFile(filePath, body) {
 const slugs = {
   oldOrder: [
     "theory/why-party-politics-is-becoming-a-low-dimensional-function",
+    "theory/end-of-party-politics-in-information-age",
     "theory/us-industrial-system-cannot-carry-information-age",
     "theory/us-separation-of-powers-integrative-capacity-crisis",
     "theory/information-age-erodes-us-integrative-capacity",
@@ -386,11 +387,12 @@ status: published
 
 ${articleLines([
   "theory/why-party-politics-is-becoming-a-low-dimensional-function",
+  "theory/end-of-party-politics-in-information-age",
   "theory/costly-industrial-governance-information-age",
   "china/industrial-system-failure-in-information-age",
   "theory/ccp-completed-historical-task-refuses-exit",
   "theory/modern-social-syndrome",
-])}
+], { sort: "manual" })}
 
 ### 二、西方制度困境与美国政治
 
@@ -618,7 +620,7 @@ function mapSection(title, sectionSlugs, { sort = "date" } = {}) {
 
 const used = new Set();
 const mapBody = [
-  ["一、旧世界为什么失效", slugs.oldOrder],
+  ["一、旧世界为什么失效", slugs.oldOrder, { sort: "manual" }],
   ["二、中共这个组织为什么走向失灵", slugs.ccp],
   ["三、中国正在进入什么阶段", slugs.stage],
   ["四、外部误判、国际风险与历史案例", slugs.international],
@@ -652,9 +654,9 @@ const mapBody = [
     "civic-orderism/why-civic-orderism-emphasizes-experience-and-records",
   ]],
 ]
-  .map(([title, sectionSlugs]) => {
+  .map(([title, sectionSlugs, options]) => {
     sectionSlugs.map(findArticleBySlug).filter(Boolean).forEach((article) => used.add(article.slug));
-    return mapSection(title, sectionSlugs);
+    return mapSection(title, sectionSlugs, options);
   })
   .join("");
 

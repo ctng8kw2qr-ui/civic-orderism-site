@@ -136,9 +136,9 @@ status: published
 
 ## 近期补充文章
 
+- [[theory/end-of-party-politics-in-information-age|政党的历史终结：信息化时代为什么不再需要政党垄断政治入口]]（2026-06-08）
 - [[china/political-machine-rewards-and-limits|机器的奖赏与机器的尽头]]（2026-05-30）
 - [[china/emotional-link-breakdown-and-regime-collapse|情感链接的断裂与体制坍塌机制]]（2026-05-30）
-- [[theory/social-change-dynamics-when-system-no-longer-worth-it|社会变革动力学：当所有人都觉得“不值了”]]（2026-05-30）
 
 ## 全部栏目
 
