@@ -180,6 +180,7 @@ const slugs = {
   civicTheory: [
     "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
     "civic-orderism/civic-orderism-manual",
+    "civic-orderism/state-must-rely-on-systems-not-drivers",
     "civic-orderism/what-civic-orderism-ultimately-solves",
     "civic-orderism/why-not-left-right-democracy-autocracy",
     "civic-orderism/why-weaken-party-politics",
@@ -543,8 +544,9 @@ status: published
 ${articleLines([
   "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
   "civic-orderism/civic-orderism-manual",
+  "civic-orderism/state-must-rely-on-systems-not-drivers",
   "civic-orderism/what-civic-orderism-ultimately-solves",
-])}
+], { sort: "manual" })}
 
 ### 二、基本原则
 
@@ -630,7 +632,7 @@ const mapBody = [
     "civic-orderism/why-civic-orderism-is-easier-to-succeed",
     "civic-orderism/why-focus-on-invisible-power-nodes",
   ]],
-  ["六、公民秩序主义的基本理论", slugs.civicTheory],
+  ["六、公民秩序主义的基本理论", slugs.civicTheory, { sort: "manual" }],
   ["七、委员会与公共判断机制", [
     "civic-orderism/top-level-power-structure-under-civic-orderism",
     "civic-orderism/what-is-committee-system",

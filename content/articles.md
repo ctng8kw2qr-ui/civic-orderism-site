@@ -98,11 +98,12 @@ status: published
 
 - [[civic-orderism/what-civic-orderism-solves-if-you-read-only-one|如果你只读一篇：公民秩序主义到底想解决什么]]（2026-05-14）
 - [[civic-orderism/civic-orderism-manual|公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案]]（2026-05-10）
-- [[civic-orderism/why-focus-on-invisible-power-nodes|公民秩序主义为什么更加注意现代社会的隐形权力节点（社会组织、平台企业）]]（2026-05-10）
-- [[civic-orderism/why-weaken-party-politics|公民秩序主义为什么刻意弱化政党政治]]（2026-05-10）
+- [[civic-orderism/state-must-rely-on-systems-not-drivers|国家不能只靠驾驶员：为什么现代治理必须依赖系统]]（2026-06-08）
 - [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]（2026-05-10）
-- [[civic-orderism/public-politics-without-party-dominance|弱化政党政治之后，公共政治如何继续存在]]（2026-05-10）
 - [[civic-orderism/why-not-left-right-democracy-autocracy|为什么公民秩序主义不纠结于左右、民主专制之争]]（2026-05-10）
+- [[civic-orderism/why-weaken-party-politics|公民秩序主义为什么刻意弱化政党政治]]（2026-05-10）
+- [[civic-orderism/public-politics-without-party-dominance|弱化政党政治之后，公共政治如何继续存在]]（2026-05-10）
+- [[civic-orderism/why-focus-on-invisible-power-nodes|公民秩序主义为什么更加注意现代社会的隐形权力节点（社会组织、平台企业）]]（2026-05-10）
 - [[civic-orderism/why-against-moral-narrative|为什么公民秩序主义反对道德叙事，也反对对公职人员的道德审判]]（2026-05-10）
 - [[civic-orderism/why-emphasize-reciprocity-and-equality|为什么公民秩序主义强调的是对等、平等，而非照顾、怜悯]]（2026-05-10）
 - [[civic-orderism/why-civic-orderism-is-easier-to-succeed|为什么公民秩序主义在未来接替难度最小：它不是推倒国家，而是接管、校正和重组国家运行系统]]（2026-05-10）
@@ -136,4 +137,4 @@ status: published
 
 _（暂无未归入前九个栏目的近期文章。）_
 
-本站共收录 74 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。
+本站共收录 75 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。
