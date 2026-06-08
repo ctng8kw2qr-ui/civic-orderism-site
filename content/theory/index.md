@@ -16,11 +16,11 @@ status: published
 
 ### 一、工业时代制度局限
 
-- [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]（2026-05-14）
 - [[theory/end-of-party-politics-in-information-age|政党的历史终结：信息化时代为什么不再需要政党垄断政治入口]]（2026-06-08）
-- [[theory/costly-industrial-governance-information-age|一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价]]（2026-05-11）
-- [[china/industrial-system-failure-in-information-age|中共基于工业化的社会制度，在信息化时代的必然失效]]（2026-05-28）
 - [[theory/ccp-completed-historical-task-refuses-exit|中共完成了历史任务，但拒绝被历史淘汰]]（2026-05-30）
+- [[china/industrial-system-failure-in-information-age|中共基于工业化的社会制度，在信息化时代的必然失效]]（2026-05-28）
+- [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]（2026-05-14）
+- [[theory/costly-industrial-governance-information-age|一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价]]（2026-05-11）
 - [[theory/modern-social-syndrome|现代社会候群症]]（2026-05-10）
 
 ### 二、西方制度困境与美国政治

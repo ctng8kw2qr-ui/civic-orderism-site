@@ -393,7 +393,7 @@ ${articleLines([
   "china/industrial-system-failure-in-information-age",
   "theory/ccp-completed-historical-task-refuses-exit",
   "theory/modern-social-syndrome",
-], { sort: "manual" })}
+])}
 
 ### 二、西方制度困境与美国政治
 
@@ -546,7 +546,7 @@ ${articleLines([
   "civic-orderism/civic-orderism-manual",
   "civic-orderism/state-must-rely-on-systems-not-drivers",
   "civic-orderism/what-civic-orderism-ultimately-solves",
-], { sort: "manual" })}
+])}
 
 ### 二、基本原则
 
@@ -622,7 +622,7 @@ function mapSection(title, sectionSlugs, { sort = "date" } = {}) {
 
 const used = new Set();
 const mapBody = [
-  ["一、旧世界为什么失效", slugs.oldOrder, { sort: "manual" }],
+  ["一、旧世界为什么失效", slugs.oldOrder],
   ["二、中共这个组织为什么走向失灵", slugs.ccp],
   ["三、中国正在进入什么阶段", slugs.stage],
   ["四、外部误判、国际风险与历史案例", slugs.international],
@@ -632,7 +632,7 @@ const mapBody = [
     "civic-orderism/why-civic-orderism-is-easier-to-succeed",
     "civic-orderism/why-focus-on-invisible-power-nodes",
   ]],
-  ["六、公民秩序主义的基本理论", slugs.civicTheory, { sort: "manual" }],
+  ["六、公民秩序主义的基本理论", slugs.civicTheory],
   ["七、委员会与公共判断机制", [
     "civic-orderism/top-level-power-structure-under-civic-orderism",
     "civic-orderism/what-is-committee-system",

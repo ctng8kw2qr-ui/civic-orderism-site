@@ -29,21 +29,21 @@ status: published
 
 ## 一、旧世界为什么失效
 
-- [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]（2026-05-14）
 - [[theory/end-of-party-politics-in-information-age|政党的历史终结：信息化时代为什么不再需要政党垄断政治入口]]（2026-06-08）
+- [[theory/ccp-completed-historical-task-refuses-exit|中共完成了历史任务，但拒绝被历史淘汰]]（2026-05-30）
+- [[theory/organizational-collapse-begins-with-loss-of-institutional-trust|组织的坍塌，始于制度信任的瓦解]]（2026-05-30）
+- [[china/industrial-system-failure-in-information-age|中共基于工业化的社会制度，在信息化时代的必然失效]]（2026-05-28）
+- [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]（2026-05-14）
 - [[theory/us-industrial-system-cannot-carry-information-age|美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代]]（2026-05-12）
 - [[theory/us-separation-of-powers-integrative-capacity-crisis|美国三权分立的真正危机，不是分权，而是失去统合能力]]（2026-05-12）
 - [[theory/information-age-erodes-us-integrative-capacity|为什么信息化时代正在系统性瓦解美国的统合能力]]（2026-05-12）
 - [[theory/us-supreme-court-partisan-final-battleground|美国最高法院为何滑向党争终局战场]]（2026-05-11）
 - [[theory/costly-industrial-governance-information-age|一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价]]（2026-05-11）
-- [[china/industrial-system-failure-in-information-age|中共基于工业化的社会制度，在信息化时代的必然失效]]（2026-05-28）
-- [[theory/ccp-completed-historical-task-refuses-exit|中共完成了历史任务，但拒绝被历史淘汰]]（2026-05-30）
 - [[theory/internal-change-external-change|内变引外变：现代政治为何走到十字路口]]（2026-05-10）
 - [[theory/procedural-accountability-organized-power|为什么程序性问责，常常敌不过组织化权力]]（2026-05-10）
-- [[theory/organizational-collapse-begins-with-loss-of-institutional-trust|组织的坍塌，始于制度信任的瓦解]]（2026-05-30）
 - [[theory/modern-social-syndrome|现代社会候群症]]（2026-05-10）
-- [[theory/ai-monitoring-organizational-friction|AI监控并不降低组织摩擦：一份冷静推演]]（2026-05-10）
 - [[institution/despotism-cancer-ming-1566|专制之癌：从《大明王朝1566》到结构性腐败的宿命]]（2026-05-10）
+- [[theory/ai-monitoring-organizational-friction|AI监控并不降低组织摩擦：一份冷静推演]]（2026-05-10）
 
 ## 二、中共这个组织为什么走向失灵
 
@@ -96,14 +96,14 @@ status: published
 
 ## 六、公民秩序主义的基本理论
 
+- [[civic-orderism/state-must-rely-on-systems-not-drivers|国家不能只靠驾驶员：为什么现代治理必须依赖系统]]（2026-06-08）
 - [[civic-orderism/what-civic-orderism-solves-if-you-read-only-one|如果你只读一篇：公民秩序主义到底想解决什么]]（2026-05-14）
 - [[civic-orderism/civic-orderism-manual|公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案]]（2026-05-10）
-- [[civic-orderism/state-must-rely-on-systems-not-drivers|国家不能只靠驾驶员：为什么现代治理必须依赖系统]]（2026-06-08）
-- [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]（2026-05-10）
-- [[civic-orderism/why-not-left-right-democracy-autocracy|为什么公民秩序主义不纠结于左右、民主专制之争]]（2026-05-10）
-- [[civic-orderism/why-weaken-party-politics|公民秩序主义为什么刻意弱化政党政治]]（2026-05-10）
-- [[civic-orderism/public-politics-without-party-dominance|弱化政党政治之后，公共政治如何继续存在]]（2026-05-10）
 - [[civic-orderism/why-focus-on-invisible-power-nodes|公民秩序主义为什么更加注意现代社会的隐形权力节点（社会组织、平台企业）]]（2026-05-10）
+- [[civic-orderism/why-weaken-party-politics|公民秩序主义为什么刻意弱化政党政治]]（2026-05-10）
+- [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]（2026-05-10）
+- [[civic-orderism/public-politics-without-party-dominance|弱化政党政治之后，公共政治如何继续存在]]（2026-05-10）
+- [[civic-orderism/why-not-left-right-democracy-autocracy|为什么公民秩序主义不纠结于左右、民主专制之争]]（2026-05-10）
 - [[civic-orderism/why-against-moral-narrative|为什么公民秩序主义反对道德叙事，也反对对公职人员的道德审判]]（2026-05-10）
 - [[civic-orderism/why-emphasize-reciprocity-and-equality|为什么公民秩序主义强调的是对等、平等，而非照顾、怜悯]]（2026-05-10）
 - [[civic-orderism/why-civic-orderism-is-easier-to-succeed|为什么公民秩序主义在未来接替难度最小：它不是推倒国家，而是接管、校正和重组国家运行系统]]（2026-05-10）

@@ -16,9 +16,9 @@ status: published
 
 ### 一、理论入口
 
+- [[civic-orderism/state-must-rely-on-systems-not-drivers|国家不能只靠驾驶员：为什么现代治理必须依赖系统]]（2026-06-08）
 - [[civic-orderism/what-civic-orderism-solves-if-you-read-only-one|如果你只读一篇：公民秩序主义到底想解决什么]]（2026-05-14）
 - [[civic-orderism/civic-orderism-manual|公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案]]（2026-05-10）
-- [[civic-orderism/state-must-rely-on-systems-not-drivers|国家不能只靠驾驶员：为什么现代治理必须依赖系统]]（2026-06-08）
 - [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]（2026-05-10）
 
 ### 二、基本原则
