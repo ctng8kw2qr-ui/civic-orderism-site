@@ -227,6 +227,23 @@ ${bulletList(articleLinks([
 
 </div>`;
 
+const organizationManualEntry = `<section class="organization-manual-entry">
+
+<p class="resource-label">正式资料</p>
+
+## 公民秩序主义组织手册
+
+<p class="resource-subtitle">了解我们的世界判断、组织原则与加入方式。</p>
+
+这份手册不是宣言，也不是情绪动员，而是一份进入说明书。它用于说明公民秩序主义为什么存在、我们如何判断现实、为什么暂不建立开放群组，以及感兴趣的人如何通过邮件联系。
+
+<div class="resource-actions">
+  <a class="resource-button resource-button-primary" href="/files/civic-orderism-organization-manual.pdf">下载 PDF</a>
+  <a class="resource-button" href="/organization-manual">阅读说明</a>
+</div>
+
+</section>`;
+
 const themedReading = [
   [
     "旧秩序失效",
@@ -330,6 +347,8 @@ status: published
 第二，在旧秩序失效之后，中国是否可能建立一种更可进入、可解释、可纠错、可追责的公共秩序？
 
 公民秩序主义不是情绪化反对，也不是简单的政权替换想象，而是一套面向中国现实与信息化时代的国家治理理论。
+
+${organizationManualEntry}
 
 ${firstReadingSection}
 
@@ -537,6 +556,18 @@ status: published
 
 公民秩序主义不是一个口号，不是政党，也不是情绪化的革命方案。它试图回答的是：在现代国家越来越庞大、制度越来越复杂、普通人越来越难以进入制度的情况下，如何重新建立国家与公民之间可进入、可解释、可纠错、可追责的公共秩序。
 
+<section class="formal-resources">
+
+## 正式资料
+
+<ol>
+  <li><a href="/organization-manual"><strong>公民秩序主义组织手册</strong></a><br><span>了解我们的世界判断、组织原则与加入方式。</span></li>
+  <li><a href="/civic-orderism/civic-orderism-manual">公民秩序主义说明书</a></li>
+  <li><a href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">如果你只读一篇：公民秩序主义到底想解决什么</a></li>
+</ol>
+
+</section>
+
 ## 文章列表
 
 ### 一、理论入口
@@ -681,6 +712,8 @@ status: published
 从旧秩序失效，到中共组织失灵，再到公民秩序主义的制度回应。
 
 这里不是按发布时间排列文章，而是按照问题路径组织阅读。你可以从现实问题进入，也可以从制度理论进入；可以先理解中共为什么失灵，也可以直接阅读公民秩序主义如何提出新的公共秩序方案。
+
+<p class="articles-reading-note">如果你是第一次来到这里，建议先阅读<a href="/organization-manual">《公民秩序主义组织手册》</a>，再按下方分类进入专题文章。</p>
 
 ## 分类目录
 

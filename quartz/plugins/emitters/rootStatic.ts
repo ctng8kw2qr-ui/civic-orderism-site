@@ -25,9 +25,10 @@ export const RootStatic: QuartzEmitterPlugin = () => ({
     const copiedFiles: FilePath[] = []
     for (const fp of allFiles) {
       const fileName = basename(fp)
-      if (rootStaticFiles.includes(fileName)) {
+      const isPublicFile = fp.startsWith("files/")
+      if (rootStaticFiles.includes(fileName) || isPublicFile) {
         const src = joinSegments(staticPath, fp) as FilePath
-        const dest = joinSegments(outputRootPath, fileName) as FilePath
+        const dest = joinSegments(outputRootPath, isPublicFile ? fp : fileName) as FilePath
         await fs.promises.mkdir(dirname(dest), { recursive: true })
         await fs.promises.copyFile(src, dest)
         copiedFiles.push(dest)

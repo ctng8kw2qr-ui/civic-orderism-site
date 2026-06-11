@@ -12,6 +12,18 @@ status: published
 
 公民秩序主义不是一个口号，不是政党，也不是情绪化的革命方案。它试图回答的是：在现代国家越来越庞大、制度越来越复杂、普通人越来越难以进入制度的情况下，如何重新建立国家与公民之间可进入、可解释、可纠错、可追责的公共秩序。
 
+<section class="formal-resources">
+
+## 正式资料
+
+<ol>
+  <li><a href="/organization-manual"><strong>公民秩序主义组织手册</strong></a><br><span>了解我们的世界判断、组织原则与加入方式。</span></li>
+  <li><a href="/civic-orderism/civic-orderism-manual">公民秩序主义说明书</a></li>
+  <li><a href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">如果你只读一篇：公民秩序主义到底想解决什么</a></li>
+</ol>
+
+</section>
+
 ## 文章列表
 
 ### 一、理论入口

@@ -27,6 +27,23 @@ status: published
 
 公民秩序主义不是情绪化反对，也不是简单的政权替换想象，而是一套面向中国现实与信息化时代的国家治理理论。
 
+<section class="organization-manual-entry">
+
+<p class="resource-label">正式资料</p>
+
+## 公民秩序主义组织手册
+
+<p class="resource-subtitle">了解我们的世界判断、组织原则与加入方式。</p>
+
+这份手册不是宣言，也不是情绪动员，而是一份进入说明书。它用于说明公民秩序主义为什么存在、我们如何判断现实、为什么暂不建立开放群组，以及感兴趣的人如何通过邮件联系。
+
+<div class="resource-actions">
+  <a class="resource-button resource-button-primary" href="/files/civic-orderism-organization-manual.pdf">下载 PDF</a>
+  <a class="resource-button" href="/organization-manual">阅读说明</a>
+</div>
+
+</section>
+
 <div class="home-first-reading">
 
 ## 第一次来，按这个顺序读
