@@ -423,34 +423,39 @@ article blockquote {
   }
 
   article .organization-manual-entry {
-    margin: 1.65rem 0 1.75rem;
-    padding: 20px 18px;
+    width: 100%;
+    max-width: 100%;
+    margin: 1.65rem 0 2rem;
+    padding: 18px 16px;
+    box-sizing: border-box;
+    overflow: hidden;
     border-color: color-mix(in srgb, var(--lightgray) 78%, transparent);
     border-radius: 6px;
   }
 
   article .organization-manual-entry .resource-label {
-    font-size: 0.72rem;
+    margin-bottom: 8px;
+    font-size: 0.8125rem;
     line-height: 1.35;
     letter-spacing: 0.1em;
     opacity: 0.78;
   }
 
   article .organization-manual-entry h2 {
-    margin: 0.3rem 0 0.28rem;
-    font-size: 1.375rem;
-    line-height: 1.32;
+    margin: 0 0 8px;
+    font-size: 1.5rem;
+    line-height: 1.25;
   }
 
   article .organization-manual-entry .resource-subtitle {
-    margin: 0 0 0.55rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    margin: 0 0 10px;
+    font-size: 1rem;
+    line-height: 1.45;
   }
 
   article .organization-manual-entry > p:not(.resource-label):not(.resource-subtitle) {
     margin: 0;
-    font-size: 0.95rem;
+    font-size: 0.96875rem;
     line-height: 1.6;
   }
 
@@ -460,8 +465,13 @@ article blockquote {
   }
 
   article .organization-manual-entry .resource-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
     gap: 10px;
-    margin-top: 0.85rem;
+    margin-top: 18px;
+    box-sizing: border-box;
   }
 
   article .resource-button {
@@ -470,9 +480,14 @@ article blockquote {
   }
 
   article .organization-manual-entry .resource-button {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
     min-height: 0;
-    padding: 12px 16px;
-    border-radius: 4px;
+    margin: 0;
+    padding: 13px 14px;
+    box-sizing: border-box;
+    border-radius: 6px;
     font-size: 1rem;
     line-height: 1.25;
   }
@@ -484,6 +499,23 @@ article blockquote {
   article .organization-manual-entry + .home-first-reading h2 {
     margin-top: 0;
     padding-top: 1.15rem;
+  }
+
+  article .home-first-reading,
+  article .home-first-reading ul,
+  article .home-first-reading li {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  article .home-first-reading a.internal {
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    line-height: inherit;
+    -webkit-box-decoration-break: slice;
+    box-decoration-break: slice;
   }
 
   article .manual-contact {
