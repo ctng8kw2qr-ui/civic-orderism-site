@@ -422,14 +422,68 @@ article blockquote {
     padding: 1.15rem;
   }
 
+  article .organization-manual-entry {
+    margin: 1.65rem 0 1.75rem;
+    padding: 20px 18px;
+    border-color: color-mix(in srgb, var(--lightgray) 78%, transparent);
+    border-radius: 6px;
+  }
+
+  article .organization-manual-entry .resource-label {
+    font-size: 0.72rem;
+    line-height: 1.35;
+    letter-spacing: 0.1em;
+    opacity: 0.78;
+  }
+
+  article .organization-manual-entry h2 {
+    margin: 0.3rem 0 0.28rem;
+    font-size: 1.375rem;
+    line-height: 1.32;
+  }
+
+  article .organization-manual-entry .resource-subtitle {
+    margin: 0 0 0.55rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  article .organization-manual-entry > p:not(.resource-label):not(.resource-subtitle) {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
   article .resource-actions {
     display: grid;
     grid-template-columns: 1fr;
   }
 
+  article .organization-manual-entry .resource-actions {
+    gap: 10px;
+    margin-top: 0.85rem;
+  }
+
   article .resource-button {
     justify-content: center;
     width: 100%;
+  }
+
+  article .organization-manual-entry .resource-button {
+    min-height: 0;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+
+  article .organization-manual-entry .resource-button:not(.resource-button-primary) {
+    border-color: color-mix(in srgb, var(--gray) 72%, var(--lightgray));
+  }
+
+  article .organization-manual-entry + .home-first-reading h2 {
+    margin-top: 0;
+    padding-top: 1.15rem;
   }
 
   article .manual-contact {
@@ -439,6 +493,10 @@ article blockquote {
 
   article .manual-contact dd {
     margin-bottom: 0.65rem;
+  }
+
+  body[data-slug="index"] .page {
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
   }
 }
 
