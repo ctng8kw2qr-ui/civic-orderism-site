@@ -20,7 +20,6 @@ listed: false
 
 <div class="resource-actions">
   <a class="resource-button resource-button-primary" href="/files/civic-orderism-introduction-manual.pdf">下载 PDF</a>
-  <a class="resource-button" href="/">返回首页</a>
 </div>
 
 </section>

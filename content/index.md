@@ -41,7 +41,7 @@ status: published
 
 <div class="resource-actions manual-entry-actions">
   <a class="resource-button resource-button-primary manual-entry-button" href="/files/civic-orderism-introduction-manual.pdf">下载 PDF</a>
-  <a class="resource-button manual-entry-button" href="/introduction-manual">阅读说明</a>
+  <button class="resource-button manual-entry-button" type="button" data-manual-modal="introduction">阅读说明</button>
 </div>
 
 </section>
@@ -58,7 +58,7 @@ status: published
 
 <div class="resource-actions manual-entry-actions">
   <a class="resource-button resource-button-primary manual-entry-button" href="/files/civic-orderism-organization-manual.pdf">下载 PDF</a>
-  <a class="resource-button manual-entry-button" href="/organization-manual">阅读说明</a>
+  <button class="resource-button manual-entry-button" type="button" data-manual-modal="organization">阅读说明</button>
 </div>
 
 </section>
