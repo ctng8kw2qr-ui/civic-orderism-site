@@ -260,6 +260,26 @@ article .organization-manual-entry {
   padding: 1.5rem 1.6rem;
 }
 
+article .home-manual-note {
+  margin: 1.35rem 0 0;
+  color: var(--darkgray);
+  font-size: 0.94rem;
+}
+
+article .home-manual-note a {
+  color: inherit;
+  font-weight: 600;
+}
+
+article .introduction-manual-entry {
+  margin-top: 0.85rem;
+  margin-bottom: 1.15rem;
+}
+
+article .introduction-manual-entry + .organization-manual-entry {
+  margin-top: 0;
+}
+
 article .organization-manual-entry h2 {
   margin: 0.35rem 0 0.35rem;
   padding: 0;
@@ -433,6 +453,21 @@ article blockquote {
     border-radius: 6px;
   }
 
+  article .home-manual-note {
+    margin-top: 1.1rem;
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  article .introduction-manual-entry {
+    margin-top: 0.7rem;
+    margin-bottom: 0.85rem;
+  }
+
+  article .introduction-manual-entry + .organization-manual-entry {
+    margin-top: 0;
+  }
+
   article .organization-manual-entry .resource-label {
     margin-bottom: 8px;
     font-size: 0.8125rem;
@@ -496,7 +531,7 @@ article blockquote {
     border-color: color-mix(in srgb, var(--gray) 72%, var(--lightgray));
   }
 
-  article .organization-manual-entry + .home-first-reading h2 {
+  article .manual-entry-card + .home-first-reading h2 {
     margin-top: 0;
     padding-top: 1.15rem;
   }
@@ -529,6 +564,58 @@ article blockquote {
 
   body[data-slug="index"] .page {
     padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 640px) {
+  body[data-slug="index"] article .manual-entry-card {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 18px 16px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  body[data-slug="index"] article .manual-entry-card .manual-entry-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0;
+    box-sizing: border-box;
+    gap: 10px;
+  }
+
+  body[data-slug="index"] article .manual-entry-card .manual-entry-actions .manual-entry-button {
+    display: flex;
+    align-self: stretch;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 13px 14px;
+    box-sizing: border-box !important;
+    border-radius: 6px;
+  }
+
+  body[data-slug="index"] article .first-time-reading a.internal {
+    padding: 0 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    -webkit-box-decoration-break: initial !important;
+    box-decoration-break: initial !important;
   }
 }
 

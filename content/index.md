@@ -27,7 +27,25 @@ status: published
 
 公民秩序主义不是情绪化反对，也不是简单的政权替换想象，而是一套面向中国现实与信息化时代的国家治理理论。
 
-<section class="organization-manual-entry">
+<p class="home-manual-note">完整入门说明可先阅读<a href="/files/civic-orderism-introduction-manual.pdf">《公民秩序主义介绍手册》</a>。</p>
+
+<section class="organization-manual-entry introduction-manual-entry manual-entry-card">
+
+<p class="resource-label">入门手册</p>
+
+## 公民秩序主义介绍手册
+
+<p class="resource-subtitle">信息化时代的国家秩序方案</p>
+
+如果你第一次接触公民秩序主义，可以先阅读这份介绍手册。它以较短篇幅说明公民秩序主义的基本理念、核心制度设计，以及它为什么是一套面向信息化时代的国家秩序方案。
+
+<div class="resource-actions manual-entry-actions">
+  <a class="resource-button resource-button-primary manual-entry-button" href="/files/civic-orderism-introduction-manual.pdf"><span>阅读 / 下载《公民秩序主义介绍手册》</span></a>
+</div>
+
+</section>
+
+<section class="organization-manual-entry manual-entry-card">
 
 <p class="resource-label">正式资料</p>
 
@@ -37,19 +55,20 @@ status: published
 
 这份手册不是宣言，也不是情绪动员，而是一份进入说明书。它用于说明公民秩序主义为什么存在、我们如何判断现实、为什么暂不建立开放群组，以及感兴趣的人如何通过邮件联系。
 
-<div class="resource-actions">
-  <a class="resource-button resource-button-primary" href="/files/civic-orderism-organization-manual.pdf">下载 PDF</a>
-  <a class="resource-button" href="/organization-manual">阅读说明</a>
+<div class="resource-actions manual-entry-actions">
+  <a class="resource-button resource-button-primary manual-entry-button" href="/files/civic-orderism-organization-manual.pdf">下载 PDF</a>
+  <a class="resource-button manual-entry-button" href="/organization-manual">阅读说明</a>
 </div>
 
 </section>
 
-<div class="home-first-reading">
+<div class="home-first-reading first-time-reading">
 
 ## 第一次来，按这个顺序读
 
 如果你第一次来到这里，不需要按发布时间阅读。建议先理解旧秩序为什么失效，再理解中共组织为什么失灵，最后进入公民秩序主义的制度回应。
 
+- [《公民秩序主义介绍手册》PDF](/files/civic-orderism-introduction-manual.pdf)
 - [[civic-orderism/what-civic-orderism-solves-if-you-read-only-one|如果你只读一篇：公民秩序主义到底想解决什么]]
 - [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]
 - [[china/ccp-collapse-three-triggers-social-security-healthcare-finance|中共崩解的三大导火索：社保、医保与金融系统]]
@@ -172,5 +191,6 @@ status: published
 
 邮箱：[citizenorder@proton.me](mailto:citizenorder@proton.me)
 X 平台：[@CivicOrderism](https://x.com/CivicOrderism)
+网站：[civicorderism.com](https://civicorderism.com)
 
 为便于有效沟通，建议先阅读“第一次来，按这个顺序读”中的基础文章。
