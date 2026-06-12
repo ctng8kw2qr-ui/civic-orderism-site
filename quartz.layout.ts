@@ -7,6 +7,7 @@ const publicExplorerOptions = {
     !node.slugSegment.startsWith("article_"),
   mapFn: (node: any) => {
     if (node.slugSegment === "start-here") node.displayName = "从这里开始"
+    if (node.slugSegment === "introduction-manual") node.displayName = "介绍手册"
     if (node.slugSegment === "organization-manual") node.displayName = "组织手册"
     if (node.slugSegment === "theory") node.displayName = "旧秩序失效"
     if (node.slugSegment === "china") node.displayName = "解析中共"
@@ -18,6 +19,7 @@ const publicExplorerOptions = {
   sortFn: (a: any, b: any) => {
     const order = [
       "index.md",
+      "introduction-manual",
       "organization-manual",
       "theory",
       "china",

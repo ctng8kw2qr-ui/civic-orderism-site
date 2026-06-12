@@ -227,7 +227,7 @@ ${bulletList(["[《公民秩序主义介绍手册》PDF](/files/civic-orderism-i
 
 </div>`;
 
-const introductionManualEntry = `<p class="home-manual-note">完整入门说明可先阅读<a href="/files/civic-orderism-introduction-manual.pdf">《公民秩序主义介绍手册》</a>。</p>
+const introductionManualEntry = `<p class="home-manual-note">完整入门说明可先阅读<a href="/introduction-manual">《公民秩序主义介绍手册》</a>。</p>
 
 <section class="organization-manual-entry introduction-manual-entry manual-entry-card">
 
@@ -240,7 +240,8 @@ const introductionManualEntry = `<p class="home-manual-note">完整入门说明�
 如果你第一次接触公民秩序主义，可以先阅读这份介绍手册。它以较短篇幅说明公民秩序主义的基本理念、核心制度设计，以及它为什么是一套面向信息化时代的国家秩序方案。
 
 <div class="resource-actions manual-entry-actions">
-  <a class="resource-button resource-button-primary manual-entry-button" href="/files/civic-orderism-introduction-manual.pdf"><span>阅读 / 下载《公民秩序主义介绍手册》</span></a>
+  <a class="resource-button resource-button-primary manual-entry-button" href="/files/civic-orderism-introduction-manual.pdf">下载 PDF</a>
+  <a class="resource-button manual-entry-button" href="/introduction-manual">阅读说明</a>
 </div>
 
 </section>`;
