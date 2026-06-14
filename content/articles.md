@@ -31,6 +31,7 @@ status: published
 
 ## 一、旧世界为什么失效
 
+- [[theory/democracy-still-exists-but-cannot-penetrate-reality|民主还在，但越来越难穿透现实]]（2026-06-13）
 - [[theory/end-of-party-politics-in-information-age|政党的历史终结：信息化时代为什么不再需要政党垄断政治入口]]（2026-06-08）
 - [[theory/ccp-completed-historical-task-refuses-exit|中共完成了历史任务，但拒绝被历史淘汰]]（2026-05-30）
 - [[theory/organizational-collapse-begins-with-loss-of-institutional-trust|组织的坍塌，始于制度信任的瓦解]]（2026-05-30）
@@ -139,4 +140,4 @@ status: published
 
 _（暂无未归入前九个栏目的近期文章。）_
 
-本站共收录 75 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。
+本站共收录 76 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。

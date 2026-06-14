@@ -25,6 +25,7 @@ status: published
 
 ### 二、西方制度困境与美国政治
 
+- [[theory/democracy-still-exists-but-cannot-penetrate-reality|民主还在，但越来越难穿透现实]]（2026-06-13）
 - [[theory/us-industrial-system-cannot-carry-information-age|美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代]]（2026-05-12）
 - [[theory/us-separation-of-powers-integrative-capacity-crisis|美国三权分立的真正危机，不是分权，而是失去统合能力]]（2026-05-12）
 - [[theory/information-age-erodes-us-integrative-capacity|为什么信息化时代正在系统性瓦解美国的统合能力]]（2026-05-12）

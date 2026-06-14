@@ -122,6 +122,7 @@ function writeFile(filePath, body) {
 
 const slugs = {
   oldOrder: [
+    "theory/democracy-still-exists-but-cannot-penetrate-reality",
     "theory/why-party-politics-is-becoming-a-low-dimensional-function",
     "theory/end-of-party-politics-in-information-age",
     "theory/us-industrial-system-cannot-carry-information-age",
@@ -439,6 +440,7 @@ ${articleLines([
 ### 二、西方制度困境与美国政治
 
 ${articleLines([
+  "theory/democracy-still-exists-but-cannot-penetrate-reality",
   "theory/us-industrial-system-cannot-carry-information-age",
   "theory/us-separation-of-powers-integrative-capacity-crisis",
   "theory/information-age-erodes-us-integrative-capacity",
