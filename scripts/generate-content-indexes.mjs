@@ -540,7 +540,7 @@ status: published
 
 ## 文章列表
 
-### 一、财政、社保、医保与金融压力
+### 一、产业、债务与秩序失灵
 
 ${articleLines([
   "china-stage/china-manufacturing-cannot-stop",

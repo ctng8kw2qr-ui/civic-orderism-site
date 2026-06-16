@@ -14,7 +14,7 @@ status: published
 
 ## 文章列表
 
-### 一、财政、社保、医保与金融压力
+### 一、产业、债务与秩序失灵
 
 - [[china-stage/china-manufacturing-cannot-stop|中国制造业不是造不出来，而是停不下来]]（2026-06-16）
 - [[china/ccp-collapse-three-triggers-social-security-healthcare-finance|中共崩解的三大导火索：社保、医保与金融系统]]（2026-05-11）
