@@ -162,6 +162,7 @@ const slugs = {
     "china/propaganda-system-hollowing-out",
   ],
   stage: [
+    "china-stage/china-manufacturing-cannot-stop",
     "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
     "china/ccp-reform-political-balance-deadlock",
     "china/ccp-bureaucracy-historical-bill",
@@ -542,6 +543,7 @@ status: published
 ### 一、财政、社保、医保与金融压力
 
 ${articleLines([
+  "china-stage/china-manufacturing-cannot-stop",
   "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
   "china/ccp-reform-political-balance-deadlock",
   "china/ccp-bureaucracy-historical-bill",

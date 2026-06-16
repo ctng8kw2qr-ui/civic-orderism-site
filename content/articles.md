@@ -73,6 +73,7 @@ status: published
 
 ## 三、中国正在进入什么阶段
 
+- [[china-stage/china-manufacturing-cannot-stop|中国制造业不是造不出来，而是停不下来]]（2026-06-16）
 - [[theory/social-change-dynamics-when-system-no-longer-worth-it|社会变革动力学：当所有人都觉得“不值了”]]（2026-05-30）
 - [[china/ccp-collapse-three-triggers-social-security-healthcare-finance|中共崩解的三大导火索：社保、医保与金融系统]]（2026-05-11）
 - [[china/ccp-bureaucracy-historical-bill|当历史总账开始结算：高刚性官僚体系如何把系统性责任层层压向中基层]]（2026-05-10）
@@ -140,4 +141,4 @@ status: published
 
 _（暂无未归入前九个栏目的近期文章。）_
 
-本站共收录 76 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。
+本站共收录 77 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。

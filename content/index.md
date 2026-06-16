@@ -173,9 +173,9 @@ status: published
 
 ## 近期补充文章
 
+- [[china-stage/china-manufacturing-cannot-stop|中国制造业不是造不出来，而是停不下来]]（2026-06-16）
 - [[theory/democracy-still-exists-but-cannot-penetrate-reality|民主还在，但越来越难穿透现实]]（2026-06-13）
 - [[civic-orderism/state-must-rely-on-systems-not-drivers|国家不能只靠驾驶员：为什么现代治理必须依赖系统]]（2026-06-08）
-- [[theory/end-of-party-politics-in-information-age|政党的历史终结：信息化时代为什么不再需要政党垄断政治入口]]（2026-06-08）
 
 ## 全部栏目
 

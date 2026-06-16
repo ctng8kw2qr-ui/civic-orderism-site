@@ -16,6 +16,7 @@ status: published
 
 ### 一、财政、社保、医保与金融压力
 
+- [[china-stage/china-manufacturing-cannot-stop|中国制造业不是造不出来，而是停不下来]]（2026-06-16）
 - [[china/ccp-collapse-three-triggers-social-security-healthcare-finance|中共崩解的三大导火索：社保、医保与金融系统]]（2026-05-11）
 - [[china/ccp-bureaucracy-historical-bill|当历史总账开始结算：高刚性官僚体系如何把系统性责任层层压向中基层]]（2026-05-10）
 - [[china/ccp-reform-political-balance-deadlock|中共的真正死局：改革未必救经济，却一定先打破政治平衡]]（2026-05-10）
