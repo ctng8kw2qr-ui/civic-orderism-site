@@ -225,7 +225,28 @@
   
     .cover-main { margin-top: 39mm; }
     .cover h1 { font-size: 30pt; }
-    .cover-meta { grid-template-columns: 1fr; gap: 2.2mm; font-size: 9.2pt; }
+    .cover-meta {
+      grid-template-columns: 1fr;
+      gap: 2.2mm;
+      font-size: 9.2pt;
+    }
+    .cover-contact-title {
+      color: var(--gold-light);
+      font: 700 7.2pt/1 Arial, sans-serif;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .cover-contact-lines,
+    .contact-lines,
+    .back-contact-lines {
+      display: grid;
+      grid-template-columns: 28mm 1fr;
+      gap: 2.2mm 5mm;
+    }
+    .cover-contact-lines span,
+    .back-contact-lines span { color: #b9c6d4; }
+    .cover-contact-lines strong,
+    .back-contact-lines strong { color: white; font-weight: 500; }
     .introduction-note .statement { font-size: 11pt; }
     .introduction-note .statement strong { color: var(--navy); }
     .page-watermark {
@@ -351,15 +372,33 @@
       border-top: .8mm solid var(--navy);
       break-inside: avoid;
     }
-    .contact-section h2 { margin-top: 0; }
+    .contact-section h2 {
+      margin-top: 0;
+      letter-spacing: .08em;
+    }
     .contact-section a { color: inherit; text-decoration: none; }
     .contact-lines {
-      display: grid;
       grid-template-columns: 26mm 1fr;
       gap: 2.5mm 5mm;
       margin-top: 6mm;
+      font-size: 10.4pt;
     }
     .contact-lines span { color: var(--muted); }
+    .back-contact {
+      position: absolute;
+      left: 25mm;
+      bottom: 42mm;
+      color: #d5dee8;
+      font-size: 9.2pt;
+      line-height: 1.5;
+    }
+    .back-contact-title {
+      margin-bottom: 4mm;
+      color: var(--gold-light);
+      font: 700 7.2pt/1 Arial, sans-serif;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
     .architecture-page {
       position: relative;
       box-sizing: border-box;
@@ -876,9 +915,12 @@
       <div class="cover-tagline">信息化时代的国家秩序方案</div>
     </div>
     <div class="cover-meta">
-      <div><strong>citizenorder@proton.me</strong></div>
-      <div><strong>x.com/CivicOrderism</strong></div>
-      <div><strong>civicorderism.com</strong></div>
+      <div class="cover-contact-title">联系方式 / Contact</div>
+      <div class="cover-contact-lines">
+        <span>X 平台 / X</span><strong>@CivicOrderism</strong>
+        <span>邮箱 / Email</span><strong>citizenorder@proton.me</strong>
+        <span>网站 / Website</span><strong>https://civicorderism.com/</strong>
+      </div>
     </div>
   </section>
 
@@ -1210,16 +1252,16 @@
       <div class="chapter-index">C</div>
       <div class="chapter-heading">
         <div class="eyebrow">CIVIC ORDERISM · CONTACT</div>
-        <h1>联系方式</h1>
+        <h1>联系方式 / Contact</h1>
         <p class="chapter-question"><span>保持联系</span>严肃交流、资料反馈与建设性讨论，可通过以下方式联系。</p>
       </div>
     </header>
     <div class="contact-section">
-      <h2>联系方式</h2>
+      <h2>联系方式 / Contact</h2>
       <div class="contact-lines">
-        <span>邮箱</span><strong><a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a></strong>
-        <span>X 平台</span><strong><a href="https://x.com/CivicOrderism">@CivicOrderism</a></strong>
-        <span>网站</span><strong><a href="https://civicorderism.com">civicorderism.com</a></strong>
+        <span>X 平台 / X</span><strong><a href="https://x.com/CivicOrderism">@CivicOrderism</a></strong>
+        <span>邮箱 / Email</span><strong><a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a></strong>
+        <span>网站 / Website</span><strong><a href="https://civicorderism.com/">https://civicorderism.com/</a></strong>
       </div>
     </div>
   </section>
@@ -1235,9 +1277,12 @@
       以制度为工具，以责任为核心。
     </div>
     <div class="back-contact">
-      citizenorder@proton.me<br>
-      x.com/CivicOrderism<br>
-      civicorderism.com
+      <div class="back-contact-title">联系方式 / Contact</div>
+      <div class="back-contact-lines">
+        <span>X 平台 / X</span><strong>@CivicOrderism</strong>
+        <span>邮箱 / Email</span><strong>citizenorder@proton.me</strong>
+        <span>网站 / Website</span><strong>https://civicorderism.com/</strong>
+      </div>
     </div>
     <div class="back-final">从权力崇拜走向制度秩序。</div>
   </section>
