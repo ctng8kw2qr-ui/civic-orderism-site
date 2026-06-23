@@ -83,6 +83,8 @@ status: published
 
 ## 按主题阅读 / 全部栏目
 
+<p class="category-navigation-note">按问题意识进入不同主题，逐步理解公民秩序主义的判断框架。</p>
+
 <div class="category-navigation-grid">
 
 <a href="/theory">旧秩序失效</a>
