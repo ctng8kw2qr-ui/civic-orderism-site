@@ -403,6 +403,7 @@ ${homeLatest || "暂无文章。"}
 严肃交流、资料反馈与建设性讨论，可通过以下方式联系：
 
 邮箱：[citizenorder@proton.me](mailto:citizenorder@proton.me)
+备用邮箱（Gmail）：[civicorderism@gmail.com](mailto:civicorderism@gmail.com)
 X 平台：[@CivicOrderism](https://x.com/CivicOrderism)
 网站：[civicorderism.com](https://civicorderism.com)
 

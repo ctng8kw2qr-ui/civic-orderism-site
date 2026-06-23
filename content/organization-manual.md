@@ -34,4 +34,6 @@ listed: false
   <dd><a href="https://x.com/CivicOrderism">@CivicOrderism</a></dd>
   <dt>邮箱</dt>
   <dd><a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a></dd>
+  <dt>备用邮箱（Gmail）</dt>
+  <dd><a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com</a></dd>
 </dl>

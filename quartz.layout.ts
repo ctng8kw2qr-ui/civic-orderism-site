@@ -79,6 +79,7 @@ export const sharedPageComponents: SharedLayout = {
       "Civic Orderism": "https://civicorderism.com",
       "X: @CivicOrderism": "https://x.com/CivicOrderism",
       "citizenorder@proton.me": "mailto:citizenorder@proton.me",
+      "备用邮箱（Gmail）：civicorderism@gmail.com": "mailto:civicorderism@gmail.com",
     },
   }),
 }

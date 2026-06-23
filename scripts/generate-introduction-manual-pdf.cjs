@@ -1146,6 +1146,7 @@ ${referenceStyle}
       <div class="cover-contact-lines">
         <span>X 平台 / X</span><strong>@CivicOrderism</strong>
         <span>邮箱 / Email</span><strong>citizenorder@proton.me</strong>
+        <span>备用邮箱 / Backup Email</span><strong>civicorderism@gmail.com</strong>
         <span>网站 / Website</span><strong>https://civicorderism.com/</strong>
       </div>
     </div>
@@ -1185,6 +1186,7 @@ ${referenceStyle}
       <div class="contact-lines">
         <span>X 平台 / X</span><strong><a href="https://x.com/CivicOrderism">@CivicOrderism</a></strong>
         <span>邮箱 / Email</span><strong><a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a></strong>
+        <span>备用邮箱 / Backup Email</span><strong><a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com</a></strong>
         <span>网站 / Website</span><strong><a href="https://civicorderism.com/">https://civicorderism.com/</a></strong>
       </div>
     </div>
@@ -1205,6 +1207,7 @@ ${referenceStyle}
       <div class="back-contact-lines">
         <span>X 平台 / X</span><strong>@CivicOrderism</strong>
         <span>邮箱 / Email</span><strong>citizenorder@proton.me</strong>
+        <span>备用邮箱 / Backup Email</span><strong>civicorderism@gmail.com</strong>
         <span>网站 / Website</span><strong>https://civicorderism.com/</strong>
       </div>
     </div>
