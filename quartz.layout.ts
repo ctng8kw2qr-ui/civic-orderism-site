@@ -15,6 +15,7 @@ const publicExplorerOptions = {
     if (node.slugSegment === "civic-orderism") node.displayName = "公民秩序主义"
     if (node.slugSegment === "institution") node.displayName = "制度机制"
     if (node.slugSegment === "articles.md") node.displayName = "阅读地图"
+    if (node.slugSegment === "copyright") node.displayName = "版权说明"
   },
   sortFn: (a: any, b: any) => {
     const order = [
@@ -27,6 +28,7 @@ const publicExplorerOptions = {
       "civic-orderism",
       "institution",
       "articles.md",
+      "copyright",
       "start-here",
     ]
     const ai = order.indexOf(a.slugSegment)
@@ -73,13 +75,22 @@ export const sharedPageComponents: SharedLayout = {
       component: Component.ManualModals(),
       condition: (page) => page.fileData.slug === "index",
     }),
+    Component.ConditionalRender({
+      component: Component.ArticleAttribution(),
+      condition: (page) =>
+        ["theory/", "china/", "china-stage/", "civic-orderism/", "institution/"].some(
+          (prefix) => (page.fileData.slug ?? "").startsWith(prefix),
+        ),
+    }),
   ],
   footer: Component.Footer({
+    copyright: "© 2026 Citizen Orderism / 公民秩序主义",
     links: {
-      "Civic Orderism": "https://civicorderism.com",
+      "官方网站：https://civicorderism.com": "https://civicorderism.com/",
       "X: @CivicOrderism": "https://x.com/CivicOrderism",
-      "citizenorder@proton.me": "mailto:citizenorder@proton.me",
-      "备用邮箱（Gmail）：civicorderism@gmail.com": "mailto:civicorderism@gmail.com",
+      "联系邮箱：citizenorder@proton.me": "mailto:citizenorder@proton.me",
+      "备用邮箱：civicorderism@gmail.com": "mailto:civicorderism@gmail.com",
+      "版权说明": "/copyright",
     },
   }),
 }

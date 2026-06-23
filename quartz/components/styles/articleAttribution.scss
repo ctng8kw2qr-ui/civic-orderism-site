@@ -1,0 +1,34 @@
+.article-attribution {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--lightgray);
+  color: var(--darkgray);
+  font-size: 0.88rem;
+  line-height: 1.7;
+
+  & p {
+    margin: 0;
+  }
+
+  & p + p {
+    margin-top: 0.15rem;
+  }
+
+  & strong {
+    color: var(--dark);
+    font-weight: 500;
+  }
+
+  & a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}
+
+@media all and (max-width: 760px) {
+  .article-attribution {
+    margin-top: 2rem;
+    font-size: 0.86rem;
+  }
+}
