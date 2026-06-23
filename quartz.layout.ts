@@ -86,10 +86,7 @@ export const sharedPageComponents: SharedLayout = {
   footer: Component.Footer({
     copyright: "© 2026 Citizen Orderism / 公民秩序主义",
     links: {
-      "官方网站：https://civicorderism.com": "https://civicorderism.com/",
-      "X: @CivicOrderism": "https://x.com/CivicOrderism",
-      "联系邮箱：citizenorder@proton.me": "mailto:citizenorder@proton.me",
-      "备用邮箱：civicorderism@gmail.com": "mailto:civicorderism@gmail.com",
+      "Official Publication · civicorderism.com": "https://civicorderism.com/",
       "版权说明": "/copyright",
     },
   }),
