@@ -49,7 +49,9 @@ function parseArticle(filePath) {
     hasDate: Boolean(parsed.data.date),
     listed: parsed.data.listed !== false,
     slug: slugFor(relativePath),
-    title: parsed.data.title ? String(parsed.data.title) : path.basename(relativePath, ".md"),
+    title: parsed.data.title
+      ? String(parsed.data.title)
+      : path.basename(relativePath, ".md"),
   };
 }
 
@@ -66,8 +68,15 @@ function compareArticlesByDateDesc(a, b) {
 const articles = walk(contentDir)
   .map((filePath) => [filePath, toPosix(path.relative(contentDir, filePath))])
   .filter(([, relativePath]) => !isIndexPage(relativePath))
-  .filter(([, relativePath]) => !path.basename(relativePath).startsWith("article_"))
-  .filter(([, relativePath]) => !["未命名.md", "untitled.md"].includes(path.basename(relativePath).toLowerCase()))
+  .filter(
+    ([, relativePath]) => !path.basename(relativePath).startsWith("article_"),
+  )
+  .filter(
+    ([, relativePath]) =>
+      !["未命名.md", "untitled.md"].includes(
+        path.basename(relativePath).toLowerCase(),
+      ),
+  )
   .map(([filePath]) => parseArticle(filePath))
   .filter(Boolean)
   .filter((article) => article.listed)
@@ -89,15 +98,15 @@ function articleLines(slugs, { sort = "date" } = {}) {
 }
 
 function articlesForSlugs(slugs, { sort = "date" } = {}) {
-  const matched = slugs
-    .map(findArticleBySlug)
-    .filter(Boolean);
+  const matched = slugs.map(findArticleBySlug).filter(Boolean);
   if (sort === "date") matched.sort(compareArticlesByDateDesc);
   return matched;
 }
 
 function articleLinks(slugs, options = {}) {
-  return articlesForSlugs(slugs, options).map((article) => `[[${article.slug}|${article.title}]]`);
+  return articlesForSlugs(slugs, options).map(
+    (article) => `[[${article.slug}|${article.title}]]`,
+  );
 }
 
 function bulletList(items) {
@@ -218,14 +227,22 @@ const firstReadingSection = `<div class="home-first-reading first-time-reading">
 
 如果你第一次来到这里，不需要按发布时间阅读。建议先理解旧秩序为什么失效，再理解中共组织为什么失灵，最后进入公民秩序主义的制度回应。
 
-${bulletList(["[《公民秩序主义介绍手册》PDF](/files/civic-orderism-introduction-manual.pdf)"].concat(articleLinks([
-  "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
-  "theory/why-party-politics-is-becoming-a-low-dimensional-function",
-  "theory/party-state-structural-failure",
-  "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
-  "civic-orderism/civic-orderism-manual",
-  "civic-orderism/why-dual-track-committee-administration",
-])).concat(["[[articles|阅读地图]]"]))}
+${bulletList(
+  [
+    "[《公民秩序主义介绍手册》PDF](/files/civic-orderism-introduction-manual.pdf)",
+  ]
+    .concat(
+      articleLinks([
+        "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+        "theory/why-party-politics-is-becoming-a-low-dimensional-function",
+        "theory/party-state-structural-failure",
+        "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+        "civic-orderism/civic-orderism-manual",
+        "civic-orderism/why-dual-track-committee-administration",
+      ]),
+    )
+    .concat(["[[articles|阅读地图]]"]),
+)}
 
 </div>`;
 
@@ -317,7 +334,9 @@ const themedReading = [
     "institution",
   ],
 ]
-  .map(([heading, description, items, moreSlug]) => renderCard(heading, description, items, moreSlug))
+  .map(([heading, description, items, moreSlug]) =>
+    renderCard(heading, description, items, moreSlug),
+  )
   .concat([
     renderLinkCard(
       "阅读地图",
@@ -333,9 +352,26 @@ const themedReading = [
   .join("\n\n");
 
 const homeLatest = articles
-  .filter((article) => article.slug !== "civic-orderism/what-civic-orderism-solves-if-you-read-only-one")
+  .filter(
+    (article) =>
+      article.slug !==
+      "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+  )
   .slice(0, 3)
   .map(articleLine)
+  .join("\n");
+
+const homeLatestCards = articles
+  .filter(
+    (article) =>
+      article.slug !==
+      "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+  )
+  .slice(0, 3)
+  .map(
+    (article) =>
+      `<a href="/${article.slug}"><span>${article.title}</span><time>${article.date}</time></a>`,
+  )
   .join("\n");
 
 writeFile(
@@ -355,59 +391,116 @@ status: published
     <img src="static/logo.png" alt="公民秩序主义 Logo" />
     <span>公民秩序主义</span>
   </h1>
+  <p class="home-kicker">CIVIC ORDERISM</p>
 </div>
 
-## CIVIC ORDERISM
+<div class="home-hero-copy">
 
 从现实痛感进入结构判断，再进入制度回应。
 
 本站关注两个问题：
 
-第一，工业时代形成的政党政治、官僚体系和国家治理模式，为什么在信息化时代越来越难以解释、整合和回应复杂社会？
-
-第二，在旧秩序失效之后，中国是否可能建立一种更可进入、可解释、可纠错、可追责的公共秩序？
+* 旧秩序为何失效。
+* 中国是否可能建立可解释、可纠错、可追责的公共秩序。
 
 公民秩序主义不是情绪化反对，也不是简单的政权替换想象，而是一套面向中国现实与信息化时代的国家治理理论。
 
-${introductionManualEntry}
+</div>
 
-${organizationManualEntry}
+<section class="home-section formal-publications">
 
-${firstReadingSection}
+## 正式资料
 
-## 按主题阅读
+<div class="publication-grid">
 
-<p class="home-themed-reading-note">从旧秩序失效，到中共组织失灵，再到现实阶段判断、理论入口和制度机制。</p>
+<section class="publication-card">
 
-<div class="article-category-grid home-themed-reading-grid">
+<p class="resource-label">OFFICIAL PUBLICATION</p>
 
-${themedReading}
+### 公民秩序主义介绍手册
+
+<p class="resource-subtitle">理解公民秩序主义的基础文本</p>
+
+<a class="resource-button resource-button-primary" href="/files/civic-orderism-introduction-manual.pdf">阅读 PDF</a>
+
+</section>
+
+<section class="publication-card">
+
+<p class="resource-label">OFFICIAL PUBLICATION</p>
+
+### 公民秩序主义组织手册
+
+<p class="resource-subtitle">理解组织结构、运行机制与制度安排</p>
+
+<a class="resource-button resource-button-primary" href="/files/civic-orderism-organization-manual.pdf">阅读 PDF</a>
+
+</section>
 
 </div>
 
+</section>
+
+<section class="home-section reading-path">
+
+## 第一次来，按这个顺序读
+
+<div class="reading-path-list">
+
+<a class="reading-path-item" href="/files/civic-orderism-introduction-manual.pdf"><span>01</span><strong>先读《公民秩序主义介绍手册》</strong></a>
+<a class="reading-path-item" href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one"><span>02</span><strong>理解核心问题：为什么需要新的公共秩序</strong></a>
+<a class="reading-path-item" href="/theory/party-state-structural-failure"><span>03</span><strong>阅读中共结构分析：旧秩序为何失效</strong></a>
+<a class="reading-path-item" href="/civic-orderism/why-dual-track-committee-administration"><span>04</span><strong>进入制度机制：委员会、秘书处、行政系统、大议会</strong></a>
+<a class="reading-path-item" href="/articles"><span>05</span><strong>查看阅读地图，按主题继续阅读</strong></a>
+
+</div>
+
+</section>
+
+<section class="home-section reading-navigation">
+
+## 按主题阅读 / 全部栏目
+
+<div class="category-navigation-grid">
+
+<a href="/theory">旧秩序失效</a>
+<a href="/china">解析中共</a>
+<a href="/china-stage">中国阶段判断</a>
+<a href="/civic-orderism">公民秩序主义</a>
+<a href="/institution">制度机制</a>
+<a href="/articles">阅读地图</a>
+
+</div>
+
+</section>
+
+<section class="home-section recent-articles">
+
 ## 近期补充文章
 
-${homeLatest || "暂无文章。"}
+<div class="recent-article-list">
 
-## 全部栏目
+${homeLatestCards || "暂无文章。"}
 
-- [[theory|旧秩序失效]]
-- [[china|解析中共]]
-- [[china-stage|中国阶段判断]]
-- [[civic-orderism|公民秩序主义]]
-- [[institution|制度机制]]
-- [[articles|阅读地图]]
+</div>
+
+</section>
+
+<section class="home-section contact-section">
 
 ## 联系方式
 
-严肃交流、资料反馈与建设性讨论，可通过以下方式联系：
+<p>严肃交流、资料反馈与建设性讨论，可通过邮件联系。</p>
 
-邮箱：[citizenorder@proton.me](mailto:citizenorder@proton.me)
-备用邮箱（Gmail）：[civicorderism@gmail.com](mailto:civicorderism@gmail.com)
-X 平台：[@CivicOrderism](https://x.com/CivicOrderism)
-网站：[civicorderism.com](https://civicorderism.com)
+<dl class="contact-list">
+  <div><dt>主邮箱</dt><dd><a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a></dd></div>
+  <div><dt>备用邮箱</dt><dd><a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com</a></dd></div>
+  <div><dt>X 平台</dt><dd><a href="https://x.com/CivicOrderism">@CivicOrderism</a></dd></div>
+</dl>
 
-为便于有效沟通，建议先阅读“第一次来，按这个顺序读”中的基础文章。`,
+<p class="contact-note">为便于有效沟通，建议先阅读“第一次来，按这个顺序读”中的基础文章。</p>
+
+</section>`,
 );
 
 writeFile(
@@ -684,43 +777,62 @@ const mapBody = [
   ["二、中共这个组织为什么走向失灵", slugs.ccp],
   ["三、中国正在进入什么阶段", slugs.stage],
   ["四、外部误判、国际风险与历史案例", slugs.international],
-  ["五、为什么需要新的制度通道", [
-    "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
-    "civic-orderism/what-civic-orderism-ultimately-solves",
-    "civic-orderism/why-civic-orderism-is-easier-to-succeed",
-    "civic-orderism/why-focus-on-invisible-power-nodes",
-  ]],
+  [
+    "五、为什么需要新的制度通道",
+    [
+      "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+      "civic-orderism/what-civic-orderism-ultimately-solves",
+      "civic-orderism/why-civic-orderism-is-easier-to-succeed",
+      "civic-orderism/why-focus-on-invisible-power-nodes",
+    ],
+  ],
   ["六、公民秩序主义的基本理论", slugs.civicTheory],
-  ["七、委员会与公共判断机制", [
-    "civic-orderism/top-level-power-structure-under-civic-orderism",
-    "civic-orderism/what-is-committee-system",
-    "civic-orderism/committee-administration-opposite-incentives",
-    "civic-orderism/why-committees-cannot-directly-take-cases",
-    "civic-orderism/why-dual-track-committee-administration",
-    "civic-orderism/why-not-simple-separation-of-powers",
-  ]],
-  ["八、选举、授权与责任更替", [
-    "civic-orderism/election-logic-under-civic-orderism",
-    "civic-orderism/why-elections-reject-political-donations",
-    "civic-orderism/why-part-time-representatives",
-    "civic-orderism/why-proposals-from-social-organizations",
-    "civic-orderism/why-no-bicameral-parliament",
-  ]],
-  ["九、后台系统、司法与执行底座", [
-    "civic-orderism/backend-system-under-civic-orderism",
-    "civic-orderism/why-information-transparency",
-    "civic-orderism/why-justice-serves-reality",
-    "civic-orderism/state-operation-process-under-civic-orderism",
-    "civic-orderism/why-civic-orderism-emphasizes-experience-and-records",
-  ]],
+  [
+    "七、委员会与公共判断机制",
+    [
+      "civic-orderism/top-level-power-structure-under-civic-orderism",
+      "civic-orderism/what-is-committee-system",
+      "civic-orderism/committee-administration-opposite-incentives",
+      "civic-orderism/why-committees-cannot-directly-take-cases",
+      "civic-orderism/why-dual-track-committee-administration",
+      "civic-orderism/why-not-simple-separation-of-powers",
+    ],
+  ],
+  [
+    "八、选举、授权与责任更替",
+    [
+      "civic-orderism/election-logic-under-civic-orderism",
+      "civic-orderism/why-elections-reject-political-donations",
+      "civic-orderism/why-part-time-representatives",
+      "civic-orderism/why-proposals-from-social-organizations",
+      "civic-orderism/why-no-bicameral-parliament",
+    ],
+  ],
+  [
+    "九、后台系统、司法与执行底座",
+    [
+      "civic-orderism/backend-system-under-civic-orderism",
+      "civic-orderism/why-information-transparency",
+      "civic-orderism/why-justice-serves-reality",
+      "civic-orderism/state-operation-process-under-civic-orderism",
+      "civic-orderism/why-civic-orderism-emphasizes-experience-and-records",
+    ],
+  ],
 ]
   .map(([title, sectionSlugs, options]) => {
-    sectionSlugs.map(findArticleBySlug).filter(Boolean).forEach((article) => used.add(article.slug));
+    sectionSlugs
+      .map(findArticleBySlug)
+      .filter(Boolean)
+      .forEach((article) => used.add(article.slug));
     return mapSection(title, sectionSlugs, options);
   })
   .join("");
 
-const recent = articles.filter((article) => !used.has(article.slug)).slice(0, 5).map(articleLine).join("\n");
+const recent = articles
+  .filter((article) => !used.has(article.slug))
+  .slice(0, 5)
+  .map(articleLine)
+  .join("\n");
 
 writeFile(
   "articles.md",

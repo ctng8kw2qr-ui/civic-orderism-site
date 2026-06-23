@@ -1,6 +1,6 @@
-import { QuartzConfig } from "./quartz/cfg"
-import * as Plugin from "./quartz/plugins"
-import { RootStatic } from "./quartz/plugins/emitters/rootStatic"
+import { QuartzConfig } from "./quartz/cfg";
+import * as Plugin from "./quartz/plugins";
+import { RootStatic } from "./quartz/plugins/emitters/rootStatic";
 
 /**
  * Quartz 4 Configuration
@@ -41,15 +41,15 @@ const config: QuartzConfig = {
       },
       colors: {
         lightMode: {
-          light: "#f8f8f6",
-          lightgray: "#e4e2dd",
-          gray: "#9a978e",
-          darkgray: "#4a4a46",
-          dark: "#111111",
-          secondary: "#333333",
-          tertiary: "#6a6862",
-          highlight: "rgba(17, 17, 17, 0.08)",
-          textHighlight: "rgba(17, 17, 17, 0.12)",
+          light: "#f7f8fa",
+          lightgray: "#dbe1e8",
+          gray: "#7d8794",
+          darkgray: "#465260",
+          dark: "#14253a",
+          secondary: "#0a1d38",
+          tertiary: "#9b7c3e",
+          highlight: "rgba(10, 29, 56, 0.07)",
+          textHighlight: "rgba(181, 154, 99, 0.20)",
         },
         darkMode: {
           light: "#111111",
@@ -105,6 +105,6 @@ const config: QuartzConfig = {
       Plugin.NotFoundPage(),
     ],
   },
-}
+};
 
-export default config
+export default config;
