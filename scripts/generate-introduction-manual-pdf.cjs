@@ -42,6 +42,32 @@ const NODE_MODULES =
 const BROWSERS_PATH =
   process.env.PLAYWRIGHT_BROWSERS_PATH || path.join(ROOT, "work", "playwright-browsers");
 
+function resolveChromiumPath() {
+  const candidates = [
+    process.env.PLAYWRIGHT_CHROMIUM_PATH,
+    path.join(
+      BROWSERS_PATH,
+      "chromium-1223",
+      "chrome-mac-arm64",
+      "Google Chrome for Testing.app",
+      "Contents",
+      "MacOS",
+      "Google Chrome for Testing",
+    ),
+    path.join(
+      process.env.HOME || "",
+      "Library",
+      "Caches",
+      "ms-playwright",
+      "chromium_headless_shell-1223",
+      "chrome-headless-shell-mac-arm64",
+      "chrome-headless-shell",
+    ),
+  ].filter(Boolean)
+
+  return candidates.find((candidate) => fs.existsSync(candidate))
+}
+
 const chapterQuestions = new Map([
   ["前言：公民秩序主义要回答什么问题", "国家为什么存在，制度服务于谁，权力如何被组织、监督和纠正？"],
   ["公民秩序主义的基本理念", "公民、制度、责任与公共秩序之间应当建立怎样的关系？"],
@@ -474,6 +500,56 @@ ${referenceStyle}
     .back-contact-lines span { color: #b9c6d4; }
     .cover-contact-lines strong,
     .back-contact-lines strong { color: white; font-weight: 500; }
+    .cover-official {
+      margin-top: 2mm;
+      padding-top: 3mm;
+      border-top: .3mm solid rgba(255,255,255,.23);
+      color: #c9d3df;
+      font: 7.5pt/1.55 Arial, sans-serif;
+      letter-spacing: .08em;
+    }
+    .cover-official span,
+    .cover-official strong,
+    .cover-official em,
+    .cover-official small { display: block; }
+    .cover-official strong { color: white; font-size: 8.5pt; font-weight: 600; }
+    .cover-official em { color: var(--gold-light); font-style: normal; }
+    .cover-official small { margin-top: .4mm; color: #b9c6d4; }
+    .copyright-page {
+      position: relative;
+      min-height: 275mm;
+      padding: 29mm 25mm 23mm;
+      background: linear-gradient(155deg, #f7f9fb, white 52%, #eef2f5);
+      color: var(--ink);
+      break-before: page;
+      page-break-before: always;
+    }
+    .copyright-page .folio { color: var(--gold); font: 700 9pt Arial, sans-serif; letter-spacing: .2em; }
+    .copyright-page h1 { margin: 8mm 0 11mm; color: var(--navy); font-size: 25pt; line-height: 1.25; }
+    .copyright-page .copyright-statement {
+      padding: 8mm 9mm;
+      background: white;
+      border-top: .8mm solid var(--navy);
+      box-shadow: 0 1.5mm 4mm rgba(10,29,56,.05);
+    }
+    .copyright-page p { margin: 0 0 4mm; text-align: left; }
+    .copyright-page p:last-child { margin-bottom: 0; }
+    .copyright-page .copyright-contacts { margin-top: 10mm; }
+    .copyright-page .copyright-contacts h2 { margin: 0 0 5mm; font-size: 12pt; letter-spacing: .12em; color: var(--navy); }
+    .copyright-page .copyright-grid { display: grid; grid-template-columns: 34mm 1fr; gap: 2.2mm 5mm; font-size: 10pt; }
+    .copyright-page .copyright-grid span { color: var(--muted); }
+    .copyright-page .official-source {
+      position: absolute;
+      left: 25mm;
+      right: 25mm;
+      bottom: 23mm;
+      padding-top: 6mm;
+      border-top: .3mm solid var(--line);
+      color: var(--muted);
+      font: 8.5pt/1.7 Arial, sans-serif;
+      letter-spacing: .03em;
+    }
+    .copyright-page .official-source strong { display: block; color: var(--navy); font-size: 9pt; letter-spacing: .12em; }
     .introduction-note .statement { font-size: 11pt; }
     .introduction-note .statement strong { color: var(--navy); }
     .page-watermark {
@@ -1149,6 +1225,12 @@ ${referenceStyle}
         <span>备用邮箱 / Backup Email</span><strong>civicorderism@gmail.com</strong>
         <span>网站 / Website</span><strong>https://civicorderism.com/</strong>
       </div>
+      <div class="cover-official">
+        <span>Official Edition</span>
+        <strong>Citizen Orderism</strong>
+        <em>Version 1.0 · June 2026</em>
+        <small>Document ID · CO-2026-001</small>
+      </div>
     </div>
   </section>
 
@@ -1213,6 +1295,35 @@ ${referenceStyle}
     </div>
     <div class="back-final">从权力崇拜走向制度秩序。</div>
   </section>
+
+  <section class="copyright-page">
+    <div class="folio">OFFICIAL PUBLICATION · 版权声明</div>
+    <h1>版权声明</h1>
+    <div class="copyright-statement">
+      <p>© 2026 公民秩序主义（Citizen Orderism）</p>
+      <p>本文件为公民秩序主义官方发布版本。</p>
+      <p>欢迎个人学习、引用、转载与讨论。</p>
+      <p>转载时请保留原文内容及出处，不得擅自删改、断章取义或以其他名义重新发布。</p>
+      <p>如需进行改编、翻译、出版、研究合作或大规模传播，请联系：</p>
+    </div>
+    <div class="copyright-contacts">
+      <h2>联系方式</h2>
+      <div class="copyright-grid">
+        <span>主联系邮箱</span><strong>citizenorder@proton.me</strong>
+        <span>备用联系邮箱</span><strong>civicorderism@gmail.com</strong>
+        <span>官方网站</span><strong>https://civicorderism.com</strong>
+        <span>版本</span><strong>Version 1.0</strong>
+        <span>发布日期</span><strong>June 2026</strong>
+        <span>Document ID</span><strong>CO-2026-001</strong>
+      </div>
+    </div>
+    <div class="official-source">
+      <strong>Official Source</strong>
+      Website: https://civicorderism.com<br>
+      Email: citizenorder@proton.me<br>
+      Backup Email: civicorderism@gmail.com
+    </div>
+  </section>
 </body>
 </html>`;
 }
@@ -1226,18 +1337,10 @@ async function main() {
   fs.writeFileSync(HTML_PATH, buildHtml(lines), "utf8");
 
   const playwright = require(path.join(NODE_MODULES, "playwright"));
-  const fullChromiumPath = path.join(
-    BROWSERS_PATH,
-    "chromium-1223",
-    "chrome-mac-arm64",
-    "Google Chrome for Testing.app",
-    "Contents",
-    "MacOS",
-    "Google Chrome for Testing",
-  );
+  const chromiumPath = resolveChromiumPath();
   const browser = await playwright.chromium.launch({
     headless: true,
-    executablePath: fs.existsSync(fullChromiumPath) ? fullChromiumPath : undefined,
+    executablePath: chromiumPath,
   });
   const page = await browser.newPage({
     viewport: { width: 1280, height: 1800 },
@@ -1262,7 +1365,7 @@ async function main() {
       </div>`,
     footerTemplate: `
       <div style="width:100%;padding:0 18mm;font-family:Arial,sans-serif;font-size:7px;color:#6b7582;display:flex;justify-content:space-between;letter-spacing:.05em;">
-        <span>https://civicorderism.com/</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span>
+        <span>Citizen Orderism · civicorderism.com</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span>
       </div>`,
   });
   await browser.close();

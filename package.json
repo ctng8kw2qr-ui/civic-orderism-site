@@ -14,6 +14,7 @@
   "scripts": {
     "quartz": "./quartz/bootstrap-cli.mjs",
     "generate:indexes": "node ./scripts/generate-content-indexes.mjs",
+    "generate:manual-pdfs": "node ./scripts/generate-introduction-manual-pdf.cjs && node ./scripts/generate-organization-manual-pdf.cjs",
     "dev": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build --serve",
     "build": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build && node ./scripts/generate-static-security-files.mjs",
     "preview": "wrangler dev",
