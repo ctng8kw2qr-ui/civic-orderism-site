@@ -6,6 +6,7 @@ tags:
   - index
 description: "公民秩序主义关注工业时代旧秩序在信息化时代的失效，并尝试提出一种面向中国现实、可进入、可解释、可纠错、可追责的公共秩序方案。"
 status: published
+enableToc: false
 ---
 
 <div class="home-hero-heading">

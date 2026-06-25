@@ -72,6 +72,11 @@ ul.toc-content.collapsed {
   display: none;
 }
 
+.page-footer .toc,
+footer .toc {
+  display: none !important;
+}
+
 .toc-mobile {
   display: none;
   margin: 0.8rem 0 1.2rem;

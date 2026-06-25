@@ -6,6 +6,7 @@ tags:
   - index
 description: "从旧秩序失效，到中共组织失灵，再到公民秩序主义的制度回应。"
 status: published
+enableToc: false
 ---
 
 # 阅读地图
@@ -16,7 +17,7 @@ status: published
 
 <p class="articles-reading-note">如果你是第一次来到这里，建议先阅读<a href="/organization-manual">《公民秩序主义组织手册》</a>，再按下方分类进入专题文章。</p>
 
-## 分类目录
+## 专题入口
 
 - [旧世界为什么失效](#一旧世界为什么失效)
 - [中共这个组织为什么走向失灵](#二中共这个组织为什么走向失灵)

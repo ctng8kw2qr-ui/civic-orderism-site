@@ -259,26 +259,32 @@ export const ArticleCta: QuartzComponent = ({
           如果你希望继续了解公民秩序主义的完整框架，可先阅读介绍手册；严肃交流可通过邮箱联系。
         </p>
       </div>
-      <div class="article-ending-cta__links">
-        <a
-          class="article-ending-cta__button article-ending-cta__button--primary"
-          href="/files/civic-orderism-introduction-manual.pdf"
-        >
-          阅读 PDF 介绍手册
-        </a>
-        <a
-          class="article-ending-cta__button"
-          href="mailto:citizenorder@proton.me"
-        >
-          主邮箱 citizenorder@proton.me
-        </a>
-        <a
-          class="article-ending-cta__button"
-          href="mailto:civicorderism@gmail.com"
-        >
-          备用邮箱 civicorderism@gmail.com
-        </a>
-      </div>
+      <dl class="article-ending-cta__links">
+        <div class="article-ending-cta__item">
+          <dt>资料入口</dt>
+          <dd>
+            <a href="/files/civic-orderism-introduction-manual.pdf">
+              阅读 PDF 介绍手册
+            </a>
+          </dd>
+        </div>
+        <div class="article-ending-cta__item">
+          <dt>主邮箱</dt>
+          <dd>
+            <a href="mailto:citizenorder@proton.me">
+              citizenorder@proton.me
+            </a>
+          </dd>
+        </div>
+        <div class="article-ending-cta__item">
+          <dt>备用邮箱</dt>
+          <dd>
+            <a href="mailto:civicorderism@gmail.com">
+              civicorderism@gmail.com
+            </a>
+          </dd>
+        </div>
+      </dl>
     </section>
   )
 }
