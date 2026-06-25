@@ -478,8 +478,31 @@ article .reading-map-section-note span {
   margin-left: 0.45rem;
 }
 
-body[data-slug="articles"] article h2 + .reading-map-section-note + ul {
-  margin-top: 0.85rem;
+body[data-slug="articles"] article h2 + .reading-map-section-note + p {
+  margin-top: 1rem;
+  margin-bottom: 0.55rem;
+  color: var(--dark);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+body[data-slug="articles"] article .reading-map-more {
+  margin: 1rem 0 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid #d8dee6;
+  border-radius: 6px;
+  background: #fff;
+}
+
+body[data-slug="articles"] article .reading-map-more summary {
+  cursor: pointer;
+  color: var(--dark);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+body[data-slug="articles"] article .reading-map-more ul {
+  margin-top: 0.75rem;
 }
 
 body[data-slug="articles"] article ul {

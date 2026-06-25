@@ -39,9 +39,9 @@ export default ((opts?: Partial<Options>) => {
         ? "toc-mobile"
         : displayClass === "desktop-only"
           ? "toc-desktop"
-          : undefined
+          : "toc-article"
     const title =
-      displayClass === "mobile-only"
+      displayClass === "mobile-only" || responsiveClass === "toc-article"
         ? "本文目录"
         : i18n(cfg.locale).components.tableOfContents.title
     return (

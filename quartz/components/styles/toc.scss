@@ -68,9 +68,30 @@ ul.toc-content.overflow {
   }
 }
 
+ul.toc-content.collapsed {
+  display: none;
+}
+
 .toc-mobile {
   display: none;
   margin: 0.8rem 0 1.2rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--lightgray);
+  border-bottom: 1px solid var(--lightgray);
+
+  & button.toc-header {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  & ul.toc-content.overflow {
+    max-height: 45vh;
+    margin-bottom: 0;
+  }
+}
+
+.toc-article {
+  margin: 0.8rem 0 1.35rem;
   padding: 0.75rem 0;
   border-top: 1px solid var(--lightgray);
   border-bottom: 1px solid var(--lightgray);
@@ -99,5 +120,24 @@ ul.toc-content.overflow {
 @media all and not ($mobile) {
   .toc-desktop {
     display: flex;
+  }
+}
+
+@media all and ($desktop) {
+  .toc-article {
+    position: fixed;
+    top: 7rem;
+    right: max(1.2rem, calc((100vw - 1180px) / 2));
+    z-index: 5;
+    width: min(16rem, 22vw);
+    max-height: calc(100vh - 9rem);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 0.85rem;
+  }
+
+  .toc-article ul.toc-content.overflow {
+    max-height: calc(100vh - 12rem);
   }
 }

@@ -67,6 +67,22 @@ const publicExplorerOptions = {
   },
 }
 
+const articlePrefixes = [
+  "theory/",
+  "china/",
+  "china-stage/",
+  "civic-orderism/",
+  "institution/",
+]
+
+const isArticleContentPage = (page: any) => {
+  const slug = page.fileData.slug ?? ""
+  if (slug === "index" || slug === "articles" || slug.endsWith("/index")) {
+    return false
+  }
+  return articlePrefixes.some((prefix) => slug.startsWith(prefix))
+}
+
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
@@ -81,14 +97,7 @@ export const sharedPageComponents: SharedLayout = {
     }),
     Component.ConditionalRender({
       component: Component.ArticleAttribution(),
-      condition: (page) =>
-        [
-          "theory/",
-          "china/",
-          "china-stage/",
-          "civic-orderism/",
-          "institution/",
-        ].some((prefix) => (page.fileData.slug ?? "").startsWith(prefix)),
+      condition: isArticleContentPage,
     }),
   ],
   footer: Component.Footer({
@@ -112,8 +121,8 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
     Component.ArticleSeriesNavigation(),
     Component.ConditionalRender({
-      component: Component.MobileOnly(Component.TableOfContents()),
-      condition: (page) => page.fileData.slug !== "index",
+      component: Component.TableOfContents(),
+      condition: isArticleContentPage,
     }),
     Component.ArticleCoreJudgmentCard(),
   ],
@@ -132,12 +141,7 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.Explorer(publicExplorerOptions),
   ],
-  right: [
-    Component.ConditionalRender({
-      component: Component.DesktopOnly(Component.TableOfContents()),
-      condition: (page) => page.fileData.slug !== "index",
-    }),
-  ],
+  right: [],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)

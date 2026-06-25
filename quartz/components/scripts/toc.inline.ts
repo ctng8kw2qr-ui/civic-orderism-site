@@ -70,6 +70,12 @@ function setupToc() {
     const button = toc.querySelector(".toc-header")
     const content = toc.querySelector(".toc-content")
     if (!button || !content) return
+    if (toc.classList.contains("toc-article")) {
+      const shouldCollapse = window.matchMedia("(max-width: 800px)").matches
+      button.classList.toggle("collapsed", shouldCollapse)
+      button.setAttribute("aria-expanded", shouldCollapse ? "false" : "true")
+      content.classList.toggle("collapsed", shouldCollapse)
+    }
     button.addEventListener("click", toggleToc)
     window.addCleanup(() => button.removeEventListener("click", toggleToc))
   }

@@ -43,8 +43,8 @@ function getArticleSummary(file: QuartzPluginData) {
     file.description ??
     ""
   const summary = String(raw).replace(/\s+/g, " ").trim()
-  if (summary.length <= 82) return summary
-  return `${summary.slice(0, 82)}...`
+  if (summary.length <= 66) return summary
+  return `${summary.slice(0, 66)}...`
 }
 
 function getSeries(value: unknown): string | undefined {
@@ -262,7 +262,7 @@ export const ArticleCta: QuartzComponent = ({
       <div class="article-ending-cta__links">
         <a
           class="article-ending-cta__button article-ending-cta__button--primary"
-          href="/static/files/civic-orderism-introduction-manual.pdf"
+          href="/files/civic-orderism-introduction-manual.pdf"
         >
           阅读 PDF 介绍手册
         </a>

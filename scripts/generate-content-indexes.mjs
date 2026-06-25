@@ -102,18 +102,30 @@ function articleLines(slugs, { sort = "date" } = {}) {
   return matched.map(articleLine).join("\n") || "暂无文章。";
 }
 
-function mapArticleLines(slugs, recommendedSlug, { sort = "date" } = {}) {
+function mapArticleGroups(slugs, recommendedSlugs = [], { sort = "date" } = {}) {
   const matched = slugs.map(findArticleBySlug).filter(Boolean);
-  if (sort === "date") matched.sort(compareArticlesByDateDesc);
-  return (
-    matched
-      .map((article) =>
-        article.slug === recommendedSlug
-          ? recommendedArticleLine(article)
-          : articleLine(article),
-      )
-      .join("\n") || "暂无文章。"
+  const recommendedSet = new Set(
+    Array.isArray(recommendedSlugs) ? recommendedSlugs : [recommendedSlugs],
   );
+  if (sort === "date") matched.sort(compareArticlesByDateDesc);
+  const recommended = matched.filter((article) => recommendedSet.has(article.slug));
+  const more = matched.filter((article) => !recommendedSet.has(article.slug));
+
+  if (matched.length === 0) return "暂无文章。";
+
+  const recommendedBlock =
+    recommended.length > 0
+      ? `**推荐先读**\n\n${recommended.map(recommendedArticleLine).join("\n")}\n\n`
+      : "";
+
+  const moreBlock =
+    more.length > 0
+      ? `<details class="reading-map-more" open>\n<summary>更多文章</summary>\n\n${more
+          .map(articleLine)
+          .join("\n")}\n\n</details>`
+      : "";
+
+  return `${recommendedBlock}${moreBlock}`.trim();
 }
 
 function articlesForSlugs(slugs, { sort = "date" } = {}) {
@@ -792,12 +804,16 @@ ${articleLines([
 function mapSection(
   title,
   sectionSlugs,
-  { sort = "date", description = "", recommendedSlug } = {},
+  { sort = "date", description = "", recommendedSlug, recommendedSlugs } = {},
 ) {
   const note = description
-    ? `<p class="reading-map-section-note">${description}<span>推荐先读</span></p>\n\n`
+    ? `<p class="reading-map-section-note">${description}</p>\n\n`
     : "";
-  return `## ${title}\n\n${note}${mapArticleLines(sectionSlugs, recommendedSlug, { sort })}\n\n`;
+  return `## ${title}\n\n${note}${mapArticleGroups(
+    sectionSlugs,
+    recommendedSlugs ?? recommendedSlug,
+    { sort },
+  )}\n\n`;
 }
 
 const used = new Set();
