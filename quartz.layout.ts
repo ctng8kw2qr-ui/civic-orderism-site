@@ -3,12 +3,13 @@ import * as Component from "./quartz/components"
 
 const publicExplorerOptions = {
   filterFn: (node: any) =>
-    node.slugSegment !== "tags" &&
-    !node.slugSegment.startsWith("article_"),
+    node.slugSegment !== "tags" && !node.slugSegment.startsWith("article_"),
   mapFn: (node: any) => {
     if (node.slugSegment === "start-here") node.displayName = "从这里开始"
-    if (node.slugSegment === "introduction-manual") node.displayName = "介绍手册"
-    if (node.slugSegment === "organization-manual") node.displayName = "组织手册"
+    if (node.slugSegment === "introduction-manual")
+      node.displayName = "介绍手册"
+    if (node.slugSegment === "organization-manual")
+      node.displayName = "组织手册"
     if (node.slugSegment === "theory") node.displayName = "旧秩序失效"
     if (node.slugSegment === "china") node.displayName = "解析中共"
     if (node.slugSegment === "china-stage") node.displayName = "中国阶段判断"
@@ -71,6 +72,9 @@ export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [
+    Component.ArticleSeriesNavigation(),
+    Component.ArticleContinueReading(),
+    Component.ArticleEndingCta(),
     Component.ConditionalRender({
       component: Component.ManualModals(),
       condition: (page) => page.fileData.slug === "index",
@@ -78,16 +82,20 @@ export const sharedPageComponents: SharedLayout = {
     Component.ConditionalRender({
       component: Component.ArticleAttribution(),
       condition: (page) =>
-        ["theory/", "china/", "china-stage/", "civic-orderism/", "institution/"].some(
-          (prefix) => (page.fileData.slug ?? "").startsWith(prefix),
-        ),
+        [
+          "theory/",
+          "china/",
+          "china-stage/",
+          "civic-orderism/",
+          "institution/",
+        ].some((prefix) => (page.fileData.slug ?? "").startsWith(prefix)),
     }),
   ],
   footer: Component.Footer({
     copyright: "© 2026 Citizen Orderism / 公民秩序主义",
     links: {
       "Official Publication · civicorderism.com": "https://civicorderism.com/",
-      "版权说明": "/copyright",
+      版权说明: "/copyright",
     },
   }),
 }
@@ -95,12 +103,16 @@ export const sharedPageComponents: SharedLayout = {
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
+    Component.ArticleReadingProgress(),
     Component.ConditionalRender({
       component: Component.Breadcrumbs(),
       condition: (page) => page.fileData.slug !== "index",
     }),
     Component.ContentMeta(),
     Component.TagList(),
+    Component.ArticleSeriesNavigation(),
+    Component.MobileOnly(Component.TableOfContents()),
+    Component.ArticleCoreJudgmentCard(),
   ],
   left: [
     Component.PageTitle(),
@@ -117,9 +129,7 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.Explorer(publicExplorerOptions),
   ],
-  right: [
-    Component.DesktopOnly(Component.TableOfContents()),
-  ],
+  right: [Component.DesktopOnly(Component.TableOfContents())],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)

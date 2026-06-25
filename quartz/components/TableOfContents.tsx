@@ -1,4 +1,8 @@
-import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
+import {
+  QuartzComponent,
+  QuartzComponentConstructor,
+  QuartzComponentProps,
+} from "./types"
 import legacyStyle from "./styles/legacyToc.scss"
 import modernStyle from "./styles/toc.scss"
 import { classNames } from "../util/lang"
@@ -31,6 +35,10 @@ export default ((opts?: Partial<Options>) => {
     }
 
     const id = `toc-${numTocs++}`
+    const title =
+      displayClass === "mobile-only"
+        ? "本文目录"
+        : i18n(cfg.locale).components.tableOfContents.title
     return (
       <div class={classNames(displayClass, "toc")}>
         <button
@@ -39,7 +47,7 @@ export default ((opts?: Partial<Options>) => {
           aria-controls={id}
           aria-expanded={!fileData.collapseToc}
         >
-          <h3>{i18n(cfg.locale).components.tableOfContents.title}</h3>
+          <h3>{title}</h3>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -72,9 +80,15 @@ export default ((opts?: Partial<Options>) => {
   }
 
   TableOfContents.css = modernStyle
-  TableOfContents.afterDOMLoaded = concatenateResources(script, overflowListAfterDOMLoaded)
+  TableOfContents.afterDOMLoaded = concatenateResources(
+    script,
+    overflowListAfterDOMLoaded,
+  )
 
-  const LegacyTableOfContents: QuartzComponent = ({ fileData, cfg }: QuartzComponentProps) => {
+  const LegacyTableOfContents: QuartzComponent = ({
+    fileData,
+    cfg,
+  }: QuartzComponentProps) => {
     if (!fileData.toc) {
       return null
     }

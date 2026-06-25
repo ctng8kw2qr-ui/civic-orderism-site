@@ -1,17 +1,58 @@
-const observer = new IntersectionObserver((entries) => {
-  for (const entry of entries) {
-    const slug = entry.target.id
-    const tocEntryElements = document.querySelectorAll(`a[data-for="${slug}"]`)
-    const windowHeight = entry.rootBounds?.height
-    if (windowHeight && tocEntryElements.length > 0) {
-      if (entry.boundingClientRect.y < windowHeight) {
-        tocEntryElements.forEach((tocEntryElement) => tocEntryElement.classList.add("in-view"))
-      } else {
-        tocEntryElements.forEach((tocEntryElement) => tocEntryElement.classList.remove("in-view"))
-      }
+function updateActiveTocEntry() {
+  const headers = Array.from(
+    document.querySelectorAll<HTMLElement>("h2[id], h3[id]"),
+  )
+  if (headers.length === 0) return
+
+  let active = headers[0]
+  const offset = window.innerHeight * 0.25
+  for (const header of headers) {
+    if (header.getBoundingClientRect().top <= offset) {
+      active = header
+    } else {
+      break
     }
   }
-})
+
+  document.querySelectorAll(".toc a[data-for]").forEach((link) => {
+    const isActive = link.getAttribute("data-for") === active.id
+    link.classList.toggle("active", isActive)
+    link.classList.toggle("in-view", isActive)
+  })
+}
+
+function handleTocClick(event: Event) {
+  const link = event.currentTarget as HTMLAnchorElement
+  const targetId = link.getAttribute("data-for")
+  const target = targetId ? document.getElementById(targetId) : null
+  if (!target) return
+
+  event.preventDefault()
+  target.scrollIntoView({ behavior: "smooth", block: "start" })
+  history.pushState(null, "", `#${targetId}`)
+  updateActiveTocEntry()
+}
+
+function setupTocLinks() {
+  document
+    .querySelectorAll<HTMLAnchorElement>(".toc a[data-for]")
+    .forEach((link) => {
+      link.addEventListener("click", handleTocClick)
+      window.addCleanup(() => link.removeEventListener("click", handleTocClick))
+    })
+}
+
+function setupTocScrollSpy() {
+  updateActiveTocEntry()
+  document.addEventListener("scroll", updateActiveTocEntry, { passive: true })
+  window.addEventListener("resize", updateActiveTocEntry)
+  window.addCleanup(() =>
+    document.removeEventListener("scroll", updateActiveTocEntry),
+  )
+  window.addCleanup(() =>
+    window.removeEventListener("resize", updateActiveTocEntry),
+  )
+}
 
 function toggleToc(this: HTMLElement) {
   this.classList.toggle("collapsed")
@@ -36,9 +77,6 @@ function setupToc() {
 
 document.addEventListener("nav", () => {
   setupToc()
-
-  // update toc entry highlighting
-  observer.disconnect()
-  const headers = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]")
-  headers.forEach((header) => observer.observe(header))
+  setupTocLinks()
+  setupTocScrollSpy()
 })

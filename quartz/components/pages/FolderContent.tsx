@@ -1,4 +1,8 @@
-import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "../types"
+import {
+  QuartzComponent,
+  QuartzComponentConstructor,
+  QuartzComponentProps,
+} from "../types"
 
 import style from "../styles/listPage.scss"
 import { PageList, SortFn } from "../PageList"
@@ -38,7 +42,7 @@ export default ((opts?: Partial<FolderContentOptions>) => {
 
     const allPagesInFolder: QuartzPluginData[] =
       folder.children
-        .map((node) => {
+        .map((node): QuartzPluginData | undefined => {
           // regular file, proceed
           if (node.data) {
             return node.data
@@ -84,10 +88,13 @@ export default ((opts?: Partial<FolderContentOptions>) => {
                 title: node.displayName,
                 tags: [],
               },
-            }
+            } as QuartzPluginData
           }
         })
-        .filter((page) => page !== undefined && page.frontmatter?.folderListed !== false) ?? []
+        .filter(
+          (page): page is QuartzPluginData =>
+            page !== undefined && page.frontmatter?.folderListed !== false,
+        ) ?? []
     const cssClasses: string[] = fileData.frontmatter?.cssclasses ?? []
     const classes = cssClasses.join(" ")
     const listProps = {

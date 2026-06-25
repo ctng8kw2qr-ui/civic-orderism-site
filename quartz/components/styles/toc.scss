@@ -6,6 +6,7 @@
   overflow-y: hidden;
   min-height: 1.4rem;
   flex: 0 0.5 auto;
+  font-size: 0.9rem;
   &:has(button.toc-header.collapsed) {
     flex: 0 1 1.4rem;
   }
@@ -53,8 +54,10 @@ ul.toc-content.overflow {
     transition:
       0.5s ease opacity,
       0.3s ease color;
-    &.in-view {
-      opacity: 0.75;
+    &.in-view,
+    &.active {
+      color: var(--secondary);
+      opacity: 0.9;
     }
   }
 
@@ -62,5 +65,22 @@ ul.toc-content.overflow {
     & .depth-#{$i} {
       padding-left: calc(1rem * #{$i});
     }
+  }
+}
+
+.mobile-only.toc {
+  margin: 0.8rem 0 1.2rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--lightgray);
+  border-bottom: 1px solid var(--lightgray);
+
+  & button.toc-header {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  & ul.toc-content.overflow {
+    max-height: 45vh;
+    margin-bottom: 0;
   }
 }

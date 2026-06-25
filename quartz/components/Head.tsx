@@ -1,8 +1,15 @@
 import { i18n } from "../i18n"
-import { FullSlug, getFileExtension, joinSegments, pathToRoot, simplifySlug } from "../util/path"
-import { CSSResourceToStyleElement, JSResourceToScriptElement } from "../util/resources"
+import { getFileExtension, joinSegments, simplifySlug } from "../util/path"
+import {
+  CSSResourceToStyleElement,
+  JSResourceToScriptElement,
+} from "../util/resources"
 import { googleFontHref, googleFontSubsetHref } from "../util/theme"
-import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
+import {
+  QuartzComponent,
+  QuartzComponentConstructor,
+  QuartzComponentProps,
+} from "./types"
 import { unescapeHTML } from "../util/escape"
 import { CustomOgImagesEmitterName } from "../plugins/emitters/ogImage"
 
@@ -18,7 +25,8 @@ export default (() => {
   }: QuartzComponentProps) => {
     const titleSuffix = cfg.pageTitleSuffix ?? ""
     const title =
-      (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix
+      (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) +
+      titleSuffix
     const description =
       fileData.frontmatter?.socialDescription ??
       fileData.frontmatter?.description ??
@@ -28,9 +36,6 @@ export default (() => {
 
     const siteBase = `https://${cfg.baseUrl ?? "example.com"}`
     const url = new URL(siteBase)
-    const path = url.pathname as FullSlug
-    const baseDir = fileData.slug === "404" ? path : pathToRoot(fileData.slug!)
-    const iconPath = joinSegments(baseDir, "static/icon.png")
 
     // Url of current page
     const canonicalUrl =
@@ -53,11 +58,18 @@ export default (() => {
             <link rel="preconnect" href="https://fonts.gstatic.com" />
             <link rel="stylesheet" href={googleFontHref(cfg.theme)} />
             {cfg.theme.typography.title && (
-              <link rel="stylesheet" href={googleFontSubsetHref(cfg.theme, cfg.pageTitle)} />
+              <link
+                rel="stylesheet"
+                href={googleFontSubsetHref(cfg.theme, cfg.pageTitle)}
+              />
             )}
           </>
         )}
-        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://cdnjs.cloudflare.com"
+          crossOrigin="anonymous"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <meta name="og:site_name" content={cfg.pageTitle}></meta>
@@ -90,15 +102,31 @@ export default (() => {
         )}
 
         <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png?v=2"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png?v=2"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png?v=2"
+        />
         <link rel="manifest" href="/site.webmanifest?v=2" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content="公民秩序主义" />
         <meta name="theme-color" content="#f8f8f6" />
-        
-{fileData.slug !== "404" && <link rel="canonical" href={canonicalUrl} />}
+
+        {fileData.slug !== "404" && (
+          <link rel="canonical" href={canonicalUrl} />
+        )}
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
 

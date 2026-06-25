@@ -25,6 +25,13 @@ import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
 import ManualModals from "./ManualModals"
 import ArticleAttribution from "./ArticleAttribution"
+import {
+  ArticleContinueReading,
+  ArticleCoreJudgmentCard,
+  ArticleEndingCta,
+  ArticleReadingProgress,
+  ArticleSeriesNavigation,
+} from "./ArticleReadingEnhancements"
 
 export {
   ArticleTitle,
@@ -54,4 +61,9 @@ export {
   ConditionalRender,
   ManualModals,
   ArticleAttribution,
+  ArticleContinueReading,
+  ArticleCoreJudgmentCard,
+  ArticleEndingCta,
+  ArticleReadingProgress,
+  ArticleSeriesNavigation,
 }

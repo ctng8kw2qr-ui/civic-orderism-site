@@ -5,6 +5,7 @@ import { toString } from "mdast-util-to-string"
 import Slugger from "github-slugger"
 
 export interface Options {
+  minDepth: 1 | 2 | 3 | 4 | 5 | 6
   maxDepth: 1 | 2 | 3 | 4 | 5 | 6
   minEntries: number
   showByDefault: boolean
@@ -12,6 +13,7 @@ export interface Options {
 }
 
 const defaultOptions: Options = {
+  minDepth: 2,
   maxDepth: 3,
   minEntries: 1,
   showByDefault: true,
@@ -25,7 +27,9 @@ interface TocEntry {
 }
 
 const slugAnchor = new Slugger()
-export const TableOfContents: QuartzTransformerPlugin<Partial<Options>> = (userOpts) => {
+export const TableOfContents: QuartzTransformerPlugin<Partial<Options>> = (
+  userOpts,
+) => {
   const opts = { ...defaultOptions, ...userOpts }
   return {
     name: "TableOfContents",
@@ -33,7 +37,8 @@ export const TableOfContents: QuartzTransformerPlugin<Partial<Options>> = (userO
       return [
         () => {
           return async (tree: Root, file) => {
-            const display = file.data.frontmatter?.enableToc ?? opts.showByDefault
+            const display =
+              file.data.frontmatter?.enableToc ?? opts.showByDefault
             if (display) {
               slugAnchor.reset()
               const toc: TocEntry[] = []
@@ -41,12 +46,15 @@ export const TableOfContents: QuartzTransformerPlugin<Partial<Options>> = (userO
               visit(tree, "heading", (node) => {
                 if (node.depth <= opts.maxDepth) {
                   const text = toString(node)
-                  highestDepth = Math.min(highestDepth, node.depth)
-                  toc.push({
-                    depth: node.depth,
-                    text,
-                    slug: slugAnchor.slug(text),
-                  })
+                  const slug = slugAnchor.slug(text)
+                  if (node.depth >= opts.minDepth) {
+                    highestDepth = Math.min(highestDepth, node.depth)
+                    toc.push({
+                      depth: node.depth,
+                      text,
+                      slug,
+                    })
+                  }
                 }
               })
 

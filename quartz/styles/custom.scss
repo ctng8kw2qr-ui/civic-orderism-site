@@ -11,6 +11,7 @@ body {
 
 article {
   max-width: 780px;
+  line-height: 1.82;
 }
 
 body[data-slug="index"] article {
@@ -82,12 +83,53 @@ article h2 {
   margin-top: 3.2rem;
   padding-top: 1.4rem;
   border-top: 1px solid var(--lightgray);
+  font-size: 1.45rem;
   font-weight: 500;
+  line-height: 1.45;
 }
 
 article h3 {
-  margin-top: 2rem;
+  margin-top: 2.2rem;
+  font-size: 1.12rem;
   font-weight: 500;
+  line-height: 1.5;
+}
+
+article p {
+  margin-top: 1rem;
+  margin-bottom: 1.05rem;
+}
+
+article ul,
+article ol {
+  margin-top: 0.85rem;
+  margin-bottom: 1.15rem;
+}
+
+article li {
+  margin: 0.35rem 0;
+}
+
+@media (max-width: 800px) {
+  .page > #quartz-body {
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+  }
+
+  article {
+    max-width: 100%;
+    line-height: 1.78;
+  }
+
+  article h2 {
+    margin-top: 2.5rem;
+    font-size: 1.28rem;
+  }
+
+  article h3 {
+    margin-top: 1.75rem;
+    font-size: 1.05rem;
+  }
 }
 
 article .article-category-grid {

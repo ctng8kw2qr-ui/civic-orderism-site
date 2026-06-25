@@ -3,7 +3,13 @@ import remarkFrontmatter from "remark-frontmatter"
 import { QuartzTransformerPlugin } from "../types"
 import yaml from "js-yaml"
 import toml from "toml"
-import { FilePath, FullSlug, getFileExtension, slugifyFilePath, slugTag } from "../../util/path"
+import {
+  FilePath,
+  FullSlug,
+  getFileExtension,
+  slugifyFilePath,
+  slugTag,
+} from "../../util/path"
 import { QuartzPluginData } from "../vfile"
 import { i18n } from "../../i18n"
 
@@ -36,7 +42,9 @@ function coerceToArray(input: string | string[]): string[] | undefined {
 
   // remove all non-strings
   return input
-    .filter((tag: unknown) => typeof tag === "string" || typeof tag === "number")
+    .filter(
+      (tag: unknown) => typeof tag === "string" || typeof tag === "number",
+    )
     .map((tag: string | number) => tag.toString())
 }
 
@@ -52,7 +60,9 @@ function getAliasSlugs(aliases: string[]): FullSlug[] {
   return res
 }
 
-export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts) => {
+export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (
+  userOpts,
+) => {
   const opts = { ...defaultOptions, ...userOpts }
   return {
     name: "FrontMatter",
@@ -66,7 +76,8 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
             const { data } = matter(fileData, {
               ...opts,
               engines: {
-                yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
+                yaml: (s) =>
+                  yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
                 toml: (s) => toml.parse(s) as object,
               },
             })
@@ -74,13 +85,18 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
             if (data.title != null && data.title.toString() !== "") {
               data.title = data.title.toString()
             } else {
-              data.title = file.stem ?? i18n(cfg.configuration.locale).propertyDefaults.title
+              data.title =
+                file.stem ??
+                i18n(cfg.configuration.locale).propertyDefaults.title
             }
 
             const tags = coerceToArray(coalesceAliases(data, ["tags", "tag"]))
-            if (tags) data.tags = [...new Set(tags.map((tag: string) => slugTag(tag)))]
+            if (tags)
+              data.tags = [...new Set(tags.map((tag: string) => slugTag(tag)))]
 
-            const aliases = coerceToArray(coalesceAliases(data, ["aliases", "alias"]))
+            const aliases = coerceToArray(
+              coalesceAliases(data, ["aliases", "alias"]),
+            )
             if (aliases) {
               data.aliases = aliases // frontmatter
               file.data.aliases = getAliasSlugs(aliases)
@@ -95,10 +111,16 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
               allSlugs.push(data.permalink)
             }
 
-            const cssclasses = coerceToArray(coalesceAliases(data, ["cssclasses", "cssclass"]))
+            const cssclasses = coerceToArray(
+              coalesceAliases(data, ["cssclasses", "cssclass"]),
+            )
             if (cssclasses) data.cssclasses = cssclasses
 
-            const socialImage = coalesceAliases(data, ["socialImage", "image", "cover"])
+            const socialImage = coalesceAliases(data, [
+              "socialImage",
+              "image",
+              "cover",
+            ])
 
             const created = coalesceAliases(data, ["created", "date"])
             if (created) {
@@ -114,7 +136,11 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
             if (modified) data.modified = modified
             data.modified ||= created // if modified is not set, use created
 
-            const published = coalesceAliases(data, ["published", "publishDate", "date"])
+            const published = coalesceAliases(data, [
+              "published",
+              "publishDate",
+              "date",
+            ])
             if (published) data.published = published
 
             if (socialImage) data.socialImage = socialImage
@@ -152,6 +178,13 @@ declare module "vfile" {
         cssclasses: string[]
         socialImage: string
         comments: boolean | string
+        folderListed: boolean
+        category: string
+        section: string
+        summary: string
+        series: string | { name?: string; order?: number }
+        coreJudgments: string[]
+        core_judgments: string[]
       }>
   }
 }
