@@ -68,7 +68,8 @@ ul.toc-content.overflow {
   }
 }
 
-.mobile-only.toc {
+.toc-mobile {
+  display: none;
   margin: 0.8rem 0 1.2rem;
   padding: 0.75rem 0;
   border-top: 1px solid var(--lightgray);
@@ -82,5 +83,21 @@ ul.toc-content.overflow {
   & ul.toc-content.overflow {
     max-height: 45vh;
     margin-bottom: 0;
+  }
+}
+
+@media all and ($mobile) {
+  .toc-mobile {
+    display: flex;
+  }
+
+  .toc-desktop {
+    display: none;
+  }
+}
+
+@media all and not ($mobile) {
+  .toc-desktop {
+    display: flex;
   }
 }

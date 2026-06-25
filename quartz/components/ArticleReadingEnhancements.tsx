@@ -36,6 +36,17 @@ function asStringArray(value: unknown): string[] {
   return []
 }
 
+function getArticleSummary(file: QuartzPluginData) {
+  const raw =
+    file.frontmatter?.summary ??
+    file.frontmatter?.description ??
+    file.description ??
+    ""
+  const summary = String(raw).replace(/\s+/g, " ").trim()
+  if (summary.length <= 82) return summary
+  return `${summary.slice(0, 82)}...`
+}
+
 function getSeries(value: unknown): string | undefined {
   if (typeof value === "string" && value.trim() !== "") return value.trim()
   if (value && typeof value === "object" && "name" in value) {
@@ -97,7 +108,10 @@ export const CoreJudgmentCard: QuartzComponent = ({
   fileData,
 }: QuartzComponentProps) => {
   const judgments = asStringArray(
-    fileData.frontmatter?.coreJudgments ?? fileData.frontmatter?.core_judgments,
+    fileData.frontmatter?.key_points ??
+      fileData.frontmatter?.keyPoints ??
+      fileData.frontmatter?.coreJudgments ??
+      fileData.frontmatter?.core_judgments,
   ).slice(0, 5)
 
   if (!isArticlePage(fileData) || judgments.length === 0) return null
@@ -220,9 +234,9 @@ export const ContinueReading: QuartzComponent = ({
             <span class="article-continue-reading__title">
               {page.frontmatter?.title}
             </span>
-            {page.frontmatter?.summary ? (
+            {getArticleSummary(page) ? (
               <span class="article-continue-reading__summary">
-                {String(page.frontmatter.summary)}
+                {getArticleSummary(page)}
               </span>
             ) : null}
           </a>
@@ -242,15 +256,28 @@ export const ArticleCta: QuartzComponent = ({
       <div>
         <h2>进一步阅读与联系</h2>
         <p>
-          可从手册版本继续阅读公民秩序主义的基本框架；如需联系，请使用以下邮箱。
+          如果你希望继续了解公民秩序主义的完整框架，可先阅读介绍手册；严肃交流可通过邮箱联系。
         </p>
       </div>
       <div class="article-ending-cta__links">
-        <a href="/static/files/civic-orderism-introduction-manual.pdf">
-          PDF 介绍手册
+        <a
+          class="article-ending-cta__button article-ending-cta__button--primary"
+          href="/static/files/civic-orderism-introduction-manual.pdf"
+        >
+          阅读 PDF 介绍手册
         </a>
-        <a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a>
-        <a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com</a>
+        <a
+          class="article-ending-cta__button"
+          href="mailto:citizenorder@proton.me"
+        >
+          主邮箱 citizenorder@proton.me
+        </a>
+        <a
+          class="article-ending-cta__button"
+          href="mailto:civicorderism@gmail.com"
+        >
+          备用邮箱 civicorderism@gmail.com
+        </a>
       </div>
     </section>
   )

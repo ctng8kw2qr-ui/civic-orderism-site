@@ -5,7 +5,6 @@ import {
 } from "./types"
 import legacyStyle from "./styles/legacyToc.scss"
 import modernStyle from "./styles/toc.scss"
-import { classNames } from "../util/lang"
 
 // @ts-ignore
 import script from "./scripts/toc.inline"
@@ -35,12 +34,18 @@ export default ((opts?: Partial<Options>) => {
     }
 
     const id = `toc-${numTocs++}`
+    const responsiveClass =
+      displayClass === "mobile-only"
+        ? "toc-mobile"
+        : displayClass === "desktop-only"
+          ? "toc-desktop"
+          : undefined
     const title =
       displayClass === "mobile-only"
         ? "本文目录"
         : i18n(cfg.locale).components.tableOfContents.title
     return (
-      <div class={classNames(displayClass, "toc")}>
+      <div class={["toc", responsiveClass].filter(Boolean).join(" ")}>
         <button
           type="button"
           class={fileData.collapseToc ? "collapsed toc-header" : "toc-header"}

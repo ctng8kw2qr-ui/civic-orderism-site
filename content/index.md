@@ -122,6 +122,7 @@ status: published
   <div><dt>主邮箱</dt><dd><a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a></dd></div>
   <div><dt>备用邮箱</dt><dd><a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com</a></dd></div>
   <div><dt>X 平台</dt><dd><a href="https://x.com/CivicOrderism">@CivicOrderism</a></dd></div>
+  <div><dt>网站</dt><dd><a href="https://civicorderism.com/">civicorderism.com</a></dd></div>
 </dl>
 
 <p class="contact-note">为便于有效沟通，建议先阅读“第一次来，按这个顺序读”中的基础文章。</p>

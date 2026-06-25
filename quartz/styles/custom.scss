@@ -440,6 +440,56 @@ article .articles-reading-note {
   color: var(--darkgray);
 }
 
+body[data-slug="articles"] article h2 {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #d8dee6;
+  color: #0a1d38;
+  font-size: 1.26rem;
+  font-weight: 600;
+}
+
+body[data-slug="articles"] article h2 + .reading-map-section-note {
+  margin: 0.55rem 0 0.95rem;
+}
+
+article .reading-map-section-note {
+  color: var(--darkgray);
+  font-size: 0.92rem;
+  line-height: 1.68;
+}
+
+article .reading-map-section-note span,
+article .recommended-reading {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.45rem;
+  padding: 0.1rem 0.38rem;
+  border: 1px solid #d8dee6;
+  border-radius: 4px;
+  color: #7e642e;
+  font-size: 0.74rem;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+article .reading-map-section-note span {
+  margin-left: 0.45rem;
+}
+
+body[data-slug="articles"] article h2 + .reading-map-section-note + ul {
+  margin-top: 0.85rem;
+}
+
+body[data-slug="articles"] article ul {
+  padding-left: 1.15rem;
+}
+
+body[data-slug="articles"] article li {
+  margin: 0.48rem 0;
+}
+
 body:not([data-slug="index"]) article p {
   line-height: 1.8;
   margin-top: 1em;
@@ -709,26 +759,34 @@ article .contact-section > p {
 }
 
 article .contact-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
   margin: 1.35rem 0;
-  border-top: 1px solid #d8dee6;
 }
 
 article .contact-list > div {
-  display: grid;
-  grid-template-columns: 6rem minmax(0, 1fr);
-  gap: 1rem;
-  padding: 0.82rem 0;
-  border-bottom: 1px solid #d8dee6;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.28rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid #d8dee6;
+  border-radius: 6px;
+  background: #fff;
 }
 
 article .contact-list dt {
   color: #9b7c3e;
-  font-size: 0.88rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
 article .contact-list dd {
   margin: 0;
   overflow-wrap: anywhere;
+  line-height: 1.45;
 }
 
 article .contact-note {
@@ -788,9 +846,8 @@ article .contact-note {
     margin-top: 0.38rem;
   }
 
-  article .contact-list > div {
+  article .contact-list {
     grid-template-columns: 1fr;
-    gap: 0.2rem;
   }
 
   article .home-hero-title {
@@ -1156,7 +1213,7 @@ article .contact-note {
 
   body:not([data-slug="index"]) .right,
   body:not([data-slug="index"]) .sidebar.right,
-  body:not([data-slug="index"]) .toc {
+  body:not([data-slug="index"]) .toc-desktop {
     display: none !important;
     width: 0 !important;
     max-width: 0 !important;

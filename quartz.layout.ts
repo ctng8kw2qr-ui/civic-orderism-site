@@ -111,7 +111,10 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ContentMeta(),
     Component.TagList(),
     Component.ArticleSeriesNavigation(),
-    Component.MobileOnly(Component.TableOfContents()),
+    Component.ConditionalRender({
+      component: Component.MobileOnly(Component.TableOfContents()),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
     Component.ArticleCoreJudgmentCard(),
   ],
   left: [
@@ -129,7 +132,12 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.Explorer(publicExplorerOptions),
   ],
-  right: [Component.DesktopOnly(Component.TableOfContents())],
+  right: [
+    Component.ConditionalRender({
+      component: Component.DesktopOnly(Component.TableOfContents()),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
+  ],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)

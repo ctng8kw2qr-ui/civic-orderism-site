@@ -91,10 +91,29 @@ function articleLine(article) {
   return `- [[${article.slug}|${article.title}]]${date}`;
 }
 
+function recommendedArticleLine(article) {
+  const date = article.hasDate && article.date ? `（${article.date}）` : "";
+  return `- <span class="recommended-reading">推荐先读</span> [[${article.slug}|${article.title}]]${date}`;
+}
+
 function articleLines(slugs, { sort = "date" } = {}) {
   const matched = slugs.map(findArticleBySlug).filter(Boolean);
   if (sort === "date") matched.sort(compareArticlesByDateDesc);
   return matched.map(articleLine).join("\n") || "暂无文章。";
+}
+
+function mapArticleLines(slugs, recommendedSlug, { sort = "date" } = {}) {
+  const matched = slugs.map(findArticleBySlug).filter(Boolean);
+  if (sort === "date") matched.sort(compareArticlesByDateDesc);
+  return (
+    matched
+      .map((article) =>
+        article.slug === recommendedSlug
+          ? recommendedArticleLine(article)
+          : articleLine(article),
+      )
+      .join("\n") || "暂无文章。"
+  );
 }
 
 function articlesForSlugs(slugs, { sort = "date" } = {}) {
@@ -498,6 +517,7 @@ ${homeLatestCards || "暂无文章。"}
   <div><dt>主邮箱</dt><dd><a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a></dd></div>
   <div><dt>备用邮箱</dt><dd><a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com</a></dd></div>
   <div><dt>X 平台</dt><dd><a href="https://x.com/CivicOrderism">@CivicOrderism</a></dd></div>
+  <div><dt>网站</dt><dd><a href="https://civicorderism.com/">civicorderism.com</a></dd></div>
 </dl>
 
 <p class="contact-note">为便于有效沟通，建议先阅读“第一次来，按这个顺序读”中的基础文章。</p>
@@ -769,16 +789,56 @@ ${articleLines([
 ])}`,
 );
 
-function mapSection(title, sectionSlugs, { sort = "date" } = {}) {
-  return `## ${title}\n\n${articleLines(sectionSlugs, { sort })}\n\n`;
+function mapSection(
+  title,
+  sectionSlugs,
+  { sort = "date", description = "", recommendedSlug } = {},
+) {
+  const note = description
+    ? `<p class="reading-map-section-note">${description}<span>推荐先读</span></p>\n\n`
+    : "";
+  return `## ${title}\n\n${note}${mapArticleLines(sectionSlugs, recommendedSlug, { sort })}\n\n`;
 }
 
 const used = new Set();
 const mapBody = [
-  ["一、旧世界为什么失效", slugs.oldOrder],
-  ["二、中共这个组织为什么走向失灵", slugs.ccp],
-  ["三、中国正在进入什么阶段", slugs.stage],
-  ["四、外部误判、国际风险与历史案例", slugs.international],
+  [
+    "一、旧世界为什么失效",
+    slugs.oldOrder,
+    {
+      description:
+        "先理解工业时代制度为什么在信息化社会里失去统合能力。",
+      recommendedSlug:
+        "theory/democracy-still-exists-but-cannot-penetrate-reality",
+    },
+  ],
+  [
+    "二、中共这个组织为什么走向失灵",
+    slugs.ccp,
+    {
+      description:
+        "这一组文章用于理解中共不是单点危机，而是组织信用、责任结构和激励机制同步失效。",
+      recommendedSlug: "theory/party-state-structural-failure",
+    },
+  ],
+  [
+    "三、中国正在进入什么阶段",
+    slugs.stage,
+    {
+      description:
+        "从经济、财政、社会心理和官僚行为观察中国现实正在进入的阶段。",
+      recommendedSlug: "china-stage/china-manufacturing-cannot-stop",
+    },
+  ],
+  [
+    "四、外部误判、国际风险与历史案例",
+    slugs.international,
+    {
+      description:
+        "这一组用于校正外部观察中常见的主体误判、战争误判和历史类比误判。",
+      recommendedSlug: "china/taiwan-war-controllable-escalation-illusion",
+    },
+  ],
   [
     "五、为什么需要新的制度通道",
     [
@@ -787,8 +847,22 @@ const mapBody = [
       "civic-orderism/why-civic-orderism-is-easier-to-succeed",
       "civic-orderism/why-focus-on-invisible-power-nodes",
     ],
+    {
+      description:
+        "从“为什么旧通道不够”进入“为什么需要可解释、可纠错、可追责的新通道”。",
+      recommendedSlug:
+        "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+    },
   ],
-  ["六、公民秩序主义的基本理论", slugs.civicTheory],
+  [
+    "六、公民秩序主义的基本理论",
+    slugs.civicTheory,
+    {
+      description:
+        "这一组是公民秩序主义的理论骨架：国家如何从人格依赖转向系统依赖。",
+      recommendedSlug: "civic-orderism/state-must-rely-on-systems-not-drivers",
+    },
+  ],
   [
     "七、委员会与公共判断机制",
     [
@@ -799,6 +873,11 @@ const mapBody = [
       "civic-orderism/why-dual-track-committee-administration",
       "civic-orderism/why-not-simple-separation-of-powers",
     ],
+    {
+      description:
+        "理解委员会不是替代行政做事，而是建立公共判断、纠偏和责任识别机制。",
+      recommendedSlug: "civic-orderism/why-committees-cannot-directly-take-cases",
+    },
   ],
   [
     "八、选举、授权与责任更替",
@@ -809,6 +888,11 @@ const mapBody = [
       "civic-orderism/why-proposals-from-social-organizations",
       "civic-orderism/why-no-bicameral-parliament",
     ],
+    {
+      description:
+        "这一组说明选举如何回到授权、责任和代表关系，而不是沦为资本、动员和表演。",
+      recommendedSlug: "civic-orderism/election-logic-under-civic-orderism",
+    },
   ],
   [
     "九、后台系统、司法与执行底座",
@@ -819,6 +903,11 @@ const mapBody = [
       "civic-orderism/state-operation-process-under-civic-orderism",
       "civic-orderism/why-civic-orderism-emphasizes-experience-and-records",
     ],
+    {
+      description:
+        "这里进入制度运行的底层条件：留痕、培训、司法、执行和信息透明。",
+      recommendedSlug: "civic-orderism/backend-system-under-civic-orderism",
+    },
   ],
 ]
   .map(([title, sectionSlugs, options]) => {

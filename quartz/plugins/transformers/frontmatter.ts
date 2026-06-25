@@ -183,6 +183,8 @@ declare module "vfile" {
         section: string
         summary: string
         series: string | { name?: string; order?: number }
+        key_points: string[]
+        keyPoints: string[]
         coreJudgments: string[]
         core_judgments: string[]
       }>
