@@ -219,7 +219,7 @@ export const ContinueReading: QuartzComponent = ({
       <h2>继续阅读</h2>
       <div class="article-continue-reading__grid">
         {recommendations.map((page) => (
-          <article class="article-continue-reading__card">
+          <article class="article-continue-reading__card" data-card="recommendation">
             <h3 class="article-continue-reading__title">
               <a href={resolveRelative(fileData.slug!, page.slug!)}>
                 {page.frontmatter?.title}
@@ -258,32 +258,32 @@ export const ArticleCta: QuartzComponent = ({
           如果你希望继续了解公民秩序主义的完整框架，可先阅读介绍手册；严肃交流可通过邮箱联系。
         </p>
       </div>
-      <dl class="article-ending-cta__links">
-        <div class="article-ending-cta__item">
-          <dt>资料入口</dt>
-          <dd>
+      <ul class="article-ending-cta__links">
+        <li class="article-ending-cta__item">
+          <span class="article-ending-cta__label">资料入口</span>
+          <span class="article-ending-cta__value">
             <a href="/files/civic-orderism-introduction-manual.pdf">
               阅读 PDF 介绍手册
             </a>
-          </dd>
-        </div>
-        <div class="article-ending-cta__item">
-          <dt>主邮箱</dt>
-          <dd>
+          </span>
+        </li>
+        <li class="article-ending-cta__item">
+          <span class="article-ending-cta__label">主邮箱</span>
+          <span class="article-ending-cta__value">
             <a href="mailto:citizenorder@proton.me">
               citizenorder@proton.me
             </a>
-          </dd>
-        </div>
-        <div class="article-ending-cta__item">
-          <dt>备用邮箱</dt>
-          <dd>
+          </span>
+        </li>
+        <li class="article-ending-cta__item">
+          <span class="article-ending-cta__label">备用邮箱</span>
+          <span class="article-ending-cta__value">
             <a href="mailto:civicorderism@gmail.com">
               civicorderism@gmail.com
             </a>
-          </dd>
-        </div>
-      </dl>
+          </span>
+        </li>
+      </ul>
     </section>
   )
 }

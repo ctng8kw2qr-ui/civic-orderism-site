@@ -138,6 +138,7 @@ article .key-judgment,
     min-width: 0;
     flex-direction: column;
     gap: 0.58rem;
+    min-height: 9.5rem;
     padding: 1.05rem 1.1rem;
     border: 1px solid var(--lightgray);
     border-radius: 6px;
@@ -228,32 +229,36 @@ article .key-judgment,
     grid-template-columns: minmax(0, 1fr);
     gap: 0.55rem;
     margin: 0;
+    padding: 0;
     font-size: 0.86rem;
     line-height: 1.45;
+    list-style: none;
   }
 
   &__item {
+    display: flex;
     min-width: 0;
+    flex-direction: column;
+    gap: 0.24rem;
     padding: 0.72rem 0.8rem;
     border: 1px solid var(--lightgray);
     border-radius: 5px;
     background: var(--light);
   }
 
-  & dt {
-    margin: 0 0 0.24rem;
+  &__label {
     color: var(--gray);
     font-size: 0.74rem;
     font-weight: 600;
     letter-spacing: 0.04em;
   }
 
-  & dt::after {
+  &__label::after {
     content: ":";
   }
 
-  & dd {
-    margin: 0;
+  &__value {
+    display: block;
     overflow-wrap: anywhere;
   }
 
