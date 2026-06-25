@@ -143,7 +143,6 @@ article .key-judgment,
     border-radius: 6px;
     background: var(--light);
     color: var(--darkgray);
-    text-decoration: none;
     background-image: none;
   }
 
@@ -153,10 +152,11 @@ article .key-judgment,
   }
 
   &__meta {
-    order: 1;
+    order: 2;
     display: flex;
     flex-wrap: wrap;
     gap: 0.35rem 0.55rem;
+    margin: 0;
     color: var(--gray);
     font-size: 0.75rem;
     line-height: 1.4;
@@ -168,17 +168,28 @@ article .key-judgment,
   }
 
   &__title {
-    order: 2;
+    order: 1;
     display: block;
-    color: var(--dark);
+    margin: 0;
     font-size: 0.98rem;
     font-weight: 600;
     line-height: 1.45;
+
+    & a {
+      color: var(--dark);
+      text-decoration: none;
+      background-image: none;
+    }
+
+    & a:hover {
+      color: var(--secondary);
+    }
   }
 
   &__summary {
     order: 3;
     display: -webkit-box;
+    margin: 0;
     overflow: hidden;
     color: var(--darkgray);
     font-size: 0.82rem;
@@ -235,6 +246,10 @@ article .key-judgment,
     font-size: 0.74rem;
     font-weight: 600;
     letter-spacing: 0.04em;
+  }
+
+  & dt::after {
+    content: ":";
   }
 
   & dd {

@@ -120,11 +120,11 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ContentMeta(),
     Component.TagList(),
     Component.ArticleSeriesNavigation(),
+    Component.ArticleCoreJudgmentCard(),
     Component.ConditionalRender({
       component: Component.TableOfContents(),
       condition: isArticleContentPage,
     }),
-    Component.ArticleCoreJudgmentCard(),
   ],
   left: [
     Component.PageTitle(),
