@@ -118,7 +118,7 @@ export const CoreJudgmentCard: QuartzComponent = ({
 
   return (
     <section class="article-core-judgments" aria-label="本文核心判断">
-      <div class="article-core-judgments__label">本文核心判断</div>
+      <h2 class="article-core-judgments__label">本文核心判断</h2>
       <ol>
         {judgments.map((judgment) => (
           <li>{judgment}</li>
@@ -259,10 +259,13 @@ export const ArticleCta: QuartzComponent = ({
         </p>
       </div>
       <ul class="article-ending-cta__links">
-        <li class="article-ending-cta__item">
+        <li class="article-ending-cta__item article-ending-cta__item--primary">
           <span class="article-ending-cta__label">资料入口</span>
           <span class="article-ending-cta__value">
-            <a href="/files/civic-orderism-introduction-manual.pdf">
+            <a
+              class="article-ending-cta__button"
+              href="/files/civic-orderism-introduction-manual.pdf"
+            >
               阅读 PDF 介绍手册
             </a>
           </span>
