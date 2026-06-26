@@ -21,13 +21,20 @@
 }
 
 .article-core-judgments {
-  margin: 1.45rem 0 2.15rem;
-  padding: 1.2rem 1.3rem 1.15rem;
-  border: 1px solid var(--lightgray);
-  border-left: 3px solid color-mix(in srgb, var(--secondary) 76%, var(--gray));
-  border-radius: 7px;
-  background: color-mix(in srgb, var(--light) 96%, var(--dark) 4%);
-  box-shadow: 0 1px 0 color-mix(in srgb, var(--dark) 7%, transparent);
+  margin: 1.45rem 0 2.35rem;
+  padding: 1.25rem 1.35rem 1.18rem;
+  border: 1px solid color-mix(in srgb, var(--lightgray) 84%, var(--gray));
+  border-left: 3px solid color-mix(in srgb, var(--secondary) 72%, var(--gray));
+  border-radius: 8px;
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--light) 94%, var(--dark) 6%),
+      color-mix(in srgb, var(--light) 98%, var(--dark) 2%)
+    );
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--light) 70%, transparent),
+    0 1px 0 color-mix(in srgb, var(--dark) 8%, transparent);
 
   &__label {
     margin: 0 0 0.72rem;
@@ -40,6 +47,11 @@
   & ol {
     margin: 0;
     padding-left: 1.25rem;
+  }
+
+  & li::marker {
+    color: color-mix(in srgb, var(--secondary) 70%, var(--gray));
+    font-weight: 600;
   }
 
   & li {
@@ -119,11 +131,11 @@ article .key-judgment,
 }
 
 .article-continue-reading {
-  margin: 2.8rem 0 2.2rem;
+  margin: 3rem 0 2.35rem;
 
   & h2 {
-    margin: 0 0 1rem;
-    padding-top: 1rem;
+    margin: 0 0 1.05rem;
+    padding-top: 1.05rem;
     border-top: 1px solid var(--lightgray);
     font-size: 1.25rem;
     font-weight: 500;
@@ -143,13 +155,20 @@ article .key-judgment,
     flex-direction: column;
     gap: 0.62rem;
     min-height: 10.25rem;
-    padding: 1.15rem 1.15rem 1.1rem;
-    border: 1px solid var(--lightgray);
-    border-radius: 7px;
-    background: color-mix(in srgb, var(--light) 97%, var(--dark) 3%);
+    padding: 1.18rem 1.18rem 1.12rem;
+    border: 1px solid color-mix(in srgb, var(--lightgray) 88%, var(--gray));
+    border-radius: 8px;
+    background:
+      linear-gradient(
+        180deg,
+        var(--light),
+        color-mix(in srgb, var(--light) 96%, var(--dark) 4%)
+      );
     color: var(--darkgray);
     background-image: none;
-    box-shadow: 0 1px 0 color-mix(in srgb, var(--dark) 6%, transparent);
+    box-shadow:
+      inset 0 1px 0 color-mix(in srgb, var(--light) 75%, transparent),
+      0 1px 0 color-mix(in srgb, var(--dark) 7%, transparent);
     transition:
       border-color 160ms ease,
       background-color 160ms ease,
@@ -157,10 +176,22 @@ article .key-judgment,
   }
 
   &__card:hover {
-    border-color: color-mix(in srgb, var(--secondary) 42%, var(--lightgray));
+    border-color: color-mix(in srgb, var(--secondary) 46%, var(--lightgray));
     background: var(--light);
-    box-shadow: 0 2px 8px color-mix(in srgb, var(--dark) 7%, transparent);
+    box-shadow:
+      inset 0 1px 0 color-mix(in srgb, var(--light) 75%, transparent),
+      0 3px 10px color-mix(in srgb, var(--dark) 8%, transparent);
     color: var(--dark);
+  }
+
+  &__card::before {
+    content: "";
+    position: absolute;
+    inset: 0.75rem auto auto 1.18rem;
+    width: 2.2rem;
+    height: 2px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--secondary) 42%, var(--lightgray));
   }
 
   &__meta {
@@ -183,6 +214,7 @@ article .key-judgment,
     order: 1;
     display: block;
     margin: 0;
+    padding-top: 0.35rem;
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.48;
@@ -215,13 +247,20 @@ article .key-judgment,
 .article-ending-cta {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 1.25rem;
-  margin: 2.35rem 0 0;
-  padding: 1.3rem;
-  border: 1px solid var(--lightgray);
-  border-radius: 7px;
-  background: color-mix(in srgb, var(--light) 96%, var(--dark) 4%);
-  box-shadow: 0 1px 0 color-mix(in srgb, var(--dark) 6%, transparent);
+  gap: 1.35rem;
+  margin: 2.5rem 0 0;
+  padding: 1.35rem;
+  border: 1px solid color-mix(in srgb, var(--lightgray) 86%, var(--gray));
+  border-radius: 8px;
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--light) 95%, var(--dark) 5%),
+      color-mix(in srgb, var(--light) 98%, var(--dark) 2%)
+    );
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--light) 72%, transparent),
+    0 1px 0 color-mix(in srgb, var(--dark) 8%, transparent);
 
   & h2 {
     margin: 0 0 0.35rem;
@@ -241,7 +280,7 @@ article .key-judgment,
   &__links {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    gap: 0.62rem;
+    gap: 0.68rem;
     margin: 0;
     padding: 0;
     font-size: 0.86rem;
@@ -253,15 +292,16 @@ article .key-judgment,
     display: flex;
     min-width: 0;
     flex-direction: column;
-    gap: 0.28rem;
-    padding: 0.78rem 0.85rem;
-    border: 1px solid var(--lightgray);
+    gap: 0.3rem;
+    padding: 0.82rem 0.9rem;
+    border: 1px solid color-mix(in srgb, var(--lightgray) 88%, var(--gray));
     border-radius: 6px;
     background: var(--light);
   }
 
   &__item--primary {
-    background: color-mix(in srgb, var(--light) 92%, var(--secondary) 8%);
+    border-color: color-mix(in srgb, var(--secondary) 32%, var(--lightgray));
+    background: color-mix(in srgb, var(--light) 91%, var(--secondary) 9%);
   }
 
   &__label {
@@ -296,7 +336,7 @@ article .key-judgment,
     width: fit-content;
     align-items: center;
     justify-content: center;
-    padding: 0.36rem 0.62rem;
+    padding: 0.42rem 0.72rem;
     border: 1px solid color-mix(in srgb, var(--secondary) 34%, var(--lightgray));
     border-radius: 4px;
     background: var(--light);
