@@ -117,14 +117,9 @@ export const CoreJudgmentCard: QuartzComponent = ({
   if (!isArticlePage(fileData) || judgments.length === 0) return null
 
   return (
-    <section
-      class="article-core-judgments key-points-card"
-      aria-label="本文核心判断"
-    >
+    <section class="key-points-card" aria-label="本文核心判断">
       <div class="key-points-card__inner">
-        <h2 class="article-core-judgments__label key-points-card__title">
-          本文核心判断
-        </h2>
+        <h2 class="key-points-card__title">本文核心判断</h2>
         <ol class="key-points-card__list">
           {judgments.map((judgment) => (
             <li class="key-points-card__item">{judgment}</li>
@@ -222,22 +217,17 @@ export const ContinueReading: QuartzComponent = ({
   if (recommendations.length === 0) return null
 
   return (
-    <section
-      class="article-continue-reading related-reading"
-      aria-label="继续阅读"
-    >
+    <section class="related-reading" aria-label="继续阅读">
       <h2 class="related-reading__heading">继续阅读</h2>
-      <div class="article-continue-reading__grid related-grid">
+      <div class="related-grid">
         {recommendations.map((page) => (
           <a
-            class="article-continue-reading__card related-card"
+            class="related-card"
             data-card="recommendation"
             href={resolveRelative(fileData.slug!, page.slug!)}
           >
-            <span class="article-continue-reading__title related-card__title">
-              {page.frontmatter?.title}
-            </span>
-            <p class="article-continue-reading__meta">
+            <span class="related-card__title">{page.frontmatter?.title}</span>
+            <p class="related-card__meta">
               {page.dates ? (
                 <Date date={getDate(cfg, page)!} locale={cfg.locale} />
               ) : null}
@@ -246,9 +236,7 @@ export const ContinueReading: QuartzComponent = ({
               ) : null}
             </p>
             {getArticleSummary(page) ? (
-              <p class="article-continue-reading__summary">
-                {getArticleSummary(page)}
-              </p>
+              <p class="related-card__summary">{getArticleSummary(page)}</p>
             ) : null}
           </a>
         ))}
@@ -263,36 +251,36 @@ export const ArticleCta: QuartzComponent = ({
   if (!isArticlePage(fileData)) return null
 
   return (
-    <section class="article-ending-cta article-cta" aria-label="文章结尾信息">
+    <section class="article-cta" aria-label="文章结尾信息">
       <div class="article-cta__copy">
         <h2 class="article-cta__title">进一步阅读与联系</h2>
         <p>
           如果你希望继续了解公民秩序主义的完整框架，可先阅读介绍手册；严肃交流可通过邮箱联系。
         </p>
       </div>
-      <div class="article-ending-cta__links article-cta__links">
-        <div class="article-ending-cta__item article-ending-cta__item--primary article-cta__item article-cta__item--primary">
-          <span class="article-ending-cta__label">资料入口</span>
-          <span class="article-ending-cta__value">
+      <div class="article-cta__links">
+        <div class="article-cta__item article-cta__item--primary">
+          <span class="article-cta__label">资料入口</span>
+          <span class="article-cta__value">
             <a
-              class="article-ending-cta__button"
+              class="article-cta__button"
               href="/files/civic-orderism-introduction-manual.pdf"
             >
               阅读 PDF 介绍手册
             </a>
           </span>
         </div>
-        <div class="article-ending-cta__item article-cta__item">
-          <span class="article-ending-cta__label">主邮箱</span>
-          <span class="article-ending-cta__value">
+        <div class="article-cta__item">
+          <span class="article-cta__label">主邮箱</span>
+          <span class="article-cta__value">
             <a href="mailto:citizenorder@proton.me">
               citizenorder@proton.me
             </a>
           </span>
         </div>
-        <div class="article-ending-cta__item article-cta__item">
-          <span class="article-ending-cta__label">备用邮箱</span>
-          <span class="article-ending-cta__value">
+        <div class="article-cta__item">
+          <span class="article-cta__label">备用邮箱</span>
+          <span class="article-cta__value">
             <a href="mailto:civicorderism@gmail.com">
               civicorderism@gmail.com
             </a>
