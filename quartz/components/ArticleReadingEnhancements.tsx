@@ -117,13 +117,20 @@ export const CoreJudgmentCard: QuartzComponent = ({
   if (!isArticlePage(fileData) || judgments.length === 0) return null
 
   return (
-    <section class="article-core-judgments" aria-label="本文核心判断">
-      <h2 class="article-core-judgments__label">本文核心判断</h2>
-      <ol>
-        {judgments.map((judgment) => (
-          <li>{judgment}</li>
-        ))}
-      </ol>
+    <section
+      class="article-core-judgments key-points-card"
+      aria-label="本文核心判断"
+    >
+      <div class="key-points-card__inner">
+        <h2 class="article-core-judgments__label key-points-card__title">
+          本文核心判断
+        </h2>
+        <ol class="key-points-card__list">
+          {judgments.map((judgment) => (
+            <li class="key-points-card__item">{judgment}</li>
+          ))}
+        </ol>
+      </div>
     </section>
   )
 }
@@ -217,9 +224,13 @@ export const ContinueReading: QuartzComponent = ({
   return (
     <section class="article-continue-reading" aria-label="继续阅读">
       <h2>继续阅读</h2>
-      <div class="article-continue-reading__grid">
+      <div class="article-continue-reading__grid related-grid">
         {recommendations.map((page) => (
-          <article class="article-continue-reading__card" data-card="recommendation">
+          <div
+            class="article-continue-reading__card related-card"
+            data-card="recommendation"
+            role="article"
+          >
             <h3 class="article-continue-reading__title">
               <a href={resolveRelative(fileData.slug!, page.slug!)}>
                 {page.frontmatter?.title}
@@ -238,7 +249,7 @@ export const ContinueReading: QuartzComponent = ({
                 {getArticleSummary(page)}
               </p>
             ) : null}
-          </article>
+          </div>
         ))}
       </div>
     </section>
@@ -251,15 +262,15 @@ export const ArticleCta: QuartzComponent = ({
   if (!isArticlePage(fileData)) return null
 
   return (
-    <section class="article-ending-cta" aria-label="文章结尾信息">
-      <div>
-        <h2>进一步阅读与联系</h2>
+    <section class="article-ending-cta article-cta" aria-label="文章结尾信息">
+      <div class="article-cta__copy">
+        <h2 class="article-cta__title">进一步阅读与联系</h2>
         <p>
           如果你希望继续了解公民秩序主义的完整框架，可先阅读介绍手册；严肃交流可通过邮箱联系。
         </p>
       </div>
-      <ul class="article-ending-cta__links">
-        <li class="article-ending-cta__item article-ending-cta__item--primary">
+      <div class="article-ending-cta__links article-cta__links">
+        <div class="article-ending-cta__item article-ending-cta__item--primary article-cta__item article-cta__item--primary">
           <span class="article-ending-cta__label">资料入口</span>
           <span class="article-ending-cta__value">
             <a
@@ -269,24 +280,24 @@ export const ArticleCta: QuartzComponent = ({
               阅读 PDF 介绍手册
             </a>
           </span>
-        </li>
-        <li class="article-ending-cta__item">
+        </div>
+        <div class="article-ending-cta__item article-cta__item">
           <span class="article-ending-cta__label">主邮箱</span>
           <span class="article-ending-cta__value">
             <a href="mailto:citizenorder@proton.me">
               citizenorder@proton.me
             </a>
           </span>
-        </li>
-        <li class="article-ending-cta__item">
+        </div>
+        <div class="article-ending-cta__item article-cta__item">
           <span class="article-ending-cta__label">备用邮箱</span>
           <span class="article-ending-cta__value">
             <a href="mailto:civicorderism@gmail.com">
               civicorderism@gmail.com
             </a>
           </span>
-        </li>
-      </ul>
+        </div>
+      </div>
     </section>
   )
 }
