@@ -22,31 +22,27 @@
 
 .article-core-judgments {
   margin: 1.45rem 0 2.35rem;
-  padding: 1.25rem 1.35rem 1.18rem;
-  border: 1px solid color-mix(in srgb, var(--lightgray) 84%, var(--gray));
-  border-left: 3px solid color-mix(in srgb, var(--secondary) 72%, var(--gray));
+  padding: 1.35rem 1.45rem 1.28rem;
+  border: 1px solid color-mix(in srgb, var(--lightgray) 76%, var(--gray));
+  border-left: 4px solid color-mix(in srgb, var(--secondary) 62%, var(--gray));
   border-radius: 8px;
-  background:
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--light) 94%, var(--dark) 6%),
-      color-mix(in srgb, var(--light) 98%, var(--dark) 2%)
-    );
+  background: #fff;
   box-shadow:
     inset 0 1px 0 color-mix(in srgb, var(--light) 70%, transparent),
-    0 1px 0 color-mix(in srgb, var(--dark) 8%, transparent);
+    0 2px 10px color-mix(in srgb, var(--dark) 7%, transparent);
 
   &__label {
-    margin: 0 0 0.72rem;
+    margin: 0 0 0.82rem;
     color: var(--dark);
-    font-size: 0.94rem;
+    font-size: 1rem;
     font-weight: 600;
     line-height: 1.35;
   }
 
   & ol {
     margin: 0;
-    padding-left: 1.25rem;
+    padding: 0.88rem 0 0 1.35rem;
+    border-top: 1px solid color-mix(in srgb, var(--lightgray) 82%, #fff);
   }
 
   & li::marker {
@@ -131,7 +127,7 @@ article .key-judgment,
 }
 
 .article-continue-reading {
-  margin: 3rem 0 2.35rem;
+  margin: 3.15rem 0 2.5rem;
 
   & h2 {
     margin: 0 0 1.05rem;
@@ -144,7 +140,7 @@ article .key-judgment,
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.15rem;
+    gap: 1.25rem;
     align-items: stretch;
   }
 
@@ -153,22 +149,17 @@ article .key-judgment,
     display: flex;
     min-width: 0;
     flex-direction: column;
-    gap: 0.62rem;
-    min-height: 10.25rem;
-    padding: 1.18rem 1.18rem 1.12rem;
-    border: 1px solid color-mix(in srgb, var(--lightgray) 88%, var(--gray));
+    gap: 0.68rem;
+    min-height: 10.75rem;
+    padding: 1.25rem 1.22rem 1.16rem;
+    border: 1px solid color-mix(in srgb, var(--lightgray) 78%, var(--gray));
     border-radius: 8px;
-    background:
-      linear-gradient(
-        180deg,
-        var(--light),
-        color-mix(in srgb, var(--light) 96%, var(--dark) 4%)
-      );
+    background: #fff;
     color: var(--darkgray);
     background-image: none;
     box-shadow:
       inset 0 1px 0 color-mix(in srgb, var(--light) 75%, transparent),
-      0 1px 0 color-mix(in srgb, var(--dark) 7%, transparent);
+      0 2px 10px color-mix(in srgb, var(--dark) 6%, transparent);
     transition:
       border-color 160ms ease,
       background-color 160ms ease,
@@ -176,22 +167,22 @@ article .key-judgment,
   }
 
   &__card:hover {
-    border-color: color-mix(in srgb, var(--secondary) 46%, var(--lightgray));
-    background: var(--light);
+    border-color: color-mix(in srgb, var(--secondary) 38%, var(--gray));
+    background: color-mix(in srgb, #fff 96%, var(--lightgray));
     box-shadow:
       inset 0 1px 0 color-mix(in srgb, var(--light) 75%, transparent),
-      0 3px 10px color-mix(in srgb, var(--dark) 8%, transparent);
+      0 3px 12px color-mix(in srgb, var(--dark) 8%, transparent);
     color: var(--dark);
   }
 
   &__card::before {
     content: "";
     position: absolute;
-    inset: 0.75rem auto auto 1.18rem;
-    width: 2.2rem;
+    inset: 0 auto auto 0;
+    width: 100%;
     height: 2px;
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--secondary) 42%, var(--lightgray));
+    border-radius: 8px 8px 0 0;
+    background: color-mix(in srgb, var(--secondary) 34%, var(--lightgray));
   }
 
   &__meta {
@@ -214,7 +205,7 @@ article .key-judgment,
     order: 1;
     display: block;
     margin: 0;
-    padding-top: 0.35rem;
+    padding-top: 0.08rem;
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.48;
@@ -248,19 +239,14 @@ article .key-judgment,
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: 1.35rem;
-  margin: 2.5rem 0 0;
-  padding: 1.35rem;
-  border: 1px solid color-mix(in srgb, var(--lightgray) 86%, var(--gray));
+  margin: 2.6rem 0 0;
+  padding: 1.45rem;
+  border: 1px solid color-mix(in srgb, var(--lightgray) 76%, var(--gray));
   border-radius: 8px;
-  background:
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--light) 95%, var(--dark) 5%),
-      color-mix(in srgb, var(--light) 98%, var(--dark) 2%)
-    );
+  background: #fff;
   box-shadow:
     inset 0 1px 0 color-mix(in srgb, var(--light) 72%, transparent),
-    0 1px 0 color-mix(in srgb, var(--dark) 8%, transparent);
+    0 2px 10px color-mix(in srgb, var(--dark) 7%, transparent);
 
   & h2 {
     margin: 0 0 0.35rem;
@@ -280,7 +266,7 @@ article .key-judgment,
   &__links {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    gap: 0.68rem;
+    gap: 0.72rem;
     margin: 0;
     padding: 0;
     font-size: 0.86rem;
@@ -293,15 +279,15 @@ article .key-judgment,
     min-width: 0;
     flex-direction: column;
     gap: 0.3rem;
-    padding: 0.82rem 0.9rem;
-    border: 1px solid color-mix(in srgb, var(--lightgray) 88%, var(--gray));
+    padding: 0.88rem 0.95rem;
+    border: 1px solid color-mix(in srgb, var(--lightgray) 78%, var(--gray));
     border-radius: 6px;
-    background: var(--light);
+    background: color-mix(in srgb, #fff 96%, var(--lightgray));
   }
 
   &__item--primary {
-    border-color: color-mix(in srgb, var(--secondary) 32%, var(--lightgray));
-    background: color-mix(in srgb, var(--light) 91%, var(--secondary) 9%);
+    border-color: color-mix(in srgb, var(--secondary) 30%, var(--gray));
+    background: color-mix(in srgb, #fff 91%, var(--secondary) 9%);
   }
 
   &__label {
@@ -336,15 +322,16 @@ article .key-judgment,
     width: fit-content;
     align-items: center;
     justify-content: center;
-    padding: 0.42rem 0.72rem;
-    border: 1px solid color-mix(in srgb, var(--secondary) 34%, var(--lightgray));
+    padding: 0.46rem 0.78rem;
+    border: 1px solid color-mix(in srgb, var(--secondary) 38%, var(--gray));
     border-radius: 4px;
-    background: var(--light);
+    background: #fff;
     line-height: 1.35;
   }
 
   &__button:hover {
-    border-color: color-mix(in srgb, var(--secondary) 60%, var(--lightgray));
+    border-color: color-mix(in srgb, var(--secondary) 58%, var(--gray));
+    background: color-mix(in srgb, #fff 94%, var(--lightgray));
   }
 }
 
@@ -369,7 +356,8 @@ article .key-judgment,
 
   .article-core-judgments {
     margin-top: 1.2rem;
-    padding: 1rem 1rem 0.95rem;
+    margin-bottom: 1.85rem;
+    padding: 1.08rem 1.05rem 1rem;
   }
 
   .article-series-nav {
@@ -393,10 +381,10 @@ article .key-judgment,
   }
 
   .article-continue-reading__grid {
-    gap: 0.9rem;
+    gap: 1rem;
   }
 
   .article-ending-cta {
-    padding: 1.05rem;
+    padding: 1.1rem;
   }
 }
