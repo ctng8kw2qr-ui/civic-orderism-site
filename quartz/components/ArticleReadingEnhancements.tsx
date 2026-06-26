@@ -222,20 +222,21 @@ export const ContinueReading: QuartzComponent = ({
   if (recommendations.length === 0) return null
 
   return (
-    <section class="article-continue-reading" aria-label="继续阅读">
-      <h2>继续阅读</h2>
+    <section
+      class="article-continue-reading related-reading"
+      aria-label="继续阅读"
+    >
+      <h2 class="related-reading__heading">继续阅读</h2>
       <div class="article-continue-reading__grid related-grid">
         {recommendations.map((page) => (
-          <div
+          <a
             class="article-continue-reading__card related-card"
             data-card="recommendation"
-            role="article"
+            href={resolveRelative(fileData.slug!, page.slug!)}
           >
-            <h3 class="article-continue-reading__title">
-              <a href={resolveRelative(fileData.slug!, page.slug!)}>
-                {page.frontmatter?.title}
-              </a>
-            </h3>
+            <span class="article-continue-reading__title related-card__title">
+              {page.frontmatter?.title}
+            </span>
             <p class="article-continue-reading__meta">
               {page.dates ? (
                 <Date date={getDate(cfg, page)!} locale={cfg.locale} />
@@ -249,7 +250,7 @@ export const ContinueReading: QuartzComponent = ({
                 {getArticleSummary(page)}
               </p>
             ) : null}
-          </div>
+          </a>
         ))}
       </div>
     </section>
