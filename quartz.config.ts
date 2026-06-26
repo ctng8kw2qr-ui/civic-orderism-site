@@ -12,7 +12,7 @@ const config: QuartzConfig = {
     pageTitle: "公民秩序主义",
     pageTitleSuffix: " · CIVIC ORDERISM",
     enableSPA: true,
-    enablePopovers: true,
+    enablePopovers: false,
     analytics: null,
     locale: "zh-CN",
     baseUrl: "civicorderism.com",
