@@ -180,6 +180,7 @@ const slugs = {
     "institution/despotism-cancer-ming-1566",
   ],
   ccp: [
+    "china/ccp-no-real-base",
     "theory/party-state-structural-failure",
     "china/information-age-impact-on-ccp-mechanisms",
     "theory/high-rigidity-system-ccp",
@@ -606,9 +607,10 @@ status: published
 
 ## 文章列表
 
-### 一、组织结构与权力网络
+### 一、组织结构与系统失效
 
 ${articleLines([
+  "china/ccp-no-real-base",
   "theory/party-state-structural-failure",
   "china/ccp-power-network-not-line",
   "china/xi-power-centralization",

@@ -14,8 +14,9 @@ status: published
 
 ## 文章列表
 
-### 一、组织结构与权力网络
+### 一、组织结构与系统失效
 
+- [[china/ccp-no-real-base|中共最大的秘密：它根本没有基本盘]]（2026-07-01）
 - [[china/ccp-power-network-not-line|中共的权力布局不是一条线，而是一张网]]（2026-05-13）
 - [[china/ccp-2018-new-reform-opening|2018新“改革开放”：从开放社会到封闭风险]]（2026-05-10）
 - [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]（2026-05-10）

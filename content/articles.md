@@ -70,6 +70,7 @@ enableToc: false
 <details class="reading-map-more" open>
 <summary>更多文章</summary>
 
+- [[china/ccp-no-real-base|中共最大的秘密：它根本没有基本盘]]（2026-07-01）
 - [[china/political-machine-rewards-and-limits|机器的奖赏与机器的尽头]]（2026-05-30）
 - [[china/emotional-link-breakdown-and-regime-collapse|情感链接的断裂与体制坍塌机制]]（2026-05-30）
 - [[china/party-power-logic-and-ccp-goal-vacuum|政党存在的权力逻辑与中共的目标困境]]（2026-05-30）
@@ -232,4 +233,4 @@ enableToc: false
 
 _（暂无未归入前九个栏目的近期文章。）_
 
-本站共收录 77 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。
+本站共收录 78 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。
