@@ -120,7 +120,7 @@ function mapArticleGroups(slugs, recommendedSlugs = [], { sort = "date" } = {}) 
 
   const moreBlock =
     more.length > 0
-      ? `<details class="reading-map-more" open>\n<summary>更多文章</summary>\n\n${more
+      ? `<details class="reading-map-more">\n<summary>更多文章</summary>\n\n${more
           .map(articleLine)
           .join("\n")}\n\n</details>`
       : "";
@@ -452,7 +452,7 @@ enableToc: false
 
 ### 公民秩序主义介绍手册
 
-<p class="resource-subtitle">理解公民秩序主义的基础文本</p>
+<p class="resource-subtitle">第一次了解公民秩序主义的基础文本</p>
 
 <a class="resource-button resource-button-primary" href="/files/civic-orderism-introduction-manual.pdf">阅读 PDF</a>
 
@@ -464,7 +464,7 @@ enableToc: false
 
 ### 公民秩序主义组织手册
 
-<p class="resource-subtitle">理解组织结构、运行机制与制度安排</p>
+<p class="resource-subtitle">进一步了解组织原则、参与方式与合作边界</p>
 
 <a class="resource-button resource-button-primary" href="/files/civic-orderism-organization-manual.pdf">阅读 PDF</a>
 
@@ -827,8 +827,10 @@ const mapBody = [
     {
       description:
         "先理解工业时代制度为什么在信息化社会里失去统合能力。",
-      recommendedSlug:
+      recommendedSlugs: [
+        "theory/why-party-politics-is-becoming-a-low-dimensional-function",
         "theory/democracy-still-exists-but-cannot-penetrate-reality",
+      ],
     },
   ],
   [
@@ -837,7 +839,10 @@ const mapBody = [
     {
       description:
         "这一组文章用于理解中共不是单点危机，而是组织信用、责任结构和激励机制同步失效。",
-      recommendedSlug: "theory/party-state-structural-failure",
+      recommendedSlugs: [
+        "theory/party-state-structural-failure",
+        "china/ccp-no-real-base",
+      ],
     },
   ],
   [
@@ -846,7 +851,10 @@ const mapBody = [
     {
       description:
         "从经济、财政、社会心理和官僚行为观察中国现实正在进入的阶段。",
-      recommendedSlug: "china-stage/china-manufacturing-cannot-stop",
+      recommendedSlugs: [
+        "china-stage/china-manufacturing-cannot-stop",
+        "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+      ],
     },
   ],
   [
@@ -855,7 +863,10 @@ const mapBody = [
     {
       description:
         "这一组用于校正外部观察中常见的主体误判、战争误判和历史类比误判。",
-      recommendedSlug: "china/taiwan-war-controllable-escalation-illusion",
+      recommendedSlugs: [
+        "china/taiwan-war-controllable-escalation-illusion",
+        "china/pla-political-subject-myth",
+      ],
     },
   ],
   [
@@ -869,8 +880,10 @@ const mapBody = [
     {
       description:
         "从“为什么旧通道不够”进入“为什么需要可解释、可纠错、可追责的新通道”。",
-      recommendedSlug:
+      recommendedSlugs: [
         "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+        "civic-orderism/what-civic-orderism-ultimately-solves",
+      ],
     },
   ],
   [
@@ -879,7 +892,10 @@ const mapBody = [
     {
       description:
         "这一组是公民秩序主义的理论骨架：国家如何从人格依赖转向系统依赖。",
-      recommendedSlug: "civic-orderism/state-must-rely-on-systems-not-drivers",
+      recommendedSlugs: [
+        "civic-orderism/state-must-rely-on-systems-not-drivers",
+        "civic-orderism/civic-orderism-manual",
+      ],
     },
   ],
   [
@@ -895,7 +911,10 @@ const mapBody = [
     {
       description:
         "理解委员会不是替代行政做事，而是建立公共判断、纠偏和责任识别机制。",
-      recommendedSlug: "civic-orderism/why-committees-cannot-directly-take-cases",
+      recommendedSlugs: [
+        "civic-orderism/what-is-committee-system",
+        "civic-orderism/why-committees-cannot-directly-take-cases",
+      ],
     },
   ],
   [
@@ -910,7 +929,10 @@ const mapBody = [
     {
       description:
         "这一组说明选举如何回到授权、责任和代表关系，而不是沦为资本、动员和表演。",
-      recommendedSlug: "civic-orderism/election-logic-under-civic-orderism",
+      recommendedSlugs: [
+        "civic-orderism/election-logic-under-civic-orderism",
+        "civic-orderism/why-elections-reject-political-donations",
+      ],
     },
   ],
   [
@@ -925,7 +947,10 @@ const mapBody = [
     {
       description:
         "这里进入制度运行的底层条件：留痕、培训、司法、执行和信息透明。",
-      recommendedSlug: "civic-orderism/backend-system-under-civic-orderism",
+      recommendedSlugs: [
+        "civic-orderism/backend-system-under-civic-orderism",
+        "civic-orderism/state-operation-process-under-civic-orderism",
+      ],
     },
   ],
 ]
@@ -963,7 +988,7 @@ enableToc: false
 
 这里不是按发布时间排列文章，而是按照问题路径组织阅读。你可以从现实问题进入，也可以从制度理论进入；可以先理解中共为什么失灵，也可以直接阅读公民秩序主义如何提出新的公共秩序方案。
 
-<p class="articles-reading-note">如果你是第一次来到这里，建议先阅读<a href="/organization-manual">《公民秩序主义组织手册》</a>，再按下方分类进入专题文章。</p>
+<p class="articles-reading-note">如果你是第一次来到这里，建议先阅读<a href="/files/civic-orderism-introduction-manual.pdf">《公民秩序主义介绍手册》</a>，再按下方分类进入专题文章；如需了解组织原则、参与方式与合作边界，再阅读<a href="/organization-manual">《公民秩序主义组织手册》</a>。</p>
 
 ## 专题入口
 

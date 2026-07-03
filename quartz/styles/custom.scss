@@ -478,6 +478,10 @@ article .reading-map-section-note span {
   margin-left: 0.45rem;
 }
 
+body[data-slug="articles"] article > p + ul {
+  margin-bottom: 2rem;
+}
+
 body[data-slug="articles"] article h2 + .reading-map-section-note + p {
   margin-top: 1rem;
   margin-bottom: 0.55rem;
@@ -487,22 +491,36 @@ body[data-slug="articles"] article h2 + .reading-map-section-note + p {
 }
 
 body[data-slug="articles"] article .reading-map-more {
-  margin: 1rem 0 0;
-  padding: 0.9rem 1rem;
+  margin: 0.95rem 0 0;
+  padding: 0.75rem 0.95rem;
   border: 1px solid #d8dee6;
   border-radius: 6px;
-  background: #fff;
+  background: #fbfbfa;
 }
 
 body[data-slug="articles"] article .reading-map-more summary {
   cursor: pointer;
-  color: var(--dark);
+  color: var(--darkgray);
   font-size: 0.9rem;
   font-weight: 600;
 }
 
 body[data-slug="articles"] article .reading-map-more ul {
   margin-top: 0.75rem;
+  color: var(--darkgray);
+}
+
+body[data-slug="articles"] article .reading-map-more li {
+  font-size: 0.92rem;
+}
+
+body[data-slug="articles"] article .reading-map-more a {
+  color: var(--darkgray);
+  font-weight: 400;
+}
+
+body[data-slug="articles"] article .reading-map-more a:hover {
+  color: var(--dark);
 }
 
 body[data-slug="articles"] article ul {

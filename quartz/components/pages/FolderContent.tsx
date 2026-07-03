@@ -101,6 +101,7 @@ export default ((opts?: Partial<FolderContentOptions>) => {
       ...props,
       sort: options.sort,
       allFiles: allPagesInFolder,
+      showTags: false,
     }
 
     const content = (
@@ -112,7 +113,8 @@ export default ((opts?: Partial<FolderContentOptions>) => {
     return (
       <div class="popover-hint">
         <article class={classes}>{content}</article>
-        <div class="page-listing">
+        <section class="page-listing" aria-label="本栏目全部文章">
+          <h2>本栏目全部文章</h2>
           {options.showFolderCount && (
             <p>
               {i18n(cfg.locale).pages.folderContent.itemsUnderFolder({
@@ -123,7 +125,7 @@ export default ((opts?: Partial<FolderContentOptions>) => {
           <div>
             <PageList {...listProps} />
           </div>
-        </div>
+        </section>
       </div>
     )
   }

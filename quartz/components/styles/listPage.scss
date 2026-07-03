@@ -2,12 +2,12 @@
 
 ul.section-ul {
   list-style: none;
-  margin-top: 2em;
+  margin-top: 1em;
   padding-left: 0;
 }
 
 li.section-li {
-  margin-bottom: 1em;
+  margin-bottom: 0.8em;
 
   & > .section {
     display: grid;
@@ -23,11 +23,40 @@ li.section-li {
       background-color: transparent;
     }
 
+    & > .desc > h3 {
+      font-size: 0.96rem;
+      line-height: 1.45;
+    }
+
     & .meta {
       margin: 0 1em 0 0;
       opacity: 0.6;
     }
   }
+}
+
+.page-listing {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--lightgray);
+  color: var(--darkgray);
+}
+
+.page-listing > h2 {
+  margin: 0 0 0.9rem;
+  color: var(--darkgray);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.page-listing .section h3 a {
+  color: var(--darkgray);
+  font-weight: 500;
+}
+
+.page-listing .section h3 a:hover {
+  color: var(--dark);
 }
 
 // modifications in popover context

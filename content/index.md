@@ -42,7 +42,7 @@ enableToc: false
 
 ### 公民秩序主义介绍手册
 
-<p class="resource-subtitle">理解公民秩序主义的基础文本</p>
+<p class="resource-subtitle">第一次了解公民秩序主义的基础文本</p>
 
 <a class="resource-button resource-button-primary" href="/files/civic-orderism-introduction-manual.pdf">阅读 PDF</a>
 
@@ -54,7 +54,7 @@ enableToc: false
 
 ### 公民秩序主义组织手册
 
-<p class="resource-subtitle">理解组织结构、运行机制与制度安排</p>
+<p class="resource-subtitle">进一步了解组织原则、参与方式与合作边界</p>
 
 <a class="resource-button resource-button-primary" href="/files/civic-orderism-organization-manual.pdf">阅读 PDF</a>
 

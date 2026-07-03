@@ -15,7 +15,7 @@ enableToc: false
 
 这里不是按发布时间排列文章，而是按照问题路径组织阅读。你可以从现实问题进入，也可以从制度理论进入；可以先理解中共为什么失灵，也可以直接阅读公民秩序主义如何提出新的公共秩序方案。
 
-<p class="articles-reading-note">如果你是第一次来到这里，建议先阅读<a href="/organization-manual">《公民秩序主义组织手册》</a>，再按下方分类进入专题文章。</p>
+<p class="articles-reading-note">如果你是第一次来到这里，建议先阅读<a href="/files/civic-orderism-introduction-manual.pdf">《公民秩序主义介绍手册》</a>，再按下方分类进入专题文章；如需了解组织原则、参与方式与合作边界，再阅读<a href="/organization-manual">《公民秩序主义组织手册》</a>。</p>
 
 ## 专题入口
 
@@ -37,15 +37,15 @@ enableToc: false
 **推荐先读**
 
 - <span class="recommended-reading">推荐先读</span> [[theory/democracy-still-exists-but-cannot-penetrate-reality|民主还在，但越来越难穿透现实]]（2026-06-13）
+- <span class="recommended-reading">推荐先读</span> [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]（2026-05-14）
 
-<details class="reading-map-more" open>
+<details class="reading-map-more">
 <summary>更多文章</summary>
 
 - [[theory/end-of-party-politics-in-information-age|政党的历史终结：信息化时代为什么不再需要政党垄断政治入口]]（2026-06-08）
 - [[theory/ccp-completed-historical-task-refuses-exit|中共完成了历史任务，但拒绝被历史淘汰]]（2026-05-30）
 - [[theory/organizational-collapse-begins-with-loss-of-institutional-trust|组织的坍塌，始于制度信任的瓦解]]（2026-05-30）
 - [[china/industrial-system-failure-in-information-age|中共基于工业化的社会制度，在信息化时代的必然失效]]（2026-05-28）
-- [[theory/why-party-politics-is-becoming-a-low-dimensional-function|为什么政党政治越来越像低维函数]]（2026-05-14）
 - [[theory/us-industrial-system-cannot-carry-information-age|美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代]]（2026-05-12）
 - [[theory/us-separation-of-powers-integrative-capacity-crisis|美国三权分立的真正危机，不是分权，而是失去统合能力]]（2026-05-12）
 - [[theory/information-age-erodes-us-integrative-capacity|为什么信息化时代正在系统性瓦解美国的统合能力]]（2026-05-12）
@@ -65,12 +65,12 @@ enableToc: false
 
 **推荐先读**
 
+- <span class="recommended-reading">推荐先读</span> [[china/ccp-no-real-base|中共最大的秘密：它根本没有基本盘]]（2026-07-01）
 - <span class="recommended-reading">推荐先读</span> [[theory/party-state-structural-failure|党国系统的结构性失效：一个组织诊断]]（2026-05-10）
 
-<details class="reading-map-more" open>
+<details class="reading-map-more">
 <summary>更多文章</summary>
 
-- [[china/ccp-no-real-base|中共最大的秘密：它根本没有基本盘]]（2026-07-01）
 - [[china/political-machine-rewards-and-limits|机器的奖赏与机器的尽头]]（2026-05-30）
 - [[china/emotional-link-breakdown-and-regime-collapse|情感链接的断裂与体制坍塌机制]]（2026-05-30）
 - [[china/party-power-logic-and-ccp-goal-vacuum|政党存在的权力逻辑与中共的目标困境]]（2026-05-30）
@@ -100,12 +100,12 @@ enableToc: false
 **推荐先读**
 
 - <span class="recommended-reading">推荐先读</span> [[china-stage/china-manufacturing-cannot-stop|中国制造业不是造不出来，而是停不下来]]（2026-06-16）
+- <span class="recommended-reading">推荐先读</span> [[china/ccp-collapse-three-triggers-social-security-healthcare-finance|中共崩解的三大导火索：社保、医保与金融系统]]（2026-05-11）
 
-<details class="reading-map-more" open>
+<details class="reading-map-more">
 <summary>更多文章</summary>
 
 - [[theory/social-change-dynamics-when-system-no-longer-worth-it|社会变革动力学：当所有人都觉得“不值了”]]（2026-05-30）
-- [[china/ccp-collapse-three-triggers-social-security-healthcare-finance|中共崩解的三大导火索：社保、医保与金融系统]]（2026-05-11）
 - [[china/ccp-bureaucracy-historical-bill|当历史总账开始结算：高刚性官僚体系如何把系统性责任层层压向中基层]]（2026-05-10）
 - [[theory/no-accountability-lie-flat-mentality|为什么“无人担责的躺平心态”会从根本上摧毁一个超大型执政组织]]（2026-05-10）
 - [[theory/trapped-by-process|我们不是被贫穷困住，而是被流程困住]]（2026-05-10）
@@ -122,14 +122,14 @@ enableToc: false
 **推荐先读**
 
 - <span class="recommended-reading">推荐先读</span> [[china/taiwan-war-controllable-escalation-illusion|台海战争的真正危险：可控升级的幻觉]]（2026-05-19）
+- <span class="recommended-reading">推荐先读</span> [[china/pla-political-subject-myth|外界对解放军的迷思：把“军”当成政治主体，是第一层误判]]（2026-05-10）
 
-<details class="reading-map-more" open>
+<details class="reading-map-more">
 <summary>更多文章</summary>
 
 - [[theory/overseas-political-movements-fail|海外政治运动为什么一事无成？]]（2026-05-10）
 - [[china/taiwan-war-risk|台海是否会走向战争：基于战争四驱动的组织决策风险评估]]（2026-05-10）
 - [[china/diplomacy-root|外交的根源：从中共内政逻辑看其外交激进化]]（2026-05-10）
-- [[china/pla-political-subject-myth|外界对解放军的迷思：把“军”当成政治主体，是第一层误判]]（2026-05-10）
 
 </details>
 
@@ -140,12 +140,12 @@ enableToc: false
 **推荐先读**
 
 - <span class="recommended-reading">推荐先读</span> [[civic-orderism/what-civic-orderism-solves-if-you-read-only-one|如果你只读一篇：公民秩序主义到底想解决什么]]（2026-05-14）
+- <span class="recommended-reading">推荐先读</span> [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]（2026-05-10）
 
-<details class="reading-map-more" open>
+<details class="reading-map-more">
 <summary>更多文章</summary>
 
 - [[civic-orderism/why-focus-on-invisible-power-nodes|公民秩序主义为什么更加注意现代社会的隐形权力节点（社会组织、平台企业）]]（2026-05-10）
-- [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]（2026-05-10）
 - [[civic-orderism/why-civic-orderism-is-easier-to-succeed|为什么公民秩序主义在未来接替难度最小：它不是推倒国家，而是接管、校正和重组国家运行系统]]（2026-05-10）
 
 </details>
@@ -157,12 +157,12 @@ enableToc: false
 **推荐先读**
 
 - <span class="recommended-reading">推荐先读</span> [[civic-orderism/state-must-rely-on-systems-not-drivers|国家不能只靠驾驶员：为什么现代治理必须依赖系统]]（2026-06-08）
+- <span class="recommended-reading">推荐先读</span> [[civic-orderism/civic-orderism-manual|公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案]]（2026-05-10）
 
-<details class="reading-map-more" open>
+<details class="reading-map-more">
 <summary>更多文章</summary>
 
 - [[civic-orderism/what-civic-orderism-solves-if-you-read-only-one|如果你只读一篇：公民秩序主义到底想解决什么]]（2026-05-14）
-- [[civic-orderism/civic-orderism-manual|公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案]]（2026-05-10）
 - [[civic-orderism/why-focus-on-invisible-power-nodes|公民秩序主义为什么更加注意现代社会的隐形权力节点（社会组织、平台企业）]]（2026-05-10）
 - [[civic-orderism/why-weaken-party-politics|公民秩序主义为什么刻意弱化政党政治]]（2026-05-10）
 - [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]（2026-05-10）
@@ -181,12 +181,12 @@ enableToc: false
 **推荐先读**
 
 - <span class="recommended-reading">推荐先读</span> [[civic-orderism/why-committees-cannot-directly-take-cases|为什么委员会不能直接接案：公民秩序主义中“入口权”与“判断权”必须分开]]（2026-05-17）
+- <span class="recommended-reading">推荐先读</span> [[civic-orderism/what-is-committee-system|什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构]]（2026-05-10）
 
-<details class="reading-map-more" open>
+<details class="reading-map-more">
 <summary>更多文章</summary>
 
 - [[civic-orderism/top-level-power-structure-under-civic-orderism|公民秩序主义下顶层权力结构的布局：为什么国家最高层不能只有一个权力中心，也不能碎片化成互相消耗的多头政治]]（2026-05-10）
-- [[civic-orderism/what-is-committee-system|什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构]]（2026-05-10）
 - [[civic-orderism/committee-administration-opposite-incentives|委员会与行政机关激励结构相反的意义：为什么公民秩序主义必须把“做事的人”和“看事的人”分开]]（2026-05-10）
 - [[civic-orderism/why-dual-track-committee-administration|为什么公民秩序主义必须采取委员会—行政双轨制，但最终仍由民选政治官员统合国家]]（2026-05-10）
 - [[civic-orderism/why-not-simple-separation-of-powers|为什么公民秩序主义不采取简单的三权分立]]（2026-05-10）
@@ -200,11 +200,11 @@ enableToc: false
 **推荐先读**
 
 - <span class="recommended-reading">推荐先读</span> [[civic-orderism/election-logic-under-civic-orderism|公民秩序主义下的选举逻辑：它与传统选举的区别，以及制度优势]]（2026-05-10）
+- <span class="recommended-reading">推荐先读</span> [[civic-orderism/why-elections-reject-political-donations|为什么公民秩序主义下的选举会天然排斥政治献金]]（2026-05-10）
 
-<details class="reading-map-more" open>
+<details class="reading-map-more">
 <summary>更多文章</summary>
 
-- [[civic-orderism/why-elections-reject-political-donations|为什么公民秩序主义下的选举会天然排斥政治献金]]（2026-05-10）
 - [[civic-orderism/why-no-bicameral-parliament|为什么公民秩序主义议会不采取上下两院制]]（2026-05-10）
 - [[civic-orderism/why-proposals-from-social-organizations|为什么议案应主要来自社会组织，而不是某个议员、某个人]]（2026-05-10）
 - [[civic-orderism/why-part-time-representatives|为什么议员主要应采取兼职制，而非全职制]]（2026-05-10）
@@ -218,11 +218,11 @@ enableToc: false
 **推荐先读**
 
 - <span class="recommended-reading">推荐先读</span> [[civic-orderism/backend-system-under-civic-orderism|公民秩序主义对后台系统的重视：为什么培训、秘书处、专业事务与留痕系统，是现代国家真正的底座]]（2026-05-10）
+- <span class="recommended-reading">推荐先读</span> [[civic-orderism/state-operation-process-under-civic-orderism|公民秩序主义下国家运行的大概流程：从普通人的问题，到国家的判断、执行与纠偏]]（2026-05-10）
 
-<details class="reading-map-more" open>
+<details class="reading-map-more">
 <summary>更多文章</summary>
 
-- [[civic-orderism/state-operation-process-under-civic-orderism|公民秩序主义下国家运行的大概流程：从普通人的问题，到国家的判断、执行与纠偏]]（2026-05-10）
 - [[civic-orderism/why-civic-orderism-emphasizes-experience-and-records|为什么公民秩序主义强调履历、经验：因为现代国家不能把高位判断交给空降、表演和单一激情]]（2026-05-10）
 - [[civic-orderism/why-justice-serves-reality|为什么公民秩序主义强调司法是为现实服务的]]（2026-05-10）
 - [[civic-orderism/why-information-transparency|为什么公民秩序主义强调信息透明及信息发布]]（2026-05-10）
