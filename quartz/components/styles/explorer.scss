@@ -126,6 +126,17 @@ button.desktop-explorer {
       overscroll-behavior: contain;
     }
 
+    & li.overflow-end {
+      display: block;
+      height: 1px;
+      list-style: none;
+      pointer-events: none;
+    }
+
+    & li.overflow-end::marker {
+      content: "";
+    }
+
     & li > a {
       color: var(--dark);
       opacity: 0.75;

@@ -80,13 +80,12 @@ function toggleFolder(evt: MouseEvent) {
 }
 
 function createFileNode(currentSlug: FullSlug, node: FileTrieNode): HTMLLIElement {
-  const template = document.getElementById("template-file") as HTMLTemplateElement
-  const clone = template.content.cloneNode(true) as DocumentFragment
-  const li = clone.querySelector("li") as HTMLLIElement
-  const a = li.querySelector("a") as HTMLAnchorElement
+  const li = document.createElement("li")
+  const a = document.createElement("a")
   a.href = resolveRelative(currentSlug, node.slug)
   a.dataset.for = node.slug
   a.textContent = node.displayName
+  li.appendChild(a)
 
   if (currentSlug === node.slug) {
     a.classList.add("active")
@@ -100,13 +99,32 @@ function createFolderNode(
   node: FileTrieNode,
   opts: ParsedOptions,
 ): HTMLLIElement {
-  const template = document.getElementById("template-folder") as HTMLTemplateElement
-  const clone = template.content.cloneNode(true) as DocumentFragment
-  const li = clone.querySelector("li") as HTMLLIElement
-  const folderContainer = li.querySelector(".folder-container") as HTMLElement
-  const titleContainer = folderContainer.querySelector("div") as HTMLElement
-  const folderOuter = li.querySelector(".folder-outer") as HTMLElement
-  const ul = folderOuter.querySelector("ul") as HTMLUListElement
+  const li = document.createElement("li")
+  const folderContainer = document.createElement("div")
+  const folderIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg")
+  const folderIconPath = document.createElementNS("http://www.w3.org/2000/svg", "polyline")
+  const titleContainer = document.createElement("div")
+  const folderOuter = document.createElement("div")
+  const ul = document.createElement("ul")
+
+  folderContainer.className = "folder-container"
+  folderIcon.setAttribute("xmlns", "http://www.w3.org/2000/svg")
+  folderIcon.setAttribute("width", "12")
+  folderIcon.setAttribute("height", "12")
+  folderIcon.setAttribute("viewBox", "5 8 14 8")
+  folderIcon.setAttribute("fill", "none")
+  folderIcon.setAttribute("stroke", "currentColor")
+  folderIcon.setAttribute("stroke-width", "2")
+  folderIcon.setAttribute("stroke-linecap", "round")
+  folderIcon.setAttribute("stroke-linejoin", "round")
+  folderIcon.classList.add("folder-icon")
+  folderIconPath.setAttribute("points", "6 9 12 15 18 9")
+  folderIcon.appendChild(folderIconPath)
+  folderOuter.className = "folder-outer"
+  ul.className = "content"
+  li.append(folderContainer, folderOuter)
+  folderContainer.append(folderIcon, titleContainer)
+  folderOuter.appendChild(ul)
 
   const folderPath = node.slug
   folderContainer.dataset.folderpath = folderPath
@@ -116,17 +134,20 @@ function createFolderNode(
   }
 
   if (opts.folderClickBehavior === "link") {
-    // Replace button with link for link behavior
-    const button = titleContainer.querySelector(".folder-button") as HTMLElement
     const a = document.createElement("a")
     a.href = resolveRelative(currentSlug, folderPath)
     a.dataset.for = folderPath
     a.className = "folder-title"
     a.textContent = node.displayName
-    button.replaceWith(a)
+    titleContainer.appendChild(a)
   } else {
-    const span = titleContainer.querySelector(".folder-title") as HTMLElement
+    const button = document.createElement("button")
+    const span = document.createElement("span")
+    button.className = "folder-button"
+    span.className = "folder-title"
     span.textContent = node.displayName
+    button.appendChild(span)
+    titleContainer.appendChild(button)
   }
 
   // if the saved state is collapsed or the default state is collapsed
