@@ -221,6 +221,7 @@ const slugs = {
     "china/pla-political-subject-myth",
   ],
   civicTheory: [
+    "civic-orderism/why-civic-orderism",
     "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
     "civic-orderism/civic-orderism-manual",
     "civic-orderism/state-must-rely-on-systems-not-drivers",
@@ -730,6 +731,7 @@ status: published
 ### 一、理论入口
 
 ${articleLines([
+  "civic-orderism/why-civic-orderism",
   "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
   "civic-orderism/civic-orderism-manual",
   "civic-orderism/state-must-rely-on-systems-not-drivers",
@@ -872,6 +874,7 @@ const mapBody = [
   [
     "五、为什么需要新的制度通道",
     [
+      "civic-orderism/why-civic-orderism",
       "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
       "civic-orderism/what-civic-orderism-ultimately-solves",
       "civic-orderism/why-civic-orderism-is-easier-to-succeed",
@@ -881,8 +884,8 @@ const mapBody = [
       description:
         "从“为什么旧通道不够”进入“为什么需要可解释、可纠错、可追责的新通道”。",
       recommendedSlugs: [
+        "civic-orderism/why-civic-orderism",
         "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
-        "civic-orderism/what-civic-orderism-ultimately-solves",
       ],
     },
   ],
@@ -893,8 +896,8 @@ const mapBody = [
       description:
         "这一组是公民秩序主义的理论骨架：国家如何从人格依赖转向系统依赖。",
       recommendedSlugs: [
+        "civic-orderism/why-civic-orderism",
         "civic-orderism/state-must-rely-on-systems-not-drivers",
-        "civic-orderism/civic-orderism-manual",
       ],
     },
   ],

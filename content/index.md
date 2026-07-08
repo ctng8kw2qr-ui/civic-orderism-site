@@ -105,9 +105,9 @@ enableToc: false
 
 <div class="recent-article-list">
 
+<a href="/civic-orderism/why-civic-orderism"><span>为什么是公民秩序主义？</span><time>2026-07-08</time></a>
 <a href="/china/ccp-no-real-base"><span>中共最大的秘密：它根本没有基本盘</span><time>2026-07-01</time></a>
 <a href="/china-stage/china-manufacturing-cannot-stop"><span>中国制造业不是造不出来，而是停不下来</span><time>2026-06-16</time></a>
-<a href="/theory/democracy-still-exists-but-cannot-penetrate-reality"><span>民主还在，但越来越难穿透现实</span><time>2026-06-13</time></a>
 
 </div>
 

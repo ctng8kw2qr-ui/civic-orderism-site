@@ -139,13 +139,14 @@ enableToc: false
 
 **推荐先读**
 
+- <span class="recommended-reading">推荐先读</span> [[civic-orderism/why-civic-orderism|为什么是公民秩序主义？]]（2026-07-08）
 - <span class="recommended-reading">推荐先读</span> [[civic-orderism/what-civic-orderism-solves-if-you-read-only-one|如果你只读一篇：公民秩序主义到底想解决什么]]（2026-05-14）
-- <span class="recommended-reading">推荐先读</span> [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]（2026-05-10）
 
 <details class="reading-map-more">
 <summary>更多文章</summary>
 
 - [[civic-orderism/why-focus-on-invisible-power-nodes|公民秩序主义为什么更加注意现代社会的隐形权力节点（社会组织、平台企业）]]（2026-05-10）
+- [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]（2026-05-10）
 - [[civic-orderism/why-civic-orderism-is-easier-to-succeed|为什么公民秩序主义在未来接替难度最小：它不是推倒国家，而是接管、校正和重组国家运行系统]]（2026-05-10）
 
 </details>
@@ -156,13 +157,14 @@ enableToc: false
 
 **推荐先读**
 
+- <span class="recommended-reading">推荐先读</span> [[civic-orderism/why-civic-orderism|为什么是公民秩序主义？]]（2026-07-08）
 - <span class="recommended-reading">推荐先读</span> [[civic-orderism/state-must-rely-on-systems-not-drivers|国家不能只靠驾驶员：为什么现代治理必须依赖系统]]（2026-06-08）
-- <span class="recommended-reading">推荐先读</span> [[civic-orderism/civic-orderism-manual|公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案]]（2026-05-10）
 
 <details class="reading-map-more">
 <summary>更多文章</summary>
 
 - [[civic-orderism/what-civic-orderism-solves-if-you-read-only-one|如果你只读一篇：公民秩序主义到底想解决什么]]（2026-05-14）
+- [[civic-orderism/civic-orderism-manual|公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案]]（2026-05-10）
 - [[civic-orderism/why-focus-on-invisible-power-nodes|公民秩序主义为什么更加注意现代社会的隐形权力节点（社会组织、平台企业）]]（2026-05-10）
 - [[civic-orderism/why-weaken-party-politics|公民秩序主义为什么刻意弱化政党政治]]（2026-05-10）
 - [[civic-orderism/what-civic-orderism-ultimately-solves|公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系]]（2026-05-10）
@@ -233,4 +235,4 @@ enableToc: false
 
 _（暂无未归入前九个栏目的近期文章。）_
 
-本站共收录 78 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。
+本站共收录 79 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。
