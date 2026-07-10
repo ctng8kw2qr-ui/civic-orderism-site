@@ -26,7 +26,7 @@ status: published
 
 ### 二、从增长型组织到防御型组织
 
-- [[china/ccp-2018-xi-era-local-growth-space|中共2018：习近平元年？]]（2026-07-10）
+- [[china/ccp-2018-xi-era-local-growth-space|中共2018：习近平元年]]（2026-07-10）
 - [[china/political-machine-rewards-and-limits|机器的奖赏与机器的尽头]]（2026-05-30）
 - [[china/emotional-link-breakdown-and-regime-collapse|情感链接的断裂与体制坍塌机制]]（2026-05-30）
 - [[china/party-power-logic-and-ccp-goal-vacuum|政党存在的权力逻辑与中共的目标困境]]（2026-05-30）

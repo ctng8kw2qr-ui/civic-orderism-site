@@ -105,7 +105,7 @@ enableToc: false
 
 <div class="recent-article-list">
 
-<a href="/china/ccp-2018-xi-era-local-growth-space"><span>中共2018：习近平元年？</span><time>2026-07-10</time></a>
+<a href="/china/ccp-2018-xi-era-local-growth-space"><span>中共2018：习近平元年</span><time>2026-07-10</time></a>
 <a href="/china/why-ccp-will-not-relax-party-pressure"><span>中共为什么不会真正放松党内高压？</span><time>2026-07-09</time></a>
 <a href="/civic-orderism/why-civic-orderism"><span>为什么是公民秩序主义？</span><time>2026-07-08</time></a>
 
