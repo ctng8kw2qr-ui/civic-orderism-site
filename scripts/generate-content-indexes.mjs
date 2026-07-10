@@ -181,6 +181,7 @@ const slugs = {
   ],
   ccp: [
     "china/ccp-no-real-base",
+    "china/why-ccp-will-not-relax-party-pressure",
     "theory/party-state-structural-failure",
     "china/information-age-impact-on-ccp-mechanisms",
     "theory/high-rigidity-system-ccp",
@@ -635,6 +636,7 @@ ${articleLines([
 ### 三、官僚系统、宣传系统与责任压缩
 
 ${articleLines([
+  "china/why-ccp-will-not-relax-party-pressure",
   "china/bureaucratic-system-under-purges",
   "china/ccp-bureaucracy-double-deadlock",
   "china/when-high-ranking-officials-are-no-longer-safe",
