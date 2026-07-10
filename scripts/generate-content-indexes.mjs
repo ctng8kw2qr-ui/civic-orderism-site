@@ -182,6 +182,7 @@ const slugs = {
   ccp: [
     "china/ccp-no-real-base",
     "china/why-ccp-will-not-relax-party-pressure",
+    "china/ccp-2018-xi-era-local-growth-space",
     "theory/party-state-structural-failure",
     "china/information-age-impact-on-ccp-mechanisms",
     "theory/high-rigidity-system-ccp",
@@ -624,6 +625,7 @@ ${articleLines([
 ### 二、从增长型组织到防御型组织
 
 ${articleLines([
+  "china/ccp-2018-xi-era-local-growth-space",
   "china/information-age-impact-on-ccp-mechanisms",
   "theory/high-rigidity-system-ccp",
   "theory/ccp-high-fragility-dysfunction",
