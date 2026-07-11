@@ -71,6 +71,7 @@ enableToc: false
 <details class="reading-map-more">
 <summary>更多文章</summary>
 
+- [[china/mao-death-release-xi-death-weightlessness|毛泽东之死是解压，习近平之死将是失重]]（2026-07-11）
 - [[china/ccp-2018-xi-era-local-growth-space|中共2018：习近平元年]]（2026-07-10）
 - [[china/why-ccp-will-not-relax-party-pressure|中共为什么不会真正放松党内高压？]]（2026-07-09）
 - [[china/political-machine-rewards-and-limits|机器的奖赏与机器的尽头]]（2026-05-30）
@@ -237,4 +238,4 @@ enableToc: false
 
 _（暂无未归入前九个栏目的近期文章。）_
 
-本站共收录 81 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。
+本站共收录 82 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。

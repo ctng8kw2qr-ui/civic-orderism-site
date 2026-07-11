@@ -183,6 +183,7 @@ const slugs = {
     "china/ccp-no-real-base",
     "china/why-ccp-will-not-relax-party-pressure",
     "china/ccp-2018-xi-era-local-growth-space",
+    "china/mao-death-release-xi-death-weightlessness",
     "theory/party-state-structural-failure",
     "china/information-age-impact-on-ccp-mechanisms",
     "theory/high-rigidity-system-ccp",
@@ -613,6 +614,7 @@ status: published
 ### 一、组织结构与系统失效
 
 ${articleLines([
+  "china/mao-death-release-xi-death-weightlessness",
   "china/ccp-no-real-base",
   "theory/party-state-structural-failure",
   "china/ccp-power-network-not-line",
