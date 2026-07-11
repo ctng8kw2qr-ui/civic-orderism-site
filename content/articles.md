@@ -71,7 +71,7 @@ enableToc: false
 <details class="reading-map-more">
 <summary>更多文章</summary>
 
-- [[china/mao-death-release-xi-death-weightlessness|毛泽东之死是解压，习近平之死将是失重]]（2026-07-11）
+- [[china/mao-death-release-xi-death-weightlessness|如果习近平去世会发生什么？]]（2026-07-11）
 - [[china/ccp-2018-xi-era-local-growth-space|中共2018：习近平元年]]（2026-07-10）
 - [[china/why-ccp-will-not-relax-party-pressure|中共为什么不会真正放松党内高压？]]（2026-07-09）
 - [[china/political-machine-rewards-and-limits|机器的奖赏与机器的尽头]]（2026-05-30）

@@ -105,7 +105,7 @@ enableToc: false
 
 <div class="recent-article-list">
 
-<a href="/china/mao-death-release-xi-death-weightlessness"><span>毛泽东之死是解压，习近平之死将是失重</span><time>2026-07-11</time></a>
+<a href="/china/mao-death-release-xi-death-weightlessness"><span>如果习近平去世会发生什么？</span><time>2026-07-11</time></a>
 <a href="/china/ccp-2018-xi-era-local-growth-space"><span>中共2018：习近平元年</span><time>2026-07-10</time></a>
 <a href="/china/why-ccp-will-not-relax-party-pressure"><span>中共为什么不会真正放松党内高压？</span><time>2026-07-09</time></a>
 

@@ -1,5 +1,5 @@
 ---
-title: 毛泽东之死是解压，习近平之死将是失重
+title: 如果习近平去世会发生什么？
 date: 2026-07-11
 category: 解析中共
 section: 组织结构与系统失效
@@ -36,7 +36,7 @@ slug: china/mao-death-release-xi-death-weightlessness
 status: published
 ---
 
-# 毛泽东之死是解压，习近平之死将是失重
+# 如果习近平去世会发生什么？
 
 <p class="subtitle">毛泽东去世，意味着压在中共身上的最高压力源终于消失；习近平若在没有完成权力交接的情况下突然去世，消失的却可能是中共内部唯一仍然有效的秩序中心。</p>
 
