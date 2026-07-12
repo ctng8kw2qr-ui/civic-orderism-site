@@ -181,6 +181,7 @@ const slugs = {
   ],
   ccp: [
     "china/ccp-no-real-base",
+    "china/why-ccp-cannot-reduce-grassroots-burden",
     "china/why-ccp-will-not-relax-party-pressure",
     "china/ccp-2018-xi-era-local-growth-space",
     "china/mao-death-release-xi-death-weightlessness",
@@ -640,6 +641,7 @@ ${articleLines([
 ### 三、官僚系统、宣传系统与责任压缩
 
 ${articleLines([
+  "china/why-ccp-cannot-reduce-grassroots-burden",
   "china/why-ccp-will-not-relax-party-pressure",
   "china/bureaucratic-system-under-purges",
   "china/ccp-bureaucracy-double-deadlock",

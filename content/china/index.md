@@ -38,6 +38,7 @@ status: published
 
 ### 三、官僚系统、宣传系统与责任压缩
 
+- [[china/why-ccp-cannot-reduce-grassroots-burden|中共为什么永远无法真正为基层减负？]]（2026-07-12）
 - [[china/why-ccp-will-not-relax-party-pressure|中共为什么不会真正放松党内高压？]]（2026-07-09）
 - [[china/bureaucratic-system-under-purges|高位清洗如何改变中共官僚系统]]（2026-05-17）
 - [[china/ccp-from-faith-community-to-black-box-post|从“信仰共同体”到“黑箱岗位”：中共内部成员心态的三次断裂]]（2026-05-13）
