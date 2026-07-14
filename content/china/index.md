@@ -38,6 +38,7 @@ status: published
 
 ### 三、官僚系统、宣传系统与责任压缩
 
+- [[china/why-expulsion-from-party-becomes-standard-ending|为什么“开除党籍”正在成为中共处理高级干部的标准结局？]]（2026-07-14）
 - [[china/why-ccp-cannot-reduce-grassroots-burden|中共为什么永远无法真正为基层减负？]]（2026-07-12）
 - [[china/why-ccp-will-not-relax-party-pressure|中共为什么不会真正放松党内高压？]]（2026-07-09）
 - [[china/bureaucratic-system-under-purges|高位清洗如何改变中共官僚系统]]（2026-05-17）

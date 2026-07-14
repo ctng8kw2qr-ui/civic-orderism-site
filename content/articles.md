@@ -71,6 +71,7 @@ enableToc: false
 <details class="reading-map-more">
 <summary>更多文章</summary>
 
+- [[china/why-expulsion-from-party-becomes-standard-ending|为什么“开除党籍”正在成为中共处理高级干部的标准结局？]]（2026-07-14）
 - [[china/why-ccp-cannot-reduce-grassroots-burden|中共为什么永远无法真正为基层减负？]]（2026-07-12）
 - [[china/mao-death-release-xi-death-weightlessness|如果习近平去世会发生什么？]]（2026-07-11）
 - [[china/ccp-2018-xi-era-local-growth-space|中共2018：习近平元年]]（2026-07-10）
@@ -239,4 +240,4 @@ enableToc: false
 
 _（暂无未归入前九个栏目的近期文章。）_
 
-本站共收录 83 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。
+本站共收录 84 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。

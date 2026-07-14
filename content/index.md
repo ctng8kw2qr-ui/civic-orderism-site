@@ -105,9 +105,9 @@ enableToc: false
 
 <div class="recent-article-list">
 
+<a href="/china/why-expulsion-from-party-becomes-standard-ending"><span>为什么“开除党籍”正在成为中共处理高级干部的标准结局？</span><time>2026-07-14</time></a>
 <a href="/china/why-ccp-cannot-reduce-grassroots-burden"><span>中共为什么永远无法真正为基层减负？</span><time>2026-07-12</time></a>
 <a href="/china/mao-death-release-xi-death-weightlessness"><span>如果习近平去世会发生什么？</span><time>2026-07-11</time></a>
-<a href="/china/ccp-2018-xi-era-local-growth-space"><span>中共2018：习近平元年</span><time>2026-07-10</time></a>
 
 </div>
 
