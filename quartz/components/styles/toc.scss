@@ -128,21 +128,35 @@ footer .toc {
   }
 }
 
-@media all and ($desktop) {
+@media all and (min-width: 1380px) {
   .toc-article {
     position: fixed;
     top: 7rem;
-    right: max(1.2rem, calc((100vw - 1180px) / 2));
+    right: max(1.5rem, calc((100vw - 1380px) / 2));
     z-index: 5;
-    width: min(16rem, 22vw);
+    width: min(15rem, 21vw);
     max-height: calc(100vh - 9rem);
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 1.5rem;
     border: 0;
-    font-size: 0.85rem;
+    border-left: 1px solid var(--lightgray);
+    box-sizing: border-box;
+    font-size: 0.8rem;
+    line-height: 1.55;
+  }
+
+  .toc-article button.toc-header h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
   }
 
   .toc-article ul.toc-content.overflow {
     max-height: calc(100vh - 12rem);
+    margin-top: 0.75rem;
+  }
+
+  .toc-article ul.toc-content.overflow > li {
+    margin: 0.35rem 0;
   }
 }
