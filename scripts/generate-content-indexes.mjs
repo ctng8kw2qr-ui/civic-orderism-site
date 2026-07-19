@@ -208,6 +208,7 @@ const slugs = {
     "china/propaganda-system-hollowing-out",
   ],
   stage: [
+    "china-stage/ccp-second-reform-opening-possibility",
     "china-stage/china-manufacturing-cannot-stop",
     "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
     "china/ccp-reform-political-balance-deadlock",
@@ -685,6 +686,7 @@ status: published
 ### 一、产业、债务与秩序失灵
 
 ${articleLines([
+  "china-stage/ccp-second-reform-opening-possibility",
   "china-stage/china-manufacturing-cannot-stop",
   "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
   "china/ccp-reform-political-balance-deadlock",

@@ -110,6 +110,7 @@ enableToc: false
 <details class="reading-map-more">
 <summary>更多文章</summary>
 
+- [[china-stage/ccp-second-reform-opening-possibility|中共还有没有二次改开的可能？]]（2026-07-19）
 - [[theory/social-change-dynamics-when-system-no-longer-worth-it|社会变革动力学：当所有人都觉得“不值了”]]（2026-05-30）
 - [[china/ccp-bureaucracy-historical-bill|当历史总账开始结算：高刚性官僚体系如何把系统性责任层层压向中基层]]（2026-05-10）
 - [[theory/no-accountability-lie-flat-mentality|为什么“无人担责的躺平心态”会从根本上摧毁一个超大型执政组织]]（2026-05-10）
@@ -240,4 +241,4 @@ enableToc: false
 
 _（暂无未归入前九个栏目的近期文章。）_
 
-本站共收录 84 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。
+本站共收录 85 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。

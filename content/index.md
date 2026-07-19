@@ -105,9 +105,9 @@ enableToc: false
 
 <div class="recent-article-list">
 
+<a href="/china-stage/ccp-second-reform-opening-possibility"><span>中共还有没有二次改开的可能？</span><time>2026-07-19</time></a>
 <a href="/china/why-expulsion-from-party-becomes-standard-ending"><span>为什么“开除党籍”正在成为中共处理高级干部的标准结局？</span><time>2026-07-14</time></a>
 <a href="/china/why-ccp-cannot-reduce-grassroots-burden"><span>中共为什么永远无法真正为基层减负？</span><time>2026-07-12</time></a>
-<a href="/china/mao-death-release-xi-death-weightlessness"><span>如果习近平去世会发生什么？</span><time>2026-07-11</time></a>
 
 </div>
 
