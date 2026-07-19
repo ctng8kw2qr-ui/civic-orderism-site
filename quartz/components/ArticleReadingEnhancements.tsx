@@ -24,6 +24,9 @@ const ARTICLE_PREFIXES = [
 ];
 
 type MigrationEntry = (typeof migrationMap)[number];
+type PublishedConcept = (typeof conceptsConfig)[number];
+
+const MAX_RELATED_CONCEPTS = 3;
 const migrationBySlug = new Map<string, MigrationEntry>(
   migrationMap.map((entry) => [entry.slug, entry]),
 );
@@ -60,6 +63,74 @@ function asStringArray(value: unknown): string[] {
   }
   if (typeof value === "string" && value.trim() !== "") return [value];
   return [];
+}
+
+function normalizeTaxonomyValue(value: string) {
+  return value
+    .normalize("NFKC")
+    .toLocaleLowerCase()
+    .replace(/[\s/_-]+/g, "")
+    .replace(/[^\p{L}\p{N}]/gu, "");
+}
+
+function conceptsForArticle(
+  file: QuartzPluginData,
+  knowledge: MigrationEntry,
+): PublishedConcept[] {
+  const scores = new Map<string, number>();
+  const addCandidate = (slug: string, score: number) => {
+    if (!conceptBySlug.has(slug)) return;
+    scores.set(slug, Math.max(scores.get(slug) ?? 0, score));
+  };
+
+  knowledge.concepts.forEach((slug, index) => addCandidate(slug, 1000 - index));
+  asStringArray(file.frontmatter?.concepts).forEach((slug, index) =>
+    addCandidate(slug, 900 - index),
+  );
+
+  const articleTopics = new Set([
+    ...knowledge.topics,
+    ...asStringArray(file.frontmatter?.topics),
+  ]);
+  articleTopics.forEach((topicSlug) => {
+    const topic = topicBySlug.get(topicSlug);
+    topic?.concepts.forEach((slug, index) => addCandidate(slug, 700 - index));
+    conceptsConfig.forEach((concept) => {
+      if (concept.topics.includes(topicSlug)) addCandidate(concept.slug, 650);
+    });
+  });
+
+  const metadata = [
+    ...knowledge.tags,
+    ...asStringArray(file.frontmatter?.tags),
+    ...asStringArray(file.frontmatter?.keywords),
+    ...asStringArray(file.frontmatter?.category),
+    file.frontmatter?.title,
+    file.slug,
+  ]
+    .filter((value): value is string => typeof value === "string")
+    .map(normalizeTaxonomyValue)
+    .filter(Boolean);
+
+  conceptBySlug.forEach((concept, slug) => {
+    const names = [concept.name, slug].map(normalizeTaxonomyValue);
+    if (
+      metadata.some((value) =>
+        names.some((name) => value === name || value.includes(name)),
+      )
+    ) {
+      addCandidate(slug, 500);
+    }
+  });
+
+  return [...scores.entries()]
+    .sort(([aSlug, aScore], [bSlug, bScore]) => {
+      if (aScore !== bScore) return bScore - aScore;
+      return aSlug.localeCompare(bSlug);
+    })
+    .slice(0, MAX_RELATED_CONCEPTS)
+    .map(([slug]) => conceptBySlug.get(slug))
+    .filter((concept): concept is PublishedConcept => concept !== undefined);
 }
 
 function getArticleSummary(file: QuartzPluginData) {
@@ -175,9 +246,7 @@ export const KnowledgeContext: QuartzComponent = ({
   const topics = knowledge.topics
     .map((slug) => topicBySlug.get(slug))
     .filter(Boolean);
-  const concepts = knowledge.concepts
-    .map((slug) => conceptBySlug.get(slug))
-    .filter(Boolean);
+  const concepts = conceptsForArticle(fileData, knowledge);
   const primaryTopic = knowledge.topics[0];
   const readingSequence = articleFiles(allFiles)
     .filter(isEligibleRecommendation)
@@ -225,7 +294,7 @@ export const KnowledgeContext: QuartzComponent = ({
             ))}
           </p>
         ) : (
-          <p>概念关联待人工复核。</p>
+          <p>暂无关联核心概念</p>
         )}
       </div>
       <div class="article-knowledge__group article-knowledge__reading-path">
