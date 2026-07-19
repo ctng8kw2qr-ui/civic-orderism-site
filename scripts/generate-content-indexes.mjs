@@ -3,6 +3,13 @@ import path from "node:path";
 import matter from "gray-matter";
 
 const contentDir = path.resolve("content");
+const articleDirectories = [
+  "theory/",
+  "china/",
+  "china-stage/",
+  "civic-orderism/",
+  "institution/",
+];
 const siteDescription =
   "公民秩序主义关注工业时代旧秩序在信息化时代的失效，并尝试提出一种面向中国现实、可进入、可解释、可纠错、可追责的公共秩序方案。";
 
@@ -68,6 +75,9 @@ function compareArticlesByDateDesc(a, b) {
 const articles = walk(contentDir)
   .map((filePath) => [filePath, toPosix(path.relative(contentDir, filePath))])
   .filter(([, relativePath]) => !isIndexPage(relativePath))
+  .filter(([, relativePath]) =>
+    articleDirectories.some((prefix) => relativePath.startsWith(prefix)),
+  )
   .filter(
     ([, relativePath]) => !path.basename(relativePath).startsWith("article_"),
   )
@@ -102,13 +112,19 @@ function articleLines(slugs, { sort = "date" } = {}) {
   return matched.map(articleLine).join("\n") || "暂无文章。";
 }
 
-function mapArticleGroups(slugs, recommendedSlugs = [], { sort = "date" } = {}) {
+function mapArticleGroups(
+  slugs,
+  recommendedSlugs = [],
+  { sort = "date" } = {},
+) {
   const matched = slugs.map(findArticleBySlug).filter(Boolean);
   const recommendedSet = new Set(
     Array.isArray(recommendedSlugs) ? recommendedSlugs : [recommendedSlugs],
   );
   if (sort === "date") matched.sort(compareArticlesByDateDesc);
-  const recommended = matched.filter((article) => recommendedSet.has(article.slug));
+  const recommended = matched.filter((article) =>
+    recommendedSet.has(article.slug),
+  );
   const more = matched.filter((article) => !recommendedSet.has(article.slug));
 
   if (matched.length === 0) return "暂无文章。";
@@ -839,8 +855,7 @@ const mapBody = [
     "一、旧世界为什么失效",
     slugs.oldOrder,
     {
-      description:
-        "先理解工业时代制度为什么在信息化社会里失去统合能力。",
+      description: "先理解工业时代制度为什么在信息化社会里失去统合能力。",
       recommendedSlugs: [
         "theory/why-party-politics-is-becoming-a-low-dimensional-function",
         "theory/democracy-still-exists-but-cannot-penetrate-reality",

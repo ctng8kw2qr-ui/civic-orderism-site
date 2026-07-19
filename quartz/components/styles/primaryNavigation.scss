@@ -1,0 +1,118 @@
+@use "../../styles/variables.scss" as *;
+
+.primary-navigation {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--lightgray);
+  border-bottom: 1px solid var(--lightgray);
+}
+
+.primary-navigation__brand {
+  flex: 0 0 auto;
+  color: var(--dark);
+  font-size: 0.88rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  background-image: none;
+}
+
+.primary-navigation__links {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.15rem;
+}
+
+.primary-navigation__links a {
+  padding: 0.42rem 0.6rem;
+  border-radius: 4px;
+  color: var(--darkgray);
+  font-size: 0.82rem;
+  line-height: 1.25;
+  text-decoration: none;
+  white-space: nowrap;
+  background-image: none;
+}
+
+.primary-navigation__links a:hover,
+.primary-navigation__links a:focus-visible,
+.primary-navigation__links a[aria-current="page"] {
+  background: var(--highlight);
+  color: var(--dark);
+  outline: none;
+}
+
+.primary-navigation__links a[aria-current="page"] {
+  box-shadow: inset 0 -2px 0 var(--tertiary);
+}
+
+.primary-navigation__toggle {
+  display: none;
+  margin-left: auto;
+  padding: 0.4rem 0.55rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--dark);
+  font: inherit;
+}
+
+.primary-navigation__secondary {
+  display: none;
+}
+
+@media all and ($mobile) {
+  .primary-navigation {
+    position: relative;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+  }
+
+  .primary-navigation__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .primary-navigation__links {
+    display: none;
+    width: 100%;
+    flex: 1 0 100%;
+    align-items: stretch;
+    padding-top: 0.35rem;
+  }
+
+  .primary-navigation[data-open="true"] .primary-navigation__links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem;
+  }
+
+  .primary-navigation__links a {
+    box-sizing: border-box;
+    padding: 0.65rem 0.7rem;
+    border: 1px solid var(--lightgray);
+    white-space: normal;
+  }
+
+  .primary-navigation__secondary {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem;
+    padding-top: 0.35rem;
+    border-top: 1px solid var(--lightgray);
+  }
+
+  .primary-navigation__secondary a {
+    color: var(--gray);
+    font-size: 0.78rem;
+  }
+}

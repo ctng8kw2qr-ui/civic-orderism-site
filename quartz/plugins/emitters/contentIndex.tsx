@@ -1,33 +1,57 @@
-import { Root } from "hast"
-import { GlobalConfiguration } from "../../cfg"
-import { getDate } from "../../components/Date"
-import { escapeHTML } from "../../util/escape"
-import { FilePath, FullSlug, SimpleSlug, joinSegments, simplifySlug } from "../../util/path"
-import { QuartzEmitterPlugin } from "../types"
-import { toHtml } from "hast-util-to-html"
-import { write } from "./helpers"
-import { i18n } from "../../i18n"
+import { Root } from "hast";
+import { GlobalConfiguration } from "../../cfg";
+import { getDate } from "../../components/Date";
+import { escapeHTML } from "../../util/escape";
+import {
+  FilePath,
+  FullSlug,
+  SimpleSlug,
+  joinSegments,
+  simplifySlug,
+} from "../../util/path";
+import { QuartzEmitterPlugin } from "../types";
+import { toHtml } from "hast-util-to-html";
+import { write } from "./helpers";
+import { i18n } from "../../i18n";
+import migrationMap from "../../../content-migration-map.json";
+import topicsConfig from "../../../data/topics.config.json";
+import conceptsConfig from "../../../data/concepts.config.json";
 
-export type ContentIndexMap = Map<FullSlug, ContentDetails>
+export type ContentIndexMap = Map<FullSlug, ContentDetails>;
 export type ContentDetails = {
-  slug: FullSlug
-  filePath: FilePath
-  title: string
-  links: SimpleSlug[]
-  tags: string[]
-  content: string
-  richContent?: string
-  date?: Date
-  description?: string
-}
+  slug: FullSlug;
+  filePath: FilePath;
+  title: string;
+  links: SimpleSlug[];
+  tags: string[];
+  content: string;
+  richContent?: string;
+  date?: Date;
+  description?: string;
+  contentType?: string;
+};
+
+const migrationBySlug = new Map(
+  migrationMap.map((entry) => [entry.slug, entry]),
+);
+const topicNames = new Map(
+  topicsConfig
+    .filter((entry) => entry.status === "published")
+    .map((entry) => [entry.slug, entry.name]),
+);
+const conceptNames = new Map(
+  conceptsConfig
+    .filter((entry) => entry.status === "published")
+    .map((entry) => [entry.slug, entry.name]),
+);
 
 interface Options {
-  enableSiteMap: boolean
-  enableRSS: boolean
-  rssLimit?: number
-  rssFullHtml: boolean
-  rssSlug: string
-  includeEmptyFiles: boolean
+  enableSiteMap: boolean;
+  enableRSS: boolean;
+  rssLimit?: number;
+  rssFullHtml: boolean;
+  rssSlug: string;
+  includeEmptyFiles: boolean;
 }
 
 const defaultOptions: Options = {
@@ -37,65 +61,69 @@ const defaultOptions: Options = {
   rssFullHtml: false,
   rssSlug: "index",
   includeEmptyFiles: true,
-}
+};
 
-function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndexMap): string {
-  const base = cfg.baseUrl ?? ""
-  const defaultLastMod = new Date().toISOString()
-  const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => {
-    const sitemapSlug = slug === "tags" ? ("tags/" as SimpleSlug) : slug
+function generateSiteMap(
+  cfg: GlobalConfiguration,
+  idx: ContentIndexMap,
+): string {
+  const base = cfg.baseUrl ?? "";
+  const defaultLastMod = new Date().toISOString();
+  const createURLEntry = (
+    slug: SimpleSlug,
+    content: ContentDetails,
+  ): string => {
+    const sitemapSlug = slug === "tags" ? ("tags/" as SimpleSlug) : slug;
     return `  <url>
     <loc>${escapeHTML(`https://${joinSegments(base, encodeURI(sitemapSlug))}`)}</loc>
     <lastmod>${content.date?.toISOString() ?? defaultLastMod}</lastmod>
-  </url>`
-  }
-  const sitemapEntries = new Map(idx)
-  sitemapEntries.set("tags" as FullSlug, {
-    slug: "tags" as FullSlug,
-    filePath: "tags/index.md" as FilePath,
-    title: "Tags",
-    links: [],
-    tags: [],
-    content: "",
-  })
-
-  const urls = Array.from(sitemapEntries)
+  </url>`;
+  };
+  const urls = Array.from(idx)
     .map(([slug, content]) => createURLEntry(simplifySlug(slug), content))
-    .join("\n")
+    .join("\n");
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls}
 </urlset>
-`
+`;
 }
 
-function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndexMap, limit?: number): string {
-  const base = cfg.baseUrl ?? ""
+function generateRSSFeed(
+  cfg: GlobalConfiguration,
+  idx: ContentIndexMap,
+  limit?: number,
+): string {
+  const base = cfg.baseUrl ?? "";
 
-  const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => `<item>
+  const createURLEntry = (
+    slug: SimpleSlug,
+    content: ContentDetails,
+  ): string => `<item>
     <title>${escapeHTML(content.title)}</title>
     <link>https://${joinSegments(base, encodeURI(slug))}</link>
     <guid>https://${joinSegments(base, encodeURI(slug))}</guid>
     <description><![CDATA[ ${content.richContent ?? content.description} ]]></description>
     <pubDate>${content.date?.toUTCString()}</pubDate>
-  </item>`
+  </item>`;
 
   const items = Array.from(idx)
+    .filter(([_, content]) => content.contentType === "文章")
     .sort(([_, f1], [__, f2]) => {
       if (f1.date && f2.date) {
-        return f2.date.getTime() - f1.date.getTime()
+        return f2.date.getTime() - f1.date.getTime();
       } else if (f1.date && !f2.date) {
-        return -1
+        return -1;
       } else if (!f1.date && f2.date) {
-        return 1
+        return 1;
       }
 
-      return f1.title.localeCompare(f2.title)
+      return f1.title.localeCompare(f2.title);
     })
     .map(([slug, content]) => createURLEntry(simplifySlug(slug), content))
     .slice(0, limit ?? idx.size)
-    .join("")
+    .join("");
 
   return `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
@@ -108,33 +136,63 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndexMap, limit?:
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       ${items}
     </channel>
-  </rss>`
+  </rss>`;
 }
 
 export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
-  opts = { ...defaultOptions, ...opts }
+  opts = { ...defaultOptions, ...opts };
   return {
     name: "ContentIndex",
     async *emit(ctx, content) {
-      const cfg = ctx.cfg.configuration
-      const linkIndex: ContentIndexMap = new Map()
+      const cfg = ctx.cfg.configuration;
+      const linkIndex: ContentIndexMap = new Map();
       for (const [tree, file] of content) {
-        const slug = file.data.slug!
-        const date = getDate(ctx.cfg.configuration, file.data) ?? new Date()
-        if (opts?.includeEmptyFiles || (file.data.text && file.data.text !== "")) {
+        const slug = file.data.slug!;
+        if (
+          file.data.frontmatter?.published === false ||
+          file.data.frontmatter?.listed === false ||
+          file.data.frontmatter?.status === "draft" ||
+          file.data.frontmatter?.status === "archived"
+        ) {
+          continue;
+        }
+        const date = getDate(ctx.cfg.configuration, file.data) ?? new Date();
+        const knowledge = migrationBySlug.get(slug);
+        const knowledgeText = knowledge
+          ? [
+              knowledge.summary,
+              knowledge.section,
+              ...knowledge.topics.flatMap((item) => {
+                const name = topicNames.get(item);
+                return name ? [name] : [];
+              }),
+              ...knowledge.concepts
+                .map((item) => conceptNames.get(item))
+                .filter((item): item is string => Boolean(item)),
+              ...knowledge.tags,
+            ].join(" ")
+          : "";
+        if (
+          opts?.includeEmptyFiles ||
+          (file.data.text && file.data.text !== "")
+        ) {
           linkIndex.set(slug, {
             slug,
             filePath: file.data.relativePath!,
             title: file.data.frontmatter?.title!,
             links: file.data.links ?? [],
             tags: file.data.frontmatter?.tags ?? [],
-            content: file.data.text ?? "",
+            content: `${file.data.text ?? ""} ${knowledgeText}`.trim(),
             richContent: opts?.rssFullHtml
               ? escapeHTML(toHtml(tree as Root, { allowDangerousHtml: true }))
               : undefined,
             date: date,
             description: file.data.description ?? "",
-          })
+            contentType: String(
+              file.data.frontmatter?.contentType ??
+                (knowledge ? "文章" : "页面"),
+            ),
+          });
         }
       }
 
@@ -144,7 +202,7 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
           content: generateSiteMap(cfg, linkIndex),
           slug: "sitemap" as FullSlug,
           ext: ".xml",
-        })
+        });
       }
 
       if (opts?.enableRSS) {
@@ -153,26 +211,26 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
           content: generateRSSFeed(cfg, linkIndex, opts.rssLimit),
           slug: (opts?.rssSlug ?? "index") as FullSlug,
           ext: ".xml",
-        })
+        });
       }
 
-      const fp = joinSegments("static", "contentIndex") as FullSlug
+      const fp = joinSegments("static", "contentIndex") as FullSlug;
       const simplifiedIndex = Object.fromEntries(
         Array.from(linkIndex).map(([slug, content]) => {
           // remove description and from content index as nothing downstream
           // actually uses it. Keep date so client-side navigation can sort
           // article entries by publication date.
-          delete content.description
-          return [slug, content]
+          delete content.description;
+          return [slug, content];
         }),
-      )
+      );
 
       yield write({
         ctx,
         content: JSON.stringify(simplifiedIndex),
         slug: fp,
         ext: ".json",
-      })
+      });
     },
     externalResources: (ctx) => {
       if (opts?.enableRSS) {
@@ -185,8 +243,8 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
               href={`https://${ctx.cfg.configuration.baseUrl}/index.xml`}
             />,
           ],
-        }
+        };
       }
     },
-  }
-}
+  };
+};

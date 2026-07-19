@@ -1,0 +1,139 @@
+[
+  {
+    "name": "习近平时代",
+    "slug": "xi-era",
+    "status": "published",
+    "description": "追踪权力集中、组织防御化与接班风险如何共同塑造习近平时代。",
+    "coreJudgment": "个人权力集中并未消除组织问题，而是把反馈、责任与继承风险进一步压缩到最高层。",
+    "concepts": [
+      "bureaucratic-shock",
+      "crisis-management",
+      "order-evaporation"
+    ],
+    "recommended": [
+      "china/xi-power-centralization",
+      "china/xi-solved-organization-not-reality",
+      "china/xi-succession-crisis-gray-rhino"
+    ]
+  },
+  {
+    "name": "官僚系统",
+    "slug": "bureaucratic-system",
+    "status": "published",
+    "description": "研究整肃、问责、避责与多头治理如何改变官僚系统的行为。",
+    "coreJudgment": "当风险集中而责任边界模糊，官僚系统会从执行转向自保，并形成系统性休克。",
+    "concepts": [
+      "bureaucratic-shock",
+      "ruling-techniques",
+      "crisis-management"
+    ],
+    "recommended": [
+      "china/bureaucratic-system-under-purges",
+      "china/why-ccp-cannot-reduce-grassroots-burden",
+      "china/ccp-power-network-not-line"
+    ]
+  },
+  {
+    "name": "秩序蒸发",
+    "slug": "order-evaporation",
+    "status": "published",
+    "description": "观察制度形式仍在、实际协作与可信承诺却逐步失效的过程。",
+    "coreJudgment": "秩序的失效通常先表现为组织信用、行动能力与社会预期的蒸发，而不是形式结构突然消失。",
+    "concepts": ["order-evaporation", "high-fragility", "political-debt"],
+    "recommended": [
+      "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
+      "china/emotional-link-breakdown-and-regime-collapse",
+      "theory/ccp-high-fragility-dysfunction"
+    ]
+  },
+  {
+    "name": "三清时代",
+    "slug": "three-cleans-era",
+    "status": "published",
+    "description": "围绕财政清账、政治清责与组织清洗建立的阶段性研究框架。",
+    "coreJudgment": "资源收缩之后，组织会从增量分配进入存量追责，财政、政治与组织成本开始集中结算。",
+    "concepts": ["three-cleans-era", "fiscal-debt", "political-debt"],
+    "recommended": [
+      "china/ccp-bureaucracy-historical-bill",
+      "china/why-expulsion-from-party-becomes-standard-ending"
+    ]
+  },
+  {
+    "name": "二次改开",
+    "slug": "second-reform",
+    "status": "published",
+    "description": "讨论改革窗口是否仍存在，以及第二次改革开放面对的组织约束。",
+    "coreJudgment": "二次改开的关键不是单一领导人的意愿，而是组织绝境、利益重组与外部窗口能否同时出现。",
+    "concepts": ["second-reform", "political-route", "opportunity-contraction"],
+    "recommended": [
+      "china-stage/ccp-second-reform-opening-possibility",
+      "china/ccp-2018-new-reform-opening",
+      "china/ccp-reform-political-balance-deadlock"
+    ]
+  },
+  {
+    "name": "中共统治术",
+    "slug": "ccp-governance",
+    "status": "published",
+    "description": "分析压力传导、组织控制、宣传与危机管理的实际机制。",
+    "coreJudgment": "统治能力并不等于治理能力；短期控制工具的叠加，可能持续消耗长期组织信用。",
+    "concepts": [
+      "ruling-techniques",
+      "crisis-management",
+      "language-inflation"
+    ],
+    "recommended": [
+      "china/why-ccp-will-not-relax-party-pressure",
+      "china/propaganda-system-hollowing-out",
+      "china/political-machine-rewards-and-limits"
+    ]
+  },
+  {
+    "name": "地方财政",
+    "slug": "local-finance",
+    "status": "published",
+    "description": "研究地方债务、财政责任与治理能力之间的联动。",
+    "coreJudgment": "地方财政不是单一经济问题，而是中央—地方责任结构、增长模式与公共服务承诺的共同结果。",
+    "concepts": ["fiscal-debt", "political-debt", "order-evaporation"],
+    "recommended": [
+      "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+      "china-stage/china-manufacturing-cannot-stop",
+      "china/chicken-and-cage"
+    ]
+  },
+  {
+    "name": "中国政治转型",
+    "slug": "political-transition",
+    "status": "published",
+    "description": "讨论低冲突转型、国家重组与制度接续的现实路径。",
+    "coreJudgment": "政治转型的核心不是抽象替换，而是如何保留国家能力、恢复责任链并降低社会摩擦。",
+    "concepts": [
+      "nonviolent-transition",
+      "state-system-upgrade",
+      "political-route"
+    ],
+    "recommended": [
+      "civic-orderism/why-civic-orderism-is-easier-to-succeed",
+      "theory/internal-change-external-change",
+      "civic-orderism/state-must-rely-on-systems-not-drivers"
+    ]
+  },
+  {
+    "name": "制度机制",
+    "slug": "institutional-mechanisms",
+    "status": "draft",
+    "publicationReason": "与一级栏目‘制度设计’功能重复；先保留框架和 URL，但不作为首批公开专题。",
+    "description": "把委员会、行政、议会、选举、司法与后台系统放在同一制度框架中检验。",
+    "coreJudgment": "制度设计必须同时回答入口、判断、执行、纠偏与问责如何分工。",
+    "concepts": [
+      "low-friction-governance",
+      "state-system-upgrade",
+      "political-route"
+    ],
+    "recommended": [
+      "civic-orderism/what-is-committee-system",
+      "civic-orderism/why-dual-track-committee-administration",
+      "civic-orderism/backend-system-under-civic-orderism"
+    ]
+  }
+]

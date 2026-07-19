@@ -1,0 +1,22 @@
+{
+  "name": "公民秩序主义",
+  "englishName": "CIVIC ORDERISM",
+  "tagline": "从现实痛感进入结构判断，再进入制度回应。",
+  "description": "一个从中国现实问题出发，连接结构解释、趋势判断、理论回应与制度设计的政治研究与制度知识库。",
+  "primaryEmail": "citizenorder@proton.me",
+  "secondaryEmail": "civicorderism@gmail.com",
+  "documents": [
+    {
+      "title": "公民秩序主义介绍手册",
+      "description": "第一次理解公民秩序主义的基础文本。",
+      "updated": "2026-06-11",
+      "href": "/files/civic-orderism-introduction-manual.pdf"
+    },
+    {
+      "title": "公民秩序主义组织手册",
+      "description": "了解项目判断、组织原则与参与边界。",
+      "updated": "2026-06-11",
+      "href": "/files/civic-orderism-organization-manual.pdf"
+    }
+  ]
+}

@@ -4,6 +4,341 @@ body {
   letter-spacing: 0;
 }
 
+/* V2 information architecture: restrained knowledge-library surfaces. */
+.v2-hero {
+  padding: 2.25rem 0 2.5rem;
+  border-bottom: 1px solid var(--lightgray);
+}
+
+article .v2-hero h1 {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 0.35rem 0 1rem;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 450;
+  line-height: 1.15;
+}
+
+article .v2-hero h1 img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+}
+
+.v2-hero__tagline {
+  margin: 0.5rem 0;
+  color: var(--dark);
+  font-size: clamp(1.08rem, 2.2vw, 1.35rem);
+  line-height: 1.55;
+}
+
+.v2-hero > p:last-of-type {
+  max-width: 720px;
+  color: var(--darkgray);
+}
+
+.v2-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.4rem;
+}
+
+.start-entry-grid,
+.topic-entry-grid,
+.concept-grid,
+.reading-route-grid,
+.knowledge-grid,
+.recommendation-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.topic-entry-grid,
+.concept-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.start-entry-card,
+.topic-entry-card,
+.concept-card {
+  display: flex;
+  min-width: 0;
+  min-height: 8rem;
+  flex-direction: column;
+  gap: 0.55rem;
+  box-sizing: border-box;
+  padding: 1.15rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 7px;
+  background: color-mix(in srgb, var(--light) 86%, #fff);
+  color: var(--darkgray);
+  text-decoration: none;
+  background-image: none;
+}
+
+.start-entry-card:hover,
+.start-entry-card:focus-visible,
+.topic-entry-card:hover,
+.topic-entry-card:focus-visible,
+.concept-card:hover,
+.concept-card:focus-visible {
+  border-color: var(--tertiary);
+  background: var(--highlight);
+  outline: none;
+}
+
+.start-entry-card strong,
+.topic-entry-card strong,
+.concept-card strong {
+  color: var(--dark);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.start-entry-card span,
+.topic-entry-card span,
+.concept-card span {
+  flex: 1;
+  color: var(--darkgray);
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
+.start-entry-card small,
+.topic-entry-card small,
+.concept-card small {
+  color: var(--tertiary);
+  font-size: 0.74rem;
+}
+
+.knowledge-grid {
+  margin: 1rem 0;
+}
+
+.knowledge-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 1.15rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 7px;
+  background: color-mix(in srgb, var(--light) 88%, #fff);
+}
+
+.knowledge-card[hidden] {
+  display: none !important;
+}
+
+article .knowledge-card h3 {
+  margin: 0.55rem 0;
+  font-size: 1.02rem;
+}
+
+.knowledge-card__meta,
+.knowledge-card__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0;
+  color: var(--gray);
+  font-size: 0.72rem;
+}
+
+.knowledge-card__meta span + span::before {
+  content: "·";
+  margin-right: 0.45rem;
+}
+
+.knowledge-card__summary {
+  display: -webkit-box;
+  margin: 0 0 0.8rem;
+  overflow: hidden;
+  color: var(--darkgray);
+  font-size: 0.86rem;
+  line-height: 1.65;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.knowledge-card__chips {
+  margin-top: auto;
+}
+
+.knowledge-card__chips span {
+  padding: 0.22rem 0.42rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 3px;
+}
+
+.knowledge-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: end;
+  margin: 1rem 0;
+  padding: 0.85rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+}
+
+.knowledge-filters label {
+  display: flex;
+  min-width: 11rem;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.28rem;
+  color: var(--gray);
+  font-size: 0.74rem;
+}
+
+.knowledge-filters select,
+.knowledge-filters button,
+.knowledge-pagination button {
+  min-height: 2.25rem;
+  padding: 0.4rem 0.65rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 4px;
+  background: var(--light);
+  color: var(--darkgray);
+  font: inherit;
+}
+
+.knowledge-filters button:hover,
+.knowledge-filters button:focus-visible,
+.knowledge-pagination button:hover:not(:disabled),
+.knowledge-pagination button:focus-visible:not(:disabled) {
+  border-color: var(--tertiary);
+  color: var(--dark);
+  outline: none;
+}
+
+.knowledge-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin: 1.2rem 0;
+  color: var(--gray);
+  font-size: 0.78rem;
+}
+
+.knowledge-pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.section-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 1rem 0;
+}
+
+.section-stats span {
+  padding: 0.35rem 0.55rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 4px;
+  color: var(--gray);
+  font-size: 0.76rem;
+}
+
+.recommendation-columns {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.recommendation-columns > section,
+.reading-route-card,
+.topic-hero-note {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 7px;
+  background: color-mix(in srgb, var(--light) 88%, #fff);
+}
+
+article .recommendation-columns h3,
+article .reading-route-card h3 {
+  margin: 0 0 0.65rem;
+  font-size: 0.95rem;
+}
+
+.recommendation-columns ol,
+.reading-route-card ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.recommendation-columns li,
+.reading-route-card li {
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.topic-hero-note {
+  margin: 1.2rem 0;
+  border-left: 4px solid var(--tertiary);
+}
+
+.topic-hero-note p {
+  margin: 0.45rem 0;
+}
+
+.topic-hero-note small,
+.concept-definition {
+  color: var(--gray);
+}
+
+.section-more {
+  margin-top: 1rem;
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .topic-entry-grid,
+  .concept-grid,
+  .recommendation-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .v2-hero {
+    padding-top: 1.4rem;
+  }
+
+  article .v2-hero h1 img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .start-entry-grid,
+  .topic-entry-grid,
+  .concept-grid,
+  .reading-route-grid,
+  .knowledge-grid,
+  .recommendation-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .start-entry-card,
+  .topic-entry-card,
+  .concept-card {
+    min-height: 0;
+  }
+
+  .knowledge-filters {
+    align-items: stretch;
+  }
+
+  .knowledge-filters label,
+  .knowledge-filters button {
+    min-width: 100%;
+  }
+}
+
 .page-title a {
   font-weight: 500;
   letter-spacing: 0.08em;

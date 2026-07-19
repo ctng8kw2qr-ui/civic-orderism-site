@@ -1,0 +1,71 @@
+{
+  "recommendations": {
+    "newReader": [
+      "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+      "theory/party-state-structural-failure",
+      "civic-orderism/what-is-committee-system"
+    ],
+    "currentFocus": [
+      "china-stage/ccp-second-reform-opening-possibility",
+      "china/why-expulsion-from-party-becomes-standard-ending",
+      "china/why-ccp-cannot-reduce-grassroots-burden"
+    ],
+    "theoryFoundation": [
+      "civic-orderism/why-civic-orderism",
+      "civic-orderism/civic-orderism-manual",
+      "civic-orderism/state-must-rely-on-systems-not-drivers"
+    ]
+  },
+  "tenMinutes": [
+    "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+    "theory/party-state-structural-failure",
+    "civic-orderism/why-civic-orderism"
+  ],
+  "thirtyMinutes": [
+    "/files/civic-orderism-introduction-manual.pdf",
+    "china/ccp-power-network-not-line",
+    "civic-orderism/civic-orderism-manual"
+  ],
+  "routes": [
+    {
+      "name": "普通读者路线",
+      "description": "从现实痛感进入结构解释，再看理论与制度回应。",
+      "slugs": [
+        "china/why-ccp-cannot-reduce-grassroots-burden",
+        "theory/party-state-structural-failure",
+        "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+        "civic-orderism/what-is-committee-system"
+      ]
+    },
+    {
+      "name": "体制内读者路线",
+      "description": "从官僚行为、组织信用和责任结构进入。",
+      "slugs": [
+        "china/bureaucratic-system-under-purges",
+        "china/why-ccp-cannot-reduce-grassroots-burden",
+        "china/organization-credit-retired-officials",
+        "civic-orderism/committee-administration-opposite-incentives"
+      ]
+    },
+    {
+      "name": "海外中文读者路线",
+      "description": "先理解中国组织逻辑，再进入未来判断与转型路径。",
+      "slugs": [
+        "china/ccp-power-network-not-line",
+        "china/taiwan-war-controllable-escalation-illusion",
+        "china-stage/ccp-second-reform-opening-possibility",
+        "civic-orderism/why-civic-orderism-is-easier-to-succeed"
+      ]
+    },
+    {
+      "name": "制度研究路线",
+      "description": "直接进入制度入口、判断、执行、纠偏与问责机制。",
+      "slugs": [
+        "civic-orderism/what-is-committee-system",
+        "civic-orderism/why-dual-track-committee-administration",
+        "civic-orderism/state-operation-process-under-civic-orderism",
+        "civic-orderism/backend-system-under-civic-orderism"
+      ]
+    }
+  ]
+}

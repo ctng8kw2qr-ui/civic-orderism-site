@@ -14,10 +14,101 @@
 
 .key-points-card,
 .article-series-nav,
+.article-knowledge,
 .related-reading,
 .article-cta {
   box-sizing: border-box;
   max-width: 780px;
+}
+
+.article-knowledge {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2.8rem 0 1.4rem;
+  padding-top: 1.3rem;
+  border-top: 1px solid var(--lightgray);
+
+  &__group {
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid var(--lightgray);
+    border-radius: 7px;
+    background: #fff;
+  }
+
+  &__group h2 {
+    margin: 0 0 0.7rem;
+    padding: 0;
+    border: 0;
+    font-size: 0.95rem;
+    font-weight: 650;
+  }
+
+  &__links,
+  &__reading-path nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 0;
+  }
+
+  &__links a,
+  &__links span,
+  &__reading-path a,
+  &__reading-path span {
+    padding: 0.36rem 0.52rem;
+    border: 1px solid var(--lightgray);
+    border-radius: 4px;
+    background: var(--light);
+    color: var(--darkgray);
+    font-size: 0.8rem;
+    line-height: 1.45;
+    text-decoration: none;
+    background-image: none;
+  }
+
+  &__reading-path {
+    grid-column: 1 / -1;
+  }
+
+  &__reading-path nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  &__details {
+    grid-column: 1 / -1;
+    color: var(--gray);
+    font-size: 0.82rem;
+  }
+
+  &__details summary {
+    cursor: pointer;
+  }
+
+  &__details dl {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  &__details dl > div {
+    min-width: 0;
+    padding: 0.65rem;
+    border: 1px solid var(--lightgray);
+    border-radius: 4px;
+  }
+
+  &__details dt {
+    margin-bottom: 0.2rem;
+    color: var(--gray);
+  }
+
+  &__details dd {
+    margin: 0;
+    color: var(--darkgray);
+  }
 }
 
 .key-points-card {
@@ -402,6 +493,7 @@ article .key-judgment,
 
   .key-points-card,
   .article-series-nav,
+  .article-knowledge,
   .related-reading,
   .article-cta {
     max-width: 100%;
@@ -415,6 +507,20 @@ article .key-judgment,
 
   .article-series-nav {
     margin: 0.85rem 0 1.1rem;
+  }
+
+  .article-knowledge {
+    grid-template-columns: 1fr;
+  }
+
+  .article-knowledge__reading-path,
+  .article-knowledge__details {
+    grid-column: auto;
+  }
+
+  .article-knowledge__reading-path nav,
+  .article-knowledge__details dl {
+    grid-template-columns: 1fr;
   }
 
   article .key-judgment,

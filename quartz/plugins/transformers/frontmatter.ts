@@ -1,43 +1,43 @@
-import matter from "gray-matter"
-import remarkFrontmatter from "remark-frontmatter"
-import { QuartzTransformerPlugin } from "../types"
-import yaml from "js-yaml"
-import toml from "toml"
+import matter from "gray-matter";
+import remarkFrontmatter from "remark-frontmatter";
+import { QuartzTransformerPlugin } from "../types";
+import yaml from "js-yaml";
+import toml from "toml";
 import {
   FilePath,
   FullSlug,
   getFileExtension,
   slugifyFilePath,
   slugTag,
-} from "../../util/path"
-import { QuartzPluginData } from "../vfile"
-import { i18n } from "../../i18n"
+} from "../../util/path";
+import { QuartzPluginData } from "../vfile";
+import { i18n } from "../../i18n";
 
 export interface Options {
-  delimiters: string | [string, string]
-  language: "yaml" | "toml"
+  delimiters: string | [string, string];
+  language: "yaml" | "toml";
 }
 
 const defaultOptions: Options = {
   delimiters: "---",
   language: "yaml",
-}
+};
 
 function coalesceAliases(data: { [key: string]: any }, aliases: string[]) {
   for (const alias of aliases) {
-    if (data[alias] !== undefined && data[alias] !== null) return data[alias]
+    if (data[alias] !== undefined && data[alias] !== null) return data[alias];
   }
 }
 
 function coerceToArray(input: string | string[]): string[] | undefined {
-  if (input === undefined || input === null) return undefined
+  if (input === undefined || input === null) return undefined;
 
   // coerce to array
   if (!Array.isArray(input)) {
     input = input
       .toString()
       .split(",")
-      .map((tag: string) => tag.trim())
+      .map((tag: string) => tag.trim());
   }
 
   // remove all non-strings
@@ -45,34 +45,34 @@ function coerceToArray(input: string | string[]): string[] | undefined {
     .filter(
       (tag: unknown) => typeof tag === "string" || typeof tag === "number",
     )
-    .map((tag: string | number) => tag.toString())
+    .map((tag: string | number) => tag.toString());
 }
 
 function getAliasSlugs(aliases: string[]): FullSlug[] {
-  const res: FullSlug[] = []
+  const res: FullSlug[] = [];
   for (const alias of aliases) {
-    const isMd = getFileExtension(alias) === "md"
-    const mockFp = isMd ? alias : alias + ".md"
-    const slug = slugifyFilePath(mockFp as FilePath)
-    res.push(slug)
+    const isMd = getFileExtension(alias) === "md";
+    const mockFp = isMd ? alias : alias + ".md";
+    const slug = slugifyFilePath(mockFp as FilePath);
+    res.push(slug);
   }
 
-  return res
+  return res;
 }
 
 export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (
   userOpts,
 ) => {
-  const opts = { ...defaultOptions, ...userOpts }
+  const opts = { ...defaultOptions, ...userOpts };
   return {
     name: "FrontMatter",
     markdownPlugins(ctx) {
-      const { cfg, allSlugs } = ctx
+      const { cfg, allSlugs } = ctx;
       return [
         [remarkFrontmatter, ["yaml", "toml"]],
         () => {
           return (_, file) => {
-            const fileData = Buffer.from(file.value as Uint8Array)
+            const fileData = Buffer.from(file.value as Uint8Array);
             const { data } = matter(fileData, {
               ...opts,
               engines: {
@@ -80,51 +80,63 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (
                   yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
                 toml: (s) => toml.parse(s) as object,
               },
-            })
+            });
 
             if (data.title != null && data.title.toString() !== "") {
-              data.title = data.title.toString()
+              data.title = data.title.toString();
             } else {
               data.title =
                 file.stem ??
-                i18n(cfg.configuration.locale).propertyDefaults.title
+                i18n(cfg.configuration.locale).propertyDefaults.title;
             }
 
-            const tags = coerceToArray(coalesceAliases(data, ["tags", "tag"]))
+            const tags = coerceToArray(coalesceAliases(data, ["tags", "tag"]));
             if (tags)
-              data.tags = [...new Set(tags.map((tag: string) => slugTag(tag)))]
+              data.tags = [...new Set(tags.map((tag: string) => slugTag(tag)))];
+
+            const topics = coerceToArray(data.topics);
+            data.topics = topics ? [...new Set(topics.map(String))] : [];
+            const concepts = coerceToArray(data.concepts);
+            data.concepts = concepts ? [...new Set(concepts.map(String))] : [];
+            data.featured ??= false;
+            data.recommended ??= false;
+            data.readingLevel ??= "进阶";
+            data.readingOrder ??= 999;
+            data.author ??= "公民秩序主义";
+            data.status ??= data.draft ? "draft" : "published";
+            data.needsReview ??= false;
 
             const aliases = coerceToArray(
               coalesceAliases(data, ["aliases", "alias"]),
-            )
+            );
             if (aliases) {
-              data.aliases = aliases // frontmatter
-              file.data.aliases = getAliasSlugs(aliases)
-              allSlugs.push(...file.data.aliases)
+              data.aliases = aliases; // frontmatter
+              file.data.aliases = getAliasSlugs(aliases);
+              allSlugs.push(...file.data.aliases);
             }
 
             if (data.permalink != null && data.permalink.toString() !== "") {
-              data.permalink = data.permalink.toString() as FullSlug
-              const aliases = file.data.aliases ?? []
-              aliases.push(data.permalink)
-              file.data.aliases = aliases
-              allSlugs.push(data.permalink)
+              data.permalink = data.permalink.toString() as FullSlug;
+              const aliases = file.data.aliases ?? [];
+              aliases.push(data.permalink);
+              file.data.aliases = aliases;
+              allSlugs.push(data.permalink);
             }
 
             const cssclasses = coerceToArray(
               coalesceAliases(data, ["cssclasses", "cssclass"]),
-            )
-            if (cssclasses) data.cssclasses = cssclasses
+            );
+            if (cssclasses) data.cssclasses = cssclasses;
 
             const socialImage = coalesceAliases(data, [
               "socialImage",
               "image",
               "cover",
-            ])
+            ]);
 
-            const created = coalesceAliases(data, ["created", "date"])
+            const created = coalesceAliases(data, ["created", "date"]);
             if (created) {
-              data.created = created
+              data.created = created;
             }
 
             const modified = coalesceAliases(data, [
@@ -132,61 +144,74 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (
               "lastmod",
               "updated",
               "last-modified",
-            ])
-            if (modified) data.modified = modified
-            data.modified ||= created // if modified is not set, use created
+            ]);
+            if (modified) data.modified = modified;
+            data.modified ||= created; // if modified is not set, use created
 
             const published = coalesceAliases(data, [
               "published",
               "publishDate",
               "date",
-            ])
-            if (published) data.published = published
+            ]);
+            if (published) data.published = published;
 
-            if (socialImage) data.socialImage = socialImage
+            if (socialImage) data.socialImage = socialImage;
 
             // Remove duplicate slugs
-            const uniqueSlugs = [...new Set(allSlugs)]
-            allSlugs.splice(0, allSlugs.length, ...uniqueSlugs)
+            const uniqueSlugs = [...new Set(allSlugs)];
+            allSlugs.splice(0, allSlugs.length, ...uniqueSlugs);
 
             // fill in frontmatter
-            file.data.frontmatter = data as QuartzPluginData["frontmatter"]
-          }
+            file.data.frontmatter = data as QuartzPluginData["frontmatter"];
+          };
         },
-      ]
+      ];
     },
-  }
-}
+  };
+};
 
 declare module "vfile" {
   interface DataMap {
-    aliases: FullSlug[]
+    aliases: FullSlug[];
     frontmatter: { [key: string]: unknown } & {
-      title: string
+      title: string;
     } & Partial<{
-        tags: string[]
-        aliases: string[]
-        modified: string
-        created: string
-        published: string
-        description: string
-        socialDescription: string
-        publish: boolean | string
-        draft: boolean | string
-        lang: string
-        enableToc: string
-        cssclasses: string[]
-        socialImage: string
-        comments: boolean | string
-        folderListed: boolean
-        category: string
-        section: string
-        summary: string
-        series: string | { name?: string; order?: number }
-        key_points: string[]
-        keyPoints: string[]
-        coreJudgments: string[]
-        core_judgments: string[]
-      }>
+        tags: string[];
+        aliases: string[];
+        modified: string;
+        created: string;
+        published: string | boolean;
+        listed: boolean;
+        noindex: boolean;
+        description: string;
+        socialDescription: string;
+        publish: boolean | string;
+        draft: boolean | string;
+        lang: string;
+        enableToc: string;
+        cssclasses: string[];
+        socialImage: string;
+        comments: boolean | string;
+        folderListed: boolean;
+        category: string;
+        section: string;
+        summary: string;
+        updated: string;
+        topics: string[];
+        concepts: string[];
+        featured: boolean;
+        recommended: boolean;
+        readingLevel: string;
+        readingOrder: number;
+        author: string;
+        status: "published" | "draft" | "archived";
+        needsReview: boolean;
+        contentType: string;
+        series: string | { name?: string; order?: number };
+        key_points: string[];
+        keyPoints: string[];
+        coreJudgments: string[];
+        core_judgments: string[];
+      }>;
   }
 }

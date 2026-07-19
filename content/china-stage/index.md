@@ -1,35 +1,37 @@
 ---
 title: "中国阶段判断"
-date: 2026-06-02
-category: "中国阶段判断"
-tags:
-  - china-stage
-description: "从财政、社保、医保、金融、基层治理、普通人压力和社会心理进入中国现实阶段判断。"
+date: 2026-07-19
+updated: 2026-07-19
+description: "保留的旧栏目入口；阶段判断已纳入中国未来。"
+contentType: "兼容入口"
 status: published
+listed: true
+noindex: false
 ---
 
 # 中国阶段判断
 
-这里关注中国现实正在发生的结构性变化：财政、社保、医保、金融、基层治理、普通人生活压力和社会心理如何共同构成一个新的历史阶段。它不是情绪判断，而是从现实痛感进入制度结构。
+这是保留的旧栏目入口。阶段性预测、改革窗口与未来路径现统一进入 [[china-future|中国未来]]，原有文章 URL 均保持不变。
 
-## 文章列表
-
-### 一、产业、债务与秩序失灵
-
-- [[china-stage/ccp-second-reform-opening-possibility|中共还有没有二次改开的可能？]]（2026-07-19）
-- [[china-stage/china-manufacturing-cannot-stop|中国制造业不是造不出来，而是停不下来]]（2026-06-16）
-- [[china/ccp-collapse-three-triggers-social-security-healthcare-finance|中共崩解的三大导火索：社保、医保与金融系统]]（2026-05-11）
-- [[china/ccp-bureaucracy-historical-bill|当历史总账开始结算：高刚性官僚体系如何把系统性责任层层压向中基层]]（2026-05-10）
-- [[china/ccp-reform-political-balance-deadlock|中共的真正死局：改革未必救经济，却一定先打破政治平衡]]（2026-05-10）
-
-### 二、基层治理、普通人压力与社会心理
-
-- [[theory/no-accountability-lie-flat-mentality|为什么“无人担责的躺平心态”会从根本上摧毁一个超大型执政组织]]（2026-05-10）
-- [[theory/trapped-by-process|我们不是被贫穷困住，而是被流程困住]]（2026-05-10）
-- [[china/chicken-and-cage|养鸡与换笼：民营经济被整肃的结构逻辑]]（2026-05-10）
-- [[china/maginot-line-of-stability-maintenance|一个难以言说的防线：从“液压维稳”到当代的马其诺防线]]（2026-05-10）
-
-### 三、社会变革动力与历史总账
-
-- [[theory/social-change-dynamics-when-system-no-longer-worth-it|社会变革动力学：当所有人都觉得“不值了”]]（2026-05-30）
-- [[theory/organizational-collapse-begins-with-loss-of-institutional-trust|组织的坍塌，始于制度信任的瓦解]]（2026-05-30）
+<div class="knowledge-browser" data-knowledge-browser data-page-size="10">
+<div class="knowledge-filters" aria-label="文章筛选">
+  <label>专题<select data-filter-topic><option value="">全部专题</option><option value="second-reform">二次改开</option><option value="local-finance">地方财政</option><option value="order-evaporation">秩序蒸发</option></select></label>
+  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="second-reform">二次改开</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option></select></label>
+  <button type="button" data-filter-reset>重置</button>
+</div>
+<div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="second-reform" data-concepts="second-reform">
+  <p class="knowledge-card__meta"><span>2026-07-19</span><span>中国未来</span><span>22 分钟</span></p>
+  <h3><a href="/china-stage/ccp-second-reform-opening-possibility">中共还有没有二次改开的可能？</a></h3>
+  <p class="knowledge-card__summary">本文认为，讨论中共是否可能二次改开，真正关键不是领导人是否愿意改革，而是中共是否再次走到类似1978年的组织绝境。第一次改革开放来自旧路线破产、共同求生和全球化窗口；今天面对的则是繁荣退潮后的损失分配，因此二次改开的门槛更高。</p>
+  <p class="knowledge-card__chips"><span>专题：二次改开</span><span>概念：二次改开</span></p>
+</article>
+<article class="knowledge-card" data-knowledge-card data-topics="local-finance order-evaporation" data-concepts="order-evaporation high-fragility">
+  <p class="knowledge-card__meta"><span>2026-06-16</span><span>中国未来</span><span>11 分钟</span></p>
+  <h3><a href="/china-stage/china-manufacturing-cannot-stop">中国制造业不是造不出来，而是停不下来</a></h3>
+  <p class="knowledge-card__summary">中国制造业的困境不是简单的订单外迁或产业衰退，而是生产能力、地方动员、债务周期、银行体系和政治责任机制共同形成的系统性困局。真正的问题不是造不出来，而是越能造、越难停、越难赚钱，最后指向秩序本身的失灵。</p>
+  <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：秩序蒸发</span></p>
+</article>
+</div>
+<div class="knowledge-pagination" aria-label="文章分页"><button type="button" data-page-prev>上一页</button><span data-page-status></span><button type="button" data-page-next>下一页</button></div>
+</div>

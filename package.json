@@ -13,10 +13,12 @@
   },
   "scripts": {
     "quartz": "./quartz/bootstrap-cli.mjs",
-    "generate:indexes": "node ./scripts/generate-content-indexes.mjs",
+    "generate:indexes": "node ./scripts/generate-content-indexes.mjs && node ./scripts/generate-v2-architecture.mjs",
     "generate:manual-pdfs": "node ./scripts/generate-introduction-manual-pdf.cjs && node ./scripts/generate-organization-manual-pdf.cjs",
     "dev": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build --serve",
     "build": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build && node ./scripts/generate-static-security-files.mjs",
+    "validate:v2": "node ./scripts/validate-v2-architecture.mjs",
+    "validate:content-safety": "node ./scripts/validate-content-safety.mjs",
     "preview": "wrangler dev",
     "docs": "node ./quartz/bootstrap-cli.mjs build --serve -d docs",
     "check": "tsc --noEmit && npx prettier . --check",

@@ -1,0 +1,56 @@
+[
+  {
+    "name": "解析中共",
+    "slug": "china",
+    "description": "从组织、财政、官僚运行和权力机制出发，解释中共为何走到今天。",
+    "topics": [
+      "xi-era",
+      "bureaucratic-system",
+      "order-evaporation",
+      "ccp-governance"
+    ],
+    "recommended": [
+      "theory/party-state-structural-failure",
+      "china/ccp-power-network-not-line",
+      "china/bureaucratic-system-under-purges"
+    ]
+  },
+  {
+    "name": "中国未来",
+    "slug": "china-future",
+    "description": "讨论中国正在走向哪里，以及未来可能出现的政治与社会窗口。",
+    "topics": [
+      "second-reform",
+      "local-finance",
+      "political-transition",
+      "order-evaporation"
+    ],
+    "recommended": [
+      "china-stage/ccp-second-reform-opening-possibility",
+      "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+      "china/ccp-reform-political-balance-deadlock"
+    ]
+  },
+  {
+    "name": "公民秩序主义",
+    "slug": "civic-orderism",
+    "description": "解释公民秩序主义是什么、为什么出现，以及它试图回应什么时代问题。",
+    "topics": ["political-transition"],
+    "recommended": [
+      "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+      "civic-orderism/civic-orderism-manual",
+      "civic-orderism/why-civic-orderism"
+    ]
+  },
+  {
+    "name": "制度设计",
+    "slug": "institution-design",
+    "description": "将理论转化为可讨论、可修正、可检验的具体制度机制。",
+    "topics": ["institutional-mechanisms"],
+    "recommended": [
+      "civic-orderism/what-is-committee-system",
+      "civic-orderism/why-dual-track-committee-administration",
+      "civic-orderism/state-operation-process-under-civic-orderism"
+    ]
+  }
+]
