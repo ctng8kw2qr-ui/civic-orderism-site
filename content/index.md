@@ -7,6 +7,9 @@ contentType: "首页"
 status: published
 listed: true
 noindex: false
+aliases:
+  - article_priority_index
+  - article_summaries
 ---
 
 <section class="v2-hero">

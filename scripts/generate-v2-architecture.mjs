@@ -546,7 +546,7 @@ function recommendationDetail(groupName, article) {
 
 writeContent(
   "index.md",
-  `${yamlFrontmatter({ title: site.name, description: site.description, contentType: "首页" })}
+  `${yamlFrontmatter({ title: site.name, description: site.description, contentType: "首页", aliases: ["article_priority_index", "article_summaries"] })}
 
 <section class="v2-hero">
   <p class="home-kicker">${site.englishName}</p>
