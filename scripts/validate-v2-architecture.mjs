@@ -18,6 +18,16 @@ const publicTopics = topics.filter((item) => item.status === "published");
 const hiddenTopics = topics.filter((item) => item.status !== "published");
 const publicConcepts = concepts.filter((item) => item.status === "published");
 const hiddenConcepts = concepts.filter((item) => item.status !== "published");
+const developmentPlaceholderPatterns = [
+  /待人工复核/i,
+  /\bTODO\b/i,
+  /\bFIXME\b/i,
+  /\bPlaceholder\b/i,
+  /Lorem Ipsum/i,
+  /Coming Soon/i,
+  /临时文本/i,
+  /测试文字/i,
+];
 
 const assert = (condition, message) => {
   if (!condition) errors.push(message);
@@ -28,6 +38,18 @@ const publicRouteExists = (slug) =>
     ? fs.existsSync(path.join(publicDir, "index.html"))
     : fs.existsSync(publicHtml(slug)) ||
       fs.existsSync(path.join(publicDir, slug, "index.html"));
+const visiblePageText = (html) =>
+  html
+    .replace(/<script\b[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style\b[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ");
+const walkHtmlFiles = (directory) =>
+  fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const entryPath = path.join(directory, entry.name);
+    if (entry.isDirectory()) return walkHtmlFiles(entryPath);
+    return entry.name.endsWith(".html") ? [entryPath] : [];
+  });
 
 assert(
   new Set(migration.map((item) => item.slug)).size === migration.length,
@@ -217,6 +239,16 @@ assert(
   migration.filter((item) => item.needsReview).length === 14,
   `人工复核文章应为 14 篇，当前为 ${migration.filter((item) => item.needsReview).length}`,
 );
+
+for (const htmlPath of walkHtmlFiles(publicDir)) {
+  const pageText = visiblePageText(fs.readFileSync(htmlPath, "utf8"));
+  for (const pattern of developmentPlaceholderPatterns) {
+    assert(
+      !pattern.test(pageText),
+      `公开页面包含开发占位文本：${path.relative(publicDir, htmlPath)} -> ${pattern}`,
+    );
+  }
+}
 
 if (errors.length) {
   console.error(errors.map((item) => `- ${item}`).join("\n"));
