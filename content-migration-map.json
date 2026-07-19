@@ -1,5 +1,30 @@
 [
   {
+    "title": "国家如何平稳转轨：公民秩序主义不是中共官僚的敌人",
+    "slug": "civic-orderism/peaceful-state-transition",
+    "date": "2026-07-19",
+    "updated": "2026-07-19",
+    "summary": "社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不以集体清算为前提的转轨道路。",
+    "originalSection": "公民秩序主义",
+    "section": "公民秩序主义",
+    "tags": [
+      "公民秩序主义",
+      "国家转轨",
+      "官僚系统",
+      "行政连续性",
+      "非清算转型"
+    ],
+    "status": "published",
+    "topics": ["political-transition", "bureaucratic-system"],
+    "concepts": ["bureaucratic-shock"],
+    "featured": false,
+    "recommended": false,
+    "readingLevel": "基础",
+    "readingOrder": 0,
+    "author": "公民秩序主义",
+    "needsReview": false
+  },
+  {
     "title": "中共还有没有二次改开的可能？",
     "slug": "china-stage/ccp-second-reform-opening-possibility",
     "date": "2026-07-19",
@@ -295,7 +320,7 @@
     "featured": false,
     "recommended": true,
     "readingLevel": "基础",
-    "readingOrder": 2,
+    "readingOrder": 3,
     "author": "公民秩序主义",
     "needsReview": false
   },
@@ -1251,7 +1276,7 @@
     "featured": false,
     "recommended": false,
     "readingLevel": "基础",
-    "readingOrder": 1,
+    "readingOrder": 2,
     "author": "公民秩序主义",
     "needsReview": false
   },
@@ -1743,7 +1768,7 @@
     "featured": false,
     "recommended": true,
     "readingLevel": "基础",
-    "readingOrder": 0,
+    "readingOrder": 1,
     "author": "公民秩序主义",
     "needsReview": false
   },

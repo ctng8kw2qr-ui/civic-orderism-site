@@ -37,6 +37,12 @@ noindex: false
 ## 相关文章
 
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition bureaucratic-system" data-concepts="bureaucratic-shock">
+  <p class="knowledge-card__meta"><span>2026-07-19</span><span>13 分钟阅读</span></p>
+  <h3><a href="/civic-orderism/peaceful-state-transition">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</a></h3>
+  <p class="knowledge-card__summary">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不以集体清算为前提的转轨道路。</p>
+  <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：官僚休克</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era bureaucratic-system" data-concepts="bureaucratic-shock">
   <p class="knowledge-card__meta"><span>2026-07-14</span><span>17 分钟阅读</span></p>
   <h3><a href="/china/why-expulsion-from-party-becomes-standard-ending">为什么“开除党籍”正在成为中共处理高级干部的标准结局？</a></h3>
@@ -102,12 +108,6 @@ noindex: false
   <h3><a href="/china/ccp-collapse-three-triggers-social-security-healthcare-finance">中共崩解的三大导火索：社保、医保与金融系统</a></h3>
   <p class="knowledge-card__summary">本文从社保、医保与金融系统三个领域，分析中共未来危机如何从国家信用事件转化为社会预期和官僚系统的连锁崩解。</p>
   <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：秩序蒸发</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>10 分钟阅读</span></p>
-  <h3><a href="/china/ccp-bureaucracy-double-deadlock">不抓人就躺平，一抓人就失真：中共官僚体系为何陷入双重死结</a></h3>
-  <p class="knowledge-card__summary">很多人谈中国官僚体系的问题，喜欢把原因简单归结为一句话：</p>
-  <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚休克</span></p>
 </article>
 </div>
 
