@@ -482,27 +482,6 @@ function simpleArticleList(slugs) {
   );
 }
 
-const startCards = [
-  ["第一次来到这里", "用 10 分钟建立最小阅读框架。", "/start", "开始阅读"],
-  [
-    "想理解中共为什么变成今天这样",
-    "从权力机制、官僚系统与组织惯性进入。",
-    "/china",
-    "进入解析中共",
-  ],
-  [
-    "想知道中国未来可能怎样变化",
-    "查看趋势判断、改革窗口与政治转型。",
-    "/china-future",
-    "进入中国未来",
-  ],
-  [
-    "想了解替代性的政治与制度方案",
-    "先看理论框架，再进入制度机制。",
-    "/civic-orderism",
-    "理解制度回应",
-  ],
-];
 const homeTopicCards = publicTopics
   .slice(0, 6)
   .map((topic) => {
@@ -517,32 +496,17 @@ const homeTopicCards = publicTopics
     return `<a class="topic-entry-card home-topic-card" href="/topics/${topic.slug}"><strong>${topic.name}</strong><span>${topic.description}</span><small>${related.length} 篇文章 · 更新至 ${updated}</small></a>`;
   })
   .join("\n");
-const recommendationGroups = [
-  ["新读者必读", readingPaths.recommendations.newReader],
-  ["当前重点", readingPaths.recommendations.currentFocus],
-  ["理论基础", readingPaths.recommendations.theoryFoundation],
-];
-const homeRecommendationArticles = new Set(
-  recommendationGroups.flatMap(([, slugs]) =>
-    slugs
-      .map((slug) => articleBySlug.get(slug))
-      .filter(isEligibleArticle)
-      .map((article) => article.slug),
-  ),
-);
+const transitionArticleSlug = "civic-orderism/peaceful-state-transition";
+const transitionArticle = articleBySlug.get(transitionArticleSlug);
+if (!isEligibleArticle(transitionArticle)) {
+  throw new Error(
+    `Homepage transition article is unavailable: ${transitionArticleSlug}`,
+  );
+}
 const latestArticles = articles
   .filter(isEligibleArticle)
-  .filter((article) => !homeRecommendationArticles.has(article.slug))
+  .filter((article) => article.slug !== transitionArticleSlug)
   .slice(0, 6);
-
-function recommendationDetail(groupName, article) {
-  if (groupName === "当前重点") {
-    const summary = article.summary || "当前研究重点与阶段性判断。";
-    return summary.length > 52 ? `${summary.slice(0, 52)}…` : summary;
-  }
-  if (groupName === "理论基础") return `阅读级别：${article.readingLevel}`;
-  return "按顺序建立最小阅读框架";
-}
 
 writeContent(
   "index.md",
@@ -558,17 +522,40 @@ writeContent(
 
 <section class="home-section">
 
-## 从哪里开始
+## 正式资料
 
-<div class="start-entry-grid">
-${startCards.map(([title, description, href, action]) => `<a class="start-entry-card" href="${href}"><strong>${title}</strong><span>${description}</span><small>${action} →</small></a>`).join("\n")}
+<div class="publication-grid">
+${site.documents.map((doc) => `<section class="publication-card"><p class="resource-label">核心文档</p><h3>${doc.title}</h3><p class="resource-subtitle">${doc.description}</p><small>更新：${doc.updated}</small><a class="resource-button resource-button-primary" href="${doc.href}">阅读或下载</a></section>`).join("\n")}
 </div>
 
 </section>
 
 <section class="home-section">
 
-<div class="home-section-heading"><h2>核心专题</h2><a href="/topics">查看全部专题 →</a></div>
+## 第一次来，按这个顺序读
+
+<div class="reading-path-list">
+${readingPaths.homepage.map((item, index) => `<a class="reading-path-item" href="${item.href}"><span>${String(index + 1).padStart(2, "0")}</span><strong>${item.label}</strong></a>`).join("\n")}
+</div>
+
+</section>
+
+<section class="home-section">
+
+<div class="home-transition-feature">
+  <div class="home-transition-feature__content">
+    <p class="resource-label">国家如何平稳转轨</p>
+    <h2><a href="/${transitionArticle.slug}">公民秩序主义不是中共官僚的敌人</a></h2>
+    <p>社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不以集体清算为前提的转轨道路。</p>
+  </div>
+  <a class="v2-button v2-button--secondary home-transition-feature__action" href="/${transitionArticle.slug}">阅读转轨方案</a>
+</div>
+
+</section>
+
+<section class="home-section">
+
+<div class="home-section-heading"><h2>按主题阅读</h2><a href="/topics">查看全部专题 →</a></div>
 
 <div class="topic-entry-grid">${homeTopicCards}</div>
 
@@ -576,43 +563,11 @@ ${startCards.map(([title, description, href, action]) => `<a class="start-entry-
 
 <section class="home-section">
 
-## 推荐阅读
-
-<div class="recommendation-columns">
-${recommendationGroups
-  .map(([name, slugs]) => {
-    const groupArticles = slugs
-      .map((slug) => articleBySlug.get(slug))
-      .filter(isEligibleArticle);
-    return `<section><h3>${name}</h3><div class="recommendation-list">${groupArticles
-      .map(
-        (article, index) =>
-          `<a class="recommendation-item" href="/${article.slug}"><span class="recommendation-item__index">${String(index + 1).padStart(2, "0")}</span><span class="recommendation-item__content"><strong>${article.title}</strong><small>${recommendationDetail(name, article)}</small></span></a>`,
-      )
-      .join("")}</div></section>`;
-  })
-  .join("\n")}
-</div>
-
-</section>
-
-<section class="home-section">
-
-## 最新文章
+## 近期补充文章
 
 <div class="knowledge-grid home-article-grid">${latestArticles.map(homeArticleCard).join("\n")}</div>
 
 <p class="section-more"><a href="/articles">查看全部文章 →</a></p>
-
-</section>
-
-<section class="home-section">
-
-## 核心文档
-
-<div class="publication-grid">
-${site.documents.map((doc) => `<section class="publication-card"><p class="resource-label">核心文档</p><h3>${doc.title}</h3><p class="resource-subtitle">${doc.description}</p><small>更新：${doc.updated}</small><a class="resource-button resource-button-primary" href="${doc.href}">阅读或下载</a></section>`).join("\n")}
-</div>
 
 </section>
 

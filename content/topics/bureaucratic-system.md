@@ -13,7 +13,7 @@ noindex: false
 
 研究整肃、问责、避责与多头治理如何改变官僚系统的行为。
 
-<div class="topic-hero-note"><strong>核心判断</strong><p>当风险集中而责任边界模糊，官僚系统会从执行转向自保，并形成系统性休克。</p><small>17 篇相关文章 · 最近更新 2026-07-14</small></div>
+<div class="topic-hero-note"><strong>核心判断</strong><p>当风险集中而责任边界模糊，官僚系统会从执行转向自保，并形成系统性休克。</p><small>18 篇相关文章 · 最近更新 2026-07-19</small></div>
 
 ## 推荐阅读顺序
 
@@ -24,6 +24,12 @@ noindex: false
 ## 全部相关文章
 
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition bureaucratic-system" data-concepts="bureaucratic-shock">
+  <p class="knowledge-card__meta"><span>2026-07-19</span><span>13 分钟阅读</span></p>
+  <h3><a href="/civic-orderism/peaceful-state-transition">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</a></h3>
+  <p class="knowledge-card__summary">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不以集体清算为前提的转轨道路。</p>
+  <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：官僚休克</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era bureaucratic-system" data-concepts="bureaucratic-shock">
   <p class="knowledge-card__meta"><span>2026-07-14</span><span>17 分钟阅读</span></p>
   <h3><a href="/china/why-expulsion-from-party-becomes-standard-ending">为什么“开除党籍”正在成为中共处理高级干部的标准结局？</a></h3>

@@ -13,7 +13,7 @@ noindex: false
 
 解释公民秩序主义是什么、为什么出现，以及它试图回应什么时代问题。
 
-<div class="section-stats"><span>28 篇已发布文章</span><span>1 个正式专题</span><span>更新至 2026-07-08</span></div>
+<div class="section-stats"><span>29 篇已发布文章</span><span>1 个正式专题</span><span>更新至 2026-07-19</span></div>
 
 <div class="section-core-judgment"><strong>栏目核心判断</strong><p>公民秩序主义的核心不是更换掌权者，而是让公共问题能够进入系统，让判断、执行、纠错与问责重新形成可理解的责任链。</p></div>
 
@@ -39,7 +39,7 @@ noindex: false
 
 ## 专题入口
 
-<div class="topic-entry-grid topic-entry-grid--single"><a class="topic-entry-card" href="/topics/political-transition"><strong>中国政治转型</strong><span>讨论低冲突转型、国家重组与制度接续的现实路径。</span><small>5 篇相关文章</small></a></div>
+<div class="topic-entry-grid topic-entry-grid--single"><a class="topic-entry-card" href="/topics/political-transition"><strong>中国政治转型</strong><span>讨论低冲突转型、国家重组与制度接续的现实路径。</span><small>6 篇相关文章</small></a></div>
 
 ## 全部文章
 
@@ -47,11 +47,17 @@ noindex: false
 
 <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">
-  <label>专题<select data-filter-topic><option value="">全部专题</option><option value="order-evaporation">秩序蒸发</option><option value="political-transition">中国政治转型</option><option value="local-finance">地方财政</option><option value="bureaucratic-system">官僚系统</option><option value="ccp-governance">中共统治术</option></select></label>
-  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="bureaucratic-shock">官僚休克</option></select></label>
+  <label>专题<select data-filter-topic><option value="">全部专题</option><option value="political-transition">中国政治转型</option><option value="bureaucratic-system">官僚系统</option><option value="order-evaporation">秩序蒸发</option><option value="local-finance">地方财政</option><option value="ccp-governance">中共统治术</option></select></label>
+  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="bureaucratic-shock">官僚休克</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option></select></label>
   <button type="button" data-filter-reset>重置</button>
 </div>
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition bureaucratic-system" data-concepts="bureaucratic-shock">
+  <p class="knowledge-card__meta"><span>2026-07-19</span><span>13 分钟阅读</span></p>
+  <h3><a href="/civic-orderism/peaceful-state-transition">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</a></h3>
+  <p class="knowledge-card__summary">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不以集体清算为前提的转轨道路。</p>
+  <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：官僚休克</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
   <p class="knowledge-card__meta"><span>2026-07-08</span><span>18 分钟阅读</span></p>
   <h3><a href="/civic-orderism/why-civic-orderism">为什么是公民秩序主义？</a></h3>
@@ -209,6 +215,6 @@ noindex: false
 
 ## 相关核心概念
 
-<div class="section-concept-links"><a href="/concepts/order-evaporation">秩序蒸发</a>
-<a href="/concepts/high-fragility">高脆弱态</a>
-<a href="/concepts/bureaucratic-shock">官僚休克</a></div>
+<div class="section-concept-links"><a href="/concepts/bureaucratic-shock">官僚休克</a>
+<a href="/concepts/order-evaporation">秩序蒸发</a>
+<a href="/concepts/high-fragility">高脆弱态</a></div>
