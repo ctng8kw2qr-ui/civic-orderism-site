@@ -350,12 +350,37 @@ function articleCard(article) {
   ].filter(Boolean);
   const summary = article.summary || `${article.title}的结构分析与研究笔记。`;
   return `<article class="knowledge-card" data-knowledge-card data-topics="${article.topics.join(" ")}" data-concepts="${article.concepts.join(" ")}">
-  <p class="knowledge-card__meta"><span>${article.date || "日期待补"}</span><span>${article.section}</span><span>${article.readingMinutes} 分钟</span></p>
+  <p class="knowledge-card__meta"><span>${article.date || "日期待补"}</span><span>${article.readingMinutes} 分钟阅读</span></p>
   <h3><a href="/${encodeURI(article.slug)}">${article.title}</a></h3>
   <p class="knowledge-card__summary">${summary}</p>${
     chips.length
       ? `
   <p class="knowledge-card__chips">${chips.map((item) => `<span>${item}</span>`).join("")}</p>`
+      : ""
+  }
+</article>`;
+}
+
+function homeArticleCard(article) {
+  const topic = article.topics
+    .map((slug) => topicBySlug.get(slug))
+    .find((item) => item?.status === "published");
+  const concept = article.concepts
+    .map((slug) => conceptBySlug.get(slug))
+    .find((item) => item?.status === "published");
+  const marker = topic
+    ? `专题：${topic.name}`
+    : concept
+      ? `概念：${concept.name}`
+      : "";
+  const summary = article.summary || `${article.title}的结构分析与研究笔记。`;
+  return `<article class="knowledge-card home-article-card">
+  <p class="knowledge-card__meta"><span>${article.date || "日期待补"}</span><span>${article.section}</span></p>
+  <h3><a href="/${encodeURI(article.slug)}">${article.title}</a></h3>
+  <p class="knowledge-card__summary">${summary}</p>${
+    marker
+      ? `
+  <p class="knowledge-card__chips"><span>${marker}</span></p>`
       : ""
   }
 </article>`;
@@ -386,14 +411,15 @@ ${cardGrid(items)}
 function sectionPage(section) {
   const items = articles.filter(
     (article) =>
-      article.section === section.name && article.status !== "archived",
+      article.section === section.name && article.status === "published",
   );
   const recommended = section.recommended
     .map((slug) => articleBySlug.get(slug))
     .filter(isEligibleArticle);
-  const topicCards = section.topics
+  const sectionTopics = section.topics
     .map((slug) => topicBySlug.get(slug))
-    .filter((item) => item?.status === "published")
+    .filter((item) => item?.status === "published");
+  const topicCards = sectionTopics
     .map((topic) => {
       const count = items.filter((article) =>
         article.topics.includes(topic.slug),
@@ -401,13 +427,21 @@ function sectionPage(section) {
       return `<a class="topic-entry-card" href="/topics/${topic.slug}"><strong>${topic.name}</strong><span>${topic.description}</span><small>${count} 篇相关文章</small></a>`;
     })
     .join("\n");
+  const relatedConcepts = [
+    ...new Set(items.flatMap((article) => article.concepts)),
+  ]
+    .map((slug) => conceptBySlug.get(slug))
+    .filter((concept) => concept?.status === "published")
+    .slice(0, 8);
   return `${yamlFrontmatter({ title: section.name, description: section.description, contentType: "栏目" })}
 
 # ${section.name}
 
 ${section.description}
 
-<div class="section-stats"><span>${items.length} 篇文章</span><span>${section.topics.length} 个专题入口</span><span>更新至 ${items[0]?.updated || "2026-07-19"}</span></div>
+<div class="section-stats"><span>${items.length} 篇已发布文章</span><span>${sectionTopics.length} 个正式专题</span><span>更新至 ${items[0]?.updated || "2026-07-19"}</span></div>
+
+<div class="section-core-judgment"><strong>栏目核心判断</strong><p>${section.coreJudgment}</p></div>
 
 ## 推荐文章
 
@@ -415,13 +449,17 @@ ${cardGrid(recommended, "knowledge-grid knowledge-grid--recommended")}
 
 ## 专题入口
 
-<div class="topic-entry-grid">${topicCards}</div>
+${topicCards ? `<div class="topic-entry-grid${sectionTopics.length === 1 ? " topic-entry-grid--single" : ""}">${topicCards}</div>` : '<p class="section-empty-note">当前栏目尚无独立公开专题，可直接按核心概念浏览全部文章。</p>'}
 
 ## 全部文章
 
 可按专题或核心概念筛选。每页显示 10 篇，筛选不会改变文章原有 URL。
 
-${filterPanel(items)}`;
+${filterPanel(items)}
+
+## 相关核心概念
+
+${relatedConcepts.length ? `<div class="section-concept-links">${relatedConcepts.map((concept) => `<a href="/concepts/${concept.slug}">${concept.name}</a>`).join("\n")}</div>` : "当前暂无已公开的相关核心概念。"}`;
 }
 
 for (const section of sections) {
@@ -476,7 +514,7 @@ const homeTopicCards = publicTopics
         .map((article) => article.updated)
         .sort()
         .at(-1) || "待更新";
-    return `<a class="topic-entry-card" href="/topics/${topic.slug}"><strong>${topic.name}</strong><span>${topic.description}</span><small>${related.length} 篇 · 更新至 ${updated}</small></a>`;
+    return `<a class="topic-entry-card home-topic-card" href="/topics/${topic.slug}"><strong>${topic.name}</strong><span>${topic.description}</span><small>${related.length} 篇文章 · 更新至 ${updated}</small></a>`;
   })
   .join("\n");
 const recommendationGroups = [
@@ -497,6 +535,15 @@ const latestArticles = articles
   .filter((article) => !homeRecommendationArticles.has(article.slug))
   .slice(0, 6);
 
+function recommendationDetail(groupName, article) {
+  if (groupName === "当前重点") {
+    const summary = article.summary || "当前研究重点与阶段性判断。";
+    return summary.length > 52 ? `${summary.slice(0, 52)}…` : summary;
+  }
+  if (groupName === "理论基础") return `阅读级别：${article.readingLevel}`;
+  return "按顺序建立最小阅读框架";
+}
+
 writeContent(
   "index.md",
   `${yamlFrontmatter({ title: site.name, description: site.description, contentType: "首页" })}
@@ -506,6 +553,7 @@ writeContent(
   <h1><img src="/static/logo.png" alt="" />${site.name}</h1>
   <p class="v2-hero__tagline">${site.tagline}</p>
   <p>${site.description}</p>
+  <div class="v2-actions"><a class="v2-button v2-button--primary" href="/start">开始阅读</a><a class="v2-button v2-button--secondary" href="/files/civic-orderism-introduction-manual.pdf">阅读介绍手册</a></div>
 </section>
 
 <section class="home-section">
@@ -520,11 +568,9 @@ ${startCards.map(([title, description, href, action]) => `<a class="start-entry-
 
 <section class="home-section">
 
-## 核心专题
+<div class="home-section-heading"><h2>核心专题</h2><a href="/topics">查看全部专题 →</a></div>
 
 <div class="topic-entry-grid">${homeTopicCards}</div>
-
-<p class="section-more"><a href="/topics">查看全部专题 →</a></p>
 
 </section>
 
@@ -534,17 +580,17 @@ ${startCards.map(([title, description, href, action]) => `<a class="start-entry-
 
 <div class="recommendation-columns">
 ${recommendationGroups
-  .map(
-    ([name, slugs]) =>
-      `<section><h3>${name}</h3><ol>${slugs
-        .map((slug) => articleBySlug.get(slug))
-        .filter(isEligibleArticle)
-        .map(
-          (article) =>
-            `<li><a href="/${article.slug}">${article.title}</a></li>`,
-        )
-        .join("")}</ol></section>`,
-  )
+  .map(([name, slugs]) => {
+    const groupArticles = slugs
+      .map((slug) => articleBySlug.get(slug))
+      .filter(isEligibleArticle);
+    return `<section><h3>${name}</h3><div class="recommendation-list">${groupArticles
+      .map(
+        (article, index) =>
+          `<a class="recommendation-item" href="/${article.slug}"><span class="recommendation-item__index">${String(index + 1).padStart(2, "0")}</span><span class="recommendation-item__content"><strong>${article.title}</strong><small>${recommendationDetail(name, article)}</small></span></a>`,
+      )
+      .join("")}</div></section>`;
+  })
   .join("\n")}
 </div>
 
@@ -554,7 +600,7 @@ ${recommendationGroups
 
 ## 最新文章
 
-${cardGrid(latestArticles)}
+<div class="knowledge-grid home-article-grid">${latestArticles.map(homeArticleCard).join("\n")}</div>
 
 <p class="section-more"><a href="/articles">查看全部文章 →</a></p>
 

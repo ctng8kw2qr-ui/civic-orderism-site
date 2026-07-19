@@ -38,7 +38,7 @@ noindex: true
 
 <div class="knowledge-grid">
 <article class="knowledge-card" data-knowledge-card data-topics="order-evaporation local-finance political-transition" data-concepts="order-evaporation high-fragility political-debt fiscal-debt nonviolent-transition">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>公民秩序主义</span><span>18 分钟</span></p>
+  <p class="knowledge-card__meta"><span>2026-05-10</span><span>18 分钟阅读</span></p>
   <h3><a href="/theory/modern-social-syndrome">现代社会候群症</a></h3>
   <p class="knowledge-card__summary">当权力从“城堡”变成“网”，普通人为何越来越无力</p>
   <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>

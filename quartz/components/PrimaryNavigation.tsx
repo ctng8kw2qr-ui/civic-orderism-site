@@ -28,6 +28,27 @@ const PrimaryNavigation: QuartzComponent = ({
 
   return (
     <nav class="primary-navigation" aria-label="主要导航">
+      <button
+        class="primary-navigation__toggle"
+        type="button"
+        aria-label="打开导航"
+        aria-expanded="false"
+        aria-controls="primary-navigation-links"
+      >
+        <span class="primary-navigation__toggle-label">导航</span>
+        <span
+          class="primary-navigation__toggle-icon primary-navigation__toggle-icon--menu"
+          aria-hidden="true"
+        >
+          ☰
+        </span>
+        <span
+          class="primary-navigation__toggle-icon primary-navigation__toggle-icon--close"
+          aria-hidden="true"
+        >
+          ×
+        </span>
+      </button>
       <a
         class="primary-navigation__brand"
         href="/"
@@ -35,15 +56,6 @@ const PrimaryNavigation: QuartzComponent = ({
       >
         公民秩序主义
       </a>
-      <button
-        class="primary-navigation__toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="primary-navigation-links"
-      >
-        <span>导航</span>
-        <span aria-hidden="true">☰</span>
-      </button>
       <div class="primary-navigation__links" id="primary-navigation-links">
         {navigation.map((item) => {
           return (

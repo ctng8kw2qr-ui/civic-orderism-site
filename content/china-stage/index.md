@@ -21,13 +21,13 @@ noindex: false
 </div>
 <div class="knowledge-grid">
 <article class="knowledge-card" data-knowledge-card data-topics="second-reform" data-concepts="second-reform">
-  <p class="knowledge-card__meta"><span>2026-07-19</span><span>中国未来</span><span>22 分钟</span></p>
+  <p class="knowledge-card__meta"><span>2026-07-19</span><span>22 分钟阅读</span></p>
   <h3><a href="/china-stage/ccp-second-reform-opening-possibility">中共还有没有二次改开的可能？</a></h3>
   <p class="knowledge-card__summary">本文认为，讨论中共是否可能二次改开，真正关键不是领导人是否愿意改革，而是中共是否再次走到类似1978年的组织绝境。第一次改革开放来自旧路线破产、共同求生和全球化窗口；今天面对的则是繁荣退潮后的损失分配，因此二次改开的门槛更高。</p>
   <p class="knowledge-card__chips"><span>专题：二次改开</span><span>概念：二次改开</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="local-finance order-evaporation" data-concepts="order-evaporation high-fragility">
-  <p class="knowledge-card__meta"><span>2026-06-16</span><span>中国未来</span><span>11 分钟</span></p>
+  <p class="knowledge-card__meta"><span>2026-06-16</span><span>11 分钟阅读</span></p>
   <h3><a href="/china-stage/china-manufacturing-cannot-stop">中国制造业不是造不出来，而是停不下来</a></h3>
   <p class="knowledge-card__summary">中国制造业的困境不是简单的订单外迁或产业衰退，而是生产能力、地方动员、债务周期、银行体系和政治责任机制共同形成的系统性困局。真正的问题不是造不出来，而是越能造、越难停、越难赚钱，最后指向秩序本身的失灵。</p>
   <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：秩序蒸发</span></p>

@@ -3,6 +3,7 @@
     "name": "解析中共",
     "slug": "china",
     "description": "从组织、财政、官僚运行和权力机制出发，解释中共为何走到今天。",
+    "coreJudgment": "中共面临的并非单一政策失误，而是权力集中、反馈失真、官僚避责与组织信用消耗相互放大的系统性问题。",
     "topics": [
       "xi-era",
       "bureaucratic-system",
@@ -19,6 +20,7 @@
     "name": "中国未来",
     "slug": "china-future",
     "description": "讨论中国正在走向哪里，以及未来可能出现的政治与社会窗口。",
+    "coreJudgment": "中国未来的变化取决于财政、组织与社会预期能否继续维持，以及改革窗口与制度接续能否在危机中出现。",
     "topics": [
       "second-reform",
       "local-finance",
@@ -35,6 +37,7 @@
     "name": "公民秩序主义",
     "slug": "civic-orderism",
     "description": "解释公民秩序主义是什么、为什么出现，以及它试图回应什么时代问题。",
+    "coreJudgment": "公民秩序主义的核心不是更换掌权者，而是让公共问题能够进入系统，让判断、执行、纠错与问责重新形成可理解的责任链。",
     "topics": ["political-transition"],
     "recommended": [
       "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
@@ -46,6 +49,7 @@
     "name": "制度设计",
     "slug": "institution-design",
     "description": "将理论转化为可讨论、可修正、可检验的具体制度机制。",
+    "coreJudgment": "制度设计必须同时回答问题如何进入、谁来判断、谁来执行、错误如何纠正，以及责任如何被识别与更替。",
     "topics": ["institutional-mechanisms"],
     "recommended": [
       "civic-orderism/what-is-committee-system",

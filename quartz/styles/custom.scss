@@ -45,6 +45,55 @@ article .v2-hero h1 img {
   margin-top: 1.4rem;
 }
 
+.v2-button {
+  display: inline-flex;
+  min-height: 2.65rem;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0.62rem 1rem;
+  border: 1px solid #0a1d38;
+  border-radius: 4px;
+  font-size: 0.92rem;
+  font-weight: 650;
+  line-height: 1.3;
+  text-decoration: none;
+  background-image: none;
+}
+
+.v2-button--primary {
+  background: #0a1d38;
+  color: #fff;
+}
+
+.v2-button--secondary {
+  background: transparent;
+  color: #0a1d38;
+}
+
+.v2-button:hover,
+.v2-button:focus-visible {
+  border-color: #29415f;
+  outline: 2px solid color-mix(in srgb, #0a1d38 24%, transparent);
+  outline-offset: 2px;
+}
+
+article a.v2-button {
+  padding: 0.62rem 1rem;
+  border-radius: 4px;
+  line-height: 1.3;
+}
+
+article a.v2-button--primary {
+  background: #0a1d38;
+  color: #fff;
+}
+
+article a.v2-button--secondary {
+  background: transparent;
+  color: #0a1d38;
+}
+
 .start-entry-grid,
 .topic-entry-grid,
 .concept-grid,
@@ -70,10 +119,10 @@ article .v2-hero h1 img {
   flex-direction: column;
   gap: 0.55rem;
   box-sizing: border-box;
-  padding: 1.15rem;
+  padding: 1.35rem 1.25rem;
   border: 1px solid var(--lightgray);
   border-radius: 7px;
-  background: color-mix(in srgb, var(--light) 86%, #fff);
+  background: #fff;
   color: var(--darkgray);
   text-decoration: none;
   background-image: none;
@@ -85,8 +134,9 @@ article .v2-hero h1 img {
 .topic-entry-card:focus-visible,
 .concept-card:hover,
 .concept-card:focus-visible {
-  border-color: var(--tertiary);
-  background: var(--highlight);
+  border-color: color-mix(in srgb, var(--gray) 55%, var(--lightgray));
+  background: #fff;
+  box-shadow: 0 5px 18px rgb(24 37 54 / 6%);
   outline: none;
 }
 
@@ -94,7 +144,7 @@ article .v2-hero h1 img {
 .topic-entry-card strong,
 .concept-card strong {
   color: var(--dark);
-  font-size: 1rem;
+  font-size: 1.08rem;
   line-height: 1.45;
 }
 
@@ -103,15 +153,42 @@ article .v2-hero h1 img {
 .concept-card span {
   flex: 1;
   color: var(--darkgray);
-  font-size: 0.86rem;
+  font-size: 0.92rem;
   line-height: 1.65;
 }
 
 .start-entry-card small,
 .topic-entry-card small,
 .concept-card small {
-  color: var(--tertiary);
-  font-size: 0.74rem;
+  color: var(--gray);
+  font-size: 0.78rem;
+}
+
+.topic-entry-grid--single {
+  max-width: 680px;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.home-topic-card {
+  min-height: 10.5rem;
+}
+
+article a.topic-entry-card {
+  padding: 1.35rem 1.25rem;
+  border-radius: 7px;
+  background: #fff;
+  line-height: inherit;
+}
+
+article a.topic-entry-card:hover,
+article a.topic-entry-card:focus-visible {
+  background: #fff;
+}
+
+.home-topic-card small {
+  margin-top: auto;
+  padding-top: 0.65rem;
+  border-top: 1px solid color-mix(in srgb, var(--lightgray) 72%, transparent);
 }
 
 .knowledge-grid {
@@ -162,6 +239,18 @@ article .knowledge-card h3 {
   line-height: 1.65;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+}
+
+.home-article-card .knowledge-card__summary,
+body:is(
+    [data-slug="china"],
+    [data-slug="china-future"],
+    [data-slug="civic-orderism"],
+    [data-slug="institution-design"]
+  )
+  .knowledge-card__summary {
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 .knowledge-card__chips {
@@ -246,8 +335,54 @@ article .knowledge-card h3 {
   font-size: 0.76rem;
 }
 
-.recommendation-columns {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.section-core-judgment {
+  margin: 1.25rem 0 2rem;
+  padding: 1.15rem 1.25rem;
+  border-left: 3px solid #9b7c3e;
+  background: color-mix(in srgb, var(--lightgray) 46%, #fff);
+}
+
+.section-core-judgment strong {
+  color: #0a1d38;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+}
+
+.section-core-judgment p {
+  margin: 0.45rem 0 0;
+  color: var(--darkgray);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.section-empty-note {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  color: var(--gray);
+}
+
+.section-concept-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.section-concept-links a {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 4px;
+  color: var(--darkgray);
+  font-size: 0.88rem;
+  text-decoration: none;
+  background-image: none;
+}
+
+.section-concept-links a:hover,
+.section-concept-links a:focus-visible {
+  border-color: var(--gray);
+  color: var(--dark);
+  outline: none;
 }
 
 .recommendation-columns > section,
@@ -257,6 +392,86 @@ article .knowledge-card h3 {
   border: 1px solid var(--lightgray);
   border-radius: 7px;
   background: color-mix(in srgb, var(--light) 88%, #fff);
+}
+
+.recommendation-columns > section {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+}
+
+.recommendation-columns {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.recommendation-list {
+  display: grid;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  flex: 1;
+  gap: 0.65rem;
+}
+
+.recommendation-item {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  gap: 0.7rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--lightgray) 78%, transparent);
+  color: var(--dark);
+  text-decoration: none;
+  background-image: none;
+}
+
+.recommendation-item:first-child {
+  border-top: 0;
+}
+
+.recommendation-item__index {
+  color: #9b7c3e;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.recommendation-item__content {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.recommendation-item__content strong {
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.recommendation-item__content small {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--gray);
+  font-size: 0.76rem;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.recommendation-item:hover strong,
+.recommendation-item:focus-visible strong {
+  text-decoration: underline;
+  text-decoration-color: #9b7c3e;
+  text-underline-offset: 0.2em;
+}
+
+.recommendation-item:focus-visible {
+  outline: 2px solid color-mix(in srgb, #0a1d38 24%, transparent);
+  outline-offset: 2px;
+}
+
+article a.recommendation-item {
+  padding: 0.75rem 0;
+  border-radius: 0;
+  background: transparent;
+  line-height: inherit;
 }
 
 article .recommendation-columns h3,
@@ -958,6 +1173,41 @@ article .home-section > h2 {
   font-weight: 600;
 }
 
+article .home-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #d8dee6;
+}
+
+article .home-section-heading h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #0a1d38;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+article .home-section-heading > a {
+  flex: 0 0 auto;
+  color: var(--darkgray);
+  font-size: 0.88rem;
+  text-decoration: none;
+  background-image: none;
+}
+
+article .home-section-heading > a:hover,
+article .home-section-heading > a:focus-visible {
+  color: var(--dark);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  outline: none;
+}
+
 article .publication-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1169,6 +1419,67 @@ article .contact-note {
   font-size: 0.92rem;
 }
 
+@media (min-width: 801px) {
+  .page {
+    max-width: 1380px;
+  }
+
+  .page > #quartz-body,
+  body[data-slug="index"] .page > #quartz-body {
+    grid-template-columns: 232px minmax(0, 1080px) !important;
+    grid-template-areas:
+      "grid-sidebar-left grid-header"
+      "grid-sidebar-left grid-center"
+      "grid-sidebar-left grid-footer" !important;
+    column-gap: 2rem !important;
+  }
+
+  .page > #quartz-body .sidebar.left {
+    width: 232px;
+    padding: 4rem 1rem 2rem;
+  }
+
+  .page > #quartz-body .sidebar.left .page-title {
+    font-size: 1.3rem;
+  }
+
+  .page > #quartz-body .sidebar.left .page-title .site-brand img {
+    width: 3.2rem;
+    height: 3.2rem;
+    flex-basis: 3.2rem;
+  }
+
+  .page > #quartz-body .page-header {
+    margin-top: 4rem;
+  }
+
+  .page > #quartz-body .sidebar.right {
+    display: none !important;
+  }
+
+  body[data-slug="index"] article,
+  body:is(
+      [data-slug="china"],
+      [data-slug="china-future"],
+      [data-slug="civic-orderism"],
+      [data-slug="institution-design"]
+    )
+    article {
+    max-width: 1080px;
+  }
+
+  body:is(
+      [data-slug="index"],
+      [data-slug="china"],
+      [data-slug="china-future"],
+      [data-slug="civic-orderism"],
+      [data-slug="institution-design"]
+    )
+    article {
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 600px) {
   article .home-hero-title {
     font-size: 2rem;
@@ -1186,6 +1497,14 @@ article .contact-note {
 
   article .home-section {
     margin-top: 2.7rem;
+  }
+
+  article .home-section-heading {
+    align-items: baseline;
+  }
+
+  article .home-section-heading > a {
+    font-size: 0.8rem;
   }
 
   article .publication-grid,

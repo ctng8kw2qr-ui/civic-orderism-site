@@ -26,6 +26,7 @@ import ConditionalRender from "./ConditionalRender";
 import ManualModals from "./ManualModals";
 import ArticleAttribution from "./ArticleAttribution";
 import PrimaryNavigation from "./PrimaryNavigation";
+import KnowledgeSidebar from "./KnowledgeSidebar";
 import {
   ArticleContinueReading,
   ArticleCoreJudgmentCard,
@@ -64,6 +65,7 @@ export {
   ManualModals,
   ArticleAttribution,
   PrimaryNavigation,
+  KnowledgeSidebar,
   ArticleContinueReading,
   ArticleCoreJudgmentCard,
   ArticleEndingCta,

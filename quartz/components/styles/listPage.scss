@@ -59,6 +59,70 @@ li.section-li {
   color: var(--dark);
 }
 
+.section-archive > summary {
+  display: flex;
+  min-height: 2.75rem;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  color: var(--darkgray);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.section-archive > summary::-webkit-details-marker {
+  display: none;
+}
+
+.section-archive > summary::after {
+  content: "+";
+  flex: 0 0 auto;
+  color: var(--gray);
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+.section-archive[open] > summary::after {
+  content: "−";
+}
+
+.section-archive > summary:hover,
+.section-archive > summary:focus-visible {
+  color: var(--dark);
+}
+
+.section-archive > summary:focus-visible,
+.section-archive__content > button:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--tertiary) 55%, transparent);
+  outline-offset: 3px;
+}
+
+.section-archive__content {
+  padding-top: 0.35rem;
+}
+
+.section-archive__content > button {
+  display: block;
+  margin: 1.4rem 0 0 auto;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--darkgray);
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.section-archive__content > button:hover {
+  border-color: var(--gray);
+  color: var(--dark);
+}
+
 // modifications in popover context
 .popover .section {
   grid-template-columns: fit-content(8em) 1fr !important;

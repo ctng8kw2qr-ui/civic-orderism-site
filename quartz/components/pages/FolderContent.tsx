@@ -2,42 +2,51 @@ import {
   QuartzComponent,
   QuartzComponentConstructor,
   QuartzComponentProps,
-} from "../types"
+} from "../types";
 
-import style from "../styles/listPage.scss"
-import { PageList, SortFn } from "../PageList"
-import { Root } from "hast"
-import { htmlToJsx } from "../../util/jsx"
-import { i18n } from "../../i18n"
-import { QuartzPluginData } from "../../plugins/vfile"
-import { ComponentChildren } from "preact"
-import { concatenateResources } from "../../util/resources"
-import { trieFromAllFiles } from "../../util/ctx"
+import style from "../styles/listPage.scss";
+import { PageList, SortFn } from "../PageList";
+import { Root } from "hast";
+import { htmlToJsx } from "../../util/jsx";
+import { i18n } from "../../i18n";
+import { QuartzPluginData } from "../../plugins/vfile";
+import { ComponentChildren } from "preact";
+import { concatenateResources } from "../../util/resources";
+import { trieFromAllFiles } from "../../util/ctx";
+import sections from "../../../data/sections.config.json";
+import migration from "../../../content-migration-map.json";
+// @ts-ignore
+import script from "../scripts/sectionArchive.inline";
+
+const primarySectionSlugs = new Set(sections.map((section) => section.slug));
+const migratedArticleBySlug = new Map(
+  migration.map((article) => [article.slug, article]),
+);
 
 interface FolderContentOptions {
   /**
    * Whether to display number of folders
    */
-  showFolderCount: boolean
-  showSubfolders: boolean
-  sort?: SortFn
+  showFolderCount: boolean;
+  showSubfolders: boolean;
+  sort?: SortFn;
 }
 
 const defaultOptions: FolderContentOptions = {
   showFolderCount: false,
   showSubfolders: true,
-}
+};
 
 export default ((opts?: Partial<FolderContentOptions>) => {
-  const options: FolderContentOptions = { ...defaultOptions, ...opts }
+  const options: FolderContentOptions = { ...defaultOptions, ...opts };
 
   const FolderContent: QuartzComponent = (props: QuartzComponentProps) => {
-    const { tree, fileData, allFiles, cfg } = props
+    const { tree, fileData, allFiles, cfg } = props;
 
-    const trie = (props.ctx.trie ??= trieFromAllFiles(allFiles))
-    const folder = trie.findNode(fileData.slug!.split("/"))
+    const trie = (props.ctx.trie ??= trieFromAllFiles(allFiles));
+    const folder = trie.findNode(fileData.slug!.split("/"));
     if (!folder) {
-      return null
+      return null;
     }
 
     const allPagesInFolder: QuartzPluginData[] =
@@ -45,29 +54,29 @@ export default ((opts?: Partial<FolderContentOptions>) => {
         .map((node): QuartzPluginData | undefined => {
           // regular file, proceed
           if (node.data) {
-            return node.data
+            return node.data;
           }
 
           if (node.isFolder && options.showSubfolders) {
             // folders that dont have data need synthetic files
             const getMostRecentDates = (): QuartzPluginData["dates"] => {
-              let maybeDates: QuartzPluginData["dates"] | undefined = undefined
+              let maybeDates: QuartzPluginData["dates"] | undefined = undefined;
               for (const child of node.children) {
                 if (child.data?.dates) {
                   // compare all dates and assign to maybeDates if its more recent or its not set
                   if (!maybeDates) {
-                    maybeDates = { ...child.data.dates }
+                    maybeDates = { ...child.data.dates };
                   } else {
                     if (child.data.dates.created > maybeDates.created) {
-                      maybeDates.created = child.data.dates.created
+                      maybeDates.created = child.data.dates.created;
                     }
 
                     if (child.data.dates.modified > maybeDates.modified) {
-                      maybeDates.modified = child.data.dates.modified
+                      maybeDates.modified = child.data.dates.modified;
                     }
 
                     if (child.data.dates.published > maybeDates.published) {
-                      maybeDates.published = child.data.dates.published
+                      maybeDates.published = child.data.dates.published;
                     }
                   }
                 }
@@ -78,8 +87,8 @@ export default ((opts?: Partial<FolderContentOptions>) => {
                   modified: new Date(),
                   published: new Date(),
                 }
-              )
-            }
+              );
+            };
 
             return {
               slug: node.slug,
@@ -88,48 +97,75 @@ export default ((opts?: Partial<FolderContentOptions>) => {
                 title: node.displayName,
                 tags: [],
               },
-            } as QuartzPluginData
+            } as QuartzPluginData;
           }
         })
         .filter(
           (page): page is QuartzPluginData =>
             page !== undefined && page.frontmatter?.folderListed !== false,
-        ) ?? []
-    const cssClasses: string[] = fileData.frontmatter?.cssclasses ?? []
-    const classes = cssClasses.join(" ")
+        ) ?? [];
+    const cssClasses: string[] = fileData.frontmatter?.cssclasses ?? [];
+    const classes = cssClasses.join(" ");
+    const listPageSlug = (fileData.slug ?? "").replace(/\/index$/, "");
+    const isPrimarySection = primarySectionSlugs.has(listPageSlug);
+    const primarySection = sections.find(
+      (section) => section.slug === listPageSlug,
+    );
+    const listedPages = primarySection
+      ? allFiles.filter((page) => {
+          const migratedArticle = migratedArticleBySlug.get(page.slug ?? "");
+          return (
+            migratedArticle?.section === primarySection.name &&
+            migratedArticle.status === "published"
+          );
+        })
+      : allPagesInFolder;
     const listProps = {
       ...props,
       sort: options.sort,
-      allFiles: allPagesInFolder,
+      allFiles: listedPages,
       showTags: false,
-    }
+    };
 
     const content = (
       (tree as Root).children.length === 0
         ? fileData.description
         : htmlToJsx(fileData.filePath!, tree)
-    ) as ComponentChildren
+    ) as ComponentChildren;
 
     return (
       <div class="popover-hint">
         <article class={classes}>{content}</article>
-        <section class="page-listing" aria-label="本栏目全部文章">
-          <h2>本栏目全部文章</h2>
-          {options.showFolderCount && (
-            <p>
-              {i18n(cfg.locale).pages.folderContent.itemsUnderFolder({
-                count: allPagesInFolder.length,
-              })}
-            </p>
-          )}
-          <div>
-            <PageList {...listProps} />
-          </div>
-        </section>
+        {isPrimarySection ? (
+          <details class="page-listing section-archive" data-section-archive>
+            <summary>完整文章索引（{listedPages.length}）</summary>
+            <div class="section-archive__content">
+              <PageList {...listProps} />
+              <button type="button" data-section-archive-collapse>
+                收起
+              </button>
+            </div>
+          </details>
+        ) : (
+          <section class="page-listing" aria-label="本栏目全部文章">
+            <h2>本栏目全部文章</h2>
+            {options.showFolderCount && (
+              <p>
+                {i18n(cfg.locale).pages.folderContent.itemsUnderFolder({
+                  count: allPagesInFolder.length,
+                })}
+              </p>
+            )}
+            <div>
+              <PageList {...listProps} />
+            </div>
+          </section>
+        )}
       </div>
-    )
-  }
+    );
+  };
 
-  FolderContent.css = concatenateResources(style, PageList.css)
-  return FolderContent
-}) satisfies QuartzComponentConstructor
+  FolderContent.css = concatenateResources(style, PageList.css);
+  FolderContent.afterDOMLoaded = script;
+  return FolderContent;
+}) satisfies QuartzComponentConstructor;

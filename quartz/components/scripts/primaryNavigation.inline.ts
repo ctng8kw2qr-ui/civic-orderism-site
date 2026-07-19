@@ -7,13 +7,41 @@ function setupPrimaryNavigation() {
     );
     if (!toggle || toggle.dataset.bound === "true") continue;
     toggle.dataset.bound = "true";
-    const onClick = () => {
-      const open = nav.dataset.open !== "true";
+
+    const setOpen = (open: boolean) => {
       nav.dataset.open = String(open);
       toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "关闭导航" : "打开导航");
     };
+    const onClick = () => {
+      setOpen(nav.dataset.open !== "true");
+    };
+    const onOutsidePointer = (event: PointerEvent) => {
+      if (nav.dataset.open === "true" && !nav.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    };
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape" || nav.dataset.open !== "true") return;
+      event.preventDefault();
+      setOpen(false);
+      requestAnimationFrame(() => toggle.focus());
+    };
+    const onLinkClick = () => setOpen(false);
+    const links = nav.querySelectorAll<HTMLAnchorElement>(
+      ".primary-navigation__links a",
+    );
+
     toggle.addEventListener("click", onClick);
-    window.addCleanup(() => toggle.removeEventListener("click", onClick));
+    document.addEventListener("pointerdown", onOutsidePointer);
+    document.addEventListener("keydown", onKeyDown);
+    links.forEach((link) => link.addEventListener("click", onLinkClick));
+    window.addCleanup(() => {
+      toggle.removeEventListener("click", onClick);
+      document.removeEventListener("pointerdown", onOutsidePointer);
+      document.removeEventListener("keydown", onKeyDown);
+      links.forEach((link) => link.removeEventListener("click", onLinkClick));
+    });
   }
 
   for (const browser of document.querySelectorAll<HTMLElement>(
