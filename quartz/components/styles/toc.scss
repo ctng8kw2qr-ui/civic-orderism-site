@@ -128,13 +128,16 @@ footer .toc {
   }
 }
 
-@media all and (min-width: 1380px) {
+@media all and (min-width: 1440px) {
   .toc-article {
-    position: fixed;
+    display: none;
+  }
+
+  .toc-desktop {
+    position: sticky;
     top: 7rem;
-    right: max(1.5rem, calc((100vw - 1380px) / 2));
-    z-index: 5;
-    width: min(15rem, 21vw);
+    width: 100%;
+    min-width: 0;
     max-height: calc(100vh - 9rem);
     margin: 0;
     padding: 0 0 0 1.5rem;
@@ -143,20 +146,37 @@ footer .toc {
     box-sizing: border-box;
     font-size: 0.8rem;
     line-height: 1.55;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
-  .toc-article button.toc-header h3 {
+  .toc-desktop button.toc-header {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .toc-desktop button.toc-header h3 {
     font-size: 0.95rem;
     font-weight: 600;
     letter-spacing: 0.04em;
   }
 
-  .toc-article ul.toc-content.overflow {
+  .toc-desktop ul.toc-content.overflow {
     max-height: calc(100vh - 12rem);
     margin-top: 0.75rem;
+    overflow-x: hidden;
   }
 
-  .toc-article ul.toc-content.overflow > li {
+  .toc-desktop ul.toc-content.overflow > li {
     margin: 0.35rem 0;
+    min-width: 0;
+  }
+
+  .toc-desktop ul.toc-content.overflow > li > a {
+    display: block;
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 }

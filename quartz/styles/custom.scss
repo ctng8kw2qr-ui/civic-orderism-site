@@ -1480,6 +1480,74 @@ article .contact-note {
   }
 }
 
+body:is(
+    [data-slug^="theory/"],
+    [data-slug^="china/"],
+    [data-slug^="china-stage/"],
+    [data-slug^="civic-orderism/"],
+    [data-slug^="institution/"]
+  ):not([data-slug$="/index"]) {
+  .page > #quartz-body {
+    .center,
+    .center > article {
+      min-width: 0;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    overflow-x: clip;
+
+    .page {
+      max-width: 1368px;
+    }
+
+    .page > #quartz-body {
+      grid-template-columns: 232px minmax(0, 780px) 260px !important;
+      grid-template-areas:
+        "grid-sidebar-left grid-header grid-sidebar-right"
+        "grid-sidebar-left grid-center grid-sidebar-right"
+        "grid-sidebar-left grid-footer grid-sidebar-right" !important;
+      column-gap: 48px !important;
+      align-items: start;
+
+      .center,
+      .center > article {
+        width: 100%;
+        max-width: 780px;
+      }
+
+      .sidebar.right {
+        display: flex !important;
+        position: sticky;
+        top: 0;
+        align-self: start;
+        width: 260px;
+        min-width: 0;
+        max-width: 260px;
+        height: 100vh;
+        min-height: 0;
+        margin: 0;
+        padding: 7rem 0 2rem;
+        overflow: visible;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  html:has(
+    body:is(
+        [data-slug^="theory/"],
+        [data-slug^="china/"],
+        [data-slug^="china-stage/"],
+        [data-slug^="civic-orderism/"],
+        [data-slug^="institution/"]
+      ):not([data-slug$="/index"])
+  ) {
+    overflow-x: clip;
+  }
+}
+
 @media (max-width: 600px) {
   article .home-hero-title {
     font-size: 2rem;
