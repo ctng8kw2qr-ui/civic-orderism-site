@@ -1543,6 +1543,21 @@ article .contact-note {
   }
 }
 
+@media (min-width: 1366px) {
+  body[data-slug="index"] .page {
+    max-width: 1608px;
+  }
+
+  body[data-slug="index"] .page > #quartz-body {
+    grid-template-columns: 232px minmax(0, 1080px) 232px !important;
+    grid-template-areas:
+      "grid-sidebar-left grid-header ."
+      "grid-sidebar-left grid-center ."
+      "grid-sidebar-left grid-footer ." !important;
+    column-gap: 2rem !important;
+  }
+}
+
 body:is(
     [data-slug^="theory/"],
     [data-slug^="china/"],
