@@ -37,6 +37,12 @@ noindex: false
 ## 相关文章
 
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era order-evaporation" data-concepts="order-evaporation high-fragility">
+  <p class="knowledge-card__meta"><span>2026-07-19</span><span>17 分钟阅读</span></p>
+  <h3><a href="/china-stage/three-cleans-era-political-economic-cultural-contraction">时代何至如此：政治清人，经济清账，文化清声</a></h3>
+  <p class="knowledge-card__summary">政治清人、经济清账、文化清声并非孤立政策，而是增长放缓、财政收缩与信心下降后，制度从发展逻辑转向风险逻辑的共同表现。本文以“三清时代”为框架，分析全面收缩如何制造官场休克、秩序蒸发，并使旧问题的清理逐渐快于新秩序的建立。</p>
+  <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：秩序蒸发</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="local-finance order-evaporation" data-concepts="order-evaporation high-fragility">
   <p class="knowledge-card__meta"><span>2026-06-16</span><span>11 分钟阅读</span></p>
   <h3><a href="/china-stage/china-manufacturing-cannot-stop">中国制造业不是造不出来，而是停不下来</a></h3>
@@ -102,12 +108,6 @@ noindex: false
   <h3><a href="/institution/despotism-cancer-ming-1566">专制之癌：从《大明王朝1566》到结构性腐败的宿命</a></h3>
   <p class="knowledge-card__summary">《大明王朝1566》中，有一句被无数观众记住的台词。</p>
   <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：官僚休克</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation high-fragility">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>8 分钟阅读</span></p>
-  <h3><a href="/china/organization-credit-retired-officials">组织信用的最后一关：退休官员、终身承诺与中共的功能性衰竭</a></h3>
-  <p class="knowledge-card__summary">在任何长期执政型组织中，真正构成稳定基础的，从来不是全民支持，而是一个相对封闭的核心群体。</p>
-  <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
 </article>
 </div>
 

@@ -13,7 +13,7 @@ noindex: false
 
 观察制度形式仍在、实际协作与可信承诺却逐步失效的过程。
 
-<div class="topic-hero-note"><strong>核心判断</strong><p>秩序的失效通常先表现为组织信用、行动能力与社会预期的蒸发，而不是形式结构突然消失。</p><small>12 篇相关文章 · 最近更新 2026-06-16</small></div>
+<div class="topic-hero-note"><strong>核心判断</strong><p>秩序的失效通常先表现为组织信用、行动能力与社会预期的蒸发，而不是形式结构突然消失。</p><small>13 篇相关文章 · 最近更新 2026-07-19</small></div>
 
 ## 推荐阅读顺序
 
@@ -24,6 +24,12 @@ noindex: false
 ## 全部相关文章
 
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era order-evaporation" data-concepts="order-evaporation high-fragility">
+  <p class="knowledge-card__meta"><span>2026-07-19</span><span>17 分钟阅读</span></p>
+  <h3><a href="/china-stage/three-cleans-era-political-economic-cultural-contraction">时代何至如此：政治清人，经济清账，文化清声</a></h3>
+  <p class="knowledge-card__summary">政治清人、经济清账、文化清声并非孤立政策，而是增长放缓、财政收缩与信心下降后，制度从发展逻辑转向风险逻辑的共同表现。本文以“三清时代”为框架，分析全面收缩如何制造官场休克、秩序蒸发，并使旧问题的清理逐渐快于新秩序的建立。</p>
+  <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：秩序蒸发</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="local-finance order-evaporation" data-concepts="order-evaporation high-fragility">
   <p class="knowledge-card__meta"><span>2026-06-16</span><span>11 分钟阅读</span></p>
   <h3><a href="/china-stage/china-manufacturing-cannot-stop">中国制造业不是造不出来，而是停不下来</a></h3>

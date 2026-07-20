@@ -15,11 +15,17 @@ noindex: false
 
 <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">
-  <label>专题<select data-filter-topic><option value="">全部专题</option><option value="second-reform">二次改开</option><option value="local-finance">地方财政</option><option value="order-evaporation">秩序蒸发</option></select></label>
-  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="second-reform">二次改开</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option></select></label>
+  <label>专题<select data-filter-topic><option value="">全部专题</option><option value="three-cleans-era">三清时代</option><option value="order-evaporation">秩序蒸发</option><option value="second-reform">二次改开</option><option value="local-finance">地方财政</option></select></label>
+  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="second-reform">二次改开</option></select></label>
   <button type="button" data-filter-reset>重置</button>
 </div>
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era order-evaporation" data-concepts="order-evaporation high-fragility">
+  <p class="knowledge-card__meta"><span>2026-07-19</span><span>17 分钟阅读</span></p>
+  <h3><a href="/china-stage/three-cleans-era-political-economic-cultural-contraction">时代何至如此：政治清人，经济清账，文化清声</a></h3>
+  <p class="knowledge-card__summary">政治清人、经济清账、文化清声并非孤立政策，而是增长放缓、财政收缩与信心下降后，制度从发展逻辑转向风险逻辑的共同表现。本文以“三清时代”为框架，分析全面收缩如何制造官场休克、秩序蒸发，并使旧问题的清理逐渐快于新秩序的建立。</p>
+  <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：秩序蒸发</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="second-reform" data-concepts="second-reform">
   <p class="knowledge-card__meta"><span>2026-07-19</span><span>22 分钟阅读</span></p>
   <h3><a href="/china-stage/ccp-second-reform-opening-possibility">中共还有没有二次改开的可能？</a></h3>

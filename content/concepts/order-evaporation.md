@@ -37,6 +37,12 @@ noindex: false
 ## 相关文章
 
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era order-evaporation" data-concepts="order-evaporation high-fragility">
+  <p class="knowledge-card__meta"><span>2026-07-19</span><span>17 分钟阅读</span></p>
+  <h3><a href="/china-stage/three-cleans-era-political-economic-cultural-contraction">时代何至如此：政治清人，经济清账，文化清声</a></h3>
+  <p class="knowledge-card__summary">政治清人、经济清账、文化清声并非孤立政策，而是增长放缓、财政收缩与信心下降后，制度从发展逻辑转向风险逻辑的共同表现。本文以“三清时代”为框架，分析全面收缩如何制造官场休克、秩序蒸发，并使旧问题的清理逐渐快于新秩序的建立。</p>
+  <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：秩序蒸发</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="xi-era" data-concepts="bureaucratic-shock order-evaporation">
   <p class="knowledge-card__meta"><span>2026-07-11</span><span>11 分钟阅读</span></p>
   <h3><a href="/china/mao-death-release-xi-death-weightlessness">如果习近平去世会发生什么？</a></h3>
@@ -102,12 +108,6 @@ noindex: false
   <h3><a href="/china/information-age-impact-on-ccp-mechanisms">信息化时代冲击中共的机制</a></h3>
   <p class="knowledge-card__summary">本文分析信息化时代对中共的冲击并不是单纯的信息传播问题，而是全球利润结构、资本偏好、外贸形态、地方财政、社会预期、信息控制、组织反馈、创新环境、规模优势和合法性基础同时发生变化后，对中共增长与治理体系形成的机制性冲击。</p>
   <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：秩序蒸发</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation high-fragility">
-  <p class="knowledge-card__meta"><span>2026-05-13</span><span>16 分钟阅读</span></p>
-  <h3><a href="/china/Macro-Narratives,-Opportunity-Incentives,-and-High-Fragility">宏观叙事、机会激励与高脆弱态：中共为何更可能“失灵”而非“倒台”</a></h3>
-  <p class="knowledge-card__summary">本文从宏观叙事、机会结构、合规安全、靠山化、免责型合规和制度信用破产出发，解释中共为何更可能进入“还在，但越来越靠不住”的功能性失灵状态。</p>
-  <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
 </article>
 </div>
 

@@ -240,5 +240,6 @@ enableToc: false
 ## 十、近期文章
 
 - [[civic-orderism/peaceful-state-transition|国家如何平稳转轨：公民秩序主义不是中共官僚的敌人]]（2026-07-19）
+- [[china-stage/three-cleans-era-political-economic-cultural-contraction|时代何至如此：政治清人，经济清账，文化清声]]（2026-07-19）
 
-本站共收录 86 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。
+本站共收录 87 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。

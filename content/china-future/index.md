@@ -13,7 +13,7 @@ noindex: false
 
 讨论中国正在走向哪里，以及未来可能出现的政治与社会窗口。
 
-<div class="section-stats"><span>9 篇已发布文章</span><span>4 个正式专题</span><span>更新至 2026-07-19</span></div>
+<div class="section-stats"><span>10 篇已发布文章</span><span>4 个正式专题</span><span>更新至 2026-07-19</span></div>
 
 <div class="section-core-judgment"><strong>栏目核心判断</strong><p>中国未来的变化取决于财政、组织与社会预期能否继续维持，以及改革窗口与制度接续能否在危机中出现。</p></div>
 
@@ -45,7 +45,7 @@ noindex: false
 <div class="topic-entry-grid"><a class="topic-entry-card" href="/topics/second-reform"><strong>二次改开</strong><span>讨论改革窗口是否仍存在，以及第二次改革开放面对的组织约束。</span><small>3 篇相关文章</small></a>
 <a class="topic-entry-card" href="/topics/local-finance"><strong>地方财政</strong><span>研究地方债务、财政责任与治理能力之间的联动。</span><small>4 篇相关文章</small></a>
 <a class="topic-entry-card" href="/topics/political-transition"><strong>中国政治转型</strong><span>讨论低冲突转型、国家重组与制度接续的现实路径。</span><small>0 篇相关文章</small></a>
-<a class="topic-entry-card" href="/topics/order-evaporation"><strong>秩序蒸发</strong><span>观察制度形式仍在、实际协作与可信承诺却逐步失效的过程。</span><small>1 篇相关文章</small></a></div>
+<a class="topic-entry-card" href="/topics/order-evaporation"><strong>秩序蒸发</strong><span>观察制度形式仍在、实际协作与可信承诺却逐步失效的过程。</span><small>2 篇相关文章</small></a></div>
 
 ## 全部文章
 
@@ -53,11 +53,17 @@ noindex: false
 
 <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">
-  <label>专题<select data-filter-topic><option value="">全部专题</option><option value="second-reform">二次改开</option><option value="local-finance">地方财政</option><option value="order-evaporation">秩序蒸发</option><option value="xi-era">习近平时代</option><option value="bureaucratic-system">官僚系统</option><option value="ccp-governance">中共统治术</option><option value="three-cleans-era">三清时代</option></select></label>
-  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="second-reform">二次改开</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="bureaucratic-shock">官僚休克</option></select></label>
+  <label>专题<select data-filter-topic><option value="">全部专题</option><option value="three-cleans-era">三清时代</option><option value="order-evaporation">秩序蒸发</option><option value="second-reform">二次改开</option><option value="local-finance">地方财政</option><option value="xi-era">习近平时代</option><option value="bureaucratic-system">官僚系统</option><option value="ccp-governance">中共统治术</option></select></label>
+  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="second-reform">二次改开</option><option value="bureaucratic-shock">官僚休克</option></select></label>
   <button type="button" data-filter-reset>重置</button>
 </div>
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era order-evaporation" data-concepts="order-evaporation high-fragility">
+  <p class="knowledge-card__meta"><span>2026-07-19</span><span>17 分钟阅读</span></p>
+  <h3><a href="/china-stage/three-cleans-era-political-economic-cultural-contraction">时代何至如此：政治清人，经济清账，文化清声</a></h3>
+  <p class="knowledge-card__summary">政治清人、经济清账、文化清声并非孤立政策，而是增长放缓、财政收缩与信心下降后，制度从发展逻辑转向风险逻辑的共同表现。本文以“三清时代”为框架，分析全面收缩如何制造官场休克、秩序蒸发，并使旧问题的清理逐渐快于新秩序的建立。</p>
+  <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：秩序蒸发</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="second-reform" data-concepts="second-reform">
   <p class="knowledge-card__meta"><span>2026-07-19</span><span>22 分钟阅读</span></p>
   <h3><a href="/china-stage/ccp-second-reform-opening-possibility">中共还有没有二次改开的可能？</a></h3>
@@ -118,7 +124,7 @@ noindex: false
 
 ## 相关核心概念
 
-<div class="section-concept-links"><a href="/concepts/second-reform">二次改开</a>
-<a href="/concepts/order-evaporation">秩序蒸发</a>
+<div class="section-concept-links"><a href="/concepts/order-evaporation">秩序蒸发</a>
 <a href="/concepts/high-fragility">高脆弱态</a>
+<a href="/concepts/second-reform">二次改开</a>
 <a href="/concepts/bureaucratic-shock">官僚休克</a></div>

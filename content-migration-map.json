@@ -25,6 +25,33 @@
     "needsReview": false
   },
   {
+    "title": "时代何至如此：政治清人，经济清账，文化清声",
+    "slug": "china-stage/three-cleans-era-political-economic-cultural-contraction",
+    "date": "2026-07-19",
+    "updated": "2026-07-19",
+    "summary": "政治清人、经济清账、文化清声并非孤立政策，而是增长放缓、财政收缩与信心下降后，制度从发展逻辑转向风险逻辑的共同表现。本文以“三清时代”为框架，分析全面收缩如何制造官场休克、秩序蒸发，并使旧问题的清理逐渐快于新秩序的建立。",
+    "originalSection": "中国未来",
+    "section": "中国未来",
+    "tags": [
+      "三清时代",
+      "中国未来",
+      "政治清理",
+      "经济偿债",
+      "文化收缩",
+      "秩序蒸发",
+      "制度偿债周期"
+    ],
+    "status": "published",
+    "topics": ["three-cleans-era", "order-evaporation"],
+    "concepts": ["order-evaporation", "high-fragility"],
+    "featured": false,
+    "recommended": false,
+    "readingLevel": "进阶",
+    "readingOrder": 0,
+    "author": "公民秩序主义",
+    "needsReview": false
+  },
+  {
     "title": "中共还有没有二次改开的可能？",
     "slug": "china-stage/ccp-second-reform-opening-possibility",
     "date": "2026-07-19",
@@ -80,7 +107,7 @@
     "featured": true,
     "recommended": true,
     "readingLevel": "进阶",
-    "readingOrder": 1,
+    "readingOrder": 2,
     "author": "公民秩序主义",
     "needsReview": false
   },
@@ -971,7 +998,7 @@
     "featured": false,
     "recommended": false,
     "readingLevel": "进阶",
-    "readingOrder": 0,
+    "readingOrder": 1,
     "author": "公民秩序主义",
     "needsReview": false
   },

@@ -65,8 +65,8 @@ aliases:
 
 <div class="topic-entry-grid"><a class="topic-entry-card home-topic-card" href="/topics/xi-era"><strong>习近平时代</strong><span>追踪权力集中、组织防御化与接班风险如何共同塑造习近平时代。</span><small>9 篇文章 · 更新至 2026-07-11</small></a>
 <a class="topic-entry-card home-topic-card" href="/topics/bureaucratic-system"><strong>官僚系统</strong><span>研究整肃、问责、避责与多头治理如何改变官僚系统的行为。</span><small>18 篇文章 · 更新至 2026-07-19</small></a>
-<a class="topic-entry-card home-topic-card" href="/topics/order-evaporation"><strong>秩序蒸发</strong><span>观察制度形式仍在、实际协作与可信承诺却逐步失效的过程。</span><small>12 篇文章 · 更新至 2026-06-16</small></a>
-<a class="topic-entry-card home-topic-card" href="/topics/three-cleans-era"><strong>三清时代</strong><span>围绕财政清账、政治清责与组织清洗建立的阶段性研究框架。</span><small>5 篇文章 · 更新至 2026-07-14</small></a>
+<a class="topic-entry-card home-topic-card" href="/topics/order-evaporation"><strong>秩序蒸发</strong><span>观察制度形式仍在、实际协作与可信承诺却逐步失效的过程。</span><small>13 篇文章 · 更新至 2026-07-19</small></a>
+<a class="topic-entry-card home-topic-card" href="/topics/three-cleans-era"><strong>三清时代</strong><span>围绕财政清账、政治清责与组织清洗建立的阶段性研究框架。</span><small>6 篇文章 · 更新至 2026-07-19</small></a>
 <a class="topic-entry-card home-topic-card" href="/topics/second-reform"><strong>二次改开</strong><span>讨论改革窗口是否仍存在，以及第二次改革开放面对的组织约束。</span><small>4 篇文章 · 更新至 2026-07-19</small></a>
 <a class="topic-entry-card home-topic-card" href="/topics/ccp-governance"><strong>中共统治术</strong><span>分析压力传导、组织控制、宣传与危机管理的实际机制。</span><small>13 篇文章 · 更新至 2026-07-09</small></a></div>
 
@@ -77,6 +77,12 @@ aliases:
 ## 近期补充文章
 
 <div class="knowledge-grid home-article-grid"><article class="knowledge-card home-article-card">
+  <p class="knowledge-card__meta"><span>2026-07-19</span><span>中国未来</span></p>
+  <h3><a href="/china-stage/three-cleans-era-political-economic-cultural-contraction">时代何至如此：政治清人，经济清账，文化清声</a></h3>
+  <p class="knowledge-card__summary">政治清人、经济清账、文化清声并非孤立政策，而是增长放缓、财政收缩与信心下降后，制度从发展逻辑转向风险逻辑的共同表现。本文以“三清时代”为框架，分析全面收缩如何制造官场休克、秩序蒸发，并使旧问题的清理逐渐快于新秩序的建立。</p>
+  <p class="knowledge-card__chips"><span>专题：三清时代</span></p>
+</article>
+<article class="knowledge-card home-article-card">
   <p class="knowledge-card__meta"><span>2026-07-19</span><span>中国未来</span></p>
   <h3><a href="/china-stage/ccp-second-reform-opening-possibility">中共还有没有二次改开的可能？</a></h3>
   <p class="knowledge-card__summary">本文认为，讨论中共是否可能二次改开，真正关键不是领导人是否愿意改革，而是中共是否再次走到类似1978年的组织绝境。第一次改革开放来自旧路线破产、共同求生和全球化窗口；今天面对的则是繁荣退潮后的损失分配，因此二次改开的门槛更高。</p>
@@ -105,12 +111,6 @@ aliases:
   <h3><a href="/china/ccp-2018-xi-era-local-growth-space">中共2018：习近平元年</a></h3>
   <p class="knowledge-card__summary">2018年并不是最喧闹的年份，却可能是习近平时代真正制度化的年份。修宪、党和国家机构改革、国地税合并三条制度线路，分别改变权力的时间结构、组织结构与利益结构，共同推动中共从依靠地方弹性创造增长，转向依靠中央穿透维持控制。</p>
   <p class="knowledge-card__chips"><span>专题：习近平时代</span></p>
-</article>
-<article class="knowledge-card home-article-card">
-  <p class="knowledge-card__meta"><span>2026-07-09</span><span>解析中共</span></p>
-  <h3><a href="/china/why-ccp-will-not-relax-party-pressure">中共为什么不会真正放松党内高压？</a></h3>
-  <p class="knowledge-card__summary">本文提出一个可检验的假说：当体制的利益分配能力持续下降，而组织存续又高度依赖中央集权时，审查、追责和清洗会系统性地替代利益激励，成为维持干部服从和组织运转的主要工具。</p>
-  <p class="knowledge-card__chips"><span>专题：中共统治术</span></p>
 </article></div>
 
 <p class="section-more"><a href="/articles">查看全部文章 →</a></p>
