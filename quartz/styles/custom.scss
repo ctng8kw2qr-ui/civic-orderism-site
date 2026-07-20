@@ -1216,7 +1216,11 @@ article .publication-grid {
 
 article .publication-card {
   display: flex;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   min-height: 220px;
+  box-sizing: border-box;
   flex-direction: column;
   align-items: flex-start;
   padding: 1.6rem;
@@ -1240,6 +1244,10 @@ article .publication-card .resource-subtitle {
 }
 
 article .publication-card .resource-button {
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  justify-content: center;
   margin-top: auto;
 }
 
@@ -1647,6 +1655,8 @@ body:is(
 
   article .publication-card .resource-button {
     width: 100%;
+    margin-right: 0;
+    margin-left: 0;
     margin-top: 1.2rem;
   }
 
