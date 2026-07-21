@@ -61,7 +61,7 @@ noindex: false
   <p class="knowledge-card__summary">本文解释公民秩序主义为什么要求委员会不能直接接案。委员会的核心职责是判断、质询、纠偏和问责，而不是接收社会矛盾、筛选个案或决定谁的问题可以进入制度流程。入口权应由前端机构承担，判断权应由委员会承担，两者必须分开，以防止委员会腐化、私人化接案和形成新的权力中心。</p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="low-friction-governance">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>14 分钟阅读</span></p>
+  <p class="knowledge-card__meta"><span>2026-05-10</span><span>13 分钟阅读</span></p>
   <h3><a href="/civic-orderism/backend-system-under-civic-orderism">公民秩序主义对后台系统的重视：为什么培训、秘书处、专业事务与留痕系统，是现代国家真正的底座</a></h3>
   <p class="knowledge-card__summary">公民秩序主义并不认为，一个国家只要有口号、有领导、有选举、有议会、有行政机关，就能自然走向成熟治理。</p>
   <p class="knowledge-card__chips"><span>概念：低摩擦治理</span></p>
@@ -121,7 +121,7 @@ noindex: false
   <p class="knowledge-card__summary">公民秩序主义问答。</p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>12 分钟阅读</span></p>
+  <p class="knowledge-card__meta"><span>2026-05-10</span><span>13 分钟阅读</span></p>
   <h3><a href="/civic-orderism/why-elections-reject-political-donations">为什么公民秩序主义下的选举会天然排斥政治献金</a></h3>
   <p class="knowledge-card__summary">公民秩序主义问答。</p>
 </article>

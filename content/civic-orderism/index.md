@@ -57,7 +57,7 @@ noindex: false
 </div>
 <div class="knowledge-grid">
 <article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="political-route nonviolent-transition state-system-upgrade">
-  <p class="knowledge-card__meta"><span>2026-07-19</span><span>14 分钟阅读</span></p>
+  <p class="knowledge-card__meta"><span>2026-07-19</span><span>13 分钟阅读</span></p>
   <h3><a href="/civic-orderism/peaceful-state-transition">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</a></h3>
   <p class="knowledge-card__summary">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不以集体清算为前提的转轨道路。</p>
   <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：政治路线</span></p>
@@ -181,12 +181,12 @@ noindex: false
   <p class="knowledge-card__summary">加拿大式代议政治的深层困境</p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>11 分钟阅读</span></p>
+  <p class="knowledge-card__meta"><span>2026-05-10</span><span>12 分钟阅读</span></p>
   <h3><a href="/civic-orderism/why-not-left-right-democracy-autocracy">为什么公民秩序主义不纠结于左右、民主专制之争</a></h3>
   <p class="knowledge-card__summary">公民秩序主义问答。</p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>10 分钟阅读</span></p>
+  <p class="knowledge-card__meta"><span>2026-05-10</span><span>11 分钟阅读</span></p>
   <h3><a href="/civic-orderism/why-against-moral-narrative">为什么公民秩序主义反对道德叙事，也反对对公职人员的道德审判</a></h3>
   <p class="knowledge-card__summary">公民秩序主义问答。</p>
 </article>
