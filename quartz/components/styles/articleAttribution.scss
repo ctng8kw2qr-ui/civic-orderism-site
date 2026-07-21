@@ -5,6 +5,8 @@
   color: var(--darkgray);
   font-size: 0.88rem;
   line-height: 1.7;
+  max-width: 100%;
+  min-width: 0;
 
   & p {
     margin: 0;
@@ -20,9 +22,7 @@
   }
 
   & a {
-    color: inherit;
-    text-decoration: underline;
-    text-underline-offset: 2px;
+    overflow-wrap: anywhere;
   }
 }
 
