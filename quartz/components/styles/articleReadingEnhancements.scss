@@ -72,6 +72,28 @@
     grid-column: 1 / -1;
   }
 
+  &__concept {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  &__concept small {
+    color: var(--gray);
+    font-size: 0.68rem;
+  }
+
+  &__concept--reviewing {
+    border-style: dashed;
+    background: color-mix(in srgb, var(--light) 92%, var(--lightgray));
+  }
+
+  &__sequence-progress {
+    margin: -0.15rem 0 0.75rem;
+    color: var(--gray);
+    font-size: 0.78rem;
+  }
+
   &__reading-path nav {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));

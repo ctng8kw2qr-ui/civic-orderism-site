@@ -1,24 +1,26 @@
 ---
 title: "非暴力转型"
 date: 2026-07-19
-updated: 2026-07-19
+updated: 2026-07-20
 description: "以降低冲突、避免清算并维持国家基本能力为约束的政治转型路径。"
 contentType: "核心概念"
-status: draft
+status: published
 listed: false
+folderListed: false
 noindex: true
+publicationStatus: reviewing
 ---
 
 # 非暴力转型
+
+<p class="concept-status concept-status--reviewing">研究概念</p>
 
 <p class="concept-definition">以降低冲突、避免清算并维持国家基本能力为约束的政治转型路径。</p>
 
 | 字段 | 内容 |
 | --- | --- |
-| 首次提出或使用 | 待考证 |
-| 更新时间 | 2026-07-19 |
-| 发布建议 | B 类 |
-| 完善状态 | 保留框架，暂不公开 |
+| 更新时间 | 2026-07-20 |
+| 知识状态 | 研究概念 |
 
 ## 完整解释
 
@@ -34,14 +36,32 @@ noindex: true
 - 不清算
 - 国家能力连续
 
-## 相关文章
+## 代表文章
 
 <div class="knowledge-grid">
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation local-finance political-transition" data-concepts="order-evaporation high-fragility political-debt fiscal-debt nonviolent-transition">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>18 分钟阅读</span></p>
-  <h3><a href="/theory/modern-social-syndrome">现代社会候群症</a></h3>
-  <p class="knowledge-card__summary">当权力从“城堡”变成“网”，普通人为何越来越无力</p>
-  <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition bureaucratic-system" data-concepts="political-route nonviolent-transition state-system-upgrade">
+  <p class="knowledge-card__meta"><span>2026-07-19</span><span>13 分钟阅读</span></p>
+  <h3><a href="/civic-orderism/peaceful-state-transition">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</a></h3>
+  <p class="knowledge-card__summary">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不以集体清算为前提的转轨道路。</p>
+  <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：政治路线</span></p>
+</article>
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route">
+  <p class="knowledge-card__meta"><span>2026-05-10</span><span>13 分钟阅读</span></p>
+  <h3><a href="/civic-orderism/why-civic-orderism-is-easier-to-succeed">为什么公民秩序主义在未来接替难度最小：它不是推倒国家，而是接管、校正和重组国家运行系统</a></h3>
+  <p class="knowledge-card__summary">公民秩序主义在未来如果面对中国秩序重建问题，它的接替难度相对最小，原因不在于它最激进，也不在于它口号最响，而在于它最接近中国现实国家机器的真实形态。</p>
+  <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：非暴力转型</span></p>
+</article>
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route">
+  <p class="knowledge-card__meta"><span>2026-05-10</span><span>11 分钟阅读</span></p>
+  <h3><a href="/theory/internal-change-external-change">内变引外变：现代政治为何走到十字路口</a></h3>
+  <p class="knowledge-card__summary">现代政治已经走到了一个历史性的十字路口。</p>
+  <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：非暴力转型</span></p>
+</article>
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition local-finance" data-concepts="order-evaporation state-system-upgrade nonviolent-transition">
+  <p class="knowledge-card__meta"><span>2026-06-08</span><span>10 分钟阅读</span></p>
+  <h3><a href="/civic-orderism/state-must-rely-on-systems-not-drivers">国家不能只靠驾驶员：为什么现代治理必须依赖系统</a></h3>
+  <p class="knowledge-card__summary">本文以现代汽车系统为比喻，说明国家作为复杂系统不能依赖单一领导人的英明，而必须依靠行政、司法、监督、财政、媒体、信息和立法等子系统的相对独立、差异性反馈与自我修复能力。文章以中共集权为反面案例，论证政党集权为何会破坏国家系统可靠性。</p>
+  <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：秩序蒸发</span></p>
 </article>
 </div>
 
@@ -50,3 +70,6 @@ noindex: true
 - [[topics/political-transition|中国政治转型]]
 
 ## 相关概念
+
+- [[concepts/political-route|政治路线]]
+- [[concepts/state-system-upgrade|国家系统升级]]

@@ -1,11 +1,12 @@
 ---
 title: "旧秩序失效"
 date: 2026-07-19
-updated: 2026-07-19
+updated: 2026-07-20
 description: "保留的旧栏目入口；相关内容已纳入公民秩序主义与中国政治转型专题。"
 contentType: "兼容入口"
 status: published
 listed: true
+folderListed: true
 noindex: false
 ---
 
@@ -16,7 +17,7 @@ noindex: false
 <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">
   <label>专题<select data-filter-topic><option value="">全部专题</option><option value="order-evaporation">秩序蒸发</option><option value="political-transition">中国政治转型</option><option value="bureaucratic-system">官僚系统</option><option value="ccp-governance">中共统治术</option><option value="local-finance">地方财政</option></select></label>
-  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="bureaucratic-shock">官僚休克</option></select></label>
+  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="political-debt">政治偿债</option><option value="state-system-upgrade">国家系统升级</option><option value="bureaucratic-shock">官僚休克</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option><option value="fiscal-debt">财政偿债</option><option value="nonviolent-transition">非暴力转型</option><option value="political-route">政治路线</option></select></label>
   <button type="button" data-filter-reset>重置</button>
 </div>
 <div class="knowledge-grid">
@@ -30,8 +31,9 @@ noindex: false
   <p class="knowledge-card__meta"><span>2026-06-08</span><span>7 分钟阅读</span></p>
   <h3><a href="/theory/end-of-party-politics-in-information-age">政党的历史终结：信息化时代为什么不再需要政党垄断政治入口</a></h3>
   <p class="knowledge-card__summary">本文分析政党政治在低信息、低流动、低技术时代的历史合理性，并指出信息化时代已经部分替代政党的政治基础设施功能，而政党的组织约束功能也可以由公共制度承接。因此，政党可以继续存在，但不应继续垄断政治入口。</p>
+  <p class="knowledge-card__chips"><span>概念：国家系统升级</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation political-transition" data-concepts="order-evaporation high-fragility">
+<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation political-transition" data-concepts="order-evaporation high-fragility political-debt">
   <p class="knowledge-card__meta"><span>2026-05-30</span><span>6 分钟阅读</span></p>
   <h3><a href="/theory/social-change-dynamics-when-system-no-longer-worth-it">社会变革动力学：当所有人都觉得“不值了”</a></h3>
   <p class="knowledge-card__summary">本文从利益链条、外部环境、精英分裂、信息透明、集体行动困境与情感链接断裂等角度，分析社会变革不是浪漫的觉醒，而是当维持旧体系的代价超过推倒旧体系的代价后，社会进入倒计时的动力学过程。</p>
@@ -42,7 +44,7 @@ noindex: false
   <h3><a href="/theory/ccp-completed-historical-task-refuses-exit">中共完成了历史任务，但拒绝被历史淘汰</a></h3>
   <p class="knowledge-card__summary">本文从文明发展史角度重新定位中共，认为它不是中国历史的偶然灾难，而是中国迟到工业化过程中形成的高压组织工具。它曾经完成把农业中国压入工业时代的历史任务，但在信息化时代拒绝退场，因此从历史工具变成文明阻碍。</p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation high-fragility">
+<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation high-fragility political-debt">
   <p class="knowledge-card__meta"><span>2026-05-30</span><span>5 分钟阅读</span></p>
   <h3><a href="/theory/organizational-collapse-begins-with-loss-of-institutional-trust">组织的坍塌，始于制度信任的瓦解</a></h3>
   <p class="knowledge-card__summary">本文从门阀政治、九品中正制、东晋政治与《红楼梦》中的贾府败落出发，分析当制度信任被关系依附取代后，组织如何逐渐空心化、犬儒化，并最终在看似突然的危机中坍塌。</p>
@@ -74,17 +76,18 @@ noindex: false
   <p class="knowledge-card__meta"><span>2026-05-11</span><span>16 分钟阅读</span></p>
   <h3><a href="/theory/us-supreme-court-partisan-final-battleground">美国最高法院为何滑向党争终局战场</a></h3>
   <p class="knowledge-card__summary">本文从三权分立、终身制、席位争夺、立法失能和信息化放大效应出发，分析美国最高法院为什么正承受从中立裁判者滑向党争终局战场的结构性压力。</p>
-  <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：秩序蒸发</span></p>
+  <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：财政偿债</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
   <p class="knowledge-card__meta"><span>2026-05-11</span><span>7 分钟阅读</span></p>
   <h3><a href="/theory/costly-industrial-governance-information-age">一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价</a></h3>
   <p class="knowledge-card__summary">本文从工业型治理的历史合理性出发，分析它在信息化时代为什么会压制反馈、尝试与协作信任，并把越来越高的系统成本转移给普通人。</p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="high-fragility">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>10 分钟阅读</span></p>
   <h3><a href="/theory/party-state-structural-failure">党国系统的结构性失效：一个组织诊断</a></h3>
   <p class="knowledge-card__summary">理解中共的未来，存在两种常见误区。</p>
+  <p class="knowledge-card__chips"><span>概念：高脆弱态</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system ccp-governance local-finance" data-concepts="bureaucratic-shock ruling-techniques crisis-management language-inflation fiscal-debt">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>4 分钟阅读</span></p>
@@ -97,17 +100,17 @@ noindex: false
   <h3><a href="/theory/high-rigidity-system-ccp">解析高刚性体制：中共无以为继的结构性根因</a></h3>
   <p class="knowledge-card__summary">中共体制无以为继的根因，并不在外部环境，也不在所谓敌对势力的反对。</p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="">
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>11 分钟阅读</span></p>
   <h3><a href="/theory/internal-change-external-change">内变引外变：现代政治为何走到十字路口</a></h3>
   <p class="knowledge-card__summary">现代政治已经走到了一个历史性的十字路口。</p>
-  <p class="knowledge-card__chips"><span>专题：中国政治转型</span></p>
+  <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：非暴力转型</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation high-fragility">
+<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="high-fragility order-evaporation political-debt">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>9 分钟阅读</span></p>
   <h3><a href="/theory/ccp-high-fragility-dysfunction">它还在，但越来越靠不住：为什么中共更可能“失灵”而非“倒台”</a></h3>
   <p class="knowledge-card__summary">谈到中共的未来，人们习惯在两个极端之间摇摆：</p>
-  <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
+  <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：高脆弱态</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>10 分钟阅读</span></p>
@@ -135,6 +138,7 @@ noindex: false
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>9 分钟阅读</span></p>
   <h3><a href="/theory/ai-monitoring-organizational-friction">AI监控并不降低组织摩擦：一份冷静推演</a></h3>
   <p class="knowledge-card__summary">关于“用 AI 降低组织内部摩擦、提高节点效率”的设想，常见叙事是：</p>
+  <p class="knowledge-card__chips"><span>概念：政治偿债</span></p>
 </article>
 </div>
 <div class="knowledge-pagination" aria-label="文章分页"><button type="button" data-page-prev>上一页</button><span data-page-status></span><button type="button" data-page-next>下一页</button></div>

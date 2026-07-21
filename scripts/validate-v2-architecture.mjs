@@ -9,6 +9,7 @@ const migration = readJson("content-migration-map.json");
 const topics = readJson("data/topics.config.json");
 const concepts = readJson("data/concepts.config.json");
 const sections = readJson("data/sections.config.json");
+const readingSequences = readJson("data/reading-sequences.config.json");
 const topicSlugs = new Set(topics.map((item) => item.slug));
 const conceptSlugs = new Set(concepts.map((item) => item.slug));
 const sectionNames = new Set(sections.map((item) => item.name));
@@ -16,8 +17,16 @@ const migrationBySlug = new Map(migration.map((item) => [item.slug, item]));
 const errors = [];
 const publicTopics = topics.filter((item) => item.status === "published");
 const hiddenTopics = topics.filter((item) => item.status !== "published");
-const publicConcepts = concepts.filter((item) => item.status === "published");
-const hiddenConcepts = concepts.filter((item) => item.status !== "published");
+const conceptPublicationStatus = (concept) => concept.publicationStatus;
+const formalConcepts = concepts.filter(
+  (item) => conceptPublicationStatus(item) === "published",
+);
+const researchConcepts = concepts.filter(
+  (item) => conceptPublicationStatus(item) === "reviewing",
+);
+const hiddenConcepts = concepts.filter((item) =>
+  ["merged", "held"].includes(conceptPublicationStatus(item)),
+);
 const developmentPlaceholderPatterns = [
   /待人工复核/i,
   /\bTODO\b/i,
@@ -68,6 +77,10 @@ for (const article of migration) {
     fs.existsSync(publicHtml(article.slug)),
     `原文章 URL 未生成：/${article.slug}`,
   );
+  assert(
+    /^\d{4}-\d{2}-\d{2}$/.test(article.date),
+    `文章发布日期不是标准日期：${article.slug} -> ${article.date}`,
+  );
   const articleHtml = fs.readFileSync(publicHtml(article.slug), "utf8");
   const recommendationHrefs = [
     ...articleHtml.matchAll(/<a class="related-card"[^>]*href="([^"]+)"/g),
@@ -80,6 +93,14 @@ for (const article of migration) {
       ).pathname.replace(/^\//, ""),
     ),
   );
+  const readingPathBlock = articleHtml.match(
+    /article-knowledge__reading-path[\s\S]*?<nav[^>]*>([\s\S]*?)<\/nav>/,
+  )?.[1];
+  const readingPathSlugs = readingPathBlock
+    ? [...readingPathBlock.matchAll(/data-slug="([^"]+)"/g)].map(
+        (match) => match[1],
+      )
+    : [];
   assert(recommendationSlugs.length <= 3, `推荐阅读超过 3 篇：${article.slug}`);
   assert(
     new Set(recommendationSlugs).size === recommendationSlugs.length,
@@ -88,6 +109,14 @@ for (const article of migration) {
   assert(
     !recommendationSlugs.includes(article.slug),
     `推荐阅读包含当前文章：${article.slug}`,
+  );
+  assert(
+    !articleHtml.includes("上一篇：无") && !articleHtml.includes("下一篇：无"),
+    `文章阅读路径显示空边界：${article.slug}`,
+  );
+  assert(
+    readingPathSlugs.every((slug) => !recommendationSlugs.includes(slug)),
+    `继续阅读与相邻阅读路径重复：${article.slug}`,
   );
   for (const recommendedSlug of recommendationSlugs) {
     const target = migrationBySlug.get(recommendedSlug);
@@ -119,6 +148,17 @@ for (const article of migration) {
   );
   article.concepts.forEach((slug) =>
     assert(conceptSlugs.has(slug), `未知概念：${article.slug} -> ${slug}`),
+  );
+}
+
+for (let index = 1; index < migration.length; index += 1) {
+  const previous = migration[index - 1];
+  const current = migration[index];
+  assert(
+    previous.date > current.date ||
+      (previous.date === current.date &&
+        previous.title.localeCompare(current.title, "zh-CN") <= 0),
+    `迁移映射日期排序不稳定：${previous.slug} -> ${current.slug}`,
   );
 }
 
@@ -183,6 +223,41 @@ concepts.forEach((concept) =>
     `缺少概念页：${concept.slug}`,
   ),
 );
+for (const concept of concepts) {
+  assert(
+    ["published", "reviewing", "merged", "held"].includes(
+      conceptPublicationStatus(concept),
+    ),
+    `概念缺少有效 publicationStatus：${concept.slug}`,
+  );
+  assert(
+    Array.isArray(concept.representativeArticles),
+    `概念缺少代表文章配置：${concept.slug}`,
+  );
+  for (const slug of concept.representativeArticles ?? []) {
+    assert(
+      migrationBySlug.has(slug),
+      `概念代表文章不存在：${concept.slug} -> ${slug}`,
+    );
+  }
+}
+for (const sequence of readingSequences) {
+  assert(sequence.id?.trim(), "阅读顺序缺少 id");
+  assert(sequence.name?.trim(), `阅读顺序缺少名称：${sequence.id}`);
+  for (const item of sequence.items ?? []) {
+    if (item.slug) {
+      assert(
+        migrationBySlug.has(item.slug),
+        `阅读顺序文章不存在：${sequence.id} -> ${item.slug}`,
+      );
+    } else {
+      assert(
+        item.href?.startsWith("/"),
+        `阅读顺序入口无效：${sequence.id} -> ${item.href}`,
+      );
+    }
+  }
+}
 
 for (const file of [
   "public/files/civic-orderism-introduction-manual.pdf",
@@ -211,6 +286,7 @@ for (const route of [
 }
 for (const item of [
   ...hiddenTopics.map((item) => `topics/${item.slug}`),
+  ...researchConcepts.map((item) => `concepts/${item.slug}`),
   ...hiddenConcepts.map((item) => `concepts/${item.slug}`),
 ]) {
   assert(
@@ -239,6 +315,7 @@ assert(
 );
 for (const item of [
   ...hiddenTopics.map((item) => `topics/${item.slug}`),
+  ...researchConcepts.map((item) => `concepts/${item.slug}`),
   ...hiddenConcepts.map((item) => `concepts/${item.slug}`),
 ]) {
   assert(!(item in searchIndex), `隐藏页面进入搜索索引：/${item}`);
@@ -246,6 +323,68 @@ for (const item of [
 assert(
   migration.filter((item) => item.needsReview).length === 14,
   `人工复核文章应为 14 篇，当前为 ${migration.filter((item) => item.needsReview).length}`,
+);
+
+const homepageHtml = fs.readFileSync(
+  path.join(publicDir, "index.html"),
+  "utf8",
+);
+const homepageLatestSlugs = [
+  ...homepageHtml.matchAll(
+    /class="knowledge-card home-article-card"[\s\S]*?data-slug="([^"]+)"/g,
+  ),
+].map((match) => match[1]);
+const expectedLatestSlugs = migration
+  .filter(
+    (article) => article.status === "published" && article.needsReview !== true,
+  )
+  .slice(0, 4)
+  .map((article) => article.slug);
+assert(
+  JSON.stringify(homepageLatestSlugs) === JSON.stringify(expectedLatestSlugs),
+  `首页最新文章未按发布日期自动排序：${homepageLatestSlugs.join(", ")}`,
+);
+assert(
+  visiblePageText(homepageHtml).includes("用5分钟建立最小阅读框架"),
+  "首页缺少统一的新读者时长说明",
+);
+
+const conceptIndexHtml = fs.readFileSync(
+  path.join(publicDir, "concepts", "index.html"),
+  "utf8",
+);
+const conceptIndexText = visiblePageText(conceptIndexHtml);
+assert(
+  formalConcepts.every((concept) =>
+    conceptIndexHtml.includes(`/concepts/${concept.slug}`),
+  ),
+  "概念索引缺少正式概念",
+);
+assert(
+  researchConcepts.every((concept) =>
+    conceptIndexHtml.includes(`/concepts/${concept.slug}`),
+  ),
+  "概念索引缺少研究概念",
+);
+assert(
+  hiddenConcepts.every(
+    (concept) => !conceptIndexHtml.includes(`/concepts/${concept.slug}`),
+  ),
+  "概念索引显示了保留或合并概念",
+);
+assert(
+  !conceptIndexText.includes("本栏目全部文章"),
+  "概念索引重复渲染通用文件夹列表",
+);
+
+const startHtml = fs.readFileSync(publicHtml("start"), "utf8");
+const startText = visiblePageText(startHtml);
+assert(startText.includes("新读者入口"), "/start 缺少新读者入口标签");
+assert(!startText.includes("约 5 分钟"), "/start 仍包含人工时长文案");
+assert(startText.includes("3分钟阅读"), "/start 自动阅读时长不再是 3 分钟");
+assert(
+  !visiblePageText(homepageHtml).includes("约 5 分钟"),
+  "首页仍包含人工时长文案",
 );
 
 for (const route of ["index", "start"]) {

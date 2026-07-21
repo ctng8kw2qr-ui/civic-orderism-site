@@ -108,6 +108,7 @@ export default ((opts?: Partial<FolderContentOptions>) => {
     const classes = cssClasses.join(" ");
     const listPageSlug = (fileData.slug ?? "").replace(/\/index$/, "");
     const isPrimarySection = primarySectionSlugs.has(listPageSlug);
+    const isConceptIndex = listPageSlug === "concepts";
     const primarySection = sections.find(
       (section) => section.slug === listPageSlug,
     );
@@ -136,7 +137,7 @@ export default ((opts?: Partial<FolderContentOptions>) => {
     return (
       <div class="popover-hint">
         <article class={classes}>{content}</article>
-        {isPrimarySection ? (
+        {isConceptIndex ? null : isPrimarySection ? (
           <details class="page-listing section-archive" data-section-archive>
             <summary>完整文章索引（{listedPages.length}）</summary>
             <div class="section-archive__content">

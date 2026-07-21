@@ -1,24 +1,26 @@
 ---
 title: "财政偿债"
 date: 2026-07-19
-updated: 2026-07-19
+updated: 2026-07-20
 description: "对长期依赖债务、土地与未来收入形成的财政成本进行集中结算。"
 contentType: "核心概念"
-status: draft
+status: published
 listed: false
+folderListed: false
 noindex: true
+publicationStatus: reviewing
 ---
 
 # 财政偿债
+
+<p class="concept-status concept-status--reviewing">研究概念</p>
 
 <p class="concept-definition">对长期依赖债务、土地与未来收入形成的财政成本进行集中结算。</p>
 
 | 字段 | 内容 |
 | --- | --- |
-| 首次提出或使用 | 待考证 |
-| 更新时间 | 2026-07-19 |
-| 发布建议 | B 类 |
-| 完善状态 | 保留框架，暂不公开 |
+| 更新时间 | 2026-07-20 |
+| 知识状态 | 研究概念 |
 
 ## 完整解释
 
@@ -34,32 +36,56 @@ noindex: true
 - 公共服务收缩
 - 财政责任上移或下压
 
-## 相关文章
+## 代表文章
 
 <div class="knowledge-grid">
-<article class="knowledge-card" data-knowledge-card data-topics="local-finance" data-concepts="fiscal-debt political-debt order-evaporation language-inflation state-system-upgrade">
-  <p class="knowledge-card__meta"><span>2026-05-11</span><span>16 分钟阅读</span></p>
-  <h3><a href="/theory/us-supreme-court-partisan-final-battleground">美国最高法院为何滑向党争终局战场</a></h3>
-  <p class="knowledge-card__summary">本文从三权分立、终身制、席位争夺、立法失能和信息化放大效应出发，分析美国最高法院为什么正承受从中立裁判者滑向党争终局战场的结构性压力。</p>
-  <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：秩序蒸发</span></p>
+<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era order-evaporation" data-concepts="three-cleans-era fiscal-debt political-debt">
+  <p class="knowledge-card__meta"><span>2026-07-19</span><span>17 分钟阅读</span></p>
+  <h3><a href="/china-stage/three-cleans-era-political-economic-cultural-contraction">时代何至如此：政治清人，经济清账，文化清声</a></h3>
+  <p class="knowledge-card__summary">政治清人、经济清账、文化清声并非孤立政策，而是增长放缓、财政收缩与信心下降后，制度从发展逻辑转向风险逻辑的共同表现。本文以“三清时代”为框架，分析全面收缩如何制造官场休克、秩序蒸发，并使旧问题的清理逐渐快于新秩序的建立。</p>
+  <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：三清时代</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system ccp-governance local-finance" data-concepts="bureaucratic-shock ruling-techniques crisis-management language-inflation fiscal-debt">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>4 分钟阅读</span></p>
-  <h3><a href="/theory/overseas-political-movements-fail">海外政治运动为什么一事无成？</a></h3>
-  <p class="knowledge-card__summary">分析海外中文政治运动长期低效与结构性失败的原因。</p>
-  <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚休克</span></p>
+<article class="knowledge-card" data-knowledge-card data-topics="local-finance bureaucratic-system" data-concepts="fiscal-debt political-debt order-evaporation">
+  <p class="knowledge-card__meta"><span>2026-05-11</span><span>12 分钟阅读</span></p>
+  <h3><a href="/china/ccp-collapse-three-triggers-social-security-healthcare-finance">中共崩解的三大导火索：社保、医保与金融系统</a></h3>
+  <p class="knowledge-card__summary">本文从社保、医保与金融系统三个领域，分析中共未来危机如何从国家信用事件转化为社会预期和官僚系统的连锁崩解。</p>
+  <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：财政偿债</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance local-finance" data-concepts="ruling-techniques crisis-management language-inflation fiscal-debt political-debt">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>9 分钟阅读</span></p>
-  <h3><a href="/china/taiwan-war-risk">台海是否会走向战争：基于战争四驱动的组织决策风险评估</a></h3>
-  <p class="knowledge-card__summary">本文基于战争四驱动框架，从意识形态动员、内部压力外溢、领土争端、安全困境与组织责任分配角度，评估台海是否会走向全面战争。</p>
-  <p class="knowledge-card__chips"><span>专题：中共统治术</span></p>
+<article class="knowledge-card" data-knowledge-card data-topics="local-finance three-cleans-era" data-concepts="fiscal-debt political-debt order-evaporation">
+  <p class="knowledge-card__meta"><span>2026-05-10</span><span>8 分钟阅读</span></p>
+  <h3><a href="/china/chicken-and-cage">养鸡与换笼：民营经济被整肃的结构逻辑</a></h3>
+  <p class="knowledge-card__summary">本文从中央—地方关系、官商共生、财政金融通道与组织控制逻辑出发，分析中共整肃民营经济背后的结构动因。</p>
+  <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：财政偿债</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation local-finance political-transition" data-concepts="order-evaporation high-fragility political-debt fiscal-debt nonviolent-transition">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>18 分钟阅读</span></p>
-  <h3><a href="/theory/modern-social-syndrome">现代社会候群症</a></h3>
-  <p class="knowledge-card__summary">当权力从“城堡”变成“网”，普通人为何越来越无力</p>
-  <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
+<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era bureaucratic-system" data-concepts="three-cleans-era fiscal-debt political-debt">
+  <p class="knowledge-card__meta"><span>2026-07-14</span><span>17 分钟阅读</span></p>
+  <h3><a href="/china/why-expulsion-from-party-becomes-standard-ending">为什么“开除党籍”正在成为中共处理高级干部的标准结局？</a></h3>
+  <p class="knowledge-card__summary">本文认为，高级干部被开除党籍的常态化，不能简单解释为反腐更严格或制度更刚性。真正值得注意的是，中共在拥有巨大政治裁量空间的情况下，越来越主动选择最彻底、最不可逆的处理方式，把组织失败个体化，把党籍从终身政治身份退化为条件性资格。</p>
+  <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：三清时代</span></p>
+</article>
+<article class="knowledge-card" data-knowledge-card data-topics="local-finance order-evaporation" data-concepts="fiscal-debt political-debt order-evaporation">
+  <p class="knowledge-card__meta"><span>2026-06-16</span><span>11 分钟阅读</span></p>
+  <h3><a href="/china-stage/china-manufacturing-cannot-stop">中国制造业不是造不出来，而是停不下来</a></h3>
+  <p class="knowledge-card__summary">中国制造业的困境不是简单的订单外迁或产业衰退，而是生产能力、地方动员、债务周期、银行体系和政治责任机制共同形成的系统性困局。真正的问题不是造不出来，而是越能造、越难停、越难赚钱，最后指向秩序本身的失灵。</p>
+  <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：财政偿债</span></p>
+</article>
+<article class="knowledge-card" data-knowledge-card data-topics="local-finance" data-concepts="fiscal-debt political-debt order-evaporation">
+  <p class="knowledge-card__meta"><span>2026-05-19</span><span>12 分钟阅读</span></p>
+  <h3><a href="/china/information-age-impact-on-ccp-mechanisms">信息化时代冲击中共的机制</a></h3>
+  <p class="knowledge-card__summary">本文分析信息化时代对中共的冲击并不是单纯的信息传播问题，而是全球利润结构、资本偏好、外贸形态、地方财政、社会预期、信息控制、组织反馈、创新环境、规模优势和合法性基础同时发生变化后，对中共增长与治理体系形成的机制性冲击。</p>
+  <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：财政偿债</span></p>
+</article>
+<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="three-cleans-era fiscal-debt political-debt">
+  <p class="knowledge-card__meta"><span>2026-05-10</span><span>12 分钟阅读</span></p>
+  <h3><a href="/china/when-high-ranking-officials-are-no-longer-safe">当高位者也不再安全：这不是普通反腐，而是权力的深度焦虑</a></h3>
+  <p class="knowledge-card__summary">一个体制是否稳定，看的从来不只是它还能不能抓人，而是它为什么越来越需要抓人。</p>
+  <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：三清时代</span></p>
+</article>
+<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era bureaucratic-system" data-concepts="three-cleans-era political-debt fiscal-debt">
+  <p class="knowledge-card__meta"><span>2026-05-10</span><span>6 分钟阅读</span></p>
+  <h3><a href="/china/ccp-bureaucracy-historical-bill">当历史总账开始结算：高刚性官僚体系如何把系统性责任层层压向中基层</a></h3>
+  <p class="knowledge-card__summary">很多人谈基层问题，都会说一句话：</p>
+  <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：三清时代</span></p>
 </article>
 </div>
 
@@ -70,4 +96,5 @@ noindex: true
 
 ## 相关概念
 
+- [[concepts/political-debt|政治偿债]]
 - [[concepts/order-evaporation|秩序蒸发]]

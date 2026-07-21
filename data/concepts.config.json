@@ -11,7 +11,13 @@
     "firstUsed": "待考证",
     "needsReview": false,
     "status": "published",
+    "publicationStatus": "published",
     "publicationClass": "A",
+    "representativeArticles": [
+      "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
+      "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+      "civic-orderism/state-must-rely-on-systems-not-drivers"
+    ],
     "publicationReason": "定义、机制和现实表现边界清楚，且已有多篇文章从组织信用、协作能力与预期失效三个角度提供支持。"
   },
   {
@@ -26,7 +32,12 @@
     "firstUsed": "待考证",
     "needsReview": false,
     "status": "published",
+    "publicationStatus": "published",
     "publicationClass": "A",
+    "representativeArticles": [
+      "china/why-ccp-cannot-reduce-grassroots-burden",
+      "china/bureaucratic-system-under-purges"
+    ],
     "publicationReason": "概念边界明确，官僚系统专题已有足够文章支撑，能够与一般行政低效区分。"
   },
   {
@@ -40,7 +51,13 @@
     "firstUsed": "待考证",
     "needsReview": true,
     "status": "draft",
+    "publicationStatus": "reviewing",
     "publicationClass": "B",
+    "representativeArticles": [
+      "china-stage/three-cleans-era-political-economic-cultural-contraction",
+      "china/why-expulsion-from-party-becomes-standard-ending",
+      "china/ccp-bureaucracy-historical-bill"
+    ],
     "publicationReason": "框架方向明确，但现有页面仍主要是阶段性命名，三种‘清’之间的先后关系与适用边界尚未得到充分论证。"
   },
   {
@@ -55,7 +72,13 @@
     "firstUsed": "待考证",
     "needsReview": false,
     "status": "published",
+    "publicationStatus": "published",
     "publicationClass": "A",
+    "representativeArticles": [
+      "china-stage/ccp-second-reform-opening-possibility",
+      "china/ccp-2018-new-reform-opening",
+      "china/ccp-reform-political-balance-deadlock"
+    ],
     "publicationReason": "已有独立专题和多篇文章讨论改革窗口、组织约束与外部条件，具备稳定的知识节点作用。"
   },
   {
@@ -69,7 +92,13 @@
     "firstUsed": "待考证",
     "needsReview": true,
     "status": "draft",
+    "publicationStatus": "reviewing",
     "publicationClass": "B",
+    "representativeArticles": [
+      "china-stage/three-cleans-era-political-economic-cultural-contraction",
+      "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+      "china/chicken-and-cage"
+    ],
     "publicationReason": "相关财政文章充足，但当前定义同时覆盖地方债、公共服务与责任转移，仍需收紧概念边界。"
   },
   {
@@ -83,7 +112,12 @@
     "firstUsed": "待考证",
     "needsReview": true,
     "status": "draft",
+    "publicationStatus": "reviewing",
     "publicationClass": "B",
+    "representativeArticles": [
+      "china/ccp-bureaucracy-historical-bill",
+      "china/organization-credit-retired-officials"
+    ],
     "publicationReason": "与‘三清时代’和‘秩序蒸发’有明显交叠，独立解释力尚未充分展示。"
   },
   {
@@ -97,7 +131,13 @@
     "firstUsed": "待考证",
     "needsReview": true,
     "status": "draft",
+    "publicationStatus": "reviewing",
     "publicationClass": "B",
+    "representativeArticles": [
+      "china/why-ccp-will-not-relax-party-pressure",
+      "china/political-machine-rewards-and-limits",
+      "china/propaganda-system-hollowing-out"
+    ],
     "publicationReason": "文章支持数量足够，但当前定义过宽，容易把宣传、问责、维稳与组织控制全部装入同一概念。"
   },
   {
@@ -111,7 +151,12 @@
     "firstUsed": "待考证",
     "needsReview": true,
     "status": "draft",
+    "publicationStatus": "reviewing",
     "publicationClass": "B",
+    "representativeArticles": [
+      "china/maginot-line-of-stability-maintenance",
+      "china/taiwan-war-risk"
+    ],
     "publicationReason": "方向重要，但现有说明尚未清楚区分危机处置、风险治理与危机机制常态化。"
   },
   {
@@ -126,7 +171,13 @@
     "firstUsed": "待考证",
     "needsReview": false,
     "status": "published",
+    "publicationStatus": "published",
     "publicationClass": "A",
+    "representativeArticles": [
+      "theory/ccp-high-fragility-dysfunction",
+      "theory/party-state-structural-failure",
+      "china/organization-credit-retired-officials"
+    ],
     "publicationReason": "定义可检验，机制与表征完整，并已有文章直接讨论高度集中系统的单点依赖和反馈失真。"
   },
   {
@@ -140,7 +191,9 @@
     "firstUsed": "待考证",
     "needsReview": true,
     "status": "draft",
+    "publicationStatus": "held",
     "publicationClass": "C",
+    "representativeArticles": ["china/propaganda-system-hollowing-out"],
     "publicationReason": "单独页面的文章支撑不足，与‘机会通缩’共同表达叙事强化和现实空间收缩之间的同一组张力，建议合并后再审。"
   },
   {
@@ -154,7 +207,11 @@
     "firstUsed": "待考证",
     "needsReview": true,
     "status": "draft",
+    "publicationStatus": "held",
     "publicationClass": "C",
+    "representativeArticles": [
+      "china-stage/ccp-second-reform-opening-possibility"
+    ],
     "publicationReason": "与‘语言通胀’高度关联，独立使用时容易退化为一般经济或就业描述，建议合并为‘语言通胀与机会通缩’。"
   },
   {
@@ -168,7 +225,13 @@
     "firstUsed": "待考证",
     "needsReview": true,
     "status": "draft",
+    "publicationStatus": "reviewing",
     "publicationClass": "B",
+    "representativeArticles": [
+      "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+      "civic-orderism/state-must-rely-on-systems-not-drivers",
+      "civic-orderism/state-operation-process-under-civic-orderism"
+    ],
     "publicationReason": "方向明确且重要，但目前仍是多个制度目标的汇总，尚缺少独立机制解释和清晰适用边界。"
   },
   {
@@ -182,7 +245,13 @@
     "firstUsed": "待考证",
     "needsReview": true,
     "status": "draft",
+    "publicationStatus": "reviewing",
     "publicationClass": "B",
+    "representativeArticles": [
+      "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+      "civic-orderism/backend-system-under-civic-orderism",
+      "civic-orderism/why-dual-track-committee-administration"
+    ],
     "publicationReason": "与制度设计栏目关系密切，但现有解释主要是设计原则列表，尚不足以成为独立理论节点。"
   },
   {
@@ -196,7 +265,13 @@
     "firstUsed": "待考证",
     "needsReview": true,
     "status": "draft",
+    "publicationStatus": "reviewing",
     "publicationClass": "B",
+    "representativeArticles": [
+      "civic-orderism/why-civic-orderism",
+      "civic-orderism/civic-orderism-manual",
+      "civic-orderism/peaceful-state-transition"
+    ],
     "publicationReason": "目前更像阅读路径和方法术语，需要进一步说明阶段判断如何转化为可执行路线。"
   },
   {
@@ -210,7 +285,13 @@
     "firstUsed": "待考证",
     "needsReview": true,
     "status": "draft",
+    "publicationStatus": "reviewing",
     "publicationClass": "B",
+    "representativeArticles": [
+      "civic-orderism/peaceful-state-transition",
+      "civic-orderism/why-civic-orderism-is-easier-to-succeed",
+      "theory/internal-change-external-change"
+    ],
     "publicationReason": "价值方向清楚，但与政治路线、国家系统升级的分工尚未充分展开，相关文章也未形成稳定概念用法。"
   }
 ]

@@ -11,6 +11,12 @@ import migrationMap from "../../content-migration-map.json";
 import topicsConfig from "../../data/topics.config.json";
 import conceptsConfig from "../../data/concepts.config.json";
 import sectionsConfig from "../../data/sections.config.json";
+import readingSequencesConfig from "../../data/reading-sequences.config.json";
+import {
+  getConceptPublicationStatus,
+  isVisibleConcept,
+  resolveReadingSequence,
+} from "../util/knowledgeNavigation";
 
 // @ts-ignore
 import script from "./scripts/articleReadingEnhancements.inline";
@@ -25,6 +31,12 @@ const ARTICLE_PREFIXES = [
 
 type MigrationEntry = (typeof migrationMap)[number];
 type PublishedConcept = (typeof conceptsConfig)[number];
+type ArticleSequenceItem = {
+  slug?: string;
+  href?: string;
+  title?: string;
+  file?: QuartzPluginData;
+};
 
 const MAX_RELATED_CONCEPTS = 3;
 const migrationBySlug = new Map<string, MigrationEntry>(
@@ -37,7 +49,7 @@ const topicBySlug = new Map(
 );
 const conceptBySlug = new Map(
   conceptsConfig
-    .filter((concept) => concept.status === "published")
+    .filter(isVisibleConcept)
     .map((concept) => [concept.slug, concept]),
 );
 const sectionByName = new Map(
@@ -269,28 +281,45 @@ export const KnowledgeContext: QuartzComponent = ({
     .map((slug) => topicBySlug.get(slug))
     .filter(Boolean);
   const concepts = conceptsForArticle(fileData, knowledge);
-  const primaryTopic = knowledge.topics[0];
-  const readingSequence = articleFiles(allFiles)
-    .filter(isEligibleRecommendation)
-    .filter(
-      (file) =>
-        primaryTopic !== undefined &&
-        topicBySlug.has(primaryTopic) &&
-        knowledgeFor(file)?.topics.includes(primaryTopic),
-    )
-    .sort((a, b) => {
-      const aOrder = knowledgeFor(a)?.readingOrder ?? 999;
-      const bOrder = knowledgeFor(b)?.readingOrder ?? 999;
-      if (aOrder !== bOrder) return aOrder - bOrder;
-      return byOldestFirst(a, b);
-    });
-  const currentIndex = readingSequence.findIndex(
+  const eligibleArticles = articleFiles(allFiles).filter(
+    isEligibleRecommendation,
+  );
+  const manualSequence = resolveReadingSequence(
+    readingSequencesConfig,
+    eligibleArticles,
+    fileData.slug ?? "",
+    (file) => file.slug,
+  );
+  const fallbackSequence = manualSequence
+    ? []
+    : eligibleArticles
+        .filter((file) => sameSection(fileData, file))
+        .sort(byOldestFirst);
+  const fallbackIndex = fallbackSequence.findIndex(
     (file) => file.slug === fileData.slug,
   );
-  const previous =
-    currentIndex > 0 ? readingSequence[currentIndex - 1] : undefined;
-  const next =
-    currentIndex >= 0 ? readingSequence[currentIndex + 1] : undefined;
+  const previousItem: ArticleSequenceItem | undefined = manualSequence
+    ? manualSequence.items[manualSequence.index - 1]
+    : fallbackIndex > 0
+      ? {
+          slug: fallbackSequence[fallbackIndex - 1].slug,
+          file: fallbackSequence[fallbackIndex - 1],
+        }
+      : undefined;
+  const nextItem: ArticleSequenceItem | undefined = manualSequence
+    ? manualSequence.items[manualSequence.index + 1]
+    : fallbackIndex >= 0
+      ? {
+          slug: fallbackSequence[fallbackIndex + 1]?.slug,
+          file: fallbackSequence[fallbackIndex + 1],
+        }
+      : undefined;
+  const itemHref = (item: typeof previousItem) =>
+    item?.href ?? (item?.slug ? `/${item.slug}` : undefined);
+  const itemTitle = (item: typeof previousItem) =>
+    item?.title ?? item?.file?.frontmatter?.title;
+  const previousHref = itemHref(previousItem);
+  const nextHref = itemHref(nextItem);
 
   return (
     <section class="article-knowledge" aria-label="文章知识关联">
@@ -312,34 +341,41 @@ export const KnowledgeContext: QuartzComponent = ({
         {concepts.length ? (
           <p class="article-knowledge__links">
             {concepts.map((concept) => (
-              <a href={`/concepts/${concept!.slug}`}>{concept!.name}</a>
+              <a
+                class={`article-knowledge__concept article-knowledge__concept--${getConceptPublicationStatus(concept!)}`}
+                href={`/concepts/${concept!.slug}`}
+              >
+                {concept!.name}
+                {getConceptPublicationStatus(concept!) === "reviewing" ? (
+                  <small>研究概念</small>
+                ) : null}
+              </a>
             ))}
           </p>
         ) : (
           <p>暂无关联核心概念</p>
         )}
       </div>
-      <div class="article-knowledge__group article-knowledge__reading-path">
-        <h2>阅读路径</h2>
-        <nav aria-label="文章阅读路径">
-          {previous ? (
-            <a href={`/${previous.slug}`}>
-              上一篇：{previous.frontmatter?.title}
-            </a>
-          ) : (
-            <span>上一篇：无</span>
-          )}
-          {next ? (
-            <a href={`/${next.slug}`}>下一篇：{next.frontmatter?.title}</a>
-          ) : (
-            <span>下一篇：无</span>
-          )}
-          {topics[0] ? (
-            <a href={`/topics/${topics[0]!.slug}`}>返回专题</a>
+      {previousHref || nextHref ? (
+        <div class="article-knowledge__group article-knowledge__reading-path">
+          <h2>阅读路径</h2>
+          {manualSequence ? (
+            <p class="article-knowledge__sequence-progress">
+              {manualSequence.sequence.name} · 第{manualSequence.index + 1}
+              篇，共
+              {manualSequence.items.length}篇
+            </p>
           ) : null}
-          {section ? <a href={`/${section.slug}`}>返回栏目</a> : null}
-        </nav>
-      </div>
+          <nav aria-label="文章阅读路径">
+            {previousHref ? (
+              <a href={previousHref}>上一篇：{itemTitle(previousItem)}</a>
+            ) : null}
+            {nextHref ? (
+              <a href={nextHref}>下一篇：{itemTitle(nextItem)}</a>
+            ) : null}
+          </nav>
+        </div>
+      ) : null}
       <details class="article-knowledge__details">
         <summary>文章信息</summary>
         <dl>
@@ -428,9 +464,7 @@ export const SeriesNavigation: QuartzComponent = ({
           >
             上一篇：{previous.frontmatter?.title}
           </a>
-        ) : (
-          <span>上一篇：无</span>
-        )}
+        ) : null}
         {seriesIndex && seriesIndex.slug !== fileData.slug ? (
           <a
             href={resolveRelative(fileData.slug!, seriesIndex.slug!)}
@@ -446,9 +480,7 @@ export const SeriesNavigation: QuartzComponent = ({
           >
             下一篇：{next.frontmatter?.title}
           </a>
-        ) : (
-          <span>下一篇：无</span>
-        )}
+        ) : null}
       </div>
     </nav>
   );
@@ -463,9 +495,26 @@ export const ContinueReading: QuartzComponent = ({
 
   const currentSeries = getSeries(fileData.frontmatter?.series);
   const manualRelated = manualRelatedSlugs(fileData);
-  const recommendations = articleFiles(allFiles)
+  const eligibleArticles = articleFiles(allFiles).filter(
+    isEligibleRecommendation,
+  );
+  const manualSequence = resolveReadingSequence(
+    readingSequencesConfig,
+    eligibleArticles,
+    fileData.slug ?? "",
+    (file) => file.slug,
+  );
+  const adjacentSequenceSlugs = new Set(
+    manualSequence
+      ? [
+          manualSequence.items[manualSequence.index - 1]?.slug,
+          manualSequence.items[manualSequence.index + 1]?.slug,
+        ].filter((slug): slug is string => Boolean(slug))
+      : [],
+  );
+  const recommendations = eligibleArticles
     .filter((file) => file.slug !== fileData.slug)
-    .filter(isEligibleRecommendation)
+    .filter((file) => !file.slug || !adjacentSequenceSlugs.has(file.slug))
     .filter((file) => {
       const sharedTopics = sharedTopicCount(fileData, file);
       const sharedConcepts = sharedConceptCount(fileData, file);

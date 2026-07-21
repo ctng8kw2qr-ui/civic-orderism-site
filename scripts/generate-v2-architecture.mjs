@@ -21,6 +21,7 @@ const sections = readJson("sections.config.json");
 const topics = readJson("topics.config.json");
 const concepts = readJson("concepts.config.json");
 const readingPaths = readJson("reading-paths.config.json");
+const readingSequences = readJson("reading-sequences.config.json");
 const existingMigrationMap = fs.existsSync(
   path.join(rootDir, "content-migration-map.json"),
 )
@@ -31,9 +32,22 @@ const sectionByName = new Map(sections.map((item) => [item.name, item]));
 const topicBySlug = new Map(topics.map((item) => [item.slug, item]));
 const conceptBySlug = new Map(concepts.map((item) => [item.slug, item]));
 const publicTopics = topics.filter((item) => item.status === "published");
-const publicConcepts = concepts.filter((item) => item.status === "published");
+const conceptPublicationStatus = (concept) =>
+  concept.publicationStatus ??
+  (concept.status === "published"
+    ? "published"
+    : concept.publicationClass === "B"
+      ? "reviewing"
+      : "held");
+const formalConcepts = concepts.filter(
+  (item) => conceptPublicationStatus(item) === "published",
+);
+const researchConcepts = concepts.filter(
+  (item) => conceptPublicationStatus(item) === "reviewing",
+);
+const visibleConcepts = [...formalConcepts, ...researchConcepts];
 const publicTopicSlugs = new Set(publicTopics.map((item) => item.slug));
-const publicConceptSlugs = new Set(publicConcepts.map((item) => item.slug));
+const publicConceptSlugs = new Set(visibleConcepts.map((item) => item.slug));
 const existingMigrationBySlug = new Map(
   existingMigrationMap.map((item) => [item.slug, item]),
 );
@@ -215,7 +229,13 @@ function conceptSlugs(article) {
   }
   const text =
     `${article.slug} ${article.title} ${article.summary}`.toLowerCase();
-  const found = new Set();
+  const found = new Set(
+    concepts
+      .filter((concept) =>
+        concept.representativeArticles?.includes(article.slug),
+      )
+      .map((concept) => concept.slug),
+  );
   const topicConcepts = article.topics.flatMap(
     (slug) => topicBySlug.get(slug)?.concepts ?? [],
   );
@@ -322,9 +342,11 @@ function yamlFrontmatter({
   aliases = [],
   status = "published",
   listed = true,
+  folderListed = listed,
   noindex = false,
+  publicationStatus,
 }) {
-  return `---\ntitle: ${JSON.stringify(title)}\ndate: ${date}\nupdated: 2026-07-19\ndescription: ${JSON.stringify(description)}\ncontentType: ${JSON.stringify(contentType)}\nstatus: ${status}\nlisted: ${listed}\nnoindex: ${noindex}\n${aliases.length ? `aliases:\n${aliases.map((item) => `  - ${item}`).join("\n")}\n` : ""}---`;
+  return `---\ntitle: ${JSON.stringify(title)}\ndate: ${date}\nupdated: 2026-07-20\ndescription: ${JSON.stringify(description)}\ncontentType: ${JSON.stringify(contentType)}\nstatus: ${status}\nlisted: ${listed}\nfolderListed: ${folderListed}\nnoindex: ${noindex}\n${publicationStatus ? `publicationStatus: ${publicationStatus}\n` : ""}${aliases.length ? `aliases:\n${aliases.map((item) => `  - ${item}`).join("\n")}\n` : ""}---`;
 }
 
 function isEligibleArticle(article) {
@@ -343,7 +365,7 @@ function articleCard(article) {
     .find((item) => item?.status === "published");
   const concept = article.concepts
     .map((slug) => conceptBySlug.get(slug))
-    .find((item) => item?.status === "published");
+    .find((item) => item && publicConceptSlugs.has(item.slug));
   const chips = [
     topic ? `专题：${topic.name}` : "",
     concept ? `概念：${concept.name}` : "",
@@ -367,7 +389,7 @@ function homeArticleCard(article) {
     .find((item) => item?.status === "published");
   const concept = article.concepts
     .map((slug) => conceptBySlug.get(slug))
-    .find((item) => item?.status === "published");
+    .find((item) => item && publicConceptSlugs.has(item.slug));
   const marker = topic
     ? `专题：${topic.name}`
     : concept
@@ -396,7 +418,7 @@ function filterPanel(items) {
     .filter((item) => item?.status === "published");
   const usedConcepts = [...new Set(items.flatMap((item) => item.concepts))]
     .map((slug) => conceptBySlug.get(slug))
-    .filter((item) => item?.status === "published");
+    .filter((item) => item && publicConceptSlugs.has(item.slug));
   return `<div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">
   <label>专题<select data-filter-topic><option value="">全部专题</option>${usedTopics.map((item) => `<option value="${item.slug}">${item.name}</option>`).join("")}</select></label>
@@ -431,7 +453,7 @@ function sectionPage(section) {
     ...new Set(items.flatMap((article) => article.concepts)),
   ]
     .map((slug) => conceptBySlug.get(slug))
-    .filter((concept) => concept?.status === "published")
+    .filter((concept) => concept && publicConceptSlugs.has(concept.slug))
     .slice(0, 8);
   return `${yamlFrontmatter({ title: section.name, description: section.description, contentType: "栏目" })}
 
@@ -470,56 +492,7 @@ for (const section of sections) {
   writeContent(route, sectionPage(section));
 }
 
-const transitionArticleSlug = "civic-orderism/peaceful-state-transition";
-const transitionArticle = articleBySlug.get(transitionArticleSlug);
-if (!isEligibleArticle(transitionArticle)) {
-  throw new Error(
-    `Homepage transition article is unavailable: ${transitionArticleSlug}`,
-  );
-}
-const latestArticles = articles
-  .filter(isEligibleArticle)
-  .filter((article) => article.slug !== transitionArticleSlug)
-  .slice(0, 6);
-
-const coreJudgments = [
-  {
-    title: "中国正在进入高脆弱态",
-    description:
-      "系统仍然能够运行，但局部问题更容易形成跨区域、跨部门和跨层级的连锁反应。",
-    href: "/concepts/high-fragility",
-  },
-  {
-    title: "中共统治术正在进入偿债期",
-    description:
-      "短期控制工具曾经压低显性风险，也在持续累积财政、组织信用与治理成本。",
-    href: "/topics/ccp-governance",
-  },
-  {
-    title: "官僚系统正在由高压运转转向官僚休克",
-    description:
-      "不是所有人都不想做事，而是做事、担责和保持沉默之间的风险关系已经失衡。",
-    href: "/concepts/bureaucratic-shock",
-  },
-  {
-    title: "社会正在经历持续性的秩序蒸发",
-    description:
-      "程序仍然存在，但越来越多具体问题找不到稳定、可信、低成本的解决出口。",
-    href: "/concepts/order-evaporation",
-  },
-  {
-    title: "第二次改革开放式的历史机会很难重现",
-    description:
-      "组织处境、利益结构与外部环境已经改变，局部松动不等于新的系统性改革窗口。",
-    href: "/china-stage/ccp-second-reform-opening-possibility",
-  },
-  {
-    title: "信息化时代需要新的国家治理结构",
-    description:
-      "复杂社会不能只依赖个人判断，而需要能够吸收信息、稳定执行并持续纠错的制度系统。",
-    href: "/civic-orderism/state-must-rely-on-systems-not-drivers",
-  },
-];
+const latestArticles = articles.filter(isEligibleArticle).slice(0, 4);
 
 const roadmapSteps = [
   "高脆弱态",
@@ -531,29 +504,29 @@ const roadmapSteps = [
   "进入信息化时代治理结构",
 ];
 
-function roadmapMarkup() {
-  return `<div class="transition-roadmap" role="list" aria-label="从高脆弱态到制度转轨的七个阶段">
-${roadmapSteps
-  .map(
-    (step, index) =>
-      `<div class="transition-roadmap__step" role="listitem"><span>${String(index + 1).padStart(2, "0")}</span><strong>${step}</strong></div>${index < roadmapSteps.length - 1 ? '<span class="transition-roadmap__arrow" aria-hidden="true">→</span>' : ""}`,
-  )
-  .join("\n")}
-</div>`;
-}
-
-const onboardingCards = readingPaths.onboarding
+const newcomerSteps = readingPaths.homepage
   .map((item, index) => {
-    const article = item.slug ? articleBySlug.get(item.slug) : undefined;
-    if (item.slug && !isEligibleArticle(article)) {
-      throw new Error(
-        `Homepage onboarding article is unavailable: ${item.slug}`,
-      );
-    }
-    const href = item.href ?? `/${article.slug}`;
-    const readingTime =
-      item.readingTime ?? `${article.readingMinutes} 分钟阅读`;
-    return `<a class="onboarding-card" href="${href}"><span class="onboarding-card__number">${String(index + 1).padStart(2, "0")}</span><span class="onboarding-card__body"><strong>${item.title}</strong><span>${item.description}</span></span><small>${readingTime}</small></a>`;
+    return `<a class="onboarding-card" href="${item.href}"><span class="onboarding-card__number">${String(index + 1).padStart(2, "0")}</span><span class="onboarding-card__body"><strong>${item.label}</strong></span><small>继续阅读 →</small></a>`;
+  })
+  .join("\n");
+
+const homepageTopics = readingPaths.homepageTopics
+  .map((slug) => topicBySlug.get(slug))
+  .filter((topic) => topic?.status === "published");
+if (homepageTopics.length !== 4) {
+  throw new Error("Homepage must contain exactly four published core topics.");
+}
+const homepageTopicCards = homepageTopics
+  .map((topic) => {
+    const related = articles.filter(
+      (article) =>
+        article.topics.includes(topic.slug) && isEligibleArticle(article),
+    );
+    const updated = related
+      .map((article) => article.updated)
+      .sort()
+      .at(-1);
+    return `<a class="topic-entry-card" href="/topics/${topic.slug}"><strong>${topic.name}</strong><span>${topic.description}</span><small>${related.length} 篇文章 · 更新至 ${updated || "待更新"}</small></a>`;
   })
   .join("\n");
 
@@ -564,6 +537,23 @@ const theorySystemCards = sections
   )
   .join("\n");
 
+const startReadingSequence = readingSequences.find(
+  (sequence) => sequence.id === "civic-orderism-introduction",
+);
+const startReadingItems = (startReadingSequence?.items ?? [])
+  .flatMap((item) => {
+    if (item.href) return [{ href: item.href, title: item.title }];
+    const article = articleBySlug.get(item.slug);
+    return isEligibleArticle(article)
+      ? [{ href: `/${article.slug}`, title: article.title }]
+      : [];
+  })
+  .map(
+    (item, index) =>
+      `<li><a href="${item.href}">${String(index + 1).padStart(2, "0")} · ${item.title}</a></li>`,
+  )
+  .join("\n");
+
 writeContent(
   "index.md",
   `${yamlFrontmatter({ title: site.name, description: site.description, contentType: "首页", aliases: ["article_priority_index", "article_summaries"] })}
@@ -571,37 +561,31 @@ writeContent(
 <section class="v2-hero home-platform-hero">
   <p class="home-kicker">${site.englishName}</p>
   <h1><img src="/static/logo.png" alt="" />${site.name}</h1>
-  <p class="v2-hero__tagline">为中国提供一条低摩擦、可预期、有保障的转轨路线</p>
-  <div class="home-platform-hero__copy"><p>中国面对的已经不只是经济、财政或官场中的局部问题，而是旧有治理结构正在逐渐失去修复能力。</p><p>公民秩序主义不以革命、清算和社会撕裂为前提，而是尝试在国家、社会与官僚系统之间，建立一条清晰、稳健、可执行的转轨道路。</p></div>
-  <div class="v2-actions"><a class="v2-button v2-button--primary" href="/start">5分钟了解公民秩序主义</a><a class="v2-button v2-button--secondary" href="/files/civic-orderism-organization-manual.pdf">阅读组织手册</a><a class="v2-button v2-button--text" href="#core-judgments">查看核心判断</a></div>
+  <p class="v2-hero__tagline">从现实痛感进入结构判断，再进入制度回应。</p>
+  <div class="home-platform-hero__copy"><p>本站研究中国旧治理结构为何失效，并探索一条保持国家连续性的低摩擦制度转轨路径。</p></div>
+  <div class="v2-actions"><a class="v2-button v2-button--primary" href="/start">5分钟了解公民秩序主义</a><a class="v2-button v2-button--secondary" href="/files/civic-orderism-introduction-manual.pdf">阅读介绍手册</a><a class="v2-button v2-button--text" href="#core-topics">按专题阅读</a></div>
 </section>
 
-<section class="home-section home-why-now">
-  <div class="home-section-intro"><p class="resource-label">现实起点</p><h2>为什么是现在？</h2><p>中国正在进入一个高脆弱阶段。过去依靠增长、财政扩张、地方竞争和官僚激励维持的治理方式，正在进入偿债期。</p></div>
-  <div class="home-reality-grid"><article><strong>官僚系统进入高压损耗</strong><p>压力、追责与资源收缩同步出现，稳定执行逐渐让位于风险规避。</p></article><article><strong>社会秩序成本持续上升</strong><p>越来越多问题需要付出更高时间、信任与协调成本，才能得到不稳定的处理。</p></article><article><strong>旧治理结构修复能力下降</strong><p>制度并非突然倒塌，而是在变得更昂贵、迟钝，并逐渐失去自我纠错能力。</p></article></div>
-  <p class="home-question">在革命不可取、旧路不可持续的情况下，中国如何完成一次低摩擦转轨？</p>
+<section class="home-section" id="start-reading">
+  <div class="home-section-heading"><div><p class="resource-label">从哪里开始</p><h2>第一次来到本站？</h2><p>用5分钟建立最小阅读框架，再按顺序进入结构分析与制度回应。</p></div><a href="/articles">查看阅读地图 →</a></div>
+  <div class="onboarding-list">${newcomerSteps}</div>
 </section>
 
 <section class="home-section home-stakeholders">
   <div class="home-section-intro"><p class="resource-label">转轨的现实条件</p><h2>官僚、社会、国家三者诉求的交汇</h2><p>制度转轨不能只表达一种立场，还必须回答不同参与者如何获得稳定预期，以及国家能力如何得到接续。</p></div>
   <div class="stakeholder-grid"><article><strong>官僚系统</strong><p>需要退路、尊严、安全与稳定预期。</p></article><article><strong>社会</strong><p>需要秩序、保障、公平与基本尊严。</p></article><article><strong>国家</strong><p>需要连续性、可治理性与低风险转型。</p></article></div>
   <div class="transition-principles"><p><strong>不是</strong>推翻一切，<span>而是完成转轨。</span></p><p><strong>不是</strong>全面清算，<span>而是明确责任边界。</span></p><p><strong>不是</strong>制造新的恐惧，<span>而是建立新的制度预期。</span></p></div>
-  <p class="home-stakeholders__summary">公民秩序主义所追求的，是一条让国家不失控、社会不撕裂、官僚系统不必绝望的转轨道路。<a href="/${transitionArticle.slug}">阅读完整转轨判断 →</a></p>
+  <p class="home-stakeholders__summary">公民秩序主义所追求的，是一条让国家不失控、社会不撕裂、官僚系统不必绝望的转轨道路。<a href="/start#method-difference">理解转轨方法 →</a></p>
 </section>
 
-<section class="home-section" id="core-judgments">
-  <div class="home-section-intro"><p class="resource-label">理解现实</p><h2>核心判断</h2><p>理解公民秩序主义，先理解我们对现实的基本判断。</p></div>
-  <div class="core-judgment-grid">${coreJudgments.map((item, index) => `<a class="core-judgment-card" href="${item.href}"><span>${String(index + 1).padStart(2, "0")}</span><strong>${item.title}</strong><p>${item.description}</p><small>继续阅读 →</small></a>`).join("\n")}</div>
+<section class="home-section" id="core-topics">
+  <div class="home-section-heading"><div><p class="resource-label">持续研究线索</p><h2>核心专题</h2><p>从四条相互关联的研究线索进入，而不是追逐孤立事件。</p></div><a href="/topics">查看全部专题 →</a></div>
+  <div class="topic-entry-grid home-core-topic-grid">${homepageTopicCards}</div>
 </section>
 
-<section class="home-section">
-  <div class="home-section-intro"><p class="resource-label">理论路线图</p><h2>从高脆弱态到制度转轨</h2><p>公民秩序主义不是等待旧秩序彻底崩溃，而是在系统仍具有基本组织能力时，提前建立新的制度接口和转轨路径。</p></div>
-  ${roadmapMarkup()}
-</section>
-
-<section class="home-section">
-  <div class="home-section-heading"><div><p class="resource-label">新读者路径</p><h2>第一次来到本站？</h2></div><a href="/articles">查看阅读地图 →</a></div>
-  <div class="onboarding-list">${onboardingCards}</div>
+<section class="home-section home-method-teaser">
+  <div><p class="resource-label">方法差异</p><h2>公民秩序主义关注的，不只是价值，而是转轨如何发生</h2><p>价值主张说明希望抵达哪里，制度路线还要回答谁来承接、风险如何降低、国家能力怎样保持连续。</p></div>
+  <a class="v2-button v2-button--secondary" href="/start#method-difference">理解这条路线 →</a>
 </section>
 
 <section class="home-section">
@@ -610,7 +594,7 @@ writeContent(
 </section>
 
 <section class="home-section">
-  <div class="home-section-heading"><h2>最新文章</h2><a href="/articles">查看全部文章 →</a></div>
+  <div class="home-section-heading"><div><p class="resource-label">按发布日期自动更新</p><h2>最新文章</h2></div><a href="/articles">查看全部文章 →</a></div>
   <div class="knowledge-grid home-article-grid">${latestArticles.map(homeArticleCard).join("\n")}</div>
 </section>
 
@@ -626,15 +610,20 @@ writeContent(
   `${yamlFrontmatter({ title: "5分钟了解公民秩序主义", description: "用五分钟理解中国当前的高脆弱处境、公民秩序主义的转轨原则，以及继续阅读这套理论的路径。", contentType: "阅读路径" })}
 
 <div class="start-page">
-  <header class="start-page__header"><p class="resource-label">新读者入口 · 约 5 分钟</p><h1>5分钟了解公民秩序主义</h1><p>这里不展开完整理论，只回答五个最基本的问题：现实发生了什么、旧道路为何失效、公民秩序主义是什么、不是什么，以及接下来应该读什么。</p></header>
+  <header class="start-page__header"><p class="resource-label">新读者入口</p><h1>5分钟了解公民秩序主义</h1><p>公民秩序主义既是解释国家失灵与公共秩序的理论框架，也是一条降低冲突、保持国家连续性的制度转轨路线。</p></header>
   <div class="start-page__sections">
-    <section><span>01</span><div><h2>中国面对的不是单一问题</h2><p>经济、财政、官场、社会信任与治理能力问题正在相互叠加。局部压力通过组织和责任链相互传导，使整个系统更容易受到单点失误与资源收缩的影响。</p></div></section>
-    <section><span>02</span><div><h2>为什么旧道路越来越难继续</h2><p>过去依靠增长、地方竞争、官僚激励和外部机会形成的平衡正在失效。治理成本不断上升，反馈和纠错能力却在下降，局部调整越来越难恢复长期预期。</p></div></section>
-    <section><span>03</span><div><h2>公民秩序主义是什么</h2><p>公民秩序主义不是单纯的价值口号，而是一条制度转轨路线。它试图在秩序、自由、责任、尊严和国家连续性之间建立新的平衡，让公共问题能够进入系统并得到持续处理。</p></div></section>
-    <section><span>04</span><div><h2>公民秩序主义不是什么</h2><ul><li>不是革命路线，也不是以社会失控换取制度变化。</li><li>不是全面清算，也不是制造新的集体恐惧。</li><li>不是简单复制西方政党政治。</li><li>不是只谈抽象价值，却不回答转型如何发生。</li></ul></div></section>
-    <section><span>05</span><div><h2>建议阅读顺序</h2><ol><li><a href="/china">解析中共：理解旧系统如何运行与失效</a></li><li><a href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">公民秩序主义理论总纲</a></li><li><a href="/${transitionArticle.slug}">官僚、社会、国家三者诉求的交汇</a></li><li><a href="/institution-design">制度设计：进入具体机制</a></li><li><a href="/files/civic-orderism-organization-manual.pdf">公民秩序主义组织手册</a></li></ol></div></section>
+    <section><span>01</span><div><h2>中国面对的不是单一问题</h2><p>经济、财政、官场、社会信任与治理能力相互叠加，局部压力会沿组织和责任链扩散。</p></div></section>
+    <section><span>02</span><div><h2>为什么旧道路越来越难继续</h2><p>增长、地方竞争、官僚激励和外部机会形成的平衡正在失效；治理成本上升，反馈与纠错能力下降。</p></div></section>
+    <section><span>03</span><div><h2>公民秩序主义是什么</h2><p>它不是价值口号，而是要在秩序、自由、责任、尊严和国家连续性之间建立可执行的制度平衡。</p></div></section>
+    <section><span>04</span><div><h2>公民秩序主义不是什么</h2><ul><li>不是以社会失控换取制度变化。</li><li>不是全面清算和集体恐惧。</li><li>不是照搬西方政党政治。</li><li>不回避转型如何发生。</li></ul></div></section>
   </div>
-  <div class="start-page__actions"><a class="v2-button v2-button--primary" href="/#core-judgments">继续阅读核心判断</a><a class="v2-button v2-button--secondary" href="/files/civic-orderism-organization-manual.pdf">阅读组织手册</a></div>
+  <section class="start-method" id="method-difference">
+    <div class="home-section-intro"><p class="resource-label">方法差异</p><h2>公民秩序主义关注的，不只是价值，而是转轨如何发生</h2></div>
+    <div class="method-comparison-grid"><article><strong>只停留在价值主张</strong><p>说明希望抵达哪里，却未必回答权力如何退出、行政系统由谁承接。</p></article><article><strong>进入制度转轨路线</strong><p>处理责任边界、参与者安全、国家连续与可逆步骤，让价值进入现实。</p></article></div>
+  </section>
+  <section class="start-roadmap"><div class="home-section-intro"><p class="resource-label">理论路线图</p><h2>从高脆弱态到制度转轨</h2><p>在系统仍有基本组织能力时，提前建立制度接口和承接路径。</p></div><p class="start-roadmap__line">${roadmapSteps.join(" → ")}</p></section>
+  <section class="start-sequence"><div class="home-section-intro"><p class="resource-label">建议顺序</p><h2>${startReadingSequence?.name ?? "继续阅读"}</h2></div><ol>${startReadingItems}</ol></section>
+  <div class="start-page__actions"><a class="v2-button v2-button--primary" href="/#core-topics">按核心专题继续</a><a class="v2-button v2-button--secondary" href="/files/civic-orderism-organization-manual.pdf">阅读组织手册</a></div>
 </div>`,
 );
 
@@ -686,7 +675,7 @@ ${cardGrid(related)}
 
 ${topic.concepts
   .map((slug) => conceptBySlug.get(slug))
-  .filter((concept) => concept?.status === "published")
+  .filter((concept) => concept && publicConceptSlugs.has(concept.slug))
   .map(
     (concept) =>
       `- [[concepts/${concept.slug}|${concept.name}]] — ${concept.definition}`,
@@ -714,24 +703,46 @@ writeContent(
 );
 
 for (const concept of concepts) {
-  const relatedArticles = articles.filter((article) =>
-    article.concepts.includes(concept.slug),
+  const publicationStatus = conceptPublicationStatus(concept);
+  const conceptIsFormal = publicationStatus === "published";
+  const conceptIsVisible = conceptIsFormal || publicationStatus === "reviewing";
+  const representativeArticles = (concept.representativeArticles ?? [])
+    .map((slug) => articleBySlug.get(slug))
+    .filter(isEligibleArticle);
+  const inferredArticles = articles.filter(
+    (article) =>
+      isEligibleArticle(article) && article.concepts.includes(concept.slug),
   );
-  const conceptIsPublic = concept.status === "published";
+  const relatedArticles = [
+    ...representativeArticles,
+    ...inferredArticles.filter(
+      (article) =>
+        !representativeArticles.some(
+          (representative) => representative.slug === article.slug,
+        ),
+    ),
+  ];
+  const relatedTopics = concept.topics
+    .map((slug) => topicBySlug.get(slug))
+    .filter((topic) => topic?.status === "published");
+  const relatedConcepts = concept.related
+    .map((slug) => conceptBySlug.get(slug))
+    .filter((item) => item && publicConceptSlugs.has(item.slug));
+  const statusLabel = conceptIsFormal ? "正式概念" : "研究概念";
   writeContent(
     `concepts/${concept.slug}.md`,
-    `${yamlFrontmatter({ title: concept.name, description: concept.definition, contentType: "核心概念", status: concept.status, listed: conceptIsPublic, noindex: !conceptIsPublic })}
+    `${yamlFrontmatter({ title: concept.name, description: concept.definition, contentType: "核心概念", status: conceptIsVisible ? "published" : "draft", listed: conceptIsFormal, folderListed: conceptIsFormal, noindex: !conceptIsFormal, publicationStatus })}
 
 # ${concept.name}
+
+<p class="concept-status concept-status--${publicationStatus}">${statusLabel}</p>
 
 <p class="concept-definition">${concept.definition}</p>
 
 | 字段 | 内容 |
 | --- | --- |
-| 首次提出或使用 | ${concept.firstUsed} |
-| 更新时间 | 2026-07-19 |
-| 发布建议 | ${concept.publicationClass} 类 |
-| 完善状态 | ${conceptIsPublic ? "已完成发布复核" : "保留框架，暂不公开"} |
+| 更新时间 | 2026-07-20 |
+| 知识状态 | ${statusLabel} |
 
 ## 完整解释
 
@@ -745,25 +756,11 @@ ${concept.mechanism}
 
 ${concept.manifestations.map((item) => `- ${item}`).join("\n")}
 
-## 相关文章
+${relatedArticles.length ? `## 代表文章\n\n${cardGrid(relatedArticles.slice(0, 12))}` : ""}
 
-${relatedArticles.length ? cardGrid(relatedArticles.slice(0, 12)) : "相关文章关联待补充。"}
+${relatedTopics.length ? `## 相关专题\n\n${relatedTopics.map((topic) => `- [[topics/${topic.slug}|${topic.name}]]`).join("\n")}` : ""}
 
-## 相关专题
-
-${concept.topics
-  .map((slug) => topicBySlug.get(slug))
-  .filter((topic) => topic?.status === "published")
-  .map((topic) => `- [[topics/${topic.slug}|${topic.name}]]`)
-  .join("\n")}
-
-## 相关概念
-
-${concept.related
-  .map((slug) => conceptBySlug.get(slug))
-  .filter((item) => item?.status === "published")
-  .map((item) => `- [[concepts/${item.slug}|${item.name}]]`)
-  .join("\n")}`,
+${relatedConcepts.length ? `## 相关概念\n\n${relatedConcepts.map((item) => `- [[concepts/${item.slug}|${item.name}]]`).join("\n")}` : ""}`,
   );
 }
 
@@ -773,9 +770,17 @@ writeContent(
 
 # 核心概念库
 
-这里仅收录已经完成发布复核、能够反复用于解释现实并连接专题与制度讨论的知识节点。仍需论证或建议合并的概念保留内部框架，但不在公开索引中显示。
+这里区分已经稳定使用的正式概念与仍在论证中的研究概念。研究概念可以阅读，但暂不进入搜索与站点地图；保留或合并状态的内部框架不在公开索引中显示。
 
-<div class="concept-grid">${publicConcepts.map((concept) => `<a class="concept-card" href="/concepts/${concept.slug}"><strong>${concept.name}</strong><span>${concept.definition}</span><small>已完成发布复核</small></a>`).join("\n")}</div>`,
+## 正式概念
+
+<div class="concept-grid">${formalConcepts.map((concept) => `<a class="concept-card" href="/concepts/${concept.slug}"><strong>${concept.name}</strong><span>${concept.definition}</span><small>正式概念</small></a>`).join("\n")}</div>
+
+## 研究概念
+
+<p>以下概念已有明确研究方向，但定义边界或机制解释仍在完善。</p>
+
+<div class="concept-grid concept-grid--research">${researchConcepts.map((concept) => `<a class="concept-card concept-card--research" href="/concepts/${concept.slug}"><strong>${concept.name}</strong><span>${concept.definition}</span><small>研究概念 · 暂不索引</small></a>`).join("\n")}</div>`,
 );
 
 writeContent(
@@ -784,7 +789,12 @@ writeContent(
 
 # 关于
 
-公民秩序主义是一个从中国现实问题出发，连接结构解释、趋势判断、理论回应与制度设计的政治研究与制度知识库。
+“公民秩序主义”在本站有四个彼此关联、但不应混为一谈的层次：
+
+- **网站**：一个从中国现实问题出发，连接结构解释、趋势判断、理论回应与制度设计的政治研究与制度知识库。
+- **理论**：一套解释国家失灵、公共秩序与制度能力的研究框架。
+- **路线**：一条尽量降低冲突、保障参与者预期并保持国家连续性的制度转轨路径。
+- **组织**：仍在形成中的早期协作框架，用于探索研究、传播与制度准备如何衔接；它不是已经成熟运行的政治组织。
 
 本站保持专业、审慎、冷静和克制的写作方式。这里不以新闻速度为目标，也不以口号、情绪动员或个人崇拜替代制度分析。
 

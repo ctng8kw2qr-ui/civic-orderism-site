@@ -1,11 +1,12 @@
 ---
 title: "专题"
 date: 2026-07-19
-updated: 2026-07-19
+updated: 2026-07-20
 description: "围绕持续研究线索组织的专题入口。"
 contentType: "专题索引"
 status: published
 listed: true
+folderListed: true
 noindex: false
 ---
 

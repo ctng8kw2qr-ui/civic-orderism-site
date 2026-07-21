@@ -25,12 +25,17 @@
       "href": "/articles"
     }
   ],
+  "homepageTopics": [
+    "bureaucratic-system",
+    "order-evaporation",
+    "three-cleans-era",
+    "political-transition"
+  ],
   "onboarding": [
     {
       "title": "5分钟了解公民秩序主义",
-      "description": "用五个问题快速理解现实判断、转轨原则与继续阅读的方向。",
-      "href": "/start",
-      "readingTime": "5 分钟"
+      "description": "用5分钟建立最小阅读框架。",
+      "href": "/start"
     },
     {
       "title": "中国为什么进入高脆弱态",

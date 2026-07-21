@@ -1,0 +1,53 @@
+[
+  {
+    "id": "civic-orderism-introduction",
+    "name": "公民秩序主义入门",
+    "items": [
+      {
+        "href": "/start",
+        "title": "5分钟了解公民秩序主义"
+      },
+      {
+        "slug": "civic-orderism/what-civic-orderism-solves-if-you-read-only-one"
+      },
+      {
+        "slug": "civic-orderism/why-civic-orderism"
+      },
+      {
+        "slug": "civic-orderism/civic-orderism-manual"
+      },
+      {
+        "href": "/institution-design",
+        "title": "制度设计入口"
+      },
+      {
+        "href": "/files/civic-orderism-organization-manual.pdf",
+        "title": "公民秩序主义组织手册"
+      }
+    ]
+  },
+  {
+    "id": "understanding-current-ccp",
+    "name": "理解中共当前状态",
+    "items": [
+      {
+        "slug": "theory/ccp-high-fragility-dysfunction"
+      },
+      {
+        "slug": "china/why-ccp-cannot-reduce-grassroots-burden"
+      },
+      {
+        "slug": "theory/organizational-collapse-begins-with-loss-of-institutional-trust"
+      },
+      {
+        "slug": "china-stage/three-cleans-era-political-economic-cultural-contraction"
+      },
+      {
+        "slug": "china-stage/ccp-second-reform-opening-possibility"
+      },
+      {
+        "slug": "china/why-ccp-will-not-relax-party-pressure"
+      }
+    ]
+  }
+]

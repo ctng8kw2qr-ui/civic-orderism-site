@@ -1,11 +1,12 @@
 ---
 title: "制度机制"
 date: 2026-07-19
-updated: 2026-07-19
+updated: 2026-07-20
 description: "把委员会、行政、议会、选举、司法与后台系统放在同一制度框架中检验。"
 contentType: "专题"
 status: draft
 listed: false
+folderListed: false
 noindex: true
 ---
 
@@ -28,3 +29,7 @@ noindex: true
 </div>
 
 ## 相关核心概念
+
+- [[concepts/low-friction-governance|低摩擦治理]] — 通过清晰入口、责任边界与信息系统降低公共问题处理的制度交易成本。
+- [[concepts/state-system-upgrade|国家系统升级]] — 在保留国家连续性的同时重建入口、判断、执行、纠偏与问责系统。
+- [[concepts/political-route|政治路线]] — 把价值目标转化为进入现实、组织行动与制度过渡的可执行路径。
