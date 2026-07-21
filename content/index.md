@@ -62,6 +62,12 @@ aliases:
 <section class="home-section">
   <div class="home-section-heading"><div><p class="resource-label">按发布日期自动更新</p><h2>最新文章</h2></div><a href="/articles">查看全部文章 →</a></div>
   <div class="knowledge-grid home-article-grid"><article class="knowledge-card home-article-card">
+  <p class="knowledge-card__meta"><span>2026-07-21</span><span>解析中共</span></p>
+  <h3><a href="/china/xi-successor-and-bureaucratic-accountability">习近平到底有没有接班人？</a></h3>
+  <p class="knowledge-card__summary">习近平有没有接班人，表面上是中南海的人事问题，实质上关系整个中共官场如何计算未来。随着习近平年龄增长、中国进入经济与财政偿债阶段，官员真正担心的已不是谁会接班，而是谁会重新解释习近平时代、谁会承担这个时代留下的责任。毛泽东去世后，“四人帮”曾承担一个时代被切割和终结的政治责任。类似的责任转移逻辑，可能使今天庞大的中高级官僚集团成为未来最方便的责任承担者。正是这种共同的不安全感，正在为一种更稳定、更可预期的和平制度转轨创造现实基础。</p>
+  <p class="knowledge-card__chips"><span>专题：习近平时代</span></p>
+</article>
+<article class="knowledge-card home-article-card">
   <p class="knowledge-card__meta"><span>2026-07-19</span><span>公民秩序主义</span></p>
   <h3><a href="/civic-orderism/peaceful-state-transition">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</a></h3>
   <p class="knowledge-card__summary">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不以集体清算为前提的转轨道路。</p>
@@ -78,12 +84,6 @@ aliases:
   <h3><a href="/china-stage/ccp-second-reform-opening-possibility">中共还有没有二次改开的可能？</a></h3>
   <p class="knowledge-card__summary">本文认为，讨论中共是否可能二次改开，真正关键不是领导人是否愿意改革，而是中共是否再次走到类似1978年的组织绝境。第一次改革开放来自旧路线破产、共同求生和全球化窗口；今天面对的则是繁荣退潮后的损失分配，因此二次改开的门槛更高。</p>
   <p class="knowledge-card__chips"><span>专题：二次改开</span></p>
-</article>
-<article class="knowledge-card home-article-card">
-  <p class="knowledge-card__meta"><span>2026-07-14</span><span>解析中共</span></p>
-  <h3><a href="/china/why-expulsion-from-party-becomes-standard-ending">为什么“开除党籍”正在成为中共处理高级干部的标准结局？</a></h3>
-  <p class="knowledge-card__summary">本文认为，高级干部被开除党籍的常态化，不能简单解释为反腐更严格或制度更刚性。真正值得注意的是，中共在拥有巨大政治裁量空间的情况下，越来越主动选择最彻底、最不可逆的处理方式，把组织失败个体化，把党籍从终身政治身份退化为条件性资格。</p>
-  <p class="knowledge-card__chips"><span>专题：三清时代</span></p>
 </article></div>
 </section>
 

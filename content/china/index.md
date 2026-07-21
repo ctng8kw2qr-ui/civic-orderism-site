@@ -14,7 +14,7 @@ noindex: false
 
 从组织、财政、官僚运行和权力机制出发，解释中共为何走到今天。
 
-<div class="section-stats"><span>31 篇已发布文章</span><span>4 个正式专题</span><span>更新至 2026-07-14</span></div>
+<div class="section-stats"><span>32 篇已发布文章</span><span>4 个正式专题</span><span>更新至 2026-07-21</span></div>
 
 <div class="section-core-judgment"><strong>栏目核心判断</strong><p>中共面临的并非单一政策失误，而是权力集中、反馈失真、官僚避责与组织信用消耗相互放大的系统性问题。</p></div>
 
@@ -43,7 +43,7 @@ noindex: false
 
 ## 专题入口
 
-<div class="topic-entry-grid"><a class="topic-entry-card" href="/topics/xi-era"><strong>习近平时代</strong><span>追踪权力集中、组织防御化与接班风险如何共同塑造习近平时代。</span><small>5 篇相关文章</small></a>
+<div class="topic-entry-grid"><a class="topic-entry-card" href="/topics/xi-era"><strong>习近平时代</strong><span>追踪权力集中、组织防御化与接班风险如何共同塑造习近平时代。</span><small>6 篇相关文章</small></a>
 <a class="topic-entry-card" href="/topics/bureaucratic-system"><strong>官僚系统</strong><span>研究整肃、问责、避责与多头治理如何改变官僚系统的行为。</span><small>4 篇相关文章</small></a>
 <a class="topic-entry-card" href="/topics/order-evaporation"><strong>秩序蒸发</strong><span>观察制度形式仍在、实际协作与可信承诺却逐步失效的过程。</span><small>4 篇相关文章</small></a>
 <a class="topic-entry-card" href="/topics/ccp-governance"><strong>中共统治术</strong><span>分析压力传导、组织控制、宣传与危机管理的实际机制。</span><small>4 篇相关文章</small></a></div>
@@ -54,11 +54,17 @@ noindex: false
 
 <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">
-  <label>专题<select data-filter-topic><option value="">全部专题</option><option value="three-cleans-era">三清时代</option><option value="bureaucratic-system">官僚系统</option><option value="xi-era">习近平时代</option><option value="ccp-governance">中共统治术</option><option value="order-evaporation">秩序蒸发</option><option value="second-reform">二次改开</option></select></label>
-  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="three-cleans-era">三清时代</option><option value="fiscal-debt">财政偿债</option><option value="political-debt">政治偿债</option><option value="bureaucratic-shock">官僚休克</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="second-reform">二次改开</option><option value="political-route">政治路线</option></select></label>
+  <label>专题<select data-filter-topic><option value="">全部专题</option><option value="xi-era">习近平时代</option><option value="three-cleans-era">三清时代</option><option value="bureaucratic-system">官僚系统</option><option value="ccp-governance">中共统治术</option><option value="order-evaporation">秩序蒸发</option><option value="second-reform">二次改开</option></select></label>
+  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="bureaucratic-shock">官僚休克</option><option value="crisis-management">危机管理</option><option value="order-evaporation">秩序蒸发</option><option value="three-cleans-era">三清时代</option><option value="fiscal-debt">财政偿债</option><option value="political-debt">政治偿债</option><option value="ruling-techniques">统治术</option><option value="high-fragility">高脆弱态</option><option value="second-reform">二次改开</option><option value="political-route">政治路线</option></select></label>
   <button type="button" data-filter-reset>重置</button>
 </div>
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="xi-era" data-concepts="bureaucratic-shock crisis-management order-evaporation">
+  <p class="knowledge-card__meta"><span>2026-07-21</span><span>16 分钟阅读</span></p>
+  <h3><a href="/china/xi-successor-and-bureaucratic-accountability">习近平到底有没有接班人？</a></h3>
+  <p class="knowledge-card__summary">习近平有没有接班人，表面上是中南海的人事问题，实质上关系整个中共官场如何计算未来。随着习近平年龄增长、中国进入经济与财政偿债阶段，官员真正担心的已不是谁会接班，而是谁会重新解释习近平时代、谁会承担这个时代留下的责任。毛泽东去世后，“四人帮”曾承担一个时代被切割和终结的政治责任。类似的责任转移逻辑，可能使今天庞大的中高级官僚集团成为未来最方便的责任承担者。正是这种共同的不安全感，正在为一种更稳定、更可预期的和平制度转轨创造现实基础。</p>
+  <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：官僚休克</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="three-cleans-era fiscal-debt political-debt">
   <p class="knowledge-card__meta"><span>2026-07-14</span><span>17 分钟阅读</span></p>
   <h3><a href="/china/why-expulsion-from-party-becomes-standard-ending">为什么“开除党籍”正在成为中共处理高级干部的标准结局？</a></h3>
@@ -246,11 +252,11 @@ noindex: false
 
 ## 相关核心概念
 
-<div class="section-concept-links"><a href="/concepts/three-cleans-era">三清时代</a>
-<a href="/concepts/fiscal-debt">财政偿债</a>
-<a href="/concepts/political-debt">政治偿债</a>
-<a href="/concepts/bureaucratic-shock">官僚休克</a>
-<a href="/concepts/ruling-techniques">统治术</a>
+<div class="section-concept-links"><a href="/concepts/bureaucratic-shock">官僚休克</a>
 <a href="/concepts/crisis-management">危机管理</a>
 <a href="/concepts/order-evaporation">秩序蒸发</a>
+<a href="/concepts/three-cleans-era">三清时代</a>
+<a href="/concepts/fiscal-debt">财政偿债</a>
+<a href="/concepts/political-debt">政治偿债</a>
+<a href="/concepts/ruling-techniques">统治术</a>
 <a href="/concepts/high-fragility">高脆弱态</a></div>

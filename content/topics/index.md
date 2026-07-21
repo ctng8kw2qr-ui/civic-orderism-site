@@ -14,7 +14,7 @@ noindex: false
 
 专题不是普通标签，而是能够容纳多篇文章并持续更新的研究线索。
 
-<div class="topic-entry-grid"><a class="topic-entry-card" href="/topics/xi-era"><strong>习近平时代</strong><span>追踪权力集中、组织防御化与接班风险如何共同塑造习近平时代。</span><small>5 篇相关文章</small></a>
+<div class="topic-entry-grid"><a class="topic-entry-card" href="/topics/xi-era"><strong>习近平时代</strong><span>追踪权力集中、组织防御化与接班风险如何共同塑造习近平时代。</span><small>6 篇相关文章</small></a>
 <a class="topic-entry-card" href="/topics/bureaucratic-system"><strong>官僚系统</strong><span>研究整肃、问责、避责与多头治理如何改变官僚系统的行为。</span><small>4 篇相关文章</small></a>
 <a class="topic-entry-card" href="/topics/order-evaporation"><strong>秩序蒸发</strong><span>观察制度形式仍在、实际协作与可信承诺却逐步失效的过程。</span><small>6 篇相关文章</small></a>
 <a class="topic-entry-card" href="/topics/three-cleans-era"><strong>三清时代</strong><span>围绕财政清账、政治清责与组织清洗建立的阶段性研究框架。</span><small>4 篇相关文章</small></a>

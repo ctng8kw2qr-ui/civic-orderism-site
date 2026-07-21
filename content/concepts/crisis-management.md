@@ -45,6 +45,12 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">一个难以言说的防线：从“液压维稳”到当代的马其诺防线的结构分析与研究笔记。</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：危机管理</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="xi-era" data-concepts="bureaucratic-shock crisis-management order-evaporation">
+  <p class="knowledge-card__meta"><span>2026-07-21</span><span>16 分钟阅读</span></p>
+  <h3><a href="/china/xi-successor-and-bureaucratic-accountability">习近平到底有没有接班人？</a></h3>
+  <p class="knowledge-card__summary">习近平有没有接班人，表面上是中南海的人事问题，实质上关系整个中共官场如何计算未来。随着习近平年龄增长、中国进入经济与财政偿债阶段，官员真正担心的已不是谁会接班，而是谁会重新解释习近平时代、谁会承担这个时代留下的责任。毛泽东去世后，“四人帮”曾承担一个时代被切割和终结的政治责任。类似的责任转移逻辑，可能使今天庞大的中高级官僚集团成为未来最方便的责任承担者。正是这种共同的不安全感，正在为一种更稳定、更可预期的和平制度转轨创造现实基础。</p>
+  <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：官僚休克</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-07-12</span><span>14 分钟阅读</span></p>
   <h3><a href="/china/why-ccp-cannot-reduce-grassroots-burden">中共为什么永远无法真正为基层减负？</a></h3>
@@ -104,12 +110,6 @@ publicationStatus: reviewing
   <h3><a href="/china/ccp-bureaucracy-double-deadlock">不抓人就躺平，一抓人就失真：中共官僚体系为何陷入双重死结</a></h3>
   <p class="knowledge-card__summary">很多人谈中国官僚体系的问题，喜欢把原因简单归结为一句话：</p>
   <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚休克</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>15 分钟阅读</span></p>
-  <h3><a href="/civic-orderism/top-level-power-structure-under-civic-orderism">公民秩序主义下顶层权力结构的布局：为什么国家最高层不能只有一个权力中心，也不能碎片化成互相消耗的多头政治</a></h3>
-  <p class="knowledge-card__summary">公民秩序主义下的顶层权力结构，不是传统意义上的“一人统摄一切”，也不是西方式政党、议会、政府之间的简单分权复制。</p>
-  <p class="knowledge-card__chips"><span>概念：官僚休克</span></p>
 </article>
 </div>
 

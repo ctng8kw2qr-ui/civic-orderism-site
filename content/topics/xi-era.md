@@ -14,7 +14,7 @@ noindex: false
 
 追踪权力集中、组织防御化与接班风险如何共同塑造习近平时代。
 
-<div class="topic-hero-note"><strong>核心判断</strong><p>个人权力集中并未消除组织问题，而是把反馈、责任与继承风险进一步压缩到最高层。</p><small>5 篇相关文章 · 最近更新 2026-07-11</small></div>
+<div class="topic-hero-note"><strong>核心判断</strong><p>个人权力集中并未消除组织问题，而是把反馈、责任与继承风险进一步压缩到最高层。</p><small>6 篇相关文章 · 最近更新 2026-07-21</small></div>
 
 ## 推荐阅读顺序
 
@@ -25,6 +25,12 @@ noindex: false
 ## 全部相关文章
 
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="xi-era" data-concepts="bureaucratic-shock crisis-management order-evaporation">
+  <p class="knowledge-card__meta"><span>2026-07-21</span><span>16 分钟阅读</span></p>
+  <h3><a href="/china/xi-successor-and-bureaucratic-accountability">习近平到底有没有接班人？</a></h3>
+  <p class="knowledge-card__summary">习近平有没有接班人，表面上是中南海的人事问题，实质上关系整个中共官场如何计算未来。随着习近平年龄增长、中国进入经济与财政偿债阶段，官员真正担心的已不是谁会接班，而是谁会重新解释习近平时代、谁会承担这个时代留下的责任。毛泽东去世后，“四人帮”曾承担一个时代被切割和终结的政治责任。类似的责任转移逻辑，可能使今天庞大的中高级官僚集团成为未来最方便的责任承担者。正是这种共同的不安全感，正在为一种更稳定、更可预期的和平制度转轨创造现实基础。</p>
+  <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：官僚休克</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="xi-era" data-concepts="bureaucratic-shock crisis-management order-evaporation">
   <p class="knowledge-card__meta"><span>2026-07-11</span><span>11 分钟阅读</span></p>
   <h3><a href="/china/mao-death-release-xi-death-weightlessness">如果习近平去世会发生什么？</a></h3>
