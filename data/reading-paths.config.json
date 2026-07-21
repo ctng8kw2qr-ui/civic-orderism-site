@@ -25,6 +25,35 @@
       "href": "/articles"
     }
   ],
+  "onboarding": [
+    {
+      "title": "5分钟了解公民秩序主义",
+      "description": "用五个问题快速理解现实判断、转轨原则与继续阅读的方向。",
+      "href": "/start",
+      "readingTime": "5 分钟"
+    },
+    {
+      "title": "中国为什么进入高脆弱态",
+      "description": "理解组织仍在运行，却越来越难以承受局部冲击的结构性处境。",
+      "slug": "theory/ccp-high-fragility-dysfunction"
+    },
+    {
+      "title": "为什么第二次改革开放不会再次出现",
+      "description": "从组织绝境、利益重组与外部窗口判断改革机会为何更难重现。",
+      "slug": "china-stage/ccp-second-reform-opening-possibility"
+    },
+    {
+      "title": "官僚、社会、国家三者诉求的交汇",
+      "description": "在社会尊严、官僚预期与国家连续性之间理解低摩擦转轨。",
+      "slug": "civic-orderism/peaceful-state-transition"
+    },
+    {
+      "title": "公民秩序主义组织手册",
+      "description": "进一步了解项目判断、组织原则与参与边界。",
+      "href": "/files/civic-orderism-organization-manual.pdf",
+      "readingTime": "约 20 分钟"
+    }
+  ],
   "recommendations": {
     "newReader": [
       "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",

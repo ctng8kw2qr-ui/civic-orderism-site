@@ -38,6 +38,14 @@ const publicRouteExists = (slug) =>
     ? fs.existsSync(path.join(publicDir, "index.html"))
     : fs.existsSync(publicHtml(slug)) ||
       fs.existsSync(path.join(publicDir, slug, "index.html"));
+const publicPathExists = (pathname) => {
+  const decoded = decodeURI(pathname).replace(/^\//, "").replace(/\/$/, "");
+  if (!decoded) return fs.existsSync(path.join(publicDir, "index.html"));
+  if (path.extname(decoded)) {
+    return fs.existsSync(path.join(publicDir, decoded));
+  }
+  return publicRouteExists(decoded);
+};
 const visiblePageText = (html) =>
   html
     .replace(/<script\b[\s\S]*?<\/script>/gi, " ")
@@ -72,7 +80,7 @@ for (const article of migration) {
       ).pathname.replace(/^\//, ""),
     ),
   );
-  assert(recommendationSlugs.length <= 5, `推荐阅读超过 5 篇：${article.slug}`);
+  assert(recommendationSlugs.length <= 3, `推荐阅读超过 3 篇：${article.slug}`);
   assert(
     new Set(recommendationSlugs).size === recommendationSlugs.length,
     `推荐阅读出现重复：${article.slug}`,
@@ -239,6 +247,64 @@ assert(
   migration.filter((item) => item.needsReview).length === 14,
   `人工复核文章应为 14 篇，当前为 ${migration.filter((item) => item.needsReview).length}`,
 );
+
+for (const route of ["index", "start"]) {
+  const htmlPath =
+    route === "index" ? path.join(publicDir, "index.html") : publicHtml(route);
+  const html = fs.readFileSync(htmlPath, "utf8");
+  assert(
+    (html.match(/<h1\b/g) ?? []).length === 1,
+    `页面应只有一个 h1：/${route === "index" ? "" : route}`,
+  );
+  assert(
+    html.includes('rel="canonical" href="https://civicorderism.com/'),
+    `页面 canonical 不正确：/${route === "index" ? "" : route}`,
+  );
+  assert(
+    html.includes('property="og:title"') &&
+      html.includes('property="og:description"') &&
+      html.includes('property="og:image"'),
+    `页面 Open Graph 信息不完整：/${route === "index" ? "" : route}`,
+  );
+  assert(
+    html.includes('name="twitter:card"') &&
+      html.includes('name="twitter:title"') &&
+      html.includes('name="twitter:description"'),
+    `页面 X Card 信息不完整：/${route === "index" ? "" : route}`,
+  );
+}
+
+for (const htmlPath of walkHtmlFiles(publicDir)) {
+  const html = fs.readFileSync(htmlPath, "utf8");
+  const relative = path.relative(publicDir, htmlPath).split(path.sep).join("/");
+  const route = relative
+    .replace(/index\.html$/, "")
+    .replace(/\.html$/, "")
+    .replace(/\/$/, "");
+  const pageUrl = `https://civicorderism.com/${route}`;
+  const hrefs = [...html.matchAll(/\bhref="([^"]+)"/g)].map(
+    (match) => match[1],
+  );
+  for (const href of hrefs) {
+    if (
+      href.startsWith("#") ||
+      href.startsWith("mailto:") ||
+      href.startsWith("javascript:")
+    )
+      continue;
+    const target = new URL(href, pageUrl);
+    if (target.hostname !== "civicorderism.com") continue;
+    assert(
+      publicPathExists(target.pathname),
+      `内部链接目标不存在：${relative} -> ${target.pathname}`,
+    );
+  }
+}
+
+for (const file of ["sitemap.xml", "index.xml", "robots.txt"]) {
+  const source = fs.readFileSync(path.join(publicDir, file), "utf8");
+  assert(!/localhost|trycloudflare/i.test(source), `${file} 包含临时预览地址`);
+}
 
 for (const htmlPath of walkHtmlFiles(publicDir)) {
   const pageText = visiblePageText(fs.readFileSync(htmlPath, "utf8"));

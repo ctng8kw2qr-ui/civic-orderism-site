@@ -189,6 +189,26 @@ function sharedConceptCount(a: QuartzPluginData, b: QuartzPluginData) {
   return bKnowledge.concepts.filter((concept) => aConcepts.has(concept)).length;
 }
 
+function normalizeRelatedSlug(value: string) {
+  return value
+    .trim()
+    .replace(/^https?:\/\/[^/]+\//, "")
+    .replace(/^\.\//, "")
+    .replace(/^\//, "")
+    .replace(/\.(?:md|html)$/, "")
+    .replace(/\/$/, "");
+}
+
+function manualRelatedSlugs(file: QuartzPluginData) {
+  const fields = [
+    file.frontmatter?.relatedArticles,
+    file.frontmatter?.related_articles,
+    file.frontmatter?.related,
+    file.frontmatter?.recommendations,
+  ];
+  return new Set(fields.flatMap(asStringArray).map(normalizeRelatedSlug));
+}
+
 function isEligibleRecommendation(file: QuartzPluginData) {
   const knowledge = knowledgeFor(file);
   return Boolean(
@@ -213,19 +233,21 @@ function byOldestFirst(a: QuartzPluginData, b: QuartzPluginData) {
 function byRecommendationScore(
   current: QuartzPluginData,
   currentSeries?: string,
+  manualRelated = new Set<string>(),
 ) {
   return (a: QuartzPluginData, b: QuartzPluginData) => {
     const score = (file: QuartzPluginData) => {
       let total = 0;
+      if (sameSection(current, file)) total += 10000;
+      total += sharedConceptCount(current, file) * 1000;
+      if (file.slug && manualRelated.has(file.slug)) total += 500;
+      total += sharedTopicCount(current, file) * 100;
       if (
         currentSeries &&
         getSeries(file.frontmatter?.series) === currentSeries
       )
-        total += 1;
-      total += sharedTopicCount(current, file) * 1000;
-      total += sharedConceptCount(current, file) * 100;
-      if (sameSection(current, file)) total += 10;
-      if (knowledgeFor(file)?.recommended) total += 1;
+        total += 50;
+      if (knowledgeFor(file)?.recommended) total += 10;
       const time =
         file.dates?.published?.getTime() ?? file.dates?.created?.getTime() ?? 0;
       return total * 10000000000000 + time;
@@ -440,6 +462,7 @@ export const ContinueReading: QuartzComponent = ({
   if (!isArticlePage(fileData)) return null;
 
   const currentSeries = getSeries(fileData.frontmatter?.series);
+  const manualRelated = manualRelatedSlugs(fileData);
   const recommendations = articleFiles(allFiles)
     .filter((file) => file.slug !== fileData.slug)
     .filter(isEligibleRecommendation)
@@ -451,11 +474,12 @@ export const ContinueReading: QuartzComponent = ({
           getSeries(file.frontmatter?.series) === currentSeries) ||
         sharedTopics > 0 ||
         sharedConcepts > 0 ||
-        (sameSection(fileData, file) && knowledgeFor(file)?.recommended)
+        sameSection(fileData, file) ||
+        (file.slug !== undefined && manualRelated.has(file.slug))
       );
     })
-    .sort(byRecommendationScore(fileData, currentSeries))
-    .slice(0, 5);
+    .sort(byRecommendationScore(fileData, currentSeries, manualRelated))
+    .slice(0, 3);
 
   if (recommendations.length === 0) return null;
 

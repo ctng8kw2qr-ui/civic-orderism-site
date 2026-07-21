@@ -470,32 +470,6 @@ for (const section of sections) {
   writeContent(route, sectionPage(section));
 }
 
-function simpleArticleList(slugs) {
-  return (
-    slugs
-      .map((slug) => articleBySlug.get(slug))
-      .filter(Boolean)
-      .map(
-        (article) => `- ${mdLink(article)} — ${article.summary || "摘要待补"}`,
-      )
-      .join("\n") || "- 待人工确认"
-  );
-}
-
-const homeTopicCards = publicTopics
-  .slice(0, 6)
-  .map((topic) => {
-    const related = articles.filter((article) =>
-      article.topics.includes(topic.slug),
-    );
-    const updated =
-      related
-        .map((article) => article.updated)
-        .sort()
-        .at(-1) || "待更新";
-    return `<a class="topic-entry-card home-topic-card" href="/topics/${topic.slug}"><strong>${topic.name}</strong><span>${topic.description}</span><small>${related.length} 篇文章 · 更新至 ${updated}</small></a>`;
-  })
-  .join("\n");
 const transitionArticleSlug = "civic-orderism/peaceful-state-transition";
 const transitionArticle = articleBySlug.get(transitionArticleSlug);
 if (!isEligibleArticle(transitionArticle)) {
@@ -508,124 +482,160 @@ const latestArticles = articles
   .filter((article) => article.slug !== transitionArticleSlug)
   .slice(0, 6);
 
+const coreJudgments = [
+  {
+    title: "中国正在进入高脆弱态",
+    description:
+      "系统仍然能够运行，但局部问题更容易形成跨区域、跨部门和跨层级的连锁反应。",
+    href: "/concepts/high-fragility",
+  },
+  {
+    title: "中共统治术正在进入偿债期",
+    description:
+      "短期控制工具曾经压低显性风险，也在持续累积财政、组织信用与治理成本。",
+    href: "/topics/ccp-governance",
+  },
+  {
+    title: "官僚系统正在由高压运转转向官僚休克",
+    description:
+      "不是所有人都不想做事，而是做事、担责和保持沉默之间的风险关系已经失衡。",
+    href: "/concepts/bureaucratic-shock",
+  },
+  {
+    title: "社会正在经历持续性的秩序蒸发",
+    description:
+      "程序仍然存在，但越来越多具体问题找不到稳定、可信、低成本的解决出口。",
+    href: "/concepts/order-evaporation",
+  },
+  {
+    title: "第二次改革开放式的历史机会很难重现",
+    description:
+      "组织处境、利益结构与外部环境已经改变，局部松动不等于新的系统性改革窗口。",
+    href: "/china-stage/ccp-second-reform-opening-possibility",
+  },
+  {
+    title: "信息化时代需要新的国家治理结构",
+    description:
+      "复杂社会不能只依赖个人判断，而需要能够吸收信息、稳定执行并持续纠错的制度系统。",
+    href: "/civic-orderism/state-must-rely-on-systems-not-drivers",
+  },
+];
+
+const roadmapSteps = [
+  "高脆弱态",
+  "官僚系统高压与休克",
+  "社会秩序蒸发",
+  "旧制度运行成本持续上升",
+  "建立低摩擦转轨机制",
+  "形成新的制度框架",
+  "进入信息化时代治理结构",
+];
+
+function roadmapMarkup() {
+  return `<div class="transition-roadmap" role="list" aria-label="从高脆弱态到制度转轨的七个阶段">
+${roadmapSteps
+  .map(
+    (step, index) =>
+      `<div class="transition-roadmap__step" role="listitem"><span>${String(index + 1).padStart(2, "0")}</span><strong>${step}</strong></div>${index < roadmapSteps.length - 1 ? '<span class="transition-roadmap__arrow" aria-hidden="true">→</span>' : ""}`,
+  )
+  .join("\n")}
+</div>`;
+}
+
+const onboardingCards = readingPaths.onboarding
+  .map((item, index) => {
+    const article = item.slug ? articleBySlug.get(item.slug) : undefined;
+    if (item.slug && !isEligibleArticle(article)) {
+      throw new Error(
+        `Homepage onboarding article is unavailable: ${item.slug}`,
+      );
+    }
+    const href = item.href ?? `/${article.slug}`;
+    const readingTime =
+      item.readingTime ?? `${article.readingMinutes} 分钟阅读`;
+    return `<a class="onboarding-card" href="${href}"><span class="onboarding-card__number">${String(index + 1).padStart(2, "0")}</span><span class="onboarding-card__body"><strong>${item.title}</strong><span>${item.description}</span></span><small>${readingTime}</small></a>`;
+  })
+  .join("\n");
+
+const theorySystemCards = sections
+  .map(
+    (section) =>
+      `<a class="theory-system-card" href="/${section.slug}"><strong>${section.name}</strong><span>${section.description}</span><small>进入栏目 →</small></a>`,
+  )
+  .join("\n");
+
 writeContent(
   "index.md",
   `${yamlFrontmatter({ title: site.name, description: site.description, contentType: "首页", aliases: ["article_priority_index", "article_summaries"] })}
 
-<section class="v2-hero">
+<section class="v2-hero home-platform-hero">
   <p class="home-kicker">${site.englishName}</p>
   <h1><img src="/static/logo.png" alt="" />${site.name}</h1>
-  <p class="v2-hero__tagline">${site.tagline}</p>
-  <p>${site.description}</p>
-  <div class="v2-actions"><a class="v2-button v2-button--primary" href="/start">开始阅读</a><a class="v2-button v2-button--secondary" href="/files/civic-orderism-introduction-manual.pdf">阅读介绍手册</a></div>
+  <p class="v2-hero__tagline">为中国提供一条低摩擦、可预期、有保障的转轨路线</p>
+  <div class="home-platform-hero__copy"><p>中国面对的已经不只是经济、财政或官场中的局部问题，而是旧有治理结构正在逐渐失去修复能力。</p><p>公民秩序主义不以革命、清算和社会撕裂为前提，而是尝试在国家、社会与官僚系统之间，建立一条清晰、稳健、可执行的转轨道路。</p></div>
+  <div class="v2-actions"><a class="v2-button v2-button--primary" href="/start">5分钟了解公民秩序主义</a><a class="v2-button v2-button--secondary" href="/files/civic-orderism-organization-manual.pdf">阅读组织手册</a><a class="v2-button v2-button--text" href="#core-judgments">查看核心判断</a></div>
+</section>
+
+<section class="home-section home-why-now">
+  <div class="home-section-intro"><p class="resource-label">现实起点</p><h2>为什么是现在？</h2><p>中国正在进入一个高脆弱阶段。过去依靠增长、财政扩张、地方竞争和官僚激励维持的治理方式，正在进入偿债期。</p></div>
+  <div class="home-reality-grid"><article><strong>官僚系统进入高压损耗</strong><p>压力、追责与资源收缩同步出现，稳定执行逐渐让位于风险规避。</p></article><article><strong>社会秩序成本持续上升</strong><p>越来越多问题需要付出更高时间、信任与协调成本，才能得到不稳定的处理。</p></article><article><strong>旧治理结构修复能力下降</strong><p>制度并非突然倒塌，而是在变得更昂贵、迟钝，并逐渐失去自我纠错能力。</p></article></div>
+  <p class="home-question">在革命不可取、旧路不可持续的情况下，中国如何完成一次低摩擦转轨？</p>
+</section>
+
+<section class="home-section home-stakeholders">
+  <div class="home-section-intro"><p class="resource-label">转轨的现实条件</p><h2>官僚、社会、国家三者诉求的交汇</h2><p>制度转轨不能只表达一种立场，还必须回答不同参与者如何获得稳定预期，以及国家能力如何得到接续。</p></div>
+  <div class="stakeholder-grid"><article><strong>官僚系统</strong><p>需要退路、尊严、安全与稳定预期。</p></article><article><strong>社会</strong><p>需要秩序、保障、公平与基本尊严。</p></article><article><strong>国家</strong><p>需要连续性、可治理性与低风险转型。</p></article></div>
+  <div class="transition-principles"><p><strong>不是</strong>推翻一切，<span>而是完成转轨。</span></p><p><strong>不是</strong>全面清算，<span>而是明确责任边界。</span></p><p><strong>不是</strong>制造新的恐惧，<span>而是建立新的制度预期。</span></p></div>
+  <p class="home-stakeholders__summary">公民秩序主义所追求的，是一条让国家不失控、社会不撕裂、官僚系统不必绝望的转轨道路。<a href="/${transitionArticle.slug}">阅读完整转轨判断 →</a></p>
+</section>
+
+<section class="home-section" id="core-judgments">
+  <div class="home-section-intro"><p class="resource-label">理解现实</p><h2>核心判断</h2><p>理解公民秩序主义，先理解我们对现实的基本判断。</p></div>
+  <div class="core-judgment-grid">${coreJudgments.map((item, index) => `<a class="core-judgment-card" href="${item.href}"><span>${String(index + 1).padStart(2, "0")}</span><strong>${item.title}</strong><p>${item.description}</p><small>继续阅读 →</small></a>`).join("\n")}</div>
 </section>
 
 <section class="home-section">
-
-## 正式资料
-
-<div class="publication-grid">
-${site.documents.map((doc) => `<section class="publication-card"><p class="resource-label">核心文档</p><h3>${doc.title}</h3><p class="resource-subtitle">${doc.description}</p><small>更新：${doc.updated}</small><a class="resource-button resource-button-primary" href="${doc.href}">阅读或下载</a></section>`).join("\n")}
-</div>
-
+  <div class="home-section-intro"><p class="resource-label">理论路线图</p><h2>从高脆弱态到制度转轨</h2><p>公民秩序主义不是等待旧秩序彻底崩溃，而是在系统仍具有基本组织能力时，提前建立新的制度接口和转轨路径。</p></div>
+  ${roadmapMarkup()}
 </section>
 
 <section class="home-section">
-
-## 第一次来，按这个顺序读
-
-<div class="reading-path-list">
-${readingPaths.homepage.map((item, index) => `<a class="reading-path-item" href="${item.href}"><span>${String(index + 1).padStart(2, "0")}</span><strong>${item.label}</strong></a>`).join("\n")}
-</div>
-
+  <div class="home-section-heading"><div><p class="resource-label">新读者路径</p><h2>第一次来到本站？</h2></div><a href="/articles">查看阅读地图 →</a></div>
+  <div class="onboarding-list">${onboardingCards}</div>
 </section>
 
 <section class="home-section">
-
-<div class="home-transition-feature">
-  <div class="home-transition-feature__content">
-    <p class="resource-label">国家如何平稳转轨</p>
-    <h2><a href="/${transitionArticle.slug}">公民秩序主义不是中共官僚的敌人</a></h2>
-    <p>社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不以集体清算为前提的转轨道路。</p>
-  </div>
-  <a class="v2-button v2-button--secondary home-transition-feature__action" href="/${transitionArticle.slug}">阅读转轨方案</a>
-</div>
-
+  <div class="home-section-heading"><div><p class="resource-label">四个相互衔接的入口</p><h2>理论体系</h2></div><a href="/start">从入门页开始 →</a></div>
+  <div class="theory-system-grid">${theorySystemCards}</div>
 </section>
 
 <section class="home-section">
-
-<div class="home-section-heading"><h2>按主题阅读</h2><a href="/topics">查看全部专题 →</a></div>
-
-<div class="topic-entry-grid">${homeTopicCards}</div>
-
+  <div class="home-section-heading"><h2>最新文章</h2><a href="/articles">查看全部文章 →</a></div>
+  <div class="knowledge-grid home-article-grid">${latestArticles.map(homeArticleCard).join("\n")}</div>
 </section>
 
-<section class="home-section">
-
-## 近期补充文章
-
-<div class="knowledge-grid home-article-grid">${latestArticles.map(homeArticleCard).join("\n")}</div>
-
-<p class="section-more"><a href="/articles">查看全部文章 →</a></p>
-
-</section>
-
-<section class="home-section contact-section">
-
-## 联系与项目说明
-
-本站以政治研究与制度知识整理为主，不设聊天群、社区群或公开投稿入口。严肃交流与资料反馈可通过邮件联系。
-
-<dl class="contact-list"><div><dt>主要联系邮箱</dt><dd><a href="mailto:${site.primaryEmail}">${site.primaryEmail}</a></dd></div><div><dt>备用邮箱</dt><dd><a href="mailto:${site.secondaryEmail}">${site.secondaryEmail}</a></dd></div></dl>
-
+<section class="home-section home-further-reading">
+  <div class="home-section-intro"><p class="resource-label">正式资料与联系</p><h2>组织手册与进一步了解</h2><p>通过正式手册了解理论概览、组织原则与参与边界。本站不设聊天群或公开投稿入口，严肃交流与资料反馈可通过邮件联系。</p></div>
+  <div class="publication-grid">${site.documents.map((doc) => `<section class="publication-card"><p class="resource-label">核心文档</p><h3>${doc.title}</h3><p class="resource-subtitle">${doc.description}</p><small>更新：${doc.updated}</small><a class="resource-button resource-button-primary" href="${doc.href}">阅读或下载</a></section>`).join("\n")}</div>
+  <dl class="contact-list"><div><dt>主要联系邮箱</dt><dd><a href="mailto:${site.primaryEmail}">${site.primaryEmail}</a></dd></div><div><dt>备用邮箱</dt><dd><a href="mailto:${site.secondaryEmail}">${site.secondaryEmail}</a></dd></div></dl>
 </section>`,
 );
 
 writeContent(
   "start.md",
-  `${yamlFrontmatter({ title: "开始阅读", description: "按照时间与读者背景进入公民秩序主义知识库。", contentType: "阅读路径" })}
+  `${yamlFrontmatter({ title: "5分钟了解公民秩序主义", description: "用五分钟理解中国当前的高脆弱处境、公民秩序主义的转轨原则，以及继续阅读这套理论的路径。", contentType: "阅读路径" })}
 
-# 开始阅读
-
-第一次来到这里，不需要按发布时间阅读。下面的入口把“现实问题 → 结构解释 → 趋势判断 → 理论回应 → 制度设计”压缩成可执行的阅读路线。
-
-## 只有 10 分钟
-
-${simpleArticleList(readingPaths.tenMinutes)}
-
-## 有 30 分钟
-
-- [《公民秩序主义介绍手册》PDF](/files/civic-orderism-introduction-manual.pdf)
-${simpleArticleList(readingPaths.thirtyMinutes.filter((item) => !item.startsWith("/")))}
-
-## 想系统了解
-
-1. 现实问题：从普通人的压力和制度摩擦进入。
-2. 中共运行机制：理解组织、官僚和权力结构。
-3. 中国未来：判断改革窗口、风险与国家重组可能。
-4. 公民秩序主义：理解价值基础与理论回应。
-5. 制度设计：检验具体机制是否可执行、可纠错、可追责。
-
-## 推荐阅读路线
-
-<div class="reading-route-grid">
-${readingPaths.routes
-  .map(
-    (route) =>
-      `<section class="reading-route-card"><h3>${route.name}</h3><p>${route.description}</p><ol>${route.slugs
-        .map((slug) => articleBySlug.get(slug))
-        .filter(Boolean)
-        .map(
-          (article) =>
-            `<li><a href="/${article.slug}">${article.title}</a></li>`,
-        )
-        .join("")}</ol></section>`,
-  )
-  .join("\n")}
-</div>
-
-> 路线中的文章由现有摘要和正文内容匹配；分类不确定的条目已记录在项目的人工复核清单中。`,
+<div class="start-page">
+  <header class="start-page__header"><p class="resource-label">新读者入口 · 约 5 分钟</p><h1>5分钟了解公民秩序主义</h1><p>这里不展开完整理论，只回答五个最基本的问题：现实发生了什么、旧道路为何失效、公民秩序主义是什么、不是什么，以及接下来应该读什么。</p></header>
+  <div class="start-page__sections">
+    <section><span>01</span><div><h2>中国面对的不是单一问题</h2><p>经济、财政、官场、社会信任与治理能力问题正在相互叠加。局部压力通过组织和责任链相互传导，使整个系统更容易受到单点失误与资源收缩的影响。</p></div></section>
+    <section><span>02</span><div><h2>为什么旧道路越来越难继续</h2><p>过去依靠增长、地方竞争、官僚激励和外部机会形成的平衡正在失效。治理成本不断上升，反馈和纠错能力却在下降，局部调整越来越难恢复长期预期。</p></div></section>
+    <section><span>03</span><div><h2>公民秩序主义是什么</h2><p>公民秩序主义不是单纯的价值口号，而是一条制度转轨路线。它试图在秩序、自由、责任、尊严和国家连续性之间建立新的平衡，让公共问题能够进入系统并得到持续处理。</p></div></section>
+    <section><span>04</span><div><h2>公民秩序主义不是什么</h2><ul><li>不是革命路线，也不是以社会失控换取制度变化。</li><li>不是全面清算，也不是制造新的集体恐惧。</li><li>不是简单复制西方政党政治。</li><li>不是只谈抽象价值，却不回答转型如何发生。</li></ul></div></section>
+    <section><span>05</span><div><h2>建议阅读顺序</h2><ol><li><a href="/china">解析中共：理解旧系统如何运行与失效</a></li><li><a href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">公民秩序主义理论总纲</a></li><li><a href="/${transitionArticle.slug}">官僚、社会、国家三者诉求的交汇</a></li><li><a href="/institution-design">制度设计：进入具体机制</a></li><li><a href="/files/civic-orderism-organization-manual.pdf">公民秩序主义组织手册</a></li></ol></div></section>
+  </div>
+  <div class="start-page__actions"><a class="v2-button v2-button--primary" href="/#core-judgments">继续阅读核心判断</a><a class="v2-button v2-button--secondary" href="/files/civic-orderism-organization-manual.pdf">阅读组织手册</a></div>
+</div>`,
 );
 
 writeContent(
