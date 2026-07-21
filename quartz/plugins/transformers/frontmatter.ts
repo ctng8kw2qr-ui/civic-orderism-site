@@ -12,6 +12,7 @@ import {
 } from "../../util/path";
 import { QuartzPluginData } from "../vfile";
 import { i18n } from "../../i18n";
+import { normalizeCoreJudgments } from "../../util/articleStructure";
 
 export interface Options {
   delimiters: string | [string, string];
@@ -98,6 +99,15 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (
             data.topics = topics ? [...new Set(topics.map(String))] : [];
             const concepts = coerceToArray(data.concepts);
             data.concepts = concepts ? [...new Set(concepts.map(String))] : [];
+            data.coreJudgments = normalizeCoreJudgments(
+              data.coreJudgments,
+              data.core_judgments,
+              data.keyPoints,
+              data.key_points,
+            );
+            delete data.core_judgments;
+            delete data.keyPoints;
+            delete data.key_points;
             data.featured ??= false;
             data.recommended ??= false;
             data.readingLevel ??= "进阶";
@@ -208,10 +218,7 @@ declare module "vfile" {
         needsReview: boolean;
         contentType: string;
         series: string | { name?: string; order?: number };
-        key_points: string[];
-        keyPoints: string[];
         coreJudgments: string[];
-        core_judgments: string[];
       }>;
   }
 }

@@ -181,12 +181,12 @@ noindex: false
   <p class="knowledge-card__summary">加拿大式代议政治的深层困境</p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>11 分钟阅读</span></p>
+  <p class="knowledge-card__meta"><span>2026-05-10</span><span>12 分钟阅读</span></p>
   <h3><a href="/civic-orderism/why-not-left-right-democracy-autocracy">为什么公民秩序主义不纠结于左右、民主专制之争</a></h3>
   <p class="knowledge-card__summary">公民秩序主义问答。</p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>10 分钟阅读</span></p>
+  <p class="knowledge-card__meta"><span>2026-05-10</span><span>11 分钟阅读</span></p>
   <h3><a href="/civic-orderism/why-against-moral-narrative">为什么公民秩序主义反对道德叙事，也反对对公职人员的道德审判</a></h3>
   <p class="knowledge-card__summary">公民秩序主义问答。</p>
 </article>

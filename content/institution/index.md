@@ -87,7 +87,7 @@ noindex: false
   <p class="knowledge-card__summary">公民秩序主义问答。</p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>12 分钟阅读</span></p>
+  <p class="knowledge-card__meta"><span>2026-05-10</span><span>13 分钟阅读</span></p>
   <h3><a href="/civic-orderism/why-elections-reject-political-donations">为什么公民秩序主义下的选举会天然排斥政治献金</a></h3>
   <p class="knowledge-card__summary">公民秩序主义问答。</p>
 </article>

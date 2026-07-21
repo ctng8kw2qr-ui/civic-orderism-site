@@ -412,19 +412,19 @@ export const KnowledgeContext: QuartzComponent = ({
 export const CoreJudgmentCard: QuartzComponent = ({
   fileData,
 }: QuartzComponentProps) => {
-  const judgments = asStringArray(
-    fileData.frontmatter?.key_points ??
-      fileData.frontmatter?.keyPoints ??
-      fileData.frontmatter?.coreJudgments ??
-      fileData.frontmatter?.core_judgments,
-  ).slice(0, 5);
+  const judgments = asStringArray(fileData.frontmatter?.coreJudgments);
 
   if (!isArticlePage(fileData) || judgments.length === 0) return null;
 
   return (
-    <section class="key-points-card" aria-label="本文核心判断">
+    <section
+      class="article-core-judgments key-points-card"
+      aria-label="本文核心判断"
+    >
       <div class="key-points-card__inner">
-        <h2 class="key-points-card__title">本文核心判断</h2>
+        <h2 class="key-points-card__title" data-toc-ignore="true">
+          本文核心判断
+        </h2>
         <ol class="key-points-card__list">
           {judgments.map((judgment) => (
             <li class="key-points-card__item">{judgment}</li>
