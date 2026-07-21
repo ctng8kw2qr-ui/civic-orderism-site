@@ -2,6 +2,10 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import prettier from "prettier";
+import {
+  getPrimaryTopicArticles,
+  resolveTopicRelations,
+} from "./lib/topic-relations.mjs";
 
 const rootDir = path.resolve(".");
 const contentDir = path.join(rootDir, "content");
@@ -22,6 +26,7 @@ const topics = readJson("topics.config.json");
 const concepts = readJson("concepts.config.json");
 const readingPaths = readJson("reading-paths.config.json");
 const readingSequences = readJson("reading-sequences.config.json");
+const articleTopicAssignments = readJson("article-topics.config.json");
 const existingMigrationMap = fs.existsSync(
   path.join(rootDir, "content-migration-map.json"),
 )
@@ -51,6 +56,21 @@ const publicConceptSlugs = new Set(visibleConcepts.map((item) => item.slug));
 const existingMigrationBySlug = new Map(
   existingMigrationMap.map((item) => [item.slug, item]),
 );
+const primaryTopicByArticle = new Map(
+  articleTopicAssignments.map((item) => [item.slug, item.primaryTopic]),
+);
+if (primaryTopicByArticle.size !== articleTopicAssignments.length) {
+  throw new Error(
+    "Article primary topic configuration contains duplicate slugs.",
+  );
+}
+for (const assignment of articleTopicAssignments) {
+  if (!publicTopicSlugs.has(assignment.primaryTopic)) {
+    throw new Error(
+      `Unknown or unpublished primary topic: ${assignment.slug} -> ${assignment.primaryTopic}`,
+    );
+  }
+}
 const institutionSlugs = new Set([
   "civic-orderism/what-is-committee-system",
   "civic-orderism/state-operation-process-under-civic-orderism",
@@ -142,7 +162,7 @@ function includesAny(value, patterns) {
   return patterns.some((pattern) => value.includes(pattern));
 }
 
-function topicSlugs(article) {
+function inferredTopicSlugs(article) {
   if (manualReviewSlugs.has(article.slug)) {
     return existingMigrationBySlug.get(article.slug)?.topics ?? [];
   }
@@ -285,7 +305,14 @@ const articles = walk(contentDir)
       tags: Array.isArray(parsed.data.tags) ? parsed.data.tags.map(String) : [],
       status: String(parsed.data.status ?? "published"),
     };
-    article.topics = topicSlugs(article);
+    Object.assign(
+      article,
+      resolveTopicRelations({
+        primaryTopic: primaryTopicByArticle.get(article.slug),
+        relatedTopics: inferredTopicSlugs(article),
+        validTopicSlugs: publicTopicSlugs,
+      }),
+    );
     article.concepts = conceptSlugs(article);
     article.featured = allFeatured.has(slug);
     article.recommended = allRecommended.has(slug);
@@ -313,6 +340,11 @@ const articles = walk(contentDir)
   );
 
 const articleBySlug = new Map(articles.map((item) => [item.slug, item]));
+for (const assignment of articleTopicAssignments) {
+  if (!articleBySlug.has(assignment.slug)) {
+    throw new Error(`Primary topic article does not exist: ${assignment.slug}`);
+  }
+}
 const migrationMap = articles.map(
   ({ body: _body, readingMinutes: _readingMinutes, ...article }) => article,
 );
@@ -360,9 +392,9 @@ function mdLink(article) {
 }
 
 function articleCard(article) {
-  const topic = article.topics
-    .map((slug) => topicBySlug.get(slug))
-    .find((item) => item?.status === "published");
+  const topic = article.primaryTopic
+    ? topicBySlug.get(article.primaryTopic)
+    : undefined;
   const concept = article.concepts
     .map((slug) => conceptBySlug.get(slug))
     .find((item) => item && publicConceptSlugs.has(item.slug));
@@ -371,7 +403,7 @@ function articleCard(article) {
     concept ? `概念：${concept.name}` : "",
   ].filter(Boolean);
   const summary = article.summary || `${article.title}的结构分析与研究笔记。`;
-  return `<article class="knowledge-card" data-knowledge-card data-topics="${article.topics.join(" ")}" data-concepts="${article.concepts.join(" ")}">
+  return `<article class="knowledge-card" data-knowledge-card data-topics="${article.primaryTopic ?? ""}" data-concepts="${article.concepts.join(" ")}">
   <p class="knowledge-card__meta"><span>${article.date || "日期待补"}</span><span>${article.readingMinutes} 分钟阅读</span></p>
   <h3><a href="/${encodeURI(article.slug)}">${article.title}</a></h3>
   <p class="knowledge-card__summary">${summary}</p>${
@@ -384,9 +416,9 @@ function articleCard(article) {
 }
 
 function homeArticleCard(article) {
-  const topic = article.topics
-    .map((slug) => topicBySlug.get(slug))
-    .find((item) => item?.status === "published");
+  const topic = article.primaryTopic
+    ? topicBySlug.get(article.primaryTopic)
+    : undefined;
   const concept = article.concepts
     .map((slug) => conceptBySlug.get(slug))
     .find((item) => item && publicConceptSlugs.has(item.slug));
@@ -413,7 +445,9 @@ function cardGrid(items, className = "knowledge-grid") {
 }
 
 function filterPanel(items) {
-  const usedTopics = [...new Set(items.flatMap((item) => item.topics))]
+  const usedTopics = [
+    ...new Set(items.map((item) => item.primaryTopic).filter(Boolean)),
+  ]
     .map((slug) => topicBySlug.get(slug))
     .filter((item) => item?.status === "published");
   const usedConcepts = [...new Set(items.flatMap((item) => item.concepts))]
@@ -443,9 +477,7 @@ function sectionPage(section) {
     .filter((item) => item?.status === "published");
   const topicCards = sectionTopics
     .map((topic) => {
-      const count = items.filter((article) =>
-        article.topics.includes(topic.slug),
-      ).length;
+      const count = getPrimaryTopicArticles(items, topic.slug).length;
       return `<a class="topic-entry-card" href="/topics/${topic.slug}"><strong>${topic.name}</strong><span>${topic.description}</span><small>${count} 篇相关文章</small></a>`;
     })
     .join("\n");
@@ -518,10 +550,7 @@ if (homepageTopics.length !== 4) {
 }
 const homepageTopicCards = homepageTopics
   .map((topic) => {
-    const related = articles.filter(
-      (article) =>
-        article.topics.includes(topic.slug) && isEligibleArticle(article),
-    );
+    const related = getPrimaryTopicArticles(articles, topic.slug);
     const updated = related
       .map((article) => article.updated)
       .sort()
@@ -641,9 +670,7 @@ writeContent(
 );
 
 for (const topic of topics) {
-  const related = articles.filter((article) =>
-    article.topics.includes(topic.slug),
-  );
+  const related = getPrimaryTopicArticles(articles, topic.slug);
   const recommended = topic.recommended
     .map((slug) => articleBySlug.get(slug))
     .filter(isEligibleArticle);
@@ -694,9 +721,7 @@ writeContent(
 
 <div class="topic-entry-grid">${publicTopics
     .map((topic) => {
-      const count = articles.filter((article) =>
-        article.topics.includes(topic.slug),
-      ).length;
+      const count = getPrimaryTopicArticles(articles, topic.slug).length;
       return `<a class="topic-entry-card" href="/topics/${topic.slug}"><strong>${topic.name}</strong><span>${topic.description}</span><small>${count} 篇相关文章</small></a>`;
     })
     .join("\n")}</div>`,

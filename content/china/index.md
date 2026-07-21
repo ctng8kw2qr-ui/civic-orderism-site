@@ -33,7 +33,7 @@ noindex: false
   <p class="knowledge-card__summary">本文区分中共权力的展示形态与运行形态，指出中共权力在表面上像一条垂直权力线，但在实际运行中更像一张多节点、多阀门、多路径的权力网。</p>
   <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚休克</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system three-cleans-era" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
+<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-05-17</span><span>9 分钟阅读</span></p>
   <h3><a href="/china/bureaucratic-system-under-purges">高位清洗如何改变中共官僚系统</a></h3>
   <p class="knowledge-card__summary">省部级官员密集落马，表面上看是反腐问题，深层看则是官僚系统安全感与运行逻辑的变化。高位安全边界后退、经济低预期和责任倒查叠加，会推动官僚群体进入避责、观望、伪执行和系统性自保状态，使官僚系统从主动型系统转向防御型系统。</p>
@@ -43,10 +43,10 @@ noindex: false
 
 ## 专题入口
 
-<div class="topic-entry-grid"><a class="topic-entry-card" href="/topics/xi-era"><strong>习近平时代</strong><span>追踪权力集中、组织防御化与接班风险如何共同塑造习近平时代。</span><small>7 篇相关文章</small></a>
-<a class="topic-entry-card" href="/topics/bureaucratic-system"><strong>官僚系统</strong><span>研究整肃、问责、避责与多头治理如何改变官僚系统的行为。</span><small>9 篇相关文章</small></a>
+<div class="topic-entry-grid"><a class="topic-entry-card" href="/topics/xi-era"><strong>习近平时代</strong><span>追踪权力集中、组织防御化与接班风险如何共同塑造习近平时代。</span><small>5 篇相关文章</small></a>
+<a class="topic-entry-card" href="/topics/bureaucratic-system"><strong>官僚系统</strong><span>研究整肃、问责、避责与多头治理如何改变官僚系统的行为。</span><small>4 篇相关文章</small></a>
 <a class="topic-entry-card" href="/topics/order-evaporation"><strong>秩序蒸发</strong><span>观察制度形式仍在、实际协作与可信承诺却逐步失效的过程。</span><small>4 篇相关文章</small></a>
-<a class="topic-entry-card" href="/topics/ccp-governance"><strong>中共统治术</strong><span>分析压力传导、组织控制、宣传与危机管理的实际机制。</span><small>7 篇相关文章</small></a></div>
+<a class="topic-entry-card" href="/topics/ccp-governance"><strong>中共统治术</strong><span>分析压力传导、组织控制、宣传与危机管理的实际机制。</span><small>4 篇相关文章</small></a></div>
 
 ## 全部文章
 
@@ -54,12 +54,12 @@ noindex: false
 
 <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">
-  <label>专题<select data-filter-topic><option value="">全部专题</option><option value="three-cleans-era">三清时代</option><option value="bureaucratic-system">官僚系统</option><option value="xi-era">习近平时代</option><option value="ccp-governance">中共统治术</option><option value="order-evaporation">秩序蒸发</option><option value="local-finance">地方财政</option><option value="second-reform">二次改开</option></select></label>
+  <label>专题<select data-filter-topic><option value="">全部专题</option><option value="three-cleans-era">三清时代</option><option value="bureaucratic-system">官僚系统</option><option value="xi-era">习近平时代</option><option value="ccp-governance">中共统治术</option><option value="order-evaporation">秩序蒸发</option><option value="second-reform">二次改开</option></select></label>
   <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="three-cleans-era">三清时代</option><option value="fiscal-debt">财政偿债</option><option value="political-debt">政治偿债</option><option value="bureaucratic-shock">官僚休克</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="second-reform">二次改开</option><option value="political-route">政治路线</option></select></label>
   <button type="button" data-filter-reset>重置</button>
 </div>
 <div class="knowledge-grid">
-<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era bureaucratic-system" data-concepts="three-cleans-era fiscal-debt political-debt">
+<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="three-cleans-era fiscal-debt political-debt">
   <p class="knowledge-card__meta"><span>2026-07-14</span><span>17 分钟阅读</span></p>
   <h3><a href="/china/why-expulsion-from-party-becomes-standard-ending">为什么“开除党籍”正在成为中共处理高级干部的标准结局？</a></h3>
   <p class="knowledge-card__summary">本文认为，高级干部被开除党籍的常态化，不能简单解释为反腐更严格或制度更刚性。真正值得注意的是，中共在拥有巨大政治裁量空间的情况下，越来越主动选择最彻底、最不可逆的处理方式，把组织失败个体化，把党籍从终身政治身份退化为条件性资格。</p>
@@ -83,7 +83,7 @@ noindex: false
   <p class="knowledge-card__summary">2018年并不是最喧闹的年份，却可能是习近平时代真正制度化的年份。修宪、党和国家机构改革、国地税合并三条制度线路，分别改变权力的时间结构、组织结构与利益结构，共同推动中共从依靠地方弹性创造增长，转向依靠中央穿透维持控制。</p>
   <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：官僚休克</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance bureaucratic-system" data-concepts="ruling-techniques crisis-management bureaucratic-shock">
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management bureaucratic-shock">
   <p class="knowledge-card__meta"><span>2026-07-09</span><span>8 分钟阅读</span></p>
   <h3><a href="/china/why-ccp-will-not-relax-party-pressure">中共为什么不会真正放松党内高压？</a></h3>
   <p class="knowledge-card__summary">本文提出一个可检验的假说：当体制的利益分配能力持续下降，而组织存续又高度依赖中央集权时，审查、追责和清洗会系统性地替代利益激励，成为维持干部服从和组织运转的主要工具。</p>
@@ -94,7 +94,7 @@ noindex: false
   <h3><a href="/china/ccp-no-real-base">中共最大的秘密：它根本没有基本盘</a></h3>
   <p class="knowledge-card__summary">本文认为，中共并不存在现代政治意义上的基本盘。真正的基本盘不是人多、沉默、领工资或喊口号，而是关键时刻愿意承担政治成本的人。中共真正拥有的不是基本盘，而是控制盘、雇佣盘、恐惧盘和被拆散的社会。</p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance xi-era" data-concepts="ruling-techniques crisis-management bureaucratic-shock">
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management bureaucratic-shock">
   <p class="knowledge-card__meta"><span>2026-05-30</span><span>9 分钟阅读</span></p>
   <h3><a href="/china/political-machine-rewards-and-limits">机器的奖赏与机器的尽头</a></h3>
   <p class="knowledge-card__summary">本文以“政治机器”为框架，分析中共如何通过奖罚机制、意义叙事、地方权力重组、反腐集权和机器自保逻辑维持自身运行，并说明为什么习近平修复后的机器短期更稳、长期更脆。</p>
@@ -122,13 +122,13 @@ noindex: false
   <h3><a href="/china/industrial-system-failure-in-information-age">中共基于工业化的社会制度，在信息化时代的必然失效</a></h3>
   <p class="knowledge-card__summary">本文通过清朝洋务运动与中共“数字中国”的结构类比，分析一种为工业时代设计的党国治理机器，为什么无法真正适配信息化时代的价值创造、组织协作、社会结构和反馈机制。</p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="local-finance" data-concepts="fiscal-debt political-debt order-evaporation">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="fiscal-debt political-debt order-evaporation">
   <p class="knowledge-card__meta"><span>2026-05-19</span><span>12 分钟阅读</span></p>
   <h3><a href="/china/information-age-impact-on-ccp-mechanisms">信息化时代冲击中共的机制</a></h3>
   <p class="knowledge-card__summary">本文分析信息化时代对中共的冲击并不是单纯的信息传播问题，而是全球利润结构、资本偏好、外贸形态、地方财政、社会预期、信息控制、组织反馈、创新环境、规模优势和合法性基础同时发生变化后，对中共增长与治理体系形成的机制性冲击。</p>
-  <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：财政偿债</span></p>
+  <p class="knowledge-card__chips"><span>概念：财政偿债</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system three-cleans-era" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
+<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-05-17</span><span>9 分钟阅读</span></p>
   <h3><a href="/china/bureaucratic-system-under-purges">高位清洗如何改变中共官僚系统</a></h3>
   <p class="knowledge-card__summary">省部级官员密集落马，表面上看是反腐问题，深层看则是官僚系统安全感与运行逻辑的变化。高位安全边界后退、经济低预期和责任倒查叠加，会推动官僚群体进入避责、观望、伪执行和系统性自保状态，使官僚系统从主动型系统转向防御型系统。</p>
@@ -186,11 +186,11 @@ noindex: false
   <h3><a href="/theory/high-rigidity-system-ccp">解析高刚性体制：中共无以为继的结构性根因</a></h3>
   <p class="knowledge-card__summary">中共体制无以为继的根因，并不在外部环境，也不在所谓敌对势力的反对。</p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system ccp-governance" data-concepts="bureaucratic-shock ruling-techniques crisis-management language-inflation">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock ruling-techniques crisis-management language-inflation">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>15 分钟阅读</span></p>
   <h3><a href="/china/elite-sandification-ming-bureaucrats-ccp">沙化的忠诚：中共精英原子化与明代士大夫的历史镜像</a></h3>
   <p class="knowledge-card__summary">一个体制最危险的状态，不是它的敌人足够强大，而是它的支柱已经空心，却在外表上仍然完好无损。</p>
-  <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚休克</span></p>
+  <p class="knowledge-card__chips"><span>概念：官僚休克</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="high-fragility order-evaporation political-debt">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>9 分钟阅读</span></p>
@@ -198,17 +198,17 @@ noindex: false
   <p class="knowledge-card__summary">谈到中共的未来，人们习惯在两个极端之间摇摆：</p>
   <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：高脆弱态</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management language-inflation">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="ruling-techniques crisis-management language-inflation">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>4 分钟阅读</span></p>
   <h3><a href="/china/diplomacy-root">外交的根源：从中共内政逻辑看其外交激进化</a></h3>
   <p class="knowledge-card__summary">本文以外交是内政的延续为理论起点，分析中共近年来外交政策激进化的深层逻辑，指出其根源在于国内经济衰退、体制焦虑与权力维稳的自我防御机制。</p>
-  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+  <p class="knowledge-card__chips"><span>概念：统治术</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="xi-era bureaucratic-system ccp-governance local-finance" data-concepts="bureaucratic-shock crisis-management order-evaporation ruling-techniques language-inflation">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock crisis-management order-evaporation ruling-techniques language-inflation">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>7 分钟阅读</span></p>
   <h3><a href="/china/pla-political-subject-myth">外界对解放军的迷思：把“军”当成政治主体，是第一层误判</a></h3>
   <p class="knowledge-card__summary">外界谈解放军，最大的错觉来自一个字：</p>
-  <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：官僚休克</span></p>
+  <p class="knowledge-card__chips"><span>概念：官僚休克</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>10 分钟阅读</span></p>
@@ -222,7 +222,7 @@ noindex: false
   <p class="knowledge-card__summary">评价习近平，不能只停留在“强”或者“弱”、“聪明”或者“愚蠢”这种简单判断上。</p>
   <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：官僚休克</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="xi-era bureaucratic-system" data-concepts="bureaucratic-shock crisis-management order-evaporation">
+<article class="knowledge-card" data-knowledge-card data-topics="xi-era" data-concepts="bureaucratic-shock crisis-management order-evaporation">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>8 分钟阅读</span></p>
   <h3><a href="/china/xi-power-centralization">习近平权力集中背后的系统逻辑</a></h3>
   <p class="knowledge-card__summary">从中共官僚系统的资源收缩、风险感知与组织防御逻辑，解释习近平权力集中的结构性来源。</p>

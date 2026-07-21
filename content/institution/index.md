@@ -16,7 +16,7 @@ noindex: false
 
 <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">
-  <label>专题<select data-filter-topic><option value="">全部专题</option><option value="bureaucratic-system">官僚系统</option><option value="xi-era">习近平时代</option><option value="order-evaporation">秩序蒸发</option><option value="ccp-governance">中共统治术</option></select></label>
+  <label>专题<select data-filter-topic><option value="">全部专题</option></select></label>
   <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="low-friction-governance">低摩擦治理</option><option value="bureaucratic-shock">官僚休克</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option><option value="state-system-upgrade">国家系统升级</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option></select></label>
   <button type="button" data-filter-reset>重置</button>
 </div>
@@ -37,11 +37,11 @@ noindex: false
   <h3><a href="/civic-orderism/election-logic-under-civic-orderism">公民秩序主义下的选举逻辑：它与传统选举的区别，以及制度优势</a></h3>
   <p class="knowledge-card__summary">在公民秩序主义中，选举不是政治表演，不是政党动员，不是流量竞争，也不是让社会周期性地陷入阵营对抗。</p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>15 分钟阅读</span></p>
   <h3><a href="/civic-orderism/top-level-power-structure-under-civic-orderism">公民秩序主义下顶层权力结构的布局：为什么国家最高层不能只有一个权力中心，也不能碎片化成互相消耗的多头政治</a></h3>
   <p class="knowledge-card__summary">公民秩序主义下的顶层权力结构，不是传统意义上的“一人统摄一切”，也不是西方式政党、议会、政府之间的简单分权复制。</p>
-  <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚休克</span></p>
+  <p class="knowledge-card__chips"><span>概念：官僚休克</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="state-system-upgrade">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>12 分钟阅读</span></p>
@@ -70,11 +70,11 @@ noindex: false
   <h3><a href="/civic-orderism/why-not-simple-separation-of-powers">为什么公民秩序主义不采取简单的三权分立</a></h3>
   <p class="knowledge-card__summary">公民秩序主义问答。</p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>11 分钟阅读</span></p>
   <h3><a href="/civic-orderism/why-civic-orderism-emphasizes-experience-and-records">为什么公民秩序主义强调履历、经验：因为现代国家不能把高位判断交给空降、表演和单一激情</a></h3>
   <p class="knowledge-card__summary">公民秩序主义强调履历和经验，不是为了制造新的官僚等级，也不是为了把政治重新交给少数“资历深的人”。</p>
-  <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚休克</span></p>
+  <p class="knowledge-card__chips"><span>概念：官僚休克</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>13 分钟阅读</span></p>
@@ -106,11 +106,11 @@ noindex: false
   <h3><a href="/civic-orderism/why-part-time-representatives">为什么议员主要应采取兼职制，而非全职制</a></h3>
   <p class="knowledge-card__summary">公民秩序主义问答。</p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="xi-era bureaucratic-system order-evaporation ccp-governance" data-concepts="bureaucratic-shock crisis-management order-evaporation ruling-techniques high-fragility">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock crisis-management order-evaporation ruling-techniques high-fragility">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>13 分钟阅读</span></p>
   <h3><a href="/institution/despotism-cancer-ming-1566">专制之癌：从《大明王朝1566》到结构性腐败的宿命</a></h3>
   <p class="knowledge-card__summary">《大明王朝1566》中，有一句被无数观众记住的台词。</p>
-  <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：官僚休克</span></p>
+  <p class="knowledge-card__chips"><span>概念：官僚休克</span></p>
 </article>
 </div>
 <div class="knowledge-pagination" aria-label="文章分页"><button type="button" data-page-prev>上一页</button><span data-page-status></span><button type="button" data-page-next>下一页</button></div>

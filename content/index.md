@@ -40,10 +40,10 @@ aliases:
 
 <section class="home-section" id="core-topics">
   <div class="home-section-heading"><div><p class="resource-label">持续研究线索</p><h2>核心专题</h2><p>从四条相互关联的研究线索进入，而不是追逐孤立事件。</p></div><a href="/topics">查看全部专题 →</a></div>
-  <div class="topic-entry-grid home-core-topic-grid"><a class="topic-entry-card" href="/topics/bureaucratic-system"><strong>官僚系统</strong><span>研究整肃、问责、避责与多头治理如何改变官僚系统的行为。</span><small>12 篇文章 · 更新至 2026-07-19</small></a>
-<a class="topic-entry-card" href="/topics/order-evaporation"><strong>秩序蒸发</strong><span>观察制度形式仍在、实际协作与可信承诺却逐步失效的过程。</span><small>8 篇文章 · 更新至 2026-07-19</small></a>
-<a class="topic-entry-card" href="/topics/three-cleans-era"><strong>三清时代</strong><span>围绕财政清账、政治清责与组织清洗建立的阶段性研究框架。</span><small>6 篇文章 · 更新至 2026-07-19</small></a>
-<a class="topic-entry-card" href="/topics/political-transition"><strong>中国政治转型</strong><span>讨论低冲突转型、国家重组与制度接续的现实路径。</span><small>5 篇文章 · 更新至 2026-07-19</small></a></div>
+  <div class="topic-entry-grid home-core-topic-grid"><a class="topic-entry-card" href="/topics/bureaucratic-system"><strong>官僚系统</strong><span>研究整肃、问责、避责与多头治理如何改变官僚系统的行为。</span><small>4 篇文章 · 更新至 2026-07-12</small></a>
+<a class="topic-entry-card" href="/topics/order-evaporation"><strong>秩序蒸发</strong><span>观察制度形式仍在、实际协作与可信承诺却逐步失效的过程。</span><small>6 篇文章 · 更新至 2026-05-30</small></a>
+<a class="topic-entry-card" href="/topics/three-cleans-era"><strong>三清时代</strong><span>围绕财政清账、政治清责与组织清洗建立的阶段性研究框架。</span><small>4 篇文章 · 更新至 2026-07-19</small></a>
+<a class="topic-entry-card" href="/topics/political-transition"><strong>中国政治转型</strong><span>讨论低冲突转型、国家重组与制度接续的现实路径。</span><small>4 篇文章 · 更新至 2026-07-19</small></a></div>
 </section>
 
 <section class="home-section home-method-teaser">

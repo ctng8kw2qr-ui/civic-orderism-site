@@ -63,7 +63,7 @@ publicationStatus: published
   <p class="knowledge-card__summary">本文以“情感链接的断裂”为分析框架，通过明末、清末与当代中共的对比，分析当体制成员不再认为体制属于自己，并与体制失去情感连接时，政权如何从内部进入心理冷却、执行空转和结构性衰减。</p>
   <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation political-transition" data-concepts="order-evaporation high-fragility political-debt">
+<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation high-fragility political-debt">
   <p class="knowledge-card__meta"><span>2026-05-30</span><span>6 分钟阅读</span></p>
   <h3><a href="/theory/social-change-dynamics-when-system-no-longer-worth-it">社会变革动力学：当所有人都觉得“不值了”</a></h3>
   <p class="knowledge-card__summary">本文从利益链条、外部环境、精英分裂、信息透明、集体行动困境与情感链接断裂等角度，分析社会变革不是浪漫的觉醒，而是当维持旧体系的代价超过推倒旧体系的代价后，社会进入倒计时的动力学过程。</p>

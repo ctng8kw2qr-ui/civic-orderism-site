@@ -45,7 +45,7 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">公民秩序主义不是口号、政党或情绪化革命方案。它要解决的是现代国家与普通人之间的秩序关系断裂：问题进不了系统，责任找不到人，权力黑箱运行，行政系统自我循环。它试图通过公共判断、行政执行、信息透明、责任更替和后台支撑机制，让国家重新成为普通人可以进入、理解、追问和信任的共同生活框架。</p>
   <p class="knowledge-card__chips"><span>概念：秩序蒸发</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="political-transition local-finance" data-concepts="order-evaporation state-system-upgrade nonviolent-transition">
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="order-evaporation state-system-upgrade nonviolent-transition">
   <p class="knowledge-card__meta"><span>2026-06-08</span><span>10 分钟阅读</span></p>
   <h3><a href="/civic-orderism/state-must-rely-on-systems-not-drivers">国家不能只靠驾驶员：为什么现代治理必须依赖系统</a></h3>
   <p class="knowledge-card__summary">本文以现代汽车系统为比喻，说明国家作为复杂系统不能依赖单一领导人的英明，而必须依靠行政、司法、监督、财政、媒体、信息和立法等子系统的相对独立、差异性反馈与自我修复能力。文章以中共集权为反面案例，论证政党集权为何会破坏国家系统可靠性。</p>
@@ -57,7 +57,7 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">公民秩序主义下的国家运行，不是单一命令链，也不是单纯靠领导人、政党、议会或行政机关单独运转。</p>
   <p class="knowledge-card__chips"><span>概念：国家系统升级</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="political-transition bureaucratic-system" data-concepts="political-route nonviolent-transition state-system-upgrade">
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="political-route nonviolent-transition state-system-upgrade">
   <p class="knowledge-card__meta"><span>2026-07-19</span><span>13 分钟阅读</span></p>
   <h3><a href="/civic-orderism/peaceful-state-transition">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</a></h3>
   <p class="knowledge-card__summary">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不以集体清算为前提的转轨道路。</p>

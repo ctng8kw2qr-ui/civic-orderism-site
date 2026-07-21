@@ -63,13 +63,13 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">2018年并不是最喧闹的年份，却可能是习近平时代真正制度化的年份。修宪、党和国家机构改革、国地税合并三条制度线路，分别改变权力的时间结构、组织结构与利益结构，共同推动中共从依靠地方弹性创造增长，转向依靠中央穿透维持控制。</p>
   <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：官僚休克</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance bureaucratic-system" data-concepts="ruling-techniques crisis-management bureaucratic-shock">
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management bureaucratic-shock">
   <p class="knowledge-card__meta"><span>2026-07-09</span><span>8 分钟阅读</span></p>
   <h3><a href="/china/why-ccp-will-not-relax-party-pressure">中共为什么不会真正放松党内高压？</a></h3>
   <p class="knowledge-card__summary">本文提出一个可检验的假说：当体制的利益分配能力持续下降，而组织存续又高度依赖中央集权时，审查、追责和清洗会系统性地替代利益激励，成为维持干部服从和组织运转的主要工具。</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance xi-era" data-concepts="ruling-techniques crisis-management bureaucratic-shock">
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management bureaucratic-shock">
   <p class="knowledge-card__meta"><span>2026-05-30</span><span>9 分钟阅读</span></p>
   <h3><a href="/china/political-machine-rewards-and-limits">机器的奖赏与机器的尽头</a></h3>
   <p class="knowledge-card__summary">本文以“政治机器”为框架，分析中共如何通过奖罚机制、意义叙事、地方权力重组、反腐集权和机器自保逻辑维持自身运行，并说明为什么习近平修复后的机器短期更稳、长期更脆。</p>
@@ -81,7 +81,7 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">本文从政党作为组织的权力逻辑出发，分析中共在长期垄断国家最高权力之后所面临的目标真空、信念断层、制度信任崩塌和自我维持型衰变，说明一个完成夺权目标的政党如何从使命导向转向防御性维稳。</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system three-cleans-era" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
+<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-05-17</span><span>9 分钟阅读</span></p>
   <h3><a href="/china/bureaucratic-system-under-purges">高位清洗如何改变中共官僚系统</a></h3>
   <p class="knowledge-card__summary">省部级官员密集落马，表面上看是反腐问题，深层看则是官僚系统安全感与运行逻辑的变化。高位安全边界后退、经济低预期和责任倒查叠加，会推动官僚群体进入避责、观望、伪执行和系统性自保状态，使官僚系统从主动型系统转向防御型系统。</p>
@@ -105,11 +105,11 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">很多人谈中国官僚体系的问题，喜欢把原因简单归结为一句话：</p>
   <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚休克</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>15 分钟阅读</span></p>
   <h3><a href="/civic-orderism/top-level-power-structure-under-civic-orderism">公民秩序主义下顶层权力结构的布局：为什么国家最高层不能只有一个权力中心，也不能碎片化成互相消耗的多头政治</a></h3>
   <p class="knowledge-card__summary">公民秩序主义下的顶层权力结构，不是传统意义上的“一人统摄一切”，也不是西方式政党、议会、政府之间的简单分权复制。</p>
-  <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚休克</span></p>
+  <p class="knowledge-card__chips"><span>概念：官僚休克</span></p>
 </article>
 </div>
 

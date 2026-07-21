@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { getPrimaryTopicArticles } from "./lib/topic-relations.mjs";
 
 const root = path.resolve(".");
 const publicDir = path.join(root, "public");
@@ -143,6 +144,26 @@ for (const article of migration) {
       `核心概念超过 3 个：${article.slug} -> ${article.concepts.length}`,
     );
   }
+  assert(
+    article.primaryTopic === null || topicSlugs.has(article.primaryTopic),
+    `未知主专题：${article.slug} -> ${article.primaryTopic}`,
+  );
+  assert(
+    !article.primaryTopic ||
+      !article.relatedTopics.includes(article.primaryTopic),
+    `主专题同时出现在关联专题：${article.slug} -> ${article.primaryTopic}`,
+  );
+  assert(
+    new Set(article.relatedTopics).size === article.relatedTopics.length,
+    `关联专题重复：${article.slug}`,
+  );
+  assert(
+    JSON.stringify(article.topics) ===
+      JSON.stringify(
+        [article.primaryTopic, ...article.relatedTopics].filter(Boolean),
+      ),
+    `专题关系兼容字段不一致：${article.slug}`,
+  );
   article.topics.forEach((slug) =>
     assert(topicSlugs.has(slug), `未知专题：${article.slug} -> ${slug}`),
   );
@@ -206,10 +227,28 @@ assert(
   `正式公开专题应为 6 至 8 个，当前为 ${publicTopics.length}`,
 );
 for (const topic of publicTopics) {
-  const relatedCount = migration.filter((article) =>
-    article.topics.includes(topic.slug),
-  ).length;
+  const related = getPrimaryTopicArticles(migration, topic.slug);
+  const relatedCount = related.length;
   assert(relatedCount >= 2, `公开专题相关文章不足 2 篇：${topic.slug}`);
+  assert(
+    related.every((article) => article.primaryTopic === topic.slug),
+    `专题主列表包含其他主专题文章：${topic.slug}`,
+  );
+  const topicHtml = fs.readFileSync(publicHtml(`topics/${topic.slug}`), "utf8");
+  const renderedCards = [
+    ...topicHtml.matchAll(
+      /<article class="knowledge-card"[\s\S]*?<\/article>/g,
+    ),
+  ].map((match) => match[0]);
+  const mainList = renderedCards;
+  assert(
+    mainList.length === relatedCount,
+    `专题页显示数量与主专题数量不一致：${topic.slug} -> ${mainList.length}/${relatedCount}`,
+  );
+  assert(
+    mainList.every((card) => card.includes(`专题：${topic.name}`)),
+    `专题页文章卡片显示的主专题不一致：${topic.slug}`,
+  );
   assert(topic.description?.trim(), `公开专题缺少简介：${topic.slug}`);
   assert(topic.coreJudgment?.trim(), `公开专题缺少核心判断：${topic.slug}`);
   assert(

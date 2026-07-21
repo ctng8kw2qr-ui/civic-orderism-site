@@ -51,7 +51,7 @@ publicationStatus: published
   <p class="knowledge-card__summary">公民秩序主义不是口号、政党或情绪化革命方案。它要解决的是现代国家与普通人之间的秩序关系断裂：问题进不了系统，责任找不到人，权力黑箱运行，行政系统自我循环。它试图通过公共判断、行政执行、信息透明、责任更替和后台支撑机制，让国家重新成为普通人可以进入、理解、追问和信任的共同生活框架。</p>
   <p class="knowledge-card__chips"><span>概念：秩序蒸发</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="political-transition local-finance" data-concepts="order-evaporation state-system-upgrade nonviolent-transition">
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="order-evaporation state-system-upgrade nonviolent-transition">
   <p class="knowledge-card__meta"><span>2026-06-08</span><span>10 分钟阅读</span></p>
   <h3><a href="/civic-orderism/state-must-rely-on-systems-not-drivers">国家不能只靠驾驶员：为什么现代治理必须依赖系统</a></h3>
   <p class="knowledge-card__summary">本文以现代汽车系统为比喻，说明国家作为复杂系统不能依赖单一领导人的英明，而必须依靠行政、司法、监督、财政、媒体、信息和立法等子系统的相对独立、差异性反馈与自我修复能力。文章以中共集权为反面案例，论证政党集权为何会破坏国家系统可靠性。</p>
@@ -69,7 +69,7 @@ publicationStatus: published
   <p class="knowledge-card__summary">2018年并不是最喧闹的年份，却可能是习近平时代真正制度化的年份。修宪、党和国家机构改革、国地税合并三条制度线路，分别改变权力的时间结构、组织结构与利益结构，共同推动中共从依靠地方弹性创造增长，转向依靠中央穿透维持控制。</p>
   <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：官僚休克</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="local-finance order-evaporation" data-concepts="fiscal-debt political-debt order-evaporation">
+<article class="knowledge-card" data-knowledge-card data-topics="local-finance" data-concepts="fiscal-debt political-debt order-evaporation">
   <p class="knowledge-card__meta"><span>2026-06-16</span><span>11 分钟阅读</span></p>
   <h3><a href="/china-stage/china-manufacturing-cannot-stop">中国制造业不是造不出来，而是停不下来</a></h3>
   <p class="knowledge-card__summary">中国制造业的困境不是简单的订单外迁或产业衰退，而是生产能力、地方动员、债务周期、银行体系和政治责任机制共同形成的系统性困局。真正的问题不是造不出来，而是越能造、越难停、越难赚钱，最后指向秩序本身的失灵。</p>
@@ -81,17 +81,17 @@ publicationStatus: published
   <p class="knowledge-card__summary">本文以“情感链接的断裂”为分析框架，通过明末、清末与当代中共的对比，分析当体制成员不再认为体制属于自己，并与体制失去情感连接时，政权如何从内部进入心理冷却、执行空转和结构性衰减。</p>
   <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation political-transition" data-concepts="order-evaporation high-fragility political-debt">
+<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation high-fragility political-debt">
   <p class="knowledge-card__meta"><span>2026-05-30</span><span>6 分钟阅读</span></p>
   <h3><a href="/theory/social-change-dynamics-when-system-no-longer-worth-it">社会变革动力学：当所有人都觉得“不值了”</a></h3>
   <p class="knowledge-card__summary">本文从利益链条、外部环境、精英分裂、信息透明、集体行动困境与情感链接断裂等角度，分析社会变革不是浪漫的觉醒，而是当维持旧体系的代价超过推倒旧体系的代价后，社会进入倒计时的动力学过程。</p>
   <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="local-finance" data-concepts="fiscal-debt political-debt order-evaporation">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="fiscal-debt political-debt order-evaporation">
   <p class="knowledge-card__meta"><span>2026-05-19</span><span>12 分钟阅读</span></p>
   <h3><a href="/china/information-age-impact-on-ccp-mechanisms">信息化时代冲击中共的机制</a></h3>
   <p class="knowledge-card__summary">本文分析信息化时代对中共的冲击并不是单纯的信息传播问题，而是全球利润结构、资本偏好、外贸形态、地方财政、社会预期、信息控制、组织反馈、创新环境、规模优势和合法性基础同时发生变化后，对中共增长与治理体系形成的机制性冲击。</p>
-  <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：财政偿债</span></p>
+  <p class="knowledge-card__chips"><span>概念：财政偿债</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation high-fragility political-debt">
   <p class="knowledge-card__meta"><span>2026-05-13</span><span>16 分钟阅读</span></p>
@@ -99,7 +99,7 @@ publicationStatus: published
   <p class="knowledge-card__summary">本文从宏观叙事、机会结构、合规安全、靠山化、免责型合规和制度信用破产出发，解释中共为何更可能进入“还在，但越来越靠不住”的功能性失灵状态。</p>
   <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="local-finance bureaucratic-system" data-concepts="fiscal-debt political-debt order-evaporation">
+<article class="knowledge-card" data-knowledge-card data-topics="local-finance" data-concepts="fiscal-debt political-debt order-evaporation">
   <p class="knowledge-card__meta"><span>2026-05-11</span><span>12 分钟阅读</span></p>
   <h3><a href="/china/ccp-collapse-three-triggers-social-security-healthcare-finance">中共崩解的三大导火索：社保、医保与金融系统</a></h3>
   <p class="knowledge-card__summary">本文从社保、医保与金融系统三个领域，分析中共未来危机如何从国家信用事件转化为社会预期和官僚系统的连锁崩解。</p>

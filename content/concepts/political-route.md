@@ -51,7 +51,7 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">公民秩序主义，是一套面向现代社会，尤其面向中国现实问题的国家治理理论。</p>
   <p class="knowledge-card__chips"><span>概念：政治路线</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="political-transition bureaucratic-system" data-concepts="political-route nonviolent-transition state-system-upgrade">
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="political-route nonviolent-transition state-system-upgrade">
   <p class="knowledge-card__meta"><span>2026-07-19</span><span>13 分钟阅读</span></p>
   <h3><a href="/civic-orderism/peaceful-state-transition">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</a></h3>
   <p class="knowledge-card__summary">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不以集体清算为前提的转轨道路。</p>

@@ -16,16 +16,16 @@ noindex: false
 
 <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">
-  <label>专题<select data-filter-topic><option value="">全部专题</option><option value="order-evaporation">秩序蒸发</option><option value="political-transition">中国政治转型</option><option value="bureaucratic-system">官僚系统</option><option value="ccp-governance">中共统治术</option><option value="local-finance">地方财政</option></select></label>
+  <label>专题<select data-filter-topic><option value="">全部专题</option><option value="order-evaporation">秩序蒸发</option><option value="political-transition">中国政治转型</option></select></label>
   <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="political-debt">政治偿债</option><option value="state-system-upgrade">国家系统升级</option><option value="bureaucratic-shock">官僚休克</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option><option value="fiscal-debt">财政偿债</option><option value="nonviolent-transition">非暴力转型</option><option value="political-route">政治路线</option></select></label>
   <button type="button" data-filter-reset>重置</button>
 </div>
 <div class="knowledge-grid">
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation high-fragility political-debt language-inflation state-system-upgrade">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="order-evaporation high-fragility political-debt language-inflation state-system-upgrade">
   <p class="knowledge-card__meta"><span>2026-06-13</span><span>7 分钟阅读</span></p>
   <h3><a href="/theory/democracy-still-exists-but-cannot-penetrate-reality">民主还在，但越来越难穿透现实</a></h3>
   <p class="knowledge-card__summary">本文以加拿大为样本，分析信息化时代西方政党政治正在面对的结构性困境：政党垄断议题入口、与大资本形成共生、被算法推向空洞化，而公民又被碎片化和原子化困住，导致民主程序仍在，却越来越难真正穿透现实结构。</p>
-  <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
+  <p class="knowledge-card__chips"><span>概念：秩序蒸发</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="state-system-upgrade">
   <p class="knowledge-card__meta"><span>2026-06-08</span><span>7 分钟阅读</span></p>
@@ -33,7 +33,7 @@ noindex: false
   <p class="knowledge-card__summary">本文分析政党政治在低信息、低流动、低技术时代的历史合理性，并指出信息化时代已经部分替代政党的政治基础设施功能，而政党的组织约束功能也可以由公共制度承接。因此，政党可以继续存在，但不应继续垄断政治入口。</p>
   <p class="knowledge-card__chips"><span>概念：国家系统升级</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation political-transition" data-concepts="order-evaporation high-fragility political-debt">
+<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation high-fragility political-debt">
   <p class="knowledge-card__meta"><span>2026-05-30</span><span>6 分钟阅读</span></p>
   <h3><a href="/theory/social-change-dynamics-when-system-no-longer-worth-it">社会变革动力学：当所有人都觉得“不值了”</a></h3>
   <p class="knowledge-card__summary">本文从利益链条、外部环境、精英分裂、信息透明、集体行动困境与情感链接断裂等角度，分析社会变革不是浪漫的觉醒，而是当维持旧体系的代价超过推倒旧体系的代价后，社会进入倒计时的动力学过程。</p>
@@ -55,28 +55,28 @@ noindex: false
   <h3><a href="/theory/why-party-politics-is-becoming-a-low-dimensional-function">为什么政党政治越来越像低维函数</a></h3>
   <p class="knowledge-card__summary">政党政治并非从来没有价值，而是它所对应的社会耦合模型正在过时。它曾经适用于问题之间相对独立、主要矛盾还能被少数主线概括的时代；但今天，社会已经进入多节点、多反馈、高耦合状态，继续要求政党政治独自承担全部复杂性处理，只会造成系统性误算。</p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system order-evaporation ccp-governance" data-concepts="bureaucratic-shock ruling-techniques crisis-management order-evaporation high-fragility">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock ruling-techniques crisis-management order-evaporation high-fragility">
   <p class="knowledge-card__meta"><span>2026-05-12</span><span>10 分钟阅读</span></p>
   <h3><a href="/theory/us-industrial-system-cannot-carry-information-age">美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代</a></h3>
   <p class="knowledge-card__summary">本文从制度适配角度分析美国危机：问题不只是民主或专制之争，而是工业时代形成的政治机器，正在难以承载信息化时代的社会结构、传播结构与冲突结构。</p>
-  <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚休克</span></p>
+  <p class="knowledge-card__chips"><span>概念：官僚休克</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation high-fragility political-debt language-inflation state-system-upgrade">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="order-evaporation high-fragility political-debt language-inflation state-system-upgrade">
   <p class="knowledge-card__meta"><span>2026-05-12</span><span>14 分钟阅读</span></p>
   <h3><a href="/theory/us-separation-of-powers-integrative-capacity-crisis">美国三权分立的真正危机，不是分权，而是失去统合能力</a></h3>
   <p class="knowledge-card__summary">本文指出美国三权分立的真正危机不在于分权原则本身，而在于支撑分权稳定运行的统合性前提正在系统性流失。</p>
-  <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
+  <p class="knowledge-card__chips"><span>概念：秩序蒸发</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
   <p class="knowledge-card__meta"><span>2026-05-12</span><span>15 分钟阅读</span></p>
   <h3><a href="/theory/information-age-erodes-us-integrative-capacity">为什么信息化时代正在系统性瓦解美国的统合能力</a></h3>
   <p class="knowledge-card__summary">本文分析信息化时代如何通过共同现实破碎、平台奖励机制、媒体中枢衰退、地方整合层空心化和妥协空间压缩，系统性瓦解美国的统合能力。</p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="local-finance" data-concepts="fiscal-debt political-debt order-evaporation language-inflation state-system-upgrade">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="fiscal-debt political-debt order-evaporation language-inflation state-system-upgrade">
   <p class="knowledge-card__meta"><span>2026-05-11</span><span>16 分钟阅读</span></p>
   <h3><a href="/theory/us-supreme-court-partisan-final-battleground">美国最高法院为何滑向党争终局战场</a></h3>
   <p class="knowledge-card__summary">本文从三权分立、终身制、席位争夺、立法失能和信息化放大效应出发，分析美国最高法院为什么正承受从中立裁判者滑向党争终局战场的结构性压力。</p>
-  <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：财政偿债</span></p>
+  <p class="knowledge-card__chips"><span>概念：财政偿债</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
   <p class="knowledge-card__meta"><span>2026-05-11</span><span>7 分钟阅读</span></p>
@@ -89,11 +89,11 @@ noindex: false
   <p class="knowledge-card__summary">理解中共的未来，存在两种常见误区。</p>
   <p class="knowledge-card__chips"><span>概念：高脆弱态</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system ccp-governance local-finance" data-concepts="bureaucratic-shock ruling-techniques crisis-management language-inflation fiscal-debt">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock ruling-techniques crisis-management language-inflation fiscal-debt">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>4 分钟阅读</span></p>
   <h3><a href="/theory/overseas-political-movements-fail">海外政治运动为什么一事无成？</a></h3>
   <p class="knowledge-card__summary">分析海外中文政治运动长期低效与结构性失败的原因。</p>
-  <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚休克</span></p>
+  <p class="knowledge-card__chips"><span>概念：官僚休克</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>7 分钟阅读</span></p>
@@ -128,11 +128,11 @@ noindex: false
   <h3><a href="/theory/trapped-by-process">我们不是被贫穷困住，而是被流程困住</a></h3>
   <p class="knowledge-card__summary">高生产力时代的制度摩擦与生活窒息</p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation local-finance political-transition" data-concepts="order-evaporation high-fragility political-debt fiscal-debt nonviolent-transition">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="order-evaporation high-fragility political-debt fiscal-debt nonviolent-transition">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>18 分钟阅读</span></p>
   <h3><a href="/theory/modern-social-syndrome">现代社会候群症</a></h3>
   <p class="knowledge-card__summary">当权力从“城堡”变成“网”，普通人为何越来越无力</p>
-  <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
+  <p class="knowledge-card__chips"><span>概念：秩序蒸发</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="political-debt language-inflation state-system-upgrade">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>9 分钟阅读</span></p>

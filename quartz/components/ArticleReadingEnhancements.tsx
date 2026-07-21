@@ -277,7 +277,10 @@ export const KnowledgeContext: QuartzComponent = ({
   if (!knowledge) return null;
 
   const section = sectionByName.get(knowledge.section);
-  const topics = knowledge.topics
+  const primaryTopic = knowledge.primaryTopic
+    ? topicBySlug.get(knowledge.primaryTopic)
+    : undefined;
+  const relatedTopics = knowledge.relatedTopics
     .map((slug) => topicBySlug.get(slug))
     .filter(Boolean);
   const concepts = conceptsForArticle(fileData, knowledge);
@@ -331,8 +334,13 @@ export const KnowledgeContext: QuartzComponent = ({
           ) : (
             <span>{knowledge.section}</span>
           )}
-          {topics.map((topic) => (
-            <a href={`/topics/${topic!.slug}`}>专题：{topic!.name}</a>
+          {primaryTopic ? (
+            <a href={`/topics/${primaryTopic.slug}`}>
+              专题：{primaryTopic.name}
+            </a>
+          ) : null}
+          {relatedTopics.map((topic) => (
+            <a href={`/topics/${topic!.slug}`}>关联专题：{topic!.name}</a>
           ))}
         </p>
       </div>

@@ -9,6 +9,8 @@
     "section": "公民秩序主义",
     "tags": ["旧秩序失效", "西方政党政治"],
     "status": "published",
+    "primaryTopic": null,
+    "relatedTopics": ["order-evaporation"],
     "topics": ["order-evaporation"],
     "concepts": [
       "order-evaporation",
@@ -34,6 +36,8 @@
     "section": "公民秩序主义",
     "tags": ["旧秩序失效", "政党政治"],
     "status": "published",
+    "primaryTopic": null,
+    "relatedTopics": [],
     "topics": [],
     "concepts": ["state-system-upgrade"],
     "featured": false,
@@ -60,6 +64,13 @@
       "国际风险"
     ],
     "status": "published",
+    "primaryTopic": null,
+    "relatedTopics": [
+      "xi-era",
+      "bureaucratic-system",
+      "second-reform",
+      "ccp-governance"
+    ],
     "topics": [
       "xi-era",
       "bureaucratic-system",
@@ -96,6 +107,12 @@
       "国家治理"
     ],
     "status": "published",
+    "primaryTopic": null,
+    "relatedTopics": [
+      "bureaucratic-system",
+      "order-evaporation",
+      "ccp-governance"
+    ],
     "topics": ["bureaucratic-system", "order-evaporation", "ccp-governance"],
     "concepts": [
       "bureaucratic-shock",
@@ -121,6 +138,8 @@
     "section": "公民秩序主义",
     "tags": ["理论总纲", "美国制度危机", "三权分立", "统合能力", "制度失配"],
     "status": "published",
+    "primaryTopic": null,
+    "relatedTopics": ["order-evaporation"],
     "topics": ["order-evaporation"],
     "concepts": [
       "order-evaporation",
@@ -153,6 +172,8 @@
       "信息化时代"
     ],
     "status": "published",
+    "primaryTopic": null,
+    "relatedTopics": ["local-finance"],
     "topics": ["local-finance"],
     "concepts": [
       "fiscal-debt",
@@ -178,6 +199,8 @@
     "section": "公民秩序主义",
     "tags": ["理论总纲", "海外政治", "政治组织", "组织能力", "中文政治生态"],
     "status": "published",
+    "primaryTopic": null,
+    "relatedTopics": ["bureaucratic-system", "ccp-governance", "local-finance"],
     "topics": ["bureaucratic-system", "ccp-governance", "local-finance"],
     "concepts": [
       "bureaucratic-shock",
@@ -211,6 +234,8 @@
       "精英原子化"
     ],
     "status": "published",
+    "primaryTopic": null,
+    "relatedTopics": ["bureaucratic-system", "ccp-governance"],
     "topics": ["bureaucratic-system", "ccp-governance"],
     "concepts": [
       "bureaucratic-shock",
@@ -235,6 +260,8 @@
     "section": "中国未来",
     "tags": ["解析中共", "理论总纲", "安全困境"],
     "status": "published",
+    "primaryTopic": null,
+    "relatedTopics": ["ccp-governance", "local-finance"],
     "topics": ["ccp-governance", "local-finance"],
     "concepts": [
       "ruling-techniques",
@@ -260,6 +287,8 @@
     "section": "解析中共",
     "tags": ["解析中共", "理论总纲", "外交"],
     "status": "published",
+    "primaryTopic": null,
+    "relatedTopics": ["ccp-governance"],
     "topics": ["ccp-governance"],
     "concepts": [
       "ruling-techniques",
@@ -292,6 +321,13 @@
       "组织诊断"
     ],
     "status": "published",
+    "primaryTopic": null,
+    "relatedTopics": [
+      "xi-era",
+      "bureaucratic-system",
+      "ccp-governance",
+      "local-finance"
+    ],
     "topics": [
       "xi-era",
       "bureaucratic-system",
@@ -322,6 +358,12 @@
     "section": "公民秩序主义",
     "tags": ["理论总纲", "平台权力"],
     "status": "published",
+    "primaryTopic": null,
+    "relatedTopics": [
+      "order-evaporation",
+      "local-finance",
+      "political-transition"
+    ],
     "topics": ["order-evaporation", "local-finance", "political-transition"],
     "concepts": [
       "order-evaporation",
@@ -356,6 +398,13 @@
       "历史镜像"
     ],
     "status": "published",
+    "primaryTopic": null,
+    "relatedTopics": [
+      "xi-era",
+      "bureaucratic-system",
+      "order-evaporation",
+      "ccp-governance"
+    ],
     "topics": [
       "xi-era",
       "bureaucratic-system",
@@ -395,6 +444,8 @@
       "制度偏见"
     ],
     "status": "published",
+    "primaryTopic": null,
+    "relatedTopics": [],
     "topics": [],
     "concepts": [
       "political-debt",

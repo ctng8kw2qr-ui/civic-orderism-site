@@ -39,19 +39,19 @@ publicationStatus: reviewing
 ## 代表文章
 
 <div class="knowledge-grid">
-<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era order-evaporation" data-concepts="three-cleans-era fiscal-debt political-debt">
+<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="three-cleans-era fiscal-debt political-debt">
   <p class="knowledge-card__meta"><span>2026-07-19</span><span>17 分钟阅读</span></p>
   <h3><a href="/china-stage/three-cleans-era-political-economic-cultural-contraction">时代何至如此：政治清人，经济清账，文化清声</a></h3>
   <p class="knowledge-card__summary">政治清人、经济清账、文化清声并非孤立政策，而是增长放缓、财政收缩与信心下降后，制度从发展逻辑转向风险逻辑的共同表现。本文以“三清时代”为框架，分析全面收缩如何制造官场休克、秩序蒸发，并使旧问题的清理逐渐快于新秩序的建立。</p>
   <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：三清时代</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era bureaucratic-system" data-concepts="three-cleans-era fiscal-debt political-debt">
+<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="three-cleans-era fiscal-debt political-debt">
   <p class="knowledge-card__meta"><span>2026-07-14</span><span>17 分钟阅读</span></p>
   <h3><a href="/china/why-expulsion-from-party-becomes-standard-ending">为什么“开除党籍”正在成为中共处理高级干部的标准结局？</a></h3>
   <p class="knowledge-card__summary">本文认为，高级干部被开除党籍的常态化，不能简单解释为反腐更严格或制度更刚性。真正值得注意的是，中共在拥有巨大政治裁量空间的情况下，越来越主动选择最彻底、最不可逆的处理方式，把组织失败个体化，把党籍从终身政治身份退化为条件性资格。</p>
   <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：三清时代</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era bureaucratic-system" data-concepts="three-cleans-era political-debt fiscal-debt">
+<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="three-cleans-era political-debt fiscal-debt">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>6 分钟阅读</span></p>
   <h3><a href="/china/ccp-bureaucracy-historical-bill">当历史总账开始结算：高刚性官僚体系如何把系统性责任层层压向中基层</a></h3>
   <p class="knowledge-card__summary">很多人谈基层问题，都会说一句话：</p>
