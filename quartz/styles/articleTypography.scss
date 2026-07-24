@@ -83,12 +83,12 @@
     margin-bottom: 0;
   }
 
-  & li > p {
+  & :is(ul, ol) li > p {
     margin: 0 0 0.45em;
     line-height: inherit;
   }
 
-  & li > p:last-child {
+  & :is(ul, ol) li > p:last-child {
     margin-bottom: 0;
   }
 
@@ -143,6 +143,10 @@
     margin: 0 auto;
   }
 
+  & figure:not([data-rehype-pretty-code-figure]) > :last-child {
+    margin-bottom: 0;
+  }
+
   & figcaption {
     margin-top: 0.6em;
     color: var(--gray);
@@ -151,12 +155,34 @@
     text-align: center;
   }
 
+  & > pre,
+  & > figure[data-rehype-pretty-code-figure],
+  & > .table-container {
+    margin: var(--article-block-spacing) 0;
+  }
+
+  & > .table-container > table {
+    margin: 0;
+  }
+
+  & > .footnotes {
+    margin-top: 2.4em;
+    padding-top: 1em;
+  }
+
+  & > .footnotes > ol {
+    margin-bottom: 0;
+  }
+
+  & > .footnotes > ol > li:last-child > :last-child {
+    margin-bottom: 0;
+  }
+
   & > p:last-child,
   & > ul:last-child,
   & > ol:last-child,
   & > blockquote:last-child:not([data-callout]),
-  & > figure:last-child:not([data-rehype-pretty-code-figure]),
-  & > :last-child > :last-child {
+  & > figure:last-child:not([data-rehype-pretty-code-figure]) {
     margin-bottom: 0;
   }
 }

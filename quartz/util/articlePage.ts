@@ -13,14 +13,3 @@ export function isArticleSlug(slug = ""): boolean {
 
   return articlePrefixes.some((prefix) => slug.startsWith(prefix));
 }
-
-export function getContentArticleClasses(
-  slug = "",
-  cssclasses: string[] = [],
-): string[] {
-  return [
-    "popover-hint",
-    ...(isArticleSlug(slug) ? ["article-content"] : []),
-    ...cssclasses,
-  ];
-}

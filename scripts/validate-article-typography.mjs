@@ -88,8 +88,11 @@ const contentComponent = fs.readFileSync(
   path.join(root, "quartz/components/pages/Content.tsx"),
   "utf8",
 );
-if (!contentComponent.includes("getContentArticleClasses")) {
-  errors.push("Content.tsx 未使用统一文章正文 class 生成器");
+if (
+  !contentComponent.includes('class="article-content"') ||
+  !contentComponent.includes("isArticleSlug")
+) {
+  errors.push("Content.tsx 未使用统一文章正文容器");
 }
 
 const builtArticles = articleSlugs.map((slug) => ({
@@ -106,7 +109,21 @@ if (hasBuiltSite) {
     }
 
     const html = fs.readFileSync(file, "utf8");
-    if (!/<article class="[^"]*\barticle-content\b[^"]*">/.test(html)) {
+    const articleStart = html.search(
+      /<article class="[^"]*\bpopover-hint\b[^"]*">/,
+    );
+    const titleStart = html.indexOf("<h1", articleStart);
+    const titleEnd = html.indexOf("</h1>", titleStart);
+    const bodyStart = html.indexOf(
+      '<div class="article-content">',
+      articleStart,
+    );
+    if (
+      articleStart < 0 ||
+      titleStart < articleStart ||
+      titleEnd < titleStart ||
+      bodyStart < titleEnd
+    ) {
       errors.push(`构建页面未使用 article-content：/${slug}`);
     }
   }

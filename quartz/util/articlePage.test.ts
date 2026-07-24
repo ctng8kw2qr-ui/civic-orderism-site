@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { getContentArticleClasses, isArticleSlug } from "./articlePage";
+import { isArticleSlug } from "./articlePage";
 
 test("recognizes article slugs across every article collection", () => {
   for (const slug of [
@@ -25,17 +25,4 @@ test("excludes home, archive, and collection index pages", () => {
   ]) {
     assert.equal(isArticleSlug(slug), false, slug);
   }
-});
-
-test("adds the shared article-content class without dropping frontmatter classes", () => {
-  assert.deepEqual(getContentArticleClasses("china/example", ["legacy-copy"]), [
-    "popover-hint",
-    "article-content",
-    "legacy-copy",
-  ]);
-
-  assert.deepEqual(getContentArticleClasses("china/index", ["archive"]), [
-    "popover-hint",
-    "archive",
-  ]);
 });
