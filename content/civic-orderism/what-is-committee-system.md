@@ -2,6 +2,8 @@
 title: 什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构
 date: "2026-05-10"
 category: 公民秩序主义
+institutionSection: committee
+summary: 系统说明委员会的职责边界、工作流程，以及它与行政、秘书处和社会问题入口之间的关系。
 tags:
   - 公民秩序主义
   - 委员会体系

@@ -2,6 +2,8 @@
 title: 公民秩序主义对后台系统的重视：为什么培训、秘书处、专业事务与留痕系统，是现代国家真正的底座
 date: "2026-05-10"
 category: 公民秩序主义
+institutionSection: administration
+summary: 说明培训、秘书处、专业事务和留痕系统如何构成现代国家稳定运行的后台底座。
 tags:
   - 公民秩序主义
   - 后台系统

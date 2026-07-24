@@ -2,6 +2,8 @@
 title: 为什么议案应主要来自社会组织，而不是某个议员、某个人
 date: "2026-05-10"
 category: 公民秩序主义
+institutionSection: council
+summary: 解释社会组织为何比个人更适合持续承接问题，并把现实诉求整理为正式公共议案。
 tags:
   - 公民秩序主义
   - 问答

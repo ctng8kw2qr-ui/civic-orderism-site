@@ -209,6 +209,13 @@ declare module "vfile" {
         updated: string;
         topics: string[];
         concepts: string[];
+        institutionSection:
+          | "overview"
+          | "committee"
+          | "administration"
+          | "election"
+          | "council"
+          | "rule-of-law";
         featured: boolean;
         recommended: boolean;
         readingLevel: string;

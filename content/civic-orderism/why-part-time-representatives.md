@@ -2,6 +2,8 @@
 title: 为什么议员主要应采取兼职制，而非全职制
 date: "2026-05-10"
 category: 公民秩序主义
+institutionSection: council
+summary: 说明兼职议员如何保持社会触感，并在秘书处和专业系统支持下承担正式责任。
 tags:
   - 公民秩序主义
   - 问答

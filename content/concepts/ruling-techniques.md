@@ -90,13 +90,7 @@ publicationStatus: reviewing
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>15 分钟阅读</span></p>
   <h3><a href="/civic-orderism/top-level-power-structure-under-civic-orderism">公民秩序主义下顶层权力结构的布局：为什么国家最高层不能只有一个权力中心，也不能碎片化成互相消耗的多头政治</a></h3>
-  <p class="knowledge-card__summary">公民秩序主义下的顶层权力结构，不是传统意义上的“一人统摄一切”，也不是西方式政党、议会、政府之间的简单分权复制。</p>
-  <p class="knowledge-card__chips"><span>概念：官僚休克</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>11 分钟阅读</span></p>
-  <h3><a href="/civic-orderism/why-civic-orderism-emphasizes-experience-and-records">为什么公民秩序主义强调履历、经验：因为现代国家不能把高位判断交给空降、表演和单一激情</a></h3>
-  <p class="knowledge-card__summary">公民秩序主义强调履历和经验，不是为了制造新的官僚等级，也不是为了把政治重新交给少数“资历深的人”。</p>
+  <p class="knowledge-card__summary">说明顶层权力如何在方向、判断、执行、确认、裁判和制度免疫之间分置并保持统合。</p>
   <p class="knowledge-card__chips"><span>概念：官僚休克</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="crisis-management ruling-techniques">

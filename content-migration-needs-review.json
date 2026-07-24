@@ -385,8 +385,8 @@
     "date": "2026-05-10",
     "updated": "2026-05-10",
     "summary": "《大明王朝1566》中，有一句被无数观众记住的台词。",
-    "originalSection": "制度设计",
-    "section": "制度设计",
+    "originalSection": "解析中共",
+    "section": "解析中共",
     "tags": [
       "制度设计",
       "公民秩序主义",
@@ -398,16 +398,11 @@
       "历史镜像"
     ],
     "status": "published",
-    "primaryTopic": null,
-    "relatedTopics": [
-      "xi-era",
-      "bureaucratic-system",
-      "order-evaporation",
-      "ccp-governance"
-    ],
+    "primaryTopic": "bureaucratic-system",
+    "relatedTopics": ["xi-era", "order-evaporation", "ccp-governance"],
     "topics": [
-      "xi-era",
       "bureaucratic-system",
+      "xi-era",
       "order-evaporation",
       "ccp-governance"
     ],
@@ -420,7 +415,7 @@
     ],
     "featured": false,
     "recommended": false,
-    "readingLevel": "制度",
+    "readingLevel": "进阶",
     "readingOrder": 999,
     "author": "公民秩序主义",
     "needsReview": true

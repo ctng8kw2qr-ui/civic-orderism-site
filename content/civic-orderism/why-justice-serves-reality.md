@@ -2,6 +2,8 @@
 title: 为什么公民秩序主义强调司法是为现实服务的
 date: "2026-05-10"
 category: 公民秩序主义
+institutionSection: rule-of-law
+summary: 说明司法如何在守住程序边界的同时，以可理解、可执行和可追责的方式处理现实争议。
 tags:
   - 公民秩序主义
   - 问答

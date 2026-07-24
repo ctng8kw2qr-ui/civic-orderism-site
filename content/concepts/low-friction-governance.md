@@ -48,13 +48,13 @@ publicationStatus: reviewing
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="low-friction-governance">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>13 分钟阅读</span></p>
   <h3><a href="/civic-orderism/backend-system-under-civic-orderism">公民秩序主义对后台系统的重视：为什么培训、秘书处、专业事务与留痕系统，是现代国家真正的底座</a></h3>
-  <p class="knowledge-card__summary">公民秩序主义并不认为，一个国家只要有口号、有领导、有选举、有议会、有行政机关，就能自然走向成熟治理。</p>
+  <p class="knowledge-card__summary">说明培训、秘书处、专业事务和留痕系统如何构成现代国家稳定运行的后台底座。</p>
   <p class="knowledge-card__chips"><span>概念：低摩擦治理</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="low-friction-governance">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>12 分钟阅读</span></p>
   <h3><a href="/civic-orderism/why-dual-track-committee-administration">为什么公民秩序主义必须采取委员会—行政双轨制，但最终仍由民选政治官员统合国家</a></h3>
-  <p class="knowledge-card__summary">公民秩序主义问答。</p>
+  <p class="knowledge-card__summary">说明委员会与行政为何必须分轨运行，以及民选政治官员为何仍需承担国家统合和最终责任。</p>
   <p class="knowledge-card__chips"><span>概念：低摩擦治理</span></p>
 </article>
 </div>

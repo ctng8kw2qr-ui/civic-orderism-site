@@ -1,4 +1,5 @@
 import migration from "../../content-migration-map.json";
+import institutionSections from "../../data/institution-sections.config.json";
 import sections from "../../data/sections.config.json";
 import topics from "../../data/topics.config.json";
 import {
@@ -77,11 +78,32 @@ const KnowledgeSidebar: QuartzComponent = ({
               </a>
               {expanded && section ? (
                 <div class="knowledge-sidebar__section-links">
-                  <a href={`/${section.slug}#推荐文章`}>推荐阅读</a>
-                  {sectionTopics.map((topic) => (
-                    <a href={`/topics/${topic!.slug}`}>{topic!.name}</a>
-                  ))}
-                  <a href={`/${section.slug}#全部文章`}>查看全部文章</a>
+                  {section.slug === "institution-design" ? (
+                    <>
+                      <a href="/institution-design#institution-first-reading-title">
+                        第一次阅读
+                      </a>
+                      {institutionSections.map((institutionSection) => (
+                        <a
+                          href={`/institution-design#institution-module-${institutionSection.id}`}
+                        >
+                          {institutionSection.number} ·{" "}
+                          {institutionSection.name}
+                        </a>
+                      ))}
+                      <a href="/institution-design#all-articles">
+                        查看全部文章
+                      </a>
+                    </>
+                  ) : (
+                    <>
+                      <a href={`/${section.slug}#推荐文章`}>推荐阅读</a>
+                      {sectionTopics.map((topic) => (
+                        <a href={`/topics/${topic!.slug}`}>{topic!.name}</a>
+                      ))}
+                      <a href={`/${section.slug}#全部文章`}>查看全部文章</a>
+                    </>
+                  )}
                 </div>
               ) : null}
             </li>

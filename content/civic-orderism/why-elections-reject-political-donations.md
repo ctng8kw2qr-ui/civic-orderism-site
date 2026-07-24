@@ -2,6 +2,8 @@
 title: 为什么公民秩序主义下的选举会天然排斥政治献金
 date: "2026-05-10"
 category: 公民秩序主义
+institutionSection: election
+summary: 解释政治献金如何改变候选人的责任对象，以及为何选举资源必须制度化和平准化。
 tags:
   - 公民秩序主义
   - 问答

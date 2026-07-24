@@ -1,11 +1,22 @@
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
+import matter from "gray-matter";
 
 const root = path.resolve(".");
 const migration = JSON.parse(
   fs.readFileSync(path.join(root, "content-migration-map.json"), "utf8"),
 );
+const institutionSections = JSON.parse(
+  fs.readFileSync(
+    path.join(root, "data/institution-sections.config.json"),
+    "utf8",
+  ),
+);
+const institutionArticleSlugs = new Set(
+  institutionSections.flatMap((section) => section.articles),
+);
+const reclassifiedArticleSlug = "institution/despotism-cancer-ming-1566";
 const errors = [];
 
 function assert(condition, message) {
@@ -38,7 +49,31 @@ for (const article of sample) {
   const committed = execFileSync("git", ["show", `HEAD:${relative}`], {
     cwd: root,
   });
-  assert(current.equals(committed), `历史文章发生字节级变化：${relative}`);
+  if (
+    institutionArticleSlugs.has(article.slug) ||
+    article.slug === reclassifiedArticleSlug
+  ) {
+    const currentArticle = matter(current.toString("utf8"));
+    const committedArticle = matter(committed.toString("utf8"));
+    const allowedKeys = institutionArticleSlugs.has(article.slug)
+      ? ["institutionSection", "summary"]
+      : ["category", "topics"];
+    for (const key of allowedKeys) {
+      delete currentArticle.data[key];
+      delete committedArticle.data[key];
+    }
+    assert(
+      currentArticle.content === committedArticle.content,
+      `历史文章正文发生变化：${relative}`,
+    );
+    assert(
+      JSON.stringify(currentArticle.data) ===
+        JSON.stringify(committedArticle.data),
+      `历史文章包含未授权的元数据变化：${relative}`,
+    );
+  } else {
+    assert(current.equals(committed), `历史文章发生字节级变化：${relative}`);
+  }
 }
 
 const documents = [
@@ -73,7 +108,7 @@ if (errors.length) {
   process.exitCode = 1;
 } else {
   console.log(
-    `Historical content safety passed: ${sample.length} sampled articles are byte-identical to HEAD; ${documents.length} PDF sources and public copies match.`,
+    `Historical content safety passed: ${sample.length} sampled articles retain byte-identical bodies (allowing the institution metadata migration); ${documents.length} PDF sources and public copies match.`,
   );
   console.log(sample.map((article) => `- ${article.slug}`).join("\n"));
 }

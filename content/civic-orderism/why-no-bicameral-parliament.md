@@ -2,6 +2,8 @@
 title: 为什么公民秩序主义议会不采取上下两院制
 date: "2026-05-10"
 category: 公民秩序主义
+institutionSection: council
+summary: 说明为什么制度复核不必依靠等级化的上下两院，而应由不同系统按功能完成。
 tags:
   - 公民秩序主义
   - 问答

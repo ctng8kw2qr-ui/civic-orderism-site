@@ -2,6 +2,8 @@
 title: 公民秩序主义下的选举逻辑：它与传统选举的区别，以及制度优势
 date: "2026-05-10"
 category: 公民秩序主义
+institutionSection: election
+summary: 说明选举如何从阵营竞争回到岗位筛选、公共授权、责任记录和有序更替。
 tags:
   - 公民秩序主义
   - 选举逻辑

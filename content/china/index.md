@@ -14,7 +14,7 @@ noindex: false
 
 从组织、财政、官僚运行和权力机制出发，解释中共为何走到今天。
 
-<div class="section-stats"><span>32 篇已发布文章</span><span>4 个正式专题</span><span>更新至 2026-07-21</span></div>
+<div class="section-stats"><span>33 篇已发布文章</span><span>4 个正式专题</span><span>更新至 2026-07-21</span></div>
 
 <div class="section-core-judgment"><strong>栏目核心判断</strong><p>中共面临的并非单一政策失误，而是权力集中、反馈失真、官僚避责与组织信用消耗相互放大的系统性问题。</p></div>
 
@@ -239,6 +239,12 @@ noindex: false
   <h3><a href="/china/xi-succession-crisis-gray-rhino">中共高层政治的灰犀牛：习近平交权困境与继承危机</a></h3>
   <p class="knowledge-card__summary">分析中共的政治风险，首先必须正确识别影响其稳定性的核心变量。</p>
   <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：官僚休克</span></p>
+</article>
+<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock crisis-management order-evaporation ruling-techniques high-fragility">
+  <p class="knowledge-card__meta"><span>2026-05-10</span><span>13 分钟阅读</span></p>
+  <h3><a href="/institution/despotism-cancer-ming-1566">专制之癌：从《大明王朝1566》到结构性腐败的宿命</a></h3>
+  <p class="knowledge-card__summary">《大明王朝1566》中，有一句被无数观众记住的台词。</p>
+  <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚休克</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="political-debt high-fragility order-evaporation">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>8 分钟阅读</span></p>
