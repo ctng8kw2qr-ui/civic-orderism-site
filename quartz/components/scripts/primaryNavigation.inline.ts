@@ -55,6 +55,14 @@ function setupPrimaryNavigation() {
     const topic = browser.querySelector<HTMLSelectElement>(
       "[data-filter-topic]",
     );
+    const sectionButtons = [
+      ...browser.querySelectorAll<HTMLButtonElement>("[data-filter-section]"),
+    ];
+    const sectionLinks = [
+      ...document.querySelectorAll<HTMLAnchorElement>(
+        "[data-institution-filter-link]",
+      ),
+    ];
     const concept = browser.querySelector<HTMLSelectElement>(
       "[data-filter-concept]",
     );
@@ -66,17 +74,20 @@ function setupPrimaryNavigation() {
     const next = browser.querySelector<HTMLButtonElement>("[data-page-next]");
     const status = browser.querySelector<HTMLElement>("[data-page-status]");
     const pageSize = Number(browser.dataset.pageSize ?? 10);
+    let activeSection = "";
     let page = 1;
 
     const update = () => {
       const visible = cards.filter((card) => {
+        const sectionMatch =
+          !activeSection || card.dataset.institutionSection === activeSection;
         const topicMatch =
           !topic?.value ||
           card.dataset.topics?.split(" ").includes(topic.value);
         const conceptMatch =
           !concept?.value ||
           card.dataset.concepts?.split(" ").includes(concept.value);
-        return topicMatch && conceptMatch;
+        return sectionMatch && topicMatch && conceptMatch;
       });
       const pages = Math.max(1, Math.ceil(visible.length / pageSize));
       page = Math.min(page, pages);
@@ -90,12 +101,31 @@ function setupPrimaryNavigation() {
           : "没有匹配文章";
       if (previous) previous.disabled = page <= 1;
       if (next) next.disabled = page >= pages;
+      sectionButtons.forEach((button) => {
+        const isActive = button.dataset.filterSection === activeSection;
+        button.setAttribute("aria-pressed", String(isActive));
+      });
     };
     const onFilter = () => {
       page = 1;
       update();
     };
     const onReset = () => {
+      if (topic) topic.value = "";
+      if (concept) concept.value = "";
+      activeSection = "";
+      page = 1;
+      update();
+    };
+    const onSectionFilter = (event: Event) => {
+      const button = event.currentTarget as HTMLButtonElement;
+      activeSection = button.dataset.filterSection ?? "";
+      page = 1;
+      update();
+    };
+    const onSectionLink = (event: Event) => {
+      const link = event.currentTarget as HTMLAnchorElement;
+      activeSection = link.dataset.institutionFilterLink ?? "";
       if (topic) topic.value = "";
       if (concept) concept.value = "";
       page = 1;
@@ -111,12 +141,24 @@ function setupPrimaryNavigation() {
     };
     topic?.addEventListener("change", onFilter);
     concept?.addEventListener("change", onFilter);
+    sectionButtons.forEach((button) =>
+      button.addEventListener("click", onSectionFilter),
+    );
+    sectionLinks.forEach((link) =>
+      link.addEventListener("click", onSectionLink),
+    );
     reset?.addEventListener("click", onReset);
     previous?.addEventListener("click", onPrevious);
     next?.addEventListener("click", onNext);
     window.addCleanup(() => {
       topic?.removeEventListener("change", onFilter);
       concept?.removeEventListener("change", onFilter);
+      sectionButtons.forEach((button) =>
+        button.removeEventListener("click", onSectionFilter),
+      );
+      sectionLinks.forEach((link) =>
+        link.removeEventListener("click", onSectionLink),
+      );
       reset?.removeEventListener("click", onReset);
       previous?.removeEventListener("click", onPrevious);
       next?.removeEventListener("click", onNext);

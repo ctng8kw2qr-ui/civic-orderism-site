@@ -24,6 +24,7 @@ const site = readJson("site.config.json");
 const sections = readJson("sections.config.json");
 const topics = readJson("topics.config.json");
 const concepts = readJson("concepts.config.json");
+const institutionSections = readJson("institution-sections.config.json");
 const readingPaths = readJson("reading-paths.config.json");
 const readingSequences = readJson("reading-sequences.config.json");
 const articleTopicAssignments = readJson("article-topics.config.json");
@@ -36,6 +37,9 @@ const existingMigrationMap = fs.existsSync(
 const sectionByName = new Map(sections.map((item) => [item.name, item]));
 const topicBySlug = new Map(topics.map((item) => [item.slug, item]));
 const conceptBySlug = new Map(concepts.map((item) => [item.slug, item]));
+const institutionSectionById = new Map(
+  institutionSections.map((item) => [item.id, item]),
+);
 const publicTopics = topics.filter((item) => item.status === "published");
 const conceptPublicationStatus = (concept) =>
   concept.publicationStatus ??
@@ -149,6 +153,7 @@ function originalSection(slug, data) {
 }
 
 function newSection(slug) {
+  if (slug === "institution/despotism-cancer-ming-1566") return "解析中共";
   if (institutionSlugs.has(slug) || slug.startsWith("institution/"))
     return "制度设计";
   if (slug.startsWith("civic-orderism/")) return "公民秩序主义";
@@ -302,6 +307,10 @@ const articles = walk(contentDir)
       body: parsed.content.replace(/\s+/g, " ").trim(),
       originalSection: originalSection(slug, parsed.data),
       section: newSection(slug),
+      institutionSection:
+        typeof parsed.data.institutionSection === "string"
+          ? parsed.data.institutionSection
+          : undefined,
       tags: Array.isArray(parsed.data.tags) ? parsed.data.tags.map(String) : [],
       status: String(parsed.data.status ?? "published"),
     };
@@ -340,6 +349,35 @@ const articles = walk(contentDir)
   );
 
 const articleBySlug = new Map(articles.map((item) => [item.slug, item]));
+const configuredInstitutionSlugs = institutionSections.flatMap(
+  (section) => section.articles,
+);
+if (
+  institutionSectionById.size !== institutionSections.length ||
+  new Set(configuredInstitutionSlugs).size !== configuredInstitutionSlugs.length
+) {
+  throw new Error(
+    "Institution section configuration contains duplicate ids or article slugs.",
+  );
+}
+for (const section of institutionSections) {
+  for (const slug of section.articles) {
+    const article = articleBySlug.get(slug);
+    if (!article) {
+      throw new Error(`Institution section article does not exist: ${slug}`);
+    }
+    if (article.section !== "制度设计") {
+      throw new Error(
+        `Institution section article is outside 制度设计: ${slug} -> ${article.section}`,
+      );
+    }
+    if (article.institutionSection !== section.id) {
+      throw new Error(
+        `Institution section frontmatter mismatch: ${slug} -> ${article.institutionSection ?? "missing"} (expected ${section.id})`,
+      );
+    }
+  }
+}
 for (const assignment of articleTopicAssignments) {
   if (!articleBySlug.has(assignment.slug)) {
     throw new Error(`Primary topic article does not exist: ${assignment.slug}`);
@@ -391,7 +429,7 @@ function mdLink(article) {
   return article ? `[[${article.slug}|${article.title}]]` : "待人工确认";
 }
 
-function articleCard(article) {
+function articleCard(article, options = {}) {
   const topic = article.primaryTopic
     ? topicBySlug.get(article.primaryTopic)
     : undefined;
@@ -402,11 +440,27 @@ function articleCard(article) {
     topic ? `专题：${topic.name}` : "",
     concept ? `概念：${concept.name}` : "",
   ].filter(Boolean);
+  const institutionSection = options.showInstitutionSection
+    ? institutionSectionById.get(article.institutionSection)
+    : undefined;
   const summary = article.summary || `${article.title}的结构分析与研究笔记。`;
-  return `<article class="knowledge-card" data-knowledge-card data-topics="${article.primaryTopic ?? ""}" data-concepts="${article.concepts.join(" ")}">
+  if (!institutionSection) {
+    return `<article class="knowledge-card" data-knowledge-card data-topics="${article.primaryTopic ?? ""}" data-concepts="${article.concepts.join(" ")}">
   <p class="knowledge-card__meta"><span>${article.date || "日期待补"}</span><span>${article.readingMinutes} 分钟阅读</span></p>
   <h3><a href="/${encodeURI(article.slug)}">${article.title}</a></h3>
   <p class="knowledge-card__summary">${summary}</p>${
+    chips.length
+      ? `
+  <p class="knowledge-card__chips">${chips.map((item) => `<span>${item}</span>`).join("")}</p>`
+      : ""
+  }
+</article>`;
+  }
+  return `<article class="knowledge-card knowledge-card--institution" data-knowledge-card data-topics="${article.primaryTopic ?? ""}" data-concepts="${article.concepts.join(" ")}" data-institution-section="${article.institutionSection}">
+  <p class="knowledge-card__section">制度模块：<strong>${institutionSection.name}</strong></p>
+  <h3><a href="/${encodeURI(article.slug)}">${article.title}</a></h3>
+  <p class="knowledge-card__summary">${summary}</p>
+  <p class="knowledge-card__meta"><span>${article.date || "日期待补"}</span><span>${article.readingMinutes} 分钟阅读</span></p>${
     chips.length
       ? `
   <p class="knowledge-card__chips">${chips.map((item) => `<span>${item}</span>`).join("")}</p>`
@@ -440,11 +494,15 @@ function homeArticleCard(article) {
 </article>`;
 }
 
-function cardGrid(items, className = "knowledge-grid") {
-  return `<div class="${className}">\n${items.filter(Boolean).map(articleCard).join("\n")}\n</div>`;
+function cardGrid(items, className = "knowledge-grid", options = {}) {
+  return `<div class="${className}">\n${items
+    .filter(Boolean)
+    .map((article) => articleCard(article, options))
+    .join("\n")}\n</div>`;
 }
 
-function filterPanel(items) {
+function filterPanel(items, options = {}) {
+  const sectionFilters = options.institutionSections ?? [];
   const usedTopics = [
     ...new Set(items.map((item) => item.primaryTopic).filter(Boolean)),
   ]
@@ -455,16 +513,133 @@ function filterPanel(items) {
     .filter((item) => item && publicConceptSlugs.has(item.slug));
   return `<div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">
-  <label>专题<select data-filter-topic><option value="">全部专题</option>${usedTopics.map((item) => `<option value="${item.slug}">${item.name}</option>`).join("")}</select></label>
-  <label>核心概念<select data-filter-concept><option value="">全部概念</option>${usedConcepts.map((item) => `<option value="${item.slug}">${item.name}</option>`).join("")}</select></label>
+  ${
+    sectionFilters.length
+      ? `<fieldset class="knowledge-section-filters"><legend>制度模块</legend><div role="group" aria-label="按制度模块筛选"><button type="button" data-filter-section="" aria-pressed="true">全部</button>${sectionFilters.map((item) => `<button type="button" data-filter-section="${item.id}" aria-pressed="false">${item.name}</button>`).join("")}</div></fieldset>`
+      : `<label>专题<select data-filter-topic><option value="">全部专题</option>${usedTopics.map((item) => `<option value="${item.slug}">${item.name}</option>`).join("")}</select></label>`
+  }
+  <label${sectionFilters.length ? ' class="knowledge-filter--secondary"' : ""}>核心概念<select data-filter-concept><option value="">全部概念</option>${usedConcepts.map((item) => `<option value="${item.slug}">${item.name}</option>`).join("")}</select></label>
   <button type="button" data-filter-reset>重置</button>
 </div>
-${cardGrid(items)}
+${cardGrid(items, "knowledge-grid", {
+  showInstitutionSection: sectionFilters.length > 0,
+})}
 <div class="knowledge-pagination" aria-label="文章分页"><button type="button" data-page-prev>上一页</button><span data-page-status></span><button type="button" data-page-next>下一页</button></div>
 </div>`;
 }
 
+const institutionFlow = [
+  "社会问题与公共需求",
+  "前端机构与秘书处整理",
+  "委员会判断、监督与纠偏",
+  "政治官员统合与授权",
+  "行政系统执行",
+  "司法、透明与责任系统纠错",
+];
+
+const institutionFirstReadingSlugs = [
+  "civic-orderism/state-operation-process-under-civic-orderism",
+  "civic-orderism/why-dual-track-committee-administration",
+  "civic-orderism/what-is-committee-system",
+  "civic-orderism/committee-administration-opposite-incentives",
+  "civic-orderism/election-logic-under-civic-orderism",
+  "civic-orderism/why-not-simple-separation-of-powers",
+  "civic-orderism/top-level-power-structure-under-civic-orderism",
+];
+
+function institutionModuleArticle(article) {
+  return `<li><a href="/${encodeURI(article.slug)}"><span>${article.title}</span><small>${article.date || "日期待补"} · ${article.readingMinutes} 分钟阅读</small></a></li>`;
+}
+
+function institutionDesignPage(section) {
+  const configuredItems = institutionSections.flatMap((institutionSection) =>
+    institutionSection.articles.map((slug) => articleBySlug.get(slug)),
+  );
+  const configuredSlugs = new Set(
+    configuredItems.map((article) => article.slug),
+  );
+  const legacyItems = articles.filter(
+    (article) =>
+      article.section === "制度设计" &&
+      article.status === "published" &&
+      !configuredSlugs.has(article.slug),
+  );
+  const items = [...configuredItems, ...legacyItems];
+  const firstReading = institutionFirstReadingSlugs.map((slug) => {
+    const article = articleBySlug.get(slug);
+    if (!article) {
+      throw new Error(
+        `Institution first-reading article does not exist: ${slug}`,
+      );
+    }
+    return article;
+  });
+  const latestUpdate = items
+    .map((article) => article.updated)
+    .filter(Boolean)
+    .sort()
+    .at(-1);
+  const relatedConcepts = [
+    ...new Set(items.flatMap((article) => article.concepts)),
+  ]
+    .map((slug) => conceptBySlug.get(slug))
+    .filter((concept) => concept && publicConceptSlugs.has(concept.slug))
+    .slice(0, 8);
+  const modules = institutionSections
+    .map((institutionSection) => {
+      const moduleArticles = institutionSection.articles.map((slug) =>
+        articleBySlug.get(slug),
+      );
+      return `<section class="institution-module" id="institution-module-${institutionSection.id}">
+  <header class="institution-module__header"><p>${institutionSection.number}</p><div><h3>${institutionSection.name}</h3><p>${institutionSection.description}</p></div></header>
+  <ol class="institution-module__articles">${moduleArticles.map(institutionModuleArticle).join("\n")}</ol>
+  <a class="institution-module__all" href="#all-articles" data-institution-filter-link="${institutionSection.id}">查看本模块全部文章 →</a>
+</section>`;
+    })
+    .join("\n");
+
+  return `${yamlFrontmatter({ title: section.name, description: section.description, contentType: "栏目" })}
+
+<div class="institution-page">
+<header class="institution-hero">
+  <p class="resource-label">制度地图</p>
+  <h1>${section.name}</h1>
+  <p class="institution-hero__description">${section.description}</p>
+  <div class="section-stats"><span>${items.length} 篇已发布文章</span><span>${institutionSections.length} 个制度模块</span><span>更新至 ${latestUpdate || "2026-07-20"}</span></div>
+  <div class="section-core-judgment"><strong>栏目核心判断</strong><p>${section.coreJudgment}</p></div>
+</header>
+
+<section class="institution-map" aria-labelledby="institution-map-title">
+  <div class="institution-section-heading"><p class="resource-label">从输入到纠错</p><h2 id="institution-map-title">制度运行地图</h2></div>
+  <ol>${institutionFlow.map((step) => `<li>${step}</li>`).join("\n")}</ol>
+</section>
+
+<section class="institution-first-reading" aria-labelledby="institution-first-reading-title">
+  <div class="institution-section-heading"><p class="resource-label">新读者路径</p><h2 id="institution-first-reading-title">第一次阅读</h2><p>如果这是你第一次了解公民秩序主义的制度结构，建议按照以下顺序阅读。</p></div>
+  <ol>${firstReading.map((article, index) => `<li><a href="/${encodeURI(article.slug)}"><span class="institution-first-reading__number">${String(index + 1).padStart(2, "0")}</span><span>${article.title}</span>${index < 3 ? "<small>推荐起点</small>" : ""}</a></li>`).join("\n")}</ol>
+</section>
+
+<section class="institution-modules" aria-labelledby="institution-modules-title">
+  <div class="institution-section-heading"><p class="resource-label">六个制度模块</p><h2 id="institution-modules-title">按照制度模块阅读</h2><p>从整体结构进入具体机制，理解每一组制度安排承担的功能与边界。</p></div>
+  <div class="institution-module-list">${modules}</div>
+</section>
+
+<section class="institution-all-articles" id="all-articles" aria-labelledby="institution-all-articles-title">
+  <div class="institution-section-heading"><p class="resource-label">完整索引</p><h2 id="institution-all-articles-title">全部文章</h2><p>先按制度模块筛选，再按核心概念缩小范围。筛选和分页不会改变任何文章 URL。</p></div>
+  ${filterPanel(items, { institutionSections })}
+</section>
+
+<section class="institution-related-concepts">
+  <div class="institution-section-heading"><p class="resource-label">辅助线索</p><h2>相关核心概念</h2></div>
+  ${relatedConcepts.length ? `<div class="section-concept-links">${relatedConcepts.map((concept) => `<a href="/concepts/${concept.slug}">${concept.name}</a>`).join("\n")}</div>` : "当前暂无已公开的相关核心概念。"}
+</section>
+</div>`;
+}
+
 function sectionPage(section) {
+  if (section.slug === "institution-design") {
+    return institutionDesignPage(section);
+  }
   const items = articles.filter(
     (article) =>
       article.section === section.name && article.status === "published",

@@ -2,6 +2,8 @@
 title: 为什么公民秩序主义不采取简单的三权分立
 date: "2026-05-10"
 category: 公民秩序主义
+institutionSection: overview
+summary: 解释简单三权分立为何不足以覆盖现代国家的问题入口、后台流转、责任留痕与系统纠偏。
 tags:
   - 公民秩序主义
   - 问答

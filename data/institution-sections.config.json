@@ -1,0 +1,64 @@
+[
+  {
+    "id": "overview",
+    "number": "01",
+    "name": "制度总览",
+    "description": "从国家整体运行出发，理解问题如何进入制度、公共判断如何形成、政治权力如何统合，以及行政系统如何执行。",
+    "articles": [
+      "civic-orderism/state-operation-process-under-civic-orderism",
+      "civic-orderism/why-dual-track-committee-administration",
+      "civic-orderism/why-not-simple-separation-of-powers",
+      "civic-orderism/top-level-power-structure-under-civic-orderism"
+    ]
+  },
+  {
+    "id": "committee",
+    "number": "02",
+    "name": "委员会体系",
+    "description": "委员会负责公共判断、监督、质询、纠偏与问责，但不承担日常行政执行，也不能垄断问题进入制度的入口。",
+    "articles": [
+      "civic-orderism/what-is-committee-system",
+      "civic-orderism/committee-administration-opposite-incentives",
+      "civic-orderism/why-committees-cannot-directly-take-cases"
+    ]
+  },
+  {
+    "id": "administration",
+    "number": "03",
+    "name": "行政与后台系统",
+    "description": "制度不仅要设计谁拥有权力，也要设计信息如何流动、事务如何处理、行政如何执行，以及责任如何留下记录。",
+    "articles": ["civic-orderism/backend-system-under-civic-orderism"]
+  },
+  {
+    "id": "election",
+    "number": "04",
+    "name": "选举与政治官员",
+    "description": "选举的目的不是制造周期性的阵营竞争，而是完成政治授权、形成责任关系，并筛选能够承担国家判断与协调责任的政治官员。",
+    "articles": [
+      "civic-orderism/election-logic-under-civic-orderism",
+      "civic-orderism/why-civic-orderism-emphasizes-experience-and-records",
+      "civic-orderism/why-elections-reject-political-donations"
+    ]
+  },
+  {
+    "id": "council",
+    "number": "05",
+    "name": "议会与社会授权",
+    "description": "议会主要承担授权、判断、质询、监督和责任确认，而不是直接指挥行政系统或由职业政客垄断议题。",
+    "articles": [
+      "civic-orderism/why-no-bicameral-parliament",
+      "civic-orderism/why-proposals-from-social-organizations",
+      "civic-orderism/why-part-time-representatives"
+    ]
+  },
+  {
+    "id": "rule-of-law",
+    "number": "06",
+    "name": "法治、透明与责任",
+    "description": "通过司法、信息公开、制度留痕和责任识别，使错误能够被发现、争议能够被处理、权力能够被追踪。",
+    "articles": [
+      "civic-orderism/why-justice-serves-reality",
+      "civic-orderism/why-information-transparency"
+    ]
+  }
+]

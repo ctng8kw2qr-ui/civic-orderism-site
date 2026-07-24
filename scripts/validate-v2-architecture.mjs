@@ -10,10 +10,14 @@ const migration = readJson("content-migration-map.json");
 const topics = readJson("data/topics.config.json");
 const concepts = readJson("data/concepts.config.json");
 const sections = readJson("data/sections.config.json");
+const institutionSections = readJson("data/institution-sections.config.json");
 const readingSequences = readJson("data/reading-sequences.config.json");
 const topicSlugs = new Set(topics.map((item) => item.slug));
 const conceptSlugs = new Set(concepts.map((item) => item.slug));
 const sectionNames = new Set(sections.map((item) => item.name));
+const institutionSectionIds = new Set(
+  institutionSections.map((item) => item.id),
+);
 const migrationBySlug = new Map(migration.map((item) => [item.slug, item]));
 const errors = [];
 const publicTopics = topics.filter((item) => item.status === "published");
@@ -134,6 +138,13 @@ for (const article of migration) {
     sectionNames.has(article.section),
     `未知一级栏目：${article.slug} -> ${article.section}`,
   );
+  if (article.section === "制度设计") {
+    assert(
+      article.institutionSection === undefined ||
+        institutionSectionIds.has(article.institutionSection),
+      `制度设计文章包含未知制度模块：${article.slug} -> ${article.institutionSection}`,
+    );
+  }
   if (!article.needsReview) {
     assert(
       article.topics.length <= 2,
@@ -171,6 +182,44 @@ for (const article of migration) {
     assert(conceptSlugs.has(slug), `未知概念：${article.slug} -> ${slug}`),
   );
 }
+
+const configuredInstitutionSlugs = institutionSections.flatMap(
+  (section) => section.articles,
+);
+assert(
+  institutionSectionIds.size === institutionSections.length,
+  "制度模块配置存在重复 id",
+);
+assert(
+  new Set(configuredInstitutionSlugs).size ===
+    configuredInstitutionSlugs.length,
+  "制度模块配置存在重复文章",
+);
+for (const section of institutionSections) {
+  assert(section.number?.trim(), `制度模块缺少编号：${section.id}`);
+  assert(section.name?.trim(), `制度模块缺少名称：${section.id}`);
+  assert(section.description?.trim(), `制度模块缺少说明：${section.id}`);
+  for (const slug of section.articles) {
+    const article = migrationBySlug.get(slug);
+    assert(Boolean(article), `制度模块文章不存在：${section.id} -> ${slug}`);
+    assert(
+      article?.institutionSection === section.id,
+      `制度模块与文章字段不一致：${slug} -> ${article?.institutionSection}/${section.id}`,
+    );
+  }
+}
+assert(
+  migration.filter((article) => article.section === "制度设计").length === 16,
+  "制度设计栏目应包含 16 篇文章",
+);
+const despotismCancer = migrationBySlug.get(
+  "institution/despotism-cancer-ming-1566",
+);
+assert(despotismCancer?.section === "解析中共", "《专制之癌》未移入解析中共");
+assert(
+  despotismCancer?.primaryTopic === "bureaucratic-system",
+  "《专制之癌》未归入官僚系统专题",
+);
 
 for (let index = 1; index < migration.length; index += 1) {
   const previous = migration[index - 1];
@@ -424,6 +473,36 @@ assert(startText.includes("3分钟阅读"), "/start 自动阅读时长不再是 
 assert(
   !visiblePageText(homepageHtml).includes("约 5 分钟"),
   "首页仍包含人工时长文案",
+);
+
+const institutionHtml = fs.readFileSync(
+  path.join(publicDir, "institution-design", "index.html"),
+  "utf8",
+);
+const institutionText = visiblePageText(institutionHtml);
+assert(
+  institutionText.includes("制度运行地图") &&
+    institutionText.includes("第一次阅读") &&
+    institutionText.includes("按照制度模块阅读"),
+  "制度设计页缺少制度地图、第一次阅读或模块阅读区域",
+);
+assert(
+  institutionSections.every(
+    (section) =>
+      institutionHtml.includes(`id="institution-module-${section.id}"`) &&
+      institutionHtml.includes(`data-filter-section="${section.id}"`),
+  ),
+  "制度设计页缺少模块卡片或一级筛选",
+);
+assert(
+  [...institutionHtml.matchAll(/data-institution-section="([^"]+)"/g)].every(
+    (match) => institutionSectionIds.has(match[1]),
+  ),
+  "制度设计页文章卡片包含未知制度模块",
+);
+assert(
+  !institutionHtml.includes('href="/institution/despotism-cancer-ming-1566"'),
+  "《专制之癌》仍出现在制度设计页",
 );
 
 for (const route of ["index", "start"]) {

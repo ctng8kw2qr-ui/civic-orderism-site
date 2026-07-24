@@ -2,6 +2,8 @@
 title: 为什么公民秩序主义强调信息透明及信息发布
 date: "2026-05-10"
 category: 公民秩序主义
+institutionSection: rule-of-law
+summary: 解释信息公开和正式发布如何把责任链、程序链与纠偏链延伸到社会。
 tags:
   - 公民秩序主义
   - 问答

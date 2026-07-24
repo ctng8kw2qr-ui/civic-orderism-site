@@ -267,7 +267,8 @@ body:is(
     [data-slug="china"],
     [data-slug="china-future"],
     [data-slug="civic-orderism"],
-    [data-slug="institution-design"]
+    [data-slug="institution-design"],
+    [data-slug="institution-design/index"]
   )
   .knowledge-card__summary {
   font-size: 1rem;
@@ -374,6 +375,331 @@ body:is(
   color: var(--darkgray);
   font-size: 1rem;
   line-height: 1.75;
+}
+
+/* Institution design: an ordered map rather than a chronological archive. */
+.institution-page {
+  --institution-accent: var(--tertiary);
+  --institution-ink: var(--dark);
+}
+
+.institution-hero {
+  display: grid;
+  grid-template-columns:
+    minmax(180px, 0.9fr) minmax(230px, 1.15fr) minmax(130px, auto)
+    minmax(300px, 1.55fr);
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.4rem 0 0.5rem;
+}
+
+.institution-hero > .resource-label {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+article .institution-hero h1 {
+  margin: 0;
+  color: var(--institution-ink);
+  font-size: clamp(2.15rem, 5vw, 3.35rem);
+  font-weight: 560;
+  line-height: 1.18;
+}
+
+.institution-hero__description {
+  max-width: 720px;
+  margin: 0;
+  color: var(--darkgray);
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.institution-hero .section-stats {
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0;
+}
+
+.institution-hero .section-stats span {
+  text-align: center;
+}
+
+.institution-hero .section-core-judgment {
+  margin: 0;
+}
+
+.institution-page > section {
+  margin-top: 3.2rem;
+}
+
+.institution-section-heading {
+  max-width: 780px;
+  margin-bottom: 1.25rem;
+}
+
+article .institution-section-heading h2 {
+  margin: 0.25rem 0 0.45rem;
+  padding: 0;
+  border: 0;
+  color: var(--institution-ink);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1.35;
+}
+
+.institution-section-heading > p:last-child:not(.resource-label) {
+  margin: 0;
+  color: var(--darkgray);
+  line-height: 1.7;
+}
+
+.institution-map ol {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  list-style: none;
+  border: 1px solid var(--lightgray);
+  border-radius: 7px;
+  background: var(--light);
+}
+
+.institution-map li {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 7rem;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 1rem 1.15rem;
+  color: var(--institution-ink);
+  font-size: 0.9rem;
+  font-weight: 650;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.institution-map li + li {
+  border-left: 1px solid var(--lightgray);
+}
+
+.institution-map li:not(:last-child)::after {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: -0.43rem;
+  width: 0.72rem;
+  height: 0.72rem;
+  border-top: 1px solid var(--institution-accent);
+  border-right: 1px solid var(--institution-accent);
+  background: var(--light);
+  content: "";
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.institution-first-reading ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--lightgray);
+}
+
+.institution-first-reading li {
+  margin: 0;
+  border-bottom: 1px solid var(--lightgray);
+}
+
+article .institution-first-reading a {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: 2.8rem minmax(0, 1fr) auto;
+  gap: 0.9rem;
+  align-items: center;
+  padding: 0.95rem 0.2rem;
+  color: var(--institution-ink);
+  line-height: 1.55;
+  text-decoration: none;
+  background-image: none;
+}
+
+.institution-first-reading__number {
+  color: var(--institution-accent);
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+}
+
+.institution-first-reading small {
+  padding: 0.2rem 0.42rem;
+  border: 1px solid
+    color-mix(in srgb, var(--institution-accent) 48%, var(--lightgray));
+  border-radius: 999px;
+  color: var(--institution-accent);
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.institution-first-reading a:hover > span:nth-child(2),
+.institution-first-reading a:focus-visible > span:nth-child(2) {
+  text-decoration: underline;
+  text-decoration-color: var(--institution-accent);
+  text-underline-offset: 0.2em;
+}
+
+.institution-first-reading a:focus-visible,
+.institution-module__articles a:focus-visible,
+.institution-module__all:focus-visible {
+  border-radius: 3px;
+  outline: 2px solid var(--institution-accent);
+  outline-offset: 3px;
+}
+
+.institution-module-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.institution-module {
+  min-width: 0;
+  padding: 1.5rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--light) 94%, var(--lightgray));
+}
+
+.institution-module__header {
+  display: grid;
+  grid-template-columns: 3.25rem minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.institution-module__header > p {
+  margin: 0.15rem 0 0;
+  color: var(--institution-accent);
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+}
+
+article .institution-module__header h3 {
+  margin: 0;
+  color: var(--institution-ink);
+  font-size: 1.28rem;
+  line-height: 1.4;
+}
+
+.institution-module__header div > p {
+  max-width: 840px;
+  margin: 0.55rem 0 0;
+  color: var(--darkgray);
+  line-height: 1.7;
+}
+
+.institution-module__articles {
+  margin: 1.25rem 0 0 4.25rem;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--lightgray);
+}
+
+.institution-module__articles li {
+  margin: 0;
+  border-bottom: 1px solid var(--lightgray);
+}
+
+article .institution-module__articles a {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.9rem 0;
+  color: var(--institution-ink);
+  text-decoration: none;
+  background-image: none;
+}
+
+.institution-module__articles small {
+  color: var(--gray);
+  font-size: 0.74rem;
+  white-space: nowrap;
+}
+
+.institution-module__articles a:hover span,
+.institution-module__articles a:focus-visible span {
+  text-decoration: underline;
+  text-decoration-color: var(--institution-accent);
+  text-underline-offset: 0.2em;
+}
+
+article .institution-module__all {
+  display: inline-block;
+  margin: 1rem 0 0 4.25rem;
+  color: var(--institution-ink);
+  font-size: 0.84rem;
+  font-weight: 650;
+  text-decoration: none;
+  background-image: none;
+}
+
+.institution-page .knowledge-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.knowledge-card__section {
+  margin: 0;
+  color: var(--gray);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.knowledge-card__section strong {
+  color: var(--institution-ink, var(--dark));
+  font-weight: 700;
+}
+
+.knowledge-card--institution .knowledge-card__meta {
+  margin: 0 0 0.85rem;
+}
+
+.knowledge-card--institution .knowledge-card__chips {
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--lightgray);
+}
+
+.knowledge-section-filters {
+  min-width: 0;
+  flex: 1 0 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.knowledge-section-filters legend {
+  margin-bottom: 0.35rem;
+  color: var(--gray);
+  font-size: 0.74rem;
+}
+
+.knowledge-section-filters > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.knowledge-section-filters button {
+  min-height: 2.2rem;
+  background: transparent;
+}
+
+.knowledge-section-filters button[aria-pressed="true"] {
+  border-color: var(--institution-ink);
+  background: var(--institution-ink);
+  color: var(--light);
+}
+
+.knowledge-filter--secondary {
+  max-width: 20rem;
 }
 
 .section-empty-note {
@@ -538,6 +864,32 @@ article .reading-route-card h3 {
   .recommendation-columns {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .institution-map ol {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .institution-map li:nth-child(4) {
+    border-left: 0;
+  }
+
+  .institution-map li:nth-child(n + 4) {
+    border-top: 1px solid var(--lightgray);
+  }
+
+  .institution-map li:nth-child(3)::after {
+    content: none;
+  }
+
+  .institution-hero {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    align-items: start;
+  }
+
+  .institution-hero .section-stats {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 600px) {
@@ -572,6 +924,103 @@ article .reading-route-card h3 {
   .knowledge-filters label,
   .knowledge-filters button {
     min-width: 100%;
+  }
+
+  .institution-page > section {
+    margin-top: 2.5rem;
+  }
+
+  .institution-hero {
+    display: block;
+    padding-top: 1rem;
+  }
+
+  .institution-hero > .resource-label {
+    margin-bottom: 0.55rem;
+  }
+
+  article .institution-hero h1 {
+    margin-bottom: 0.65rem;
+  }
+
+  .institution-hero .section-stats {
+    margin: 1rem 0;
+  }
+
+  .institution-hero .section-core-judgment {
+    margin: 1rem 0 0;
+  }
+
+  .institution-map ol {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .institution-map li {
+    min-height: 0;
+    justify-content: flex-start;
+    padding: 1rem 2.5rem 1rem 1rem;
+    text-align: left;
+  }
+
+  .institution-map li + li,
+  .institution-map li:nth-child(4) {
+    border-top: 1px solid var(--lightgray);
+    border-left: 0;
+  }
+
+  .institution-map li:not(:last-child)::after,
+  .institution-map li:nth-child(3)::after {
+    top: auto;
+    right: 1.1rem;
+    bottom: -0.42rem;
+    display: block;
+    background: var(--light);
+    transform: rotate(135deg);
+  }
+
+  article .institution-first-reading a {
+    grid-template-columns: 2.35rem minmax(0, 1fr);
+    gap: 0.65rem;
+  }
+
+  .institution-first-reading small {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .institution-module {
+    padding: 1.15rem;
+  }
+
+  .institution-module__header {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.35rem;
+  }
+
+  .institution-module__articles {
+    margin-left: 0;
+  }
+
+  article .institution-module__articles a {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.3rem;
+  }
+
+  .institution-module__articles small {
+    white-space: normal;
+  }
+
+  article .institution-module__all {
+    margin-left: 0;
+  }
+
+  .knowledge-section-filters > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .knowledge-filter--secondary {
+    max-width: none;
   }
 }
 
@@ -2110,7 +2559,8 @@ article .start-roadmap__line {
       [data-slug="china"],
       [data-slug="china-future"],
       [data-slug="civic-orderism"],
-      [data-slug="institution-design"]
+      [data-slug="institution-design"],
+      [data-slug="institution-design/index"]
     )
     article {
     max-width: 1080px;
@@ -2121,7 +2571,8 @@ article .start-roadmap__line {
       [data-slug="china"],
       [data-slug="china-future"],
       [data-slug="civic-orderism"],
-      [data-slug="institution-design"]
+      [data-slug="institution-design"],
+      [data-slug="institution-design/index"]
     )
     article {
     font-size: 16px;

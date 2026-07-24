@@ -17,10 +17,10 @@ publicationStatus: reviewing
 
 <p class="concept-definition">在保留国家连续性的同时重建入口、判断、执行、纠偏与问责系统。</p>
 
-| 字段     | 内容       |
-| -------- | ---------- |
+| 字段 | 内容 |
+| --- | --- |
 | 更新时间 | 2026-07-20 |
-| 知识状态 | 研究概念   |
+| 知识状态 | 研究概念 |
 
 ## 完整解释
 
@@ -54,7 +54,7 @@ publicationStatus: reviewing
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="state-system-upgrade">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>12 分钟阅读</span></p>
   <h3><a href="/civic-orderism/state-operation-process-under-civic-orderism">公民秩序主义下国家运行的大概流程：从普通人的问题，到国家的判断、执行与纠偏</a></h3>
-  <p class="knowledge-card__summary">公民秩序主义下的国家运行，不是单一命令链，也不是单纯靠领导人、政党、议会或行政机关单独运转。</p>
+  <p class="knowledge-card__summary">从普通人的问题出发，说明问题如何进入制度，并经过整理、判断、执行、留痕和纠偏形成完整国家运行链条。</p>
   <p class="knowledge-card__chips"><span>概念：国家系统升级</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route">

@@ -1,7 +1,9 @@
 ---
 title: 专制之癌：从《大明王朝1566》到结构性腐败的宿命
-date: '2026-05-10'
-category: 制度设计
+date: "2026-05-10"
+category: 解析中共
+topics:
+  - bureaucratic-system
 tags:
   - 制度设计
   - 公民秩序主义
@@ -14,6 +16,7 @@ tags:
 description: 《大明王朝1566》中，有一句被无数观众记住的台词。
 status: published
 ---
+
 # 专制之癌：从《大明王朝1566》到结构性腐败的宿命
 
 《大明王朝1566》中，有一句被无数观众记住的台词。
