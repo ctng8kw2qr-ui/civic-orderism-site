@@ -1,5 +1,36 @@
 [
   {
+    "title": "信息化时代与政治转型",
+    "slug": "civic-orderism/information-age-and-political-transition",
+    "date": "2026-07-24",
+    "updated": "2026-07-24",
+    "summary": "世界已经进入信息化时代，但绝大多数国家仍运行着工业时代建立起来的治理体系。本文从时代错位、改革开放遗留问题与资源约束出发，解释公民秩序主义为何在今天提出。",
+    "originalSection": "公民秩序主义",
+    "section": "公民秩序主义",
+    "tags": [
+      "公民秩序主义",
+      "信息化时代",
+      "政治转型",
+      "国家系统升级",
+      "治理体系"
+    ],
+    "status": "published",
+    "primaryTopic": "political-transition",
+    "relatedTopics": ["second-reform"],
+    "topics": ["political-transition", "second-reform"],
+    "concepts": [
+      "nonviolent-transition",
+      "state-system-upgrade",
+      "political-route"
+    ],
+    "featured": false,
+    "recommended": false,
+    "readingLevel": "基础",
+    "readingOrder": 999,
+    "author": "公民秩序主义",
+    "needsReview": false
+  },
+  {
     "title": "习近平到底有没有接班人？",
     "slug": "china/xi-successor-and-bureaucratic-accountability",
     "date": "2026-07-21",

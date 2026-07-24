@@ -27,6 +27,17 @@ const articleRootLabels = new Map([
 
 const reviewMetadata = new Map([
   [
+    "content/civic-orderism/information-age-and-political-transition.md",
+    {
+      phase: "新增文章",
+      originalJudgmentField: "无",
+      status: "是",
+      reviewLevel: "政治与时效性复核",
+      reason:
+        "涉及信息化时代、改革开放窗口与和平转型条件的现实判断；核心判断和重点句均取自原文，建议上线前复核时效性语气。",
+    },
+  ],
+  [
     "content/civic-orderism/what-civic-orderism-solves-if-you-read-only-one.md",
     {
       phase: "阶段 1",

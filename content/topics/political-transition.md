@@ -14,7 +14,7 @@ noindex: false
 
 讨论低冲突转型、国家重组与制度接续的现实路径。
 
-<div class="topic-hero-note"><strong>核心判断</strong><p>政治转型的核心不是抽象替换，而是如何保留国家能力、恢复责任链并降低社会摩擦。</p><small>4 篇相关文章 · 最近更新 2026-07-19</small></div>
+<div class="topic-hero-note"><strong>核心判断</strong><p>政治转型的核心不是抽象替换，而是如何保留国家能力、恢复责任链并降低社会摩擦。</p><small>5 篇相关文章 · 最近更新 2026-07-24</small></div>
 
 ## 推荐阅读顺序
 
@@ -26,6 +26,12 @@ noindex: false
 ## 全部相关文章
 
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route">
+  <p class="knowledge-card__meta"><span>2026-07-24</span><span>7 分钟阅读</span></p>
+  <h3><a href="/civic-orderism/information-age-and-political-transition">信息化时代与政治转型</a></h3>
+  <p class="knowledge-card__summary">世界已经进入信息化时代，但绝大多数国家仍运行着工业时代建立起来的治理体系。本文从时代错位、改革开放遗留问题与资源约束出发，解释公民秩序主义为何在今天提出。</p>
+  <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：非暴力转型</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="political-route nonviolent-transition state-system-upgrade">
   <p class="knowledge-card__meta"><span>2026-07-19</span><span>13 分钟阅读</span></p>
   <h3><a href="/civic-orderism/peaceful-state-transition">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</a></h3>

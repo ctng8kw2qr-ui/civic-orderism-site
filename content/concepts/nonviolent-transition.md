@@ -17,10 +17,10 @@ publicationStatus: reviewing
 
 <p class="concept-definition">以降低冲突、避免清算并维持国家基本能力为约束的政治转型路径。</p>
 
-| 字段 | 内容 |
-| --- | --- |
+| 字段     | 内容       |
+| -------- | ---------- |
 | 更新时间 | 2026-07-20 |
-| 知识状态 | 研究概念 |
+| 知识状态 | 研究概念   |
 
 ## 完整解释
 
@@ -55,6 +55,12 @@ publicationStatus: reviewing
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>11 分钟阅读</span></p>
   <h3><a href="/theory/internal-change-external-change">内变引外变：现代政治为何走到十字路口</a></h3>
   <p class="knowledge-card__summary">现代政治已经走到了一个历史性的十字路口。</p>
+  <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：非暴力转型</span></p>
+</article>
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route">
+  <p class="knowledge-card__meta"><span>2026-07-24</span><span>7 分钟阅读</span></p>
+  <h3><a href="/civic-orderism/information-age-and-political-transition">信息化时代与政治转型</a></h3>
+  <p class="knowledge-card__summary">世界已经进入信息化时代，但绝大多数国家仍运行着工业时代建立起来的治理体系。本文从时代错位、改革开放遗留问题与资源约束出发，解释公民秩序主义为何在今天提出。</p>
   <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：非暴力转型</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="order-evaporation state-system-upgrade nonviolent-transition">

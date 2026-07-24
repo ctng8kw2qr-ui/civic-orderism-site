@@ -17,10 +17,10 @@ publicationStatus: reviewing
 
 <p class="concept-definition">把价值目标转化为进入现实、组织行动与制度过渡的可执行路径。</p>
 
-| 字段 | 内容 |
-| --- | --- |
+| 字段     | 内容       |
+| -------- | ---------- |
 | 更新时间 | 2026-07-20 |
-| 知识状态 | 研究概念 |
+| 知识状态 | 研究概念   |
 
 ## 完整解释
 
@@ -56,6 +56,12 @@ publicationStatus: reviewing
   <h3><a href="/civic-orderism/peaceful-state-transition">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</a></h3>
   <p class="knowledge-card__summary">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不以集体清算为前提的转轨道路。</p>
   <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：政治路线</span></p>
+</article>
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route">
+  <p class="knowledge-card__meta"><span>2026-07-24</span><span>7 分钟阅读</span></p>
+  <h3><a href="/civic-orderism/information-age-and-political-transition">信息化时代与政治转型</a></h3>
+  <p class="knowledge-card__summary">世界已经进入信息化时代，但绝大多数国家仍运行着工业时代建立起来的治理体系。本文从时代错位、改革开放遗留问题与资源约束出发，解释公民秩序主义为何在今天提出。</p>
+  <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：非暴力转型</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="second-reform" data-concepts="second-reform political-route">
   <p class="knowledge-card__meta"><span>2026-07-19</span><span>22 分钟阅读</span></p>

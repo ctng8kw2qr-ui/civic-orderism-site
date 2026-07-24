@@ -14,7 +14,7 @@ noindex: false
 
 解释公民秩序主义是什么、为什么出现，以及它试图回应什么时代问题。
 
-<div class="section-stats"><span>29 篇已发布文章</span><span>1 个正式专题</span><span>更新至 2026-07-19</span></div>
+<div class="section-stats"><span>30 篇已发布文章</span><span>1 个正式专题</span><span>更新至 2026-07-24</span></div>
 
 <div class="section-core-judgment"><strong>栏目核心判断</strong><p>公民秩序主义的核心不是更换掌权者，而是让公共问题能够进入系统，让判断、执行、纠错与问责重新形成可理解的责任链。</p></div>
 
@@ -43,7 +43,7 @@ noindex: false
 
 ## 专题入口
 
-<div class="topic-entry-grid topic-entry-grid--single"><a class="topic-entry-card" href="/topics/political-transition"><strong>中国政治转型</strong><span>讨论低冲突转型、国家重组与制度接续的现实路径。</span><small>4 篇相关文章</small></a></div>
+<div class="topic-entry-grid topic-entry-grid--single"><a class="topic-entry-card" href="/topics/political-transition"><strong>中国政治转型</strong><span>讨论低冲突转型、国家重组与制度接续的现实路径。</span><small>5 篇相关文章</small></a></div>
 
 ## 全部文章
 
@@ -52,10 +52,16 @@ noindex: false
 <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">
   <label>专题<select data-filter-topic><option value="">全部专题</option><option value="political-transition">中国政治转型</option><option value="order-evaporation">秩序蒸发</option></select></label>
-  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="political-route">政治路线</option><option value="nonviolent-transition">非暴力转型</option><option value="state-system-upgrade">国家系统升级</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="political-debt">政治偿债</option><option value="low-friction-governance">低摩擦治理</option><option value="bureaucratic-shock">官僚休克</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option><option value="fiscal-debt">财政偿债</option></select></label>
+  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="nonviolent-transition">非暴力转型</option><option value="state-system-upgrade">国家系统升级</option><option value="political-route">政治路线</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="political-debt">政治偿债</option><option value="low-friction-governance">低摩擦治理</option><option value="bureaucratic-shock">官僚休克</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option><option value="fiscal-debt">财政偿债</option></select></label>
   <button type="button" data-filter-reset>重置</button>
 </div>
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route">
+  <p class="knowledge-card__meta"><span>2026-07-24</span><span>7 分钟阅读</span></p>
+  <h3><a href="/civic-orderism/information-age-and-political-transition">信息化时代与政治转型</a></h3>
+  <p class="knowledge-card__summary">世界已经进入信息化时代，但绝大多数国家仍运行着工业时代建立起来的治理体系。本文从时代错位、改革开放遗留问题与资源约束出发，解释公民秩序主义为何在今天提出。</p>
+  <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：非暴力转型</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="political-route nonviolent-transition state-system-upgrade">
   <p class="knowledge-card__meta"><span>2026-07-19</span><span>13 分钟阅读</span></p>
   <h3><a href="/civic-orderism/peaceful-state-transition">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</a></h3>
@@ -224,9 +230,9 @@ noindex: false
 
 ## 相关核心概念
 
-<div class="section-concept-links"><a href="/concepts/political-route">政治路线</a>
-<a href="/concepts/nonviolent-transition">非暴力转型</a>
+<div class="section-concept-links"><a href="/concepts/nonviolent-transition">非暴力转型</a>
 <a href="/concepts/state-system-upgrade">国家系统升级</a>
+<a href="/concepts/political-route">政治路线</a>
 <a href="/concepts/order-evaporation">秩序蒸发</a>
 <a href="/concepts/high-fragility">高脆弱态</a>
 <a href="/concepts/political-debt">政治偿债</a>
