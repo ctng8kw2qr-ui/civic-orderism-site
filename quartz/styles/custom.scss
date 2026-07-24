@@ -1,4 +1,5 @@
 @use "./base.scss";
+@use "./articleTypography.scss";
 
 body {
   letter-spacing: 0;
@@ -1551,18 +1552,6 @@ body[data-slug="articles"] article li {
   margin: 0.48rem 0;
 }
 
-body:not([data-slug="index"]) article p {
-  line-height: 1.8;
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
-
-body:not([data-slug="index"]) article li {
-  line-height: 1.75;
-  margin-top: 0.35em;
-  margin-bottom: 0.35em;
-}
-
 article .subtitle,
 article blockquote {
   color: var(--darkgray);
@@ -2983,45 +2972,6 @@ body:is(
     box-sizing: border-box;
     padding-left: 0;
     padding-right: 0;
-  }
-
-  body:not([data-slug="index"]) article p,
-  body:not([data-slug="index"]) article li {
-    font-size: 16px;
-  }
-
-  body:not([data-slug="index"]) article p {
-    line-height: 1.75;
-    margin-top: 0.9em;
-    margin-bottom: 0.9em;
-  }
-
-  body:not([data-slug="index"]) article li {
-    line-height: 1.7;
-    margin-top: 0.3em;
-    margin-bottom: 0.3em;
-  }
-
-  body:not([data-slug="index"]) article h1 {
-    font-size: 1.75rem;
-    line-height: 1.35;
-    margin-top: 1.2em;
-    margin-bottom: 0.8em;
-  }
-
-  body:not([data-slug="index"]) article h2 {
-    font-size: 1.35rem;
-    line-height: 1.4;
-    margin-top: 1.6em;
-    margin-bottom: 0.7em;
-    padding-top: 1em;
-  }
-
-  body:not([data-slug="index"]) article h3 {
-    font-size: 1.15rem;
-    line-height: 1.4;
-    margin-top: 1.2em;
-    margin-bottom: 0.5em;
   }
 
   .page > #quartz-body .sidebar.right {

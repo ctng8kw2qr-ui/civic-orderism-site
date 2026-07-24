@@ -20,6 +20,8 @@
     "build": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build && node ./scripts/generate-static-security-files.mjs",
     "validate:v2": "node ./scripts/validate-v2-architecture.mjs",
     "validate:content-safety": "node ./scripts/validate-content-safety.mjs",
+    "validate:article-typography": "node ./scripts/validate-article-typography.mjs",
+    "check:links": "node ./scripts/check-internal-links.mjs",
     "preview": "wrangler dev",
     "docs": "node ./quartz/bootstrap-cli.mjs build --serve -d docs",
     "check": "tsc --noEmit && npx prettier . --check",

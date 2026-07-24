@@ -1,0 +1,182 @@
+@use "./variables.scss" as *;
+
+/*
+ * Shared long-form article rhythm.
+ *
+ * All ordinary article typography should be controlled here. Component-specific
+ * surfaces such as key judgments, callouts, knowledge cards, and the article
+ * footer keep their own scoped styles.
+ */
+.article-content {
+  --article-font-size: 17px;
+  --article-line-height: 1.9;
+  --article-paragraph-spacing: 1.25em;
+  --article-heading-2-spacing: 2.4em;
+  --article-heading-3-spacing: 2em;
+  --article-heading-4-spacing: 1.6em;
+  --article-block-spacing: 1.5em;
+  --article-list-indent: 1.5em;
+
+  min-width: 0;
+  color: var(--darkgray);
+  font-size: var(--article-font-size);
+  line-height: var(--article-line-height);
+
+  & p {
+    margin: 0 0 var(--article-paragraph-spacing);
+    line-height: inherit;
+  }
+
+  & > :is(h2, h3, h4, h5, h6) {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  & > :first-child:is(h2, h3, h4, h5, h6) {
+    margin-top: 0;
+  }
+
+  & h2 {
+    margin: var(--article-heading-2-spacing) 0 0.9em;
+    font-size: 1.45rem;
+    line-height: 1.35;
+  }
+
+  & h3 {
+    margin: var(--article-heading-3-spacing) 0 0.75em;
+    font-size: 1.15rem;
+    line-height: 1.4;
+  }
+
+  & h4,
+  & h5,
+  & h6 {
+    margin: var(--article-heading-4-spacing) 0 0.65em;
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+
+  & :is(h2, h3, h4, h5, h6) + :is(p, ul, ol, blockquote) {
+    margin-top: 0;
+  }
+
+  & ul,
+  & ol {
+    margin: 0.75em 0 var(--article-paragraph-spacing);
+    padding-inline-start: var(--article-list-indent);
+  }
+
+  & ul {
+    list-style: disc;
+  }
+
+  & ol {
+    list-style: decimal;
+  }
+
+  & li {
+    margin: 0 0 0.45em;
+    line-height: 1.8;
+  }
+
+  & li:last-child {
+    margin-bottom: 0;
+  }
+
+  & li > p {
+    margin: 0 0 0.45em;
+    line-height: inherit;
+  }
+
+  & li > p:last-child {
+    margin-bottom: 0;
+  }
+
+  & li > :is(ul, ol) {
+    margin: 0.55em 0 0;
+    padding-inline-start: 1.35em;
+  }
+
+  & blockquote:not([data-callout]) {
+    box-sizing: border-box;
+    margin: var(--article-block-spacing) 0;
+    padding: 0.9em 1.1em;
+    border: 0;
+    border-left: 3px solid var(--tertiary);
+    background: color-mix(in srgb, var(--light) 92%, var(--lightgray));
+    color: var(--darkgray);
+    line-height: 1.8;
+  }
+
+  & blockquote:not([data-callout]) > :first-child {
+    margin-top: 0;
+  }
+
+  & blockquote:not([data-callout]) > :last-child {
+    margin-bottom: 0;
+  }
+
+  & strong {
+    font-weight: 650;
+  }
+
+  & hr {
+    width: 100%;
+    height: 1px;
+    margin: 2.4em 0;
+    border: 0;
+    background: var(--lightgray);
+  }
+
+  & img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1.8em auto;
+  }
+
+  & figure:not([data-rehype-pretty-code-figure]) {
+    margin: 1.8em 0;
+  }
+
+  & figure:not([data-rehype-pretty-code-figure]) img {
+    margin: 0 auto;
+  }
+
+  & figcaption {
+    margin-top: 0.6em;
+    color: var(--gray);
+    font-size: 0.9em;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  & > p:last-child,
+  & > ul:last-child,
+  & > ol:last-child,
+  & > blockquote:last-child:not([data-callout]),
+  & > figure:last-child:not([data-rehype-pretty-code-figure]),
+  & > :last-child > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media all and ($mobile) {
+  .article-content {
+    --article-font-size: 16px;
+    --article-line-height: 1.85;
+    --article-list-indent: 1.25em;
+
+    & h2 {
+      font-size: 1.35rem;
+    }
+
+    & h3 {
+      font-size: 1.12rem;
+    }
+
+    & blockquote:not([data-callout]) {
+      padding: 0.8em 0.9em;
+    }
+  }
+}
