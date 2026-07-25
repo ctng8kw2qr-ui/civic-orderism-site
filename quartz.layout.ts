@@ -1,21 +1,10 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg";
 import * as Component from "./quartz/components";
 import { QuartzComponentProps } from "./quartz/components/types";
-
-const articlePrefixes = [
-  "theory/",
-  "china/",
-  "china-stage/",
-  "civic-orderism/",
-  "institution/",
-];
+import { isArticleSlug } from "./quartz/util/articlePage";
 
 const isArticleContentPage = (page: QuartzComponentProps) => {
-  const slug = page.fileData.slug ?? "";
-  if (slug === "index" || slug === "articles" || slug.endsWith("/index")) {
-    return false;
-  }
-  return articlePrefixes.some((prefix) => slug.startsWith(prefix));
+  return isArticleSlug(page.fileData.slug ?? "");
 };
 
 // components shared across all pages
