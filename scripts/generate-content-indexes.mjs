@@ -201,6 +201,7 @@ const slugs = {
     "china/why-expulsion-from-party-becomes-standard-ending",
     "china/why-ccp-will-not-relax-party-pressure",
     "china/ccp-2018-xi-era-local-growth-space",
+    "china/supply-side-reform-state-can-scale-not-discover-future",
     "china/mao-death-release-xi-death-weightlessness",
     "theory/party-state-structural-failure",
     "china/information-age-impact-on-ccp-mechanisms",
@@ -647,6 +648,7 @@ ${articleLines([
 
 ${articleLines([
   "china/ccp-2018-xi-era-local-growth-space",
+  "china/supply-side-reform-state-can-scale-not-discover-future",
   "china/information-age-impact-on-ccp-mechanisms",
   "theory/high-rigidity-system-ccp",
   "theory/ccp-high-fragility-dysfunction",
