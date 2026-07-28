@@ -57,6 +57,12 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">这些年，中文舆论场上一个越来越明显的现象是：</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management fiscal-debt">
+  <p class="knowledge-card__meta"><span>2026-07-28</span><span>16 分钟阅读</span></p>
+  <h3><a href="/china/supply-side-reform-state-can-scale-not-discover-future">供给侧改革之后：国家能放大产业，却未必能发现未来</a></h3>
+  <p class="knowledge-card__summary">新能源汽车、光伏和动力电池的成功，说明中国国家体系能够把制造业中的产业信号迅速放大为全国性产能；芯片烂尾、造车淘汰和周期性过剩则提醒我们，放大能力不等于发现能力。本文讨论供给侧改革如何改变中央、地方、企业与市场之间的分工。</p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-07-12</span><span>14 分钟阅读</span></p>
   <h3><a href="/china/why-ccp-cannot-reduce-grassroots-burden">中共为什么永远无法真正为基层减负？</a></h3>

@@ -14,7 +14,7 @@ noindex: false
 
 从组织、财政、官僚运行和权力机制出发，解释中共为何走到今天。
 
-<div class="section-stats"><span>33 篇已发布文章</span><span>4 个正式专题</span><span>更新至 2026-07-21</span></div>
+<div class="section-stats"><span>34 篇已发布文章</span><span>4 个正式专题</span><span>更新至 2026-07-28</span></div>
 
 <div class="section-core-judgment"><strong>栏目核心判断</strong><p>中共面临的并非单一政策失误，而是权力集中、反馈失真、官僚避责与组织信用消耗相互放大的系统性问题。</p></div>
 
@@ -46,7 +46,7 @@ noindex: false
 <div class="topic-entry-grid"><a class="topic-entry-card" href="/topics/xi-era"><strong>习近平时代</strong><span>追踪权力集中、组织防御化与接班风险如何共同塑造习近平时代。</span><small>6 篇相关文章</small></a>
 <a class="topic-entry-card" href="/topics/bureaucratic-system"><strong>官僚系统</strong><span>研究整肃、问责、避责与多头治理如何改变官僚系统的行为。</span><small>4 篇相关文章</small></a>
 <a class="topic-entry-card" href="/topics/order-evaporation"><strong>秩序蒸发</strong><span>观察制度形式仍在、实际协作与可信承诺却逐步失效的过程。</span><small>4 篇相关文章</small></a>
-<a class="topic-entry-card" href="/topics/ccp-governance"><strong>中共统治术</strong><span>分析压力传导、组织控制、宣传与危机管理的实际机制。</span><small>4 篇相关文章</small></a></div>
+<a class="topic-entry-card" href="/topics/ccp-governance"><strong>中共统治术</strong><span>分析压力传导、组织控制、宣传与危机管理的实际机制。</span><small>5 篇相关文章</small></a></div>
 
 ## 全部文章
 
@@ -54,11 +54,17 @@ noindex: false
 
 <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">
-  <label>专题<select data-filter-topic><option value="">全部专题</option><option value="xi-era">习近平时代</option><option value="three-cleans-era">三清时代</option><option value="bureaucratic-system">官僚系统</option><option value="ccp-governance">中共统治术</option><option value="order-evaporation">秩序蒸发</option><option value="second-reform">二次改开</option></select></label>
-  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="bureaucratic-shock">官僚休克</option><option value="crisis-management">危机管理</option><option value="order-evaporation">秩序蒸发</option><option value="three-cleans-era">三清时代</option><option value="fiscal-debt">财政偿债</option><option value="political-debt">政治偿债</option><option value="ruling-techniques">统治术</option><option value="high-fragility">高脆弱态</option><option value="second-reform">二次改开</option><option value="political-route">政治路线</option></select></label>
+  <label>专题<select data-filter-topic><option value="">全部专题</option><option value="ccp-governance">中共统治术</option><option value="xi-era">习近平时代</option><option value="three-cleans-era">三清时代</option><option value="bureaucratic-system">官僚系统</option><option value="order-evaporation">秩序蒸发</option><option value="second-reform">二次改开</option></select></label>
+  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option><option value="fiscal-debt">财政偿债</option><option value="bureaucratic-shock">官僚休克</option><option value="order-evaporation">秩序蒸发</option><option value="three-cleans-era">三清时代</option><option value="political-debt">政治偿债</option><option value="high-fragility">高脆弱态</option><option value="second-reform">二次改开</option><option value="political-route">政治路线</option></select></label>
   <button type="button" data-filter-reset>重置</button>
 </div>
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management fiscal-debt">
+  <p class="knowledge-card__meta"><span>2026-07-28</span><span>16 分钟阅读</span></p>
+  <h3><a href="/china/supply-side-reform-state-can-scale-not-discover-future">供给侧改革之后：国家能放大产业，却未必能发现未来</a></h3>
+  <p class="knowledge-card__summary">新能源汽车、光伏和动力电池的成功，说明中国国家体系能够把制造业中的产业信号迅速放大为全国性产能；芯片烂尾、造车淘汰和周期性过剩则提醒我们，放大能力不等于发现能力。本文讨论供给侧改革如何改变中央、地方、企业与市场之间的分工。</p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="xi-era" data-concepts="bureaucratic-shock crisis-management order-evaporation">
   <p class="knowledge-card__meta"><span>2026-07-21</span><span>16 分钟阅读</span></p>
   <h3><a href="/china/xi-successor-and-bureaucratic-accountability">习近平到底有没有接班人？</a></h3>
@@ -258,11 +264,11 @@ noindex: false
 
 ## 相关核心概念
 
-<div class="section-concept-links"><a href="/concepts/bureaucratic-shock">官僚休克</a>
+<div class="section-concept-links"><a href="/concepts/ruling-techniques">统治术</a>
 <a href="/concepts/crisis-management">危机管理</a>
+<a href="/concepts/fiscal-debt">财政偿债</a>
+<a href="/concepts/bureaucratic-shock">官僚休克</a>
 <a href="/concepts/order-evaporation">秩序蒸发</a>
 <a href="/concepts/three-cleans-era">三清时代</a>
-<a href="/concepts/fiscal-debt">财政偿债</a>
 <a href="/concepts/political-debt">政治偿债</a>
-<a href="/concepts/ruling-techniques">统治术</a>
 <a href="/concepts/high-fragility">高脆弱态</a></div>

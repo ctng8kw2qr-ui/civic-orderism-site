@@ -62,6 +62,12 @@ aliases:
 <section class="home-section">
   <div class="home-section-heading"><div><p class="resource-label">按发布日期自动更新</p><h2>最新文章</h2></div><a href="/articles">查看全部文章 →</a></div>
   <div class="knowledge-grid home-article-grid"><article class="knowledge-card home-article-card">
+  <p class="knowledge-card__meta"><span>2026-07-28</span><span>解析中共</span></p>
+  <h3><a href="/china/supply-side-reform-state-can-scale-not-discover-future">供给侧改革之后：国家能放大产业，却未必能发现未来</a></h3>
+  <p class="knowledge-card__summary">新能源汽车、光伏和动力电池的成功，说明中国国家体系能够把制造业中的产业信号迅速放大为全国性产能；芯片烂尾、造车淘汰和周期性过剩则提醒我们，放大能力不等于发现能力。本文讨论供给侧改革如何改变中央、地方、企业与市场之间的分工。</p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span></p>
+</article>
+<article class="knowledge-card home-article-card">
   <p class="knowledge-card__meta"><span>2026-07-24</span><span>公民秩序主义</span></p>
   <h3><a href="/civic-orderism/information-age-and-political-transition">信息化时代与政治转型</a></h3>
   <p class="knowledge-card__summary">世界已经进入信息化时代，但绝大多数国家仍运行着工业时代建立起来的治理体系。本文从时代错位、改革开放遗留问题与资源约束出发，解释公民秩序主义为何在今天提出。</p>
@@ -78,12 +84,6 @@ aliases:
   <h3><a href="/civic-orderism/peaceful-state-transition">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</a></h3>
   <p class="knowledge-card__summary">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不以集体清算为前提的转轨道路。</p>
   <p class="knowledge-card__chips"><span>专题：中国政治转型</span></p>
-</article>
-<article class="knowledge-card home-article-card">
-  <p class="knowledge-card__meta"><span>2026-07-19</span><span>中国未来</span></p>
-  <h3><a href="/china-stage/three-cleans-era-political-economic-cultural-contraction">时代何至如此：政治清人，经济清账，文化清声</a></h3>
-  <p class="knowledge-card__summary">政治清人、经济清账、文化清声并非孤立政策，而是增长放缓、财政收缩与信心下降后，制度从发展逻辑转向风险逻辑的共同表现。本文以“三清时代”为框架，分析全面收缩如何制造官场休克、秩序蒸发，并使旧问题的清理逐渐快于新秩序的建立。</p>
-  <p class="knowledge-card__chips"><span>专题：三清时代</span></p>
 </article></div>
 </section>
 

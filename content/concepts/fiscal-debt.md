@@ -57,6 +57,12 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">本文从中央—地方关系、官商共生、财政金融通道与组织控制逻辑出发，分析中共整肃民营经济背后的结构动因。</p>
   <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：财政偿债</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management fiscal-debt">
+  <p class="knowledge-card__meta"><span>2026-07-28</span><span>16 分钟阅读</span></p>
+  <h3><a href="/china/supply-side-reform-state-can-scale-not-discover-future">供给侧改革之后：国家能放大产业，却未必能发现未来</a></h3>
+  <p class="knowledge-card__summary">新能源汽车、光伏和动力电池的成功，说明中国国家体系能够把制造业中的产业信号迅速放大为全国性产能；芯片烂尾、造车淘汰和周期性过剩则提醒我们，放大能力不等于发现能力。本文讨论供给侧改革如何改变中央、地方、企业与市场之间的分工。</p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="three-cleans-era fiscal-debt political-debt">
   <p class="knowledge-card__meta"><span>2026-07-14</span><span>17 分钟阅读</span></p>
   <h3><a href="/china/why-expulsion-from-party-becomes-standard-ending">为什么“开除党籍”正在成为中共处理高级干部的标准结局？</a></h3>
