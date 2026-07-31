@@ -17,10 +17,10 @@ publicationStatus: reviewing
 
 <p class="concept-definition">对长期依赖债务、土地与未来收入形成的财政成本进行集中结算。</p>
 
-| 字段 | 内容 |
-| --- | --- |
+| 字段     | 内容       |
+| -------- | ---------- |
 | 更新时间 | 2026-07-20 |
-| 知识状态 | 研究概念 |
+| 知识状态 | 研究概念   |
 
 ## 完整解释
 
@@ -56,6 +56,12 @@ publicationStatus: reviewing
   <h3><a href="/china/chicken-and-cage">养鸡与换笼：民营经济被整肃的结构逻辑</a></h3>
   <p class="knowledge-card__summary">本文从中央—地方关系、官商共生、财政金融通道与组织控制逻辑出发，分析中共整肃民营经济背后的结构动因。</p>
   <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：财政偿债</span></p>
+</article>
+<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="three-cleans-era fiscal-debt political-debt">
+  <p class="knowledge-card__meta"><span>2026-07-31</span><span>11 分钟阅读</span></p>
+  <h3><a href="/china/route-transition-why-ccp-keeps-purging-officials">路线转换：中共为什么必须不断清洗自己的官员</a></h3>
+  <p class="knowledge-card__summary">本文将持续反腐放在路线转换中理解：当中共从发展优先、地方放权和增量交换，转向政治安全、集中控制与存量追责，旧发展路线形成的干部网络就会被重新评价。纪律案件处理真实腐败，也为组织拆除旧节点、改变选人标准和重塑官僚行为提供了工具。</p>
+  <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：三清时代</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management fiscal-debt">
   <p class="knowledge-card__meta"><span>2026-07-28</span><span>16 分钟阅读</span></p>

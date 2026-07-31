@@ -199,6 +199,7 @@ const slugs = {
     "china/ccp-no-real-base",
     "china/why-ccp-cannot-reduce-grassroots-burden",
     "china/why-expulsion-from-party-becomes-standard-ending",
+    "china/route-transition-why-ccp-keeps-purging-officials",
     "china/why-ccp-will-not-relax-party-pressure",
     "china/ccp-2018-xi-era-local-growth-space",
     "china/supply-side-reform-state-can-scale-not-discover-future",
@@ -661,6 +662,7 @@ ${articleLines([
 ### 三、官僚系统、宣传系统与责任压缩
 
 ${articleLines([
+  "china/route-transition-why-ccp-keeps-purging-officials",
   "china/why-expulsion-from-party-becomes-standard-ending",
   "china/why-ccp-cannot-reduce-grassroots-burden",
   "china/why-ccp-will-not-relax-party-pressure",

@@ -14,7 +14,7 @@ noindex: false
 
 从组织、财政、官僚运行和权力机制出发，解释中共为何走到今天。
 
-<div class="section-stats"><span>34 篇已发布文章</span><span>4 个正式专题</span><span>更新至 2026-07-28</span></div>
+<div class="section-stats"><span>35 篇已发布文章</span><span>4 个正式专题</span><span>更新至 2026-07-31</span></div>
 
 <div class="section-core-judgment"><strong>栏目核心判断</strong><p>中共面临的并非单一政策失误，而是权力集中、反馈失真、官僚避责与组织信用消耗相互放大的系统性问题。</p></div>
 
@@ -54,11 +54,17 @@ noindex: false
 
 <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">
-  <label>专题<select data-filter-topic><option value="">全部专题</option><option value="ccp-governance">中共统治术</option><option value="xi-era">习近平时代</option><option value="three-cleans-era">三清时代</option><option value="bureaucratic-system">官僚系统</option><option value="order-evaporation">秩序蒸发</option><option value="second-reform">二次改开</option></select></label>
-  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option><option value="fiscal-debt">财政偿债</option><option value="bureaucratic-shock">官僚休克</option><option value="order-evaporation">秩序蒸发</option><option value="three-cleans-era">三清时代</option><option value="political-debt">政治偿债</option><option value="high-fragility">高脆弱态</option><option value="second-reform">二次改开</option><option value="political-route">政治路线</option></select></label>
+  <label>专题<select data-filter-topic><option value="">全部专题</option><option value="three-cleans-era">三清时代</option><option value="ccp-governance">中共统治术</option><option value="xi-era">习近平时代</option><option value="bureaucratic-system">官僚系统</option><option value="order-evaporation">秩序蒸发</option><option value="second-reform">二次改开</option></select></label>
+  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="three-cleans-era">三清时代</option><option value="fiscal-debt">财政偿债</option><option value="political-debt">政治偿债</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option><option value="bureaucratic-shock">官僚休克</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="second-reform">二次改开</option><option value="political-route">政治路线</option></select></label>
   <button type="button" data-filter-reset>重置</button>
 </div>
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="three-cleans-era fiscal-debt political-debt">
+  <p class="knowledge-card__meta"><span>2026-07-31</span><span>11 分钟阅读</span></p>
+  <h3><a href="/china/route-transition-why-ccp-keeps-purging-officials">路线转换：中共为什么必须不断清洗自己的官员</a></h3>
+  <p class="knowledge-card__summary">本文将持续反腐放在路线转换中理解：当中共从发展优先、地方放权和增量交换，转向政治安全、集中控制与存量追责，旧发展路线形成的干部网络就会被重新评价。纪律案件处理真实腐败，也为组织拆除旧节点、改变选人标准和重塑官僚行为提供了工具。</p>
+  <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：三清时代</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management fiscal-debt">
   <p class="knowledge-card__meta"><span>2026-07-28</span><span>16 分钟阅读</span></p>
   <h3><a href="/china/supply-side-reform-state-can-scale-not-discover-future">供给侧改革之后：国家能放大产业，却未必能发现未来</a></h3>
@@ -264,11 +270,11 @@ noindex: false
 
 ## 相关核心概念
 
-<div class="section-concept-links"><a href="/concepts/ruling-techniques">统治术</a>
-<a href="/concepts/crisis-management">危机管理</a>
+<div class="section-concept-links"><a href="/concepts/three-cleans-era">三清时代</a>
 <a href="/concepts/fiscal-debt">财政偿债</a>
+<a href="/concepts/political-debt">政治偿债</a>
+<a href="/concepts/ruling-techniques">统治术</a>
+<a href="/concepts/crisis-management">危机管理</a>
 <a href="/concepts/bureaucratic-shock">官僚休克</a>
 <a href="/concepts/order-evaporation">秩序蒸发</a>
-<a href="/concepts/three-cleans-era">三清时代</a>
-<a href="/concepts/political-debt">政治偿债</a>
 <a href="/concepts/high-fragility">高脆弱态</a></div>
