@@ -71,6 +71,7 @@ enableToc: false
 <details class="reading-map-more">
 <summary>更多文章</summary>
 
+- [[china/route-transition-why-ccp-keeps-purging-officials|路线转换：中共为什么必须不断清洗自己的官员]]（2026-07-31）
 - [[china/supply-side-reform-state-can-scale-not-discover-future|供给侧改革之后：国家能放大产业，却未必能发现未来]]（2026-07-28）
 - [[china/why-expulsion-from-party-becomes-standard-ending|为什么“开除党籍”正在成为中共处理高级干部的标准结局？]]（2026-07-14）
 - [[china/why-ccp-cannot-reduce-grassroots-burden|中共为什么永远无法真正为基层减负？]]（2026-07-12）
@@ -245,4 +246,4 @@ enableToc: false
 - [[civic-orderism/peaceful-state-transition|国家如何平稳转轨：公民秩序主义不是中共官僚的敌人]]（2026-07-19）
 - [[china-stage/three-cleans-era-political-economic-cultural-contraction|时代何至如此：政治清人，经济清账，文化清声]]（2026-07-19）
 
-本站共收录 90 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。
+本站共收录 91 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。

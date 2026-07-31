@@ -14,7 +14,7 @@ noindex: false
 
 围绕财政清账、政治清责与组织清洗建立的阶段性研究框架。
 
-<div class="topic-hero-note"><strong>核心判断</strong><p>资源收缩之后，组织会从增量分配进入存量追责，财政、政治与组织成本开始集中结算。</p><small>4 篇相关文章 · 最近更新 2026-07-19</small></div>
+<div class="topic-hero-note"><strong>核心判断</strong><p>资源收缩之后，组织会从增量分配进入存量追责，财政、政治与组织成本开始集中结算。</p><small>5 篇相关文章 · 最近更新 2026-07-31</small></div>
 
 ## 推荐阅读顺序
 
@@ -25,6 +25,12 @@ noindex: false
 ## 全部相关文章
 
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="three-cleans-era fiscal-debt political-debt">
+  <p class="knowledge-card__meta"><span>2026-07-31</span><span>11 分钟阅读</span></p>
+  <h3><a href="/china/route-transition-why-ccp-keeps-purging-officials">路线转换：中共为什么必须不断清洗自己的官员</a></h3>
+  <p class="knowledge-card__summary">本文将持续反腐放在路线转换中理解：当中共从发展优先、地方放权和增量交换，转向政治安全、集中控制与存量追责，旧发展路线形成的干部网络就会被重新评价。纪律案件处理真实腐败，也为组织拆除旧节点、改变选人标准和重塑官僚行为提供了工具。</p>
+  <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：三清时代</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="three-cleans-era fiscal-debt political-debt">
   <p class="knowledge-card__meta"><span>2026-07-19</span><span>17 分钟阅读</span></p>
   <h3><a href="/china-stage/three-cleans-era-political-economic-cultural-contraction">时代何至如此：政治清人，经济清账，文化清声</a></h3>
