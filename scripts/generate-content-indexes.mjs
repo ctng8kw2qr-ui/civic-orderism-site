@@ -553,8 +553,8 @@ ${homeLatestCards || "暂无文章。"}
 <p>严肃交流、资料反馈与建设性讨论，可通过邮件联系。</p>
 
 <dl class="contact-list">
-  <div><dt>主邮箱</dt><dd><a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a></dd></div>
-  <div><dt>备用邮箱</dt><dd><a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com</a></dd></div>
+  <div><dt>主联系邮箱</dt><dd><a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com</a></dd></div>
+  <div><dt>备用邮箱</dt><dd><a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a></dd></div>
   <div><dt>X 平台</dt><dd><a href="https://x.com/CivicOrderism">@CivicOrderism</a></dd></div>
   <div><dt>网站</dt><dd><a href="https://civicorderism.com/">civicorderism.com</a></dd></div>
 </dl>

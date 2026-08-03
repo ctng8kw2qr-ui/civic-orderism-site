@@ -599,15 +599,15 @@ export const ArticleCta: QuartzComponent = ({
           </span>
         </div>
         <div class="article-cta__item">
-          <span class="article-cta__label">主邮箱</span>
+          <span class="article-cta__label">主联系邮箱</span>
           <span class="article-cta__value">
-            <a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a>
+            <a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com</a>
           </span>
         </div>
         <div class="article-cta__item">
           <span class="article-cta__label">备用邮箱</span>
           <span class="article-cta__value">
-            <a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com</a>
+            <a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a>
           </span>
         </div>
       </div>

@@ -23,4 +23,4 @@ listed: false
 
 引用、转发和讨论本站内容，不等于获得组织名义授权。
 
-如需转载、引用或合作，可通过 [citizenorder@proton.me](mailto:citizenorder@proton.me) 联系。
+如需转载、引用或合作，可通过主联系邮箱 [civicorderism@gmail.com](mailto:civicorderism@gmail.com) 联系。

@@ -805,7 +805,7 @@ writeContent(
 <section class="home-section home-further-reading">
   <div class="home-section-intro"><p class="resource-label">正式资料与联系</p><h2>组织手册与进一步了解</h2><p>通过正式手册了解理论概览、组织原则与参与边界。本站不设聊天群或公开投稿入口，严肃交流与资料反馈可通过邮件联系。</p></div>
   <div class="publication-grid">${site.documents.map((doc) => `<section class="publication-card"><p class="resource-label">核心文档</p><h3>${doc.title}</h3><p class="resource-subtitle">${doc.description}</p><small>更新：${doc.updated}</small><a class="resource-button resource-button-primary" href="${doc.href}">阅读或下载</a></section>`).join("\n")}</div>
-  <dl class="contact-list"><div><dt>主要联系邮箱</dt><dd><a href="mailto:${site.primaryEmail}">${site.primaryEmail}</a></dd></div><div><dt>备用邮箱</dt><dd><a href="mailto:${site.secondaryEmail}">${site.secondaryEmail}</a></dd></div></dl>
+  <dl class="contact-list"><div><dt>主联系邮箱</dt><dd><a href="mailto:${site.primaryEmail}">${site.primaryEmail}</a></dd></div><div><dt>备用邮箱</dt><dd><a href="mailto:${site.secondaryEmail}">${site.secondaryEmail}</a></dd></div></dl>
 </section>`,
 );
 
@@ -1015,7 +1015,7 @@ ${site.documents.map((doc) => `- [${doc.title}](${doc.href}) — ${doc.descripti
 
 ## 联系方式
 
-- 主要联系邮箱：[${site.primaryEmail}](mailto:${site.primaryEmail})
+- 主联系邮箱：[${site.primaryEmail}](mailto:${site.primaryEmail})
 - 备用邮箱：[${site.secondaryEmail}](mailto:${site.secondaryEmail})
 - 网站：[civicorderism.com](https://civicorderism.com/)
 

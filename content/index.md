@@ -91,5 +91,5 @@ aliases:
   <div class="home-section-intro"><p class="resource-label">正式资料与联系</p><h2>组织手册与进一步了解</h2><p>通过正式手册了解理论概览、组织原则与参与边界。本站不设聊天群或公开投稿入口，严肃交流与资料反馈可通过邮件联系。</p></div>
   <div class="publication-grid"><section class="publication-card"><p class="resource-label">核心文档</p><h3>公民秩序主义介绍手册</h3><p class="resource-subtitle">第一次理解公民秩序主义的基础文本。</p><small>更新：2026-06-11</small><a class="resource-button resource-button-primary" href="/files/civic-orderism-introduction-manual.pdf">阅读或下载</a></section>
 <section class="publication-card"><p class="resource-label">核心文档</p><h3>公民秩序主义组织手册</h3><p class="resource-subtitle">记录仍在形成中的组织原则、参与边界与早期协作框架。</p><small>更新：2026-06-11</small><a class="resource-button resource-button-primary" href="/files/civic-orderism-organization-manual.pdf">阅读或下载</a></section></div>
-  <dl class="contact-list"><div><dt>主要联系邮箱</dt><dd><a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a></dd></div><div><dt>备用邮箱</dt><dd><a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com</a></dd></div></dl>
+  <dl class="contact-list"><div><dt>主联系邮箱</dt><dd><a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com</a></dd></div><div><dt>备用邮箱</dt><dd><a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a></dd></div></dl>
 </section>

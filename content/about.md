@@ -39,8 +39,8 @@ noindex: false
 
 ## 联系方式
 
-- 主要联系邮箱：[citizenorder@proton.me](mailto:citizenorder@proton.me)
-- 备用邮箱：[civicorderism@gmail.com](mailto:civicorderism@gmail.com)
+- 主联系邮箱：[civicorderism@gmail.com](mailto:civicorderism@gmail.com)
+- 备用邮箱：[citizenorder@proton.me](mailto:citizenorder@proton.me)
 - 网站：[civicorderism.com](https://civicorderism.com/)
 
 本站不设聊天群、社区群或公开投稿入口。

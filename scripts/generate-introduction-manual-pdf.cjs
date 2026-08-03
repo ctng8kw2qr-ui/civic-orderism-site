@@ -40,7 +40,8 @@ const NODE_MODULES =
   process.env.NODE_PATH ||
   "/Users/zhaopengbo/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules";
 const BROWSERS_PATH =
-  process.env.PLAYWRIGHT_BROWSERS_PATH || path.join(ROOT, "work", "playwright-browsers");
+  process.env.PLAYWRIGHT_BROWSERS_PATH ||
+  path.join(ROOT, "work", "playwright-browsers");
 
 function resolveChromiumPath() {
   const candidates = [
@@ -63,17 +64,32 @@ function resolveChromiumPath() {
       "chrome-headless-shell-mac-arm64",
       "chrome-headless-shell",
     ),
-  ].filter(Boolean)
+  ].filter(Boolean);
 
-  return candidates.find((candidate) => fs.existsSync(candidate))
+  return candidates.find((candidate) => fs.existsSync(candidate));
 }
 
 const chapterQuestions = new Map([
-  ["前言：公民秩序主义要回答什么问题", "国家为什么存在，制度服务于谁，权力如何被组织、监督和纠正？"],
-  ["公民秩序主义的基本理念", "公民、制度、责任与公共秩序之间应当建立怎样的关系？"],
-  ["公民秩序主义的核心制度设计", "一套可解释、可追责、可纠错的现代国家系统如何具体运行？"],
-  ["公民秩序主义的时代意义", "信息化时代为何需要超越旧式政党对抗，转向国家系统升级？"],
-  ["结语：从权力崇拜走向制度秩序", "如何从依赖人物、口号和动员，走向可持续运行的制度秩序？"],
+  [
+    "前言：公民秩序主义要回答什么问题",
+    "国家为什么存在，制度服务于谁，权力如何被组织、监督和纠正？",
+  ],
+  [
+    "公民秩序主义的基本理念",
+    "公民、制度、责任与公共秩序之间应当建立怎样的关系？",
+  ],
+  [
+    "公民秩序主义的核心制度设计",
+    "一套可解释、可追责、可纠错的现代国家系统如何具体运行？",
+  ],
+  [
+    "公民秩序主义的时代意义",
+    "信息化时代为何需要超越旧式政党对抗，转向国家系统升级？",
+  ],
+  [
+    "结语：从权力崇拜走向制度秩序",
+    "如何从依赖人物、口号和动员，走向可持续运行的制度秩序？",
+  ],
 ]);
 
 const toc = [
@@ -135,7 +151,10 @@ const toc = [
 ];
 
 const chapterMeta = new Map([
-  ["前言：公民秩序主义要回答什么问题", ["00", "前言：公民秩序主义要回答什么问题"]],
+  [
+    "前言：公民秩序主义要回答什么问题",
+    ["00", "前言：公民秩序主义要回答什么问题"],
+  ],
   ["公民秩序主义的基本理念", ["01", "公民秩序主义的基本理念"]],
   ["公民秩序主义的核心制度设计", ["02", "公民秩序主义的核心制度设计"]],
   ["公民秩序主义的时代意义", ["03", "公民秩序主义的时代意义"]],
@@ -206,7 +225,10 @@ function isNumberedSubheading(line) {
 
 const listBlocks = new Map([
   ["普通人遇到问题时，是否有地方可以说理？", { count: 4, includeFirst: true }],
-  ["如果预算复杂，国家应当提供可理解的预算说明；", { count: 4, includeFirst: true }],
+  [
+    "如果预算复杂，国家应当提供可理解的预算说明；",
+    { count: 4, includeFirst: true },
+  ],
   ["任何重要公共事项，都应尽可能回答：", { count: 7 }],
   ["好的制度，应该做到：", { count: 6 }],
   ["所谓社会摩擦，就是普通人在面对制度时不断感受到的障碍：", { count: 9 }],
@@ -1221,8 +1243,8 @@ ${referenceStyle}
       <div class="cover-contact-title">联系方式 / Contact</div>
       <div class="cover-contact-lines">
         <span>X 平台 / X</span><strong>@CivicOrderism</strong>
-        <span>邮箱 / Email</span><strong>citizenorder@proton.me</strong>
-        <span>备用邮箱 / Backup Email</span><strong>civicorderism@gmail.com</strong>
+        <span>主联系邮箱 / Primary contact</span><strong>civicorderism@gmail.com</strong>
+        <span>备用邮箱 / Alternative contact</span><strong>citizenorder@proton.me</strong>
         <span>网站 / Website</span><strong>https://civicorderism.com/</strong>
       </div>
       <div class="cover-official">
@@ -1267,8 +1289,8 @@ ${referenceStyle}
       <h2>联系方式 / Contact</h2>
       <div class="contact-lines">
         <span>X 平台 / X</span><strong><a href="https://x.com/CivicOrderism">@CivicOrderism</a></strong>
-        <span>邮箱 / Email</span><strong><a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a></strong>
-        <span>备用邮箱 / Backup Email</span><strong><a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com</a></strong>
+        <span>主联系邮箱 / Primary contact</span><strong><a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com</a></strong>
+        <span>备用邮箱 / Alternative contact</span><strong><a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a></strong>
         <span>网站 / Website</span><strong><a href="https://civicorderism.com/">https://civicorderism.com/</a></strong>
       </div>
     </div>
@@ -1288,8 +1310,8 @@ ${referenceStyle}
       <div class="back-contact-title">联系方式 / Contact</div>
       <div class="back-contact-lines">
         <span>X 平台 / X</span><strong>@CivicOrderism</strong>
-        <span>邮箱 / Email</span><strong>citizenorder@proton.me</strong>
-        <span>备用邮箱 / Backup Email</span><strong>civicorderism@gmail.com</strong>
+        <span>主联系邮箱 / Primary contact</span><strong>civicorderism@gmail.com</strong>
+        <span>备用邮箱 / Alternative contact</span><strong>citizenorder@proton.me</strong>
         <span>网站 / Website</span><strong>https://civicorderism.com/</strong>
       </div>
     </div>
@@ -1309,8 +1331,8 @@ ${referenceStyle}
     <div class="copyright-contacts">
       <h2>联系方式</h2>
       <div class="copyright-grid">
-        <span>主联系邮箱</span><strong>citizenorder@proton.me</strong>
-        <span>备用联系邮箱</span><strong>civicorderism@gmail.com</strong>
+        <span>主联系邮箱</span><strong>civicorderism@gmail.com</strong>
+        <span>备用邮箱</span><strong>citizenorder@proton.me</strong>
         <span>官方网站</span><strong>https://civicorderism.com</strong>
         <span>版本</span><strong>Version 1.0</strong>
         <span>发布日期</span><strong>June 2026</strong>
@@ -1320,8 +1342,8 @@ ${referenceStyle}
     <div class="official-source">
       <strong>Official Source</strong>
       Website: https://civicorderism.com<br>
-      Email: citizenorder@proton.me<br>
-      Backup Email: civicorderism@gmail.com
+      Primary contact: civicorderism@gmail.com<br>
+      Alternative contact: citizenorder@proton.me
     </div>
   </section>
 </body>
