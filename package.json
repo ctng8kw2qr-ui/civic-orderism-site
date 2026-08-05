@@ -16,7 +16,7 @@
     "generate:indexes": "node ./scripts/generate-content-indexes.mjs && node ./scripts/generate-v2-architecture.mjs",
     "generate:manual-pdfs": "node ./scripts/generate-introduction-manual-pdf.cjs && node ./scripts/generate-organization-manual-pdf.cjs",
     "generate:article-structure-review": "node ./scripts/generate-article-structure-review.mjs && prettier ./reports/article-structure-review.md --write",
-    "dev": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build --serve",
+    "dev": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build --serve --host 0.0.0.0 --port 8080",
     "build": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build && node ./scripts/generate-static-security-files.mjs",
     "validate:v2": "node ./scripts/validate-v2-architecture.mjs",
     "validate:content-safety": "node ./scripts/validate-content-safety.mjs",

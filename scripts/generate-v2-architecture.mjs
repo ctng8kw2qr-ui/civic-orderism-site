@@ -21,6 +21,7 @@ const articlePrefixes = [
 const readJson = (name) =>
   JSON.parse(fs.readFileSync(path.join(dataDir, name), "utf8"));
 const site = readJson("site.config.json");
+const organization = readJson("organization.config.json");
 const sections = readJson("sections.config.json");
 const topics = readJson("topics.config.json");
 const concepts = readJson("concepts.config.json");
@@ -662,6 +663,15 @@ function sectionPage(section) {
     .map((slug) => conceptBySlug.get(slug))
     .filter((concept) => concept && publicConceptSlugs.has(concept.slug))
     .slice(0, 8);
+  const civicRouteIntro =
+    section.slug === "civic-orderism"
+      ? `<section class="section-route-intro" aria-labelledby="section-route-intro-title">
+  <p class="resource-label">从这里理解路线</p>
+  <h2 id="section-route-intro-title">公民秩序主义不只是理论，也是一项政治准备</h2>
+  <p>它为中国准备一条不依赖革命、不以清算为目的和平政治转轨道路，并通过理论传播、路线推广、支持者识别与制度准备，逐步建立早期协作基础。</p>
+  <div class="section-route-links"><a href="/start"><strong>5分钟了解</strong><span>建立最小理解框架</span></a><a href="/civic-orderism/peaceful-state-transition"><strong>核心路线</strong><span>理解国家连续与低冲突转轨</span></a><a href="/participate"><strong>参与说明</strong><span>了解传播、研究与早期协作</span></a></div>
+</section>`
+      : "";
   return `${yamlFrontmatter({ title: section.name, description: section.description, contentType: "栏目" })}
 
 # ${section.name}
@@ -670,7 +680,7 @@ ${section.description}
 
 <div class="section-stats"><span>${items.length} 篇已发布文章</span><span>${sectionTopics.length} 个正式专题</span><span>更新至 ${items[0]?.updated || "2026-07-19"}</span></div>
 
-<div class="section-core-judgment"><strong>栏目核心判断</strong><p>${section.coreJudgment}</p></div>
+<div class="section-core-judgment"><strong>栏目核心判断</strong><p>${section.coreJudgment}</p></div>${civicRouteIntro ? `\n\n${civicRouteIntro}` : ""}
 
 ## 推荐文章
 
@@ -764,48 +774,67 @@ writeContent(
 
 <section class="v2-hero home-platform-hero">
   <p class="home-kicker">${site.englishName}</p>
-  <h1><img src="/static/logo.png" alt="" />${site.name}</h1>
-  <p class="v2-hero__tagline">从现实痛感进入结构判断，再进入制度回应。</p>
-  <div class="home-platform-hero__copy"><p>本站研究中国旧治理结构为何失效，并探索一条保持国家连续性的低摩擦制度转轨路径。</p></div>
-  <div class="v2-actions"><a class="v2-button v2-button--primary" href="/start">5分钟了解公民秩序主义</a><a class="v2-button v2-button--secondary" href="/files/civic-orderism-introduction-manual.pdf">阅读介绍手册</a><a class="v2-button v2-button--text" href="#core-topics">按专题阅读</a></div>
+  <h1>建设一条低阻力、低风险、能够和平承接中国未来的政治道路</h1>
+  <p class="v2-hero__tagline">公民秩序主义正在从理论走向制度化筹备。</p>
+  <div class="home-platform-hero__copy"><p>我们正在进入北美非营利法人、董事会治理和长期组织基础的筹备阶段。目标不是追求短期声势，而是依法建立一个稳定、克制、具有明确责任和治理结构的公共研究与制度建设平台。</p></div>
+  <div class="v2-actions"><a class="v2-button v2-button--primary" href="/start">了解公民秩序主义</a><a class="v2-button v2-button--secondary" href="${organization.routes.manifesto}">阅读筹备宣言</a><a class="v2-button v2-button--text" href="${organization.routes.participate}">参与筹备</a></div>
+  <p class="home-preparation-note">${organization.statusLabels.registration}；${organization.statusLabels.board}。</p>
 </section>
 
-<section class="home-section" id="start-reading">
-  <div class="home-section-heading"><div><p class="resource-label">从哪里开始</p><h2>第一次来到本站？</h2><p>用5分钟建立最小阅读框架，再按顺序进入结构分析与制度回应。</p></div><a href="/articles">查看阅读地图 →</a></div>
-  <div class="onboarding-list">${newcomerSteps}</div>
+<section class="home-section home-organization-rationale" id="why-organization">
+  <div class="home-section-intro"><p class="resource-label">从理论走向组织</p><h2>为什么需要从理论走向组织</h2><p>一种真正希望影响国家未来的政治思想，不能永远依靠个人维护，也不能只停留在文章、观点和公共讨论之中。</p></div>
+  <div class="organization-logic"><span>理论需要制度承载</span><i>→</i><span>制度需要组织实践</span><i>→</i><span>组织需要合法、稳定的运行基础</span></div>
+  <p class="home-organization-rationale__summary">启动北美非营利法人及董事会筹备，是为了长期保存理论、验证制度、积累人才、保护数字资产并承担公共责任。<a href="${organization.routes.nonprofitPreparation}">了解筹备范围 →</a></p>
 </section>
 
-<section class="home-section home-stakeholders">
-  <div class="home-section-intro"><p class="resource-label">转轨的现实条件</p><h2>官僚、社会、国家三者诉求的交汇</h2><p>制度转轨不能只表达一种立场，还必须回答不同参与者如何获得稳定预期，以及国家能力如何得到接续。</p></div>
-  <div class="stakeholder-grid"><article><strong>官僚系统</strong><p>需要退路、尊严、安全与稳定预期。</p></article><article><strong>社会</strong><p>需要秩序、保障、公平与基本尊严。</p></article><article><strong>国家</strong><p>需要连续性、可治理性与低风险转型。</p></article></div>
-  <div class="transition-principles"><p><strong>不是</strong>推翻一切，<span>而是完成转轨。</span></p><p><strong>不是</strong>全面清算，<span>而是明确责任边界。</span></p><p><strong>不是</strong>制造新的恐惧，<span>而是建立新的制度预期。</span></p></div>
-  <p class="home-stakeholders__summary">公民秩序主义所追求的，是一条让国家不失控、社会不撕裂、官僚系统不必绝望的转轨道路。<a href="/start#method-difference">理解转轨方法 →</a></p>
+<section class="home-section home-stakeholders" id="transition-principles">
+  <div class="home-section-intro"><p class="resource-label">我们的政治路线</p><h2>不革命、不普遍清算、不让国家停摆</h2><p>我们不以报复作为组织手段，不因身份对体制内人员实施集体追责，而是通过协商、谈判、授权转换和制度重组完成和平政治转轨。</p></div>
+  <div class="stakeholder-grid"><article><strong>不革命</strong><p>不以社会崩溃和国家解体换取政治变化。</p></article><article><strong>不普遍清算</strong><p>区分政治、历史与刑事责任，拒绝集体报复。</p></article><article><strong>不让国家停摆</strong><p>保障财政、教育、医疗、交通、治安和基层治理不断档。</p></article></div>
+  <p class="home-stakeholders__summary">我们希望推动的，不是一次权力争夺，而是一次治理方式与国家秩序的和平转换。<a href="/civic-orderism/peaceful-state-transition">阅读核心路线 →</a></p>
 </section>
 
-<section class="home-section" id="core-topics">
-  <div class="home-section-heading"><div><p class="resource-label">持续研究线索</p><h2>核心专题</h2><p>从四条相互关联的研究线索进入，而不是追逐孤立事件。</p></div><a href="/topics">查看全部专题 →</a></div>
-  <div class="topic-entry-grid home-core-topic-grid">${homepageTopicCards}</div>
+<section class="home-section home-route-need">
+  <div class="home-section-intro"><p class="resource-label">提前准备</p><h2>为什么现在需要提前准备</h2><p>财政压力、人口老龄化、地方债务、社会保障、基层治理、官僚体系风险和国际环境变化，正在持续传导至整个国家运行体系。</p></div>
+  <p class="home-question">如果旧秩序无法继续，新的秩序由谁承接？</p>
+  <p class="home-route-need__summary">如果没有提前形成理论、制度、组织、人才和社会信任，旧秩序的失效就可能演变为社会失序。我们不希望在危机发生以后寻找答案。</p>
+</section>
+
+<section class="home-section home-build" id="what-we-build">
+  <div class="home-section-intro"><p class="resource-label">长期组织基础</p><h2>我们正在建设什么</h2><p>法人不是目的。它是长期公共建设和制度实践的基础设施。</p></div>
+  <div class="home-build-grid"><article><span>01</span><strong>理论与制度平台</strong><p>持续研究中国政治、财政、官僚体系、社会治理与和平转轨。</p></article><article><span>02</span><strong>合法组织基础</strong><p>在加拿大及北美法律环境下筹备稳定、可持续的非营利法人。</p></article><article><span>03</span><strong>董事会治理结构</strong><p>建立明确的授权、监督、责任和治理边界。</p></article><article><span>04</span><strong>信息与隐私制度</strong><p>拟建立信息最小化、最小权限、分级访问和身份保护。</p></article><article><span>05</span><strong>品牌与数字资产保护</strong><p>长期管理网站、理论成果、出版物、账号、域名与档案。</p></article><article><span>06</span><strong>人才与信任积累</strong><p>识别能够长期承担研究、法律、财务、技术和组织治理责任的人。</p></article></div>
 </section>
 
 <section class="home-section home-method-teaser">
-  <div><p class="resource-label">方法差异</p><h2>公民秩序主义关注的，不只是价值，而是转轨如何发生</h2><p>价值主张说明希望抵达哪里，制度路线还要回答谁来承接、风险如何降低、国家能力怎样保持连续。</p></div>
-  <a class="v2-button v2-button--secondary" href="/start#method-difference">理解这条路线 →</a>
+  <div><p class="resource-label">低阻力的政治逻辑</p><h2>为什么这条路线具有更低的政治阻力</h2><p>公民秩序主义不进入革命、社会崩溃和普遍清算的传统敌我逻辑。它反对的是失效的制度，而不是国家本身；它也不把体制内人员整体定义为敌人。</p><strong>真正的战略优势，不是谁拥有更强的惩罚能力，而是谁能够为更多人提供一个成本更低、风险更小、值得相信的未来。</strong></div>
+  <a class="v2-button v2-button--secondary" href="${organization.routes.manifesto}">阅读完整论证 →</a>
+</section>
+
+<section class="home-section home-preparation-overview" id="preparation">
+  <div class="home-section-intro"><p class="resource-label">当前阶段</p><h2>北美非营利法人与首届董事会筹备</h2><p>目前的工作是明确法人宗旨、业务范围和治理结构，建立财务、隐私、知识产权与信息安全制度，梳理公共资产，并识别能够承担长期治理责任的候选人。</p></div>
+  <div class="preparation-status-grid"><a href="${organization.routes.nonprofitPreparation}"><span>${organization.statusLabels.nonprofit}</span><strong>法人筹备</strong><p>了解法人定位、拟承担的公共工作、当前筹备事项和治理原则。</p><small>了解筹备状态 →</small></a><a href="${organization.routes.boardPreparation}"><span>${organization.statusLabels.board}</span><strong>首届董事会筹备</strong><p>董事会是承担治理、监督、法律责任与资产保护的责任机构，不是荣誉头衔。</p><small>了解责任与边界 →</small></a></div>
+  <p class="preparation-boundary"><strong>身份边界：</strong>参与筹备不自动产生董事资格、法定成员资格、共同创始人身份、官方代表资格、项目治理权或项目资产所有权。</p>
+</section>
+
+<section class="home-section home-participate">
+  <div class="home-section-intro"><p class="resource-label">少量、长期、责任导向</p><h2>我们希望与什么样的人建立联系</h2><p>现阶段的重点不是普通会员扩张，而是与少量长期居住于加拿大或北美、能够承担真实制度和治理工作的人建立联系。</p></div>
+  <div class="participation-levels"><span>法律与法人治理</span><span>财务与内部控制</span><span>研究与制度设计</span><span>技术、信息安全与运营</span></div>
+  <div class="home-participate__action"><p>我们不以学历、知名度、粉丝数量或激烈立场作为主要标准，更重视品格、责任、稳定性、专业能力和长期合作的可能。</p><a class="v2-button v2-button--primary" href="${organization.routes.participate}">阅读参与筹备说明</a></div>
+</section>
+
+<section class="home-section" id="core-route">
+  <div class="home-section-heading"><div><p class="resource-label">核心路线与筹备文件</p><h2>从理论进入组织准备</h2><p>先理解这条政治道路，再理解为什么需要建立长期组织基础。</p></div><a href="/civic-orderism">查看系列全文 →</a></div>
+  <div class="core-judgment-grid"><a class="core-judgment-card" href="/start"><span>01 · 快速了解</span><strong>5分钟了解公民秩序主义</strong><p>从中国的现实处境、转轨原则与制度方向建立基本框架。</p><small>开始阅读 →</small></a><a class="core-judgment-card" href="/civic-orderism/peaceful-state-transition"><span>02 · 和平转轨</span><strong>国家如何在不停摆的条件下完成转轨</strong><p>让社会、国家与体制内成员获得可信的安全预期。</p><small>阅读核心路线 →</small></a><a class="core-judgment-card" href="${organization.routes.manifesto}"><span>03 · 组织筹备</span><strong>公民秩序主义北美非营利法人及董事会筹备宣言</strong><p>了解从理论到组织的阶段转变、治理原则与参与边界。</p><small>阅读筹备宣言 →</small></a><a class="core-judgment-card" href="/institution-design"><span>04 · 制度准备</span><strong>把政治主张转化为可讨论的国家制度</strong><p>进入问题入口、公共判断、行政执行、纠错与问责机制。</p><small>进入制度设计 →</small></a></div>
 </section>
 
 <section class="home-section">
-  <div class="home-section-heading"><div><p class="resource-label">四个相互衔接的入口</p><h2>理论体系</h2></div><a href="/start">从入门页开始 →</a></div>
-  <div class="theory-system-grid">${theorySystemCards}</div>
-</section>
-
-<section class="home-section">
-  <div class="home-section-heading"><div><p class="resource-label">按发布日期自动更新</p><h2>最新文章</h2></div><a href="/articles">查看全部文章 →</a></div>
+  <div class="home-section-heading"><div><p class="resource-label">按发布日期自动更新</p><h2>最新研究和文章</h2></div><a href="/articles">查看全部文章 →</a></div>
   <div class="knowledge-grid home-article-grid">${latestArticles.map(homeArticleCard).join("\n")}</div>
 </section>
 
 <section class="home-section home-further-reading">
-  <div class="home-section-intro"><p class="resource-label">正式资料与联系</p><h2>组织手册与进一步了解</h2><p>通过正式手册了解理论概览、组织原则与参与边界。本站不设聊天群或公开投稿入口，严肃交流与资料反馈可通过邮件联系。</p></div>
+  <div class="home-section-intro"><p class="resource-label">正式资料与联系</p><h2>手册与筹备联系</h2><p>本站不设公开成员名册、群聊、支付或募款入口。现阶段通过电子邮件建立初步联系。</p></div>
   <div class="publication-grid">${site.documents.map((doc) => `<section class="publication-card"><p class="resource-label">核心文档</p><h3>${doc.title}</h3><p class="resource-subtitle">${doc.description}</p><small>更新：${doc.updated}</small><a class="resource-button resource-button-primary" href="${doc.href}">阅读或下载</a></section>`).join("\n")}</div>
-  <dl class="contact-list"><div><dt>主联系邮箱</dt><dd><a href="mailto:${site.primaryEmail}">${site.primaryEmail}</a></dd></div><div><dt>备用邮箱</dt><dd><a href="mailto:${site.secondaryEmail}">${site.secondaryEmail}</a></dd></div></dl>
+  <dl class="contact-list"><div><dt>主联系邮箱</dt><dd><a href="mailto:${organization.primaryEmail}">${organization.primaryEmail}</a></dd></div><div><dt>备用邮箱</dt><dd><a href="mailto:${organization.secondaryEmail}">${organization.secondaryEmail}</a></dd></div></dl>
 </section>`,
 );
 
@@ -929,6 +958,14 @@ for (const concept of concepts) {
     .map((slug) => conceptBySlug.get(slug))
     .filter((item) => item && publicConceptSlugs.has(item.slug));
   const statusLabel = conceptIsFormal ? "正式概念" : "研究概念";
+  const usesAlignedStatusTable = [
+    "fiscal-debt",
+    "political-debt",
+    "three-cleans-era",
+  ].includes(concept.slug);
+  const conceptStatusTable = usesAlignedStatusTable
+    ? `| 字段     | 内容       |\n| -------- | ---------- |\n| 更新时间 | 2026-07-20 |\n| 知识状态 | ${statusLabel}   |`
+    : `| 字段 | 内容 |\n| --- | --- |\n| 更新时间 | 2026-07-20 |\n| 知识状态 | ${statusLabel} |`;
   writeContent(
     `concepts/${concept.slug}.md`,
     `${yamlFrontmatter({ title: concept.name, description: concept.definition, contentType: "核心概念", status: conceptIsVisible ? "published" : "draft", listed: conceptIsFormal, folderListed: conceptIsFormal, noindex: !conceptIsFormal, publicationStatus })}
@@ -939,10 +976,7 @@ for (const concept of concepts) {
 
 <p class="concept-definition">${concept.definition}</p>
 
-| 字段 | 内容 |
-| --- | --- |
-| 更新时间 | 2026-07-20 |
-| 知识状态 | ${statusLabel} |
+${conceptStatusTable}
 
 ## 完整解释
 
@@ -984,17 +1018,143 @@ writeContent(
 );
 
 writeContent(
+  "preparation.md",
+  `${yamlFrontmatter({ title: "北美非营利法人筹备", description: "了解公民秩序主义筹备北美非营利法人的目的、当前状态、拟承担的公共工作、治理原则与参与边界。", contentType: "筹备页面" })}
+
+<div class="preparation-page">
+<header class="preparation-hero">
+  <p class="resource-label">长期公共建设的组织基础</p>
+  <h1>北美非营利法人筹备</h1>
+  <p>公民秩序主义正在为理论研究、制度设计、公共传播、人才培养与数字资产保护建立一个长期、稳定、克制的组织基础。</p>
+  <div class="preparation-status"><span>${organization.statusLabels.nonprofit}</span><span>${organization.statusLabels.registration}</span><span>${organization.statusLabels.jurisdiction}</span></div>
+</header>
+
+<section class="preparation-section">
+  <div class="home-section-intro"><p class="resource-label">为什么需要法人</p><h2>让公共事业不再依赖个人意志和临时协作</h2><p>理论需要制度承载，制度需要组织实践。法人不是目的，而是明确责任、保护公共资产、建立持续治理和依法开展工作的基础设施。</p></div>
+  <div class="preparation-principle-grid"><article><strong>治理可持续</strong><p>以章程、董事会、授权和记录制度代替个人化管理。</p></article><article><strong>责任可识别</strong><p>明确谁能够决策、谁承担监督、谁对财务和公共资产负责。</p></article><article><strong>资产可保护</strong><p>长期管理理论成果、品牌、域名、网站、账号、档案与出版物。</p></article></div>
+</section>
+
+<section class="preparation-section">
+  <div class="home-section-intro"><p class="resource-label">拟承担的公共工作</p><h2>研究、出版、制度建设与人才培养</h2><p>具体业务范围将根据最终注册法域、章程和法律意见确定。现阶段的筹备方向包括：</p></div>
+  <ul class="preparation-work-list"><li><strong>理论研究</strong><span>持续研究中国政治、财政、社会、官僚体系与国家治理。</span></li><li><strong>制度设计</strong><span>完善和平转轨、行政承接、责任区分和公共权力约束方案。</span></li><li><strong>出版与传播</strong><span>维护网站，出版研究成果，建立稳定、克制的公共传播平台。</span></li><li><strong>组织治理</strong><span>建立章程、附例、财务、档案、隐私、知识产权与信息安全制度。</span></li><li><strong>人才培养</strong><span>识别并培养能够承担研究、专业与长期治理责任的人。</span></li></ul>
+</section>
+
+<section class="preparation-section">
+  <div class="home-section-intro"><p class="resource-label">当前筹备事项</p><h2>先建立规则，再扩大参与</h2></div>
+  <ol class="preparation-steps"><li><span>01</span><div><strong>明确宗旨与业务范围</strong><p>研究适合的法人定位、公共目的和合规边界。</p></div></li><li><span>02</span><div><strong>选择注册法域</strong><p>比较加拿大及北美相关法律环境；目前尚未确定具体法域。</p></div></li><li><span>03</span><div><strong>制定章程与组织附例</strong><p>明确董事会、法定成员、授权、监督和利益冲突规则。</p></div></li><li><span>04</span><div><strong>建立内部制度</strong><p>准备财务、档案、隐私、信息安全和知识产权制度。</p></div></li><li><span>05</span><div><strong>识别首届董事候选人</strong><p>以真实治理责任、专业能力和长期合作可能为标准。</p></div></li><li><span>06</span><div><strong>完成法律程序</strong><p>在制度和人员准备成熟后，再依法申请注册并产生治理机构。</p></div></li></ol>
+</section>
+
+<section class="preparation-section preparation-governance">
+  <div><p class="resource-label">治理原则</p><h2>克制、程序、责任与安全</h2></div>
+  <ul><li>先有制度，再扩大参与；</li><li>先有责任，再授予权力；</li><li>组织资产服务公共使命，不归个人所有；</li><li>未经授权，任何人不得代表组织；</li><li>采用分级授权、最小权限和可追溯的决策记录；</li><li>重要法律、财务和信息安全事项必须经过专业审查。</li></ul>
+</section>
+
+<section class="preparation-section preparation-legal-note">
+  <p class="resource-label">重要状态说明</p>
+  <h2>筹备不等于已经成立</h2>
+  <p>截至目前，${organization.statusLabels.registration}，${organization.statusLabels.jurisdiction}，${organization.statusLabels.board}。本站使用“北美非营利法人筹备”和“董事会筹备”，仅描述正在进行的准备工作，不表示已经取得任何法人、慈善或免税资格。</p>
+  <p><strong>参与筹备不自动产生</strong>董事资格、法定成员资格、共同创始人身份、官方代表资格、项目治理权或项目资产所有权。</p>
+  <div class="preparation-actions"><a class="v2-button v2-button--primary" href="${organization.routes.boardPreparation}">了解董事会筹备</a><a class="v2-button v2-button--secondary" href="${organization.routes.participate}">参与筹备</a></div>
+</section>
+</div>`,
+);
+
+writeContent(
+  "preparation/board.md",
+  `${yamlFrontmatter({ title: "首届董事会筹备", description: "了解公民秩序主义首届董事会的定位、责任、候选人标准、产生程序与当前法律状态。", contentType: "筹备页面" })}
+
+<div class="preparation-page board-preparation-page">
+<header class="preparation-hero">
+  <p class="resource-label">治理责任，不是荣誉头衔</p>
+  <h1>首届董事会筹备</h1>
+  <p>董事会将承担组织方向、合规监督、财务责任、公共资产保护和管理层问责。首届董事会将在法人制度准备和法律程序完成后依法产生。</p>
+  <div class="preparation-status"><span>${organization.statusLabels.board}</span><span>${organization.statusLabels.registration}</span></div>
+</header>
+
+<section class="preparation-section">
+  <div class="home-section-intro"><p class="resource-label">董事会是什么</p><h2>承担长期治理和法律责任的机构</h2><p>董事不是项目支持者的高级称号，也不是对早期参与的奖励。董事需要对组织使命、合规、财务、风险和公共资产承担持续的受托责任。</p></div>
+  <div class="preparation-principle-grid"><article><strong>守护使命</strong><p>保证组织工作持续服务于和平转轨、制度研究和公共建设。</p></article><article><strong>监督治理</strong><p>审议重大政策、预算、授权、风险和管理层履职。</p></article><article><strong>保护资产</strong><p>防止品牌、知识成果、资金、账号和数字资产被个人控制或挪用。</p></article></div>
+</section>
+
+<section class="preparation-section">
+  <div class="home-section-intro"><p class="resource-label">候选人标准</p><h2>我们重视什么</h2><p>现阶段希望与少量长期居住于加拿大或北美、理解基本政治路线并愿意承担真实治理责任的人建立联系。</p></div>
+  <ul class="participate-checklist"><li>理解和平转轨、行政承接与国家连续；</li><li>认同不革命、不普遍清算、不以报复为目的；</li><li>尊重程序、授权、组织纪律与集体决策；</li><li>具备独立判断、事实意识和处理分歧的能力；</li><li>能够保护组织信息、成员隐私和敏感资料；</li><li>愿意投入稳定时间并承担法定治理责任；</li><li>能够识别并披露利益冲突；</li><li>具备法律、财务、公共管理、技术、传播、研究或运营能力之一。</li></ul>
+</section>
+
+<section class="preparation-section">
+  <div class="home-section-intro"><p class="resource-label">产生程序</p><h2>不会通过公开报名直接任命</h2><p>首届董事会的产生将以法律要求、章程设计、背景核验、长期合作观察和正式决议为基础。</p></div>
+  <ol class="preparation-steps"><li><span>01</span><div><strong>初步联系</strong><p>了解路线认同、专业背景、居住法域与参与意愿。</p></div></li><li><span>02</span><div><strong>任务协作</strong><p>通过小规模、具体工作观察责任感、判断力与协作稳定性。</p></div></li><li><span>03</span><div><strong>治理沟通</strong><p>讨论董事义务、利益冲突、保密、安全和时间投入。</p></div></li><li><span>04</span><div><strong>合规审查</strong><p>结合最终注册法域核对董事资格和法律要求。</p></div></li><li><span>05</span><div><strong>依法产生</strong><p>在法人程序中依章程完成提名、同意、决议与记录。</p></div></li></ol>
+</section>
+
+<section class="preparation-section preparation-legal-note">
+  <p class="resource-label">身份边界</p><h2>筹备联系不构成任命或承诺</h2>
+  <p>提交意向、参与会议、提供建议或完成协作任务，都不当然产生董事候选人、董事、法定成员、共同创始人或官方代表身份。任何治理身份都必须在制度准备和法律程序完成后，以正式文件确认。</p>
+  <div class="preparation-actions"><a class="v2-button v2-button--primary" href="${organization.routes.participate}#contact">提交筹备意向</a><a class="v2-button v2-button--secondary" href="${organization.routes.manifesto}">阅读筹备宣言</a></div>
+</section>
+</div>`,
+);
+
+writeContent(
+  "participate.md",
+  `${yamlFrontmatter({ title: "参与筹备", description: "了解如何参与公民秩序主义北美非营利法人、首届董事会及相关制度建设，并安全提交筹备意向。", contentType: "参与筹备" })}
+
+<div class="participate-page">
+<header class="participate-hero">
+  <p class="resource-label">少量、长期、任务制协作</p>
+  <h1>参与公民秩序主义筹备</h1>
+  <p>当前不是普通会员招募，也不是建立大规模公开群组。我们希望与少量长期居住于加拿大或北美、认同基本路线并愿意承担真实制度建设工作的人建立联系。</p>
+  <p class="participate-status-note">${organization.statusLabels.registration}；${organization.statusLabels.board}。</p>
+</header>
+
+<section class="participate-section" aria-labelledby="participation-paths">
+  <div class="home-section-intro"><p class="resource-label">六个工作方向</p><h2 id="participation-paths">你可以参与什么</h2><p>早期协作以小规模、具体任务为主，并根据必要性采用最小权限和分级访问。</p></div>
+  <div class="participate-path-grid"><article><span>01</span><h3>法律与法人治理</h3><p>注册法域研究、章程和附例、董事义务、政策与合规文件。</p></article><article><span>02</span><h3>财务与内部控制</h3><p>预算、记账、报销、审批、审计准备和资产管理制度。</p></article><article><span>03</span><h3>研究与制度设计</h3><p>政治、财政、社会治理、官僚体系、和平转轨与行政承接研究。</p></article><article><span>04</span><h3>技术与信息安全</h3><p>网站、档案、访问控制、数字资产、隐私保护和风险评估。</p></article><article><span>05</span><h3>出版与公共传播</h3><p>编辑、翻译、视觉设计、出版流程和克制、准确的公共表达。</p></article><article><span>06</span><h3>组织运营与人才联系</h3><p>任务协调、会议记录、流程建设、专业网络和长期合作维护。</p></article></div>
+</section>
+
+<section class="participate-section participate-fit" aria-labelledby="participation-fit">
+  <div class="home-section-intro"><p class="resource-label">责任与稳定性优先</p><h2 id="participation-fit">我们希望与什么样的人建立联系</h2></div>
+  <ul class="participate-checklist"><li>理解和平转轨与行政承接；</li><li>认同不革命、不普遍清算、不以报复为目的；</li><li>能够长期、稳定地参与公共事务；</li><li>尊重程序、授权、组织纪律与事实；</li><li>能够保护组织信息和成员隐私；</li><li>愿意承担真实工作和明确责任；</li><li>具备独立思考和处理分歧的能力；</li><li>拥有法律、财务、管理、技术、传播、设计、研究或运营能力之一。</li></ul>
+</section>
+
+<section class="participate-section participate-boundaries" aria-labelledby="participation-boundaries">
+  <div><p class="resource-label">我们不希望建立什么</p><h2 id="participation-boundaries">不以人数、头衔和情绪制造组织</h2><p>我们不建立个人崇拜，不依靠口号、互相攻击和敌我动员维持活跃度，不建立失控的大规模公开群组，也不允许任何人未经授权代表组织。</p><p>我们不以公开暴露身份、激进言论或不必要的冒险作为忠诚证明，不以内部热闹代替真实建设。</p></div>
+</section>
+
+<section class="participate-section participate-security" aria-labelledby="participation-security">
+  <div class="home-section-intro"><p class="resource-label">参与者保护</p><h2 id="participation-security">不人为制造风险</h2><p>未来将逐步建立信息最小化、化名参与、身份保护、分级授权、最小权限、内部资料访问控制和敏感工作独立风险评估机制。</p></div>
+  <p>我们无法承诺政治参与完全没有风险，但不会鼓励无意义的牺牲，也不会要求任何人以个人或家庭安全换取组织认可。</p>
+</section>
+
+<section class="participate-section preparation-legal-note" aria-labelledby="participation-status-boundary">
+  <p class="resource-label">身份边界</p><h2 id="participation-status-boundary">筹备参与不是治理身份</h2>
+  <p>提交邮件、参加沟通、提供建议或完成任务，均不当然产生董事资格、法定成员资格、共同创始人身份、官方代表资格、项目治理权或项目资产所有权。</p>
+</section>
+
+<section class="participate-section participate-contact" id="contact" aria-labelledby="participation-contact">
+  <div class="home-section-intro"><p class="resource-label">筹备联系</p><h2 id="participation-contact">提交参与意向</h2><p>如果你长期居住于加拿大或北美，认同基本方向并愿意承担长期制度建设工作，可以通过电子邮件建立初步联系。</p></div>
+  <div class="participate-contact-grid"><div><h3>邮件建议包括</h3><ul><li>所在国家、州或省；</li><li>对公民秩序主义基本路线的理解；</li><li>专业背景和可参与方向；</li><li>能够投入的大致时间；</li><li>希望参与法人、董事会或哪一类制度筹备；</li><li>是否接受小规模、任务制和长期观察式协作。</li></ul></div><div class="participate-contact-card"><p class="resource-label">主联系邮箱</p><a href="mailto:${organization.primaryEmail}?subject=${encodeURIComponent("公民秩序主义北美筹备参与意向")}">${organization.primaryEmail}</a><p class="resource-label">备用邮箱</p><a href="mailto:${organization.secondaryEmail}?subject=${encodeURIComponent("公民秩序主义北美筹备参与意向")}">${organization.secondaryEmail}</a><small>请不要在初次邮件中发送身份证件、详细住址、护照号码、单位内部资料或其他不必要的敏感个人信息。可以先使用化名并说明希望采用的联系方式。</small></div></div>
+</section>
+</div>`,
+);
+
+writeContent(
   "about.md",
-  `${yamlFrontmatter({ title: "关于", description: "关于公民秩序主义项目、研究方法与联系方式。", contentType: "页面" })}
+  `${yamlFrontmatter({ title: "关于", description: "了解公民秩序主义作为网站、理论、政治与制度路线以及北美组织筹备项目的准确定位。", contentType: "页面" })}
 
 # 关于
 
 “公民秩序主义”在本站有四个彼此关联、但不应混为一谈的层次：
 
-- **网站**：一个从中国现实问题出发，连接结构解释、趋势判断、理论回应与制度设计的政治研究与制度知识库。
+- **网站**：公民秩序主义的正式门户、理论与路线说明中心，也是北美非营利法人及首届董事会筹备的公开信息入口。
 - **理论**：一套解释国家失灵、公共秩序与制度能力的研究框架。
-- **路线**：一条尽量降低冲突、保障参与者预期并保持国家连续性的制度转轨路径。
-- **组织**：仍在形成中的早期协作框架，用于探索研究、传播与制度准备如何衔接；它不是已经成熟运行的政治组织。
+- **政治与制度路线**：一条以低阻力、低风险方式推动和平转轨、行政承接和国家连续的道路，不以革命、普遍清算或报复为主要手段。
+- **组织筹备项目**：为理论研究、制度设计、公共传播、人才培养和长期治理建立合法、稳定、可持续的组织基础。
+
+**公民秩序主义已经从单纯的理论建设，进入北美非营利法人、董事会治理和长期组织基础的筹备阶段。**
+
+截至目前，${organization.statusLabels.registration}，${organization.statusLabels.jurisdiction}，${organization.statusLabels.board}。公民秩序主义尚不是一个成熟运行的政党，也不声称已经取得法人、慈善或免税资格。
+
+现阶段的目标，不是追求短期声势或迅速扩张成员，而是建立清晰的治理、授权、财务、隐私、知识产权和信息安全制度，并识别能够承担长期责任的人。
 
 本站保持专业、审慎、冷静和克制的写作方式。这里不以新闻速度为目标，也不以口号、情绪动员或个人崇拜替代制度分析。
 
@@ -1005,6 +1165,10 @@ writeContent(
 ## 阅读入口
 
 - [[start|开始阅读]]
+- [[civic-orderism/north-america-nonprofit-board-preparation-manifesto|阅读筹备宣言]]
+- [[preparation|了解法人筹备]]
+- [[preparation/board|了解首届董事会筹备]]
+- [[participate|参与筹备]]
 - [[topics|专题]]
 - [[concepts|核心概念]]
 - [[articles|全部文章]]
@@ -1015,11 +1179,11 @@ ${site.documents.map((doc) => `- [${doc.title}](${doc.href}) — ${doc.descripti
 
 ## 联系方式
 
-- 主联系邮箱：[${site.primaryEmail}](mailto:${site.primaryEmail})
-- 备用邮箱：[${site.secondaryEmail}](mailto:${site.secondaryEmail})
+- 主联系邮箱：[${organization.primaryEmail}](mailto:${organization.primaryEmail})
+- 备用邮箱：[${organization.secondaryEmail}](mailto:${organization.secondaryEmail})
 - 网站：[civicorderism.com](https://civicorderism.com/)
 
-本站不设聊天群、社区群或公开投稿入口。`,
+本站不设公开成员名册、失控的公开群聊、支付或募款入口。如果你长期居住在加拿大或北美，认同基本路线并愿意承担制度建设工作，请阅读 [[participate|参与筹备说明]]。`,
 );
 
 writeContent(

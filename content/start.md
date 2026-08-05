@@ -28,6 +28,7 @@ noindex: false
 <li><a href="/civic-orderism/why-civic-orderism">03 · 为什么是公民秩序主义？</a></li>
 <li><a href="/civic-orderism/civic-orderism-manual">04 · 公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案</a></li>
 <li><a href="/institution-design">05 · 制度设计入口</a></li>
-<li><a href="/files/civic-orderism-organization-manual.pdf">06 · 公民秩序主义组织手册</a></li></ol></section>
+<li><a href="/civic-orderism/north-america-nonprofit-board-preparation-manifesto">06 · 公民秩序主义北美非营利法人及董事会筹备宣言</a></li>
+<li><a href="/participate">07 · 参与筹备</a></li></ol></section>
   <div class="start-page__actions"><a class="v2-button v2-button--primary" href="/#core-topics">按核心专题继续</a><a class="v2-button v2-button--secondary" href="/files/civic-orderism-organization-manual.pdf">阅读组织手册</a></div>
 </div>

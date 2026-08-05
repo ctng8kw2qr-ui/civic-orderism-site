@@ -12,6 +12,7 @@ const concepts = readJson("data/concepts.config.json");
 const sections = readJson("data/sections.config.json");
 const institutionSections = readJson("data/institution-sections.config.json");
 const readingSequences = readJson("data/reading-sequences.config.json");
+const organization = readJson("data/organization.config.json");
 const topicSlugs = new Set(topics.map((item) => item.slug));
 const conceptSlugs = new Set(concepts.map((item) => item.slug));
 const sectionNames = new Set(sections.map((item) => item.name));
@@ -366,6 +367,10 @@ for (const route of [
   "topics",
   "concepts",
   "start",
+  "preparation",
+  "preparation/board",
+  "participate",
+  "civic-orderism/north-america-nonprofit-board-preparation-manifesto",
 ]) {
   assert(
     sitemap.includes(`civicorderism.com/${route}`),
@@ -432,9 +437,138 @@ assert(
   JSON.stringify(homepageLatestSlugs) === JSON.stringify(expectedLatestSlugs),
   `首页最新文章未按发布日期自动排序：${homepageLatestSlugs.join(", ")}`,
 );
+const homepageText = visiblePageText(homepageHtml);
 assert(
-  visiblePageText(homepageHtml).includes("用5分钟建立最小阅读框架"),
-  "首页缺少统一的新读者时长说明",
+  homepageText.includes(
+    "建设一条低阻力、低风险、能够和平承接中国未来的政治道路",
+  ),
+  "首页缺少和平承接未来的核心定位",
+);
+assert(
+  homepageText.includes("不革命、不普遍清算、不让国家停摆") &&
+    homepageText.includes("我们正在建设什么") &&
+    homepageText.includes("北美非营利法人与首届董事会筹备"),
+  "首页缺少核心转轨原则或组织筹备说明",
+);
+assert(
+  homepageHtml.includes('href="/participate"') &&
+    homepageHtml.includes('href="/preparation"') &&
+    homepageHtml.includes(
+      'href="/civic-orderism/north-america-nonprofit-board-preparation-manifesto"',
+    ),
+  "首页缺少法人筹备、宣言或参与入口",
+);
+assert(
+  homepageText.includes(organization.statusLabels.registration) &&
+    homepageText.includes(organization.statusLabels.board),
+  "首页缺少准确的法人或董事会状态",
+);
+
+const participateHtml = fs.readFileSync(publicHtml("participate"), "utf8");
+const participateText = visiblePageText(participateHtml);
+for (const requiredText of [
+  "法律与法人治理",
+  "财务与内部控制",
+  "研究与制度设计",
+  "技术与信息安全",
+  "筹备参与不是治理身份",
+  "不人为制造风险",
+  "请不要在初次邮件中发送身份证件",
+]) {
+  assert(
+    participateText.includes(requiredText),
+    `参与页缺少内容：${requiredText}`,
+  );
+}
+const primaryEmailPosition = participateHtml.indexOf(
+  "mailto:civicorderism@gmail.com",
+);
+const secondaryEmailPosition = participateHtml.indexOf(
+  "mailto:citizenorder@proton.me",
+);
+assert(
+  primaryEmailPosition >= 0 && secondaryEmailPosition > primaryEmailPosition,
+  "参与页邮箱缺失或主备顺序错误",
+);
+
+const preparationHtml = fs.readFileSync(publicHtml("preparation"), "utf8");
+const preparationText = visiblePageText(preparationHtml);
+const boardHtml = fs.readFileSync(publicHtml("preparation/board"), "utf8");
+const boardText = visiblePageText(boardHtml);
+const manifestoHtml = fs.readFileSync(
+  publicHtml(
+    "civic-orderism/north-america-nonprofit-board-preparation-manifesto",
+  ),
+  "utf8",
+);
+const manifestoText = visiblePageText(manifestoHtml);
+for (const [label, html, text] of [
+  ["法人筹备页", preparationHtml, preparationText],
+  ["董事会筹备页", boardHtml, boardText],
+  ["筹备宣言", manifestoHtml, manifestoText],
+]) {
+  assert(
+    html.includes('property="og:title"') &&
+      html.includes('name="twitter:description"') &&
+      html.includes('rel="canonical"'),
+    `${label}缺少 OG、X 或 canonical 元数据`,
+  );
+  assert(
+    text.includes(organization.statusLabels.registration) &&
+      text.includes(organization.statusLabels.board),
+    `${label}缺少法人或董事会状态说明`,
+  );
+  assert(!text.includes("法人已完成注册"), `${label}误称法人已经注册`);
+  assert(!text.includes("首届董事会已经依法产生"), `${label}误称董事会已产生`);
+}
+for (const requiredText of [
+  "理论研究",
+  "制度设计",
+  "选择注册法域",
+  "筹备不等于已经成立",
+  "不表示已经取得任何法人、慈善或免税资格",
+]) {
+  assert(
+    preparationText.includes(requiredText),
+    `法人筹备页缺少内容：${requiredText}`,
+  );
+}
+for (const requiredText of [
+  "治理责任，不是荣誉头衔",
+  "不会通过公开报名直接任命",
+  "筹备联系不构成任命或承诺",
+]) {
+  assert(
+    boardText.includes(requiredText),
+    `董事会筹备页缺少内容：${requiredText}`,
+  );
+}
+
+const ccpArticleHtml = fs.readFileSync(
+  publicHtml("china/route-transition-why-ccp-keeps-purging-officials"),
+  "utf8",
+);
+const civicArticleHtml = fs.readFileSync(
+  publicHtml("civic-orderism/peaceful-state-transition"),
+  "utf8",
+);
+assert(
+  ccpArticleHtml.includes("从理解现实，到参与准备") &&
+    ccpArticleHtml.includes('href="/start"') &&
+    ccpArticleHtml.includes(
+      'href="/civic-orderism/north-america-nonprofit-board-preparation-manifesto"',
+    ) &&
+    ccpArticleHtml.includes('href="/participate"'),
+  "解析中共文章缺少路线、筹备宣言或参与入口",
+);
+assert(
+  civicArticleHtml.includes("从理解现实，到参与准备") &&
+    civicArticleHtml.includes('href="/start"') &&
+    civicArticleHtml.includes(
+      'href="/civic-orderism/north-america-nonprofit-board-preparation-manifesto"',
+    ) &&
+    civicArticleHtml.includes('href="/participate"'),
+  "公民秩序主义文章缺少路线、筹备宣言或参与入口",
 );
 
 const conceptIndexHtml = fs.readFileSync(
@@ -469,7 +603,7 @@ const startHtml = fs.readFileSync(publicHtml("start"), "utf8");
 const startText = visiblePageText(startHtml);
 assert(startText.includes("新读者入口"), "/start 缺少新读者入口标签");
 assert(!startText.includes("约 5 分钟"), "/start 仍包含人工时长文案");
-assert(startText.includes("3分钟阅读"), "/start 自动阅读时长不再是 3 分钟");
+assert(startText.includes("4分钟阅读"), "/start 自动阅读时长不再是 4 分钟");
 assert(
   !visiblePageText(homepageHtml).includes("约 5 分钟"),
   "首页仍包含人工时长文案",

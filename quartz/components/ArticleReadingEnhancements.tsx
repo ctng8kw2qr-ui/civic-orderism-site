@@ -12,6 +12,7 @@ import topicsConfig from "../../data/topics.config.json";
 import conceptsConfig from "../../data/concepts.config.json";
 import sectionsConfig from "../../data/sections.config.json";
 import readingSequencesConfig from "../../data/reading-sequences.config.json";
+import organization from "../../data/organization.config.json";
 import {
   getConceptPublicationStatus,
   isVisibleConcept,
@@ -581,33 +582,30 @@ export const ArticleCta: QuartzComponent = ({
   return (
     <section class="article-cta" aria-label="文章结尾信息">
       <div class="article-cta__copy">
-        <h2 class="article-cta__title">进一步阅读与联系</h2>
+        <h2 class="article-cta__title">从理解现实，到参与准备</h2>
         <p>
-          如果你希望继续了解公民秩序主义的完整框架，可先阅读介绍手册；严肃交流可通过邮箱联系。
+          公民秩序主义正在筹备北美非营利法人和首届董事会，为理论研究、制度设计、公共传播与长期组织建设建立稳定基础。
         </p>
       </div>
       <div class="article-cta__links">
         <div class="article-cta__item article-cta__item--primary">
-          <span class="article-cta__label">资料入口</span>
+          <span class="article-cta__label">基本路线</span>
           <span class="article-cta__value">
-            <a
-              class="article-cta__button"
-              href="/files/civic-orderism-introduction-manual.pdf"
-            >
-              阅读 PDF 介绍手册
+            <a class="article-cta__button" href="/start">
+              了解公民秩序主义
             </a>
           </span>
         </div>
         <div class="article-cta__item">
-          <span class="article-cta__label">主联系邮箱</span>
+          <span class="article-cta__label">组织筹备</span>
           <span class="article-cta__value">
-            <a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com</a>
+            <a href={organization.routes.manifesto}>阅读筹备宣言</a>
           </span>
         </div>
         <div class="article-cta__item">
-          <span class="article-cta__label">备用邮箱</span>
+          <span class="article-cta__label">联系入口</span>
           <span class="article-cta__value">
-            <a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a>
+            <a href={organization.routes.participate}>参与筹备</a>
           </span>
         </div>
       </div>

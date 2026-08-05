@@ -36,12 +36,12 @@
   {
     "name": "公民秩序主义",
     "slug": "civic-orderism",
-    "description": "解释公民秩序主义是什么、为什么出现，以及它试图回应什么时代问题。",
-    "coreJudgment": "公民秩序主义的核心不是更换掌权者，而是让公共问题能够进入系统，让判断、执行、纠错与问责重新形成可理解的责任链。",
+    "description": "了解一条不依赖革命、不以清算为目，并保持国家连续性的中国和平政治转轨路线。",
+    "coreJudgment": "中国的政治变化不应以摧毁国家和集体报复为代价，而应通过接管、纠偏、重组与再解释，在保持国家连续性的同时建立新秩序。",
     "topics": ["political-transition"],
     "recommended": [
+      "civic-orderism/north-america-nonprofit-board-preparation-manifesto",
       "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
-      "civic-orderism/civic-orderism-manual",
       "civic-orderism/why-civic-orderism"
     ]
   },

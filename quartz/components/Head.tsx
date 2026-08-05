@@ -114,7 +114,14 @@ export default (() => {
             inLanguage: "zh-CN",
             url: canonicalUrl,
           }
-        : undefined;
+        : {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: title.replace(titleSuffix, ""),
+            description,
+            inLanguage: "zh-CN",
+            url: canonicalUrl,
+          };
 
     return (
       <head>

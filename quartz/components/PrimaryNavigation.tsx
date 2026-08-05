@@ -9,9 +9,14 @@ import style from "./styles/primaryNavigation.scss";
 import script from "./scripts/primaryNavigation.inline";
 
 const secondaryNavigation = [
-  { label: "开始阅读", href: "/start" },
+  { label: "5分钟了解", href: "/start" },
+  { label: "核心路线", href: "/civic-orderism/peaceful-state-transition" },
+  {
+    label: "筹备宣言",
+    href: "/civic-orderism/north-america-nonprofit-board-preparation-manifesto",
+  },
+  { label: "董事会筹备", href: "/preparation/board" },
   { label: "专题", href: "/topics" },
-  { label: "核心概念", href: "/concepts" },
   { label: "全部文章", href: "/articles" },
 ];
 

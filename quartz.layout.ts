@@ -29,7 +29,10 @@ export const sharedPageComponents: SharedLayout = {
     copyright: "© 2026 Citizen Orderism / 公民秩序主义",
     links: {
       "Official Publication · civicorderism.com": "https://civicorderism.com/",
+      "X · @CivicOrderism": "https://x.com/CivicOrderism",
       开始阅读: "/start",
+      法人筹备: "/preparation",
+      参与筹备: "/participate",
       专题: "/topics",
       核心概念: "/concepts",
       版权说明: "/copyright",

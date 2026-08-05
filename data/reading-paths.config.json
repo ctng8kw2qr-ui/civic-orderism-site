@@ -1,28 +1,20 @@
 {
   "homepage": [
     {
-      "label": "先读《公民秩序主义介绍手册》",
-      "href": "/files/civic-orderism-introduction-manual.pdf"
+      "label": "5分钟了解公民秩序主义",
+      "href": "/start"
     },
     {
-      "label": "理解核心问题：公民秩序主义要解决什么",
-      "href": "/civic-orderism/what-civic-orderism-solves-if-you-read-only-one"
-    },
-    {
-      "label": "阅读中共结构分析：旧秩序为何失效",
-      "href": "/theory/party-state-structural-failure"
-    },
-    {
-      "label": "理解转轨道路：为什么公民秩序主义不是中共官僚的敌人",
+      "label": "理解和平政治转轨路线",
       "href": "/civic-orderism/peaceful-state-transition"
     },
     {
-      "label": "进入制度机制：委员会、秘书处、行政系统、大议会",
-      "href": "/civic-orderism/why-dual-track-committee-administration"
+      "label": "阅读北美非营利法人及董事会筹备宣言",
+      "href": "/civic-orderism/north-america-nonprofit-board-preparation-manifesto"
     },
     {
-      "label": "查看阅读地图，按主题继续阅读",
-      "href": "/articles"
+      "label": "了解法人筹备与参与边界",
+      "href": "/preparation"
     }
   ],
   "homepageTopics": [

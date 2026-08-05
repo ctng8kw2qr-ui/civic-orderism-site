@@ -2,7 +2,7 @@
 title: "公民秩序主义"
 date: 2026-07-19
 updated: 2026-07-20
-description: "解释公民秩序主义是什么、为什么出现，以及它试图回应什么时代问题。"
+description: "了解一条不依赖革命、不以清算为目，并保持国家连续性的中国和平政治转轨路线。"
 contentType: "栏目"
 status: published
 listed: true
@@ -12,26 +12,32 @@ noindex: false
 
 # 公民秩序主义
 
-解释公民秩序主义是什么、为什么出现，以及它试图回应什么时代问题。
+了解一条不依赖革命、不以清算为目，并保持国家连续性的中国和平政治转轨路线。
 
-<div class="section-stats"><span>31 篇已发布文章</span><span>1 个正式专题</span><span>更新至 2026-08-05</span></div>
+<div class="section-stats"><span>32 篇已发布文章</span><span>1 个正式专题</span><span>更新至 2026-08-05</span></div>
 
-<div class="section-core-judgment"><strong>栏目核心判断</strong><p>公民秩序主义的核心不是更换掌权者，而是让公共问题能够进入系统，让判断、执行、纠错与问责重新形成可理解的责任链。</p></div>
+<div class="section-core-judgment"><strong>栏目核心判断</strong><p>中国的政治变化不应以摧毁国家和集体报复为代价，而应通过接管、纠偏、重组与再解释，在保持国家连续性的同时建立新秩序。</p></div>
+
+<section class="section-route-intro" aria-labelledby="section-route-intro-title">
+  <p class="resource-label">从这里理解路线</p>
+  <h2 id="section-route-intro-title">公民秩序主义不只是理论，也是一项政治准备</h2>
+  <p>它为中国准备一条不依赖革命、不以清算为目的和平政治转轨道路，并通过理论传播、路线推广、支持者识别与制度准备，逐步建立早期协作基础。</p>
+  <div class="section-route-links"><a href="/start"><strong>5分钟了解</strong><span>建立最小理解框架</span></a><a href="/civic-orderism/peaceful-state-transition"><strong>核心路线</strong><span>理解国家连续与低冲突转轨</span></a><a href="/participate"><strong>参与说明</strong><span>了解传播、研究与早期协作</span></a></div>
+</section>
 
 ## 推荐文章
 
 <div class="knowledge-grid knowledge-grid--recommended">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
+  <p class="knowledge-card__meta"><span>2026-08-05</span><span>7 分钟阅读</span></p>
+  <h3><a href="/civic-orderism/north-america-nonprofit-board-preparation-manifesto">公民秩序主义北美非营利法人及董事会筹备宣言</a></h3>
+  <p class="knowledge-card__summary">公民秩序主义正式启动北美非营利法人及首届董事会筹备，目标是为理论、制度、人才、数字资产和长期公共责任建立合法、稳定、克制的组织基础。</p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="order-evaporation state-system-upgrade low-friction-governance">
   <p class="knowledge-card__meta"><span>2026-05-14</span><span>6 分钟阅读</span></p>
   <h3><a href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">如果你只读一篇：公民秩序主义到底想解决什么</a></h3>
   <p class="knowledge-card__summary">公民秩序主义不是口号、政党或情绪化革命方案。它要解决的是现代国家与普通人之间的秩序关系断裂：问题进不了系统，责任找不到人，权力黑箱运行，行政系统自我循环。它试图通过公共判断、行政执行、信息透明、责任更替和后台支撑机制，让国家重新成为普通人可以进入、理解、追问和信任的共同生活框架。</p>
   <p class="knowledge-card__chips"><span>概念：秩序蒸发</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="political-route">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>9 分钟阅读</span></p>
-  <h3><a href="/civic-orderism/civic-orderism-manual">公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案</a></h3>
-  <p class="knowledge-card__summary">公民秩序主义，是一套面向现代社会，尤其面向中国现实问题的国家治理理论。</p>
-  <p class="knowledge-card__chips"><span>概念：政治路线</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="political-route">
   <p class="knowledge-card__meta"><span>2026-07-08</span><span>18 分钟阅读</span></p>
@@ -56,6 +62,11 @@ noindex: false
   <button type="button" data-filter-reset>重置</button>
 </div>
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
+  <p class="knowledge-card__meta"><span>2026-08-05</span><span>7 分钟阅读</span></p>
+  <h3><a href="/civic-orderism/north-america-nonprofit-board-preparation-manifesto">公民秩序主义北美非营利法人及董事会筹备宣言</a></h3>
+  <p class="knowledge-card__summary">公民秩序主义正式启动北美非营利法人及首届董事会筹备，目标是为理论、制度、人才、数字资产和长期公共责任建立合法、稳定、克制的组织基础。</p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route">
   <p class="knowledge-card__meta"><span>2026-08-05</span><span>8 分钟阅读</span></p>
   <h3><a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china">中国和平政治转型的可能性</a></h3>

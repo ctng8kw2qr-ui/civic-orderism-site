@@ -1,0 +1,26 @@
+{
+  "stage": "preparation",
+  "nonprofitStatus": "preparing",
+  "boardStatus": "preparing",
+  "registrationStatus": "not_registered",
+  "jurisdictionStatus": "undetermined",
+  "publicNameZh": "公民秩序主义",
+  "publicNameEn": "Civic Orderism",
+  "region": "North America",
+  "regionLabelZh": "北美",
+  "primaryEmail": "civicorderism@gmail.com",
+  "secondaryEmail": "citizenorder@proton.me",
+  "statusLabels": {
+    "organization": "组织基础筹备阶段",
+    "nonprofit": "北美非营利法人正在筹备",
+    "board": "首届董事会尚未依法产生",
+    "registration": "法人尚未完成注册",
+    "jurisdiction": "具体注册法域尚未确定"
+  },
+  "routes": {
+    "manifesto": "/civic-orderism/north-america-nonprofit-board-preparation-manifesto",
+    "nonprofitPreparation": "/preparation",
+    "boardPreparation": "/preparation/board",
+    "participate": "/participate"
+  }
+}
