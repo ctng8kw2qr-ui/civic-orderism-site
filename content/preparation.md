@@ -12,9 +12,9 @@ noindex: false
 
 <div class="preparation-page">
 <header class="preparation-hero">
-  <p class="resource-label">长期公共建设的组织基础</p>
+  <p class="resource-label">政治路线的长期组织承接</p>
   <h1>北美非营利法人筹备</h1>
-  <p>公民秩序主义正在为理论研究、制度设计、公共传播、人才培养与数字资产保护建立一个长期、稳定、克制的组织基础。</p>
+  <p>公民秩序主义首先是一条面向中国未来的政治与制度路线。北美非营利法人筹备用于为正式出版、理论研究、制度设计、公共传播、人才协作和数字资产保护建立依法运行的承接结构。</p>
   <div class="preparation-status"><span>北美非营利法人正在筹备</span><span>法人尚未完成注册</span><span>具体注册法域尚未确定</span></div>
 </header>
 

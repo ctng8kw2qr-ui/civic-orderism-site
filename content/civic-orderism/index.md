@@ -20,9 +20,9 @@ noindex: false
 
 <section class="section-route-intro" aria-labelledby="section-route-intro-title">
   <p class="resource-label">从这里理解路线</p>
-  <h2 id="section-route-intro-title">公民秩序主义不只是理论，也是一项政治准备</h2>
-  <p>它为中国准备一条不依赖革命、不以清算为目的和平政治转轨道路，并通过理论传播、路线推广、支持者识别与制度准备，逐步建立早期协作基础。</p>
-  <div class="section-route-links"><a href="/start"><strong>5分钟了解</strong><span>建立最小理解框架</span></a><a href="/civic-orderism/peaceful-state-transition"><strong>核心路线</strong><span>理解国家连续与低冲突转轨</span></a><a href="/participate"><strong>参与说明</strong><span>了解传播、研究与早期协作</span></a></div>
+  <h2 id="section-route-intro-title">公民秩序主义首先是一条政治与制度路线</h2>
+  <p>它面向中国未来，主张通过和平转轨、行政承接、责任区分和制度重组降低政治变化的社会成本；理论研究为路线提供基础，组织建设为路线提供长期承接。</p>
+  <div class="section-route-links"><a href="/start"><strong>5分钟了解</strong><span>建立完整的基础认识</span></a><a href="/civic-orderism/peaceful-state-transition"><strong>核心路线</strong><span>理解国家连续与低冲突转轨</span></a><a href="/participate"><strong>联系与协作</strong><span>了解传播、专业协作与长期联系</span></a></div>
 </section>
 
 ## 推荐文章

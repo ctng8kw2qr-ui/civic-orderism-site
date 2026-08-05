@@ -427,26 +427,6 @@ const homepageHtml = fs.readFileSync(
   path.join(publicDir, "index.html"),
   "utf8",
 );
-const homepageLatestSlugs = [
-  ...homepageHtml.matchAll(
-    /class="knowledge-card home-article-card"[\s\S]*?data-slug="([^"]+)"/g,
-  ),
-].map((match) => match[1]);
-const expectedLatestSlugs = migration
-  .filter(
-    (article) => article.status === "published" && article.needsReview !== true,
-  )
-  .filter(
-    (article) =>
-      article.slug !==
-      "civic-orderism/north-america-nonprofit-board-preparation-manifesto",
-  )
-  .slice(0, 3)
-  .map((article) => article.slug);
-assert(
-  JSON.stringify(homepageLatestSlugs) === JSON.stringify(expectedLatestSlugs),
-  `首页最新文章未按发布日期自动排序：${homepageLatestSlugs.join(", ")}`,
-);
 const homepageText = visiblePageText(homepageHtml);
 const homepageMainHtml =
   homepageHtml.match(
@@ -466,42 +446,36 @@ assert(
     "我们主张以和平转轨、行政承接、责任区分和制度重组",
   ) &&
     homepageMainText.includes(
-      "目前正在开展理论推广、公共传播、协作者识别与组织基础建设",
+      "当前阶段：理论建设、公共传播、专业协作者识别与北美非营利组织筹备",
     ),
   "首页首屏仍以组织筹备而不是政治与制度路线为主体",
 );
 assert(
   homepageText.includes("不革命、不清算、不让国家停摆") &&
-    homepageText.includes("为什么支持公民秩序主义") &&
-    homepageText.includes("参与公民秩序主义") &&
-    homepageText.includes("北美非营利法人及董事会筹备"),
-  "首页缺少品牌价值、参与理由、核心路线或组织筹备说明",
+    homepageText.includes("为什么这条路线能够降低未来政治成本") &&
+    homepageText.includes("让政治路线获得持续建设与长期承接") &&
+    homepageText.includes("推荐阅读"),
+  "首页缺少核心路线、转轨成本、当前工作或推荐阅读",
 );
 assert(
-  homepageHtml.includes('href="/participate"') &&
+  homepageHtml.includes("participate#contact") &&
     homepageHtml.includes('href="/preparation"') &&
     homepageHtml.includes('href="/civic-orderism/peaceful-state-transition"'),
   "首页缺少核心路线、法人筹备或参与入口",
 );
 assert(
-  homepageMainText.includes("面向不同国家和地区的读者，不限制居住地") &&
-    homepageMainText.includes("支持与传播") &&
-    homepageMainText.includes("长期组织建设") &&
-    homepageMainText.includes(
-      "其他支持、传播、翻译、研究和技术协作不受地区限制",
-    ),
-  "首页没有区分普通支持者与北美组织筹备参与者",
+  homepageMainText.includes("理论建设") &&
+    homepageMainText.includes("公共传播") &&
+    homepageMainText.includes("专业协作者识别") &&
+    homepageMainText.includes("北美非营利组织筹备"),
+  "首页当前工作没有覆盖四个既定方向",
 );
 const expectedHomepageHeadings = [
   "为什么中国需要一条新的政治道路",
-  "为什么支持公民秩序主义",
   "不革命、不清算、不让国家停摆",
-  "一条能够被更多人接受的政治道路",
-  "参与公民秩序主义",
-  "从政治路线走向长期组织基础",
-  "北美非营利法人及董事会筹备",
-  "进一步了解公民秩序主义",
-  "最新研究与正式文章",
+  "为什么这条路线能够降低未来政治成本",
+  "让政治路线获得持续建设与长期承接",
+  "推荐阅读",
   "手册和联系方式",
 ];
 const homepageHeadings = [
@@ -519,10 +493,7 @@ assert(
 assert(
   (homepageMainText.match(/政治组织雏形/g) ?? []).length === 1 &&
     homepageMainText.includes(
-      "公民秩序主义正在由一套政治与制度路线，逐步形成一个具有长期治理基础的政治组织雏形",
-    ) &&
-    homepageMainText.includes(
-      "北美非营利法人将主要承担公共研究、理论传播、制度建设、资产管理和组织治理基础工作，不等同于已经成立的政党或成熟政治组织",
+      "公民秩序主义正在由一套政治与制度路线，逐步形成具有长期治理基础的政治组织雏形",
     ),
   "首页没有准确且唯一地表达政治组织雏形",
 );
@@ -537,25 +508,26 @@ assert(
   "首页核心主张、责任分类或行政承接表述未统一",
 );
 assert(
-  homepageMainText.includes("阅读并持续了解") &&
-    homepageMainText.includes(
-      "分享正式文章和网站，并向认同和平转轨与国家连续性的人介绍公民秩序主义",
-    ) &&
-    homepageMainText.includes("参与翻译、研究或技术协作") &&
-    homepageMainText.includes("项目管理与长期运营"),
-  "首页支持与传播或长期组织建设清单未同步",
+  !homepageMainText.includes("法人状态") &&
+    !homepageMainText.includes("注册法域") &&
+    !homepageMainText.includes("董事会状态") &&
+    !homepageMainText.includes("筹备参与不自动产生治理身份"),
+  "首页仍展示应当留在组织筹备页的程序状态",
 );
-assert(
-  (homepageMainText.match(/北美非营利法人/g) ?? []).length <= 2 &&
-    (homepageMainText.match(/首届董事会/g) ?? []).length <= 2,
-  "首页法人或首届董事会完整名称出现次数过多",
-);
-for (const boundaryTerm of ["董事资格", "法定成员", "共同创始人"]) {
-  assert(
-    (homepageMainText.match(new RegExp(boundaryTerm, "g")) ?? []).length <= 1,
-    `首页重复展示身份边界：${boundaryTerm}`,
-  );
+for (const title of [
+  "中国和平政治转型的可能性",
+  "公民秩序主义介绍",
+  "公民秩序主义核心路线",
+  "制度设计",
+  "组织筹备",
+]) {
+  assert(homepageMainText.includes(title), `首页推荐阅读缺少：${title}`);
 }
+assert(
+  !homepageMainText.includes("最新研究与正式文章") &&
+    !homepageMainText.includes("按发布日期自动更新"),
+  "首页仍突出最新文章而不是固定推荐阅读",
+);
 assert(
   navigation.map((item) => item.label).join("/") ===
     "首页/公民秩序主义/核心路线/解析中共/制度设计/参与/关于",
@@ -604,9 +576,20 @@ const participateHtml = fs.readFileSync(publicHtml("participate"), "utf8");
 const participateText = visiblePageText(participateHtml);
 for (const requiredText of [
   "参与公民秩序主义",
-  "阅读并持续了解",
-  "向认同和平转轨与国家连续性的人介绍公民秩序主义",
-  "参与翻译、研究或技术协作",
+  "参与不等于立即加入组织",
+  "了解与传播",
+  "阅读公民秩序主义正式材料",
+  "介绍公民秩序主义的政治路线",
+  "专业协作",
+  "研究",
+  "编辑",
+  "翻译",
+  "设计",
+  "技术",
+  "法律",
+  "财务",
+  "项目管理",
+  "长期联系",
   "参与北美组织筹备",
   "法人筹备",
   "董事会筹备",
@@ -757,7 +740,30 @@ const startHtml = fs.readFileSync(publicHtml("start"), "utf8");
 const startText = visiblePageText(startHtml);
 assert(startText.includes("新读者入口"), "/start 缺少新读者入口标签");
 assert(!startText.includes("约 5 分钟"), "/start 仍包含人工时长文案");
-assert(startText.includes("4分钟阅读"), "/start 自动阅读时长不再是 4 分钟");
+assert(startText.includes("分钟阅读"), "/start 缺少自动阅读时长");
+for (const requiredText of [
+  "公民秩序主义首先是一条面向中国未来的政治与制度路线",
+  "从理论建设进入组织基础建设",
+  "为什么这条路线能够降低未来政治转型阻力",
+  "了解",
+  "联系",
+  "协作",
+]) {
+  assert(startText.includes(requiredText), `/start 缺少内容：${requiredText}`);
+}
+
+const aboutHtml = fs.readFileSync(publicHtml("about"), "utf8");
+const aboutText = visiblePageText(aboutHtml);
+for (const requiredText of [
+  "公民秩序主义是什么",
+  "为什么建立这个网站",
+  "当前组织阶段",
+  "网站承担哪些功能",
+  "本站是公民秩序主义的正式出版、理论沉淀、制度研究与公共传播平台",
+  "政治路线是主体，网站是载体，理论是基础，组织是长期承接结构",
+]) {
+  assert(aboutText.includes(requiredText), `关于页缺少内容：${requiredText}`);
+}
 assert(
   !visiblePageText(homepageHtml).includes("约 5 分钟"),
   "首页仍包含人工时长文案",

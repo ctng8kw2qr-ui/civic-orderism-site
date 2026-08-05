@@ -2,7 +2,7 @@
 title: "参与公民秩序主义"
 date: 2026-07-19
 updated: 2026-07-20
-description: "了解全球读者如何参与公民秩序主义，以及加拿大和北美长期居住者如何进一步参与法人、董事会与治理筹备。"
+description: "了解如何通过正式阅读、公共传播、专业协作与长期联系支持公民秩序主义，以及北美组织筹备的适用边界。"
 contentType: "参与"
 status: published
 listed: true
@@ -12,15 +12,26 @@ noindex: false
 
 <div class="participate-page">
 <header class="participate-hero">
-  <p class="resource-label">全球参与与北美组织筹备</p>
+  <p class="resource-label">了解、协作与长期联系</p>
   <h1>参与公民秩序主义</h1>
-  <p>认同公民秩序主义不受所在地区限制。你可以从阅读、传播、研究、翻译、技术、建议和长期联系开始；长期居住于加拿大或北美的人，还可以进一步了解当地法人和治理筹备。</p>
+  <p>参与不等于立即加入组织。无论身处何地，都可以先从了解政治路线、传播正式材料、提供专业协作或建立长期联系开始。</p>
 </header>
 
 <section class="participate-section" id="global" aria-labelledby="participation-global">
-  <div class="home-section-intro"><p class="resource-label">第一部分 · 不限地区</p><h2 id="participation-global">参与公民秩序主义</h2><p>面向全球认同基本路线的人。参与可以是公开传播，也可以是低风险、长期和专业化的协作。</p></div>
-  <div class="participate-support-grid"><span>阅读并持续了解</span><span>分享正式文章和网站，并向认同和平转轨与国家连续性的人介绍公民秩序主义</span><span>参与理性讨论</span><span>提交意见和专业建议</span><span>参与翻译、研究或技术协作</span><span>保持长期联系</span></div>
-  <p class="participate-support-note">这一层不限制居住地，不要求公开身份，也不要求通过激进表达证明立场。</p>
+  <div class="home-section-intro"><p class="resource-label">不限地区</p><h2 id="participation-global">了解与传播</h2><p>阅读正式材料，理解和平转轨、国家连续和责任区分，并向愿意理性讨论中国未来的人介绍公民秩序主义。</p></div>
+  <div class="participate-support-grid"><span>阅读公民秩序主义正式材料</span><span>介绍公民秩序主义的政治路线</span><span>分享网站、手册与正式文章</span><span>参与克制、基于事实的公共讨论</span></div>
+  <p class="participate-support-note">了解与传播不限制居住地，不要求公开身份，也不构成组织加入或治理身份。</p>
+</section>
+
+<section class="participate-section" id="professional" aria-labelledby="participation-professional">
+  <div class="home-section-intro"><p class="resource-label">按专业能力参与</p><h2 id="participation-professional">专业协作</h2><p>公民秩序主义需要能够承担具体工作的人，以专业成果而不是口号和声势推进长期建设。</p></div>
+  <div class="participate-support-grid"><span>研究</span><span>编辑</span><span>翻译</span><span>设计</span><span>技术</span><span>法律</span><span>财务</span><span>项目管理</span></div>
+  <p class="participate-support-note">专业协作可从小规模、明确边界的任务开始，不要求立即承担组织治理责任。</p>
+</section>
+
+<section class="participate-section" id="long-term-contact" aria-labelledby="participation-long-term-contact">
+  <div class="home-section-intro"><p class="resource-label">低风险参与</p><h2 id="participation-long-term-contact">长期联系</h2><p>对于暂时不方便公开参与的人，可以通过电子邮件建立长期联系，在保护身份和现实安全的前提下持续了解项目进展。</p></div>
+  <p class="participate-support-note">可以使用化名或只提供必要的联系方式；初次联系不需要发送身份证件、详细住址或单位内部资料。</p>
 </section>
 
 <section class="participate-section" id="north-america" aria-labelledby="participation-north-america">
