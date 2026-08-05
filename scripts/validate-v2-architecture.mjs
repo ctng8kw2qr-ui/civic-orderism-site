@@ -443,7 +443,7 @@ assert(
 );
 assert(
   homepageMainText.includes(
-    "我们主张以和平转轨、行政承接、责任区分和制度重组",
+    "公民秩序主义主张以和平转轨、行政承接、责任区分和制度重组",
   ) &&
     homepageMainText.includes(
       "当前阶段：理论建设、公共传播、专业协作者识别与北美非营利组织筹备",
@@ -452,10 +452,11 @@ assert(
 );
 assert(
   homepageText.includes("不革命、不清算、不让国家停摆") &&
-    homepageText.includes("为什么这条路线能够降低未来政治成本") &&
-    homepageText.includes("让政治路线获得持续建设与长期承接") &&
+    homepageText.includes("一条能够被更多人接受的道路") &&
+    homepageText.includes("从认同到建设") &&
+    homepageText.includes("为政治路线建立长期承接基础") &&
     homepageText.includes("推荐阅读"),
-  "首页缺少核心路线、转轨成本、当前工作或推荐阅读",
+  "首页缺少核心路线、参与路径、当前工作或推荐阅读",
 );
 assert(
   homepageHtml.includes("participate#contact") &&
@@ -466,15 +467,17 @@ assert(
 assert(
   homepageMainText.includes("理论建设") &&
     homepageMainText.includes("公共传播") &&
+    homepageMainText.includes("制度设计") &&
     homepageMainText.includes("专业协作者识别") &&
     homepageMainText.includes("北美非营利组织筹备"),
-  "首页当前工作没有覆盖四个既定方向",
+  "首页当前工作没有覆盖五个既定方向",
 );
 const expectedHomepageHeadings = [
   "为什么中国需要一条新的政治道路",
   "不革命、不清算、不让国家停摆",
-  "为什么这条路线能够降低未来政治成本",
-  "让政治路线获得持续建设与长期承接",
+  "一条能够被更多人接受的道路",
+  "从认同到建设",
+  "为政治路线建立长期承接基础",
   "推荐阅读",
   "手册和联系方式",
 ];
@@ -491,13 +494,6 @@ assert(
   "首页模块顺序不符合品牌优先的信息结构",
 );
 assert(
-  (homepageMainText.match(/政治组织雏形/g) ?? []).length === 1 &&
-    homepageMainText.includes(
-      "公民秩序主义正在由一套政治与制度路线，逐步形成具有长期治理基础的政治组织雏形",
-    ),
-  "首页没有准确且唯一地表达政治组织雏形",
-);
-assert(
   homepageMainText.includes("不革命、不清算、不让国家停摆") &&
     homepageMainText.includes(
       "不因政治身份实施普遍追责，区分政治责任、历史责任与依法确认的犯罪责任",
@@ -508,17 +504,37 @@ assert(
   "首页核心主张、责任分类或行政承接表述未统一",
 );
 assert(
-  !homepageMainText.includes("法人状态") &&
-    !homepageMainText.includes("注册法域") &&
-    !homepageMainText.includes("董事会状态") &&
-    !homepageMainText.includes("筹备参与不自动产生治理身份"),
-  "首页仍展示应当留在组织筹备页的程序状态",
+  !homepageMainHtml.includes("preparation-state-grid") &&
+    homepageMainText.includes(
+      "目前法人尚未完成注册，具体注册法域与首届董事会均未确定。筹备参与不自动产生任何治理身份",
+    ),
+  "首页程序状态没有压缩为一段简短说明",
+);
+for (const requiredText of [
+  "从认同到建设",
+  "了解与传播",
+  "专业协作",
+  "长期联系",
+  "参与不要求公开身份，也不等于立即进入组织",
+  "查看参与方式",
+]) {
+  assert(
+    homepageMainText.includes(requiredText),
+    `首页参与入口缺少：${requiredText}`,
+  );
+}
+assert(
+  !homepageMainText.includes("第一层") &&
+    !homepageMainText.includes("第二层") &&
+    !homepageMainText.includes("研究与编辑") &&
+    !homepageMainText.includes("项目管理与长期运营"),
+  "首页仍展开旧的参与分层或完整能力清单",
 );
 for (const title of [
   "中国和平政治转型的可能性",
+  "国家如何平稳转轨：公民秩序主义不是中共官僚的敌人",
   "公民秩序主义介绍",
-  "公民秩序主义核心路线",
-  "制度设计",
+  "公民秩序主义核心政治路线",
   "组织筹备",
 ]) {
   assert(homepageMainText.includes(title), `首页推荐阅读缺少：${title}`);
@@ -527,6 +543,13 @@ assert(
   !homepageMainText.includes("最新研究与正式文章") &&
     !homepageMainText.includes("按发布日期自动更新"),
   "首页仍突出最新文章而不是固定推荐阅读",
+);
+assert(
+  !homepageMainText.includes("我们主张") &&
+    !homepageMainText.includes("我们希望") &&
+    !homepageMainText.includes("我们的政治路线") &&
+    !homepageMainText.includes("为什么支持我们"),
+  "首页仍包含可改为直接品牌表述的第一人称文案",
 );
 assert(
   navigation.map((item) => item.label).join("/") ===
@@ -742,12 +765,16 @@ assert(startText.includes("新读者入口"), "/start 缺少新读者入口标�
 assert(!startText.includes("约 5 分钟"), "/start 仍包含人工时长文案");
 assert(startText.includes("分钟阅读"), "/start 缺少自动阅读时长");
 for (const requiredText of [
-  "公民秩序主义首先是一条面向中国未来的政治与制度路线",
-  "从理论建设进入组织基础建设",
+  "公民秩序主义首先是一条面向中国未来的政治与制度路线。它既解释中国正在面对的结构性问题，也提出一条降低冲突、保持国家连续运行并完成制度转轨的现实道路",
+  "公民秩序主义正在从理论走向长期承接",
+  "组织建设不是为了制造身份和等级",
   "为什么这条路线能够降低未来政治转型阻力",
-  "了解",
-  "联系",
-  "协作",
+  "下一步可以做什么",
+  "阅读核心政治路线",
+  "了解中国和平政治转型",
+  "查看组织筹备",
+  "了解参与方式",
+  "建立长期联系",
 ]) {
   assert(startText.includes(requiredText), `/start 缺少内容：${requiredText}`);
 }
@@ -761,9 +788,14 @@ for (const requiredText of [
   "网站承担哪些功能",
   "本站是公民秩序主义的正式出版、理论沉淀、制度研究与公共传播平台",
   "政治路线是主体，网站是载体，理论是基础，组织是长期承接结构",
+  "本站重视事实、逻辑、责任边界与制度可执行性，不以新闻速度、情绪动员或个人崇拜替代制度分析",
 ]) {
   assert(aboutText.includes(requiredText), `关于页缺少内容：${requiredText}`);
 }
+assert(
+  !aboutText.includes("专业、审慎、冷静和克制"),
+  "关于页仍包含直接的自我评价措辞",
+);
 assert(
   !visiblePageText(homepageHtml).includes("约 5 分钟"),
   "首页仍包含人工时长文案",
