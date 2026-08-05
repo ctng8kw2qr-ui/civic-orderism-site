@@ -450,9 +450,11 @@ const homepageMainHtml =
   )?.[1] ?? homepageHtml;
 const homepageMainText = visiblePageText(homepageMainHtml);
 assert(
-  homepageText.includes(
-    "建设一条低阻力、低风险、能够和平承接中国未来的政治道路",
-  ) && homepageText.includes("公民秩序主义官方网站"),
+  homepageText.includes("建设一条低阻力、") &&
+    homepageText.includes("低风险、能够和平") &&
+    homepageText.includes("承接中国未来的") &&
+    homepageText.includes("政治道路") &&
+    homepageText.includes("公民秩序主义官方网站"),
   "首页缺少和平承接未来的核心定位",
 );
 assert(
@@ -460,14 +462,14 @@ assert(
     "我们主张以和平转轨、行政承接、责任区分和制度重组",
   ) &&
     homepageMainText.includes(
-      "目前正在开展理论推广、公共传播、长期协作者识别、组织建设及北美非营利法人筹备工作",
+      "目前正在开展理论推广、公共传播、协作者识别与组织基础建设",
     ),
   "首页首屏仍以组织筹备而不是政治与制度路线为主体",
 );
 assert(
   homepageText.includes("不革命、不普遍清算、不让国家停摆") &&
     homepageText.includes("为什么支持公民秩序主义") &&
-    homepageText.includes("为什么参与公民秩序主义") &&
+    homepageText.includes("参与公民秩序主义") &&
     homepageText.includes("北美非营利法人及董事会筹备"),
   "首页缺少品牌价值、参与理由、核心路线或组织筹备说明",
 );
@@ -479,6 +481,8 @@ assert(
 );
 assert(
   homepageMainText.includes("面向不同国家和地区的读者，不限制居住地") &&
+    homepageMainText.includes("支持与传播") &&
+    homepageMainText.includes("长期组织建设") &&
     homepageMainText.includes(
       "其他支持、传播、翻译、研究和技术协作不受地区限制",
     ),
@@ -489,13 +493,11 @@ const expectedHomepageHeadings = [
   "为什么支持公民秩序主义",
   "不革命、不普遍清算、不让国家停摆",
   "一条能够被更多人接受的政治道路",
-  "为什么参与公民秩序主义",
-  "支持公民秩序主义",
-  "参与组织建设",
+  "参与公民秩序主义",
   "从政治路线走向长期组织基础",
   "北美非营利法人及董事会筹备",
   "进一步了解公民秩序主义",
-  "最新正式文章",
+  "最新研究与正式文章",
   "手册和联系方式",
 ];
 const homepageHeadings = [
@@ -509,6 +511,13 @@ assert(
       homepageHeadings.slice(0, expectedHomepageHeadings.length),
     ) === JSON.stringify(expectedHomepageHeadings),
   "首页模块顺序不符合品牌优先的信息结构",
+);
+assert(
+  (homepageMainText.match(/政治组织雏形/g) ?? []).length === 1 &&
+    homepageMainText.includes(
+      "公民秩序主义正在由一套政治与制度路线，逐步形成一个具有长期治理基础的政治组织雏形",
+    ),
+  "首页没有准确且唯一地表达政治组织雏形",
 );
 assert(
   (homepageMainText.match(/北美非营利法人/g) ?? []).length <= 2 &&
@@ -525,6 +534,32 @@ assert(
   navigation.map((item) => item.label).join("/") ===
     "首页/公民秩序主义/核心路线/解析中共/制度设计/参与/关于",
   "主导航没有采用品牌、路线与参与优先的结构",
+);
+const secondaryNavigationHtml =
+  homepageHtml.match(
+    /<div class="primary-navigation__secondary"[\s\S]*?<\/div>/,
+  )?.[0] ?? "";
+assert(
+  visiblePageText(secondaryNavigationHtml).trim() ===
+    "5分钟了解 中国和平政治转型 组织筹备 参与方式 全部文章" &&
+    !secondaryNavigationHtml.includes("筹备宣言") &&
+    !secondaryNavigationHtml.includes("董事会筹备"),
+  "顶部快捷导航未压缩为五项",
+);
+assert(
+  homepageText.includes("内容目录") &&
+    homepageText.includes("全部文章") &&
+    !homepageText.includes("阅读地图"),
+  "侧边栏标题或全部文章标签未统一",
+);
+const footerHtml = homepageHtml.match(/<footer[\s\S]*?<\/footer>/)?.[0] ?? "";
+assert(
+  visiblePageText(footerHtml).includes(
+    "开始阅读 核心路线 参与 组织筹备 专题 版权说明",
+  ) &&
+    !visiblePageText(footerHtml).includes("法人筹备") &&
+    !visiblePageText(footerHtml).includes("核心概念"),
+  "页脚链接未按路线与组织层级统一",
 );
 for (const forbidden of [
   "X 短贴",

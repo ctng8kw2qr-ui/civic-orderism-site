@@ -43,6 +43,6 @@ noindex: false
   <h2>筹备不等于已经成立</h2>
   <p>截至目前，法人尚未完成注册，具体注册法域尚未确定，首届董事会尚未依法产生。本站使用“北美非营利法人筹备”和“董事会筹备”，仅描述正在进行的准备工作，不表示已经取得任何法人、慈善或免税资格。</p>
   <p><strong>参与筹备不自动产生</strong>董事资格、法定成员资格、共同创始人身份、官方代表资格、项目治理权或项目资产所有权。</p>
-  <div class="preparation-actions"><a class="v2-button v2-button--primary" href="/preparation/board">了解董事会筹备</a><a class="v2-button v2-button--secondary" href="/participate">参与筹备</a></div>
+  <div class="preparation-actions"><a class="v2-button v2-button--primary" href="/preparation/board">了解董事会筹备</a><a class="v2-button v2-button--secondary" href="/civic-orderism/north-america-nonprofit-board-preparation-manifesto">阅读筹备宣言</a><a class="v2-button v2-button--secondary" href="/participate">参与筹备</a></div>
 </section>
 </div>

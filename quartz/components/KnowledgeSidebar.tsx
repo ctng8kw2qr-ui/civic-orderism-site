@@ -10,13 +10,14 @@ import {
 
 const primaryLinks = [
   { label: "从这里开始", href: "/start" },
-  ...sections.map((section) => ({
-    label: section.name,
-    href: `/${section.slug}`,
-  })),
+  { label: "公民秩序主义", href: "/civic-orderism" },
+  { label: "核心路线", href: "/civic-orderism/peaceful-state-transition" },
+  { label: "解析中共", href: "/china" },
+  { label: "中国未来", href: "/china-future" },
+  { label: "制度设计", href: "/institution-design" },
   { label: "专题", href: "/topics" },
   { label: "核心概念", href: "/concepts" },
-  { label: "阅读地图", href: "/articles" },
+  { label: "全部文章", href: "/articles" },
   { label: "关于", href: "/about" },
 ];
 
@@ -43,13 +44,18 @@ const KnowledgeSidebar: QuartzComponent = ({
   const currentSection = activeSection(slug);
   const isActive = (href: string) => {
     const target = href.replace(/^\//, "");
+    if (
+      slug === "civic-orderism/peaceful-state-transition" &&
+      href === "/civic-orderism"
+    )
+      return false;
     if (currentSection && href === `/${currentSection.slug}`) return true;
     return slug === target || slug.startsWith(`${target}/`);
   };
 
   return (
     <nav class="knowledge-sidebar" aria-label="站点地图">
-      <p class="knowledge-sidebar__label">浏览</p>
+      <p class="knowledge-sidebar__label">内容目录</p>
       <ul>
         {primaryLinks.map((item) => {
           const section = sections.find(
