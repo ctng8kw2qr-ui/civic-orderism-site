@@ -14,7 +14,7 @@ noindex: false
 
 解释公民秩序主义是什么、为什么出现，以及它试图回应什么时代问题。
 
-<div class="section-stats"><span>30 篇已发布文章</span><span>1 个正式专题</span><span>更新至 2026-07-24</span></div>
+<div class="section-stats"><span>31 篇已发布文章</span><span>1 个正式专题</span><span>更新至 2026-08-05</span></div>
 
 <div class="section-core-judgment"><strong>栏目核心判断</strong><p>公民秩序主义的核心不是更换掌权者，而是让公共问题能够进入系统，让判断、执行、纠错与问责重新形成可理解的责任链。</p></div>
 
@@ -43,7 +43,7 @@ noindex: false
 
 ## 专题入口
 
-<div class="topic-entry-grid topic-entry-grid--single"><a class="topic-entry-card" href="/topics/political-transition"><strong>中国政治转型</strong><span>讨论低冲突转型、国家重组与制度接续的现实路径。</span><small>5 篇相关文章</small></a></div>
+<div class="topic-entry-grid topic-entry-grid--single"><a class="topic-entry-card" href="/topics/political-transition"><strong>中国政治转型</strong><span>讨论低冲突转型、国家重组与制度接续的现实路径。</span><small>6 篇相关文章</small></a></div>
 
 ## 全部文章
 
@@ -56,6 +56,12 @@ noindex: false
   <button type="button" data-filter-reset>重置</button>
 </div>
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route">
+  <p class="knowledge-card__meta"><span>2026-08-05</span><span>8 分钟阅读</span></p>
+  <h3><a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china">中国和平政治转型的可能性</a></h3>
+  <p class="knowledge-card__summary">中国的未来并非只有维持现状与失控崩塌两种结局。如果旧体系越来越难以提供长期预期，而新的政治道路能够保障国家运行、划清责任边界并为体制成员提供可信退路，合作就可能逐步取代对抗。</p>
+  <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：非暴力转型</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route">
   <p class="knowledge-card__meta"><span>2026-07-24</span><span>7 分钟阅读</span></p>
   <h3><a href="/civic-orderism/information-age-and-political-transition">信息化时代与政治转型</a></h3>

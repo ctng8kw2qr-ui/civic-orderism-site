@@ -43,7 +43,7 @@ aliases:
   <div class="topic-entry-grid home-core-topic-grid"><a class="topic-entry-card" href="/topics/bureaucratic-system"><strong>官僚系统</strong><span>研究整肃、问责、避责与多头治理如何改变官僚系统的行为。</span><small>4 篇文章 · 更新至 2026-07-12</small></a>
 <a class="topic-entry-card" href="/topics/order-evaporation"><strong>秩序蒸发</strong><span>观察制度形式仍在、实际协作与可信承诺却逐步失效的过程。</span><small>6 篇文章 · 更新至 2026-05-30</small></a>
 <a class="topic-entry-card" href="/topics/three-cleans-era"><strong>三清时代</strong><span>围绕财政清账、政治清责与组织清洗建立的阶段性研究框架。</span><small>5 篇文章 · 更新至 2026-07-31</small></a>
-<a class="topic-entry-card" href="/topics/political-transition"><strong>中国政治转型</strong><span>讨论低冲突转型、国家重组与制度接续的现实路径。</span><small>5 篇文章 · 更新至 2026-07-24</small></a></div>
+<a class="topic-entry-card" href="/topics/political-transition"><strong>中国政治转型</strong><span>讨论低冲突转型、国家重组与制度接续的现实路径。</span><small>6 篇文章 · 更新至 2026-08-05</small></a></div>
 </section>
 
 <section class="home-section home-method-teaser">
@@ -62,6 +62,12 @@ aliases:
 <section class="home-section">
   <div class="home-section-heading"><div><p class="resource-label">按发布日期自动更新</p><h2>最新文章</h2></div><a href="/articles">查看全部文章 →</a></div>
   <div class="knowledge-grid home-article-grid"><article class="knowledge-card home-article-card">
+  <p class="knowledge-card__meta"><span>2026-08-05</span><span>公民秩序主义</span></p>
+  <h3><a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china">中国和平政治转型的可能性</a></h3>
+  <p class="knowledge-card__summary">中国的未来并非只有维持现状与失控崩塌两种结局。如果旧体系越来越难以提供长期预期，而新的政治道路能够保障国家运行、划清责任边界并为体制成员提供可信退路，合作就可能逐步取代对抗。</p>
+  <p class="knowledge-card__chips"><span>专题：中国政治转型</span></p>
+</article>
+<article class="knowledge-card home-article-card">
   <p class="knowledge-card__meta"><span>2026-07-31</span><span>解析中共</span></p>
   <h3><a href="/china/route-transition-why-ccp-keeps-purging-officials">路线转换：中共为什么必须不断清洗自己的官员</a></h3>
   <p class="knowledge-card__summary">本文将持续反腐放在路线转换中理解：当中共从发展优先、地方放权和增量交换，转向政治安全、集中控制与存量追责，旧发展路线形成的干部网络就会被重新评价。纪律案件处理真实腐败，也为组织拆除旧节点、改变选人标准和重塑官僚行为提供了工具。</p>
@@ -78,12 +84,6 @@ aliases:
   <h3><a href="/civic-orderism/information-age-and-political-transition">信息化时代与政治转型</a></h3>
   <p class="knowledge-card__summary">世界已经进入信息化时代，但绝大多数国家仍运行着工业时代建立起来的治理体系。本文从时代错位、改革开放遗留问题与资源约束出发，解释公民秩序主义为何在今天提出。</p>
   <p class="knowledge-card__chips"><span>专题：中国政治转型</span></p>
-</article>
-<article class="knowledge-card home-article-card">
-  <p class="knowledge-card__meta"><span>2026-07-21</span><span>解析中共</span></p>
-  <h3><a href="/china/xi-successor-and-bureaucratic-accountability">习近平到底有没有接班人？</a></h3>
-  <p class="knowledge-card__summary">习近平有没有接班人，表面上是中南海的人事问题，实质上关系整个中共官场如何计算未来。随着习近平年龄增长、中国进入经济与财政偿债阶段，官员真正担心的已不是谁会接班，而是谁会重新解释习近平时代、谁会承担这个时代留下的责任。毛泽东去世后，“四人帮”曾承担一个时代被切割和终结的政治责任。类似的责任转移逻辑，可能使今天庞大的中高级官僚集团成为未来最方便的责任承担者。正是这种共同的不安全感，正在为一种更稳定、更可预期的和平制度转轨创造现实基础。</p>
-  <p class="knowledge-card__chips"><span>专题：习近平时代</span></p>
 </article></div>
 </section>
 
