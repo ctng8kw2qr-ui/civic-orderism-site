@@ -32,7 +32,7 @@ export const sharedPageComponents: SharedLayout = {
       "X · @CivicOrderism": "https://x.com/CivicOrderism",
       开始阅读: "/start",
       法人筹备: "/preparation",
-      支持与参与: "/participate",
+      参与: "/participate",
       专题: "/topics",
       核心概念: "/concepts",
       版权说明: "/copyright",

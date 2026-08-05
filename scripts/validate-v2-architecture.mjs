@@ -13,6 +13,7 @@ const sections = readJson("data/sections.config.json");
 const institutionSections = readJson("data/institution-sections.config.json");
 const readingSequences = readJson("data/reading-sequences.config.json");
 const organization = readJson("data/organization.config.json");
+const navigation = readJson("data/navigation.config.json");
 const topicSlugs = new Set(topics.map((item) => item.slug));
 const conceptSlugs = new Set(concepts.map((item) => item.slug));
 const sectionNames = new Set(sections.map((item) => item.name));
@@ -431,6 +432,11 @@ const expectedLatestSlugs = migration
   .filter(
     (article) => article.status === "published" && article.needsReview !== true,
   )
+  .filter(
+    (article) =>
+      article.slug !==
+      "civic-orderism/north-america-nonprofit-board-preparation-manifesto",
+  )
   .slice(0, 3)
   .map((article) => article.slug);
 assert(
@@ -438,11 +444,25 @@ assert(
   `首页最新文章未按发布日期自动排序：${homepageLatestSlugs.join(", ")}`,
 );
 const homepageText = visiblePageText(homepageHtml);
+const homepageMainHtml =
+  homepageHtml.match(
+    /<article class="popover-hint">([\s\S]*?)<\/article><hr/,
+  )?.[1] ?? homepageHtml;
+const homepageMainText = visiblePageText(homepageMainHtml);
 assert(
   homepageText.includes(
     "建设一条低阻力、低风险、能够和平承接中国未来的政治道路",
   ) && homepageText.includes("公民秩序主义官方网站"),
   "首页缺少和平承接未来的核心定位",
+);
+assert(
+  homepageMainText.includes(
+    "我们主张以和平转轨、行政承接、责任区分和制度重组",
+  ) &&
+    homepageMainText.includes(
+      "目前正在开展理论推广、公共传播、长期协作者识别、组织建设及北美非营利法人筹备工作",
+    ),
+  "首页首屏仍以组织筹备而不是政治与制度路线为主体",
 );
 assert(
   homepageText.includes("不革命、不普遍清算、不让国家停摆") &&
@@ -458,44 +478,82 @@ assert(
   "首页缺少核心路线、法人筹备或参与入口",
 );
 assert(
-  homepageText.includes("任何认同基本理念的人") &&
-    homepageText.includes("北美长期居住者可进一步了解法人和董事会筹备"),
+  homepageMainText.includes("面向不同国家和地区的读者，不限制居住地") &&
+    homepageMainText.includes(
+      "其他支持、传播、翻译、研究和技术协作不受地区限制",
+    ),
   "首页没有区分普通支持者与北美组织筹备参与者",
 );
-const homepageSectionOrder = [
-  "公民秩序主义官方网站",
+const expectedHomepageHeadings = [
   "为什么中国需要一条新的政治道路",
   "为什么支持公民秩序主义",
   "不革命、不普遍清算、不让国家停摆",
+  "一条能够被更多人接受的政治道路",
   "为什么参与公民秩序主义",
-  "公民秩序主义正在从理论走向组织",
+  "支持公民秩序主义",
+  "参与组织建设",
+  "从政治路线走向长期组织基础",
   "北美非营利法人及董事会筹备",
-  "如何参与",
-  "最新研究和文章",
-  "继续了解或建立联系",
-].map((text) => homepageText.indexOf(text));
+  "进一步了解公民秩序主义",
+  "最新正式文章",
+  "手册和联系方式",
+];
+const homepageHeadings = [
+  ...homepageMainHtml.matchAll(/<h2[^>]*>([^<]+)<a role="anchor"/g),
+].map((match) => match[1]);
 assert(
-  homepageSectionOrder.every(
-    (position, index) =>
-      position >= 0 &&
-      (index === 0 || position > homepageSectionOrder[index - 1]),
-  ),
+  homepageMainHtml.includes(
+    '<p class="home-kicker">公民秩序主义官方网站</p>',
+  ) &&
+    JSON.stringify(
+      homepageHeadings.slice(0, expectedHomepageHeadings.length),
+    ) === JSON.stringify(expectedHomepageHeadings),
   "首页模块顺序不符合品牌优先的信息结构",
 );
+assert(
+  (homepageMainText.match(/北美非营利法人/g) ?? []).length <= 2 &&
+    (homepageMainText.match(/首届董事会/g) ?? []).length <= 2,
+  "首页法人或首届董事会完整名称出现次数过多",
+);
+for (const boundaryTerm of ["董事资格", "法定成员", "共同创始人"]) {
+  assert(
+    (homepageMainText.match(new RegExp(boundaryTerm, "g")) ?? []).length <= 1,
+    `首页重复展示身份边界：${boundaryTerm}`,
+  );
+}
+assert(
+  navigation.map((item) => item.label).join("/") ===
+    "首页/公民秩序主义/核心路线/解析中共/制度设计/参与/关于",
+  "主导航没有采用品牌、路线与参与优先的结构",
+);
+for (const forbidden of [
+  "X 短贴",
+  "X 长文系列",
+  "X 每日更新",
+  "社交平台互动数据",
+  "公民秩序主义Ⅰ",
+]) {
+  assert(
+    !homepageMainText.includes(forbidden),
+    `首页混入 X 内容归档：${forbidden}`,
+  );
+}
 
 const participateHtml = fs.readFileSync(publicHtml("participate"), "utf8");
 const participateText = visiblePageText(participateHtml);
 for (const requiredText of [
-  "支持公民秩序主义",
-  "阅读正式文章",
-  "长期关注研究进展",
-  "提出意见和建议",
-  "参与研究与组织建设",
-  "法律与法人治理",
+  "参与公民秩序主义",
+  "阅读和长期关注",
+  "传播正式文章和网站",
+  "翻译与跨语言传播",
+  "技术和网站协作",
+  "参与北美组织筹备",
+  "法人筹备",
+  "董事会筹备",
+  "法律与合规",
   "财务与内部控制",
-  "研究与制度设计",
-  "技术与信息安全",
-  "其他研究、传播与专业协作不受这一地区限制",
+  "治理制度建设",
+  "北美居住要求不适用于普通支持、传播、翻译、研究和技术协作",
   "筹备参与不是治理身份",
   "不人为制造风险",
   "请不要在初次邮件中发送身份证件",

@@ -1,9 +1,9 @@
 ---
-title: "支持与参与公民秩序主义"
+title: "参与公民秩序主义"
 date: 2026-07-19
 updated: 2026-07-20
-description: "了解如何通过阅读、传播、建议和专业意见支持公民秩序主义，以及如何进一步参与研究与组织建设。"
-contentType: "支持与参与"
+description: "了解全球读者如何参与公民秩序主义，以及加拿大和北美长期居住者如何进一步参与法人、董事会与治理筹备。"
+contentType: "参与"
 status: published
 listed: true
 folderListed: true
@@ -12,20 +12,21 @@ noindex: false
 
 <div class="participate-page">
 <header class="participate-hero">
-  <p class="resource-label">从认同、支持到长期建设</p>
-  <h1>支持与参与公民秩序主义</h1>
-  <p>认同公民秩序主义不受所在地区限制。你可以从阅读、关注、分享、建议和专业意见开始；希望承担具体责任的人，也可以进一步参与研究、技术与组织建设。</p>
+  <p class="resource-label">全球参与与北美组织筹备</p>
+  <h1>参与公民秩序主义</h1>
+  <p>认同公民秩序主义不受所在地区限制。你可以从阅读、传播、研究、翻译、技术、建议和长期联系开始；长期居住于加拿大或北美的人，还可以进一步了解当地法人和治理筹备。</p>
 </header>
 
-<section class="participate-section" id="support" aria-labelledby="participation-support">
-  <div class="home-section-intro"><p class="resource-label">第一层</p><h2 id="participation-support">支持公民秩序主义</h2><p>任何认同和平转轨、国家连续、减少冲突和长期制度建设的人，都可以选择适合自己的支持方式。</p></div>
-  <div class="participate-support-grid"><span>阅读正式文章</span><span>长期关注研究进展</span><span>分享网站与核心路线</span><span>提出意见和建议</span><span>与我们建立联系</span><span>提供专业意见</span></div>
-  <p class="participate-support-note">支持不要求公开身份，不要求进入组织，也不要求通过激进表达证明立场。</p>
+<section class="participate-section" id="global" aria-labelledby="participation-global">
+  <div class="home-section-intro"><p class="resource-label">第一部分 · 不限地区</p><h2 id="participation-global">参与公民秩序主义</h2><p>面向全球认同基本路线的人。参与可以是公开传播，也可以是低风险、长期和专业化的协作。</p></div>
+  <div class="participate-support-grid"><span>阅读和长期关注</span><span>传播正式文章和网站</span><span>参与研究</span><span>翻译与跨语言传播</span><span>技术和网站协作</span><span>提交意见与建议</span><span>提供专业意见</span><span>保持长期联系</span></div>
+  <p class="participate-support-note">这一层不限制居住地，不要求公开身份，也不要求通过激进表达证明立场。</p>
 </section>
 
-<section class="participate-section" id="organization" aria-labelledby="participation-paths">
-  <div class="home-section-intro"><p class="resource-label">第二层</p><h2 id="participation-paths">参与研究与组织建设</h2><p>适合愿意承担具体工作、尊重程序和安全边界，并能够保持长期协作的人。法人和董事会筹备主要面向长期居住于加拿大或北美的人，其他研究、传播与专业协作不受这一地区限制。</p></div>
-  <div class="participate-path-grid"><article><span>01</span><h3>法律与法人治理</h3><p>注册法域研究、章程和附例、董事义务、政策与合规文件。</p></article><article><span>02</span><h3>财务与内部控制</h3><p>预算、记账、报销、审批、审计准备和资产管理制度。</p></article><article><span>03</span><h3>研究与制度设计</h3><p>政治、财政、社会治理、官僚体系、和平转轨与行政承接研究。</p></article><article><span>04</span><h3>技术与信息安全</h3><p>网站、档案、访问控制、数字资产、隐私保护和风险评估。</p></article><article><span>05</span><h3>出版与公共传播</h3><p>编辑、翻译、视觉设计、出版流程和克制、准确的公共表达。</p></article><article><span>06</span><h3>组织运营与人才联系</h3><p>任务协调、会议记录、流程建设、专业网络和长期合作维护。</p></article></div>
+<section class="participate-section" id="north-america" aria-labelledby="participation-north-america">
+  <div class="home-section-intro"><p class="resource-label">第二部分 · 加拿大及北美</p><h2 id="participation-north-america">参与北美组织筹备</h2><p>面向长期居住于加拿大或北美、愿意承担当地法律责任和长期治理工作的人。当前工作以小规模、具体任务和长期合作观察为主。</p></div>
+  <div class="participate-path-grid"><article><span>01</span><h3>法人筹备</h3><p>注册法域、法人宗旨、业务范围、章程与组织附例研究。</p></article><article><span>02</span><h3>董事会筹备</h3><p>董事责任、候选人识别、利益冲突与依法产生程序。</p></article><article><span>03</span><h3>法律与合规</h3><p>当地非营利法律、政策文件、档案和公共活动边界。</p></article><article><span>04</span><h3>财务与内部控制</h3><p>预算、记账、审批、审计准备和组织资产管理制度。</p></article><article><span>05</span><h3>治理制度建设</h3><p>授权、监督、责任、隐私、信息安全与决策记录。</p></article><article><span>06</span><h3>长期组织运营</h3><p>任务协调、人才联系、出版支持和稳定的组织基础维护。</p></article></div>
+  <p class="participate-region-boundary"><strong>适用范围：</strong>北美居住要求不适用于普通支持、传播、翻译、研究和技术协作，只适用于当地法人、董事会候选人识别以及需要承担当地法律责任的治理工作。</p>
 </section>
 
 <section class="participate-section participate-fit" aria-labelledby="participation-fit">

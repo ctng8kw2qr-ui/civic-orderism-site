@@ -37,7 +37,7 @@ noindex: false
 - [[civic-orderism/north-america-nonprofit-board-preparation-manifesto|阅读筹备宣言]]
 - [[preparation|了解法人筹备]]
 - [[preparation/board|了解首届董事会筹备]]
-- [[participate|支持与参与公民秩序主义]]
+- [[participate|参与公民秩序主义]]
 - [[topics|专题]]
 - [[concepts|核心概念]]
 - [[articles|全部文章]]
@@ -53,4 +53,4 @@ noindex: false
 - 备用邮箱：[citizenorder@proton.me](mailto:citizenorder@proton.me)
 - 网站：[civicorderism.com](https://civicorderism.com/)
 
-本站不设公开成员名册、失控的公开群聊、支付或募款入口。无论身处何地，只要认同基本路线，都可以阅读 [[participate|支持与参与说明]]；北美长期居住者还可以进一步了解法人和董事会筹备。
+本站不设公开成员名册、失控的公开群聊、支付或募款入口。无论身处何地，只要认同基本路线，都可以阅读 [[participate|参与说明]]；北美长期居住者还可以进一步了解法人和董事会筹备。

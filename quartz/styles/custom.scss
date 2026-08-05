@@ -2076,6 +2076,58 @@ article .home-support__statement {
   line-height: 1.75;
 }
 
+article .home-section-conclusion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.25rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #d8dee6;
+}
+
+article .home-section-conclusion strong {
+  color: #0a1d38;
+  line-height: 1.7;
+}
+
+article .home-section-conclusion a {
+  color: #0a1d38;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+article .home-audience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.35rem;
+}
+
+article .home-audience-grid article {
+  min-width: 0;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid #d8dee6;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--light) 98%, var(--lightgray));
+}
+
+article .home-audience-grid strong {
+  color: #0a1d38;
+}
+
+article .home-audience-grid p {
+  margin: 0.55rem 0 0;
+  color: var(--darkgray);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+article .participation-levels--six {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 article .home-participation-paths {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2160,6 +2212,74 @@ article .home-contact-grid small {
   color: var(--gray);
   font-size: 0.8rem;
   line-height: 1.5;
+}
+
+article .home-build-grid--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+article .home-build-grid--four article {
+  padding: 1.1rem;
+}
+
+article .home-inline-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.25rem;
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid #d8dee6;
+}
+
+article .home-inline-links a {
+  color: #0a1d38;
+  font-size: 0.9rem;
+}
+
+article .home-learning-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 1.3rem;
+  border-top: 1px solid #d8dee6;
+  border-bottom: 1px solid #d8dee6;
+}
+
+article .home-learning-grid a {
+  display: flex;
+  min-width: 0;
+  min-height: 110px;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-right: 1px solid #d8dee6;
+  color: var(--dark);
+  text-decoration: none;
+  background-image: none;
+}
+
+article .home-learning-grid a:last-child {
+  border-right: 0;
+}
+
+article .home-learning-grid span {
+  color: #9b7c3e;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+article .home-learning-grid strong {
+  color: #0a1d38;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+article .home-learning-grid a:hover strong,
+article .home-learning-grid a:focus-visible strong {
+  text-decoration: underline;
+  text-decoration-color: #9b7c3e;
+  text-underline-offset: 0.2em;
 }
 
 article .home-participate__action {
@@ -2343,6 +2463,16 @@ article .participate-support-note {
   color: var(--darkgray);
   font-size: 0.92rem;
   line-height: 1.7;
+}
+
+article .participate-region-boundary {
+  margin: 1rem 0 0;
+  padding: 1rem 1.1rem;
+  border-left: 3px solid #9b7c3e;
+  background: color-mix(in srgb, var(--light) 96%, var(--lightgray));
+  color: var(--darkgray);
+  font-size: 0.92rem;
+  line-height: 1.75;
 }
 
 article .participate-boundaries {
@@ -3149,8 +3279,21 @@ article .start-roadmap__line {
   article .stakeholder-grid,
   article .transition-principles,
   article .home-build-grid,
+  article .home-build-grid--four,
   article .preparation-principle-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  article .home-learning-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  article .home-learning-grid a:nth-child(2n) {
+    border-right: 0;
+  }
+
+  article .home-learning-grid a:nth-child(-n + 4) {
+    border-bottom: 1px solid #d8dee6;
   }
 }
 
@@ -3175,8 +3318,72 @@ article .start-roadmap__line {
   article .organization-logic,
   article .home-participation-paths,
   article .home-contact-grid,
-  article .participate-support-grid {
+  article .participate-support-grid,
+  article .home-audience-grid,
+  article .home-learning-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  article .home-learning-grid a,
+  article .home-learning-grid a:nth-child(2n) {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid #d8dee6;
+  }
+
+  article .home-learning-grid a:last-child {
+    border-bottom: 0;
+  }
+
+  article .home-section-conclusion a {
+    white-space: normal;
+  }
+
+  article .home-audience-grid,
+  article .home-build-grid--four,
+  article .stakeholder-grid,
+  article .preparation-status-grid,
+  article .home-article-grid,
+  article .home-contact-grid,
+  article .participation-levels--five,
+  article .participation-levels--six,
+  article .home-learning-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  article .home-audience-grid article,
+  article .home-build-grid--four article {
+    padding: 0.9rem;
+  }
+
+  article .home-audience-grid p,
+  article .home-build-grid--four p {
+    font-size: 0.84rem;
+    line-height: 1.55;
+  }
+
+  article .participation-levels--five span,
+  article .participation-levels--six span {
+    padding: 0.72rem 0.55rem;
+    font-size: 0.82rem;
+  }
+
+  article .stakeholder-grid > article,
+  article .preparation-status-grid a,
+  article .home-article-grid article,
+  article .home-contact-grid > div {
+    padding: 0.9rem;
+  }
+
+  article .stakeholder-grid > article:last-child,
+  article .home-article-grid > article:last-child {
+    grid-column: 1 / -1;
+  }
+
+  article .stakeholder-grid p,
+  article .preparation-status-grid p {
+    font-size: 0.84rem;
+    line-height: 1.55;
   }
 
   article .organization-logic i {
@@ -3447,7 +3654,23 @@ body:is(
   }
 
   article .home-section {
-    margin-top: 2.7rem;
+    margin-top: 2.2rem;
+  }
+
+  article .home-learning-grid a,
+  article .home-learning-grid a:nth-child(2n) {
+    min-height: 88px;
+    border-right: 1px solid #d8dee6;
+  }
+
+  article .home-learning-grid a:nth-child(2n) {
+    border-right: 0;
+  }
+
+  article .home-learning-grid a:last-child {
+    grid-column: 1 / -1;
+    min-height: 0;
+    border-right: 0;
   }
 
   article .home-section-heading {

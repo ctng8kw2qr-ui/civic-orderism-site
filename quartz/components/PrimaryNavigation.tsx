@@ -10,13 +10,16 @@ import script from "./scripts/primaryNavigation.inline";
 
 const secondaryNavigation = [
   { label: "5分钟了解", href: "/start" },
-  { label: "核心路线", href: "/civic-orderism/peaceful-state-transition" },
+  {
+    label: "中国和平政治转型",
+    href: "/civic-orderism/possibility-of-peaceful-political-transition-in-china",
+  },
+  { label: "组织筹备", href: "/preparation" },
   {
     label: "筹备宣言",
     href: "/civic-orderism/north-america-nonprofit-board-preparation-manifesto",
   },
   { label: "董事会筹备", href: "/preparation/board" },
-  { label: "专题", href: "/topics" },
   { label: "全部文章", href: "/articles" },
 ];
 
