@@ -788,32 +788,32 @@ writeContent(
 <section class="home-section home-route-need" id="new-political-road">
   <div class="home-section-intro"><p class="resource-label">中国未来</p><h2>为什么中国需要一条新的政治道路</h2><p>人口、财政、债务、社会保障、官僚体系和国际环境正在形成叠加的结构性压力，旧制度的发现问题、纠正错误和承担责任能力持续下降。</p></div>
   <p class="home-question">当旧秩序无法继续时，谁能够承接国家、维持公共服务，并防止政治变化演变为社会失序？</p>
-  <div class="home-section-conclusion"><strong>中国需要的不是更多愤怒，而是一条能够真正进入未来的政治道路。</strong></div>
+  <div class="home-section-conclusion"><strong>中国需要的不是更多愤怒，而是一条能够真正进入未来的政治道路。公民秩序主义试图提供的，正是这样一条道路。</strong></div>
 </section>
 
 <section class="home-section home-support" id="core-topics">
-  <div class="home-section-intro"><p class="resource-label">路线价值</p><h2>为什么支持公民秩序主义</h2><p>这条政治路线不以摧毁旧秩序为目标，而是为中国准备一个可以保持运行、降低冲突并持续纠错的新秩序。</p></div>
-  <div class="stakeholder-grid"><article><strong>保持国家连续运行</strong><p>政治变化不能让财政、教育、医疗、交通、治安和基层治理停摆。</p></article><article><strong>降低社会冲突成本</strong><p>不以革命、普遍清算和集体报复制造新的恐惧与仇恨。</p></article><article><strong>建立能够持续纠错的制度</strong><p>限制公共权力，明确责任，让制度能够发现错误、纠正错误并承担后果。</p></article></div>
+  <div class="home-section-intro"><p class="resource-label">路线价值</p><h2>为什么支持公民秩序主义</h2><p>中国未来真正缺少的，不只是对旧制度的批评，而是一条能够在政治变化中维持国家运行、降低社会冲突并持续纠错的新道路。</p></div>
+  <div class="stakeholder-grid"><article><strong>保持国家连续运行</strong><p>政治变化不能让财政、教育、医疗、交通、治安和基层治理停摆。</p></article><article><strong>降低社会冲突成本</strong><p>不以革命、不实施普遍追责和集体报复制造新的恐惧与仇恨。</p></article><article><strong>建立能够持续纠错的制度</strong><p>限制公共权力，明确责任，让制度能够发现错误、纠正错误并承担后果。</p></article></div>
 </section>
 
 <section class="home-section home-stakeholders" id="transition-principles">
-  <div class="home-section-intro"><p class="resource-label">我们的政治路线</p><h2>不革命、不普遍清算、不让国家停摆</h2><p>我们不以报复作为组织手段，不因身份对体制内人员实施集体追责，而是通过协商、谈判、授权转换和制度重组推动和平政治转轨。</p></div>
-  <div class="stakeholder-grid"><article><strong>不革命</strong><p>不以社会崩溃和国家解体换取政治变化。</p></article><article><strong>不普遍清算</strong><p>区分政治、历史与刑事责任，拒绝集体报复。</p></article><article><strong>不让国家停摆</strong><p>保障国家行政体系和基本公共服务连续运行。</p></article></div>
+  <div class="home-section-intro"><p class="resource-label">我们的政治路线</p><h2>不革命、不清算、不让国家停摆</h2><p>我们不以报复作为组织手段，不因身份对体制内人员实施集体追责，而是通过协商、谈判、授权转换和制度重组推动和平政治转轨。</p></div>
+  <div class="stakeholder-grid"><article><strong>不革命</strong><p>不以社会崩溃和国家解体换取政治变化。</p></article><article><strong>不清算</strong><p>不因政治身份实施普遍追责，区分政治责任、历史责任与依法确认的犯罪责任。</p></article><article><strong>不让国家停摆</strong><p>保障国家行政体系和基本公共服务连续运行。</p></article></div>
   <p class="home-stakeholders__summary">我们希望推动的，不是权力争夺，而是治理方式与国家秩序的和平转换。</p>
 </section>
 
 <section class="home-section home-audience" id="shared-road">
   <div class="home-section-intro"><p class="resource-label">共同利益</p><h2>一条能够被更多人接受的政治道路</h2><p>和平转轨必须同时回应社会成员、体制内普通成员、专业人员与国家行政系统的基本诉求。</p></div>
-  <div class="home-audience-grid"><article><strong>普通社会成员</strong><p>获得尊严、保障、安全和稳定预期，不因政治变化承担失序成本。</p></article><article><strong>体制内普通成员</strong><p>不因身份受到集体追责，在明确责任边界下获得安全、退路和重新参与国家建设的机会。</p></article><article><strong>专业人员</strong><p>能够按照专业规律参与财政、法律、医疗、教育、技术和公共治理。</p></article><article><strong>国家行政系统</strong><p>保持必要能力和公共服务连续，在制度重组中完成纠偏和升级。</p></article></div>
+  <div class="home-audience-grid"><article><strong>普通社会成员</strong><p>获得尊严、保障、安全和稳定预期，不因政治变化承担失序成本。</p></article><article><strong>体制内普通成员</strong><p>不因身份受到集体追责，在明确责任边界下获得安全、退路和重新参与国家建设的机会。</p></article><article><strong>专业人员</strong><p>能够按照专业规律参与财政、法律、医疗、教育、技术和公共治理。</p></article><article><strong>国家行政系统</strong><p>保留必要的行政能力和公共服务体系，在政治转轨中完成权力重组、责任重建和制度纠偏。</p></article></div>
 </section>
 
 <section class="home-section home-participation" id="participate">
   <div class="home-section-intro"><p class="resource-label">从认同到建设</p><h2>参与公民秩序主义</h2><p>一条政治路线只有被长期维护、制度化和组织化，才可能真正进入现实。参与公民秩序主义，就是把认同转化为持续建设。</p></div>
-  <div class="home-participation-grid"><article><p class="resource-label">第一层</p><h3>支持与传播</h3><p>面向不同国家和地区的读者，不限制居住地。</p><ul><li>阅读和长期关注</li><li>分享正式文章和网站</li><li>参与理性讨论</li><li>提交意见和专业建议</li><li>翻译与传播</li><li>保持长期联系</li></ul><small>支持不要求公开身份，也不要求立即进入组织。</small></article><article><p class="resource-label">第二层</p><h3>长期组织建设</h3><p>面向能够承担具体工作的人。</p><ul><li>研究与编辑</li><li>翻译与传播</li><li>技术与设计</li><li>信息安全</li><li>法律与财务</li><li>非营利组织运营</li><li>治理制度建设</li><li>长期协作</li></ul><small>加拿大或北美长期居住要求，只适用于当地法人筹备、董事候选人识别以及需要承担当地法律责任的治理工作。其他支持、传播、翻译、研究和技术协作不受地区限制。</small></article></div>
+  <div class="home-participation-grid"><article><p class="resource-label">第一层</p><h3>支持与传播</h3><p>面向不同国家和地区的读者，不限制居住地。</p><ul><li>阅读并持续了解</li><li>分享正式文章和网站，并向认同和平转轨与国家连续性的人介绍公民秩序主义</li><li>参与理性讨论</li><li>提交意见和专业建议</li><li>参与翻译、研究或技术协作</li><li>保持长期联系</li></ul><small>支持不要求公开身份，也不要求立即进入组织。</small></article><article><p class="resource-label">第二层</p><h3>长期组织建设</h3><p>面向能够承担具体工作的人。</p><ul><li>研究与编辑</li><li>翻译与传播</li><li>技术与设计</li><li>信息安全</li><li>法律与财务</li><li>非营利组织运营</li><li>治理制度建设</li><li>项目管理与长期运营</li></ul><small>加拿大或北美长期居住要求，只适用于当地法人筹备、董事候选人识别以及需要承担当地法律责任的治理工作。其他支持、传播、翻译、研究和技术协作不受地区限制。</small></article></div>
 </section>
 
 <section class="home-section home-organization-rationale" id="why-organization">
-  <div class="home-section-intro"><p class="resource-label">组织化</p><h2>从政治路线走向长期组织基础</h2><p>公民秩序主义正在由一套政治与制度路线，逐步形成一个具有长期治理基础的政治组织雏形。当前组织化工作主要包括公共研究、理论传播、制度设计、长期协作，以及北美非营利法人和董事会筹备。</p></div>
+  <div class="home-section-intro"><p class="resource-label">组织化</p><h2>从政治路线走向长期组织基础</h2><p>公民秩序主义正在由一套政治与制度路线，逐步形成一个具有长期治理基础的政治组织雏形。北美非营利法人将主要承担公共研究、理论传播、制度建设、资产管理和组织治理基础工作，不等同于已经成立的政党或成熟政治组织。当前组织化工作主要包括公共研究、理论传播、制度设计、长期协作，以及当地法人和董事会筹备。</p></div>
   <div class="home-build-grid home-build-grid--four"><article><strong>合法组织基础</strong><p>为公共研究、出版和长期协作建立依法运行的承载结构。</p></article><article><strong>治理与责任结构</strong><p>明确授权、监督、财务与组织责任。</p></article><article><strong>理论及数字资产保护</strong><p>保护网站、出版物、品牌、档案和研究成果。</p></article><article><strong>人才与长期协作</strong><p>积累能够承担研究、专业与治理责任的人才。</p></article></div>
   <div class="home-inline-links"><a href="${organization.routes.nonprofitPreparation}">了解组织筹备 →</a></div>
 </section>
@@ -850,7 +850,7 @@ writeContent(
     <section><span>01</span><div><h2>中国面对的不是单一问题</h2><p>经济、财政、官场、社会信任与治理能力相互叠加，局部压力会沿组织和责任链扩散。</p></div></section>
     <section><span>02</span><div><h2>为什么旧道路越来越难继续</h2><p>增长、地方竞争、官僚激励和外部机会形成的平衡正在失效；治理成本上升，反馈与纠错能力下降。</p></div></section>
     <section><span>03</span><div><h2>公民秩序主义是什么</h2><p>它不是价值口号，而是要在秩序、自由、责任、尊严和国家连续性之间建立可执行的制度平衡。</p></div></section>
-    <section><span>04</span><div><h2>公民秩序主义不是什么</h2><ul><li>不是以社会失控换取制度变化。</li><li>不是全面清算和集体恐惧。</li><li>不是照搬西方政党政治。</li><li>不回避转型如何发生。</li></ul></div></section>
+    <section><span>04</span><div><h2>公民秩序主义不是什么</h2><ul><li>不是以社会失控换取制度变化。</li><li>不是以政治身份实施普遍追责和制造集体恐惧。</li><li>不是照搬西方政党政治。</li><li>不回避转型如何发生。</li></ul></div></section>
   </div>
   <section class="start-method" id="method-difference">
     <div class="home-section-intro"><p class="resource-label">方法差异</p><h2>公民秩序主义关注的，不只是价值，而是转轨如何发生</h2></div>
@@ -1080,7 +1080,7 @@ writeContent(
 
 <section class="preparation-section">
   <div class="home-section-intro"><p class="resource-label">候选人标准</p><h2>我们重视什么</h2><p>现阶段希望与少量长期居住于加拿大或北美、理解基本政治路线并愿意承担真实治理责任的人建立联系。</p></div>
-  <ul class="participate-checklist"><li>理解和平转轨、行政承接与国家连续；</li><li>认同不革命、不普遍清算、不以报复为目的；</li><li>尊重程序、授权、组织纪律与集体决策；</li><li>具备独立判断、事实意识和处理分歧的能力；</li><li>能够保护组织信息、成员隐私和敏感资料；</li><li>愿意投入稳定时间并承担法定治理责任；</li><li>能够识别并披露利益冲突；</li><li>具备法律、财务、公共管理、技术、传播、研究或运营能力之一。</li></ul>
+  <ul class="participate-checklist"><li>理解和平转轨、行政承接与国家连续；</li><li>认同不革命、不清算、不以报复为目的；</li><li>尊重程序、授权、组织纪律与集体决策；</li><li>具备独立判断、事实意识和处理分歧的能力；</li><li>能够保护组织信息、成员隐私和敏感资料；</li><li>愿意投入稳定时间并承担法定治理责任；</li><li>能够识别并披露利益冲突；</li><li>具备法律、财务、公共管理、技术、传播、研究或运营能力之一。</li></ul>
 </section>
 
 <section class="preparation-section">
@@ -1109,7 +1109,7 @@ writeContent(
 
 <section class="participate-section" id="global" aria-labelledby="participation-global">
   <div class="home-section-intro"><p class="resource-label">第一部分 · 不限地区</p><h2 id="participation-global">参与公民秩序主义</h2><p>面向全球认同基本路线的人。参与可以是公开传播，也可以是低风险、长期和专业化的协作。</p></div>
-  <div class="participate-support-grid"><span>阅读和长期关注</span><span>传播正式文章和网站</span><span>参与研究</span><span>翻译与跨语言传播</span><span>技术和网站协作</span><span>提交意见与建议</span><span>提供专业意见</span><span>保持长期联系</span></div>
+  <div class="participate-support-grid"><span>阅读并持续了解</span><span>分享正式文章和网站，并向认同和平转轨与国家连续性的人介绍公民秩序主义</span><span>参与理性讨论</span><span>提交意见和专业建议</span><span>参与翻译、研究或技术协作</span><span>保持长期联系</span></div>
   <p class="participate-support-note">这一层不限制居住地，不要求公开身份，也不要求通过激进表达证明立场。</p>
 </section>
 
@@ -1121,7 +1121,7 @@ writeContent(
 
 <section class="participate-section participate-fit" aria-labelledby="participation-fit">
   <div class="home-section-intro"><p class="resource-label">责任与稳定性优先</p><h2 id="participation-fit">我们希望与什么样的人建立联系</h2></div>
-  <ul class="participate-checklist"><li>理解和平转轨与行政承接；</li><li>认同不革命、不普遍清算、不以报复为目的；</li><li>能够长期、稳定地参与公共事务；</li><li>尊重程序、授权、组织纪律与事实；</li><li>能够保护组织信息和成员隐私；</li><li>愿意承担真实工作和明确责任；</li><li>具备独立思考和处理分歧的能力；</li><li>拥有法律、财务、管理、技术、传播、设计、研究或运营能力之一。</li></ul>
+  <ul class="participate-checklist"><li>理解和平转轨与行政承接；</li><li>认同不革命、不清算、不以报复为目的；</li><li>能够长期、稳定地参与公共事务；</li><li>尊重程序、授权、组织纪律与事实；</li><li>能够保护组织信息和成员隐私；</li><li>愿意承担真实工作和明确责任；</li><li>具备独立思考和处理分歧的能力；</li><li>拥有法律、财务、管理、技术、传播、设计、研究或运营能力之一。</li></ul>
 </section>
 
 <section class="participate-section participate-boundaries" aria-labelledby="participation-boundaries">
@@ -1155,7 +1155,7 @@ writeContent(
 
 - **网站**：公民秩序主义的正式门户、理论与路线说明中心，也是北美非营利法人及首届董事会筹备的公开信息入口。
 - **理论**：一套解释国家失灵、公共秩序与制度能力的研究框架。
-- **政治与制度路线**：一条以低阻力、低风险方式推动和平转轨、行政承接和国家连续的道路，不以革命、普遍清算或报复为主要手段。
+- **政治与制度路线**：一条以低阻力、低风险方式推动和平转轨、行政承接和国家连续的道路，不以革命、按政治身份实施普遍追责或报复为主要手段。
 - **组织筹备项目**：为理论研究、制度设计、公共传播、人才培养和长期治理建立合法、稳定、可持续的组织基础。
 
 **公民秩序主义首先是一条面向中国未来的政治与制度路线，组织建设是为了让这条路线能够长期存在并持续发展。**

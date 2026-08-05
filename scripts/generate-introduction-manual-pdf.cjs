@@ -256,7 +256,7 @@ function renderChapterOpener(key, partMarker = "") {
       <header class="chapter-opener">
         <div class="chapter-index">${number}</div>
         <div class="chapter-heading">
-          <div class="eyebrow">${partMarker ? `${escapeHtml(partMarker)} · ` : ""}CIVIC ORDERISM · INTRODUCTION MANUAL</div>
+          <div class="eyebrow">${partMarker ? `${escapeHtml(partMarker)} · ` : ""}Civic Orderism · Introduction Manual</div>
           <h1>${escapeHtml(title)}</h1>
           <p class="chapter-question"><span>本章回答</span>${escapeHtml(chapterQuestions.get(key))}</p>
         </div>
@@ -498,6 +498,8 @@ function buildHtml(lines) {
   <title>公民秩序主义介绍手册</title>
   <style>
 ${referenceStyle}
+    .eyebrow,
+    .architecture-header h2 { text-transform: none; }
     .cover-main { margin-top: 39mm; }
     .cover h1 { font-size: 30pt; }
     .cover-meta {
@@ -754,7 +756,7 @@ ${referenceStyle}
       color: #667483;
       font: 600 8.5pt Arial, sans-serif;
       letter-spacing: .12em;
-      text-transform: uppercase;
+      text-transform: none;
     }
     .architecture-header p {
       margin: 0;
@@ -1226,12 +1228,12 @@ ${referenceStyle}
   </style>
 </head>
 <body>
-  <div class="page-watermark">CIVIC ORDERISM</div>
+  <div class="page-watermark">Civic Orderism</div>
 
   <section class="cover">
     <div class="cover-brand">
       <img class="cover-logo" src="${logoData}" alt="公民秩序主义 logo">
-      <div class="cover-brand-text"><strong>公民秩序主义</strong><span>CIVIC ORDERISM</span></div>
+      <div class="cover-brand-text"><strong>公民秩序主义</strong><span>Civic Orderism</span></div>
     </div>
     <div class="cover-main">
       <div class="cover-kicker">INTRODUCTION MANUAL · 2026</div>
@@ -1249,7 +1251,7 @@ ${referenceStyle}
       </div>
       <div class="cover-official">
         <span>Official Edition</span>
-        <strong>Citizen Orderism</strong>
+        <strong>Civic Orderism</strong>
         <em>Version 1.0 · June 2026</em>
         <small>Document ID · CO-2026-001</small>
       </div>
@@ -1280,7 +1282,7 @@ ${referenceStyle}
     <header class="chapter-opener">
       <div class="chapter-index">C</div>
       <div class="chapter-heading">
-        <div class="eyebrow">CIVIC ORDERISM · CONTACT</div>
+        <div class="eyebrow">Civic Orderism · Contact</div>
         <h1>联系方式 / Contact</h1>
         <p class="chapter-question"><span>保持联系</span>严肃交流、资料反馈与建设性讨论，可通过以下方式联系。</p>
       </div>
@@ -1299,7 +1301,7 @@ ${referenceStyle}
   <section class="back-cover">
     <img src="${logoData}" alt="公民秩序主义 logo">
     <h1>公民秩序主义</h1>
-    <h2>CIVIC ORDERISM</h2>
+    <h2>Civic Orderism</h2>
     <div class="back-line"></div>
     <div class="positioning">
       <strong>信息化时代的国家秩序方案</strong><br><br>
@@ -1322,7 +1324,7 @@ ${referenceStyle}
     <div class="folio">OFFICIAL PUBLICATION · 版权声明</div>
     <h1>版权声明</h1>
     <div class="copyright-statement">
-      <p>© 2026 公民秩序主义（Citizen Orderism）</p>
+      <p>© 2026 Civic Orderism / 公民秩序主义</p>
       <p>本文件为公民秩序主义官方发布版本。</p>
       <p>欢迎个人学习、引用、转载与讨论。</p>
       <p>转载时请保留原文内容及出处，不得擅自删改、断章取义或以其他名义重新发布。</p>
@@ -1383,11 +1385,11 @@ async function main() {
     margin: { top: "10mm", bottom: "12mm", left: "0", right: "0" },
     headerTemplate: `
       <div style="width:100%;padding:0 18mm;font-family:Arial,sans-serif;font-size:7px;color:#6b7582;display:flex;justify-content:space-between;letter-spacing:.08em;">
-        <span>公民秩序主义介绍手册</span><span>CIVIC ORDERISM</span>
+        <span>公民秩序主义介绍手册</span><span>Civic Orderism</span>
       </div>`,
     footerTemplate: `
       <div style="width:100%;padding:0 18mm;font-family:Arial,sans-serif;font-size:7px;color:#6b7582;display:flex;justify-content:space-between;letter-spacing:.05em;">
-        <span>Citizen Orderism · civicorderism.com</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span>
+        <span>Civic Orderism · civicorderism.com</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span>
       </div>`,
   });
   await browser.close();

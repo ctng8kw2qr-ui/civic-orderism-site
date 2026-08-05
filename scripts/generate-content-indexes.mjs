@@ -328,9 +328,9 @@ const organizationManualEntry = `<section class="organization-manual-entry manua
 
 ## 公民秩序主义组织手册
 
-<p class="resource-subtitle">了解我们的世界判断、组织原则与加入方式。</p>
+<p class="resource-subtitle">了解我们的世界判断、组织原则、参与路径与协作边界。</p>
 
-这份手册不是宣言，也不是情绪动员，而是一份进入说明书。它用于说明公民秩序主义为什么存在、我们如何判断现实、为什么暂不建立开放群组，以及感兴趣的人如何通过邮件联系。
+这份手册不是宣言，也不是情绪动员，而是一份面向长期参与者的组织说明。它用于说明公民秩序主义为什么存在、我们如何判断现实、为什么暂不建立开放群组，以及感兴趣的人如何通过邮件联系。
 
 <div class="resource-actions manual-entry-actions">
   <a class="resource-button resource-button-primary manual-entry-button" href="/files/civic-orderism-organization-manual.pdf">下载 PDF</a>
@@ -449,7 +449,7 @@ enableToc: false
     <img src="static/logo.png" alt="公民秩序主义 Logo" />
     <span>公民秩序主义</span>
   </h1>
-  <p class="home-kicker">CIVIC ORDERISM</p>
+  <p class="home-kicker">Civic Orderism</p>
 </div>
 
 <div class="home-hero-copy">
@@ -751,7 +751,7 @@ status: published
 ## 正式资料
 
 <ol>
-  <li><a href="/organization-manual"><strong>公民秩序主义组织手册</strong></a><br><span>了解我们的世界判断、组织原则与加入方式。</span></li>
+  <li><a href="/organization-manual"><strong>公民秩序主义组织手册</strong></a><br><span>了解我们的世界判断、组织原则、参与路径与协作边界。</span></li>
   <li><a href="/civic-orderism/civic-orderism-manual">公民秩序主义说明书</a></li>
   <li><a href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">如果你只读一篇：公民秩序主义到底想解决什么</a></li>
 </ol>

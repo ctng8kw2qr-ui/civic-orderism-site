@@ -44,6 +44,10 @@ const developmentPlaceholderPatterns = [
   /临时文本/i,
   /测试文字/i,
 ];
+const legacyEnglishBrands = [
+  ["Citizen", "Orderism"].join(" "),
+  "Civic Orderism".toUpperCase(),
+];
 
 const assert = (condition, message) => {
   if (!condition) errors.push(message);
@@ -467,7 +471,7 @@ assert(
   "首页首屏仍以组织筹备而不是政治与制度路线为主体",
 );
 assert(
-  homepageText.includes("不革命、不普遍清算、不让国家停摆") &&
+  homepageText.includes("不革命、不清算、不让国家停摆") &&
     homepageText.includes("为什么支持公民秩序主义") &&
     homepageText.includes("参与公民秩序主义") &&
     homepageText.includes("北美非营利法人及董事会筹备"),
@@ -491,7 +495,7 @@ assert(
 const expectedHomepageHeadings = [
   "为什么中国需要一条新的政治道路",
   "为什么支持公民秩序主义",
-  "不革命、不普遍清算、不让国家停摆",
+  "不革命、不清算、不让国家停摆",
   "一条能够被更多人接受的政治道路",
   "参与公民秩序主义",
   "从政治路线走向长期组织基础",
@@ -516,8 +520,30 @@ assert(
   (homepageMainText.match(/政治组织雏形/g) ?? []).length === 1 &&
     homepageMainText.includes(
       "公民秩序主义正在由一套政治与制度路线，逐步形成一个具有长期治理基础的政治组织雏形",
+    ) &&
+    homepageMainText.includes(
+      "北美非营利法人将主要承担公共研究、理论传播、制度建设、资产管理和组织治理基础工作，不等同于已经成立的政党或成熟政治组织",
     ),
   "首页没有准确且唯一地表达政治组织雏形",
+);
+assert(
+  homepageMainText.includes("不革命、不清算、不让国家停摆") &&
+    homepageMainText.includes(
+      "不因政治身份实施普遍追责，区分政治责任、历史责任与依法确认的犯罪责任",
+    ) &&
+    homepageMainText.includes(
+      "保留必要的行政能力和公共服务体系，在政治转轨中完成权力重组、责任重建和制度纠偏",
+    ),
+  "首页核心主张、责任分类或行政承接表述未统一",
+);
+assert(
+  homepageMainText.includes("阅读并持续了解") &&
+    homepageMainText.includes(
+      "分享正式文章和网站，并向认同和平转轨与国家连续性的人介绍公民秩序主义",
+    ) &&
+    homepageMainText.includes("参与翻译、研究或技术协作") &&
+    homepageMainText.includes("项目管理与长期运营"),
+  "首页支持与传播或长期组织建设清单未同步",
 );
 assert(
   (homepageMainText.match(/北美非营利法人/g) ?? []).length <= 2 &&
@@ -578,10 +604,9 @@ const participateHtml = fs.readFileSync(publicHtml("participate"), "utf8");
 const participateText = visiblePageText(participateHtml);
 for (const requiredText of [
   "参与公民秩序主义",
-  "阅读和长期关注",
-  "传播正式文章和网站",
-  "翻译与跨语言传播",
-  "技术和网站协作",
+  "阅读并持续了解",
+  "向认同和平转轨与国家连续性的人介绍公民秩序主义",
+  "参与翻译、研究或技术协作",
   "参与北美组织筹备",
   "法人筹备",
   "董事会筹备",
@@ -827,7 +852,14 @@ for (const file of ["sitemap.xml", "index.xml", "robots.txt"]) {
 }
 
 for (const htmlPath of walkHtmlFiles(publicDir)) {
-  const pageText = visiblePageText(fs.readFileSync(htmlPath, "utf8"));
+  const html = fs.readFileSync(htmlPath, "utf8");
+  const pageText = visiblePageText(html);
+  for (const legacyBrand of legacyEnglishBrands) {
+    assert(
+      !html.includes(legacyBrand),
+      `公开页面仍包含旧英文品牌：${path.relative(publicDir, htmlPath)} -> ${legacyBrand}`,
+    );
+  }
   for (const pattern of developmentPlaceholderPatterns) {
     assert(
       !pattern.test(pageText),

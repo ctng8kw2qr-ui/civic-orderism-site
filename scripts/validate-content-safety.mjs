@@ -17,6 +17,29 @@ const institutionArticleSlugs = new Set(
   institutionSections.flatMap((section) => section.articles),
 );
 const reclassifiedArticleSlug = "institution/despotism-cancer-ming-1566";
+const approvedCopyNormalizations = new Map([
+  [
+    "china-stage/three-cleans-era-political-economic-cultural-contraction",
+    ["不按政治身份实施普遍追责"],
+  ],
+  ["civic-orderism/why-civic-orderism", ["不必然意味着按政治身份实施普遍追责"]],
+  [
+    "civic-orderism/north-america-nonprofit-board-preparation-manifesto",
+    ["不以政治身份实施普遍追责", "认同不革命、不清算、不以报复为目的"],
+  ],
+  [
+    "civic-orderism/possibility-of-peaceful-political-transition-in-china",
+    ["政治责任、历史责任和依法确认的犯罪责任"],
+  ],
+  [
+    "civic-orderism/peaceful-state-transition",
+    ["政治责任、历史责任与依法确认的犯罪责任"],
+  ],
+  [
+    "civic-orderism/why-civic-orderism-is-easier-to-succeed",
+    ["不追究任何依法确认的犯罪责任", "按政治身份实施普遍追责"],
+  ],
+]);
 const errors = [];
 
 function assert(condition, message) {
@@ -49,7 +72,25 @@ for (const article of sample) {
   const committed = execFileSync("git", ["show", `HEAD:${relative}`], {
     cwd: root,
   });
-  if (
+  if (approvedCopyNormalizations.has(article.slug)) {
+    const currentArticle = matter(current.toString("utf8"));
+    const committedArticle = matter(committed.toString("utf8"));
+    if (article.slug === "civic-orderism/peaceful-state-transition") {
+      delete currentArticle.data.summary;
+      delete committedArticle.data.summary;
+    }
+    assert(
+      JSON.stringify(currentArticle.data) ===
+        JSON.stringify(committedArticle.data),
+      `责任与品牌表述统一不应修改文章元数据：${relative}`,
+    );
+    for (const requiredText of approvedCopyNormalizations.get(article.slug)) {
+      assert(
+        currentArticle.content.includes(requiredText),
+        `责任与品牌表述统一缺少目标文案：${relative} -> ${requiredText}`,
+      );
+    }
+  } else if (
     institutionArticleSlugs.has(article.slug) ||
     article.slug === reclassifiedArticleSlug
   ) {
@@ -73,6 +114,33 @@ for (const article of sample) {
     );
   } else {
     assert(current.equals(committed), `历史文章发生字节级变化：${relative}`);
+  }
+}
+
+for (const [slug, requiredTexts] of approvedCopyNormalizations) {
+  const relative = `content/${slug}.md`;
+  const currentArticle = matter(
+    fs.readFileSync(path.join(root, relative), "utf8"),
+  );
+  const committedArticle = matter(
+    execFileSync("git", ["show", `HEAD:${relative}`], { cwd: root }).toString(
+      "utf8",
+    ),
+  );
+  if (slug === "civic-orderism/peaceful-state-transition") {
+    delete currentArticle.data.summary;
+    delete committedArticle.data.summary;
+  }
+  assert(
+    JSON.stringify(currentArticle.data) ===
+      JSON.stringify(committedArticle.data),
+    `责任与品牌表述统一不应修改文章元数据：${relative}`,
+  );
+  for (const requiredText of requiredTexts) {
+    assert(
+      currentArticle.content.includes(requiredText),
+      `责任与品牌表述统一缺少目标文案：${relative} -> ${requiredText}`,
+    );
   }
 }
 

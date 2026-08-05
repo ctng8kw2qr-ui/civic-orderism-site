@@ -80,9 +80,9 @@ noindex: false
   <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：非暴力转型</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="political-route nonviolent-transition state-system-upgrade">
-  <p class="knowledge-card__meta"><span>2026-07-19</span><span>13 分钟阅读</span></p>
+  <p class="knowledge-card__meta"><span>2026-07-19</span><span>14 分钟阅读</span></p>
   <h3><a href="/civic-orderism/peaceful-state-transition">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</a></h3>
-  <p class="knowledge-card__summary">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不以集体清算为前提的转轨道路。</p>
+  <p class="knowledge-card__summary">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不按政治身份实施普遍追责的转轨道路。</p>
   <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：政治路线</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="political-route">

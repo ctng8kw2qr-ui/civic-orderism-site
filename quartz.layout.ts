@@ -26,7 +26,7 @@ export const sharedPageComponents: SharedLayout = {
     }),
   ],
   footer: Component.Footer({
-    copyright: "© 2026 Citizen Orderism / 公民秩序主义",
+    copyright: "© 2026 Civic Orderism / 公民秩序主义",
     links: {
       开始阅读: "/start",
       核心路线: "/civic-orderism/peaceful-state-transition",

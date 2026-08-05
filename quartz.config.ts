@@ -10,7 +10,7 @@ import { RootStatic } from "./quartz/plugins/emitters/rootStatic";
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "公民秩序主义",
-    pageTitleSuffix: " · CIVIC ORDERISM",
+    pageTitleSuffix: " · Civic Orderism",
     enableSPA: true,
     enablePopovers: false,
     analytics: null,

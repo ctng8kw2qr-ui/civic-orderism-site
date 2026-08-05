@@ -19,7 +19,7 @@ noindex: false
 
 <section class="participate-section" id="global" aria-labelledby="participation-global">
   <div class="home-section-intro"><p class="resource-label">第一部分 · 不限地区</p><h2 id="participation-global">参与公民秩序主义</h2><p>面向全球认同基本路线的人。参与可以是公开传播，也可以是低风险、长期和专业化的协作。</p></div>
-  <div class="participate-support-grid"><span>阅读和长期关注</span><span>传播正式文章和网站</span><span>参与研究</span><span>翻译与跨语言传播</span><span>技术和网站协作</span><span>提交意见与建议</span><span>提供专业意见</span><span>保持长期联系</span></div>
+  <div class="participate-support-grid"><span>阅读并持续了解</span><span>分享正式文章和网站，并向认同和平转轨与国家连续性的人介绍公民秩序主义</span><span>参与理性讨论</span><span>提交意见和专业建议</span><span>参与翻译、研究或技术协作</span><span>保持长期联系</span></div>
   <p class="participate-support-note">这一层不限制居住地，不要求公开身份，也不要求通过激进表达证明立场。</p>
 </section>
 
@@ -31,7 +31,7 @@ noindex: false
 
 <section class="participate-section participate-fit" aria-labelledby="participation-fit">
   <div class="home-section-intro"><p class="resource-label">责任与稳定性优先</p><h2 id="participation-fit">我们希望与什么样的人建立联系</h2></div>
-  <ul class="participate-checklist"><li>理解和平转轨与行政承接；</li><li>认同不革命、不普遍清算、不以报复为目的；</li><li>能够长期、稳定地参与公共事务；</li><li>尊重程序、授权、组织纪律与事实；</li><li>能够保护组织信息和成员隐私；</li><li>愿意承担真实工作和明确责任；</li><li>具备独立思考和处理分歧的能力；</li><li>拥有法律、财务、管理、技术、传播、设计、研究或运营能力之一。</li></ul>
+  <ul class="participate-checklist"><li>理解和平转轨与行政承接；</li><li>认同不革命、不清算、不以报复为目的；</li><li>能够长期、稳定地参与公共事务；</li><li>尊重程序、授权、组织纪律与事实；</li><li>能够保护组织信息和成员隐私；</li><li>愿意承担真实工作和明确责任；</li><li>具备独立思考和处理分歧的能力；</li><li>拥有法律、财务、管理、技术、传播、设计、研究或运营能力之一。</li></ul>
 </section>
 
 <section class="participate-section participate-boundaries" aria-labelledby="participation-boundaries">

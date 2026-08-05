@@ -1,7 +1,7 @@
 ---
 title: "版权说明"
 date: 2026-06-23
-description: "Citizen Orderism（公民秩序主义）的网站内容、PDF 文件与转载引用规范。"
+description: "Civic Orderism（公民秩序主义）的网站内容、PDF 文件与转载引用规范。"
 tags:
   - 版权
 listed: false
@@ -9,7 +9,7 @@ listed: false
 
 # 版权说明
 
-本站及相关 PDF、文章、图示内容为 Citizen Orderism / 公民秩序主义公开发布材料。
+本站及相关 PDF、文章、图示内容为 Civic Orderism / 公民秩序主义公开发布材料。
 
 欢迎在注明来源与原链接的前提下引用、转发、讨论。
 
