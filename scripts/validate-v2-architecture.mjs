@@ -431,7 +431,7 @@ const expectedLatestSlugs = migration
   .filter(
     (article) => article.status === "published" && article.needsReview !== true,
   )
-  .slice(0, 4)
+  .slice(0, 3)
   .map((article) => article.slug);
 assert(
   JSON.stringify(homepageLatestSlugs) === JSON.stringify(expectedLatestSlugs),
@@ -441,36 +441,61 @@ const homepageText = visiblePageText(homepageHtml);
 assert(
   homepageText.includes(
     "建设一条低阻力、低风险、能够和平承接中国未来的政治道路",
-  ),
+  ) && homepageText.includes("公民秩序主义官方网站"),
   "首页缺少和平承接未来的核心定位",
 );
 assert(
   homepageText.includes("不革命、不普遍清算、不让国家停摆") &&
-    homepageText.includes("我们正在建设什么") &&
-    homepageText.includes("北美非营利法人与首届董事会筹备"),
-  "首页缺少核心转轨原则或组织筹备说明",
+    homepageText.includes("为什么支持公民秩序主义") &&
+    homepageText.includes("为什么参与公民秩序主义") &&
+    homepageText.includes("北美非营利法人及董事会筹备"),
+  "首页缺少品牌价值、参与理由、核心路线或组织筹备说明",
 );
 assert(
   homepageHtml.includes('href="/participate"') &&
     homepageHtml.includes('href="/preparation"') &&
-    homepageHtml.includes(
-      'href="/civic-orderism/north-america-nonprofit-board-preparation-manifesto"',
-    ),
-  "首页缺少法人筹备、宣言或参与入口",
+    homepageHtml.includes('href="/civic-orderism/peaceful-state-transition"'),
+  "首页缺少核心路线、法人筹备或参与入口",
 );
 assert(
-  homepageText.includes(organization.statusLabels.registration) &&
-    homepageText.includes(organization.statusLabels.board),
-  "首页缺少准确的法人或董事会状态",
+  homepageText.includes("任何认同基本理念的人") &&
+    homepageText.includes("北美长期居住者可进一步了解法人和董事会筹备"),
+  "首页没有区分普通支持者与北美组织筹备参与者",
+);
+const homepageSectionOrder = [
+  "公民秩序主义官方网站",
+  "为什么中国需要一条新的政治道路",
+  "为什么支持公民秩序主义",
+  "不革命、不普遍清算、不让国家停摆",
+  "为什么参与公民秩序主义",
+  "公民秩序主义正在从理论走向组织",
+  "北美非营利法人及董事会筹备",
+  "如何参与",
+  "最新研究和文章",
+  "继续了解或建立联系",
+].map((text) => homepageText.indexOf(text));
+assert(
+  homepageSectionOrder.every(
+    (position, index) =>
+      position >= 0 &&
+      (index === 0 || position > homepageSectionOrder[index - 1]),
+  ),
+  "首页模块顺序不符合品牌优先的信息结构",
 );
 
 const participateHtml = fs.readFileSync(publicHtml("participate"), "utf8");
 const participateText = visiblePageText(participateHtml);
 for (const requiredText of [
+  "支持公民秩序主义",
+  "阅读正式文章",
+  "长期关注研究进展",
+  "提出意见和建议",
+  "参与研究与组织建设",
   "法律与法人治理",
   "财务与内部控制",
   "研究与制度设计",
   "技术与信息安全",
+  "其他研究、传播与专业协作不受这一地区限制",
   "筹备参与不是治理身份",
   "不人为制造风险",
   "请不要在初次邮件中发送身份证件",
@@ -553,22 +578,33 @@ const civicArticleHtml = fs.readFileSync(
   "utf8",
 );
 assert(
-  ccpArticleHtml.includes("从理解现实，到参与准备") &&
+  ccpArticleHtml.includes("继续了解公民秩序主义") &&
     ccpArticleHtml.includes('href="/start"') &&
     ccpArticleHtml.includes(
-      'href="/civic-orderism/north-america-nonprofit-board-preparation-manifesto"',
+      'href="/civic-orderism/peaceful-state-transition"',
+    ) &&
+    ccpArticleHtml.includes(
+      'href="/civic-orderism/possibility-of-peaceful-political-transition-in-china"',
     ) &&
     ccpArticleHtml.includes('href="/participate"'),
-  "解析中共文章缺少路线、筹备宣言或参与入口",
+  "解析中共文章缺少统一的四个继续了解入口",
 );
 assert(
-  civicArticleHtml.includes("从理解现实，到参与准备") &&
+  civicArticleHtml.includes("继续了解公民秩序主义") &&
     civicArticleHtml.includes('href="/start"') &&
     civicArticleHtml.includes(
-      'href="/civic-orderism/north-america-nonprofit-board-preparation-manifesto"',
+      'href="/civic-orderism/peaceful-state-transition"',
+    ) &&
+    civicArticleHtml.includes(
+      'href="/civic-orderism/possibility-of-peaceful-political-transition-in-china"',
     ) &&
     civicArticleHtml.includes('href="/participate"'),
-  "公民秩序主义文章缺少路线、筹备宣言或参与入口",
+  "公民秩序主义文章缺少统一的四个继续了解入口",
+);
+assert(
+  !ccpArticleHtml.includes("阅读筹备宣言") &&
+    !civicArticleHtml.includes("阅读筹备宣言"),
+  "文章底部仍按文章导向组织筹备页面",
 );
 
 const conceptIndexHtml = fs.readFileSync(

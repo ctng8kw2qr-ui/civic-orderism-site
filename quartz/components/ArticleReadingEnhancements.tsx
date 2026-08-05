@@ -12,7 +12,6 @@ import topicsConfig from "../../data/topics.config.json";
 import conceptsConfig from "../../data/concepts.config.json";
 import sectionsConfig from "../../data/sections.config.json";
 import readingSequencesConfig from "../../data/reading-sequences.config.json";
-import organization from "../../data/organization.config.json";
 import {
   getConceptPublicationStatus,
   isVisibleConcept,
@@ -582,14 +581,14 @@ export const ArticleCta: QuartzComponent = ({
   return (
     <section class="article-cta" aria-label="文章结尾信息">
       <div class="article-cta__copy">
-        <h2 class="article-cta__title">从理解现实，到参与准备</h2>
+        <h2 class="article-cta__title">继续了解公民秩序主义</h2>
         <p>
-          公民秩序主义正在筹备北美非营利法人和首届董事会，为理论研究、制度设计、公共传播与长期组织建设建立稳定基础。
+          从基本理论、核心政治路线与和平转型方案继续阅读，也可以了解如何支持和参与公民秩序主义。
         </p>
       </div>
       <div class="article-cta__links">
         <div class="article-cta__item article-cta__item--primary">
-          <span class="article-cta__label">基本路线</span>
+          <span class="article-cta__label">入门</span>
           <span class="article-cta__value">
             <a class="article-cta__button" href="/start">
               了解公民秩序主义
@@ -597,15 +596,23 @@ export const ArticleCta: QuartzComponent = ({
           </span>
         </div>
         <div class="article-cta__item">
-          <span class="article-cta__label">组织筹备</span>
+          <span class="article-cta__label">核心路线</span>
           <span class="article-cta__value">
-            <a href={organization.routes.manifesto}>阅读筹备宣言</a>
+            <a href="/civic-orderism/peaceful-state-transition">核心政治路线</a>
           </span>
         </div>
         <div class="article-cta__item">
-          <span class="article-cta__label">联系入口</span>
+          <span class="article-cta__label">转型方案</span>
           <span class="article-cta__value">
-            <a href={organization.routes.participate}>参与筹备</a>
+            <a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china">
+              中国和平政治转型
+            </a>
+          </span>
+        </div>
+        <div class="article-cta__item">
+          <span class="article-cta__label">支持与参与</span>
+          <span class="article-cta__value">
+            <a href="/participate">参与公民秩序主义</a>
           </span>
         </div>
       </div>

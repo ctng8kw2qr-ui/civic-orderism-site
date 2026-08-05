@@ -2061,6 +2061,107 @@ article .participation-levels span {
   text-align: center;
 }
 
+article .participation-levels--five {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+article .home-support__statement {
+  margin: 1.25rem 0;
+  padding: 1rem 1.2rem;
+  border-left: 3px solid #9b7c3e;
+  background: color-mix(in srgb, var(--light) 95%, var(--lightgray));
+  color: #0a1d38;
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.75;
+}
+
+article .home-participation-paths {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+
+article .home-participation-paths article {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.35rem;
+  border: 1px solid #d8dee6;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--light) 98%, var(--lightgray));
+}
+
+article .home-participation-paths span {
+  color: #9b7c3e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+article .home-participation-paths h3 {
+  margin: 0.55rem 0 0;
+  color: #0a1d38;
+  font-size: 1.15rem;
+}
+
+article .home-participation-paths p {
+  flex: 1;
+  margin: 0.65rem 0 1rem;
+  color: var(--darkgray);
+  line-height: 1.7;
+}
+
+article .home-participation-paths a {
+  color: #0a1d38;
+  font-size: 0.9rem;
+}
+
+article .home-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+
+article .home-contact-grid > div {
+  display: grid;
+  min-width: 0;
+  gap: 0.65rem;
+  padding: 1.2rem;
+  border-top: 2px solid #0a1d38;
+  background: color-mix(in srgb, var(--light) 97%, var(--lightgray));
+}
+
+article .home-contact-grid > div > strong {
+  margin-bottom: 0.15rem;
+  color: #0a1d38;
+}
+
+article .home-contact-grid a {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.2rem;
+  overflow-wrap: anywhere;
+  color: #0a1d38;
+  text-decoration: none;
+  background-image: none;
+}
+
+article .home-contact-grid a + a {
+  padding-top: 0.65rem;
+  border-top: 1px solid #d8dee6;
+}
+
+article .home-contact-grid small {
+  color: var(--gray);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
 article .home-participate__action {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -2218,6 +2319,30 @@ article .participate-checklist li::before {
   left: 0;
   color: #9b7c3e;
   content: "•";
+}
+
+article .participate-support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin-top: 1.3rem;
+}
+
+article .participate-support-grid span {
+  padding: 0.9rem 1rem;
+  border: 1px solid #d8dee6;
+  border-radius: 5px;
+  color: #0a1d38;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+article .participate-support-note {
+  margin: 1rem 0 0;
+  color: var(--darkgray);
+  font-size: 0.92rem;
+  line-height: 1.7;
 }
 
 article .participate-boundaries {
@@ -3007,7 +3132,8 @@ article .start-roadmap__line {
 
 @media (max-width: 1180px) {
   article .home-work-grid,
-  article .participation-levels {
+  article .participation-levels,
+  article .participation-levels--five {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -3046,7 +3172,10 @@ article .start-roadmap__line {
   article .participate-checklist,
   article .participate-contact-grid,
   article .preparation-status-grid,
-  article .organization-logic {
+  article .organization-logic,
+  article .home-participation-paths,
+  article .home-contact-grid,
+  article .participate-support-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
