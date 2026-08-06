@@ -772,7 +772,7 @@ writeContent(
   <p class="home-kicker">公民秩序主义官方网站</p>
   <h1><span class="home-title-copy"><span class="home-title-line">建设一条低阻力、</span><span class="home-title-line">低风险、能够和平</span><span class="home-title-line">承接中国未来的</span><span class="home-title-line">政治道路</span></span></h1>
   <p class="v2-hero__tagline">公民秩序主义是一条面向中国未来的政治与制度路线。公民秩序主义主张以和平转轨、行政承接、责任区分和制度重组，降低政治变化的社会成本，让国家继续运行，让社会避免长期失序。</p>
-  <div class="home-platform-hero__copy"><p>当前阶段：理论建设、公共传播、专业协作者识别与北美非营利组织筹备。</p></div>
+  <div class="home-platform-hero__copy"><p>当前阶段：理论建设、公共传播、专业协作网络建设与北美非营利组织筹备。</p></div>
   <div class="v2-actions"><a class="v2-button v2-button--primary" href="/start">5分钟了解</a><a class="v2-button v2-button--secondary" href="/civic-orderism/peaceful-state-transition">阅读核心路线</a><a class="v2-button v2-button--text" href="${organization.routes.participate}#contact">建立联系</a></div>
 </section>
 
@@ -800,15 +800,15 @@ writeContent(
 </section>
 
 <section class="home-section home-organization-rationale" id="current-work">
-  <div class="home-section-intro"><p class="resource-label">长期承接</p><h2>当前工作</h2><p>公民秩序主义正在开展理论建设、公共传播、制度设计、专业协作者识别与北美非营利组织筹备，为这条政治路线建立长期、稳定和依法运行的承接基础。</p></div>
-  <div class="home-build-grid home-build-grid--four"><article><strong>理论建设</strong><p>完善对中国现实、和平转轨与国家连续性的系统解释。</p></article><article><strong>公共传播</strong><p>通过正式出版与公开表达建立稳定、清晰的路线认知。</p></article><article><strong>制度设计</strong><p>持续完善行政承接、责任区分与公共权力约束方案。</p></article><article><strong>专业协作者识别</strong><p>与研究、编辑、技术、法律、财务和项目管理人才建立联系。</p></article><article><strong>北美非营利组织筹备</strong><p>为公共研究、资产管理和组织治理建立依法运行的承接结构。</p></article></div>
+  <div class="home-section-intro"><p class="resource-label">长期承接</p><h2>当前工作</h2><p>公民秩序主义正在开展理论建设、公共传播、制度设计、专业协作网络建设与北美非营利组织筹备，为这条政治路线建立长期、稳定和依法运行的承接基础。</p></div>
+  <div class="home-build-grid home-build-grid--four"><article><strong>理论建设</strong><p>完善对中国现实、和平转轨与国家连续性的系统解释。</p></article><article><strong>公共传播</strong><p>通过正式出版与公开表达建立稳定、清晰的路线认知。</p></article><article><strong>制度设计</strong><p>持续完善行政承接、责任区分与公共权力约束方案。</p></article><article><strong>专业协作网络建设</strong><p>与研究、编辑、技术、法律、财务和项目管理人才建立联系。</p></article><article><strong>北美非营利组织筹备</strong><p>为公共研究、资产管理和组织治理建立依法运行的承接结构。</p></article></div>
   <p class="home-organization-rationale__summary">目前法人尚未完成注册，具体注册法域与首届董事会均未确定。筹备参与不自动产生任何治理身份。</p>
   <div class="home-inline-links"><a href="${organization.routes.nonprofitPreparation}">了解组织筹备 →</a></div>
 </section>
 
 <section class="home-section home-learning" id="learn-more">
-  <div class="home-section-heading"><div><p class="resource-label">正式阅读入口</p><h2>推荐阅读</h2><p>以下内容由人工固定配置，用于理解政治转型、核心路线、基本定位与组织承接。</p></div></div>
-  <div class="home-learning-grid"><a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china"><span>01</span><strong>中国和平政治转型的可能性</strong></a><a href="/civic-orderism/why-civic-orderism"><span>02</span><strong>公民秩序主义核心政治路线</strong></a><a href="/start"><span>03</span><strong>公民秩序主义介绍</strong></a><a href="${organization.routes.nonprofitPreparation}"><span>04</span><strong>组织筹备</strong></a><a href="/institution-design"><span>05</span><strong>制度设计</strong></a></div>
+  <div class="home-section-heading"><div><p class="resource-label">正式阅读入口</p><h2>推荐阅读</h2><p>从以下内容开始，系统了解公民秩序主义的政治路线、基本定位与长期方向。</p></div></div>
+  <div class="home-learning-grid"><a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china"><span>01</span><strong>中国和平政治转型的可能性</strong></a><a href="/civic-orderism/why-civic-orderism"><span>02</span><strong>公民秩序主义核心政治路线</strong></a><a href="/start"><span>03</span><strong>5分钟了解公民秩序主义</strong></a><a href="${organization.routes.nonprofitPreparation}"><span>04</span><strong>组织筹备</strong></a><a href="/institution-design"><span>05</span><strong>制度设计</strong></a></div>
 </section>
 
 <section class="home-section home-further-reading">
@@ -836,8 +836,8 @@ writeContent(
   <section class="start-roadmap"><div class="home-section-intro"><p class="resource-label">理论路线图</p><h2>从高脆弱态到制度转轨</h2><p>在系统仍有基本组织能力时，提前建立制度接口和承接路径。</p></div><p class="start-roadmap__line">${roadmapSteps.join(" → ")}</p></section>
   <section class="start-method"><div class="home-section-intro"><p class="resource-label">长期承接</p><h2>公民秩序主义正在从理论走向长期承接</h2><p>公民秩序主义不只是在解释问题，也正在建设能够长期维护理论、制度方案与公共资产的组织基础。当前工作包括理论出版、公共传播、制度设计、专业协作与北美非营利组织筹备。</p><p>组织建设不是为了制造身份和等级，而是为了让这条政治路线能够长期存在、持续研究、稳定传播，并在未来具备现实承接能力。</p></div></section>
   <section class="start-method"><div class="home-section-intro"><p class="resource-label">降低阻力</p><h2>为什么这条路线能够降低未来政治转型阻力</h2></div><div class="method-comparison-grid"><article><strong>减少社会恐惧</strong><p>不以革命和集体报复动员政治，降低体制内外对转型的生存性恐惧。</p></article><article><strong>保持国家连续</strong><p>保留必要行政能力和公共服务体系，避免政治变化演变为社会失序。</p></article><article><strong>提供制度接口</strong><p>通过责任区分、授权转换和制度重组，让不同群体能够进入同一条转轨道路。</p></article></div></section>
-  <section class="start-sequence"><div class="home-section-intro"><p class="resource-label">建议顺序</p><h2>${startReadingSequence?.name ?? "继续阅读"}</h2></div><ol>${startReadingItems}</ol></section>
-  <section class="start-method"><div class="home-section-intro"><p class="resource-label">继续了解</p><h2>下一步可以做什么</h2></div><div class="home-learning-grid"><a href="/civic-orderism/why-civic-orderism"><span>01</span><strong>阅读核心政治路线</strong></a><a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china"><span>02</span><strong>了解中国和平政治转型</strong></a><a href="${organization.routes.nonprofitPreparation}"><span>03</span><strong>查看组织筹备</strong></a><a href="${organization.routes.participate}"><span>04</span><strong>了解参与方式</strong></a><a href="${organization.routes.participate}#contact"><span>05</span><strong>建立长期联系</strong></a></div></section>
+  <section class="start-sequence"><div class="home-section-intro"><p class="resource-label">建议顺序</p><h2>${startReadingSequence?.name ?? "继续阅读"}</h2><p>按照以下顺序，可以系统理解公民秩序主义的现实判断、政治路线与制度方向。</p></div><ol>${startReadingItems}</ol></section>
+  <section class="start-method"><div class="home-section-intro"><p class="resource-label">行动入口</p><h2>下一步可以做什么</h2></div><div class="home-learning-grid home-learning-grid--actions"><a href="${organization.routes.participate}#contact"><span>01</span><strong>建立长期联系</strong><small>对于认同这条路线，但暂时不适合公开参与的人，可以通过电子邮件建立长期、低压力联系。</small></a><a href="${organization.routes.participate}#collaboration"><span>02</span><strong>参与专业协作</strong><small>根据研究、编辑、翻译、设计、技术、法律、财务或项目管理等专业能力参与协作。</small></a><a href="${organization.routes.nonprofitPreparation}"><span>03</span><strong>了解组织筹备</strong><small>了解北美非营利组织、治理边界与长期承接结构的筹备方向。</small></a></div></section>
 </div>`,
 );
 
@@ -1086,14 +1086,14 @@ writeContent(
   <p>参与不等于立即加入组织。无论身处何地，都可以先从了解政治路线、传播正式材料、提供专业协作或建立长期联系开始。</p>
 </header>
 
-<section class="participate-section" id="global" aria-labelledby="participation-global">
-  <div class="home-section-intro"><p class="resource-label">不限地区</p><h2 id="participation-global">了解与传播</h2><p>阅读正式材料，理解和平转轨、国家连续和责任区分，并向愿意理性讨论中国未来的人介绍公民秩序主义。</p></div>
+<section class="participate-section" id="communication" aria-labelledby="participation-communication">
+  <div class="home-section-intro"><p class="resource-label">不限地区</p><h2 id="participation-communication">了解与传播</h2><p>阅读正式材料，理解和平转轨、国家连续和责任区分，并向愿意理性讨论中国未来的人介绍公民秩序主义。</p></div>
   <div class="participate-support-grid"><span>阅读公民秩序主义正式材料</span><span>介绍公民秩序主义的政治路线</span><span>分享网站、手册与正式文章</span><span>参与克制、基于事实的公共讨论</span></div>
   <p class="participate-support-note">了解与传播不限制居住地，不要求公开身份，也不构成组织加入或治理身份。</p>
 </section>
 
-<section class="participate-section" id="professional" aria-labelledby="participation-professional">
-  <div class="home-section-intro"><p class="resource-label">按专业能力参与</p><h2 id="participation-professional">专业协作</h2><p>公民秩序主义需要能够承担具体工作的人，以专业成果而不是口号和声势推进长期建设。</p></div>
+<section class="participate-section" id="collaboration" aria-labelledby="participation-collaboration">
+  <div class="home-section-intro"><p class="resource-label">按专业能力参与</p><h2 id="participation-collaboration">专业协作</h2><p>公民秩序主义需要能够承担具体工作的人，以专业成果而不是口号和声势推进长期建设。</p></div>
   <div class="participate-support-grid"><span>研究</span><span>编辑</span><span>翻译</span><span>设计</span><span>技术</span><span>法律</span><span>财务</span><span>项目管理</span></div>
   <p class="participate-support-note">专业协作可从小规模、明确边界的任务开始，不要求立即承担组织治理责任。</p>
 </section>
@@ -1157,7 +1157,7 @@ writeContent(
 
 截至目前，${organization.statusLabels.registration}，${organization.statusLabels.jurisdiction}，${organization.statusLabels.board}。公民秩序主义尚不是一个成熟运行的政党，也不声称已经取得法人、慈善或免税资格。
 
-公民秩序主义正在从理论建设进入组织基础建设阶段。现阶段重点是理论建设、公共传播、专业协作者识别和北美非营利组织筹备，而不是追求短期声势或迅速扩张成员。
+公民秩序主义正在从理论建设进入组织基础建设阶段。现阶段重点是理论建设、公共传播、专业协作网络建设和北美非营利组织筹备，而不是追求短期声势或迅速扩张成员。
 
 北美非营利法人将作为公共研究、出版、资产管理和组织治理的承接结构，不等同于已经成立的政党或成熟政治组织。有关注册、董事会、治理身份和地区要求的程序性说明，统一在 [[preparation|组织筹备页面]] 公开。
 

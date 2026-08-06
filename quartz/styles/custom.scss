@@ -2332,6 +2332,16 @@ article .home-learning-grid strong {
   line-height: 1.55;
 }
 
+article .home-learning-grid small {
+  color: var(--darkgray);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+article .home-learning-grid--actions {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 article .home-learning-grid a:hover strong,
 article .home-learning-grid a:focus-visible strong {
   text-decoration: underline;
@@ -2436,6 +2446,10 @@ article .participate-hero > p:not(.resource-label) {
 
 article .participate-section {
   margin-top: 3.2rem;
+}
+
+article .participate-section[id] {
+  scroll-margin-top: 6rem;
 }
 
 article .participate-path-grid {

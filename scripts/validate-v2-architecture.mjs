@@ -446,7 +446,7 @@ assert(
     "公民秩序主义主张以和平转轨、行政承接、责任区分和制度重组",
   ) &&
     homepageMainText.includes(
-      "当前阶段：理论建设、公共传播、专业协作者识别与北美非营利组织筹备",
+      "当前阶段：理论建设、公共传播、专业协作网络建设与北美非营利组织筹备",
     ),
   "首页首屏仍以组织筹备而不是政治与制度路线为主体",
 );
@@ -468,7 +468,7 @@ assert(
   homepageMainText.includes("理论建设") &&
     homepageMainText.includes("公共传播") &&
     homepageMainText.includes("制度设计") &&
-    homepageMainText.includes("专业协作者识别") &&
+    homepageMainText.includes("专业协作网络建设") &&
     homepageMainText.includes("北美非营利组织筹备"),
   "首页当前工作没有覆盖五个既定方向",
 );
@@ -532,7 +532,7 @@ assert(
 );
 for (const title of [
   "中国和平政治转型的可能性",
-  "公民秩序主义介绍",
+  "5分钟了解公民秩序主义",
   "公民秩序主义核心政治路线",
   "组织筹备",
   "制度设计",
@@ -541,7 +541,11 @@ for (const title of [
 }
 assert(
   !homepageMainText.includes("最新研究与正式文章") &&
-    !homepageMainText.includes("按发布日期自动更新"),
+    !homepageMainText.includes("按发布日期自动更新") &&
+    !homepageMainText.includes(["人工固定", "配置"].join("")) &&
+    homepageMainText.includes(
+      "从以下内容开始，系统了解公民秩序主义的政治路线、基本定位与长期方向",
+    ),
   "首页仍突出最新文章而不是固定推荐阅读",
 );
 assert(
@@ -635,6 +639,12 @@ const primaryEmailPosition = participateHtml.indexOf(
 const secondaryEmailPosition = participateHtml.indexOf(
   "mailto:citizenorder@proton.me",
 );
+for (const anchor of ["communication", "collaboration", "contact"]) {
+  assert(
+    participateHtml.includes(`id="${anchor}"`),
+    `参与页缺少稳定锚点：#${anchor}`,
+  );
+}
 assert(
   primaryEmailPosition >= 0 && secondaryEmailPosition > primaryEmailPosition,
   "参与页邮箱缺失或主备顺序错误",
@@ -769,19 +779,20 @@ for (const requiredText of [
   "公民秩序主义正在从理论走向长期承接",
   "组织建设不是为了制造身份和等级",
   "为什么这条路线能够降低未来政治转型阻力",
+  "按照以下顺序，可以系统理解公民秩序主义的现实判断、政治路线与制度方向",
   "下一步可以做什么",
-  "阅读核心政治路线",
-  "了解中国和平政治转型",
-  "查看组织筹备",
-  "了解参与方式",
   "建立长期联系",
+  "参与专业协作",
+  "了解组织筹备",
 ]) {
   assert(startText.includes(requiredText), `/start 缺少内容：${requiredText}`);
 }
 assert(
   startHtml.includes("participate#contact") &&
+    startHtml.includes("participate#collaboration") &&
+    startHtml.includes('href="/preparation"') &&
     !startHtml.includes("participate#long-term-contact"),
-  "/start 长期联系入口没有统一指向 /participate#contact",
+  "/start 行动入口没有分别指向联系、专业协作和组织筹备",
 );
 
 const aboutHtml = fs.readFileSync(publicHtml("about"), "utf8");
@@ -800,6 +811,11 @@ for (const requiredText of [
 assert(
   !aboutText.includes("专业、审慎、冷静和克制"),
   "关于页仍包含直接的自我评价措辞",
+);
+assert(
+  !homepageMainText.includes(["专业协作者", "识别"].join("")) &&
+    !aboutText.includes(["专业协作者", "识别"].join("")),
+  "首页或关于页仍使用旧的协作者筛选措辞",
 );
 assert(
   !visiblePageText(homepageHtml).includes("约 5 分钟"),

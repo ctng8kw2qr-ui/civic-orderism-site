@@ -17,14 +17,14 @@ noindex: false
   <p>参与不等于立即加入组织。无论身处何地，都可以先从了解政治路线、传播正式材料、提供专业协作或建立长期联系开始。</p>
 </header>
 
-<section class="participate-section" id="global" aria-labelledby="participation-global">
-  <div class="home-section-intro"><p class="resource-label">不限地区</p><h2 id="participation-global">了解与传播</h2><p>阅读正式材料，理解和平转轨、国家连续和责任区分，并向愿意理性讨论中国未来的人介绍公民秩序主义。</p></div>
+<section class="participate-section" id="communication" aria-labelledby="participation-communication">
+  <div class="home-section-intro"><p class="resource-label">不限地区</p><h2 id="participation-communication">了解与传播</h2><p>阅读正式材料，理解和平转轨、国家连续和责任区分，并向愿意理性讨论中国未来的人介绍公民秩序主义。</p></div>
   <div class="participate-support-grid"><span>阅读公民秩序主义正式材料</span><span>介绍公民秩序主义的政治路线</span><span>分享网站、手册与正式文章</span><span>参与克制、基于事实的公共讨论</span></div>
   <p class="participate-support-note">了解与传播不限制居住地，不要求公开身份，也不构成组织加入或治理身份。</p>
 </section>
 
-<section class="participate-section" id="professional" aria-labelledby="participation-professional">
-  <div class="home-section-intro"><p class="resource-label">按专业能力参与</p><h2 id="participation-professional">专业协作</h2><p>公民秩序主义需要能够承担具体工作的人，以专业成果而不是口号和声势推进长期建设。</p></div>
+<section class="participate-section" id="collaboration" aria-labelledby="participation-collaboration">
+  <div class="home-section-intro"><p class="resource-label">按专业能力参与</p><h2 id="participation-collaboration">专业协作</h2><p>公民秩序主义需要能够承担具体工作的人，以专业成果而不是口号和声势推进长期建设。</p></div>
   <div class="participate-support-grid"><span>研究</span><span>编辑</span><span>翻译</span><span>设计</span><span>技术</span><span>法律</span><span>财务</span><span>项目管理</span></div>
   <p class="participate-support-note">专业协作可从小规模、明确边界的任务开始，不要求立即承担组织治理责任。</p>
 </section>
