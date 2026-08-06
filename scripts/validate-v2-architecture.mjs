@@ -454,7 +454,7 @@ assert(
   homepageText.includes("不革命、不清算、不让国家停摆") &&
     homepageText.includes("一条能够被更多人接受的道路") &&
     homepageText.includes("从认同到建设") &&
-    homepageText.includes("为政治路线建立长期承接基础") &&
+    homepageText.includes("当前工作") &&
     homepageText.includes("推荐阅读"),
   "首页缺少核心路线、参与路径、当前工作或推荐阅读",
 );
@@ -477,9 +477,9 @@ const expectedHomepageHeadings = [
   "不革命、不清算、不让国家停摆",
   "一条能够被更多人接受的道路",
   "从认同到建设",
-  "为政治路线建立长期承接基础",
+  "当前工作",
   "推荐阅读",
-  "手册和联系方式",
+  "手册与联系方式",
 ];
 const homepageHeadings = [
   ...homepageMainHtml.matchAll(/<h2[^>]*>([^<]+)<a role="anchor"/g),
@@ -532,10 +532,10 @@ assert(
 );
 for (const title of [
   "中国和平政治转型的可能性",
-  "国家如何平稳转轨：公民秩序主义不是中共官僚的敌人",
   "公民秩序主义介绍",
   "公民秩序主义核心政治路线",
   "组织筹备",
+  "制度设计",
 ]) {
   assert(homepageMainText.includes(title), `首页推荐阅读缺少：${title}`);
 }
@@ -778,6 +778,11 @@ for (const requiredText of [
 ]) {
   assert(startText.includes(requiredText), `/start 缺少内容：${requiredText}`);
 }
+assert(
+  startHtml.includes("participate#contact") &&
+    !startHtml.includes("participate#long-term-contact"),
+  "/start 长期联系入口没有统一指向 /participate#contact",
+);
 
 const aboutHtml = fs.readFileSync(publicHtml("about"), "utf8");
 const aboutText = visiblePageText(aboutHtml);
