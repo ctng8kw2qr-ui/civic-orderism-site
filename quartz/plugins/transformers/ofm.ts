@@ -444,7 +444,10 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
                     {
                       type: "text",
                       value: useDefaultTitle
-                        ? capitalize(typeString).replace(/-/g, " ")
+                        ? ctx.cfg.configuration.locale === "zh-CN" &&
+                          typeString.toLowerCase() === "key-point"
+                          ? "重点句"
+                          : capitalize(typeString).replace(/-/g, " ")
                         : titleContent + " ",
                     },
                     ...restOfTitle,
