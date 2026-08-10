@@ -24,7 +24,7 @@ const ManualModals: QuartzComponent = () => {
           <h2 id="introduction-modal-title">公民秩序主义介绍手册</h2>
           <p class="manual-modal-subtitle">信息化时代的国家秩序方案</p>
           <p class="manual-modal-description">
-            这份手册用于简要说明公民秩序主义的基本理念、核心制度设计与时代意义。它适合第一次接触公民秩序主义的人阅读，也可作为对外传播和制度讨论的入门材料。
+            这份手册用于简要说明公民秩序主义的基本理念、核心政治路线与治理判断。它适合第一次接触公民秩序主义的人阅读，也可作为对外传播和公共讨论的入门材料。
           </p>
           <div class="manual-modal-actions">
             <a

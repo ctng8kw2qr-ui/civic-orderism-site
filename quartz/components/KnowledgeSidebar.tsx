@@ -1,5 +1,4 @@
 import migration from "../../content-migration-map.json";
-import institutionSections from "../../data/institution-sections.config.json";
 import sections from "../../data/sections.config.json";
 import topics from "../../data/topics.config.json";
 import {
@@ -14,7 +13,6 @@ const primaryLinks = [
   { label: "核心路线", href: "/civic-orderism/peaceful-state-transition" },
   { label: "解析中共", href: "/china" },
   { label: "中国未来", href: "/china-future" },
-  { label: "制度设计", href: "/institution-design" },
   { label: "专题", href: "/topics" },
   { label: "核心概念", href: "/concepts" },
   { label: "全部文章", href: "/articles" },
@@ -84,32 +82,11 @@ const KnowledgeSidebar: QuartzComponent = ({
               </a>
               {expanded && section ? (
                 <div class="knowledge-sidebar__section-links">
-                  {section.slug === "institution-design" ? (
-                    <>
-                      <a href="/institution-design#institution-first-reading-title">
-                        第一次阅读
-                      </a>
-                      {institutionSections.map((institutionSection) => (
-                        <a
-                          href={`/institution-design#institution-module-${institutionSection.id}`}
-                        >
-                          {institutionSection.number} ·{" "}
-                          {institutionSection.name}
-                        </a>
-                      ))}
-                      <a href="/institution-design#all-articles">
-                        查看全部文章
-                      </a>
-                    </>
-                  ) : (
-                    <>
-                      <a href={`/${section.slug}#推荐文章`}>推荐阅读</a>
-                      {sectionTopics.map((topic) => (
-                        <a href={`/topics/${topic!.slug}`}>{topic!.name}</a>
-                      ))}
-                      <a href={`/${section.slug}#全部文章`}>查看全部文章</a>
-                    </>
-                  )}
+                  <a href={`/${section.slug}#推荐文章`}>推荐阅读</a>
+                  {sectionTopics.map((topic) => (
+                    <a href={`/topics/${topic!.slug}`}>{topic!.name}</a>
+                  ))}
+                  <a href={`/${section.slug}#全部文章`}>查看全部文章</a>
                 </div>
               ) : null}
             </li>

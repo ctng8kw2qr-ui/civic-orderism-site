@@ -2344,6 +2344,22 @@ article .home-contact-grid small {
   line-height: 1.5;
 }
 
+article .home-closing .resource-actions {
+  margin: 0.3rem 0 0.25rem;
+}
+
+article .home-closing .resource-actions a + a {
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--gray);
+}
+
+article .home-closing__secondary-link {
+  margin-top: 0.35rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #d8dee6;
+  font-size: 0.88rem;
+}
+
 article .home-build-grid--four {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }

@@ -72,6 +72,33 @@ const visiblePageText = (html) =>
     .replace(/<style\b[\s\S]*?<\/style>/gi, " ")
     .replace(/<[^>]+>/g, " ")
     .replace(/\s+/g, " ");
+
+const overviewArticleSource = fs.readFileSync(
+  path.join(
+    root,
+    "content/civic-orderism/what-civic-orderism-solves-if-you-read-only-one.md",
+  ),
+  "utf8",
+);
+for (const requiredText of [
+  "制度必须具备的基本能力",
+  "问题能够进入系统",
+  "权力必须留下责任链",
+  "行政必须保持执行能力",
+  "公民必须拥有持续反馈渠道",
+  "制度必须具备纠错与责任更替能力",
+]) {
+  assert(
+    overviewArticleSource.includes(requiredText),
+    `入门文章缺少抽象化制度能力：${requiredText}`,
+  );
+}
+for (const forbiddenText of ["委员会", "秘书处", "大议会"]) {
+  assert(
+    !overviewArticleSource.includes(forbiddenText),
+    `入门文章仍包含具体机构设计：${forbiddenText}`,
+  );
+}
 const walkHtmlFiles = (directory) =>
   fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
     const entryPath = path.join(directory, entry.name);
@@ -457,36 +484,30 @@ assert(
 );
 assert(
   homepageText.includes("不革命、不清算、不让国家停摆") &&
-    homepageText.includes("一条能够被更多人接受的道路") &&
-    homepageText.includes("从认同到建设") &&
-    homepageText.includes("当前工作") &&
-    homepageText.includes("推荐阅读"),
-  "首页缺少核心路线、参与路径、当前工作或推荐阅读",
+    homepageText.includes("推荐阅读") &&
+    homepageText.includes("组织筹备") &&
+    homepageText.includes("介绍手册与联系"),
+  "首页缺少核心路线、推荐阅读、组织筹备或介绍手册与联系",
 );
 assert(
-  homepageHtml.includes("participate#contact") &&
-    homepageHtml.includes('href="/preparation"') &&
-    homepageHtml.includes('href="/civic-orderism/peaceful-state-transition"'),
+  homepageHtml.includes('data-slug="participate"') &&
+    homepageHtml.includes('data-slug="preparation"'),
   "首页缺少核心路线、法人筹备或参与入口",
 );
 assert(
-  homepageMainText.includes("理论建设") &&
-    homepageMainText.includes("公共传播") &&
-    homepageMainText.includes("制度设计") &&
-    homepageMainText.includes("专业协作网络建设") &&
-    homepageMainText.includes("北美非营利组织筹备"),
-  "首页当前工作没有覆盖五个既定方向",
+  homepageMainText.includes("理论与路线研究") &&
+    homepageMainText.includes("北美法人筹备") &&
+    homepageMainText.includes("董事会筹备") &&
+    homepageMainText.includes("公共传播与联系") &&
+    !homepageMainText.includes("制度设计"),
+  "首页组织筹备没有收缩为四个当前方向，或仍突出制度设计",
 );
 const expectedHomepageHeadings = [
   "从这里开始",
-  "为什么中国需要一条新的政治道路",
   "不革命、不清算、不让国家停摆",
-  "一条能够被更多人接受的道路",
-  "从认同到建设",
-  "当前工作",
   "推荐阅读",
-  "公民秩序主义介绍手册",
-  "联系公民秩序主义",
+  "组织筹备",
+  "介绍手册与联系",
 ];
 const homepageHeadings = [
   ...homepageMainHtml.matchAll(/<h2[^>]*>([^<]+)<a role="anchor"/g),
@@ -506,9 +527,9 @@ assert(
       "不因政治身份实施普遍追责，区分政治责任、历史责任与依法确认的犯罪责任",
     ) &&
     homepageMainText.includes(
-      "保留必要的行政能力和公共服务体系，在政治转轨中完成权力重组、责任重建和制度纠偏",
+      "中国需要的不是更多愤怒，而是一条能够承接国家、维持公共服务并避免长期失序的政治道路",
     ),
-  "首页核心主张、责任分类或行政承接表述未统一",
+  "首页核心主张、责任分类或政治道路说明未统一",
 );
 assert(
   !homepageMainHtml.includes("preparation-state-grid") &&
@@ -517,25 +538,11 @@ assert(
     ),
   "首页程序状态没有压缩为一段简短说明",
 );
-for (const requiredText of [
-  "从认同到建设",
-  "了解与传播",
-  "专业协作",
-  "长期联系",
-  "参与不要求公开身份，也不等于立即进入组织",
-  "查看参与方式",
-]) {
-  assert(
-    homepageMainText.includes(requiredText),
-    `首页参与入口缺少：${requiredText}`,
-  );
-}
 assert(
-  !homepageMainText.includes("第一层") &&
-    !homepageMainText.includes("第二层") &&
-    !homepageMainText.includes("研究与编辑") &&
-    !homepageMainText.includes("项目管理与长期运营"),
-  "首页仍展开旧的参与分层或完整能力清单",
+  !homepageMainText.includes("从认同到建设") &&
+    !homepageMainHtml.includes("home-participation") &&
+    homepageMainText.includes("了解如何参与"),
+  "首页仍展开参与页内容，或缺少简短参与入口",
 );
 for (const title of [
   "如果你只读一篇：公民秩序主义到底想解决什么",
@@ -562,6 +569,7 @@ for (const requiredText of [
   "阅读完整介绍",
   "在线阅读",
   "PDF 下载",
+  "第一次系统了解公民秩序主义的基础材料",
   "欢迎围绕理论研究、公共讨论、合作与组织筹备进行联系",
 ]) {
   assert(
@@ -586,7 +594,7 @@ assert(
 );
 assert(
   navigation.map((item) => item.label).join("/") ===
-    "首页/公民秩序主义/核心路线/解析中共/制度设计/参与/关于",
+    "首页/公民秩序主义/核心路线/解析中共/参与/关于",
   "主导航没有采用品牌、路线与参与优先的结构",
 );
 const secondaryNavigationHtml =
@@ -603,7 +611,8 @@ assert(
 assert(
   homepageText.includes("内容目录") &&
     homepageText.includes("全部文章") &&
-    !homepageText.includes("阅读地图"),
+    !homepageText.includes("阅读地图") &&
+    !homepageText.includes("制度设计"),
   "侧边栏标题或全部文章标签未统一",
 );
 const footerHtml = homepageHtml.match(/<footer[\s\S]*?<\/footer>/)?.[0] ?? "";
@@ -711,7 +720,7 @@ for (const [label, html, text] of [
 }
 for (const requiredText of [
   "理论研究",
-  "制度设计",
+  "政治与治理研究",
   "选择注册法域",
   "筹备不等于已经成立",
   "不表示已经取得任何法人、慈善或免税资格",
@@ -831,7 +840,7 @@ for (const requiredText of [
   "为什么建立这个网站",
   "当前组织阶段",
   "网站承担哪些功能",
-  "本站是公民秩序主义的正式出版、理论沉淀、制度研究与公共传播平台",
+  "本站是公民秩序主义的正式出版、理论沉淀、政治与治理研究及公共传播平台",
   "政治路线是主体，网站是载体，理论是基础，组织是长期承接结构",
   "本站重视事实、逻辑、责任边界与制度可执行性，不以新闻速度、情绪动员或个人崇拜替代制度分析",
 ]) {

@@ -313,7 +313,7 @@ const introductionManualEntry = `<p class="home-manual-note">完整入门说明�
 
 <p class="resource-subtitle">信息化时代的国家秩序方案</p>
 
-如果你第一次接触公民秩序主义，可以先阅读这份介绍手册。它以较短篇幅说明公民秩序主义的基本理念、核心制度设计，以及它为什么是一套面向信息化时代的国家秩序方案。
+如果你第一次接触公民秩序主义，可以先阅读这份介绍手册。它以较短篇幅说明公民秩序主义的基本理念、核心政治路线与治理判断，以及它为什么是一套面向信息化时代的国家秩序方案。
 
 <div class="resource-actions manual-entry-actions">
   <a class="resource-button resource-button-primary manual-entry-button" href="/files/civic-orderism-introduction-manual.pdf">下载 PDF</a>

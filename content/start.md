@@ -23,14 +23,13 @@ noindex: false
     <div class="method-comparison-grid"><article><strong>只停留在价值主张</strong><p>说明希望抵达哪里，却未必回答权力如何退出、行政系统由谁承接。</p></article><article><strong>进入制度转轨路线</strong><p>处理责任边界、参与者安全、国家连续与可逆步骤，让价值进入现实。</p></article></div>
   </section>
   <section class="start-roadmap"><div class="home-section-intro"><p class="resource-label">理论路线图</p><h2>从高脆弱态到制度转轨</h2><p>在系统仍有基本组织能力时，提前建立制度接口和承接路径。</p></div><p class="start-roadmap__line">高脆弱态 → 官僚系统高压与休克 → 社会秩序蒸发 → 旧制度运行成本持续上升 → 建立低摩擦转轨机制 → 形成新的制度框架 → 进入信息化时代治理结构</p></section>
-  <section class="start-method"><div class="home-section-intro"><p class="resource-label">长期承接</p><h2>公民秩序主义正在从理论走向长期承接</h2><p>公民秩序主义不只是在解释问题，也正在建设能够长期维护理论、制度方案与公共资产的组织基础。当前工作包括理论出版、公共传播、制度设计、专业协作与北美非营利组织筹备。</p><p>组织建设不是为了制造身份和等级，而是为了让这条政治路线能够长期存在、持续研究、稳定传播，并在未来具备现实承接能力。</p></div></section>
+  <section class="start-method"><div class="home-section-intro"><p class="resource-label">长期承接</p><h2>公民秩序主义正在从理论走向长期承接</h2><p>公民秩序主义不只是在解释问题，也正在建设能够长期维护理论、治理研究与公共资产的组织基础。当前工作包括理论出版、公共传播、政治与治理研究、专业协作与北美非营利组织筹备。</p><p>组织建设不是为了制造身份和等级，而是为了让这条政治路线能够长期存在、持续研究、稳定传播，并在未来具备现实承接能力。</p></div></section>
   <section class="start-method"><div class="home-section-intro"><p class="resource-label">降低阻力</p><h2>为什么这条路线能够降低未来政治转型阻力</h2></div><div class="method-comparison-grid"><article><strong>减少社会恐惧</strong><p>不以革命和集体报复动员政治，降低体制内外对转型的生存性恐惧。</p></article><article><strong>保持国家连续</strong><p>保留必要行政能力和公共服务体系，避免政治变化演变为社会失序。</p></article><article><strong>提供制度接口</strong><p>通过责任区分、授权转换和制度重组，让不同群体能够进入同一条转轨道路。</p></article></div></section>
   <section class="start-sequence"><div class="home-section-intro"><p class="resource-label">建议顺序</p><h2>公民秩序主义入门</h2><p>按照以下顺序，可以系统理解公民秩序主义的现实判断、政治路线与制度方向。</p></div><ol><li><a href="/start">01 · 5分钟了解公民秩序主义</a></li>
 <li><a href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">02 · 如果你只读一篇：公民秩序主义到底想解决什么</a></li>
 <li><a href="/civic-orderism/why-civic-orderism">03 · 为什么是公民秩序主义？</a></li>
 <li><a href="/civic-orderism/civic-orderism-manual">04 · 公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案</a></li>
-<li><a href="/institution-design">05 · 制度设计入口</a></li>
-<li><a href="/civic-orderism/north-america-nonprofit-board-preparation-manifesto">06 · 公民秩序主义北美非营利法人及董事会筹备宣言</a></li>
-<li><a href="/participate">07 · 参与公民秩序主义</a></li></ol></section>
+<li><a href="/civic-orderism/north-america-nonprofit-board-preparation-manifesto">05 · 公民秩序主义北美非营利法人及董事会筹备宣言</a></li>
+<li><a href="/participate">06 · 参与公民秩序主义</a></li></ol></section>
   <section class="start-method"><div class="home-section-intro"><p class="resource-label">行动入口</p><h2>下一步可以做什么</h2></div><div class="home-learning-grid home-learning-grid--actions"><a href="/participate#contact"><span>01</span><strong>建立长期联系</strong><small>对于认同这条路线，但暂时不适合公开参与的人，可以通过电子邮件建立长期、低压力联系。</small></a><a href="/participate#collaboration"><span>02</span><strong>参与专业协作</strong><small>根据研究、编辑、翻译、设计、技术、法律、财务或项目管理等专业能力参与协作。</small></a><a href="/preparation"><span>03</span><strong>了解组织筹备</strong><small>了解北美非营利组织、治理边界与长期承接结构的筹备方向。</small></a></div></section>
 </div>

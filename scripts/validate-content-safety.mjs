@@ -161,9 +161,13 @@ for (const filename of documents) {
   }
 }
 
-for (const page of ["content/index.md", "content/about.md"]) {
+const requiredDocumentLinks = new Map([
+  ["content/index.md", ["civic-orderism-introduction-manual.pdf"]],
+  ["content/about.md", documents],
+]);
+for (const [page, filenames] of requiredDocumentLinks) {
   const source = fs.readFileSync(path.join(root, page), "utf8");
-  for (const filename of documents) {
+  for (const filename of filenames) {
     assert(
       source.includes(`/files/${filename}`),
       `${page} 缺少 PDF 入口：${filename}`,
