@@ -105,7 +105,7 @@ for (const article of migration) {
     ),
   );
   const readingPathBlock = articleHtml.match(
-    /article-knowledge__reading-path[\s\S]*?<nav[^>]*>([\s\S]*?)<\/nav>/,
+    /continue-reading__nav[^>]*>([\s\S]*?)<\/nav>/,
   )?.[1];
   const readingPathSlugs = readingPathBlock
     ? [...readingPathBlock.matchAll(/data-slug="([^"]+)"/g)].map(
@@ -124,6 +124,12 @@ for (const article of migration) {
   assert(
     !articleHtml.includes("上一篇：无") && !articleHtml.includes("下一篇：无"),
     `文章阅读路径显示空边界：${article.slug}`,
+  );
+  assert(
+    articleHtml.includes('aria-label="继续阅读"') &&
+      articleHtml.includes("相关文章") &&
+      articleHtml.includes("分钟阅读"),
+    `文章缺少统一继续阅读、相关文章或预计阅读时间：${article.slug}`,
   );
   assert(
     readingPathSlugs.every((slug) => !recommendationSlugs.includes(slug)),
@@ -434,20 +440,19 @@ const homepageMainHtml =
   )?.[1] ?? homepageHtml;
 const homepageMainText = visiblePageText(homepageMainHtml);
 assert(
-  homepageText.includes("建设一条低阻力、") &&
-    homepageText.includes("低风险、能够和平") &&
-    homepageText.includes("承接中国未来的") &&
-    homepageText.includes("政治道路") &&
-    homepageText.includes("公民秩序主义官方网站"),
+  homepageText.includes(
+    "建设一条低阻力、低风险、能够和平承接中国未来的政治道路",
+  ) &&
+    homepageText.includes("公民秩序主义 · Civic Orderism") &&
+    homepageText.includes(
+      "围绕中国政治转型、现代国家治理与信息化时代制度问题进行长期研究、解释与公共讨论",
+    ),
   "首页缺少和平承接未来的核心定位",
 );
 assert(
   homepageMainText.includes(
-    "公民秩序主义主张以和平转轨、行政承接、责任区分和制度重组",
-  ) &&
-    homepageMainText.includes(
-      "当前阶段：理论建设、公共传播、专业协作网络建设与北美非营利组织筹备",
-    ),
+    "公民秩序主义是一条面向中国未来的政治与制度路线，关注如何在政治变化中保持国家连续、降低社会冲突并建立能够持续纠错的新秩序",
+  ),
   "首页首屏仍以组织筹备而不是政治与制度路线为主体",
 );
 assert(
@@ -473,20 +478,22 @@ assert(
   "首页当前工作没有覆盖五个既定方向",
 );
 const expectedHomepageHeadings = [
+  "从这里开始",
   "为什么中国需要一条新的政治道路",
   "不革命、不清算、不让国家停摆",
   "一条能够被更多人接受的道路",
   "从认同到建设",
   "当前工作",
   "推荐阅读",
-  "手册与联系方式",
+  "公民秩序主义介绍手册",
+  "联系公民秩序主义",
 ];
 const homepageHeadings = [
   ...homepageMainHtml.matchAll(/<h2[^>]*>([^<]+)<a role="anchor"/g),
 ].map((match) => match[1]);
 assert(
   homepageMainHtml.includes(
-    '<p class="home-kicker">公民秩序主义官方网站</p>',
+    '<p class="home-kicker">公民秩序主义 · Civic Orderism</p>',
   ) &&
     JSON.stringify(
       homepageHeadings.slice(0, expectedHomepageHeadings.length),
@@ -531,11 +538,10 @@ assert(
   "首页仍展开旧的参与分层或完整能力清单",
 );
 for (const title of [
+  "如果你只读一篇：公民秩序主义到底想解决什么",
+  "党国系统的结构性失效：一个组织诊断",
   "中国和平政治转型的可能性",
-  "5分钟了解公民秩序主义",
-  "公民秩序主义核心政治路线",
-  "组织筹备",
-  "制度设计",
+  "信息化时代与政治转型",
 ]) {
   assert(homepageMainText.includes(title), `首页推荐阅读缺少：${title}`);
 }
@@ -544,9 +550,32 @@ assert(
     !homepageMainText.includes("按发布日期自动更新") &&
     !homepageMainText.includes(["人工固定", "配置"].join("")) &&
     homepageMainText.includes(
-      "从以下内容开始，系统了解公民秩序主义的政治路线、基本定位与长期方向",
+      "四篇现有文章分别从整体介绍、中国问题、和平转型与信息化时代进入公民秩序主义",
     ),
   "首页仍突出最新文章而不是固定推荐阅读",
+);
+for (const requiredText of [
+  "如果这是第一次接触公民秩序主义，可以按照下面的顺序建立基本认识",
+  "认识公民秩序主义",
+  "理解中国问题",
+  "理解政治路线",
+  "阅读完整介绍",
+  "在线阅读",
+  "PDF 下载",
+  "欢迎围绕理论研究、公共讨论、合作与组织筹备进行联系",
+]) {
+  assert(
+    homepageMainText.includes(requiredText),
+    `首页首次访问路径缺少：${requiredText}`,
+  );
+}
+assert(
+  homepageMainHtml.includes('href="#start-here"') &&
+    homepageMainHtml.includes('data-slug="introduction-manual"') &&
+    homepageMainHtml.includes('data-slug="about"') &&
+    homepageMainHtml.includes("mailto:civicorderism@gmail.com") &&
+    homepageMainHtml.includes("mailto:citizenorder@proton.me"),
+  "首页 Hero、介绍手册或联系入口不完整",
 );
 assert(
   !homepageMainText.includes("我们主张") &&

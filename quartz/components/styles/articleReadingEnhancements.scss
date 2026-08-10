@@ -309,6 +309,50 @@ article blockquote[data-callout="key-point"] {
   }
 }
 
+.continue-reading__nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 1.35rem;
+}
+
+.continue-reading__nav a {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--light) 94%, #fff);
+  color: var(--dark);
+  text-decoration: none;
+  background-image: none;
+}
+
+.continue-reading__nav a:hover,
+.continue-reading__nav a:focus-visible {
+  border-color: color-mix(in srgb, var(--secondary) 38%, var(--gray));
+  outline: none;
+}
+
+.continue-reading__nav small {
+  color: var(--gray);
+  font-size: 0.74rem;
+}
+
+.continue-reading__nav strong {
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.continue-reading__related > h3 {
+  margin: 0 0 0.8rem;
+  color: var(--dark);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
 .related-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -588,6 +632,10 @@ article blockquote[data-callout="key-point"] {
 
   .related-reading {
     margin-top: 2.4rem;
+  }
+
+  .continue-reading__nav {
+    grid-template-columns: 1fr;
   }
 
   .related-grid {

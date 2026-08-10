@@ -1,4 +1,4 @@
-import { Translation } from "./definition"
+import { Translation } from "./definition";
 
 export default {
   propertyDefaults: {
@@ -57,7 +57,7 @@ export default {
       title: "目录",
     },
     contentMeta: {
-      readingTime: ({ minutes }) => `${minutes}分钟阅读`,
+      readingTime: ({ minutes }) => `约 ${minutes} 分钟阅读`,
     },
   },
   pages: {
@@ -82,4 +82,4 @@ export default {
       totalTags: ({ count }) => `总共有${count}个标签。`,
     },
   },
-} as const satisfies Translation
+} as const satisfies Translation;

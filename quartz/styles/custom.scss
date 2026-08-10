@@ -1951,13 +1951,13 @@ article .home-platform-hero .home-kicker {
 }
 
 article .home-platform-hero h1 {
-  max-width: 980px;
+  max-width: 880px;
   margin-top: 0.55rem;
   color: #0a1d38;
-  font-size: clamp(2rem, 4.6vw, 3.75rem);
+  font-size: clamp(1.9rem, 3.8vw, 3rem);
   font-weight: 600;
   letter-spacing: -0.025em;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 article .home-title-copy {
@@ -1968,9 +1968,82 @@ article .home-platform-hero .v2-hero__tagline {
   max-width: 780px;
   margin-top: 1.1rem;
   color: #0a1d38;
-  font-size: clamp(1.18rem, 2.4vw, 1.55rem);
+  font-size: clamp(1.02rem, 2vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+article .home-start-here {
+  scroll-margin-top: 6rem;
+}
+
+article .home-start-grid,
+article .home-recommended-grid {
+  margin-top: 1.35rem;
+}
+
+article .home-start-card,
+article .home-recommended-card {
+  min-height: 0;
+  background: color-mix(in srgb, var(--light) 92%, #fff);
+}
+
+article .home-start-card h3 {
+  margin: 0.35rem 0 0.2rem;
+  color: #0a1d38;
+}
+
+article .home-start-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--lightgray);
+}
+
+article .home-start-card__links a,
+article .home-recommended-card__link {
+  color: #0a1d38;
+  font-size: 0.84rem;
   font-weight: 600;
-  line-height: 1.55;
+  text-decoration: none;
+  background-image: none;
+}
+
+article .home-start-card__links a:hover,
+article .home-start-card__links a:focus-visible,
+article .home-recommended-card__link:hover,
+article .home-recommended-card__link:focus-visible {
+  text-decoration: underline;
+  text-decoration-color: #9b7c3e;
+  text-underline-offset: 0.2em;
+}
+
+article .home-recommended-card__link {
+  width: fit-content;
+  margin-top: auto;
+  padding-top: 0.45rem;
+}
+
+article .home-manual-panel {
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  border: 1px solid #d8dee6;
+  border-left: 3px solid #0a1d38;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--light) 97%, var(--lightgray));
+}
+
+article .home-manual-panel .resource-actions {
+  margin-top: 0;
+}
+
+article .home-contact-grid--compact p {
+  margin: 0;
+  color: var(--darkgray);
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
 article .home-work-grid {

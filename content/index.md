@@ -14,11 +14,39 @@ aliases:
 ---
 
 <section class="v2-hero home-platform-hero">
-  <p class="home-kicker">公民秩序主义官方网站</p>
-  <h1><span class="home-title-copy"><span class="home-title-line">建设一条低阻力、</span><span class="home-title-line">低风险、能够和平</span><span class="home-title-line">承接中国未来的</span><span class="home-title-line">政治道路</span></span></h1>
-  <p class="v2-hero__tagline">公民秩序主义是一条面向中国未来的政治与制度路线。公民秩序主义主张以和平转轨、行政承接、责任区分和制度重组，降低政治变化的社会成本，让国家继续运行，让社会避免长期失序。</p>
-  <div class="home-platform-hero__copy"><p>当前阶段：理论建设、公共传播、专业协作网络建设与北美非营利组织筹备。</p></div>
-  <div class="v2-actions"><a class="v2-button v2-button--primary" href="/start">5分钟了解</a><a class="v2-button v2-button--secondary" href="/civic-orderism/peaceful-state-transition">阅读核心路线</a><a class="v2-button v2-button--text" href="/participate#contact">建立联系</a></div>
+  <p class="home-kicker">公民秩序主义 · Civic Orderism</p>
+  <h1>建设一条低阻力、低风险、能够和平承接中国未来的政治道路。</h1>
+  <p class="v2-hero__tagline">围绕中国政治转型、现代国家治理与信息化时代制度问题进行长期研究、解释与公共讨论。</p>
+  <div class="home-platform-hero__copy"><p>公民秩序主义是一条面向中国未来的政治与制度路线，关注如何在政治变化中保持国家连续、降低社会冲突并建立能够持续纠错的新秩序。</p></div>
+  <div class="v2-actions"><a class="v2-button v2-button--primary" href="#start-here">从这里开始</a><a class="v2-button v2-button--secondary" href="/introduction-manual">阅读介绍手册</a><a class="v2-button v2-button--text" href="/about">关于公民秩序主义</a></div>
+</section>
+
+<section class="home-section home-start-here" id="start-here">
+  <div class="home-section-intro"><p class="resource-label">首次访问路径</p><h2>从这里开始</h2><p>如果这是第一次接触公民秩序主义，可以按照下面的顺序建立基本认识。</p></div>
+  <div class="knowledge-grid home-start-grid"><article class="knowledge-card home-start-card">
+  <p class="knowledge-card__meta"><span>01</span></p>
+  <h3>认识公民秩序主义</h3>
+  <p class="knowledge-card__summary">了解它试图回答什么问题，以及与传统政治叙事的区别。</p>
+  <div class="home-start-card__links"><a href="/start">从这里开始 →</a></div>
+</article>
+<article class="knowledge-card home-start-card">
+  <p class="knowledge-card__meta"><span>02</span></p>
+  <h3>理解中国问题</h3>
+  <p class="knowledge-card__summary">从中共、国家治理与中国现实结构进入问题本身。</p>
+  <div class="home-start-card__links"><a href="/theory/party-state-structural-failure">阅读组织诊断 →</a></div>
+</article>
+<article class="knowledge-card home-start-card">
+  <p class="knowledge-card__meta"><span>03</span></p>
+  <h3>理解政治路线</h3>
+  <p class="knowledge-card__summary">了解为什么强调低阻力、低风险与和平承接。</p>
+  <div class="home-start-card__links"><a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china">阅读转型路线 →</a></div>
+</article>
+<article class="knowledge-card home-start-card">
+  <p class="knowledge-card__meta"><span>04</span></p>
+  <h3>阅读完整介绍</h3>
+  <p class="knowledge-card__summary">通过《公民秩序主义介绍手册》系统了解整体框架。</p>
+  <div class="home-start-card__links"><a href="/introduction-manual">在线阅读 →</a><a href="/files/civic-orderism-introduction-manual.pdf">PDF 下载</a></div>
+</article></div>
 </section>
 
 <section class="home-section home-route-need" id="new-political-road">
@@ -52,12 +80,39 @@ aliases:
 </section>
 
 <section class="home-section home-learning" id="learn-more">
-  <div class="home-section-heading"><div><p class="resource-label">正式阅读入口</p><h2>推荐阅读</h2><p>从以下内容开始，系统了解公民秩序主义的政治路线、基本定位与长期方向。</p></div></div>
-  <div class="home-learning-grid"><a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china"><span>01</span><strong>中国和平政治转型的可能性</strong></a><a href="/civic-orderism/why-civic-orderism"><span>02</span><strong>公民秩序主义核心政治路线</strong></a><a href="/start"><span>03</span><strong>5分钟了解公民秩序主义</strong></a><a href="/preparation"><span>04</span><strong>组织筹备</strong></a><a href="/institution-design"><span>05</span><strong>制度设计</strong></a></div>
+  <div class="home-section-heading"><div><p class="resource-label">新人精选</p><h2>推荐阅读</h2><p>四篇现有文章分别从整体介绍、中国问题、和平转型与信息化时代进入公民秩序主义。</p></div></div>
+  <div class="knowledge-grid home-recommended-grid"><article class="knowledge-card home-recommended-card">
+  <p class="knowledge-card__meta"><span>公民秩序主义</span><span>6 分钟阅读</span></p>
+  <h3><a href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">如果你只读一篇：公民秩序主义到底想解决什么</a></h3>
+  <p class="knowledge-card__summary">公民秩序主义不是口号、政党或情绪化革命方案。它要解决的是现代国家与普通人之间的秩序关系断裂：问题进不了系统，责任找不到人，权力黑箱运行，行政系统自我循环。它试图通过公共判断、行政执行、信息透明、责任更替和后台支撑机制，让国家重新成为普通人可以进入、理解、追问和信任的共同生活框架。</p>
+  <a class="home-recommended-card__link" href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">阅读全文 →</a>
+</article>
+<article class="knowledge-card home-recommended-card">
+  <p class="knowledge-card__meta"><span>解析中共</span><span>10 分钟阅读</span></p>
+  <h3><a href="/theory/party-state-structural-failure">党国系统的结构性失效：一个组织诊断</a></h3>
+  <p class="knowledge-card__summary">理解中共的未来，存在两种常见误区。</p>
+  <a class="home-recommended-card__link" href="/theory/party-state-structural-failure">阅读全文 →</a>
+</article>
+<article class="knowledge-card home-recommended-card">
+  <p class="knowledge-card__meta"><span>公民秩序主义</span><span>8 分钟阅读</span></p>
+  <h3><a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china">中国和平政治转型的可能性</a></h3>
+  <p class="knowledge-card__summary">中国的未来并非只有维持现状与失控崩塌两种结局。如果旧体系越来越难以提供长期预期，而新的政治道路能够保障国家运行、划清责任边界并为体制成员提供可信退路，合作就可能逐步取代对抗。</p>
+  <a class="home-recommended-card__link" href="/civic-orderism/possibility-of-peaceful-political-transition-in-china">阅读全文 →</a>
+</article>
+<article class="knowledge-card home-recommended-card">
+  <p class="knowledge-card__meta"><span>公民秩序主义</span><span>7 分钟阅读</span></p>
+  <h3><a href="/civic-orderism/information-age-and-political-transition">信息化时代与政治转型</a></h3>
+  <p class="knowledge-card__summary">世界已经进入信息化时代，但绝大多数国家仍运行着工业时代建立起来的治理体系。本文从时代错位、改革开放遗留问题与资源约束出发，解释公民秩序主义为何在今天提出。</p>
+  <a class="home-recommended-card__link" href="/civic-orderism/information-age-and-political-transition">阅读全文 →</a>
+</article></div>
 </section>
 
-<section class="home-section home-further-reading">
-  <div class="home-section-intro"><p class="resource-label">正式资料与联系</p><h2>手册与联系方式</h2><p>可通过介绍手册、正式文章和电子邮件继续了解。</p></div>
-  <div class="home-contact-grid"><div><strong>核心文档</strong><a href="/files/civic-orderism-introduction-manual.pdf">公民秩序主义介绍手册<small>第一次理解公民秩序主义的基础文本。</small></a>
-<a href="/files/civic-orderism-organization-manual.pdf">公民秩序主义组织手册<small>说明组织原则、参与路径、协作边界与长期承接方向。</small></a></div><div><strong>电子邮件</strong><a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com<small>主联系邮箱</small></a><a href="mailto:citizenorder@proton.me">citizenorder@proton.me<small>备用邮箱</small></a></div></div>
+<section class="home-section home-manual-entry" id="introduction-manual-entry">
+  <div class="home-section-intro"><p class="resource-label">基础材料</p><h2>公民秩序主义介绍手册</h2><p>如果希望一次性了解公民秩序主义的基本判断、价值体系与政治路线，可以从介绍手册开始。</p></div>
+  <div class="home-manual-panel"><div class="resource-actions"><a class="resource-button resource-button-primary" href="/introduction-manual">在线阅读</a><a class="resource-button" href="/files/civic-orderism-introduction-manual.pdf">PDF 下载</a></div><div class="home-inline-links"><a href="/organization-manual">继续了解组织原则、参与路径与协作边界 →</a><a href="/files/civic-orderism-organization-manual.pdf">下载组织手册 PDF</a></div></div>
+</section>
+
+<section class="home-section home-contact-entry" id="contact">
+  <div class="home-section-intro"><p class="resource-label">联系</p><h2>联系公民秩序主义</h2><p>欢迎围绕理论研究、公共讨论、合作与组织筹备进行联系。</p></div>
+  <div class="home-contact-grid home-contact-grid--compact"><div><strong>电子邮件</strong><a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com<small>主联系邮箱</small></a><a href="mailto:citizenorder@proton.me">citizenorder@proton.me<small>备用邮箱</small></a></div><div><strong>联系范围</strong><p>理论研究、正式出版、专业协作与北美非营利组织筹备。</p><a href="/participate#contact">了解联系与参与边界 →</a></div></div>
 </section>

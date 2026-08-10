@@ -1,21 +1,37 @@
 {
   "homepage": [
     {
-      "label": "5分钟了解公民秩序主义",
-      "href": "/start"
+      "label": "认识公民秩序主义",
+      "description": "了解它试图回答什么问题，以及与传统政治叙事的区别。",
+      "href": "/start",
+      "linkLabel": "从这里开始"
     },
     {
-      "label": "理解和平政治转轨路线",
-      "href": "/civic-orderism/peaceful-state-transition"
+      "label": "理解中国问题",
+      "description": "从中共、国家治理与中国现实结构进入问题本身。",
+      "href": "/theory/party-state-structural-failure",
+      "linkLabel": "阅读组织诊断"
     },
     {
-      "label": "阅读中国和平政治转型方案",
-      "href": "/civic-orderism/possibility-of-peaceful-political-transition-in-china"
+      "label": "理解政治路线",
+      "description": "了解为什么强调低阻力、低风险与和平承接。",
+      "href": "/civic-orderism/possibility-of-peaceful-political-transition-in-china",
+      "linkLabel": "阅读转型路线"
     },
     {
-      "label": "进入公民秩序主义系列文章",
-      "href": "/civic-orderism"
+      "label": "阅读完整介绍",
+      "description": "通过《公民秩序主义介绍手册》系统了解整体框架。",
+      "href": "/introduction-manual",
+      "linkLabel": "在线阅读",
+      "secondaryHref": "/files/civic-orderism-introduction-manual.pdf",
+      "secondaryLabel": "PDF 下载"
     }
+  ],
+  "homepageRecommendations": [
+    "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+    "theory/party-state-structural-failure",
+    "civic-orderism/possibility-of-peaceful-political-transition-in-china",
+    "civic-orderism/information-age-and-political-transition"
   ],
   "homepageTopics": [
     "bureaucratic-system",

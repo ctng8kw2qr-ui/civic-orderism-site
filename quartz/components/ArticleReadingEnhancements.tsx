@@ -270,7 +270,6 @@ function byRecommendationScore(
 
 export const KnowledgeContext: QuartzComponent = ({
   fileData,
-  allFiles,
 }: QuartzComponentProps) => {
   if (!isArticlePage(fileData)) return null;
   const knowledge = knowledgeFor(fileData);
@@ -284,45 +283,6 @@ export const KnowledgeContext: QuartzComponent = ({
     .map((slug) => topicBySlug.get(slug))
     .filter(Boolean);
   const concepts = conceptsForArticle(fileData, knowledge);
-  const eligibleArticles = articleFiles(allFiles).filter(
-    isEligibleRecommendation,
-  );
-  const manualSequence = resolveReadingSequence(
-    readingSequencesConfig,
-    eligibleArticles,
-    fileData.slug ?? "",
-    (file) => file.slug,
-  );
-  const fallbackSequence = manualSequence
-    ? []
-    : eligibleArticles
-        .filter((file) => sameSection(fileData, file))
-        .sort(byOldestFirst);
-  const fallbackIndex = fallbackSequence.findIndex(
-    (file) => file.slug === fileData.slug,
-  );
-  const previousItem: ArticleSequenceItem | undefined = manualSequence
-    ? manualSequence.items[manualSequence.index - 1]
-    : fallbackIndex > 0
-      ? {
-          slug: fallbackSequence[fallbackIndex - 1].slug,
-          file: fallbackSequence[fallbackIndex - 1],
-        }
-      : undefined;
-  const nextItem: ArticleSequenceItem | undefined = manualSequence
-    ? manualSequence.items[manualSequence.index + 1]
-    : fallbackIndex >= 0
-      ? {
-          slug: fallbackSequence[fallbackIndex + 1]?.slug,
-          file: fallbackSequence[fallbackIndex + 1],
-        }
-      : undefined;
-  const itemHref = (item: typeof previousItem) =>
-    item?.href ?? (item?.slug ? `/${item.slug}` : undefined);
-  const itemTitle = (item: typeof previousItem) =>
-    item?.title ?? item?.file?.frontmatter?.title;
-  const previousHref = itemHref(previousItem);
-  const nextHref = itemHref(nextItem);
 
   return (
     <section class="article-knowledge" aria-label="文章知识关联">
@@ -364,26 +324,6 @@ export const KnowledgeContext: QuartzComponent = ({
           <p>暂无关联核心概念</p>
         )}
       </div>
-      {previousHref || nextHref ? (
-        <div class="article-knowledge__group article-knowledge__reading-path">
-          <h2>阅读路径</h2>
-          {manualSequence ? (
-            <p class="article-knowledge__sequence-progress">
-              {manualSequence.sequence.name} · 第{manualSequence.index + 1}
-              篇，共
-              {manualSequence.items.length}篇
-            </p>
-          ) : null}
-          <nav aria-label="文章阅读路径">
-            {previousHref ? (
-              <a href={previousHref}>上一篇：{itemTitle(previousItem)}</a>
-            ) : null}
-            {nextHref ? (
-              <a href={nextHref}>下一篇：{itemTitle(nextItem)}</a>
-            ) : null}
-          </nav>
-        </div>
-      ) : null}
       <details class="article-knowledge__details">
         <summary>文章信息</summary>
         <dl>
@@ -512,13 +452,40 @@ export const ContinueReading: QuartzComponent = ({
     fileData.slug ?? "",
     (file) => file.slug,
   );
+  const fallbackSequence = manualSequence
+    ? []
+    : eligibleArticles
+        .filter((file) => sameSection(fileData, file))
+        .sort(byOldestFirst);
+  const fallbackIndex = fallbackSequence.findIndex(
+    (file) => file.slug === fileData.slug,
+  );
+  const previousItem: ArticleSequenceItem | undefined = manualSequence
+    ? manualSequence.items[manualSequence.index - 1]
+    : fallbackIndex > 0
+      ? {
+          slug: fallbackSequence[fallbackIndex - 1].slug,
+          file: fallbackSequence[fallbackIndex - 1],
+        }
+      : undefined;
+  const nextItem: ArticleSequenceItem | undefined = manualSequence
+    ? manualSequence.items[manualSequence.index + 1]
+    : fallbackIndex >= 0 && fallbackSequence[fallbackIndex + 1]
+      ? {
+          slug: fallbackSequence[fallbackIndex + 1].slug,
+          file: fallbackSequence[fallbackIndex + 1],
+        }
+      : undefined;
+  const itemHref = (item: ArticleSequenceItem | undefined) =>
+    item?.href ?? (item?.slug ? `/${item.slug}` : undefined);
+  const itemTitle = (item: ArticleSequenceItem | undefined) =>
+    item?.title ?? item?.file?.frontmatter?.title;
+  const previousHref = itemHref(previousItem);
+  const nextHref = itemHref(nextItem);
   const adjacentSequenceSlugs = new Set(
-    manualSequence
-      ? [
-          manualSequence.items[manualSequence.index - 1]?.slug,
-          manualSequence.items[manualSequence.index + 1]?.slug,
-        ].filter((slug): slug is string => Boolean(slug))
-      : [],
+    [previousItem?.slug, nextItem?.slug].filter((slug): slug is string =>
+      Boolean(slug),
+    ),
   );
   const recommendations = eligibleArticles
     .filter((file) => file.slug !== fileData.slug)
@@ -538,37 +505,61 @@ export const ContinueReading: QuartzComponent = ({
     .sort(byRecommendationScore(fileData, currentSeries, manualRelated))
     .slice(0, 3);
 
-  if (recommendations.length === 0) return null;
+  if (!previousHref && !nextHref && recommendations.length === 0) return null;
 
   return (
     <section class="related-reading" aria-label="继续阅读">
       <h2 class="related-reading__heading">继续阅读</h2>
-      <div class="related-grid">
-        {recommendations.map((page) => (
-          <a
-            class="related-card"
-            data-card="recommendation"
-            href={resolveRelative(fileData.slug!, page.slug!)}
-          >
-            <span class="related-card__title">{page.frontmatter?.title}</span>
-            <p class="related-card__meta">
-              {page.dates ? (
-                <Date date={getDate(cfg, page)!} locale={cfg.locale} />
-              ) : null}
-              {knowledgeFor(page)?.section || page.frontmatter?.category ? (
-                <span>
-                  {String(
-                    knowledgeFor(page)?.section ?? page.frontmatter?.category,
-                  )}
+      {previousHref || nextHref ? (
+        <nav class="continue-reading__nav" aria-label="上一篇和下一篇">
+          {previousHref ? (
+            <a href={previousHref} data-slug={previousItem?.slug}>
+              <small>上一篇</small>
+              <strong>{itemTitle(previousItem)}</strong>
+            </a>
+          ) : null}
+          {nextHref ? (
+            <a href={nextHref} data-slug={nextItem?.slug}>
+              <small>下一篇</small>
+              <strong>{itemTitle(nextItem)}</strong>
+            </a>
+          ) : null}
+        </nav>
+      ) : null}
+      {recommendations.length ? (
+        <div class="continue-reading__related">
+          <h3>相关文章</h3>
+          <div class="related-grid">
+            {recommendations.map((page) => (
+              <a
+                class="related-card"
+                data-card="recommendation"
+                href={resolveRelative(fileData.slug!, page.slug!)}
+              >
+                <span class="related-card__title">
+                  {page.frontmatter?.title}
                 </span>
-              ) : null}
-            </p>
-            {getArticleSummary(page) ? (
-              <p class="related-card__summary">{getArticleSummary(page)}</p>
-            ) : null}
-          </a>
-        ))}
-      </div>
+                <p class="related-card__meta">
+                  {page.dates ? (
+                    <Date date={getDate(cfg, page)!} locale={cfg.locale} />
+                  ) : null}
+                  {knowledgeFor(page)?.section || page.frontmatter?.category ? (
+                    <span>
+                      {String(
+                        knowledgeFor(page)?.section ??
+                          page.frontmatter?.category,
+                      )}
+                    </span>
+                  ) : null}
+                </p>
+                {getArticleSummary(page) ? (
+                  <p class="related-card__summary">{getArticleSummary(page)}</p>
+                ) : null}
+              </a>
+            ))}
+          </div>
+        </div>
+      ) : null}
     </section>
   );
 };
