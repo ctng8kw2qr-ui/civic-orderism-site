@@ -60,7 +60,7 @@ aliases:
   <div class="knowledge-grid home-recommended-grid"><article class="knowledge-card home-recommended-card">
   <p class="knowledge-card__meta"><span>公民秩序主义</span><span>6 分钟阅读</span></p>
   <h3><a href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">如果你只读一篇：公民秩序主义到底想解决什么</a></h3>
-  <p class="knowledge-card__summary">公民秩序主义不是口号、政党或情绪化革命方案。它要解决的是现代国家与普通人之间的秩序关系断裂：问题进不了系统，责任找不到人，权力黑箱运行，行政系统自我循环。它试图通过公共判断、行政执行、信息透明、责任更替和后台支撑机制，让国家重新成为普通人可以进入、理解、追问和信任的共同生活框架。</p>
+  <p class="knowledge-card__summary">公民秩序主义不是口号、政党或情绪化革命方案。它关注现代国家与普通人之间的秩序关系：问题能否进入系统、权力能否追责、行政能否持续运行、制度能否纠错，以及普通人能否持续获得解释和反馈。</p>
   <a class="home-recommended-card__link" href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">阅读全文 →</a>
 </article>
 <article class="knowledge-card home-recommended-card">

@@ -553,6 +553,15 @@ for (const title of [
   assert(homepageMainText.includes(title), `首页推荐阅读缺少：${title}`);
 }
 assert(
+  homepageMainText.includes(
+    "公民秩序主义不是口号、政党或情绪化革命方案。它关注现代国家与普通人之间的秩序关系：问题能否进入系统、权力能否追责、行政能否持续运行、制度能否纠错，以及普通人能否持续获得解释和反馈。",
+  ) &&
+    !homepageMainText.includes(
+      "公共判断、行政执行、信息透明、责任更替和后台支撑机制",
+    ),
+  "首页入门文章摘要仍使用旧的具体机制表述",
+);
+assert(
   !homepageMainText.includes("最新研究与正式文章") &&
     !homepageMainText.includes("按发布日期自动更新") &&
     !homepageMainText.includes(["人工固定", "配置"].join("")) &&
