@@ -1,5 +1,41 @@
 [
   {
+    "title": "安全，正在重新定义中国",
+    "slug": "china/security-is-redefining-china",
+    "date": "2026-08-10",
+    "updated": "2026-08-10",
+    "summary": "从收护照、特斯拉、华为与干部系统清洗出发，观察安全如何从一项政策目标变成重新计算人员、技术、资本、产业与权力网络的上位原则。",
+    "originalSection": "解析中共",
+    "section": "解析中共",
+    "chinaAnalysisSection": "安全叙事与防御转型",
+    "tags": [
+      "解析中共",
+      "安全叙事",
+      "防御转型",
+      "自主可控",
+      "干部管理",
+      "数据安全",
+      "华为",
+      "特斯拉",
+      "权力网络"
+    ],
+    "status": "published",
+    "primaryTopic": "ccp-governance",
+    "relatedTopics": ["bureaucratic-system"],
+    "topics": ["ccp-governance", "bureaucratic-system"],
+    "concepts": [
+      "ruling-techniques",
+      "crisis-management",
+      "bureaucratic-shock"
+    ],
+    "featured": false,
+    "recommended": false,
+    "readingLevel": "进阶",
+    "readingOrder": 999,
+    "author": "公民秩序主义",
+    "needsReview": false
+  },
+  {
     "title": "当所有人都说忠诚：中共为什么反而越来越没有安全感",
     "slug": "china/why-ccp-feels-less-secure-when-everyone-claims-loyalty",
     "date": "2026-08-10",

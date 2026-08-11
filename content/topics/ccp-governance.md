@@ -14,7 +14,7 @@ noindex: false
 
 分析压力传导、组织控制、宣传与危机管理的实际机制。
 
-<div class="topic-hero-note"><strong>核心判断</strong><p>统治能力并不等于治理能力；短期控制工具的叠加，可能持续消耗长期组织信用。</p><small>6 篇相关文章 · 最近更新 2026-07-28</small></div>
+<div class="topic-hero-note"><strong>核心判断</strong><p>统治能力并不等于治理能力；短期控制工具的叠加，可能持续消耗长期组织信用。</p><small>7 篇相关文章 · 最近更新 2026-08-10</small></div>
 
 ## 推荐阅读顺序
 
@@ -25,6 +25,12 @@ noindex: false
 ## 全部相关文章
 
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management bureaucratic-shock">
+  <p class="knowledge-card__meta"><span>2026-08-10</span><span>9 分钟阅读</span></p>
+  <h3><a href="/china/security-is-redefining-china">安全，正在重新定义中国</a></h3>
+  <p class="knowledge-card__summary">从收护照、特斯拉、华为与干部系统清洗出发，观察安全如何从一项政策目标变成重新计算人员、技术、资本、产业与权力网络的上位原则。</p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management fiscal-debt">
   <p class="knowledge-card__meta"><span>2026-07-28</span><span>16 分钟阅读</span></p>
   <h3><a href="/china/supply-side-reform-state-can-scale-not-discover-future">供给侧改革之后：国家能放大产业，却未必能发现未来</a></h3>

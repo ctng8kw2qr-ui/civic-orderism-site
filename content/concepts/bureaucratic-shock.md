@@ -51,6 +51,12 @@ publicationStatus: published
   <p class="knowledge-card__summary">省部级官员密集落马，表面上看是反腐问题，深层看则是官僚系统安全感与运行逻辑的变化。高位安全边界后退、经济低预期和责任倒查叠加，会推动官僚群体进入避责、观望、伪执行和系统性自保状态，使官僚系统从主动型系统转向防御型系统。</p>
   <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚休克</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management bureaucratic-shock">
+  <p class="knowledge-card__meta"><span>2026-08-10</span><span>9 分钟阅读</span></p>
+  <h3><a href="/china/security-is-redefining-china">安全，正在重新定义中国</a></h3>
+  <p class="knowledge-card__summary">从收护照、特斯拉、华为与干部系统清洗出发，观察安全如何从一项政策目标变成重新计算人员、技术、资本、产业与权力网络的上位原则。</p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="xi-era" data-concepts="bureaucratic-shock crisis-management order-evaporation">
   <p class="knowledge-card__meta"><span>2026-07-21</span><span>16 分钟阅读</span></p>
   <h3><a href="/china/xi-successor-and-bureaucratic-accountability">习近平到底有没有接班人？</a></h3>
@@ -104,12 +110,6 @@ publicationStatus: published
   <h3><a href="/theory/no-accountability-lie-flat-mentality">为什么“无人担责的躺平心态”会从根本上摧毁一个超大型执政组织</a></h3>
   <p class="knowledge-card__summary">现代社会的日常问题洪流、传染机制与三段式阈值模型</p>
   <p class="knowledge-card__chips"><span>概念：官僚休克</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="xi-era" data-concepts="bureaucratic-shock crisis-management order-evaporation">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>7 分钟阅读</span></p>
-  <h3><a href="/china/xi-solved-organization-not-reality">习近平解决了组织的问题，却解决不了组织面临的问题</a></h3>
-  <p class="knowledge-card__summary">评价习近平，不能只停留在“强”或者“弱”、“聪明”或者“愚蠢”这种简单判断上。</p>
-  <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：官僚休克</span></p>
 </article>
 </div>
 
