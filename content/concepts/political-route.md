@@ -57,6 +57,12 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不按政治身份实施普遍追责的转轨道路。</p>
   <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：政治路线</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="second-reform" data-concepts="second-reform political-route">
+  <p class="knowledge-card__meta"><span>2026-08-11</span><span>10 分钟阅读</span></p>
+  <h3><a href="/china/an-era-change-beginning-in-the-united-states">一场起始于美国的时代变革</a></h3>
+  <p class="knowledge-card__summary">冷战结束以后形成的“价值趋同—制度接近—国际接纳”逻辑正在弱化。未来国家之间更重要的沟通语言，可能越来越集中于利益、安全与预期，这也正在改变中共理解外部世界的方式。</p>
+  <p class="knowledge-card__chips"><span>专题：二次改开</span><span>概念：二次改开</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route">
   <p class="knowledge-card__meta"><span>2026-08-05</span><span>8 分钟阅读</span></p>
   <h3><a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china">中国和平政治转型的可能性</a></h3>

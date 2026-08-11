@@ -57,6 +57,12 @@ publicationStatus: published
   <p class="knowledge-card__summary">一个政权最危险的时刻，不是问题最多的时候，而是它已经看清问题，却发现所有出路都比问题本身更危险的时候。</p>
   <p class="knowledge-card__chips"><span>专题：二次改开</span><span>概念：二次改开</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="second-reform" data-concepts="second-reform political-route">
+  <p class="knowledge-card__meta"><span>2026-08-11</span><span>10 分钟阅读</span></p>
+  <h3><a href="/china/an-era-change-beginning-in-the-united-states">一场起始于美国的时代变革</a></h3>
+  <p class="knowledge-card__summary">冷战结束以后形成的“价值趋同—制度接近—国际接纳”逻辑正在弱化。未来国家之间更重要的沟通语言，可能越来越集中于利益、安全与预期，这也正在改变中共理解外部世界的方式。</p>
+  <p class="knowledge-card__chips"><span>专题：二次改开</span><span>概念：二次改开</span></p>
+</article>
 </div>
 
 ## 相关专题

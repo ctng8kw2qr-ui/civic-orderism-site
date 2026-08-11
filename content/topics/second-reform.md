@@ -14,7 +14,7 @@ noindex: false
 
 讨论改革窗口是否仍存在，以及第二次改革开放面对的组织约束。
 
-<div class="topic-hero-note"><strong>核心判断</strong><p>二次改开的关键不是单一领导人的意愿，而是组织绝境、利益重组与外部窗口能否同时出现。</p><small>3 篇相关文章 · 最近更新 2026-07-19</small></div>
+<div class="topic-hero-note"><strong>核心判断</strong><p>二次改开的关键不是单一领导人的意愿，而是组织绝境、利益重组与外部窗口能否同时出现。</p><small>4 篇相关文章 · 最近更新 2026-08-11</small></div>
 
 ## 推荐阅读顺序
 
@@ -25,6 +25,12 @@ noindex: false
 ## 全部相关文章
 
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="second-reform" data-concepts="second-reform political-route">
+  <p class="knowledge-card__meta"><span>2026-08-11</span><span>10 分钟阅读</span></p>
+  <h3><a href="/china/an-era-change-beginning-in-the-united-states">一场起始于美国的时代变革</a></h3>
+  <p class="knowledge-card__summary">冷战结束以后形成的“价值趋同—制度接近—国际接纳”逻辑正在弱化。未来国家之间更重要的沟通语言，可能越来越集中于利益、安全与预期，这也正在改变中共理解外部世界的方式。</p>
+  <p class="knowledge-card__chips"><span>专题：二次改开</span><span>概念：二次改开</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="second-reform" data-concepts="second-reform political-route">
   <p class="knowledge-card__meta"><span>2026-07-19</span><span>22 分钟阅读</span></p>
   <h3><a href="/china-stage/ccp-second-reform-opening-possibility">中共还有没有二次改开的可能？</a></h3>

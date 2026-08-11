@@ -14,7 +14,7 @@ noindex: false
 
 不以情绪、立场或单一事件为起点，而是把中共视为一个现实运行中的政治组织，从权力结构、组织成员、结构性困境、防御转型及其外部影响五个层面观察其变化。
 
-<div class="section-stats"><span>45 篇已发布文章</span><span>5 个分析层次</span><span>更新至 2026-08-10</span></div>
+<div class="section-stats"><span>46 篇已发布文章</span><span>5 个分析层次</span><span>更新至 2026-08-11</span></div>
 
 <div class="section-core-judgment"><strong>栏目核心判断</strong><p>理解中共的变化，需要沿着权力如何运行、成员如何行动、结构为何失灵、组织如何防御，以及压力如何向外溢出的完整链条展开。</p></div>
 
@@ -217,6 +217,10 @@ noindex: false
 观察中共内部治理逻辑如何向外交、军事、台海及国际关系外溢，以及组织压力如何增加战略误判与外部风险。
 
 <div class="knowledge-grid">
+<article class="knowledge-card">
+  <p class="knowledge-card__meta"><span>2026-08-11</span><span>10 分钟阅读</span></p>
+  <h3><a href="/china/an-era-change-beginning-in-the-united-states">一场起始于美国的时代变革</a></h3>
+</article>
 <article class="knowledge-card">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>4 分钟阅读</span></p>
   <h3><a href="/china/diplomacy-root">外交的根源：从中共内政逻辑看其外交激进化</a></h3>
