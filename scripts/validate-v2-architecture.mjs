@@ -470,43 +470,46 @@ assert(
   homepageText.includes(
     "建设一条低阻力、低风险、能够和平承接中国未来的政治道路",
   ) &&
-    homepageText.includes("公民秩序主义 · Civic Orderism") &&
     homepageText.includes(
-      "围绕中国政治转型、现代国家治理与信息化时代制度问题进行长期研究、解释与公共讨论",
-    ),
-  "首页缺少和平承接未来的核心定位",
+      "公民秩序主义北美非营利法人及首届董事会筹备工作已经启动",
+    ) &&
+    homepageText.includes("当前重点 · 北美组织筹备"),
+  "首页缺少董事会筹备与和平承接未来的首屏定位",
 );
 assert(
   homepageMainText.includes(
-    "公民秩序主义是一条面向中国未来的政治与制度路线，关注如何在政治变化中保持国家连续、降低社会冲突并建立能够持续纠错的新秩序",
+    "公民秩序主义正在从长期理论建设进入审慎的组织建设阶段",
   ),
-  "首页首屏仍以组织筹备而不是政治与制度路线为主体",
+  "首页首屏缺少从理论建设进入组织建设的阶段说明",
 );
 assert(
-  homepageText.includes("不革命、不清算、不让国家停摆") &&
-    homepageText.includes("推荐阅读") &&
-    homepageText.includes("组织筹备") &&
+  homepageText.includes("从理论建设进入组织建设") &&
+    homepageText.includes("从政治理论走向长期、审慎的现实准备") &&
+    homepageText.includes("公民秩序主义理论") &&
     homepageText.includes("介绍手册与联系"),
-  "首页缺少核心路线、推荐阅读、组织筹备或介绍手册与联系",
+  "首页缺少当前阶段、组织路线、理论或联系模块",
 );
 assert(
-  homepageHtml.includes('data-slug="participate"') &&
-    homepageHtml.includes('data-slug="preparation"'),
-  "首页缺少核心路线、法人筹备或参与入口",
+  homepageHtml.includes('data-slug="preparation"') &&
+    homepageHtml.includes('data-slug="start"') &&
+    homepageHtml.includes('data-slug="articles"'),
+  "首页首屏缺少董事会筹备、理论介绍或文章入口",
 );
 assert(
-  homepageMainText.includes("理论与路线研究") &&
-    homepageMainText.includes("北美法人筹备") &&
-    homepageMainText.includes("董事会筹备") &&
-    homepageMainText.includes("公共传播与联系") &&
+  homepageMainText.includes("北美非营利法人筹备") &&
+    homepageMainText.includes("首届董事会筹备") &&
+    homepageMainText.includes("组织路线建设") &&
+    homepageMainText.includes("理论体系整理") &&
+    homepageMainText.includes("公共传播与网站建设") &&
     !homepageMainText.includes("制度设计"),
-  "首页组织筹备没有收缩为四个当前方向，或仍突出制度设计",
+  "首页当前阶段缺少五个工作方向，或仍突出制度设计",
 );
 const expectedHomepageHeadings = [
-  "从这里开始",
-  "不革命、不清算、不让国家停摆",
-  "推荐阅读",
-  "组织筹备",
+  "从理论建设进入组织建设",
+  "从政治理论走向长期、审慎的现实准备",
+  "理解政治路线的三篇基础文章",
+  "理论、现实解释与未来秩序",
+  "近期发布",
   "介绍手册与联系",
 ];
 const homepageHeadings = [
@@ -514,85 +517,49 @@ const homepageHeadings = [
 ].map((match) => match[1]);
 assert(
   homepageMainHtml.includes(
-    '<p class="home-kicker">公民秩序主义 · Civic Orderism</p>',
+    '<p class="home-kicker">当前重点 · 北美组织筹备</p>',
   ) &&
     JSON.stringify(
       homepageHeadings.slice(0, expectedHomepageHeadings.length),
     ) === JSON.stringify(expectedHomepageHeadings),
-  "首页模块顺序不符合品牌优先的信息结构",
+  "首页模块顺序不符合董事会筹备与组织路线优先的信息结构",
 );
 assert(
-  homepageMainText.includes("不革命、不清算、不让国家停摆") &&
-    homepageMainText.includes(
-      "不因政治身份实施普遍追责，区分政治责任、历史责任与依法确认的犯罪责任",
-    ) &&
-    homepageMainText.includes(
-      "中国需要的不是更多愤怒，而是一条能够承接国家、维持公共服务并避免长期失序的政治道路",
-    ),
-  "首页核心主张、责任分类或政治道路说明未统一",
+  homepageMainText.includes("不革命、不清算") &&
+    homepageMainText.includes("低阻力、低风险") &&
+    homepageMainText.includes("和平承接中国未来") &&
+    homepageMainText.includes("长期、审慎准备"),
+  "首页组织路线的核心主张不完整",
 );
 assert(
   !homepageMainHtml.includes("preparation-state-grid") &&
     homepageMainText.includes(
-      "目前法人尚未完成注册，具体注册法域与首届董事会均未确定。筹备参与不自动产生任何治理身份",
+      "目前法人尚未完成注册，具体注册法域与首届董事会均未确定。筹备不表示已经取得任何法人或治理身份",
     ),
   "首页程序状态没有压缩为一段简短说明",
 );
 assert(
   !homepageMainText.includes("从认同到建设") &&
     !homepageMainHtml.includes("home-participation") &&
-    homepageMainText.includes("了解如何参与"),
-  "首页仍展开参与页内容，或缺少简短参与入口",
+    homepageMainText.includes("了解筹备工作"),
+  "首页仍展开参与页内容，或缺少简短筹备入口",
 );
 for (const title of [
   "如果你只读一篇：公民秩序主义到底想解决什么",
   "党国系统的结构性失效：一个组织诊断",
   "中国和平政治转型的可能性",
-  "信息化时代与政治转型",
 ]) {
-  assert(homepageMainText.includes(title), `首页推荐阅读缺少：${title}`);
+  assert(homepageMainText.includes(title), `首页理论入口缺少：${title}`);
 }
 assert(
-  homepageMainText.includes(
-    "公民秩序主义不是口号、政党或情绪化革命方案。它关注现代国家与普通人之间的秩序关系：问题能否进入系统、权力能否追责、行政能否持续运行、制度能否纠错，以及普通人能否持续获得解释和反馈。",
-  ) &&
-    !homepageMainText.includes(
-      "公共判断、行政执行、信息透明、责任更替和后台支撑机制",
-    ),
-  "首页入门文章摘要仍使用旧的具体机制表述",
-);
-assert(
-  !homepageMainText.includes("最新研究与正式文章") &&
-    !homepageMainText.includes("按发布日期自动更新") &&
-    !homepageMainText.includes(["人工固定", "配置"].join("")) &&
-    homepageMainText.includes(
-      "四篇现有文章分别从整体介绍、中国问题、和平转型与信息化时代进入公民秩序主义",
-    ),
-  "首页仍突出最新文章而不是固定推荐阅读",
-);
-for (const requiredText of [
-  "如果这是第一次接触公民秩序主义，可以按照下面的顺序建立基本认识",
-  "认识公民秩序主义",
-  "理解中国问题",
-  "理解政治路线",
-  "阅读完整介绍",
-  "在线阅读",
-  "PDF 下载",
-  "第一次系统了解公民秩序主义的基础材料",
-  "欢迎围绕理论研究、公共讨论、合作与组织筹备进行联系",
-]) {
-  assert(
-    homepageMainText.includes(requiredText),
-    `首页首次访问路径缺少：${requiredText}`,
-  );
-}
-assert(
-  homepageMainHtml.includes('href="#start-here"') &&
+  homepageMainText.includes("公民秩序主义") &&
+    homepageMainText.includes("解析中共") &&
+    homepageMainText.includes("中国未来") &&
+    homepageMainText.includes("最新文章") &&
     homepageMainHtml.includes('data-slug="introduction-manual"') &&
-    homepageMainHtml.includes('data-slug="about"') &&
     homepageMainHtml.includes("mailto:civicorderism@gmail.com") &&
     homepageMainHtml.includes("mailto:citizenorder@proton.me"),
-  "首页 Hero、介绍手册或联系入口不完整",
+  "首页三条内容主线、最新文章、介绍手册或联系入口不完整",
 );
 assert(
   !homepageMainText.includes("我们主张") &&
@@ -603,8 +570,8 @@ assert(
 );
 assert(
   navigation.map((item) => item.label).join("/") ===
-    "首页/公民秩序主义/核心路线/解析中共/参与/关于",
-  "主导航没有采用品牌、路线与参与优先的结构",
+    "首页/董事会筹备/公民秩序主义/解析中共/中国未来/关于",
+  "主导航没有采用董事会筹备与三条内容主线优先的结构",
 );
 const secondaryNavigationHtml =
   homepageHtml.match(
@@ -612,10 +579,9 @@ const secondaryNavigationHtml =
   )?.[0] ?? "";
 assert(
   visiblePageText(secondaryNavigationHtml).trim() ===
-    "5分钟了解 中国和平政治转型 组织筹备 参与方式 全部文章" &&
-    !secondaryNavigationHtml.includes("筹备宣言") &&
-    !secondaryNavigationHtml.includes("董事会筹备"),
-  "顶部快捷导航未压缩为五项",
+    "5分钟了解 核心政治路线 参与方式 全部文章" &&
+    !secondaryNavigationHtml.includes("筹备宣言"),
+  "顶部快捷导航未与一级导航分工",
 );
 assert(
   homepageText.includes("内容目录") &&
@@ -627,7 +593,7 @@ assert(
 const footerHtml = homepageHtml.match(/<footer[\s\S]*?<\/footer>/)?.[0] ?? "";
 assert(
   visiblePageText(footerHtml).includes(
-    "开始阅读 核心路线 参与 组织筹备 专题 版权说明",
+    "开始阅读 董事会筹备 核心路线 参与 专题 版权说明",
   ) &&
     !visiblePageText(footerHtml).includes("法人筹备") &&
     !visiblePageText(footerHtml).includes("核心概念"),
@@ -728,6 +694,13 @@ for (const [label, html, text] of [
   assert(!text.includes("首届董事会已经依法产生"), `${label}误称董事会已产生`);
 }
 for (const requiredText of [
+  "北美非营利法人 + 首届董事会",
+  "为什么需要法人",
+  "为什么需要董事会",
+  "前期筹备、沟通与框架建设",
+  "希望联系的人",
+  "civicorderism@gmail.com",
+  "citizenorder@proton.me",
   "理论研究",
   "政治与治理研究",
   "选择注册法域",
@@ -759,33 +732,31 @@ const civicArticleHtml = fs.readFileSync(
   "utf8",
 );
 assert(
-  ccpArticleHtml.includes("继续了解公民秩序主义") &&
+  ccpArticleHtml.includes("进一步了解公民秩序主义") &&
+    ccpArticleHtml.includes(
+      "公民秩序主义目前正在推进北美非营利法人及首届董事会筹备工作",
+    ) &&
+    ccpArticleHtml.includes('href="/preparation"') &&
     ccpArticleHtml.includes('href="/start"') &&
-    ccpArticleHtml.includes(
-      'href="/civic-orderism/peaceful-state-transition"',
-    ) &&
-    ccpArticleHtml.includes(
-      'href="/civic-orderism/possibility-of-peaceful-political-transition-in-china"',
-    ) &&
-    ccpArticleHtml.includes('href="/participate"'),
-  "解析中共文章缺少统一的四个继续了解入口",
+    ccpArticleHtml.includes("了解董事会筹备") &&
+    ccpArticleHtml.includes("了解公民秩序主义"),
+  "解析中共文章缺少统一的筹备与理论入口",
 );
 assert(
-  civicArticleHtml.includes("继续了解公民秩序主义") &&
+  civicArticleHtml.includes("进一步了解公民秩序主义") &&
+    civicArticleHtml.includes(
+      "公民秩序主义目前正在推进北美非营利法人及首届董事会筹备工作",
+    ) &&
+    civicArticleHtml.includes('href="/preparation"') &&
     civicArticleHtml.includes('href="/start"') &&
-    civicArticleHtml.includes(
-      'href="/civic-orderism/peaceful-state-transition"',
-    ) &&
-    civicArticleHtml.includes(
-      'href="/civic-orderism/possibility-of-peaceful-political-transition-in-china"',
-    ) &&
-    civicArticleHtml.includes('href="/participate"'),
-  "公民秩序主义文章缺少统一的四个继续了解入口",
+    civicArticleHtml.includes("了解董事会筹备") &&
+    civicArticleHtml.includes("了解公民秩序主义"),
+  "公民秩序主义文章缺少统一的筹备与理论入口",
 );
 assert(
   !ccpArticleHtml.includes("阅读筹备宣言") &&
     !civicArticleHtml.includes("阅读筹备宣言"),
-  "文章底部仍按文章导向组织筹备页面",
+  "文章底部仍包含过强的筹备宣言入口",
 );
 
 const conceptIndexHtml = fs.readFileSync(

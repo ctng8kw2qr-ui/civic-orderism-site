@@ -10,6 +10,7 @@ import {
 
 const primaryLinks = [
   { label: "从这里开始", href: "/start" },
+  { label: "董事会筹备", href: "/preparation" },
   { label: "公民秩序主义", href: "/civic-orderism" },
   { label: "核心路线", href: "/civic-orderism/peaceful-state-transition" },
   { label: "解析中共", href: "/china" },

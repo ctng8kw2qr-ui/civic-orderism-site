@@ -29,9 +29,9 @@ export const sharedPageComponents: SharedLayout = {
     copyright: "© 2026 Civic Orderism / 公民秩序主义",
     links: {
       开始阅读: "/start",
+      董事会筹备: "/preparation",
       核心路线: "/civic-orderism/peaceful-state-transition",
       参与: "/participate",
-      组织筹备: "/preparation",
       专题: "/topics",
       版权说明: "/copyright",
     },

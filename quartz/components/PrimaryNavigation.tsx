@@ -11,10 +11,9 @@ import script from "./scripts/primaryNavigation.inline";
 const secondaryNavigation = [
   { label: "5分钟了解", href: "/start" },
   {
-    label: "中国和平政治转型",
-    href: "/civic-orderism/possibility-of-peaceful-political-transition-in-china",
+    label: "核心政治路线",
+    href: "/civic-orderism/peaceful-state-transition",
   },
-  { label: "组织筹备", href: "/preparation" },
   { label: "参与方式", href: "/participate" },
   { label: "全部文章", href: "/articles" },
 ];
@@ -65,6 +64,11 @@ const PrimaryNavigation: QuartzComponent = ({
           return (
             <a
               href={item.href}
+              class={
+                item.href === "/preparation"
+                  ? "primary-navigation__priority"
+                  : undefined
+              }
               aria-current={isActive(item.href) ? "page" : undefined}
             >
               {item.label}

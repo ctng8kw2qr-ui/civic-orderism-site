@@ -572,38 +572,22 @@ export const ArticleCta: QuartzComponent = ({
   return (
     <section class="article-cta" aria-label="文章结尾信息">
       <div class="article-cta__copy">
-        <h2 class="article-cta__title">继续了解公民秩序主义</h2>
-        <p>
-          从基本理论、核心政治路线与和平转型方案继续阅读，也可以了解如何支持和参与公民秩序主义。
-        </p>
+        <h2 class="article-cta__title">进一步了解公民秩序主义</h2>
+        <p>公民秩序主义目前正在推进北美非营利法人及首届董事会筹备工作。</p>
       </div>
       <div class="article-cta__links">
         <div class="article-cta__item article-cta__item--primary">
-          <span class="article-cta__label">入门</span>
+          <span class="article-cta__label">当前重点</span>
           <span class="article-cta__value">
-            <a class="article-cta__button" href="/start">
-              了解公民秩序主义
+            <a class="article-cta__button" href="/preparation">
+              了解董事会筹备
             </a>
           </span>
         </div>
         <div class="article-cta__item">
-          <span class="article-cta__label">核心路线</span>
+          <span class="article-cta__label">理论与路线</span>
           <span class="article-cta__value">
-            <a href="/civic-orderism/peaceful-state-transition">核心政治路线</a>
-          </span>
-        </div>
-        <div class="article-cta__item">
-          <span class="article-cta__label">转型方案</span>
-          <span class="article-cta__value">
-            <a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china">
-              中国和平政治转型
-            </a>
-          </span>
-        </div>
-        <div class="article-cta__item">
-          <span class="article-cta__label">支持与参与</span>
-          <span class="article-cta__value">
-            <a href="/participate">参与公民秩序主义</a>
+            <a href="/start">了解公民秩序主义</a>
           </span>
         </div>
       </div>

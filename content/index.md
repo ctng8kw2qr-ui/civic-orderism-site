@@ -14,80 +14,66 @@ aliases:
 ---
 
 <section class="v2-hero home-platform-hero">
-  <p class="home-kicker">公民秩序主义 · Civic Orderism</p>
-  <h1>建设一条低阻力、低风险、能够和平承接中国未来的政治道路。</h1>
-  <p class="v2-hero__tagline">围绕中国政治转型、现代国家治理与信息化时代制度问题进行长期研究、解释与公共讨论。</p>
-  <div class="home-platform-hero__copy"><p>公民秩序主义是一条面向中国未来的政治与制度路线，关注如何在政治变化中保持国家连续、降低社会冲突并建立能够持续纠错的新秩序。</p></div>
-  <div class="v2-actions"><a class="v2-button v2-button--primary" href="#start-here">从这里开始</a><a class="v2-button v2-button--secondary" href="/introduction-manual">阅读介绍手册</a><a class="v2-button v2-button--text" href="/about">关于公民秩序主义</a></div>
+  <p class="home-kicker">当前重点 · 北美组织筹备</p>
+  <h1>公民秩序主义北美非营利法人及首届董事会筹备工作已经启动</h1>
+  <p class="v2-hero__tagline">建设一条低阻力、低风险、能够和平承接中国未来的政治道路</p>
+  <div class="home-platform-hero__copy"><p>公民秩序主义正在从长期理论建设进入审慎的组织建设阶段，为研究、出版、公共传播与未来制度准备建立依法运行的承接基础。</p></div>
+  <div class="v2-actions"><a class="v2-button v2-button--primary" href="/preparation">了解董事会筹备</a><a class="v2-button v2-button--secondary" href="/start">了解公民秩序主义</a><a class="v2-button v2-button--text" href="/articles">阅读理论文章</a></div>
+  <p class="home-preparation-note">目前法人尚未完成注册，具体注册法域与首届董事会均未确定。筹备不表示已经取得任何法人或治理身份。</p>
 </section>
 
-<section class="home-section home-start-here" id="start-here">
-  <div class="home-section-intro"><p class="resource-label">首次访问路径</p><h2>从这里开始</h2><p>如果这是第一次接触公民秩序主义，可以按照下面的顺序建立基本认识。</p></div>
-  <div class="knowledge-grid home-start-grid"><article class="knowledge-card home-start-card">
-  <p class="knowledge-card__meta"><span>01</span></p>
-  <h3>认识公民秩序主义</h3>
-  <p class="knowledge-card__summary">了解它试图回答什么问题，以及与传统政治叙事的区别。</p>
-  <div class="home-start-card__links"><a href="/start">从这里开始 →</a></div>
+<section class="home-section home-current-stage" id="current-stage">
+  <div class="home-section-intro"><p class="resource-label">当前阶段</p><h2>从理论建设进入组织建设</h2><p>公民秩序主义目前正在推进北美非营利法人及首届董事会筹备工作。</p></div>
+  <div class="home-stage-list"><article><span>01</span><strong>北美非营利法人筹备</strong></article><article><span>02</span><strong>首届董事会筹备</strong></article><article><span>03</span><strong>组织路线建设</strong></article><article><span>04</span><strong>理论体系整理</strong></article><article><span>05</span><strong>公共传播与网站建设</strong></article></div>
+  <div class="home-section-conclusion"><strong>先建立规则、责任与长期承接结构，再稳步扩大公共协作。</strong><a href="/preparation">了解筹备工作 →</a></div>
+</section>
+
+<section class="home-section home-organization-route" id="organization-route">
+  <div class="home-section-intro"><p class="resource-label">组织路线</p><h2>从政治理论走向长期、审慎的现实准备</h2><p>公民秩序主义不是单纯的政治评论项目，也不是普通内容平台，而是一条面向中国未来政治转型的组织与政治路线。</p></div>
+  <div class="home-proposition"><p>这条路线不以激化冲突获得注意，而是通过持续的理论、组织与制度准备，逐步形成能够和平承接变化的现实能力。</p><ul><li><strong>不革命、不清算</strong>，降低政治变化中的生存性恐惧。</li><li><strong>低阻力、低风险</strong>，为不同群体保留进入未来的制度接口。</li><li><strong>和平承接中国未来</strong>，保持国家连续和基本公共服务。</li><li><strong>从理论进入组织</strong>，让路线能够长期存在、研究与传播。</li><li><strong>长期、审慎准备</strong>，以规则、责任和专业能力代替临时动员。</li></ul><strong>组织建设服务于政治路线，也必须受到程序、责任与安全边界约束。</strong></div>
+  <div class="home-section-conclusion"><strong>先理解路线，再判断长期组织建设如何为它提供承接。</strong><a href="/civic-orderism/peaceful-state-transition">了解组织路线 →</a></div>
+</section>
+
+<section class="home-section home-theory-foundations" id="theory">
+  <div class="home-section-heading"><div><p class="resource-label">公民秩序主义理论</p><h2>理解政治路线的三篇基础文章</h2><p>理论继续构成组织建设的判断基础，但首页只保留少量核心入口。</p></div><a href="/civic-orderism">进入理论栏目 →</a></div>
+  <div class="home-theory-list"><a href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one"><span>01</span><strong>如果你只读一篇：公民秩序主义到底想解决什么</strong><small>6 分钟阅读</small></a>
+<a href="/theory/party-state-structural-failure"><span>02</span><strong>党国系统的结构性失效：一个组织诊断</strong><small>10 分钟阅读</small></a>
+<a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china"><span>03</span><strong>中国和平政治转型的可能性</strong><small>8 分钟阅读</small></a></div>
+</section>
+
+<section class="home-section home-content-directions" id="content-directions">
+  <div class="home-section-intro"><p class="resource-label">三条内容主线</p><h2>理论、现实解释与未来秩序</h2><p>网站内容围绕三个稳定方向组织。每个方向只在首页展示少量精选入口。</p></div>
+  <div class="home-direction-grid"><article class="home-direction-card">
+  <p class="resource-label">内容主线</p>
+  <h3><a href="/civic-orderism">公民秩序主义</a></h3>
+  <p>介绍政治路线、现代政治问题意识，以及和平承接中国未来的制度方向。</p>
+  <ul><li><a href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">如果你只读一篇：公民秩序主义到底想解决什么</a></li><li><a href="/civic-orderism/peaceful-state-transition">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</a></li></ul>
+  <a class="home-direction-card__more" href="/civic-orderism">进入公民秩序主义 →</a>
 </article>
-<article class="knowledge-card home-start-card">
-  <p class="knowledge-card__meta"><span>02</span></p>
-  <h3>理解中国问题</h3>
-  <p class="knowledge-card__summary">从中共、国家治理与中国现实结构进入问题本身。</p>
-  <div class="home-start-card__links"><a href="/theory/party-state-structural-failure">阅读组织诊断 →</a></div>
+<article class="home-direction-card">
+  <p class="resource-label">内容主线</p>
+  <h3><a href="/china">解析中共</a></h3>
+  <p>解释中共的组织运行、官僚系统、安全叙事与结构性问题。</p>
+  <ul><li><a href="/china/security-is-redefining-china">安全，正在重新定义中国</a></li><li><a href="/theory/party-state-structural-failure">党国系统的结构性失效：一个组织诊断</a></li></ul>
+  <a class="home-direction-card__more" href="/china">进入解析中共 →</a>
 </article>
-<article class="knowledge-card home-start-card">
-  <p class="knowledge-card__meta"><span>03</span></p>
-  <h3>理解政治路线</h3>
-  <p class="knowledge-card__summary">了解为什么强调低阻力、低风险与和平承接。</p>
-  <div class="home-start-card__links"><a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china">阅读转型路线 →</a></div>
-</article>
-<article class="knowledge-card home-start-card">
-  <p class="knowledge-card__meta"><span>04</span></p>
-  <h3>阅读完整介绍</h3>
-  <p class="knowledge-card__summary">通过《公民秩序主义介绍手册》系统了解整体框架。</p>
-  <div class="home-start-card__links"><a href="/introduction-manual">在线阅读 →</a><a href="/files/civic-orderism-introduction-manual.pdf">PDF 下载</a></div>
+<article class="home-direction-card">
+  <p class="resource-label">内容主线</p>
+  <h3><a href="/china-future">中国未来</a></h3>
+  <p>讨论政治转型、国家治理、秩序承接与未来制度选择。</p>
+  <ul><li><a href="/china-stage/ccp-second-reform-opening-possibility">中共还有没有二次改开的可能？</a></li><li><a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china">中国和平政治转型的可能性</a></li></ul>
+  <a class="home-direction-card__more" href="/china-future">进入中国未来 →</a>
 </article></div>
 </section>
 
-<section class="home-section home-stakeholders" id="core-topics">
-  <div class="home-section-intro"><p class="resource-label">核心政治路线</p><h2>不革命、不清算、不让国家停摆</h2><p>人口、财政、债务、社会保障与治理压力正在叠加，旧制度发现问题、纠正错误和承担责任的能力持续下降。中国需要的不是更多愤怒，而是一条能够承接国家、维持公共服务并避免长期失序的政治道路。公民秩序主义主张通过协商、授权转换和制度重组推动和平转轨。</p></div>
-  <div class="stakeholder-grid"><article><strong>不革命</strong><p>不以社会崩溃和国家解体换取政治变化。</p></article><article><strong>不清算</strong><p>不因政治身份实施普遍追责，区分政治责任、历史责任与依法确认的犯罪责任。</p></article><article><strong>不让国家停摆</strong><p>保障国家行政体系和基本公共服务连续运行。</p></article></div>
-  <p class="home-stakeholders__summary">这条路线试图降低社会失序、个人恐惧、专业断层与行政停摆的风险，让更多人能够共同进入未来。</p>
-</section>
-
-<section class="home-section home-learning" id="learn-more">
-  <div class="home-section-heading"><div><p class="resource-label">新人精选</p><h2>推荐阅读</h2><p>四篇现有文章分别从整体介绍、中国问题、和平转型与信息化时代进入公民秩序主义。</p></div></div>
-  <div class="knowledge-grid home-recommended-grid"><article class="knowledge-card home-recommended-card">
-  <p class="knowledge-card__meta"><span>公民秩序主义</span><span>6 分钟阅读</span></p>
-  <h3><a href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">如果你只读一篇：公民秩序主义到底想解决什么</a></h3>
-  <p class="knowledge-card__summary">公民秩序主义不是口号、政党或情绪化革命方案。它关注现代国家与普通人之间的秩序关系：问题能否进入系统、权力能否追责、行政能否持续运行、制度能否纠错，以及普通人能否持续获得解释和反馈。</p>
-  <a class="home-recommended-card__link" href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">阅读全文 →</a>
-</article>
-<article class="knowledge-card home-recommended-card">
-  <p class="knowledge-card__meta"><span>解析中共</span><span>10 分钟阅读</span></p>
-  <h3><a href="/theory/party-state-structural-failure">党国系统的结构性失效：一个组织诊断</a></h3>
-  <p class="knowledge-card__summary">理解中共的未来，存在两种常见误区。</p>
-  <a class="home-recommended-card__link" href="/theory/party-state-structural-failure">阅读全文 →</a>
-</article>
-<article class="knowledge-card home-recommended-card">
-  <p class="knowledge-card__meta"><span>公民秩序主义</span><span>8 分钟阅读</span></p>
-  <h3><a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china">中国和平政治转型的可能性</a></h3>
-  <p class="knowledge-card__summary">中国的未来并非只有维持现状与失控崩塌两种结局。如果旧体系越来越难以提供长期预期，而新的政治道路能够保障国家运行、划清责任边界并为体制成员提供可信退路，合作就可能逐步取代对抗。</p>
-  <a class="home-recommended-card__link" href="/civic-orderism/possibility-of-peaceful-political-transition-in-china">阅读全文 →</a>
-</article>
-<article class="knowledge-card home-recommended-card">
-  <p class="knowledge-card__meta"><span>公民秩序主义</span><span>7 分钟阅读</span></p>
-  <h3><a href="/civic-orderism/information-age-and-political-transition">信息化时代与政治转型</a></h3>
-  <p class="knowledge-card__summary">世界已经进入信息化时代，但绝大多数国家仍运行着工业时代建立起来的治理体系。本文从时代错位、改革开放遗留问题与资源约束出发，解释公民秩序主义为何在今天提出。</p>
-  <a class="home-recommended-card__link" href="/civic-orderism/information-age-and-political-transition">阅读全文 →</a>
-</article></div>
-</section>
-
-<section class="home-section home-organization-rationale" id="current-work">
-  <div class="home-section-intro"><p class="resource-label">当前阶段</p><h2>组织筹备</h2><p>公民秩序主义正在为政治路线建立长期、稳定和依法运行的承接基础。</p></div>
-  <div class="home-build-grid home-build-grid--four"><article><strong>理论与路线研究</strong><p>持续研究和平转轨、国家连续、责任重建与现代治理问题。</p></article><article><strong>北美法人筹备</strong><p>研究注册法域、法人宗旨、业务范围与合规边界。</p></article><article><strong>董事会筹备</strong><p>准备董事责任、候选人条件与依法产生程序。</p></article><article><strong>公共传播与联系</strong><p>维护正式出版、公共说明与专业协作联系。</p></article></div>
-  <p class="home-organization-rationale__summary">目前法人尚未完成注册，具体注册法域与首届董事会均未确定。筹备参与不自动产生任何治理身份。</p>
-  <div class="home-inline-links"><a href="/preparation">了解组织筹备 →</a><a href="/participate">了解如何参与 →</a></div>
+<section class="home-section home-latest" id="latest-articles">
+  <div class="home-section-heading"><div><p class="resource-label">最新文章</p><h2>近期发布</h2><p>继续阅读最新的理论、现实分析与中国未来讨论。</p></div><a href="/articles">查看全部文章 →</a></div>
+  <div class="recent-article-list"><a href="/china/an-era-change-beginning-in-the-united-states"><span>一场起始于美国的时代变革</span><time datetime="2026-08-11">2026-08-11</time></a>
+<a href="/china/security-is-redefining-china"><span>安全，正在重新定义中国</span><time datetime="2026-08-10">2026-08-10</time></a>
+<a href="/china/why-ccp-feels-less-secure-when-everyone-claims-loyalty"><span>当所有人都说忠诚：中共为什么反而越来越没有安全感</span><time datetime="2026-08-10">2026-08-10</time></a>
+<a href="/china/what-happens-when-security-becomes-the-top-priority"><span>中共全面进入安全叙事后，中国会怎么样？</span><time datetime="2026-08-10">2026-08-10</time></a>
+<a href="/civic-orderism/north-america-nonprofit-board-preparation-manifesto"><span>公民秩序主义北美非营利法人及董事会筹备宣言</span><time datetime="2026-08-05">2026-08-05</time></a>
+<a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china"><span>中国和平政治转型的可能性</span><time datetime="2026-08-05">2026-08-05</time></a></div>
 </section>
 
 <section class="home-section home-closing" id="introduction-manual-entry">

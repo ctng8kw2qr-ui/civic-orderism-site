@@ -1,8 +1,8 @@
 ---
-title: "北美非营利法人筹备"
+title: "北美非营利法人及首届董事会筹备"
 date: 2026-07-19
-updated: 2026-07-20
-description: "了解公民秩序主义筹备北美非营利法人的目的、当前状态、拟承担的公共工作、治理原则与参与边界。"
+updated: 2026-08-11
+description: "了解公民秩序主义北美非营利法人及首届董事会筹备的目的、当前阶段、治理责任、候选人方向与联系方式。"
 contentType: "筹备页面"
 status: published
 listed: true
@@ -13,14 +13,33 @@ noindex: false
 <div class="preparation-page">
 <header class="preparation-hero">
   <p class="resource-label">政治路线的长期组织承接</p>
-  <h1>北美非营利法人筹备</h1>
-  <p>公民秩序主义首先是一条面向中国未来的政治与制度路线。北美非营利法人筹备用于为正式出版、政治与治理研究、公共传播、人才协作和数字资产保护建立依法运行的承接结构。</p>
+  <h1>北美非营利法人及首届董事会筹备</h1>
+  <p>公民秩序主义正在为正式出版、政治与治理研究、公共传播、人才协作和数字资产保护建立依法运行的承接结构。现阶段同时推进北美非营利法人和首届董事会的前期准备。</p>
   <div class="preparation-status"><span>北美非营利法人正在筹备</span><span>法人尚未完成注册</span><span>具体注册法域尚未确定</span></div>
 </header>
+
+<section class="preparation-overview" aria-labelledby="preparation-overview-title">
+  <div class="home-section-intro"><p class="resource-label">结构化摘要</p><h2 id="preparation-overview-title">当前筹备事项</h2><p>以下信息用于快速说明目前在做什么、为什么需要这套组织结构，以及如何进一步联系。</p></div>
+  <div class="preparation-overview-grid">
+    <article><span>正在筹备什么</span><strong>北美非营利法人 + 首届董事会</strong><p>为理论、研究、出版、传播与公共资产建立长期承接结构。</p></article>
+    <article><span>为什么需要法人</span><strong>让公共事业不依赖个人</strong><p>以章程、授权、财务与档案制度明确责任并保护公共资产。</p></article>
+    <article><span>为什么需要董事会</span><strong>建立监督与治理责任</strong><p>对使命、法律义务、重大决策、财务和组织资产承担集体责任。</p></article>
+    <article><span>当前阶段</span><strong>前期筹备、沟通与框架建设</strong><p>法人尚未注册，注册法域与首届董事人选均未确定。</p></article>
+    <article><span>希望联系的人</span><strong>能够承担长期责任的专业参与者</strong><p>重视公共使命、程序、安全与持续合作，不以获得身份为目的。</p></article>
+    <article><span>进一步了解或联系</span><strong><a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com</a></strong><p>备用邮箱：<a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a></p></article>
+  </div>
+  <div class="preparation-overview-actions"><a class="v2-button v2-button--primary" href="/preparation/board">了解首届董事会筹备</a><a class="v2-button v2-button--secondary" href="#preparation-contact">查看联系方式</a></div>
+</section>
 
 <section class="preparation-section">
   <div class="home-section-intro"><p class="resource-label">为什么需要法人</p><h2>让公共事业不再依赖个人意志和临时协作</h2><p>理论需要制度承载，制度需要组织实践。法人不是目的，而是明确责任、保护公共资产、建立持续治理和依法开展工作的基础设施。</p></div>
   <div class="preparation-principle-grid"><article><strong>治理可持续</strong><p>以章程、董事会、授权和记录制度代替个人化管理。</p></article><article><strong>责任可识别</strong><p>明确谁能够决策、谁承担监督、谁对财务和公共资产负责。</p></article><article><strong>资产可保护</strong><p>长期管理理论成果、品牌、域名、网站、账号、档案与出版物。</p></article></div>
+</section>
+
+<section class="preparation-section">
+  <div class="home-section-intro"><p class="resource-label">为什么需要首届董事会</p><h2>让方向、责任与公共资产受到明确监督</h2><p>董事会不是象征性头衔，而是非营利法人的治理机构。首届董事需要共同建立组织最初的责任边界和工作规则。</p></div>
+  <div class="preparation-principle-grid"><article><strong>守护公共使命</strong><p>确保研究、出版与组织工作持续服务于公民秩序主义的长期公共目的。</p></article><article><strong>承担法定责任</strong><p>依照最终注册法域的法律要求，对重大决策、合规与监督承担责任。</p></article><article><strong>保护组织资产</strong><p>监督财务、知识产权、域名、网站、账号、档案和其他公共资产。</p></article></div>
+  <p class="preparation-boundary">首届董事会尚未依法产生。参与前期沟通、提供专业意见或协助筹备，都不自动产生董事资格。</p>
 </section>
 
 <section class="preparation-section">
@@ -38,11 +57,22 @@ noindex: false
   <ul><li>先有制度，再扩大参与；</li><li>先有责任，再授予权力；</li><li>组织资产服务公共使命，不归个人所有；</li><li>未经授权，任何人不得代表组织；</li><li>采用分级授权、最小权限和可追溯的决策记录；</li><li>重要法律、财务和信息安全事项必须经过专业审查。</li></ul>
 </section>
 
+<section class="preparation-section preparation-candidates">
+  <div class="home-section-intro"><p class="resource-label">希望联系的人</p><h2>以长期治理责任为前提，而不是招募头衔</h2><p>现阶段希望与能够稳定沟通、理解受托责任，并愿意在法律、财务、治理、研究、出版、技术或组织管理方面承担长期责任的人建立联系。</p></div>
+  <ul class="preparation-work-list"><li><strong>使命与判断</strong><span>认同低阻力、低风险、和平承接中国未来的政治路线，能够区分公共使命与个人立场。</span></li><li><strong>程序与责任</strong><span>愿意接受章程、利益冲突、记录、监督和集体决策规则。</span></li><li><strong>专业与持续性</strong><span>能够在明确边界内贡献专业能力，并进行长期、克制和可靠的合作。</span></li><li><strong>安全与审慎</strong><span>理解政治、法律、财务、隐私与信息安全风险，不进行未经授权的代表或承诺。</span></li></ul>
+  <div class="preparation-actions"><a class="v2-button v2-button--primary" href="/preparation/board">查看董事责任与候选人条件</a><a class="v2-button v2-button--secondary" href="/participate">了解参与边界</a></div>
+</section>
+
 <section class="preparation-section preparation-legal-note">
   <p class="resource-label">重要状态说明</p>
   <h2>筹备不等于已经成立</h2>
   <p>截至目前，法人尚未完成注册，具体注册法域尚未确定，首届董事会尚未依法产生。本站使用“北美非营利法人筹备”和“董事会筹备”，仅描述正在进行的准备工作，不表示已经取得任何法人、慈善或免税资格。</p>
   <p><strong>参与筹备不自动产生</strong>董事资格、法定成员资格、共同创始人身份、官方代表资格、项目治理权或项目资产所有权。</p>
   <div class="preparation-actions"><a class="v2-button v2-button--primary" href="/preparation/board">了解董事会筹备</a><a class="v2-button v2-button--secondary" href="/civic-orderism/north-america-nonprofit-board-preparation-manifesto">阅读筹备宣言</a><a class="v2-button v2-button--secondary" href="/participate">参与筹备</a></div>
+</section>
+
+<section class="preparation-section preparation-contact" id="preparation-contact">
+  <div><p class="resource-label">联系方式</p><h2>进一步了解或建立联系</h2><p>如果希望了解法人筹备、首届董事会责任或专业协作边界，请通过电子邮件联系。现阶段不设置即时社群入口。</p></div>
+  <dl><div><dt>主联系邮箱</dt><dd><a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com</a></dd></div><div><dt>备用邮箱</dt><dd><a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a></dd></div></dl>
 </section>
 </div>

@@ -483,7 +483,7 @@ article blockquote[data-callout="key-point"] {
 
   &__links {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.72rem;
     margin: 0;
     padding: 0;
@@ -554,7 +554,7 @@ article blockquote[data-callout="key-point"] {
 
 .article-cta__links {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.72rem;
 }
 
@@ -644,5 +644,9 @@ article blockquote[data-callout="key-point"] {
 
   .article-cta {
     padding: 1.1rem;
+  }
+
+  .article-cta__links {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
