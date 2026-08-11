@@ -14,7 +14,7 @@ noindex: false
 
 从组织、财政、官僚运行和权力机制出发，解释中共为何走到今天。
 
-<div class="section-stats"><span>35 篇已发布文章</span><span>4 个正式专题</span><span>更新至 2026-07-31</span></div>
+<div class="section-stats"><span>36 篇已发布文章</span><span>4 个正式专题</span><span>更新至 2026-08-10</span></div>
 
 <div class="section-core-judgment"><strong>栏目核心判断</strong><p>中共面临的并非单一政策失误，而是权力集中、反馈失真、官僚避责与组织信用消耗相互放大的系统性问题。</p></div>
 
@@ -59,6 +59,11 @@ noindex: false
   <button type="button" data-filter-reset>重置</button>
 </div>
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
+  <p class="knowledge-card__meta"><span>2026-08-10</span><span>12 分钟阅读</span></p>
+  <h3><a href="/china/why-ccp-feels-less-secure-when-everyone-claims-loyalty">当所有人都说忠诚：中共为什么反而越来越没有安全感</a></h3>
+  <p class="knowledge-card__summary">本文从组织政治中的甄别机制出发，解释中共为何在忠诚表态越来越整齐、党员规模越来越庞大时，反而更难判断成员的真实动机。真正制造安全焦虑的，不一定是成员普遍不忠诚，而是利益退潮以后，组织无法提前知道还有多少人愿意共同承担风险。</p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="three-cleans-era fiscal-debt political-debt">
   <p class="knowledge-card__meta"><span>2026-07-31</span><span>11 分钟阅读</span></p>
   <h3><a href="/china/route-transition-why-ccp-keeps-purging-officials">路线转换：中共为什么必须不断清洗自己的官员</a></h3>

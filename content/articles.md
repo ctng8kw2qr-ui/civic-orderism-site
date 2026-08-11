@@ -241,10 +241,10 @@ enableToc: false
 
 ## 十、近期文章
 
+- [[china/why-ccp-feels-less-secure-when-everyone-claims-loyalty|当所有人都说忠诚：中共为什么反而越来越没有安全感]]（2026-08-10）
 - [[civic-orderism/north-america-nonprofit-board-preparation-manifesto|公民秩序主义北美非营利法人及董事会筹备宣言]]（2026-08-05）
 - [[civic-orderism/possibility-of-peaceful-political-transition-in-china|中国和平政治转型的可能性]]（2026-08-05）
 - [[civic-orderism/information-age-and-political-transition|信息化时代与政治转型]]（2026-07-24）
 - [[china/xi-successor-and-bureaucratic-accountability|习近平到底有没有接班人？]]（2026-07-21）
-- [[civic-orderism/peaceful-state-transition|国家如何平稳转轨：公民秩序主义不是中共官僚的敌人]]（2026-07-19）
 
-本站共收录 93 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。
+本站共收录 94 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。
