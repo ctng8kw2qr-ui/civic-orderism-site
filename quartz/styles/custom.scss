@@ -2348,6 +2348,12 @@ article .home-closing .resource-actions {
   margin: 0.3rem 0 0.25rem;
 }
 
+article .home-closing .resource-actions .resource-button-primary,
+article .home-closing .resource-actions .resource-button-primary:hover,
+article .home-closing .resource-actions .resource-button-primary:focus-visible {
+  color: #fff;
+}
+
 article .home-closing .resource-actions a + a {
   padding-top: 0.55rem;
   border-top: 1px solid var(--gray);
