@@ -1,4 +1,5 @@
 import migration from "../../content-migration-map.json";
+import chinaAnalysis from "../../data/china-analysis.config.json";
 import sections from "../../data/sections.config.json";
 import topics from "../../data/topics.config.json";
 import {
@@ -26,6 +27,10 @@ const topicBySlug = new Map(topics.map((topic) => [topic.slug, topic]));
 const articleSectionBySlug = new Map(
   migration.map((article) => [article.slug, article.section]),
 );
+const chinaAnalysisLinks = chinaAnalysis.groups.map((group, index) => ({
+  label: group.name,
+  href: `/china#${["一", "二", "三", "四", "五"][index]}${group.name.replace(/[、，,]/g, "")}`,
+}));
 
 function activeSection(slug: string) {
   const directSection = sections.find(
@@ -82,11 +87,19 @@ const KnowledgeSidebar: QuartzComponent = ({
               </a>
               {expanded && section ? (
                 <div class="knowledge-sidebar__section-links">
-                  <a href={`/${section.slug}#推荐文章`}>推荐阅读</a>
-                  {sectionTopics.map((topic) => (
-                    <a href={`/topics/${topic!.slug}`}>{topic!.name}</a>
-                  ))}
-                  <a href={`/${section.slug}#全部文章`}>查看全部文章</a>
+                  {section.slug === "china" ? (
+                    chinaAnalysisLinks.map((link) => (
+                      <a href={link.href}>{link.label}</a>
+                    ))
+                  ) : (
+                    <>
+                      <a href={`/${section.slug}#推荐文章`}>推荐阅读</a>
+                      {sectionTopics.map((topic) => (
+                        <a href={`/topics/${topic!.slug}`}>{topic!.name}</a>
+                      ))}
+                      <a href={`/${section.slug}#全部文章`}>查看全部文章</a>
+                    </>
+                  )}
                 </div>
               ) : null}
             </li>

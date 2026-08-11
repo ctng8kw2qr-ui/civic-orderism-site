@@ -54,7 +54,8 @@
     "updated": "2026-05-19",
     "summary": "本文分析台海战争真正的危险并不一定来自一次性发动全面战争的决策，而更可能来自一连串被认为可控的渐进升级。文章从台海困境的结构性本质、威权体制的信息过滤机制、准封锁、外岛行动、经济制裁、精英问责以及晚年统治者心理等角度，解释“可控升级的幻觉”如何把决策者推向战争临界点。",
     "originalSection": "china",
-    "section": "中国未来",
+    "section": "解析中共",
+    "chinaAnalysisSection": "外交、军事与外溢风险",
     "tags": [
       "解析中共",
       "台海",
@@ -224,6 +225,7 @@
     "summary": "一个体制最危险的状态，不是它的敌人足够强大，而是它的支柱已经空心，却在外表上仍然完好无损。",
     "originalSection": "解析中共",
     "section": "解析中共",
+    "chinaAnalysisSection": "官僚系统与组织成员",
     "tags": [
       "解析中共",
       "公民秩序主义",
@@ -257,7 +259,8 @@
     "updated": "2026-05-10",
     "summary": "本文基于战争四驱动框架，从意识形态动员、内部压力外溢、领土争端、安全困境与组织责任分配角度，评估台海是否会走向全面战争。",
     "originalSection": "解析中共",
-    "section": "中国未来",
+    "section": "解析中共",
+    "chinaAnalysisSection": "外交、军事与外溢风险",
     "tags": ["解析中共", "理论总纲", "安全困境"],
     "status": "published",
     "primaryTopic": null,
@@ -285,6 +288,7 @@
     "summary": "本文以外交是内政的延续为理论起点，分析中共近年来外交政策激进化的深层逻辑，指出其根源在于国内经济衰退、体制焦虑与权力维稳的自我防御机制。",
     "originalSection": "解析中共",
     "section": "解析中共",
+    "chinaAnalysisSection": "外交、军事与外溢风险",
     "tags": ["解析中共", "理论总纲", "外交"],
     "status": "published",
     "primaryTopic": null,
@@ -310,6 +314,7 @@
     "summary": "外界谈解放军，最大的错觉来自一个字：",
     "originalSection": "解析中共",
     "section": "解析中共",
+    "chinaAnalysisSection": "外交、军事与外溢风险",
     "tags": [
       "解析中共",
       "公民秩序主义",
@@ -387,6 +392,7 @@
     "summary": "《大明王朝1566》中，有一句被无数观众记住的台词。",
     "originalSection": "解析中共",
     "section": "解析中共",
+    "chinaAnalysisSection": "结构性困境与组织失灵",
     "tags": [
       "制度设计",
       "公民秩序主义",

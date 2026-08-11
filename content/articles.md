@@ -84,7 +84,7 @@ enableToc: false
 - [[china/information-age-impact-on-ccp-mechanisms|信息化时代冲击中共的机制]]（2026-05-19）
 - [[china/bureaucratic-system-under-purges|高位清洗如何改变中共官僚系统]]（2026-05-17）
 - [[china/ccp-from-faith-community-to-black-box-post|从“信仰共同体”到“黑箱岗位”：中共内部成员心态的三次断裂]]（2026-05-13）
-- [[china/Macro Narratives, Opportunity Incentives, and High Fragility|宏观叙事、机会激励与高脆弱态：中共为何更可能“失灵”而非“倒台”]]（2026-05-13）
+- [[china/Macro-Narratives,-Opportunity-Incentives,-and-High-Fragility|宏观叙事、机会激励与高脆弱态：中共为何更可能“失灵”而非“倒台”]]（2026-05-13）
 - [[china/ccp-power-network-not-line|中共的权力布局不是一条线，而是一张网]]（2026-05-13）
 - [[china/ccp-2018-new-reform-opening|2018新“改革开放”：从开放社会到封闭风险]]（2026-05-10）
 - [[china/propaganda-system-hollowing-out|不是不会宣传，而是不敢承担：中宣系统“翻车常态化”背后的空心化逻辑]]（2026-05-10）

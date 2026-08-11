@@ -26,9 +26,15 @@ const sections = readJson("sections.config.json");
 const topics = readJson("topics.config.json");
 const concepts = readJson("concepts.config.json");
 const institutionSections = readJson("institution-sections.config.json");
+const chinaAnalysis = readJson("china-analysis.config.json");
 const readingPaths = readJson("reading-paths.config.json");
 const readingSequences = readJson("reading-sequences.config.json");
 const articleTopicAssignments = readJson("article-topics.config.json");
+const chinaAnalysisSectionBySlug = new Map(
+  chinaAnalysis.groups.flatMap((group) =>
+    group.slugs.map((slug) => [slug, group.name]),
+  ),
+);
 const existingMigrationMap = fs.existsSync(
   path.join(rootDir, "content-migration-map.json"),
 )
@@ -94,15 +100,6 @@ const institutionSlugs = new Set([
   "civic-orderism/why-justice-serves-reality",
   "civic-orderism/why-civic-orderism-emphasizes-experience-and-records",
 ]);
-const futureSlugs = new Set([
-  "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
-  "china/ccp-reform-political-balance-deadlock",
-  "china/ccp-bureaucracy-historical-bill",
-  "china/chicken-and-cage",
-  "china/maginot-line-of-stability-maintenance",
-  "china/taiwan-war-risk",
-  "china/taiwan-war-controllable-escalation-illusion",
-]);
 const ccpTheorySlugs = new Set([
   "theory/party-state-structural-failure",
   "theory/high-rigidity-system-ccp",
@@ -158,8 +155,7 @@ function newSection(slug) {
   if (institutionSlugs.has(slug) || slug.startsWith("institution/"))
     return "制度设计";
   if (slug.startsWith("civic-orderism/")) return "公民秩序主义";
-  if (slug.startsWith("china-stage/") || futureSlugs.has(slug))
-    return "中国未来";
+  if (slug.startsWith("china-stage/")) return "中国未来";
   if (slug.startsWith("china/") || ccpTheorySlugs.has(slug)) return "解析中共";
   return "公民秩序主义";
 }
@@ -308,6 +304,7 @@ const articles = walk(contentDir)
       body: parsed.content.replace(/\s+/g, " ").trim(),
       originalSection: originalSection(slug, parsed.data),
       section: newSection(slug),
+      chinaAnalysisSection: chinaAnalysisSectionBySlug.get(slug),
       institutionSection:
         typeof parsed.data.institutionSection === "string"
           ? parsed.data.institutionSection
@@ -350,6 +347,36 @@ const articles = walk(contentDir)
   );
 
 const articleBySlug = new Map(articles.map((item) => [item.slug, item]));
+const chinaAnalysisSlugs = chinaAnalysis.groups.flatMap((group) => group.slugs);
+if (
+  chinaAnalysis.groups.length !== 5 ||
+  new Set(chinaAnalysisSlugs).size !== chinaAnalysisSlugs.length
+) {
+  throw new Error(
+    "China analysis configuration must contain five groups with unique article slugs.",
+  );
+}
+for (const slug of chinaAnalysisSlugs) {
+  const article = articleBySlug.get(slug);
+  if (!article) {
+    throw new Error(`China analysis article does not exist: ${slug}`);
+  }
+  if (article.section !== "解析中共") {
+    throw new Error(
+      `China analysis article is outside 解析中共: ${slug} -> ${article.section}`,
+    );
+  }
+}
+const unclassifiedChinaArticles = articles.filter(
+  (article) =>
+    article.section === "解析中共" &&
+    !chinaAnalysisSlugs.includes(article.slug),
+);
+if (unclassifiedChinaArticles.length > 0) {
+  throw new Error(
+    `Unclassified 解析中共 articles: ${unclassifiedChinaArticles.map((article) => article.slug).join(", ")}`,
+  );
+}
 const configuredInstitutionSlugs = institutionSections.flatMap(
   (section) => section.articles,
 );
@@ -468,6 +495,19 @@ function articleCard(article, options = {}) {
       : ""
   }
 </article>`;
+}
+
+function chinaAnalysisGrid(items) {
+  return `<div class="knowledge-grid">
+${items
+  .map(
+    (article) => `<article class="knowledge-card">
+  <p class="knowledge-card__meta"><span>${article.date || "日期待补"}</span><span>${article.readingMinutes} 分钟阅读</span></p>
+  <h3><a href="/${encodeURI(article.slug)}">${article.title}</a></h3>
+</article>`,
+  )
+  .join("\n")}
+</div>`;
 }
 
 function homeArticleCard(article) {
@@ -649,6 +689,9 @@ function sectionPage(section) {
   if (section.slug === "institution-design") {
     return institutionDesignPage(section);
   }
+  if (section.slug === "china") {
+    return chinaAnalysisPage(section);
+  }
   const items = articles.filter(
     (article) =>
       article.section === section.name && article.status === "published",
@@ -707,6 +750,42 @@ ${filterPanel(items)}
 ## 相关核心概念
 
 ${relatedConcepts.length ? `<div class="section-concept-links">${relatedConcepts.map((concept) => `<a href="/concepts/${concept.slug}">${concept.name}</a>`).join("\n")}</div>` : "当前暂无已公开的相关核心概念。"}`;
+}
+
+function chinaAnalysisPage(section) {
+  const groups = chinaAnalysis.groups.map((group, index) => {
+    const items = group.slugs
+      .map((slug) => articleBySlug.get(slug))
+      .filter((article) => article?.status === "published");
+    const number = ["一", "二", "三", "四", "五"][index];
+    return `## ${number}、${group.name}
+
+${group.description}
+
+${chinaAnalysisGrid(items)}`;
+  });
+  const items = chinaAnalysisSlugs
+    .map((slug) => articleBySlug.get(slug))
+    .filter((article) => article?.status === "published");
+  const latestUpdate = [...items].sort(
+    (a, b) =>
+      b.updated.localeCompare(a.updated) ||
+      a.title.localeCompare(b.title, "zh-CN"),
+  )[0]?.updated;
+
+  return `${yamlFrontmatter({ title: section.name, description: section.description, contentType: "栏目" })}
+
+# ${section.name}
+
+${section.description}
+
+<div class="section-stats"><span>${items.length} 篇已发布文章</span><span>5 个分析层次</span><span>更新至 ${latestUpdate || "2026-07-19"}</span></div>
+
+<div class="section-core-judgment"><strong>栏目核心判断</strong><p>${section.coreJudgment}</p></div>
+
+${chinaAnalysis.readingHint}
+
+${groups.join("\n\n")}`;
 }
 
 for (const section of sections) {

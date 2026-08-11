@@ -3,6 +3,9 @@ import path from "node:path";
 import matter from "gray-matter";
 
 const contentDir = path.resolve("content");
+const chinaAnalysis = JSON.parse(
+  fs.readFileSync(path.resolve("data/china-analysis.config.json"), "utf8"),
+);
 const articleDirectories = [
   "theory/",
   "china/",
@@ -36,7 +39,7 @@ function isIndexPage(relativePath) {
 }
 
 function slugFor(relativePath) {
-  return relativePath.replace(/\.md$/, "");
+  return relativePath.replace(/\.md$/, "").replaceAll(" ", "-");
 }
 
 function normalizeDate(value) {
@@ -222,7 +225,7 @@ const slugs = {
     "china/elite-sandification-ming-bureaucrats-ccp",
     "china/organization-credit-retired-officials",
     "china/ccp-2018-new-reform-opening",
-    "china/Macro Narratives, Opportunity Incentives, and High Fragility",
+    "china/Macro-Narratives,-Opportunity-Incentives,-and-High-Fragility",
     "china/propaganda-system-hollowing-out",
   ],
   stage: [
@@ -622,67 +625,22 @@ date: 2026-05-10
 category: "解析中共"
 tags:
   - china
-description: "解释中共作为组织的权力结构、官僚系统、宣传系统、责任结构与防御化转向。"
+description: "把中共视为一个现实运行中的政治组织，从权力结构、组织成员、结构性困境、防御转型及其外部影响五个层面观察其变化。"
 status: published
 ---
 
 # 解析中共
 
-这里不把中共简单理解为某个人的意志，也不把中国问题简化为宫廷斗争，而是把中共作为一个组织来分析：它如何形成、如何运转、如何集中权力，又如何在资源收缩和社会复杂化中逐渐进入防御状态。
+不以情绪、立场或单一事件为起点，而是把中共视为一个现实运行中的政治组织，从权力结构、组织成员、结构性困境、防御转型及其外部影响五个层面观察其变化。
 
 ## 文章列表
 
-### 一、组织结构与系统失效
-
-${articleLines([
-  "china/mao-death-release-xi-death-weightlessness",
-  "china/ccp-no-real-base",
-  "theory/party-state-structural-failure",
-  "china/ccp-power-network-not-line",
-  "china/xi-power-centralization",
-  "china/xi-solved-organization-not-reality",
-  "china/xi-succession-crisis-gray-rhino",
-  "china/ccp-2018-new-reform-opening",
-])}
-
-### 二、从增长型组织到防御型组织
-
-${articleLines([
-  "china/ccp-2018-xi-era-local-growth-space",
-  "china/supply-side-reform-state-can-scale-not-discover-future",
-  "china/information-age-impact-on-ccp-mechanisms",
-  "theory/high-rigidity-system-ccp",
-  "theory/ccp-high-fragility-dysfunction",
-  "china/political-machine-rewards-and-limits",
-  "china/party-power-logic-and-ccp-goal-vacuum",
-  "china/emotional-link-breakdown-and-regime-collapse",
-  "china/Macro Narratives, Opportunity Incentives, and High Fragility",
-])}
-
-### 三、官僚系统、宣传系统与责任压缩
-
-${articleLines([
-  "china/route-transition-why-ccp-keeps-purging-officials",
-  "china/why-expulsion-from-party-becomes-standard-ending",
-  "china/why-ccp-cannot-reduce-grassroots-burden",
-  "china/why-ccp-will-not-relax-party-pressure",
-  "china/bureaucratic-system-under-purges",
-  "china/ccp-bureaucracy-double-deadlock",
-  "china/when-high-ranking-officials-are-no-longer-safe",
-  "china/ccp-from-faith-community-to-black-box-post",
-  "china/organization-credit-retired-officials",
-  "china/propaganda-system-hollowing-out",
-])}
-
-### 四、历史比较、外交外溢与误判风险
-
-${articleLines([
-  "china/elite-sandification-ming-bureaucrats-ccp",
-  "china/diplomacy-root",
-  "china/pla-political-subject-myth",
-  "china/taiwan-war-risk",
-  "china/taiwan-war-controllable-escalation-illusion",
-])}`,
+${chinaAnalysis.groups
+  .map(
+    (group, index) =>
+      `### ${["一", "二", "三", "四", "五"][index]}、${group.name}\n\n${group.description}\n\n${articleLines(group.slugs, { sort: "manual" })}`,
+  )
+  .join("\n\n")}`,
 );
 
 writeFile(
