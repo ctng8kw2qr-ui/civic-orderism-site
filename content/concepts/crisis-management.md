@@ -51,6 +51,12 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">从收护照、特斯拉、华为与干部系统清洗出发，观察安全如何从一项政策目标变成重新计算人员、技术、资本、产业与权力网络的上位原则。</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management">
+  <p class="knowledge-card__meta"><span>2026-08-10</span><span>6 分钟阅读</span></p>
+  <h3><a href="/china/what-happens-when-security-becomes-the-top-priority">中共全面进入安全叙事后，中国会怎么样？</a></h3>
+  <p class="knowledge-card__summary">当“是否安全、是否可控”成为政策的前置条件，变化的不只是某几项政策，而是整个国家的发展排序。技术和工业能力仍可能继续增强，文化、公共空间与社会自主性则会承担更高的制度成本。</p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management fiscal-debt">
   <p class="knowledge-card__meta"><span>2026-07-28</span><span>16 分钟阅读</span></p>
   <h3><a href="/china/supply-side-reform-state-can-scale-not-discover-future">供给侧改革之后：国家能放大产业，却未必能发现未来</a></h3>
@@ -103,12 +109,6 @@ publicationStatus: reviewing
   <p class="knowledge-card__meta"><span>2026-05-17</span><span>9 分钟阅读</span></p>
   <h3><a href="/china/bureaucratic-system-under-purges">高位清洗如何改变中共官僚系统</a></h3>
   <p class="knowledge-card__summary">省部级官员密集落马，表面上看是反腐问题，深层看则是官僚系统安全感与运行逻辑的变化。高位安全边界后退、经济低预期和责任倒查叠加，会推动官僚群体进入避责、观望、伪执行和系统性自保状态，使官僚系统从主动型系统转向防御型系统。</p>
-  <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚休克</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
-  <p class="knowledge-card__meta"><span>2026-05-13</span><span>11 分钟阅读</span></p>
-  <h3><a href="/china/ccp-power-network-not-line">中共的权力布局不是一条线，而是一张网</a></h3>
-  <p class="knowledge-card__summary">本文区分中共权力的展示形态与运行形态，指出中共权力在表面上像一条垂直权力线，但在实际运行中更像一张多节点、多阀门、多路径的权力网。</p>
   <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚休克</span></p>
 </article>
 </div>

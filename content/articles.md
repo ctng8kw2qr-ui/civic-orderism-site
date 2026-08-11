@@ -243,8 +243,8 @@ enableToc: false
 
 - [[china/security-is-redefining-china|安全，正在重新定义中国]]（2026-08-10）
 - [[china/why-ccp-feels-less-secure-when-everyone-claims-loyalty|当所有人都说忠诚：中共为什么反而越来越没有安全感]]（2026-08-10）
+- [[china/what-happens-when-security-becomes-the-top-priority|中共全面进入安全叙事后，中国会怎么样？]]（2026-08-10）
 - [[civic-orderism/north-america-nonprofit-board-preparation-manifesto|公民秩序主义北美非营利法人及董事会筹备宣言]]（2026-08-05）
 - [[civic-orderism/possibility-of-peaceful-political-transition-in-china|中国和平政治转型的可能性]]（2026-08-05）
-- [[civic-orderism/information-age-and-political-transition|信息化时代与政治转型]]（2026-07-24）
 
-本站共收录 95 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。
+本站共收录 96 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。

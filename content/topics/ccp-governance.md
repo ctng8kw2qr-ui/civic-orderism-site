@@ -14,7 +14,7 @@ noindex: false
 
 分析压力传导、组织控制、宣传与危机管理的实际机制。
 
-<div class="topic-hero-note"><strong>核心判断</strong><p>统治能力并不等于治理能力；短期控制工具的叠加，可能持续消耗长期组织信用。</p><small>7 篇相关文章 · 最近更新 2026-08-10</small></div>
+<div class="topic-hero-note"><strong>核心判断</strong><p>统治能力并不等于治理能力；短期控制工具的叠加，可能持续消耗长期组织信用。</p><small>8 篇相关文章 · 最近更新 2026-08-10</small></div>
 
 ## 推荐阅读顺序
 
@@ -29,6 +29,12 @@ noindex: false
   <p class="knowledge-card__meta"><span>2026-08-10</span><span>9 分钟阅读</span></p>
   <h3><a href="/china/security-is-redefining-china">安全，正在重新定义中国</a></h3>
   <p class="knowledge-card__summary">从收护照、特斯拉、华为与干部系统清洗出发，观察安全如何从一项政策目标变成重新计算人员、技术、资本、产业与权力网络的上位原则。</p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+</article>
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management">
+  <p class="knowledge-card__meta"><span>2026-08-10</span><span>6 分钟阅读</span></p>
+  <h3><a href="/china/what-happens-when-security-becomes-the-top-priority">中共全面进入安全叙事后，中国会怎么样？</a></h3>
+  <p class="knowledge-card__summary">当“是否安全、是否可控”成为政策的前置条件，变化的不只是某几项政策，而是整个国家的发展排序。技术和工业能力仍可能继续增强，文化、公共空间与社会自主性则会承担更高的制度成本。</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management fiscal-debt">

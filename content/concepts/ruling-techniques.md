@@ -63,6 +63,12 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">从收护照、特斯拉、华为与干部系统清洗出发，观察安全如何从一项政策目标变成重新计算人员、技术、资本、产业与权力网络的上位原则。</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management">
+  <p class="knowledge-card__meta"><span>2026-08-10</span><span>6 分钟阅读</span></p>
+  <h3><a href="/china/what-happens-when-security-becomes-the-top-priority">中共全面进入安全叙事后，中国会怎么样？</a></h3>
+  <p class="knowledge-card__summary">当“是否安全、是否可控”成为政策的前置条件，变化的不只是某几项政策，而是整个国家的发展排序。技术和工业能力仍可能继续增强，文化、公共空间与社会自主性则会承担更高的制度成本。</p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management fiscal-debt">
   <p class="knowledge-card__meta"><span>2026-07-28</span><span>16 分钟阅读</span></p>
   <h3><a href="/china/supply-side-reform-state-can-scale-not-discover-future">供给侧改革之后：国家能放大产业，却未必能发现未来</a></h3>
@@ -104,12 +110,6 @@ publicationStatus: reviewing
   <h3><a href="/civic-orderism/top-level-power-structure-under-civic-orderism">公民秩序主义下顶层权力结构的布局：为什么国家最高层不能只有一个权力中心，也不能碎片化成互相消耗的多头政治</a></h3>
   <p class="knowledge-card__summary">说明顶层权力如何在方向、判断、执行、确认、裁判和制度免疫之间分置并保持统合。</p>
   <p class="knowledge-card__chips"><span>概念：官僚休克</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="crisis-management ruling-techniques">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>9 分钟阅读</span></p>
-  <h3><a href="/china/maginot-line-of-stability-maintenance">一个难以言说的防线：从“液压维稳”到当代的马其诺防线</a></h3>
-  <p class="knowledge-card__summary">一个难以言说的防线：从“液压维稳”到当代的马其诺防线的结构分析与研究笔记。</p>
-  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：危机管理</span></p>
 </article>
 </div>
 
