@@ -3370,6 +3370,15 @@ article .preparation-hero > p:not(.resource-label) {
   line-height: 1.8;
 }
 
+article .preparation-hero > .preparation-status-note {
+  margin-top: 1.15rem;
+  padding-left: 0.85rem;
+  border-left: 2px solid #9b7c3e;
+  color: var(--gray);
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
 article .preparation-status {
   display: flex;
   flex-wrap: wrap;

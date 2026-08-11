@@ -17,7 +17,7 @@ aliases:
   <p class="home-kicker">当前重点 · 北美组织筹备</p>
   <h1>公民秩序主义北美非营利法人及首届董事会筹备工作已经启动</h1>
   <p class="v2-hero__tagline">建设一条低阻力、低风险、能够和平承接中国未来的政治道路</p>
-  <div class="home-platform-hero__copy"><p>公民秩序主义正在从长期理论建设进入审慎的组织建设阶段，为研究、出版、公共传播与未来制度准备建立依法运行的承接基础。</p></div>
+  <div class="home-platform-hero__copy"><p>公民秩序主义正在从理论建设进入组织建设阶段，为长期研究、出版、公共传播和未来政治承接建立稳定、依法运行的组织基础。</p></div>
   <div class="v2-actions"><a class="v2-button v2-button--primary" href="/preparation">了解董事会筹备</a><a class="v2-button v2-button--secondary" href="/start">了解公民秩序主义</a><a class="v2-button v2-button--text" href="/articles">阅读理论文章</a></div>
   <p class="home-preparation-note">目前法人尚未完成注册，具体注册法域与首届董事会均未确定。筹备不表示已经取得任何法人或治理身份。</p>
 </section>
@@ -34,15 +34,12 @@ aliases:
   <div class="home-section-conclusion"><strong>先理解路线，再判断长期组织建设如何为它提供承接。</strong><a href="/civic-orderism/peaceful-state-transition">了解组织路线 →</a></div>
 </section>
 
-<section class="home-section home-theory-foundations" id="theory">
-  <div class="home-section-heading"><div><p class="resource-label">公民秩序主义理论</p><h2>理解政治路线的三篇基础文章</h2><p>理论继续构成组织建设的判断基础，但首页只保留少量核心入口。</p></div><a href="/civic-orderism">进入理论栏目 →</a></div>
-  <div class="home-theory-list"><a href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one"><span>01</span><strong>如果你只读一篇：公民秩序主义到底想解决什么</strong><small>6 分钟阅读</small></a>
-<a href="/theory/party-state-structural-failure"><span>02</span><strong>党国系统的结构性失效：一个组织诊断</strong><small>10 分钟阅读</small></a>
-<a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china"><span>03</span><strong>中国和平政治转型的可能性</strong><small>8 分钟阅读</small></a></div>
+<section class="home-section home-current-participation" id="current-participation">
+  <div class="home-method-teaser"><div><p class="resource-label">参与当前筹备</p><h2>参与当前筹备</h2><p>公民秩序主义现阶段不以扩大人数和公开招募为目标。</p><p>认同基本路线的人，可以从了解与传播、专业协作、建立长期联系，或参与北美非营利法人及首届董事会筹备开始。</p></div><a class="v2-button v2-button--secondary" href="/participate">了解参与方式</a></div>
 </section>
 
 <section class="home-section home-content-directions" id="content-directions">
-  <div class="home-section-intro"><p class="resource-label">三条内容主线</p><h2>理论、现实解释与未来秩序</h2><p>网站内容围绕三个稳定方向组织。每个方向只在首页展示少量精选入口。</p></div>
+  <div class="home-section-intro"><p class="resource-label">理论与研究</p><h2>理论与研究</h2><p>理论研究继续为组织建设提供判断基础。首页只保留公民秩序主义、解析中共和中国未来三个方向的少量精选入口。</p></div>
   <div class="home-direction-grid"><article class="home-direction-card">
   <p class="resource-label">内容主线</p>
   <h3><a href="/civic-orderism">公民秩序主义</a></h3>

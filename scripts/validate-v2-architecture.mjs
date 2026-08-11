@@ -478,16 +478,17 @@ assert(
 );
 assert(
   homepageMainText.includes(
-    "公民秩序主义正在从长期理论建设进入审慎的组织建设阶段",
+    "公民秩序主义正在从理论建设进入组织建设阶段，为长期研究、出版、公共传播和未来政治承接建立稳定、依法运行的组织基础",
   ),
   "首页首屏缺少从理论建设进入组织建设的阶段说明",
 );
 assert(
   homepageText.includes("从理论建设进入组织建设") &&
     homepageText.includes("从政治理论走向长期、审慎的现实准备") &&
-    homepageText.includes("公民秩序主义理论") &&
+    homepageText.includes("参与当前筹备") &&
+    homepageText.includes("理论与研究") &&
     homepageText.includes("介绍手册与联系"),
-  "首页缺少当前阶段、组织路线、理论或联系模块",
+  "首页缺少当前阶段、组织路线、参与、理论或联系模块",
 );
 assert(
   homepageHtml.includes('data-slug="preparation"') &&
@@ -507,8 +508,8 @@ assert(
 const expectedHomepageHeadings = [
   "从理论建设进入组织建设",
   "从政治理论走向长期、审慎的现实准备",
-  "理解政治路线的三篇基础文章",
-  "理论、现实解释与未来秩序",
+  "参与当前筹备",
+  "理论与研究",
   "近期发布",
   "介绍手册与联系",
 ];
@@ -539,10 +540,15 @@ assert(
   "首页程序状态没有压缩为一段简短说明",
 );
 assert(
-  !homepageMainText.includes("从认同到建设") &&
-    !homepageMainHtml.includes("home-participation") &&
-    homepageMainText.includes("了解筹备工作"),
-  "首页仍展开参与页内容，或缺少简短筹备入口",
+  homepageMainText.includes("公民秩序主义现阶段不以扩大人数和公开招募为目标") &&
+    homepageMainText.includes(
+      "认同基本路线的人，可以从了解与传播、专业协作、建立长期联系，或参与北美非营利法人及首届董事会筹备开始",
+    ) &&
+    homepageMainHtml.includes('data-slug="participate"') &&
+    homepageMainText.includes("了解参与方式") &&
+    !homepageMainText.includes("立即加入") &&
+    !homepageMainText.includes("马上报名"),
+  "首页缺少克制的当前筹备参与入口，或出现强招募表达",
 );
 for (const title of [
   "如果你只读一篇：公民秩序主义到底想解决什么",
@@ -706,14 +712,24 @@ for (const requiredText of [
   "选择注册法域",
   "筹备不等于已经成立",
   "不表示已经取得任何法人、慈善或免税资格",
+  "现阶段正在识别并接触潜在首届董事候选人，但不会通过公开报名直接产生董事资格",
+  "参与筹备不自动获得治理身份",
+  "均须在制度准备完成后，依照适用法律、章程与正式程序产生",
 ]) {
   assert(
     preparationText.includes(requiredText),
     `法人筹备页缺少内容：${requiredText}`,
   );
 }
+assert(
+  preparationText.includes(
+    "当前处于北美非营利法人及首届董事会前期筹备阶段，法人尚未完成注册，首届董事会尚未依法产生",
+  ) && !preparationHtml.includes("preparation-boundary"),
+  "法人筹备页顶部状态说明未收紧，或正文仍重复状态提醒",
+);
 for (const requiredText of [
   "治理责任，不是荣誉头衔",
+  "现阶段正在识别并接触潜在首届董事候选人，但不会通过公开报名直接产生董事资格",
   "不会通过公开报名直接任命",
   "筹备联系不构成任命或承诺",
 ]) {
