@@ -969,28 +969,33 @@ const readingRouteConfigs = [
     title: "第一次了解公民秩序主义",
     description:
       "用少量核心材料理解公民秩序主义是什么、为什么提出这条路线、试图解决什么问题，以及当前已经进入什么组织阶段。",
+    audience: "第一次访问本站，希望快速建立整体认识的读者",
+    duration: "约 25–35 分钟",
     entries: [
       { href: "/introduction-manual", title: "公民秩序主义介绍手册" },
       "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
       "civic-orderism/why-civic-orderism",
       "civic-orderism/possibility-of-peaceful-political-transition-in-china",
-      {
-        href: "/preparation",
-        title: "北美非营利法人及首届董事会筹备",
-      },
-      { href: "/participate", title: "参与方式" },
     ],
     moreHref: "/civic-orderism",
-    moreLabel: "查看公民秩序主义全部文章 →",
+    moreLabel: "查看本路线延伸阅读 →",
+    nextHref: "#route-china-reality",
+    nextLabel: "继续：理解今天的中国 →",
+    organizationLinks: [
+      { href: "/preparation", title: "了解董事会筹备" },
+      { href: "/participate", title: "了解参与方式" },
+    ],
     primary: true,
   },
   {
     id: "route-china-reality",
     number: "02",
     label: "现实判断",
-    title: "理解中共与中国现实",
+    title: "理解今天的中国",
     description:
       "从中共的组织结构、官僚系统、路线调整与安全叙事出发，理解中国当前正在进入什么阶段，以及为什么现有治理逻辑越来越难以处理结构性问题。",
+    audience: "希望从中共组织运行与中国现实问题进入的读者",
+    duration: "约 35–50 分钟",
     entries: [
       "china/ccp-no-real-base",
       "theory/party-state-structural-failure",
@@ -999,7 +1004,9 @@ const readingRouteConfigs = [
       "civic-orderism/possibility-of-peaceful-political-transition-in-china",
     ],
     moreHref: "/china",
-    moreLabel: "查看解析中共全部文章 →",
+    moreLabel: "查看本路线延伸阅读 →",
+    nextHref: "#route-theory",
+    nextLabel: "继续：理解公民秩序主义的理论路线 →",
   },
   {
     id: "route-theory",
@@ -1008,15 +1015,19 @@ const readingRouteConfigs = [
     title: "理解公民秩序主义的理论路线",
     description:
       "从工业时代政治制度与信息化社会之间的错位进入，理解为什么需要新的政治组织方式，以及秩序、责任、专业判断和制度承接如何形成一条完整路线。",
+    audience: "希望理解公民秩序主义完整理论逻辑的读者",
+    duration: "约 45–60 分钟",
     entries: [
       "civic-orderism/information-age-and-political-transition",
       "theory/end-of-party-politics-in-information-age",
       "civic-orderism/state-must-rely-on-systems-not-drivers",
       "civic-orderism/why-weaken-party-politics",
-      "civic-orderism/public-politics-without-party-dominance",
+      "civic-orderism/why-civic-orderism",
     ],
     moreHref: "/theory",
-    moreLabel: "查看相关理论文章 →",
+    moreLabel: "查看本路线延伸阅读 →",
+    nextHref: "#route-institution-research",
+    nextLabel: "进入：进阶制度研究 →",
   },
   {
     id: "route-institution-research",
@@ -1025,6 +1036,8 @@ const readingRouteConfigs = [
     title: "进阶制度研究",
     description:
       "适合已经了解公民秩序主义基本路线，希望进一步阅读委员会、选举、司法、行政执行、监督机制与后台系统的读者。",
+    audience: "已经完成基础阅读、希望深入制度研究的读者",
+    duration: "约 60–120 分钟",
     entries: [
       "civic-orderism/what-is-committee-system",
       "civic-orderism/election-logic-under-civic-orderism",
@@ -1039,7 +1052,9 @@ const readingRouteConfigs = [
       },
     ],
     moreHref: "/civic-orderism",
-    moreLabel: "在公民秩序主义栏目继续阅读 →",
+    moreLabel: "查看本路线延伸阅读 →",
+    nextHref: "#all-articles",
+    nextLabel: "浏览全部文章 →",
     advanced: true,
   },
 ];
@@ -1068,9 +1083,17 @@ const readingRouteHtml = readingRouteConfigs
     ]
       .filter(Boolean)
       .join(" ");
+    const organizationLinks = route.organizationLinks
+      ? `<div class="reading-route__organization"><p>已经理解基本路线？</p><div>${route.organizationLinks
+          .map(
+            (link) =>
+              `<a href="${link.href}">${link.title}<span aria-hidden="true"> →</span></a>`,
+          )
+          .join("")}</div></div>`
+      : "";
     return `<section class="reading-route${modifiers ? ` ${modifiers}` : ""}" id="${route.id}" aria-labelledby="${route.id}-title">
-  <div class="reading-route__heading"><span class="reading-route__number">${route.number}</span><div><p class="resource-label">${route.label}</p><h2 id="${route.id}-title">${route.title}</h2><p>${route.description}</p></div></div>
-  <div class="reading-route__body"><p class="reading-route__label">推荐先读</p><ol class="reading-route__list">${entries.join("")}</ol><a class="reading-route__more" href="${route.moreHref}">${route.moreLabel}</a></div>
+  <div class="reading-route__heading"><span class="reading-route__number">${route.number}</span><div><p class="resource-label">${route.label}</p><h2 id="${route.id}-title">${route.title}</h2><p>${route.description}</p><dl class="reading-route__meta"><div><dt>适合</dt><dd>${route.audience}</dd></div><div><dt>预计阅读时间</dt><dd>${route.duration}</dd></div></dl></div></div>
+  <div class="reading-route__body"><div class="reading-route__label"><span>推荐阅读</span><span>${entries.length} 篇</span></div><ol class="reading-route__list">${entries.join("")}</ol><a class="reading-route__more" href="${route.moreHref}">${route.moreLabel}</a><footer class="reading-route__completion"><p>完成这条路线后</p><a href="${route.nextHref}">${route.nextLabel}</a>${organizationLinks}</footer></div>
 </section>`;
   })
   .join("\n\n");
@@ -1090,10 +1113,10 @@ enableToc: false
 ---
 
 <header class="reading-map-hero">
-  <p class="resource-label">从问题进入，而不是从目录开始</p>
+  <p class="resource-label">选择一条路线开始</p>
   <h1>阅读地图</h1>
-  <p>如果第一次来到这里，不需要从全部文章开始。</p>
-  <p>阅读地图按照不同问题和阅读目的整理核心文章：可以先了解公民秩序主义是什么，也可以从中共与中国现实进入，再逐步阅读理论与制度研究。</p>
+  <p>如果第一次来到这里，不建议直接浏览全部文章。</p>
+  <p>请选择下面的一条阅读路线开始。不同路线分别用于了解公民秩序主义、中国现实、理论框架与进阶制度研究。</p>
 </header>
 
 ${readingRouteHtml}
@@ -1101,7 +1124,7 @@ ${readingRouteHtml}
 <section class="reading-library" id="all-articles" aria-labelledby="all-articles-title">
   <p class="resource-label">完整索引</p>
   <h2 id="all-articles-title">全部文章</h2>
-  <p>按主题、栏目或发布时间浏览网站完整文章库。以下索引保留所有现有文章入口，但不作为第一次访问时的阅读起点。</p>
+  <p>如果已经知道自己要找什么，可以直接浏览完整文章库。以下索引保留所有现有文章入口，但不作为第一次访问时的阅读起点。</p>
   <div class="reading-library__collections"><a href="/civic-orderism"><strong>公民秩序主义</strong><span>政治路线、基本理论与组织承接</span></a><a href="/china"><strong>解析中共</strong><span>组织结构、官僚系统与现实变化</span></a><a href="/china-future"><strong>中国未来</strong><span>转型窗口、国家治理与未来秩序</span></a><a href="/topics"><strong>专题索引</strong><span>按具体问题继续浏览</span></a></div>
   <details class="reading-library-index" id="complete-article-index"><summary>浏览全部文章</summary>
 

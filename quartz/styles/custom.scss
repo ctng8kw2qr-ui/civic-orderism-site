@@ -1614,11 +1614,37 @@ body[data-slug="articles"] article .reading-route h2 {
   line-height: 1.35;
 }
 
-body[data-slug="articles"] article .reading-route__heading div > p:last-child {
+body[data-slug="articles"] article .reading-route__heading h2 + p {
   max-width: 760px;
   margin: 0;
   color: var(--darkgray);
   line-height: 1.75;
+}
+
+body[data-slug="articles"] article .reading-route__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.5rem;
+  margin: 1rem 0 0;
+}
+
+body[data-slug="articles"] article .reading-route__meta > div {
+  display: flex;
+  gap: 0.45rem;
+  align-items: baseline;
+}
+
+body[data-slug="articles"] article .reading-route__meta dt {
+  color: var(--gray);
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+}
+
+body[data-slug="articles"] article .reading-route__meta dd {
+  margin: 0;
+  color: #0a1d38;
+  font-size: 0.86rem;
 }
 
 body[data-slug="articles"] article .reading-route__body {
@@ -1626,6 +1652,9 @@ body[data-slug="articles"] article .reading-route__body {
 }
 
 body[data-slug="articles"] article .reading-route__label {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
   margin: 0 0 0.55rem;
   color: #7e642e;
   font-size: 0.76rem;
@@ -1641,12 +1670,34 @@ body[data-slug="articles"] article .reading-route__list {
 }
 
 body[data-slug="articles"] article .reading-route__list li {
+  position: relative;
   display: grid;
   grid-template-columns: 2.8rem minmax(0, 1fr);
   gap: 0.75rem;
   margin: 0;
   padding: 0.82rem 0;
   border-bottom: 1px solid #e1e5eb;
+}
+
+body[data-slug="articles"]
+  article
+  .reading-route__list
+  li:not(:last-child)::after {
+  position: absolute;
+  bottom: -0.46rem;
+  left: 0.65rem;
+  z-index: 1;
+  padding: 0 0.15rem;
+  background: var(--light);
+  color: #9b7c3e;
+  content: "↓";
+  font-size: 0.72rem;
+  line-height: 1;
+}
+
+body[data-slug="articles"] article .reading-route--primary li::after,
+body[data-slug="articles"] article .reading-route--advanced li::after {
+  background: color-mix(in srgb, var(--light) 97%, var(--lightgray));
 }
 
 body[data-slug="articles"] article .reading-route__list li > span {
@@ -1668,6 +1719,63 @@ body[data-slug="articles"] article .reading-route__more {
   color: #0a1d38;
   font-size: 0.88rem;
   font-weight: 650;
+}
+
+body[data-slug="articles"] article .reading-route__completion {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.35rem 1.2rem;
+  align-items: center;
+  margin-top: 1.35rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid #cbd3de;
+}
+
+body[data-slug="articles"] article .reading-route__completion > p {
+  margin: 0;
+  color: var(--gray);
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+}
+
+body[data-slug="articles"] article .reading-route__completion > a {
+  color: #0a1d38;
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
+body[data-slug="articles"] article .reading-route__organization {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1rem;
+  align-items: center;
+  margin-top: 0.85rem;
+  padding: 0.85rem 0 0;
+  border-top: 1px solid #e1e5eb;
+}
+
+body[data-slug="articles"] article .reading-route__organization > p {
+  margin: 0;
+  color: var(--darkgray);
+  font-size: 0.84rem;
+}
+
+body[data-slug="articles"] article .reading-route__organization > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+body[data-slug="articles"] article .reading-route__organization a {
+  display: inline-flex;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid #cbd3de;
+  border-radius: 4px;
+  color: #0a1d38;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 body[data-slug="articles"] article .reading-library {
@@ -1790,9 +1898,22 @@ body[data-slug="articles"] article .reading-map-count {
     margin: 1.25rem 0 0;
   }
 
+  body[data-slug="articles"] article .reading-route__meta {
+    display: grid;
+    gap: 0.35rem;
+  }
+
   body[data-slug="articles"] article .reading-route__list li {
     grid-template-columns: 2.25rem minmax(0, 1fr);
     gap: 0.55rem;
+  }
+
+  body[data-slug="articles"] article .reading-route__completion {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body[data-slug="articles"] article .reading-route__organization {
+    align-items: flex-start;
   }
 
   body[data-slug="articles"] article .reading-library {

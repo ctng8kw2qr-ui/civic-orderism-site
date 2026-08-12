@@ -630,22 +630,61 @@ const readingRoutes = [
   {
     id: "route-first-visit",
     title: "第一次了解公民秩序主义",
-    count: 6,
+    count: 4,
+    audience: "第一次访问本站，希望快速建立整体认识的读者",
+    duration: "约 25–35 分钟",
+    nextHref: "#route-china-reality",
+    slugs: [
+      "introduction-manual",
+      "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+      "civic-orderism/why-civic-orderism",
+      "civic-orderism/possibility-of-peaceful-political-transition-in-china",
+    ],
   },
   {
     id: "route-china-reality",
-    title: "理解中共与中国现实",
+    title: "理解今天的中国",
     count: 5,
+    audience: "希望从中共组织运行与中国现实问题进入的读者",
+    duration: "约 35–50 分钟",
+    nextHref: "#route-theory",
+    slugs: [
+      "china/ccp-no-real-base",
+      "theory/party-state-structural-failure",
+      "china/route-transition-why-ccp-keeps-purging-officials",
+      "china/what-happens-when-security-becomes-the-top-priority",
+      "civic-orderism/possibility-of-peaceful-political-transition-in-china",
+    ],
   },
   {
     id: "route-theory",
     title: "理解公民秩序主义的理论路线",
     count: 5,
+    audience: "希望理解公民秩序主义完整理论逻辑的读者",
+    duration: "约 45–60 分钟",
+    nextHref: "#route-institution-research",
+    slugs: [
+      "civic-orderism/information-age-and-political-transition",
+      "theory/end-of-party-politics-in-information-age",
+      "civic-orderism/state-must-rely-on-systems-not-drivers",
+      "civic-orderism/why-weaken-party-politics",
+      "civic-orderism/why-civic-orderism",
+    ],
   },
   {
     id: "route-institution-research",
     title: "进阶制度研究",
     count: 5,
+    audience: "已经完成基础阅读、希望深入制度研究的读者",
+    duration: "约 60–120 分钟",
+    nextHref: "#all-articles",
+    slugs: [
+      "civic-orderism/what-is-committee-system",
+      "civic-orderism/election-logic-under-civic-orderism",
+      "civic-orderism/backend-system-under-civic-orderism",
+      "civic-orderism/why-justice-serves-reality",
+      "civic-orderism/state-operation-process-under-civic-orderism",
+    ],
   },
 ];
 let previousReadingRoutePosition = -1;
@@ -660,22 +699,31 @@ for (const [index, route] of readingRoutes.entries()) {
     routeBlock.match(/<ol class="reading-route__list">([\s\S]*?)<\/ol>/)?.[1] ??
     "";
   const recommendedCount = (recommendedBlock.match(/<li>/g) ?? []).length;
+  const recommendedSlugs = [
+    ...recommendedBlock.matchAll(/data-slug="([^"]+)"/g),
+  ].map((match) => match[1]);
   assert(
     routePosition > previousReadingRoutePosition &&
       routeEnd > routePosition &&
       visiblePageText(routeBlock).includes(route.title) &&
+      visiblePageText(routeBlock).includes(route.audience) &&
+      visiblePageText(routeBlock).includes(route.duration) &&
       recommendedCount === route.count &&
+      recommendedSlugs.join("|") === route.slugs.join("|") &&
       recommendedCount >= 3 &&
-      recommendedCount <= 6 &&
-      routeBlock.includes("reading-route__more"),
+      recommendedCount <= 5 &&
+      routeBlock.includes("reading-route__more") &&
+      routeBlock.includes("reading-route__completion") &&
+      routeBlock.includes(`href="${route.nextHref}"`) &&
+      visiblePageText(routeBlock).includes("完成这条路线后"),
     `阅读地图路线结构或推荐数量异常：${route.title}`,
   );
   previousReadingRoutePosition = routePosition;
 }
 const articleLibraryPosition = articlesHtml.indexOf('id="all-articles"');
 assert(
-  articlesText.includes("如果第一次来到这里，不需要从全部文章开始") &&
-    articlesText.includes("阅读地图按照不同问题和阅读目的整理核心文章") &&
+  articlesText.includes("如果第一次来到这里，不建议直接浏览全部文章") &&
+    articlesText.includes("请选择下面的一条阅读路线开始") &&
     articleLibraryPosition > previousReadingRoutePosition &&
     articlesHtml.includes('class="reading-library-index"') &&
     articlesText.includes("浏览全部文章") &&
@@ -684,6 +732,9 @@ assert(
     articlesHtml.includes('data-slug="china"') &&
     articlesHtml.includes('data-slug="china-future"') &&
     articlesHtml.includes('data-slug="topics"') &&
+    articlesHtml.includes('data-slug="preparation"') &&
+    articlesHtml.includes('data-slug="participate"') &&
+    articlesText.includes("已经理解基本路线") &&
     !articlesHtml.includes('data-slug="institution-design"'),
   "阅读地图缺少新读者引导、完整索引入口，或重新突出制度设计",
 );
