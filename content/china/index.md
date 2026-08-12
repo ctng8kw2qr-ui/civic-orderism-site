@@ -176,7 +176,7 @@ noindex: false
 <div class="knowledge-grid">
 <article class="knowledge-card">
   <p class="knowledge-card__meta"><span>2026-08-12</span><span>15 分钟阅读</span></p>
-  <h3><a href="/china/security-led-governance-model">我们到底在搭建一个什么样的模型？</a></h3>
+  <h3><a href="/china/security-led-governance-model">安全化、再集中与治理边界</a></h3>
 </article>
 <article class="knowledge-card">
   <p class="knowledge-card__meta"><span>2026-08-10</span><span>6 分钟阅读</span></p>

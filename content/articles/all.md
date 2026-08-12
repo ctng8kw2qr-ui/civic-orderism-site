@@ -227,7 +227,7 @@ enableToc: false
 
 ## 十、近期文章
 
-- [[china/security-led-governance-model|我们到底在搭建一个什么样的模型？]]（2026-08-12）
+- [[china/security-led-governance-model|安全化、再集中与治理边界]]（2026-08-12）
 - [[china/an-era-change-beginning-in-the-united-states|一场起始于美国的时代变革]]（2026-08-11）
 - [[china/security-is-redefining-china|安全，正在重新定义中国]]（2026-08-10）
 - [[china/why-ccp-feels-less-secure-when-everyone-claims-loyalty|当所有人都说忠诚：中共为什么反而越来越没有安全感]]（2026-08-10）

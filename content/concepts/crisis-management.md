@@ -47,7 +47,7 @@ publicationStatus: reviewing
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management order-evaporation">
   <p class="knowledge-card__meta"><span>2026-08-12</span><span>15 分钟阅读</span></p>
-  <h3><a href="/china/security-led-governance-model">我们到底在搭建一个什么样的模型？</a></h3>
+  <h3><a href="/china/security-led-governance-model">安全化、再集中与治理边界</a></h3>
   <p class="knowledge-card__summary">当安全、统一和组织控制在中共治理排序中的权重持续上升，一个“安全化—清洗—再集中—再失灵”的循环正在形成。本文区分选择型与分配型问题，解释控制能力为何可能上升而治理效能反而下降。</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
 </article>

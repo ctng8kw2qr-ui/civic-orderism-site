@@ -17,6 +17,11 @@ const institutionArticleSlugs = new Set(
   institutionSections.flatMap((section) => section.articles),
 );
 const reclassifiedArticleSlug = "institution/despotism-cancer-ming-1566";
+const retitledArticleSlug = "china/security-led-governance-model";
+const retitledArticle = {
+  title: "安全化、再集中与治理边界",
+  subtitle: "理解后改革时代中共政治运行的一套模型",
+};
 const approvedCopyNormalizations = new Map([
   [
     "china-stage/three-cleans-era-political-economic-cultural-contraction",
@@ -90,6 +95,35 @@ for (const article of sample) {
         `责任与品牌表述统一缺少目标文案：${relative} -> ${requiredText}`,
       );
     }
+  } else if (article.slug === retitledArticleSlug) {
+    const currentArticle = matter(current.toString("utf8"));
+    const committedArticle = matter(committed.toString("utf8"));
+    const subtitlePattern = /<p class="subtitle">.*?<\/p>/;
+    const currentSubtitle = currentArticle.content.match(subtitlePattern)?.[0];
+    const currentBody = currentArticle.content
+      .replace(/^# .*$/m, "")
+      .replace(subtitlePattern, "");
+    const committedBody = committedArticle.content
+      .replace(/^# .*$/m, "")
+      .replace(subtitlePattern, "");
+    committedArticle.data.title = currentArticle.data.title;
+    assert(
+      currentArticle.data.title === retitledArticle.title,
+      `文章标题没有更新为指定文案：${relative}`,
+    );
+    assert(
+      currentSubtitle === `<p class="subtitle">${retitledArticle.subtitle}</p>`,
+      `文章副标题没有更新为指定文案：${relative}`,
+    );
+    assert(
+      currentBody === committedBody,
+      `标题调整不应修改文章正文：${relative}`,
+    );
+    assert(
+      JSON.stringify(currentArticle.data) ===
+        JSON.stringify(committedArticle.data),
+      `标题调整包含未授权的元数据变化：${relative}`,
+    );
   } else if (
     institutionArticleSlugs.has(article.slug) ||
     article.slug === reclassifiedArticleSlug
