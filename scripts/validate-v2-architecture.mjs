@@ -624,6 +624,70 @@ for (const forbidden of [
   );
 }
 
+const articlesHtml = fs.readFileSync(publicHtml("articles"), "utf8");
+const articlesText = visiblePageText(articlesHtml);
+const readingRoutes = [
+  {
+    id: "route-first-visit",
+    title: "第一次了解公民秩序主义",
+    count: 6,
+  },
+  {
+    id: "route-china-reality",
+    title: "理解中共与中国现实",
+    count: 5,
+  },
+  {
+    id: "route-theory",
+    title: "理解公民秩序主义的理论路线",
+    count: 5,
+  },
+  {
+    id: "route-institution-research",
+    title: "进阶制度研究",
+    count: 5,
+  },
+];
+let previousReadingRoutePosition = -1;
+for (const [index, route] of readingRoutes.entries()) {
+  const routePosition = articlesHtml.indexOf(`id="${route.id}"`);
+  const nextRouteId = readingRoutes[index + 1]?.id;
+  const routeEnd = nextRouteId
+    ? articlesHtml.indexOf(`id="${nextRouteId}"`)
+    : articlesHtml.indexOf('id="all-articles"');
+  const routeBlock = articlesHtml.slice(routePosition, routeEnd);
+  const recommendedBlock =
+    routeBlock.match(/<ol class="reading-route__list">([\s\S]*?)<\/ol>/)?.[1] ??
+    "";
+  const recommendedCount = (recommendedBlock.match(/<li>/g) ?? []).length;
+  assert(
+    routePosition > previousReadingRoutePosition &&
+      routeEnd > routePosition &&
+      visiblePageText(routeBlock).includes(route.title) &&
+      recommendedCount === route.count &&
+      recommendedCount >= 3 &&
+      recommendedCount <= 6 &&
+      routeBlock.includes("reading-route__more"),
+    `阅读地图路线结构或推荐数量异常：${route.title}`,
+  );
+  previousReadingRoutePosition = routePosition;
+}
+const articleLibraryPosition = articlesHtml.indexOf('id="all-articles"');
+assert(
+  articlesText.includes("如果第一次来到这里，不需要从全部文章开始") &&
+    articlesText.includes("阅读地图按照不同问题和阅读目的整理核心文章") &&
+    articleLibraryPosition > previousReadingRoutePosition &&
+    articlesHtml.includes('class="reading-library-index"') &&
+    articlesText.includes("浏览全部文章") &&
+    articlesText.includes("本站共收录 97 篇文章") &&
+    articlesHtml.includes('data-slug="civic-orderism"') &&
+    articlesHtml.includes('data-slug="china"') &&
+    articlesHtml.includes('data-slug="china-future"') &&
+    articlesHtml.includes('data-slug="topics"') &&
+    !articlesHtml.includes('data-slug="institution-design"'),
+  "阅读地图缺少新读者引导、完整索引入口，或重新突出制度设计",
+);
+
 const participateHtml = fs.readFileSync(publicHtml("participate"), "utf8");
 const participateText = visiblePageText(participateHtml);
 for (const requiredText of [

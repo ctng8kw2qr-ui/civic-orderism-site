@@ -1544,6 +1544,267 @@ body[data-slug="articles"] article .reading-map-more a:hover {
   color: var(--dark);
 }
 
+body[data-slug="articles"] article .reading-map-hero {
+  padding: clamp(1.5rem, 4vw, 2.7rem) 0 2rem;
+  border-bottom: 1px solid #d8dee6;
+}
+
+body[data-slug="articles"] article .reading-map-hero h1 {
+  margin: 0.55rem 0 1rem;
+  color: #0a1d38;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+body[data-slug="articles"] article .reading-map-hero > p:not(.resource-label) {
+  max-width: 780px;
+  margin: 0.35rem 0 0;
+  color: var(--darkgray);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+body[data-slug="articles"] article .reading-map-hero > p:nth-last-child(2) {
+  color: #0a1d38;
+  font-size: 1.08rem;
+  font-weight: 600;
+}
+
+body[data-slug="articles"] article .reading-route {
+  margin-top: 2.6rem;
+  padding: 2.1rem 0 0;
+  border-top: 1px solid #cbd3de;
+}
+
+body[data-slug="articles"] article .reading-route--primary {
+  padding: clamp(1.4rem, 3vw, 2rem);
+  border: 1px solid #d8dee6;
+  border-top: 3px solid #0a1d38;
+  border-radius: 7px;
+  background: color-mix(in srgb, var(--light) 98%, var(--lightgray));
+}
+
+body[data-slug="articles"] article .reading-route--advanced {
+  padding: clamp(1.35rem, 3vw, 1.8rem);
+  border: 1px solid #d8dee6;
+  background: color-mix(in srgb, var(--light) 96%, var(--lightgray));
+}
+
+body[data-slug="articles"] article .reading-route__heading {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+body[data-slug="articles"] article .reading-route__number {
+  color: #9b7c3e;
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+body[data-slug="articles"] article .reading-route h2 {
+  margin: 0.35rem 0 0.7rem;
+  padding: 0;
+  border: 0;
+  color: #0a1d38;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1.35;
+}
+
+body[data-slug="articles"] article .reading-route__heading div > p:last-child {
+  max-width: 760px;
+  margin: 0;
+  color: var(--darkgray);
+  line-height: 1.75;
+}
+
+body[data-slug="articles"] article .reading-route__body {
+  margin: 1.55rem 0 0 5.25rem;
+}
+
+body[data-slug="articles"] article .reading-route__label {
+  margin: 0 0 0.55rem;
+  color: #7e642e;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+body[data-slug="articles"] article .reading-route__list {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #d8dee6;
+  list-style: none;
+}
+
+body[data-slug="articles"] article .reading-route__list li {
+  display: grid;
+  grid-template-columns: 2.8rem minmax(0, 1fr);
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0.82rem 0;
+  border-bottom: 1px solid #e1e5eb;
+}
+
+body[data-slug="articles"] article .reading-route__list li > span {
+  color: var(--gray);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+body[data-slug="articles"] article .reading-route__list a {
+  color: #0a1d38;
+  font-weight: 560;
+  line-height: 1.55;
+}
+
+body[data-slug="articles"] article .reading-route__more {
+  display: inline-flex;
+  margin-top: 1rem;
+  color: #0a1d38;
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+body[data-slug="articles"] article .reading-library {
+  margin-top: 4rem;
+  padding: clamp(1.35rem, 3vw, 2rem);
+  border-top: 3px solid #0a1d38;
+  background: color-mix(in srgb, var(--light) 96%, var(--lightgray));
+}
+
+body[data-slug="articles"] article .reading-library > h2 {
+  margin: 0.45rem 0 0.75rem;
+  padding: 0;
+  border: 0;
+  color: #0a1d38;
+  font-size: clamp(1.55rem, 3vw, 2rem);
+}
+
+body[data-slug="articles"] article .reading-library > p:not(.resource-label) {
+  max-width: 760px;
+  color: var(--darkgray);
+  line-height: 1.75;
+}
+
+body[data-slug="articles"] article .reading-library__collections {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 1.35rem 0;
+  border: 1px solid #d8dee6;
+  background: #d8dee6;
+}
+
+body[data-slug="articles"] article .reading-library__collections a {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+  padding: 1rem;
+  background: var(--light);
+}
+
+body[data-slug="articles"] article .reading-library__collections strong {
+  color: #0a1d38;
+}
+
+body[data-slug="articles"] article .reading-library__collections span {
+  color: var(--darkgray);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+body[data-slug="articles"] article .reading-library-index {
+  margin-top: 1.15rem;
+}
+
+body[data-slug="articles"] article .reading-library-index > summary {
+  display: inline-flex;
+  cursor: pointer;
+  padding: 0.72rem 1rem;
+  border: 1px solid #0a1d38;
+  border-radius: 5px;
+  color: #0a1d38;
+  font-size: 0.88rem;
+  font-weight: 650;
+  list-style: none;
+}
+
+body[data-slug="articles"]
+  article
+  .reading-library-index
+  > summary::-webkit-details-marker {
+  display: none;
+}
+
+body[data-slug="articles"] article .reading-library-index[open] > summary {
+  background: #0a1d38;
+  color: #fff;
+}
+
+body[data-slug="articles"] article .reading-library-index > h2 {
+  margin-top: 2.25rem;
+}
+
+body[data-slug="articles"] article .reading-map-count {
+  margin-top: 1rem;
+  color: var(--gray);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 640px) {
+  body[data-slug="articles"] article .reading-map-hero {
+    padding-top: 1.2rem;
+  }
+
+  body[data-slug="articles"] article .reading-map-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  body[data-slug="articles"] article .reading-route,
+  body[data-slug="articles"] article .reading-route--primary,
+  body[data-slug="articles"] article .reading-route--advanced {
+    margin-top: 2rem;
+    padding: 1.35rem 0 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  body[data-slug="articles"] article .reading-route__heading {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.6rem;
+  }
+
+  body[data-slug="articles"] article .reading-route__number {
+    font-size: 1rem;
+  }
+
+  body[data-slug="articles"] article .reading-route__body {
+    margin: 1.25rem 0 0;
+  }
+
+  body[data-slug="articles"] article .reading-route__list li {
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    gap: 0.55rem;
+  }
+
+  body[data-slug="articles"] article .reading-library {
+    margin-top: 3rem;
+    padding: 1.25rem 1rem;
+  }
+
+  body[data-slug="articles"] article .reading-library__collections {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 body[data-slug="articles"] article ul {
   padding-left: 1.15rem;
 }

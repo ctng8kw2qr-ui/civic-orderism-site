@@ -961,45 +961,158 @@ const recent = articles
   .map(articleLine)
   .join("\n");
 
+const readingRouteConfigs = [
+  {
+    id: "route-first-visit",
+    number: "01",
+    label: "优先入口",
+    title: "第一次了解公民秩序主义",
+    description:
+      "用少量核心材料理解公民秩序主义是什么、为什么提出这条路线、试图解决什么问题，以及当前已经进入什么组织阶段。",
+    entries: [
+      { href: "/introduction-manual", title: "公民秩序主义介绍手册" },
+      "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+      "civic-orderism/why-civic-orderism",
+      "civic-orderism/possibility-of-peaceful-political-transition-in-china",
+      {
+        href: "/preparation",
+        title: "北美非营利法人及首届董事会筹备",
+      },
+      { href: "/participate", title: "参与方式" },
+    ],
+    moreHref: "/civic-orderism",
+    moreLabel: "查看公民秩序主义全部文章 →",
+    primary: true,
+  },
+  {
+    id: "route-china-reality",
+    number: "02",
+    label: "现实判断",
+    title: "理解中共与中国现实",
+    description:
+      "从中共的组织结构、官僚系统、路线调整与安全叙事出发，理解中国当前正在进入什么阶段，以及为什么现有治理逻辑越来越难以处理结构性问题。",
+    entries: [
+      "china/ccp-no-real-base",
+      "theory/party-state-structural-failure",
+      "china/route-transition-why-ccp-keeps-purging-officials",
+      "china/what-happens-when-security-becomes-the-top-priority",
+      "civic-orderism/possibility-of-peaceful-political-transition-in-china",
+    ],
+    moreHref: "/china",
+    moreLabel: "查看解析中共全部文章 →",
+  },
+  {
+    id: "route-theory",
+    number: "03",
+    label: "理论路线",
+    title: "理解公民秩序主义的理论路线",
+    description:
+      "从工业时代政治制度与信息化社会之间的错位进入，理解为什么需要新的政治组织方式，以及秩序、责任、专业判断和制度承接如何形成一条完整路线。",
+    entries: [
+      "civic-orderism/information-age-and-political-transition",
+      "theory/end-of-party-politics-in-information-age",
+      "civic-orderism/state-must-rely-on-systems-not-drivers",
+      "civic-orderism/why-weaken-party-politics",
+      "civic-orderism/public-politics-without-party-dominance",
+    ],
+    moreHref: "/theory",
+    moreLabel: "查看相关理论文章 →",
+  },
+  {
+    id: "route-institution-research",
+    number: "04",
+    label: "进阶阅读",
+    title: "进阶制度研究",
+    description:
+      "适合已经了解公民秩序主义基本路线，希望进一步阅读委员会、选举、司法、行政执行、监督机制与后台系统的读者。",
+    entries: [
+      "civic-orderism/what-is-committee-system",
+      "civic-orderism/election-logic-under-civic-orderism",
+      {
+        slug: "civic-orderism/backend-system-under-civic-orderism",
+        title: "公民秩序主义对后台系统的重视",
+      },
+      "civic-orderism/why-justice-serves-reality",
+      {
+        slug: "civic-orderism/state-operation-process-under-civic-orderism",
+        title: "公民秩序主义下国家运行的大概流程",
+      },
+    ],
+    moreHref: "/civic-orderism",
+    moreLabel: "在公民秩序主义栏目继续阅读 →",
+    advanced: true,
+  },
+];
+
+const readingRouteHtml = readingRouteConfigs
+  .map((route) => {
+    const entries = route.entries.map((entry, index) => {
+      const slug = typeof entry === "string" ? entry : entry.slug;
+      const article = slug ? findArticleBySlug(slug) : undefined;
+      if (slug && !article) {
+        throw new Error(`Reading route article not found: ${slug}`);
+      }
+      const href =
+        typeof entry === "string"
+          ? `/${entry}`
+          : entry.href || `/${entry.slug}`;
+      const title =
+        typeof entry === "string"
+          ? article.title
+          : entry.title || article.title;
+      return `<li><span>${String(index + 1).padStart(2, "0")}</span><a href="${href}">${title}</a></li>`;
+    });
+    const modifiers = [
+      route.primary ? "reading-route--primary" : "",
+      route.advanced ? "reading-route--advanced" : "",
+    ]
+      .filter(Boolean)
+      .join(" ");
+    return `<section class="reading-route${modifiers ? ` ${modifiers}` : ""}" id="${route.id}" aria-labelledby="${route.id}-title">
+  <div class="reading-route__heading"><span class="reading-route__number">${route.number}</span><div><p class="resource-label">${route.label}</p><h2 id="${route.id}-title">${route.title}</h2><p>${route.description}</p></div></div>
+  <div class="reading-route__body"><p class="reading-route__label">推荐先读</p><ol class="reading-route__list">${entries.join("")}</ol><a class="reading-route__more" href="${route.moreHref}">${route.moreLabel}</a></div>
+</section>`;
+  })
+  .join("\n\n");
+
 writeFile(
   "articles.md",
   `---
 title: "阅读地图"
 date: 2026-05-10
+updated: 2026-08-11
 category: "索引"
 tags:
   - index
-description: "从旧秩序失效，到中共组织失灵，再到公民秩序主义的制度回应。"
+description: "按照第一次了解、中国现实、理论路线与进阶制度研究四条路径阅读公民秩序主义。"
 status: published
 enableToc: false
 ---
 
-# 阅读地图
+<header class="reading-map-hero">
+  <p class="resource-label">从问题进入，而不是从目录开始</p>
+  <h1>阅读地图</h1>
+  <p>如果第一次来到这里，不需要从全部文章开始。</p>
+  <p>阅读地图按照不同问题和阅读目的整理核心文章：可以先了解公民秩序主义是什么，也可以从中共与中国现实进入，再逐步阅读理论与制度研究。</p>
+</header>
 
-从旧秩序失效，到中共组织失灵，再到公民秩序主义的制度回应。
+${readingRouteHtml}
 
-这里不是按发布时间排列文章，而是按照问题路径组织阅读。你可以从现实问题进入，也可以从制度理论进入；可以先理解中共为什么失灵，也可以直接阅读公民秩序主义如何提出新的公共秩序方案。
-
-<p class="articles-reading-note">如果你是第一次来到这里，建议先阅读<a href="/files/civic-orderism-introduction-manual.pdf">《公民秩序主义介绍手册》</a>，再按下方分类进入专题文章；如需了解组织原则、参与方式与合作边界，再阅读<a href="/organization-manual">《公民秩序主义组织手册》</a>。</p>
-
-## 专题入口
-
-- [旧世界为什么失效](#一旧世界为什么失效)
-- [中共这个组织为什么走向失灵](#二中共这个组织为什么走向失灵)
-- [中国正在进入什么阶段](#三中国正在进入什么阶段)
-- [外部误判、国际风险与历史案例](#四外部误判国际风险与历史案例)
-- [为什么需要新的制度通道](#五为什么需要新的制度通道)
-- [公民秩序主义的基本理论](#六公民秩序主义的基本理论)
-- [委员会与公共判断机制](#七委员会与公共判断机制)
-- [选举、授权与责任更替](#八选举授权与责任更替)
-- [后台系统、司法与执行底座](#九后台系统司法与执行底座)
-- [近期文章](#十近期文章)
+<section class="reading-library" id="all-articles" aria-labelledby="all-articles-title">
+  <p class="resource-label">完整索引</p>
+  <h2 id="all-articles-title">全部文章</h2>
+  <p>按主题、栏目或发布时间浏览网站完整文章库。以下索引保留所有现有文章入口，但不作为第一次访问时的阅读起点。</p>
+  <div class="reading-library__collections"><a href="/civic-orderism"><strong>公民秩序主义</strong><span>政治路线、基本理论与组织承接</span></a><a href="/china"><strong>解析中共</strong><span>组织结构、官僚系统与现实变化</span></a><a href="/china-future"><strong>中国未来</strong><span>转型窗口、国家治理与未来秩序</span></a><a href="/topics"><strong>专题索引</strong><span>按具体问题继续浏览</span></a></div>
+  <details class="reading-library-index" id="complete-article-index"><summary>浏览全部文章</summary>
 
 ${mapBody}## 十、近期文章
 
 ${recent || "_（暂无未归入前九个栏目的近期文章。）_"}
 
-本站共收录 ${articles.length} 篇文章。以上按问题路径推荐阅读；这些文章不是散的，而是一套解释系统。`,
+  </details>
+</section>
+
+<p class="reading-map-count">本站共收录 ${articles.length} 篇文章。四条路线提供阅读起点，完整索引继续保留所有现有入口。</p>`,
 );
 
 console.log(`Generated indexes for ${articles.length} articles.`);
