@@ -57,6 +57,12 @@ publicationStatus: published
   <p class="knowledge-card__summary">本文以现代汽车系统为比喻，说明国家作为复杂系统不能依赖单一领导人的英明，而必须依靠行政、司法、监督、财政、媒体、信息和立法等子系统的相对独立、差异性反馈与自我修复能力。文章以中共集权为反面案例，论证政党集权为何会破坏国家系统可靠性。</p>
   <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：秩序蒸发</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management order-evaporation">
+  <p class="knowledge-card__meta"><span>2026-08-12</span><span>15 分钟阅读</span></p>
+  <h3><a href="/china/security-led-governance-model">我们到底在搭建一个什么样的模型？</a></h3>
+  <p class="knowledge-card__summary">当安全、统一和组织控制在中共治理排序中的权重持续上升，一个“安全化—清洗—再集中—再失灵”的循环正在形成。本文区分选择型与分配型问题，解释控制能力为何可能上升而治理效能反而下降。</p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="xi-era" data-concepts="bureaucratic-shock crisis-management order-evaporation">
   <p class="knowledge-card__meta"><span>2026-07-21</span><span>16 分钟阅读</span></p>
   <h3><a href="/china/xi-successor-and-bureaucratic-accountability">习近平到底有没有接班人？</a></h3>
@@ -104,12 +110,6 @@ publicationStatus: published
   <h3><a href="/china/Macro-Narratives,-Opportunity-Incentives,-and-High-Fragility">宏观叙事、机会激励与高脆弱态：中共为何更可能“失灵”而非“倒台”</a></h3>
   <p class="knowledge-card__summary">本文从宏观叙事、机会结构、合规安全、靠山化、免责型合规和制度信用破产出发，解释中共为何更可能进入“还在，但越来越靠不住”的功能性失灵状态。</p>
   <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="local-finance" data-concepts="fiscal-debt political-debt order-evaporation">
-  <p class="knowledge-card__meta"><span>2026-05-11</span><span>12 分钟阅读</span></p>
-  <h3><a href="/china/ccp-collapse-three-triggers-social-security-healthcare-finance">中共崩解的三大导火索：社保、医保与金融系统</a></h3>
-  <p class="knowledge-card__summary">本文从社保、医保与金融系统三个领域，分析中共未来危机如何从国家信用事件转化为社会预期和官僚系统的连锁崩解。</p>
-  <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：财政偿债</span></p>
 </article>
 </div>
 

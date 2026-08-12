@@ -57,6 +57,12 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">这些年，中文舆论场上一个越来越明显的现象是：</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management order-evaporation">
+  <p class="knowledge-card__meta"><span>2026-08-12</span><span>15 分钟阅读</span></p>
+  <h3><a href="/china/security-led-governance-model">我们到底在搭建一个什么样的模型？</a></h3>
+  <p class="knowledge-card__summary">当安全、统一和组织控制在中共治理排序中的权重持续上升，一个“安全化—清洗—再集中—再失灵”的循环正在形成。本文区分选择型与分配型问题，解释控制能力为何可能上升而治理效能反而下降。</p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management bureaucratic-shock">
   <p class="knowledge-card__meta"><span>2026-08-10</span><span>9 分钟阅读</span></p>
   <h3><a href="/china/security-is-redefining-china">安全，正在重新定义中国</a></h3>
@@ -104,12 +110,6 @@ publicationStatus: reviewing
   <h3><a href="/china/ccp-bureaucracy-double-deadlock">不抓人就躺平，一抓人就失真：中共官僚体系为何陷入双重死结</a></h3>
   <p class="knowledge-card__summary">很多人谈中国官僚体系的问题，喜欢把原因简单归结为一句话：</p>
   <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚休克</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>15 分钟阅读</span></p>
-  <h3><a href="/civic-orderism/top-level-power-structure-under-civic-orderism">公民秩序主义下顶层权力结构的布局：为什么国家最高层不能只有一个权力中心，也不能碎片化成互相消耗的多头政治</a></h3>
-  <p class="knowledge-card__summary">说明顶层权力如何在方向、判断、执行、确认、裁判和制度免疫之间分置并保持统合。</p>
-  <p class="knowledge-card__chips"><span>概念：官僚休克</span></p>
 </article>
 </div>
 

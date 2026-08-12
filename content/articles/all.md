@@ -227,10 +227,10 @@ enableToc: false
 
 ## 十、近期文章
 
+- [[china/security-led-governance-model|我们到底在搭建一个什么样的模型？]]（2026-08-12）
 - [[china/an-era-change-beginning-in-the-united-states|一场起始于美国的时代变革]]（2026-08-11）
 - [[china/security-is-redefining-china|安全，正在重新定义中国]]（2026-08-10）
 - [[china/why-ccp-feels-less-secure-when-everyone-claims-loyalty|当所有人都说忠诚：中共为什么反而越来越没有安全感]]（2026-08-10）
 - [[china/what-happens-when-security-becomes-the-top-priority|中共全面进入安全叙事后，中国会怎么样？]]（2026-08-10）
-- [[civic-orderism/north-america-nonprofit-board-preparation-manifesto|公民秩序主义北美非营利法人及董事会筹备宣言]]（2026-08-05）
 
-本站共收录 97 篇文章。所有现有文章入口和旧专题锚点均保留在本页。
+本站共收录 98 篇文章。所有现有文章入口和旧专题锚点均保留在本页。

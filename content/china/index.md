@@ -14,7 +14,7 @@ noindex: false
 
 不以情绪、立场或单一事件为起点，而是把中共视为一个现实运行中的政治组织，从权力结构、组织成员、结构性困境、防御转型及其外部影响五个层面观察其变化。
 
-<div class="section-stats"><span>46 篇已发布文章</span><span>5 个分析层次</span><span>更新至 2026-08-11</span></div>
+<div class="section-stats"><span>47 篇已发布文章</span><span>5 个分析层次</span><span>更新至 2026-08-12</span></div>
 
 <div class="section-core-judgment"><strong>栏目核心判断</strong><p>理解中共的变化，需要沿着权力如何运行、成员如何行动、结构为何失灵、组织如何防御，以及压力如何向外溢出的完整链条展开。</p></div>
 
@@ -174,6 +174,10 @@ noindex: false
 当增长、改革和发展逻辑越来越难以维持，中共正在把治理重心进一步转向安全、控制、组织稳定与风险防范。本栏目观察这种战略转型如何展开。
 
 <div class="knowledge-grid">
+<article class="knowledge-card">
+  <p class="knowledge-card__meta"><span>2026-08-12</span><span>15 分钟阅读</span></p>
+  <h3><a href="/china/security-led-governance-model">我们到底在搭建一个什么样的模型？</a></h3>
+</article>
 <article class="knowledge-card">
   <p class="knowledge-card__meta"><span>2026-08-10</span><span>6 分钟阅读</span></p>
   <h3><a href="/china/what-happens-when-security-becomes-the-top-priority">中共全面进入安全叙事后，中国会怎么样？</a></h3>

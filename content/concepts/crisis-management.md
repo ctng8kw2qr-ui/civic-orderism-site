@@ -45,6 +45,12 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">一个难以言说的防线：从“液压维稳”到当代的马其诺防线的结构分析与研究笔记。</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：危机管理</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management order-evaporation">
+  <p class="knowledge-card__meta"><span>2026-08-12</span><span>15 分钟阅读</span></p>
+  <h3><a href="/china/security-led-governance-model">我们到底在搭建一个什么样的模型？</a></h3>
+  <p class="knowledge-card__summary">当安全、统一和组织控制在中共治理排序中的权重持续上升，一个“安全化—清洗—再集中—再失灵”的循环正在形成。本文区分选择型与分配型问题，解释控制能力为何可能上升而治理效能反而下降。</p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management bureaucratic-shock">
   <p class="knowledge-card__meta"><span>2026-08-10</span><span>9 分钟阅读</span></p>
   <h3><a href="/china/security-is-redefining-china">安全，正在重新定义中国</a></h3>
@@ -104,12 +110,6 @@ publicationStatus: reviewing
   <h3><a href="/china/party-power-logic-and-ccp-goal-vacuum">政党存在的权力逻辑与中共的目标困境</a></h3>
   <p class="knowledge-card__summary">本文从政党作为组织的权力逻辑出发，分析中共在长期垄断国家最高权力之后所面临的目标真空、信念断层、制度信任崩塌和自我维持型衰变，说明一个完成夺权目标的政党如何从使命导向转向防御性维稳。</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
-  <p class="knowledge-card__meta"><span>2026-05-17</span><span>9 分钟阅读</span></p>
-  <h3><a href="/china/bureaucratic-system-under-purges">高位清洗如何改变中共官僚系统</a></h3>
-  <p class="knowledge-card__summary">省部级官员密集落马，表面上看是反腐问题，深层看则是官僚系统安全感与运行逻辑的变化。高位安全边界后退、经济低预期和责任倒查叠加，会推动官僚群体进入避责、观望、伪执行和系统性自保状态，使官僚系统从主动型系统转向防御型系统。</p>
-  <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚休克</span></p>
 </article>
 </div>
 
