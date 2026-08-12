@@ -112,6 +112,46 @@ const walkHtmlFiles = (directory) =>
     return entry.name.endsWith(".html") ? [entryPath] : [];
   });
 
+const chinaAnalysisConfig = JSON.parse(
+  fs.readFileSync(path.join(root, "data/china-analysis.config.json"), "utf8"),
+);
+const chinaPageHtml = fs.readFileSync(publicRouteHtml("china"), "utf8");
+const chinaPageSource = fs.readFileSync(
+  path.join(root, "content/china/index.md"),
+  "utf8",
+);
+for (const [index, group] of chinaAnalysisConfig.groups.entries()) {
+  const heading = `## ${["一", "二", "三", "四", "五"][index]}、${group.name}`;
+  const groupSource = chinaPageSource.split(heading)[1]?.split("## ")[0] ?? "";
+  const featuredSource = groupSource.split(
+    '<details class="china-analysis-more">',
+  )[0];
+  const renderedFeatured = [
+    ...featuredSource.matchAll(/<a href="\/([^"]+)">/g),
+  ].map((match) => match[1]);
+  assert(
+    JSON.stringify(renderedFeatured) === JSON.stringify(group.featured),
+    `解析中共首屏代表作顺序与配置不一致：${group.name}`,
+  );
+}
+assert(
+  (chinaPageHtml.match(/<details class="china-analysis-more">/g) ?? [])
+    .length === chinaAnalysisConfig.groups.length,
+  "解析中共各子栏缺少默认折叠的更多文章",
+);
+assert(
+  chinaPageHtml.includes(
+    `查看全部解析中共文章（${migration.filter((article) => article.section === "解析中共" && article.status === "published").length}）`,
+  ),
+  "解析中共完整索引缺少动态文章数量",
+);
+assert(
+  chinaAnalysisConfig.groups
+    .flatMap((group) => group.slugs)
+    .every((slug) => chinaPageHtml.includes(`data-slug="${slug}"`)),
+  "解析中共页面未保留全部文章入口",
+);
+
 assert(
   new Set(migration.map((item) => item.slug)).size === migration.length,
   "迁移映射存在重复 slug",

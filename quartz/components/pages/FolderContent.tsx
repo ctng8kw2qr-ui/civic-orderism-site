@@ -139,7 +139,11 @@ export default ((opts?: Partial<FolderContentOptions>) => {
         <article class={classes}>{content}</article>
         {isConceptIndex ? null : isPrimarySection ? (
           <details class="page-listing section-archive" data-section-archive>
-            <summary>完整文章索引（{listedPages.length}）</summary>
+            <summary>
+              {listPageSlug === "china"
+                ? `查看全部解析中共文章（${listedPages.length}）`
+                : `完整文章索引（${listedPages.length}）`}
+            </summary>
             <div class="section-archive__content">
               <PageList {...listProps} />
               <button type="button" data-section-archive-collapse>

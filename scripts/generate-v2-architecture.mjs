@@ -367,6 +367,30 @@ for (const slug of chinaAnalysisSlugs) {
     );
   }
 }
+for (const group of chinaAnalysis.groups) {
+  const featured = group.featured ?? [];
+  if (
+    featured.length < 4 ||
+    featured.length > 5 ||
+    new Set(featured).size !== featured.length
+  ) {
+    throw new Error(
+      `China analysis featured list must contain 4–5 unique articles: ${group.name}`,
+    );
+  }
+  for (const slug of featured) {
+    if (!group.slugs.includes(slug)) {
+      throw new Error(
+        `China analysis featured article is outside its group: ${group.name} -> ${slug}`,
+      );
+    }
+  }
+  if (group.coreFeatured && !featured.includes(group.coreFeatured)) {
+    throw new Error(
+      `China analysis core featured article is not featured: ${group.name} -> ${group.coreFeatured}`,
+    );
+  }
+}
 const unclassifiedChinaArticles = articles.filter(
   (article) =>
     article.section === "解析中共" &&
@@ -498,12 +522,14 @@ function articleCard(article, options = {}) {
 </article>`;
 }
 
-function chinaAnalysisGrid(items) {
+function chinaAnalysisGrid(items, { coreSlug } = {}) {
   return `<div class="knowledge-grid">
 ${items
   .map(
-    (article) => `<article class="knowledge-card">
-  <p class="knowledge-card__meta"><span>${article.date || "日期待补"}</span><span>${article.readingMinutes} 分钟阅读</span></p>
+    (
+      article,
+    ) => `<article class="knowledge-card${article.slug === coreSlug ? " knowledge-card--core-reading" : ""}">
+  <p class="knowledge-card__meta">${article.slug === coreSlug ? "<span>核心阅读</span>" : `<span>${article.date || "日期待补"}</span>`}<span>${article.readingMinutes} 分钟阅读</span></p>
   <h3><a href="/${encodeURI(article.slug)}">${article.title}</a></h3>
 </article>`,
   )
@@ -755,7 +781,13 @@ ${relatedConcepts.length ? `<div class="section-concept-links">${relatedConcepts
 
 function chinaAnalysisPage(section) {
   const groups = chinaAnalysis.groups.map((group, index) => {
-    const items = group.slugs
+    const featuredSlugs = group.featured ?? group.slugs.slice(0, 5);
+    const featuredItems = featuredSlugs
+      .map((slug) => articleBySlug.get(slug))
+      .filter((article) => article?.status === "published");
+    const featuredSet = new Set(featuredSlugs);
+    const moreItems = group.slugs
+      .filter((slug) => !featuredSet.has(slug))
       .map((slug) => articleBySlug.get(slug))
       .filter((article) => article?.status === "published");
     const number = ["一", "二", "三", "四", "五"][index];
@@ -763,7 +795,16 @@ function chinaAnalysisPage(section) {
 
 ${group.description}
 
-${chinaAnalysisGrid(items)}`;
+${chinaAnalysisGrid(featuredItems, { coreSlug: group.coreFeatured })}
+
+${
+  moreItems.length
+    ? `<details class="china-analysis-more">
+<summary>更多文章（${moreItems.length}）</summary>
+${chinaAnalysisGrid(moreItems)}
+</details>`
+    : ""
+}`;
   });
   const items = chinaAnalysisSlugs
     .map((slug) => articleBySlug.get(slug))

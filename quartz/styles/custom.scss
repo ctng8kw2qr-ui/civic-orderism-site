@@ -252,6 +252,69 @@ article .knowledge-card h3 {
   margin-right: 0.45rem;
 }
 
+body:is([data-slug="china"], [data-slug="china/index"])
+  .knowledge-card--core-reading {
+  grid-column: 1 / -1;
+  padding: 1.35rem;
+  border-color: color-mix(in srgb, var(--secondary) 32%, var(--lightgray));
+  background: color-mix(in srgb, var(--light) 80%, var(--highlight));
+}
+
+body:is([data-slug="china"], [data-slug="china/index"])
+  .knowledge-card--core-reading
+  h3 {
+  font-size: 1.14rem;
+}
+
+.china-analysis-more {
+  margin: 1.15rem 0 2.35rem;
+  border-top: 1px solid var(--lightgray);
+}
+
+.china-analysis-more > summary {
+  display: flex;
+  min-height: 2.75rem;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  color: var(--darkgray);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.china-analysis-more > summary::-webkit-details-marker {
+  display: none;
+}
+
+.china-analysis-more > summary::after {
+  content: "+";
+  color: var(--gray);
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+
+.china-analysis-more[open] > summary::after {
+  content: "−";
+}
+
+.china-analysis-more > summary:hover,
+.china-analysis-more > summary:focus-visible {
+  color: var(--dark);
+}
+
+.china-analysis-more > summary:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--tertiary) 55%, transparent);
+  outline-offset: 3px;
+}
+
+.china-analysis-more > .knowledge-grid {
+  margin-top: 0.55rem;
+}
+
 .knowledge-card__summary {
   display: -webkit-box;
   margin: 0 0 0.8rem;
