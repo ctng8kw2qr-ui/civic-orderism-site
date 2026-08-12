@@ -632,7 +632,7 @@ const readingRoutes = [
     title: "第一次了解公民秩序主义",
     count: 4,
     audience: "第一次访问本站，希望快速建立整体认识的读者",
-    duration: "约 25–35 分钟",
+    duration: "约 30–45 分钟",
     nextHref: "#route-china-reality",
     slugs: [
       "introduction-manual",
@@ -725,18 +725,54 @@ assert(
   articlesText.includes("如果第一次来到这里，不建议直接浏览全部文章") &&
     articlesText.includes("请选择下面的一条阅读路线开始") &&
     articleLibraryPosition > previousReadingRoutePosition &&
-    articlesHtml.includes('class="reading-library-index"') &&
+    !articlesHtml.includes('class="reading-library-index"') &&
+    !articlesText.includes("一、旧世界为什么失效") &&
+    !articlesText.includes("九、后台系统、司法与执行底座") &&
+    !articlesHtml.includes('class="content-meta"') &&
     articlesText.includes("浏览全部文章") &&
-    articlesText.includes("本站共收录 97 篇文章") &&
+    articlesText.includes("旧专题索引均保留在独立页面") &&
     articlesHtml.includes('data-slug="civic-orderism"') &&
     articlesHtml.includes('data-slug="china"') &&
     articlesHtml.includes('data-slug="china-future"') &&
-    articlesHtml.includes('data-slug="topics"') &&
+    articlesHtml.includes('data-slug="articles/all"') &&
     articlesHtml.includes('data-slug="preparation"') &&
     articlesHtml.includes('data-slug="participate"') &&
     articlesText.includes("已经理解基本路线") &&
     !articlesHtml.includes('data-slug="institution-design"'),
   "阅读地图缺少新读者引导、完整索引入口，或重新突出制度设计",
+);
+
+const completeArticlesHtml = fs.readFileSync(
+  publicHtml("articles/all"),
+  "utf8",
+);
+const completeArticlesText = visiblePageText(completeArticlesHtml);
+for (const legacySection of [
+  "一、旧世界为什么失效",
+  "二、中共这个组织为什么走向失灵",
+  "三、中国正在进入什么阶段",
+  "四、外部误判、国际风险与历史案例",
+  "五、为什么需要新的制度通道",
+  "六、公民秩序主义的基本理论",
+  "七、委员会与公共判断机制",
+  "八、选举、授权与责任更替",
+  "九、后台系统、司法与执行底座",
+  "十、近期文章",
+]) {
+  assert(
+    completeArticlesText.includes(legacySection),
+    `完整文章索引缺少旧专题：${legacySection}`,
+  );
+}
+assert(
+  completeArticlesText.includes("本站共收录 97 篇文章") &&
+    completeArticlesHtml.includes('data-slug="articles"') &&
+    completeArticlesHtml.includes('data-slug="civic-orderism"') &&
+    completeArticlesHtml.includes('data-slug="china"') &&
+    completeArticlesHtml.includes('data-slug="china-future"') &&
+    completeArticlesHtml.includes('data-slug="topics"') &&
+    !completeArticlesHtml.includes('class="content-meta"'),
+  "独立完整文章索引缺少栏目入口、阅读地图返回入口或混入文章元信息",
 );
 
 const participateHtml = fs.readFileSync(publicHtml("participate"), "utf8");

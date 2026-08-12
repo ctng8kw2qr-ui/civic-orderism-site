@@ -970,7 +970,7 @@ const readingRouteConfigs = [
     description:
       "用少量核心材料理解公民秩序主义是什么、为什么提出这条路线、试图解决什么问题，以及当前已经进入什么组织阶段。",
     audience: "第一次访问本站，希望快速建立整体认识的读者",
-    duration: "约 25–35 分钟",
+    duration: "约 30–45 分钟",
     entries: [
       { href: "/introduction-manual", title: "公民秩序主义介绍手册" },
       "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
@@ -1122,20 +1122,39 @@ enableToc: false
 ${readingRouteHtml}
 
 <section class="reading-library" id="all-articles" aria-labelledby="all-articles-title">
+  <span class="legacy-index-anchor" id="一旧世界为什么失效" aria-hidden="true"></span><span class="legacy-index-anchor" id="二中共这个组织为什么走向失灵" aria-hidden="true"></span><span class="legacy-index-anchor" id="三中国正在进入什么阶段" aria-hidden="true"></span><span class="legacy-index-anchor" id="四外部误判国际风险与历史案例" aria-hidden="true"></span><span class="legacy-index-anchor" id="五为什么需要新的制度通道" aria-hidden="true"></span><span class="legacy-index-anchor" id="六公民秩序主义的基本理论" aria-hidden="true"></span><span class="legacy-index-anchor" id="七委员会与公共判断机制" aria-hidden="true"></span><span class="legacy-index-anchor" id="八选举授权与责任更替" aria-hidden="true"></span><span class="legacy-index-anchor" id="九后台系统司法与执行底座" aria-hidden="true"></span><span class="legacy-index-anchor" id="十近期文章" aria-hidden="true"></span>
   <p class="resource-label">完整索引</p>
   <h2 id="all-articles-title">全部文章</h2>
-  <p>如果已经知道自己要找什么，可以直接浏览完整文章库。以下索引保留所有现有文章入口，但不作为第一次访问时的阅读起点。</p>
-  <div class="reading-library__collections"><a href="/civic-orderism"><strong>公民秩序主义</strong><span>政治路线、基本理论与组织承接</span></a><a href="/china"><strong>解析中共</strong><span>组织结构、官僚系统与现实变化</span></a><a href="/china-future"><strong>中国未来</strong><span>转型窗口、国家治理与未来秩序</span></a><a href="/topics"><strong>专题索引</strong><span>按具体问题继续浏览</span></a></div>
-  <details class="reading-library-index" id="complete-article-index"><summary>浏览全部文章</summary>
+  <p>如果已经知道自己要找什么，可以直接浏览完整文章库。所有现有文章和旧专题索引均保留在独立页面。</p>
+  <div class="reading-library__collections"><a href="/civic-orderism"><strong>公民秩序主义</strong><span>政治路线、基本理论与组织承接</span></a><a href="/china"><strong>解析中共</strong><span>组织结构、官僚系统与现实变化</span></a><a href="/china-future"><strong>中国未来</strong><span>转型窗口、国家治理与未来秩序</span></a><a href="/articles/all"><strong>浏览全部文章</strong><span>进入完整文章与专题索引</span></a></div>
+</section>`,
+);
+
+writeFile(
+  "articles/all.md",
+  `---
+title: "全部文章"
+date: 2026-05-10
+updated: 2026-08-11
+category: "索引"
+tags:
+  - index
+description: "按问题、栏目与专题浏览公民秩序主义完整文章库。"
+status: published
+enableToc: false
+---
+
+# 全部文章
+
+这里保留网站完整文章与旧专题索引。如果希望按照顺序理解公民秩序主义，请先返回[阅读地图](/articles)选择一条阅读路线。
+
+<div class="complete-index-collections"><a href="/civic-orderism"><strong>公民秩序主义</strong><span>政治路线、基本理论与组织承接</span></a><a href="/china"><strong>解析中共</strong><span>组织结构、官僚系统与现实变化</span></a><a href="/china-future"><strong>中国未来</strong><span>转型窗口、国家治理与未来秩序</span></a><a href="/topics"><strong>专题索引</strong><span>按具体问题继续浏览</span></a></div>
 
 ${mapBody}## 十、近期文章
 
 ${recent || "_（暂无未归入前九个栏目的近期文章。）_"}
 
-  </details>
-</section>
-
-<p class="reading-map-count">本站共收录 ${articles.length} 篇文章。四条路线提供阅读起点，完整索引继续保留所有现有入口。</p>`,
+本站共收录 ${articles.length} 篇文章。所有现有文章入口和旧专题锚点均保留在本页。`,
 );
 
 console.log(`Generated indexes for ${articles.length} articles.`);

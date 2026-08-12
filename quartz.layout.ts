@@ -48,7 +48,10 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.ConditionalRender({
       component: Component.ContentMeta(),
-      condition: (page) => page.fileData.slug !== "index",
+      condition: (page) =>
+        page.fileData.slug !== "index" &&
+        page.fileData.slug !== "articles" &&
+        page.fileData.slug !== "articles/all",
     }),
     Component.TagList(),
     Component.ArticleSeriesNavigation(),
@@ -85,7 +88,12 @@ export const defaultContentPageLayout: PageLayout = {
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [
     Component.Breadcrumbs({ rootName: "首页", spacerSymbol: "/" }),
-    Component.ContentMeta(),
+    Component.ConditionalRender({
+      component: Component.ContentMeta(),
+      condition: (page) =>
+        page.fileData.slug !== "articles" &&
+        page.fileData.slug !== "articles/all",
+    }),
   ],
   left: [
     Component.PageTitle(),
