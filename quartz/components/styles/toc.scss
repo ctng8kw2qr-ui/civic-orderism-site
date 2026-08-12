@@ -110,11 +110,29 @@ footer .toc {
     max-height: 45vh;
     margin-bottom: 0;
   }
+
+  & ul.toc-content.overflow > li {
+    margin: 0.34rem 0;
+  }
+
+  & ul.toc-content.overflow > li > a {
+    display: block;
+    color: var(--darkgray);
+    font-size: 0.84rem;
+    line-height: 1.58;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
 }
 
 @media all and ($mobile) {
   .toc-mobile {
     display: flex;
+  }
+
+  .toc-article ul.toc-content.overflow {
+    max-height: 40vh;
+    overflow-y: auto;
   }
 
   .toc-desktop {

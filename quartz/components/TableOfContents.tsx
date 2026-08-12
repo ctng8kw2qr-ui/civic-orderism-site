@@ -44,13 +44,15 @@ export default ((opts?: Partial<Options>) => {
       responsiveClass === "toc-article" || responsiveClass === "toc-desktop"
         ? "本文目录"
         : i18n(cfg.locale).components.tableOfContents.title;
+    const initiallyCollapsed =
+      fileData.collapseToc || responsiveClass !== "toc-desktop";
     return (
       <div class={["toc", responsiveClass].filter(Boolean).join(" ")}>
         <button
           type="button"
-          class={fileData.collapseToc ? "collapsed toc-header" : "toc-header"}
+          class={initiallyCollapsed ? "collapsed toc-header" : "toc-header"}
           aria-controls={id}
-          aria-expanded={!fileData.collapseToc}
+          aria-expanded={!initiallyCollapsed}
         >
           <h3>{title}</h3>
           <svg
@@ -70,7 +72,7 @@ export default ((opts?: Partial<Options>) => {
         </button>
         <OverflowList
           id={id}
-          class={fileData.collapseToc ? "collapsed toc-content" : "toc-content"}
+          class={initiallyCollapsed ? "collapsed toc-content" : "toc-content"}
         >
           {fileData.toc.map((tocEntry) => (
             <li key={tocEntry.slug} class={`depth-${tocEntry.depth}`}>

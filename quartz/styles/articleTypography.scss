@@ -1,207 +1,385 @@
 @use "./variables.scss" as *;
 
 /*
- * Shared long-form article rhythm.
+ * Civic Orderism Article Design System
  *
- * All ordinary article typography should be controlled here. Component-specific
- * surfaces such as key judgments, callouts, knowledge cards, and the article
- * footer keep their own scoped styles.
+ * Every published article receives data-page-kind="article" in renderPage.
+ * Header, body and long-form semantic blocks inherit this single token set.
+ * Collection, organization and landing pages intentionally remain outside it.
  */
-.article-content {
+body[data-page-kind="article"] {
+  --article-reading-width: 760px;
   --article-font-size: 17px;
   --article-line-height: 1.9;
   --article-paragraph-spacing: 1.25em;
-  --article-heading-2-spacing: 2.4em;
-  --article-heading-3-spacing: 2em;
-  --article-heading-4-spacing: 1.6em;
-  --article-block-spacing: 1.5em;
+  --article-h1-size: clamp(2rem, 3.4vw, 2.75rem);
+  --article-h1-line-height: 1.22;
+  --article-h2-size: 1.45rem;
+  --article-h3-size: 1.16rem;
+  --article-h4-size: 1rem;
+  --article-h2-spacing: 2.4em;
+  --article-h3-spacing: 2em;
+  --article-h4-spacing: 1.65em;
+  --article-block-spacing: 1.55em;
   --article-list-indent: 1.5em;
 
-  min-width: 0;
-  color: var(--darkgray);
-  font-size: var(--article-font-size);
-  line-height: var(--article-line-height);
+  & .center > :is(.page-header, article, hr, .page-footer) {
+    width: 100%;
+    max-width: var(--article-reading-width);
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+  }
 
-  & p {
+  & .page-header {
+    padding-top: 0.4rem;
+  }
+
+  & .page-header > .popover-hint {
+    min-width: 0;
+  }
+
+  & .breadcrumb-container {
+    margin: 0 0 1.55rem;
+    color: var(--gray);
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
+
+  & .breadcrumb-container a,
+  & .breadcrumb-current,
+  & .breadcrumb-element p {
+    color: var(--gray);
+    font-weight: 500;
+  }
+
+  & .article-header {
+    display: block;
+    margin: 0;
+  }
+
+  & .article-header__title {
+    max-width: 23em;
+    margin: 0;
+    color: var(--dark);
+    font-size: var(--article-h1-size);
+    font-weight: 600;
+    letter-spacing: -0.018em;
+    line-height: var(--article-h1-line-height);
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  & .article-header__subtitle {
+    max-width: 42em;
+    margin: 0.85rem 0 0;
+    color: var(--darkgray);
+    font-size: 1.08rem;
+    font-weight: 400;
+    line-height: 1.65;
+  }
+
+  & .content-meta {
+    margin: 1rem 0 0;
+    color: var(--gray);
+    font-size: 0.8rem;
+    line-height: 1.55;
+  }
+
+  & .tags {
+    gap: 0.4rem;
+    margin: 0.75rem 0 0;
+  }
+
+  & .tags a.internal.tag-link {
+    padding: 0;
+    border-radius: 0;
+    background: none;
+    color: var(--gray);
+    font-size: 0.76rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  & .tags a.internal.tag-link:hover {
+    color: var(--secondary);
+  }
+
+  & .article-series-nav {
+    margin-top: 1.25rem;
+  }
+
+  & .key-points-card {
+    margin-top: 1.6rem;
+  }
+
+  & .toc-article {
+    margin-top: 1.3rem;
+    margin-bottom: 2.05rem;
+  }
+
+  & article.article-page {
+    max-width: var(--article-reading-width) !important;
+  }
+
+  & .article-content {
+    min-width: 0;
+    color: var(--darkgray);
+    font-size: var(--article-font-size);
+    line-height: var(--article-line-height);
+  }
+
+  & .article-content p {
     margin: 0 0 var(--article-paragraph-spacing);
     line-height: inherit;
   }
 
-  & > :is(h2, h3, h4, h5, h6) {
+  & .article-content > :is(h2, h3, h4, h5, h6) {
     padding-top: 0;
     border-top: 0;
   }
 
-  & > :first-child:is(h2, h3, h4, h5, h6) {
+  & .article-content > :first-child:is(h2, h3, h4, h5, h6) {
     margin-top: 0;
   }
 
-  & h2 {
-    margin: var(--article-heading-2-spacing) 0 0.9em;
-    font-size: 1.45rem;
-    line-height: 1.35;
+  & .article-content h2 {
+    margin: var(--article-h2-spacing) 0 0.9em;
+    color: var(--dark);
+    font-size: var(--article-h2-size);
+    font-weight: 600;
+    line-height: 1.38;
+    text-wrap: pretty;
   }
 
-  & h3 {
-    margin: var(--article-heading-3-spacing) 0 0.75em;
-    font-size: 1.15rem;
-    line-height: 1.4;
-  }
-
-  & h4,
-  & h5,
-  & h6 {
-    margin: var(--article-heading-4-spacing) 0 0.65em;
-    font-size: 1rem;
+  & .article-content h3 {
+    margin: var(--article-h3-spacing) 0 0.75em;
+    color: var(--dark);
+    font-size: var(--article-h3-size);
+    font-weight: 600;
     line-height: 1.45;
   }
 
-  & :is(h2, h3, h4, h5, h6) + :is(p, ul, ol, blockquote) {
+  & .article-content h4,
+  & .article-content h5,
+  & .article-content h6 {
+    margin: var(--article-h4-spacing) 0 0.65em;
+    color: var(--dark);
+    font-size: var(--article-h4-size);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  & .article-content :is(h2, h3, h4, h5, h6) + :is(p, ul, ol, blockquote) {
     margin-top: 0;
   }
 
-  & ul,
-  & ol {
+  & .article-content ul,
+  & .article-content ol {
     margin: 0.75em 0 var(--article-paragraph-spacing);
     padding-inline-start: var(--article-list-indent);
   }
 
-  & ul {
+  & .article-content ul {
     list-style: disc;
   }
 
-  & ol {
+  & .article-content ol {
     list-style: decimal;
   }
 
-  & li {
-    margin: 0 0 0.45em;
+  & .article-content li {
+    margin: 0 0 0.46em;
     line-height: 1.8;
   }
 
-  & li:last-child {
+  & .article-content li:last-child {
     margin-bottom: 0;
   }
 
-  & :is(ul, ol) li > p {
-    margin: 0 0 0.45em;
+  & .article-content :is(ul, ol) li > p {
+    margin: 0 0 0.46em;
     line-height: inherit;
   }
 
-  & :is(ul, ol) li > p:last-child {
+  & .article-content :is(ul, ol) li > p:last-child {
     margin-bottom: 0;
   }
 
-  & li > :is(ul, ol) {
+  & .article-content li > :is(ul, ol) {
     margin: 0.55em 0 0;
-    padding-inline-start: 1.35em;
+    padding-inline-start: 1.3em;
   }
 
-  & blockquote:not([data-callout]) {
+  & .article-content blockquote:not([data-callout]) {
     box-sizing: border-box;
     margin: var(--article-block-spacing) 0;
     padding: 0.9em 1.1em;
     border: 0;
-    border-left: 3px solid var(--tertiary);
+    border-left: 3px solid color-mix(in srgb, var(--secondary) 62%, var(--gray));
     background: color-mix(in srgb, var(--light) 92%, var(--lightgray));
     color: var(--darkgray);
+    font-size: 0.98em;
     line-height: 1.8;
   }
 
-  & blockquote:not([data-callout]) > :first-child {
+  & .article-content blockquote:not([data-callout]) > :first-child {
     margin-top: 0;
   }
 
-  & blockquote:not([data-callout]) > :last-child {
+  & .article-content blockquote:not([data-callout]) > :last-child {
     margin-bottom: 0;
   }
 
-  & strong {
+  & .article-content strong {
+    color: inherit;
+    font-size: inherit;
     font-weight: 650;
   }
 
-  & hr {
+  & .article-content a:not(.tag-link) {
+    color: var(--secondary);
+    font-weight: 550;
+    text-decoration-line: underline;
+    text-decoration-color: color-mix(
+      in srgb,
+      var(--secondary) 38%,
+      transparent
+    );
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+    background: none;
+    overflow-wrap: anywhere;
+  }
+
+  & .article-content a:not(.tag-link):hover {
+    color: var(--tertiary);
+    text-decoration-color: currentColor;
+  }
+
+  & .article-content hr {
     width: 100%;
     height: 1px;
     margin: 2.4em 0;
     border: 0;
-    background: var(--lightgray);
+    background: color-mix(in srgb, var(--lightgray) 78%, transparent);
   }
 
-  & img {
+  & .article-content img {
     display: block;
     max-width: 100%;
     height: auto;
     margin: 1.8em auto;
+    border-radius: 4px;
   }
 
-  & figure:not([data-rehype-pretty-code-figure]) {
+  & .article-content figure:not([data-rehype-pretty-code-figure]) {
     margin: 1.8em 0;
   }
 
-  & figure:not([data-rehype-pretty-code-figure]) img {
+  & .article-content figure:not([data-rehype-pretty-code-figure]) img {
     margin: 0 auto;
   }
 
-  & figure:not([data-rehype-pretty-code-figure]) > :last-child {
+  &
+    .article-content
+    figure:not([data-rehype-pretty-code-figure])
+    > :last-child {
     margin-bottom: 0;
   }
 
-  & figcaption {
+  & .article-content figcaption {
     margin-top: 0.6em;
     color: var(--gray);
-    font-size: 0.9em;
+    font-size: 0.84em;
     line-height: 1.6;
     text-align: center;
   }
 
-  & > pre,
-  & > figure[data-rehype-pretty-code-figure],
-  & > .table-container {
+  & .article-content > pre,
+  & .article-content > figure[data-rehype-pretty-code-figure],
+  & .article-content > .table-container {
+    max-width: 100%;
     margin: var(--article-block-spacing) 0;
+    overflow-x: auto;
   }
 
-  & > .table-container > table {
+  & .article-content > .table-container > table {
     margin: 0;
   }
 
-  & > .footnotes {
+  & .article-content > .footnotes {
     margin-top: 2.4em;
     padding-top: 1em;
   }
 
-  & > .footnotes > ol {
+  & .article-content > .footnotes > ol {
     margin-bottom: 0;
   }
 
-  & > .footnotes > ol > li:last-child > :last-child {
+  & .article-content > p:last-child,
+  & .article-content > ul:last-child,
+  & .article-content > ol:last-child,
+  & .article-content > blockquote:last-child:not([data-callout]),
+  & .article-content > figure:last-child:not([data-rehype-pretty-code-figure]) {
     margin-bottom: 0;
   }
 
-  & > p:last-child,
-  & > ul:last-child,
-  & > ol:last-child,
-  & > blockquote:last-child:not([data-callout]),
-  & > figure:last-child:not([data-rehype-pretty-code-figure]) {
+  & .center > hr {
+    margin-top: 3rem;
     margin-bottom: 0;
+    border-color: var(--lightgray);
   }
 }
 
 @media all and ($mobile) {
-  .article-content {
+  body[data-page-kind="article"] {
     --article-font-size: 16px;
     --article-line-height: 1.85;
-    --article-list-indent: 1.25em;
+    --article-paragraph-spacing: 1.22em;
+    --article-h1-size: clamp(1.78rem, 8.2vw, 2.2rem);
+    --article-h2-size: 1.34rem;
+    --article-h3-size: 1.12rem;
+    --article-list-indent: 1.22em;
 
-    & h2 {
-      font-size: 1.35rem;
+    & .page > #quartz-body {
+      padding-right: clamp(1rem, 4.8vw, 1.25rem);
+      padding-left: clamp(1rem, 4.8vw, 1.25rem);
     }
 
-    & h3 {
-      font-size: 1.12rem;
+    & .page-header {
+      padding-top: 0;
     }
 
-    & blockquote:not([data-callout]) {
+    & .breadcrumb-container {
+      margin-bottom: 1.2rem;
+    }
+
+    & .article-header__title {
+      letter-spacing: -0.012em;
+      line-height: 1.28;
+    }
+
+    & .article-header__subtitle {
+      margin-top: 0.68rem;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    & .content-meta {
+      margin-top: 0.82rem;
+    }
+
+    & .key-points-card {
+      margin-top: 1.35rem;
+    }
+
+    & .toc-article {
+      margin-top: 1rem;
+      margin-bottom: 1.7rem;
+    }
+
+    & .article-content blockquote:not([data-callout]) {
       padding: 0.8em 0.9em;
     }
   }

@@ -66,6 +66,10 @@ export const defaultContentPageLayout: PageLayout = {
       condition: (page) => page.fileData.slug !== "index",
     }),
     Component.ConditionalRender({
+      component: Component.ArticleHeader(),
+      condition: isArticleContentPage,
+    }),
+    Component.ConditionalRender({
       component: Component.ContentMeta(),
       condition: shouldShowContentMeta,
     }),

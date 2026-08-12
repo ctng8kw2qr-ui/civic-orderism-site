@@ -134,15 +134,12 @@
 }
 
 .key-points-card {
-  margin: 1.45rem 0 2.35rem;
-  padding: 1.35rem 1.45rem 1.28rem;
+  margin: 1.45rem 0 2.2rem;
+  padding: 1.25rem 1.35rem 1.2rem;
   border: 1px solid color-mix(in srgb, var(--lightgray) 76%, var(--gray));
-  border-left: 4px solid color-mix(in srgb, var(--secondary) 62%, var(--gray));
-  border-radius: 8px;
-  background: var(--light);
-  box-shadow:
-    inset 0 1px 0 color-mix(in srgb, var(--light) 70%, transparent),
-    0 2px 10px color-mix(in srgb, var(--dark) 7%, transparent);
+  border-left: 3px solid color-mix(in srgb, var(--secondary) 62%, var(--gray));
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--light) 96%, var(--lightgray));
 
   &__inner {
     display: block;
@@ -170,7 +167,8 @@
   & li {
     margin: 0.48rem 0;
     color: var(--darkgray);
-    line-height: 1.78;
+    font-size: 0.98rem;
+    line-height: 1.75;
   }
 }
 
@@ -191,7 +189,8 @@
 .key-points-card__item {
   margin: 0.48rem 0;
   color: var(--darkgray);
-  line-height: 1.78;
+  font-size: 0.98rem;
+  line-height: 1.75;
 }
 
 .key-points-card__item::marker {
@@ -236,13 +235,14 @@ article .key-judgment,
 .key-judgment,
 article blockquote[data-callout="key-point"] {
   position: relative;
-  margin: 1.25rem 0;
-  padding: 0.85rem 3.8rem 0.85rem 1rem;
-  border-left: 3px solid var(--secondary);
-  border-radius: 0 6px 6px 0;
-  background: color-mix(in srgb, var(--light) 94%, var(--dark) 6%);
+  margin: 1.45rem 0;
+  padding: 0.9rem 3.8rem 0.9rem 1rem;
+  border-left: 2px solid color-mix(in srgb, var(--secondary) 70%, var(--gray));
+  border-radius: 0 4px 4px 0;
+  background: color-mix(in srgb, var(--light) 96%, var(--lightgray));
   color: var(--dark);
-  line-height: 1.75;
+  font-size: 0.98em;
+  line-height: 1.78;
 
   & strong {
     color: inherit;
@@ -255,7 +255,7 @@ article blockquote[data-callout="key-point"] {
   max-width: 100%;
   overflow: visible;
   border: 0;
-  border-left: 3px solid var(--secondary);
+  border-left: 2px solid color-mix(in srgb, var(--secondary) 70%, var(--gray));
 
   & > .callout-title {
     display: none;

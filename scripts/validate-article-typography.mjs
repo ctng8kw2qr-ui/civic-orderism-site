@@ -88,11 +88,46 @@ const contentComponent = fs.readFileSync(
   path.join(root, "quartz/components/pages/Content.tsx"),
   "utf8",
 );
+const articleHeaderComponent = fs.readFileSync(
+  path.join(root, "quartz/components/ArticleHeader.tsx"),
+  "utf8",
+);
+const articleTypography = fs.readFileSync(
+  path.join(root, "quartz/styles/articleTypography.scss"),
+  "utf8",
+);
+const articleLayout = fs.readFileSync(
+  path.join(root, "quartz.layout.ts"),
+  "utf8",
+);
 if (
   !contentComponent.includes('class="article-content"') ||
-  !contentComponent.includes("isArticleSlug")
+  !contentComponent.includes("isArticleSlug") ||
+  !contentComponent.includes("article-page")
 ) {
   errors.push("Content.tsx 未使用统一文章正文容器");
+}
+if (
+  !articleHeaderComponent.includes('class="article-header"') ||
+  !articleHeaderComponent.includes('class="article-header__title"') ||
+  !articleHeaderComponent.includes('class="article-header__subtitle"') ||
+  !articleLayout.includes("Component.ArticleHeader()")
+) {
+  errors.push("文章页未使用统一 ArticleHeader");
+}
+
+const requiredTypographyTokens = [
+  "--article-reading-width: 760px",
+  "--article-font-size: 17px",
+  "--article-line-height: 1.9",
+  "--article-paragraph-spacing: 1.25em",
+  "--article-font-size: 16px",
+  "--article-line-height: 1.85",
+];
+for (const token of requiredTypographyTokens) {
+  if (!articleTypography.includes(token)) {
+    errors.push(`统一文章排版缺少 token：${token}`);
+  }
 }
 
 const builtArticles = articleSlugs.map((slug) => ({
@@ -109,22 +144,28 @@ if (hasBuiltSite) {
     }
 
     const html = fs.readFileSync(file, "utf8");
-    const articleStart = html.search(
-      /<article class="[^"]*\bpopover-hint\b[^"]*">/,
+    const pageKind = html.includes('data-page-kind="article"');
+    const headerStart = html.indexOf('<header class="article-header">');
+    const titleStart = html.indexOf(
+      '<h1 class="article-header__title">',
+      headerStart,
     );
-    const titleStart = html.indexOf("<h1", articleStart);
-    const titleEnd = html.indexOf("</h1>", titleStart);
+    const articleStart = html.search(
+      /<article class="[^"]*\barticle-page\b[^"]*">/,
+    );
     const bodyStart = html.indexOf(
       '<div class="article-content">',
       articleStart,
     );
     if (
+      !pageKind ||
+      headerStart < 0 ||
+      titleStart < headerStart ||
       articleStart < 0 ||
-      titleStart < articleStart ||
-      titleEnd < titleStart ||
-      bodyStart < titleEnd
+      bodyStart < articleStart ||
+      html.slice(bodyStart).includes('<p class="subtitle">')
     ) {
-      errors.push(`构建页面未使用 article-content：/${slug}`);
+      errors.push(`构建页面未使用统一文章头部与正文容器：/${slug}`);
     }
   }
 }
@@ -144,7 +185,7 @@ if (errors.length > 0) {
     0,
   );
   console.log(
-    `Article typography validation passed: ${articleFiles.length} sources; ${hasBuiltSite ? `${builtArticles.length} built pages use article-content` : "built-page check skipped"}; no forbidden spacing markup.`,
+    `Article typography validation passed: ${articleFiles.length} sources; ${hasBuiltSite ? `${builtArticles.length} built pages use ArticleHeader + article-content` : "built-page check skipped"}; centralized typography tokens present; no forbidden spacing markup.`,
   );
   console.log(
     `Intentional single <br> compatibility: ${breakCount} breaks across ${intentionalBreaks.length} articles.`,

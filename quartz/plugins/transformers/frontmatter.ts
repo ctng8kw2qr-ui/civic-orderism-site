@@ -194,6 +194,7 @@ declare module "vfile" {
         listed: boolean;
         noindex: boolean;
         description: string;
+        subtitle: string;
         socialDescription: string;
         publish: boolean | string;
         draft: boolean | string;

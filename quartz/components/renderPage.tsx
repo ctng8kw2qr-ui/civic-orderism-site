@@ -10,6 +10,7 @@ import { Root, Element, ElementContent } from "hast"
 import { GlobalConfiguration } from "../cfg"
 import { i18n } from "../i18n"
 import { styleText } from "util"
+import { isArticleSlug } from "../util/articlePage"
 
 interface RenderComponents {
   head: QuartzComponent
@@ -262,7 +263,7 @@ export function renderPage(
   const doc = (
     <html lang={lang} dir={direction}>
       <Head {...componentData} />
-      <body data-slug={slug}>
+      <body data-slug={slug} data-page-kind={isArticleSlug(slug) ? "article" : undefined}>
         <div id="quartz-root" class="page">
           <Body {...componentData}>
             {LeftComponent}
