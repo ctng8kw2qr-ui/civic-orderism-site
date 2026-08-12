@@ -9,7 +9,8 @@ import {
 } from "./types";
 
 const primaryLinks = [
-  { label: "从这里开始", href: "/start" },
+  { label: "5分钟了解", href: "/start-here" },
+  { label: "阅读地图", href: "/articles" },
   { label: "董事会筹备", href: "/preparation" },
   { label: "公民秩序主义", href: "/civic-orderism" },
   { label: "核心路线", href: "/civic-orderism/peaceful-state-transition" },
@@ -17,7 +18,6 @@ const primaryLinks = [
   { label: "中国未来", href: "/china-future" },
   { label: "专题", href: "/topics" },
   { label: "核心概念", href: "/concepts" },
-  { label: "全部文章", href: "/articles" },
   { label: "关于", href: "/about" },
 ];
 

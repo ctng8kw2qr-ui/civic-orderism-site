@@ -2,8 +2,8 @@
 title: "旧秩序失效"
 date: 2026-07-19
 updated: 2026-07-20
-description: "保留的旧栏目入口；相关内容已纳入公民秩序主义与中国政治转型专题。"
-contentType: "兼容入口"
+description: "从政党政治、工业型治理与程序问责的结构性局限，理解信息化时代的政治转型问题。"
+contentType: "研究归档"
 status: published
 listed: true
 folderListed: true
@@ -12,7 +12,7 @@ noindex: false
 
 # 旧秩序失效
 
-这是保留的旧栏目入口。相关研究已按新的信息架构纳入 [[civic-orderism|公民秩序主义]]、[[topics/political-transition|中国政治转型]]与具体核心概念，原有文章 URL 均保持不变。
+本页汇集关于政党政治、工业型治理、程序问责与信息化社会结构变化的研究。第一次访问本站，建议先从 [[articles|阅读地图]] 选择阅读路线；已经明确研究方向的读者，可以直接浏览以下文章。
 
 <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">

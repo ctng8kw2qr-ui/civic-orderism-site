@@ -721,7 +721,7 @@ function sectionPage(section) {
   <p class="resource-label">从这里理解路线</p>
   <h2 id="section-route-intro-title">公民秩序主义首先是一条政治与制度路线</h2>
   <p>它面向中国未来，主张通过和平转轨、行政承接、责任区分和制度重组降低政治变化的社会成本；理论研究为路线提供基础，组织建设为路线提供长期承接。</p>
-  <div class="section-route-links"><a href="/start"><strong>5分钟了解</strong><span>建立完整的基础认识</span></a><a href="/civic-orderism/peaceful-state-transition"><strong>核心路线</strong><span>理解国家连续与低冲突转轨</span></a><a href="/participate"><strong>联系与协作</strong><span>了解传播、专业协作与长期联系</span></a></div>
+  <div class="section-route-links"><a href="/start-here"><strong>5分钟了解</strong><span>建立完整的基础认识</span></a><a href="/civic-orderism/peaceful-state-transition"><strong>核心路线</strong><span>理解国家连续与低冲突转轨</span></a><a href="/participate"><strong>联系与协作</strong><span>了解传播、专业协作与长期联系</span></a></div>
 </section>`
       : "";
   return `${yamlFrontmatter({ title: section.name, description: section.description, contentType: "栏目" })}
@@ -942,7 +942,7 @@ writeContent(
   <h1>公民秩序主义北美非营利法人及首届董事会筹备工作已经启动</h1>
   <p class="v2-hero__tagline">建设一条低阻力、低风险、能够和平承接中国未来的政治道路</p>
   <div class="home-platform-hero__copy"><p>公民秩序主义正在从理论建设进入组织建设阶段，为长期研究、出版、公共传播和未来政治承接建立稳定、依法运行的组织基础。</p></div>
-  <div class="v2-actions"><a class="v2-button v2-button--primary" href="/preparation">了解董事会筹备</a><a class="v2-button v2-button--secondary" href="/start">了解公民秩序主义</a><a class="v2-button v2-button--text" href="/articles">阅读理论文章</a></div>
+  <div class="v2-actions"><a class="v2-button v2-button--primary" href="/preparation">了解董事会筹备</a><a class="v2-button v2-button--secondary" href="/start-here">了解公民秩序主义</a><a class="v2-button v2-button--text" href="/articles">阅读理论文章</a></div>
   <p class="home-preparation-note">当前处于前期筹备阶段，法人及首届董事会尚未依法产生。</p>
 </section>
 
@@ -979,40 +979,19 @@ writeContent(
 );
 
 writeContent(
-  "start.md",
-  `${yamlFrontmatter({ title: "5分钟了解公民秩序主义", description: "用五分钟理解中国当前的高脆弱处境、公民秩序主义的转轨原则，以及继续阅读这套理论的路径。", contentType: "阅读路径" })}
-
-<div class="start-page">
-  <header class="start-page__header"><p class="resource-label">新读者入口</p><h1>5分钟了解公民秩序主义</h1><p>公民秩序主义首先是一条面向中国未来的政治与制度路线。它既解释中国正在面对的结构性问题，也提出一条降低冲突、保持国家连续运行并完成制度转轨的现实道路。</p></header>
-  <div class="start-page__sections">
-    <section><span>01</span><div><h2>中国面对的不是单一问题</h2><p>经济、财政、官场、社会信任与治理能力相互叠加，局部压力会沿组织和责任链扩散。</p></div></section>
-    <section><span>02</span><div><h2>为什么旧道路越来越难继续</h2><p>增长、地方竞争、官僚激励和外部机会形成的平衡正在失效；治理成本上升，反馈与纠错能力下降。</p></div></section>
-    <section><span>03</span><div><h2>公民秩序主义是什么</h2><p>它不是价值口号，而是要在秩序、自由、责任、尊严和国家连续性之间建立可执行的制度平衡。</p></div></section>
-    <section><span>04</span><div><h2>公民秩序主义不是什么</h2><ul><li>不是以社会失控换取制度变化。</li><li>不是以政治身份实施普遍追责和制造集体恐惧。</li><li>不是照搬西方政党政治。</li><li>不回避转型如何发生。</li></ul></div></section>
-  </div>
-  <section class="start-method" id="method-difference">
-    <div class="home-section-intro"><p class="resource-label">方法差异</p><h2>公民秩序主义关注的，不只是价值，而是转轨如何发生</h2></div>
-    <div class="method-comparison-grid"><article><strong>只停留在价值主张</strong><p>说明希望抵达哪里，却未必回答权力如何退出、行政系统由谁承接。</p></article><article><strong>进入制度转轨路线</strong><p>处理责任边界、参与者安全、国家连续与可逆步骤，让价值进入现实。</p></article></div>
-  </section>
-  <section class="start-roadmap"><div class="home-section-intro"><p class="resource-label">理论路线图</p><h2>从高脆弱态到制度转轨</h2><p>在系统仍有基本组织能力时，提前建立制度接口和承接路径。</p></div><p class="start-roadmap__line">${roadmapSteps.join(" → ")}</p></section>
-  <section class="start-method"><div class="home-section-intro"><p class="resource-label">长期承接</p><h2>公民秩序主义正在从理论走向长期承接</h2><p>公民秩序主义不只是在解释问题，也正在建设能够长期维护理论、治理研究与公共资产的组织基础。当前工作包括理论出版、公共传播、政治与治理研究、专业协作与北美非营利组织筹备。</p><p>组织建设不是为了制造身份和等级，而是为了让这条政治路线能够长期存在、持续研究、稳定传播，并在未来具备现实承接能力。</p></div></section>
-  <section class="start-method"><div class="home-section-intro"><p class="resource-label">降低阻力</p><h2>为什么这条路线能够降低未来政治转型阻力</h2></div><div class="method-comparison-grid"><article><strong>减少社会恐惧</strong><p>不以革命和集体报复动员政治，降低体制内外对转型的生存性恐惧。</p></article><article><strong>保持国家连续</strong><p>保留必要行政能力和公共服务体系，避免政治变化演变为社会失序。</p></article><article><strong>提供制度接口</strong><p>通过责任区分、授权转换和制度重组，让不同群体能够进入同一条转轨道路。</p></article></div></section>
-  <section class="start-sequence"><div class="home-section-intro"><p class="resource-label">建议顺序</p><h2>${startReadingSequence?.name ?? "继续阅读"}</h2><p>按照以下顺序，可以系统理解公民秩序主义的现实判断、政治路线与制度方向。</p></div><ol>${startReadingItems}</ol></section>
-  <section class="start-method"><div class="home-section-intro"><p class="resource-label">行动入口</p><h2>下一步可以做什么</h2></div><div class="home-learning-grid home-learning-grid--actions"><a href="${organization.routes.participate}#contact"><span>01</span><strong>建立长期联系</strong><small>对于认同这条路线，但暂时不适合公开参与的人，可以通过电子邮件建立长期、低压力联系。</small></a><a href="${organization.routes.participate}#collaboration"><span>02</span><strong>参与专业协作</strong><small>根据研究、编辑、翻译、设计、技术、法律、财务或项目管理等专业能力参与协作。</small></a><a href="${organization.routes.nonprofitPreparation}"><span>03</span><strong>了解组织筹备</strong><small>了解北美非营利组织、治理边界与长期承接结构的筹备方向。</small></a></div></section>
-</div>`,
-);
-
-writeContent(
   "start-here/index.md",
-  `${yamlFrontmatter({ title: "从这里开始", description: "旧的新读者入口，保留原 URL 并引导至新版开始阅读页面。", contentType: "兼容入口" })}
+  `${yamlFrontmatter({ title: "5分钟了解公民秩序主义", description: "用五分钟了解公民秩序主义是什么、为什么提出、核心政治路线，以及当前组织建设阶段。", contentType: "新读者入口", aliases: ["start"] })}
 
-# 从这里开始
-
-这是保留的旧版入口。新版阅读路线已经迁移到 [[start|开始阅读]]，原有 URL 继续有效。
-
-- [[start|进入新版开始阅读页面]]
-- [阅读介绍手册 PDF](/files/civic-orderism-introduction-manual.pdf)
-- [[articles|查看完整阅读地图]]`,
+<div class="start-page start-here-page">
+  <header class="start-page__header"><p class="resource-label">新读者入口</p><h1>5分钟了解公民秩序主义</h1><p>用五个问题建立基础认识：这是什么、为什么提出、坚持什么、现在正在做什么，以及接下来从哪里继续了解。</p></header>
+  <div class="start-page__sections">
+    <section><span>01</span><div><h2>公民秩序主义是什么？</h2><p>公民秩序主义不是普通政治评论项目，也不是只提供文章和观点的内容平台。它是一条面向中国未来政治转型的组织与政治路线，目标是在降低冲突和社会代价的前提下，为国家秩序、公共服务和政治制度的和平转换建立现实承接能力。</p></div></section>
+    <section><span>02</span><div><h2>为什么提出这条路线？</h2><p>工业时代形成的政治制度、政党组织和官僚治理方式，正在面对信息化社会带来的结构性失配。信息传播、社会协作和公共问题已经高度复杂化，旧有政治通道却越来越难以形成稳定反馈、明确责任和长期判断。中国需要的不是另一轮情绪动员，而是一种适应新时代的政治组织方式。</p><p class="start-roadmap__line">信息化时代 → 工业时代制度失配 → 需要新的政治组织方式</p></div></section>
+    <section><span>03</span><div><h2>核心政治路线是什么？</h2><p>公民秩序主义主张不以社会崩溃换取政治变化，不按政治身份实施普遍追责，也不把国家行政系统整体推向对立面。</p><ul><li><strong>不革命：</strong>不以暴力和社会失控作为转型方法。</li><li><strong>不清算：</strong>责任依据具体行为、证据和法律认定。</li><li><strong>和平承接：</strong>为不同社会群体提供可理解、可预期的制度出口。</li><li><strong>国家连续：</strong>保持行政体系、公共服务与基本社会秩序。</li><li><strong>依法治理：</strong>以程序、授权、监督和责任边界约束权力。</li><li><strong>长期建设：</strong>通过持续的理论、组织和制度准备形成现实能力。</li></ul></div></section>
+    <section><span>04</span><div><h2>现在正在做什么？</h2><p>公民秩序主义已经从理论建设进入组织建设阶段。当前工作集中在北美非营利法人筹备、首届董事会筹备、理论体系整理和长期组织基础建设。现阶段不追求快速扩大人数，而是先建立规则、责任、治理边界和稳定协作关系。</p></div></section>
+    <section><span>05</span><div><h2>下一步从哪里开始？</h2><p>已经建立基础认识后，可以依次理解核心政治路线、按问题进入阅读地图，再了解当前董事会筹备工作。</p><div class="start-page__actions"><a class="v2-button v2-button--primary" href="/civic-orderism/peaceful-state-transition">阅读核心政治路线</a><a class="v2-button v2-button--secondary" href="/articles">阅读地图</a><a class="v2-button v2-button--secondary" href="/preparation">董事会筹备</a></div></div></section>
+  </div>
+</div>`,
 );
 
 for (const topic of topics) {
@@ -1251,7 +1230,7 @@ writeContent(
 </section>
 
 <section class="preparation-section">
-  <div class="home-section-intro"><p class="resource-label">候选人标准</p><h2>我们重视什么</h2><p>现阶段正在识别并接触潜在首届董事候选人，但不会通过公开报名直接产生董事资格。希望联系能够长期承担治理责任、理解基本政治路线，并具备稳定合作意愿的人。</p></div>
+  <div class="home-section-intro"><p class="resource-label">候选人标准</p><h2>潜在候选人需要具备什么</h2><p>现阶段正在识别并接触潜在首届董事候选人，但不会通过公开报名直接产生董事资格。公民秩序主义希望联系能够长期承担治理责任、理解基本政治路线，并具备稳定合作意愿的人。</p></div>
   <ul class="participate-checklist"><li>理解和平转轨、行政承接与国家连续；</li><li>认同不革命、不清算、不以报复为目的；</li><li>尊重程序、授权、组织纪律与集体决策；</li><li>具备独立判断、事实意识和处理分歧的能力；</li><li>能够保护组织信息、成员隐私和敏感资料；</li><li>愿意投入稳定时间并承担法定治理责任；</li><li>能够识别并披露利益冲突；</li><li>具备法律、财务、公共管理、技术、传播、研究或运营能力之一。</li></ul>
 </section>
 
@@ -1263,7 +1242,7 @@ writeContent(
 <section class="preparation-section preparation-legal-note">
   <p class="resource-label">身份边界</p><h2>筹备联系不构成任命或承诺</h2>
   <p>提交意向、参与会议、提供建议或完成协作任务，都不当然产生董事候选人、董事、法定成员、共同创始人或官方代表身份。任何治理身份都必须在制度准备和法律程序完成后，以正式文件确认。</p>
-  <div class="preparation-actions"><a class="v2-button v2-button--primary" href="${organization.routes.participate}#contact">提交筹备意向</a><a class="v2-button v2-button--secondary" href="${organization.routes.manifesto}">阅读筹备宣言</a></div>
+  <div class="preparation-actions"><a class="v2-button v2-button--primary" href="${organization.routes.participate}#contact">了解参与方式</a><a class="v2-button v2-button--secondary" href="${organization.routes.manifesto}">阅读筹备宣言</a></div>
 </section>
 </div>`,
 );
@@ -1367,13 +1346,17 @@ writeContent(
 
 ## 阅读入口
 
-- [[start|5分钟了解公民秩序主义]]
-- [[civic-orderism/peaceful-state-transition|阅读核心政治路线]]
-- [[participate|了解联系与专业协作方式]]
-- [[preparation|了解组织筹备]]
-- [[topics|专题]]
-- [[concepts|核心概念]]
-- [[articles|全部文章]]
+  - [[start-here|5分钟了解公民秩序主义]]
+  - [[articles|进入阅读地图]]
+  - [[civic-orderism/peaceful-state-transition|阅读核心政治路线]]
+  - [[preparation|了解组织筹备]]
+  - [[participate|了解参与方式]]
+
+## 研究入口
+
+  - [[topics|专题]]
+  - [[concepts|核心概念]]
+  - [[articles/all|全部文章]]
 
 ## 核心文档
 
@@ -1390,33 +1373,33 @@ ${site.documents.map((doc) => `- [${doc.title}](${doc.href}) — ${doc.descripti
 
 writeContent(
   "theory/index.md",
-  `${yamlFrontmatter({ title: "旧秩序失效", description: "保留的旧栏目入口；相关内容已纳入公民秩序主义与中国政治转型专题。", contentType: "兼容入口" })}
+  `${yamlFrontmatter({ title: "旧秩序失效", description: "从政党政治、工业型治理与程序问责的结构性局限，理解信息化时代的政治转型问题。", contentType: "研究归档" })}
 
 # 旧秩序失效
 
-这是保留的旧栏目入口。相关研究已按新的信息架构纳入 [[civic-orderism|公民秩序主义]]、[[topics/political-transition|中国政治转型]]与具体核心概念，原有文章 URL 均保持不变。
+本页汇集关于政党政治、工业型治理、程序问责与信息化社会结构变化的研究。第一次访问本站，建议先从 [[articles|阅读地图]] 选择阅读路线；已经明确研究方向的读者，可以直接浏览以下文章。
 
 ${filterPanel(articles.filter((article) => article.slug.startsWith("theory/")))}`,
 );
 
 writeContent(
   "china-stage/index.md",
-  `${yamlFrontmatter({ title: "中国阶段判断", description: "保留的旧栏目入口；阶段判断已纳入中国未来。", contentType: "兼容入口" })}
+  `${yamlFrontmatter({ title: "中国阶段判断", description: "围绕财政、改革窗口、社会压力与政治转型，理解中国正在进入的现实阶段。", contentType: "研究归档" })}
 
 # 中国阶段判断
 
-这是保留的旧栏目入口。阶段性预测、改革窗口与未来路径现统一进入 [[china-future|中国未来]]，原有文章 URL 均保持不变。
+本页汇集关于财政压力、改革窗口、社会心理与未来路径的阶段性研究。第一次访问本站，建议先从 [[articles|阅读地图]] 建立整体认识；希望继续研究未来秩序的读者，可以进入 [[china-future|中国未来]]。
 
 ${filterPanel(articles.filter((article) => article.slug.startsWith("china-stage/")))}`,
 );
 
 writeContent(
   "institution/index.md",
-  `${yamlFrontmatter({ title: "制度机制", description: "保留的旧栏目入口；制度文章已纳入制度设计。", contentType: "兼容入口" })}
+  `${yamlFrontmatter({ title: "制度机制", description: "浏览委员会、行政、选举、司法、监督与后台系统等进阶制度研究。", contentType: "研究归档" })}
 
 # 制度机制
 
-这是保留的旧栏目入口。委员会、行政、议会、选举、司法与后台系统现统一进入 [[institution-design|制度设计]]，原有文章 URL 均保持不变。
+本页汇集委员会、行政、议会、选举、司法、监督与后台系统等进阶制度研究。建议先完成 [[articles#route-institution-research|进阶制度研究路线]]，再按具体问题浏览以下文章。
 
 ${filterPanel(articles.filter((article) => article.section === "制度设计"))}`,
 );

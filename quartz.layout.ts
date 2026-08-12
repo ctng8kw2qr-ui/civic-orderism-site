@@ -7,6 +7,25 @@ const isArticleContentPage = (page: QuartzComponentProps) => {
   return isArticleSlug(page.fileData.slug ?? "");
 };
 
+const institutionalPageSlugs = new Set([
+  "start-here",
+  "preparation",
+  "preparation/board",
+  "participate",
+  "organization-manual",
+  "about",
+]);
+
+const shouldShowContentMeta = (page: QuartzComponentProps) => {
+  const slug = (page.fileData.slug ?? "").replace(/\/index$/, "");
+  return (
+    slug !== "index" &&
+    slug !== "articles" &&
+    slug !== "articles/all" &&
+    !institutionalPageSlugs.has(slug)
+  );
+};
+
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
@@ -28,12 +47,12 @@ export const sharedPageComponents: SharedLayout = {
   footer: Component.Footer({
     copyright: "© 2026 Civic Orderism / 公民秩序主义",
     links: {
-      开始阅读: "/start",
+      "5分钟了解": "/start-here",
+      阅读地图: "/articles",
       董事会筹备: "/preparation",
       核心路线: "/civic-orderism/peaceful-state-transition",
-      参与: "/participate",
-      专题: "/topics",
-      版权说明: "/copyright",
+      参与方式: "/participate",
+      关于: "/about",
     },
   }),
 };
@@ -48,10 +67,7 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.ConditionalRender({
       component: Component.ContentMeta(),
-      condition: (page) =>
-        page.fileData.slug !== "index" &&
-        page.fileData.slug !== "articles" &&
-        page.fileData.slug !== "articles/all",
+      condition: shouldShowContentMeta,
     }),
     Component.TagList(),
     Component.ArticleSeriesNavigation(),
@@ -90,9 +106,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.Breadcrumbs({ rootName: "首页", spacerSymbol: "/" }),
     Component.ConditionalRender({
       component: Component.ContentMeta(),
-      condition: (page) =>
-        page.fileData.slug !== "articles" &&
-        page.fileData.slug !== "articles/all",
+      condition: shouldShowContentMeta,
     }),
   ],
   left: [

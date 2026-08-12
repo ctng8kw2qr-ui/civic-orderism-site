@@ -53,6 +53,12 @@ const assert = (condition, message) => {
   if (!condition) errors.push(message);
 };
 const publicHtml = (slug) => path.join(publicDir, `${slug}.html`);
+const publicRouteHtml = (slug) => {
+  const flatPath = publicHtml(slug);
+  return fs.existsSync(flatPath)
+    ? flatPath
+    : path.join(publicDir, slug, "index.html");
+};
 const publicRouteExists = (slug) =>
   slug === "index"
     ? fs.existsSync(path.join(publicDir, "index.html"))
@@ -290,6 +296,7 @@ for (const article of migration) {
 const requiredRoutes = [
   "index",
   "start",
+  "start-here",
   "china",
   "china-future",
   "civic-orderism",
@@ -404,7 +411,7 @@ for (const route of [
   "institution-design",
   "topics",
   "concepts",
-  "start",
+  "start-here",
   "preparation",
   "preparation/board",
   "participate",
@@ -492,7 +499,7 @@ assert(
 );
 assert(
   homepageHtml.includes('data-slug="preparation"') &&
-    homepageHtml.includes('data-slug="start"') &&
+    homepageHtml.includes('data-slug="start-here"') &&
     homepageHtml.includes('data-slug="articles"'),
   "首页首屏缺少董事会筹备、理论介绍或文章入口",
 );
@@ -591,21 +598,21 @@ const secondaryNavigationHtml =
   )?.[0] ?? "";
 assert(
   visiblePageText(secondaryNavigationHtml).trim() ===
-    "5分钟了解 核心政治路线 参与方式 全部文章" &&
+    "5分钟了解 阅读地图 核心政治路线 参与方式" &&
     !secondaryNavigationHtml.includes("筹备宣言"),
   "顶部快捷导航未与一级导航分工",
 );
 assert(
   homepageText.includes("内容目录") &&
-    homepageText.includes("全部文章") &&
-    !homepageText.includes("阅读地图") &&
+    homepageText.includes("5分钟了解") &&
+    homepageText.includes("阅读地图") &&
     !homepageText.includes("制度设计"),
-  "侧边栏标题或全部文章标签未统一",
+  "侧边栏标题或阅读入口未统一",
 );
 const footerHtml = homepageHtml.match(/<footer[\s\S]*?<\/footer>/)?.[0] ?? "";
 assert(
   visiblePageText(footerHtml).includes(
-    "开始阅读 董事会筹备 核心路线 参与 专题 版权说明",
+    "5分钟了解 阅读地图 董事会筹备 核心路线 参与方式 关于",
   ) &&
     !visiblePageText(footerHtml).includes("法人筹备") &&
     !visiblePageText(footerHtml).includes("核心概念"),
@@ -938,9 +945,9 @@ assert(
       "公民秩序主义目前正在推进北美非营利法人及首届董事会筹备工作",
     ) &&
     ccpArticleHtml.includes('href="/preparation"') &&
-    ccpArticleHtml.includes('href="/start"') &&
+    ccpArticleHtml.includes('href="/start-here"') &&
     ccpArticleHtml.includes("了解董事会筹备") &&
-    ccpArticleHtml.includes("了解公民秩序主义"),
+    ccpArticleHtml.includes("5分钟了解公民秩序主义"),
   "解析中共文章缺少统一的筹备与理论入口",
 );
 assert(
@@ -949,9 +956,9 @@ assert(
       "公民秩序主义目前正在推进北美非营利法人及首届董事会筹备工作",
     ) &&
     civicArticleHtml.includes('href="/preparation"') &&
-    civicArticleHtml.includes('href="/start"') &&
+    civicArticleHtml.includes('href="/start-here"') &&
     civicArticleHtml.includes("了解董事会筹备") &&
-    civicArticleHtml.includes("了解公民秩序主义"),
+    civicArticleHtml.includes("5分钟了解公民秩序主义"),
   "公民秩序主义文章缺少统一的筹备与理论入口",
 );
 assert(
@@ -988,31 +995,58 @@ assert(
   "概念索引重复渲染通用文件夹列表",
 );
 
-const startHtml = fs.readFileSync(publicHtml("start"), "utf8");
+const startHtml = fs.readFileSync(publicRouteHtml("start-here"), "utf8");
 const startText = visiblePageText(startHtml);
-assert(startText.includes("新读者入口"), "/start 缺少新读者入口标签");
-assert(!startText.includes("约 5 分钟"), "/start 仍包含人工时长文案");
-assert(startText.includes("分钟阅读"), "/start 缺少自动阅读时长");
+assert(startText.includes("新读者入口"), "/start-here 缺少新读者入口标签");
+assert(!startText.includes("分钟阅读"), "/start-here 仍包含文章阅读时长");
 for (const requiredText of [
-  "公民秩序主义首先是一条面向中国未来的政治与制度路线。它既解释中国正在面对的结构性问题，也提出一条降低冲突、保持国家连续运行并完成制度转轨的现实道路",
-  "公民秩序主义正在从理论走向长期承接",
-  "组织建设不是为了制造身份和等级",
-  "为什么这条路线能够降低未来政治转型阻力",
-  "按照以下顺序，可以系统理解公民秩序主义的现实判断、政治路线与制度方向",
-  "下一步可以做什么",
-  "建立长期联系",
-  "参与专业协作",
-  "了解组织筹备",
+  "公民秩序主义是什么？",
+  "为什么提出这条路线？",
+  "核心政治路线是什么？",
+  "现在正在做什么？",
+  "下一步从哪里开始？",
+  "不革命",
+  "不清算",
+  "和平承接",
+  "国家连续",
+  "依法治理",
+  "长期建设",
 ]) {
-  assert(startText.includes(requiredText), `/start 缺少内容：${requiredText}`);
+  assert(
+    startText.includes(requiredText),
+    `/start-here 缺少内容：${requiredText}`,
+  );
 }
 assert(
-  startHtml.includes("participate#contact") &&
-    startHtml.includes("participate#collaboration") &&
+  startHtml.includes('href="/civic-orderism/peaceful-state-transition"') &&
+    startHtml.includes('href="/articles"') &&
     startHtml.includes('href="/preparation"') &&
-    !startHtml.includes("participate#long-term-contact"),
-  "/start 行动入口没有分别指向联系、专业协作和组织筹备",
+    !startText.includes("旧入口") &&
+    !startText.includes("迁移"),
+  "/start-here 下一步入口或正式页面文案不正确",
 );
+
+const legacyStartHtml = fs.readFileSync(publicHtml("start"), "utf8");
+assert(
+  legacyStartHtml.includes("start-here") &&
+    legacyStartHtml.includes('http-equiv="refresh"'),
+  "/start 没有兼容重定向至 /start-here",
+);
+
+for (const route of [
+  "start-here",
+  "preparation",
+  "preparation/board",
+  "participate",
+  "organization-manual",
+  "about",
+]) {
+  const html = fs.readFileSync(publicRouteHtml(route), "utf8");
+  assert(
+    !html.includes('class="content-meta"'),
+    `组织基础页面仍显示文章元信息：/${route}`,
+  );
+}
 
 const aboutHtml = fs.readFileSync(publicHtml("about"), "utf8");
 const aboutText = visiblePageText(aboutHtml);
@@ -1071,9 +1105,11 @@ assert(
   "《专制之癌》仍出现在制度设计页",
 );
 
-for (const route of ["index", "start"]) {
+for (const route of ["index", "start-here"]) {
   const htmlPath =
-    route === "index" ? path.join(publicDir, "index.html") : publicHtml(route);
+    route === "index"
+      ? path.join(publicDir, "index.html")
+      : publicRouteHtml(route);
   const html = fs.readFileSync(htmlPath, "utf8");
   assert(
     (html.match(/<h1\b/g) ?? []).length === 1,

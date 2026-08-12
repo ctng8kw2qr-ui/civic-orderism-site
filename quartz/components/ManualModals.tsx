@@ -64,10 +64,10 @@ const ManualModals: QuartzComponent = () => {
           <p class="manual-modal-label">正式资料</p>
           <h2 id="organization-modal-title">公民秩序主义组织手册</h2>
           <p class="manual-modal-subtitle">
-            了解我们的世界判断、组织原则、参与路径与协作边界
+            了解公民秩序主义的组织原则、协作边界、长期参与方式与治理要求
           </p>
           <p class="manual-modal-description">
-            这份手册用于说明公民秩序主义的世界判断、组织原则、参与路径与协作边界。它不是宣言，也不是情绪动员，而是一份面向长期参与者的组织说明。建议第一次了解公民秩序主义的人，先阅读介绍手册，再进入专题文章。
+            这份手册面向已经了解基本路线、希望进一步理解组织原则与协作边界的读者。第一次访问本站，建议先从“5分钟了解”和阅读地图开始。
           </p>
           <div class="manual-modal-actions">
             <a

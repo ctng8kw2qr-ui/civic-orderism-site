@@ -1,21 +1,27 @@
-import { FullSlug, isRelativeURL, resolveRelative, simplifySlug } from "../../util/path"
-import { QuartzEmitterPlugin } from "../types"
-import { write } from "./helpers"
-import { BuildCtx } from "../../util/ctx"
-import { VFile } from "vfile"
-import path from "path"
+import {
+  FullSlug,
+  isRelativeURL,
+  resolveRelative,
+  simplifySlug,
+} from "../../util/path";
+import { QuartzEmitterPlugin } from "../types";
+import { write } from "./helpers";
+import { BuildCtx } from "../../util/ctx";
+import { VFile } from "vfile";
+import path from "path";
 
 async function* processFile(ctx: BuildCtx, file: VFile) {
-  const ogSlug = simplifySlug(file.data.slug!)
+  const ogSlug = simplifySlug(file.data.slug!);
 
   for (const aliasTarget of file.data.aliases ?? []) {
     const aliasTargetSlug = (
       isRelativeURL(aliasTarget)
         ? path.normalize(path.join(ogSlug, "..", aliasTarget))
         : aliasTarget
-    ) as FullSlug
+    ) as FullSlug;
 
-    const redirUrl = resolveRelative(aliasTargetSlug, ogSlug)
+    const redirUrl = resolveRelative(aliasTargetSlug, ogSlug);
+    const canonicalUrl = ogSlug === "/" ? "/" : `/${ogSlug}`;
     yield write({
       ctx,
       content: `
@@ -23,7 +29,7 @@ async function* processFile(ctx: BuildCtx, file: VFile) {
         <html lang="en-us">
         <head>
         <title>${ogSlug}</title>
-        <link rel="canonical" href="${redirUrl}">
+        <link rel="canonical" href="${canonicalUrl}">
         <meta charset="utf-8">
         <meta http-equiv="refresh" content="0; url=${redirUrl}">
         </head>
@@ -31,7 +37,7 @@ async function* processFile(ctx: BuildCtx, file: VFile) {
         `,
       slug: aliasTargetSlug,
       ext: ".html",
-    })
+    });
   }
 }
 
@@ -39,16 +45,16 @@ export const AliasRedirects: QuartzEmitterPlugin = () => ({
   name: "AliasRedirects",
   async *emit(ctx, content) {
     for (const [_tree, file] of content) {
-      yield* processFile(ctx, file)
+      yield* processFile(ctx, file);
     }
   },
   async *partialEmit(ctx, _content, _resources, changeEvents) {
     for (const changeEvent of changeEvents) {
-      if (!changeEvent.file) continue
+      if (!changeEvent.file) continue;
       if (changeEvent.type === "add" || changeEvent.type === "change") {
         // add new ones if this file still exists
-        yield* processFile(ctx, changeEvent.file)
+        yield* processFile(ctx, changeEvent.file);
       }
     }
   },
-})
+});

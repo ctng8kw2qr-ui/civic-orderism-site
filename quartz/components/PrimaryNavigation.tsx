@@ -9,13 +9,13 @@ import style from "./styles/primaryNavigation.scss";
 import script from "./scripts/primaryNavigation.inline";
 
 const secondaryNavigation = [
-  { label: "5分钟了解", href: "/start" },
+  { label: "5分钟了解", href: "/start-here" },
+  { label: "阅读地图", href: "/articles" },
   {
     label: "核心政治路线",
     href: "/civic-orderism/peaceful-state-transition",
   },
   { label: "参与方式", href: "/participate" },
-  { label: "全部文章", href: "/articles" },
 ];
 
 const PrimaryNavigation: QuartzComponent = ({

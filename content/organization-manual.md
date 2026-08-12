@@ -1,22 +1,20 @@
 ---
 title: "公民秩序主义组织手册"
-date: 2026-06-11
-category: "正式资料"
-tags:
-  - civic-orderism
-  - organization
-description: "了解公民秩序主义的世界判断、组织原则、参与路径与协作边界。"
+description: "了解公民秩序主义的组织原则、协作边界、长期参与方式、治理原则与工作方式。"
+contentType: "组织基础页面"
 status: published
 listed: false
 ---
 
 # 公民秩序主义组织手册
 
-<p class="subtitle">了解我们的世界判断、组织原则、参与路径与协作边界。</p>
+<p class="subtitle">了解公民秩序主义的组织原则、协作边界、长期参与方式、治理原则与工作方式。</p>
 
 <section class="manual-overview">
 
-这份手册用于说明公民秩序主义的世界判断、组织原则、参与路径与协作边界。它不是宣言，也不是情绪动员，而是一份面向长期参与者的组织说明。建议第一次了解公民秩序主义的人，先阅读本手册，再进入专题文章。
+这份手册用于说明公民秩序主义的组织原则、协作边界、长期参与方式、治理原则与工作方式。它不是第一次了解这条路线的入口，也不是情绪动员文本，而是一份面向长期参与者的组织说明。建议已经了解公民秩序主义基本路线后，再阅读本手册。
+
+<p class="manual-reading-order">建议阅读顺序：<a href="/start-here">5分钟了解</a> → <a href="/articles">阅读地图</a> → 组织手册</p>
 
 <div class="resource-actions">
   <a class="resource-button resource-button-primary" href="/files/civic-orderism-organization-manual.pdf">下载 PDF</a>

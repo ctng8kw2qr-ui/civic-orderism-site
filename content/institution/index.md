@@ -2,8 +2,8 @@
 title: "制度机制"
 date: 2026-07-19
 updated: 2026-07-20
-description: "保留的旧栏目入口；制度文章已纳入制度设计。"
-contentType: "兼容入口"
+description: "浏览委员会、行政、选举、司法、监督与后台系统等进阶制度研究。"
+contentType: "研究归档"
 status: published
 listed: true
 folderListed: true
@@ -12,7 +12,7 @@ noindex: false
 
 # 制度机制
 
-这是保留的旧栏目入口。委员会、行政、议会、选举、司法与后台系统现统一进入 [[institution-design|制度设计]]，原有文章 URL 均保持不变。
+本页汇集委员会、行政、议会、选举、司法、监督与后台系统等进阶制度研究。建议先完成 [[articles#route-institution-research|进阶制度研究路线]]，再按具体问题浏览以下文章。
 
 <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">

@@ -45,13 +45,17 @@ noindex: false
 
 ## 阅读入口
 
-- [[start|5分钟了解公民秩序主义]]
-- [[civic-orderism/peaceful-state-transition|阅读核心政治路线]]
-- [[participate|了解联系与专业协作方式]]
-- [[preparation|了解组织筹备]]
-- [[topics|专题]]
-- [[concepts|核心概念]]
-- [[articles|全部文章]]
+  - [[start-here|5分钟了解公民秩序主义]]
+  - [[articles|进入阅读地图]]
+  - [[civic-orderism/peaceful-state-transition|阅读核心政治路线]]
+  - [[preparation|了解组织筹备]]
+  - [[participate|了解参与方式]]
+
+## 研究入口
+
+  - [[topics|专题]]
+  - [[concepts|核心概念]]
+  - [[articles/all|全部文章]]
 
 ## 核心文档
 

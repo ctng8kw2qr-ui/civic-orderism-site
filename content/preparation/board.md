@@ -24,7 +24,7 @@ noindex: false
 </section>
 
 <section class="preparation-section">
-  <div class="home-section-intro"><p class="resource-label">候选人标准</p><h2>我们重视什么</h2><p>现阶段正在识别并接触潜在首届董事候选人，但不会通过公开报名直接产生董事资格。希望联系能够长期承担治理责任、理解基本政治路线，并具备稳定合作意愿的人。</p></div>
+  <div class="home-section-intro"><p class="resource-label">候选人标准</p><h2>潜在候选人需要具备什么</h2><p>现阶段正在识别并接触潜在首届董事候选人，但不会通过公开报名直接产生董事资格。公民秩序主义希望联系能够长期承担治理责任、理解基本政治路线，并具备稳定合作意愿的人。</p></div>
   <ul class="participate-checklist"><li>理解和平转轨、行政承接与国家连续；</li><li>认同不革命、不清算、不以报复为目的；</li><li>尊重程序、授权、组织纪律与集体决策；</li><li>具备独立判断、事实意识和处理分歧的能力；</li><li>能够保护组织信息、成员隐私和敏感资料；</li><li>愿意投入稳定时间并承担法定治理责任；</li><li>能够识别并披露利益冲突；</li><li>具备法律、财务、公共管理、技术、传播、研究或运营能力之一。</li></ul>
 </section>
 
@@ -36,6 +36,6 @@ noindex: false
 <section class="preparation-section preparation-legal-note">
   <p class="resource-label">身份边界</p><h2>筹备联系不构成任命或承诺</h2>
   <p>提交意向、参与会议、提供建议或完成协作任务，都不当然产生董事候选人、董事、法定成员、共同创始人或官方代表身份。任何治理身份都必须在制度准备和法律程序完成后，以正式文件确认。</p>
-  <div class="preparation-actions"><a class="v2-button v2-button--primary" href="/participate#contact">提交筹备意向</a><a class="v2-button v2-button--secondary" href="/civic-orderism/north-america-nonprofit-board-preparation-manifesto">阅读筹备宣言</a></div>
+  <div class="preparation-actions"><a class="v2-button v2-button--primary" href="/participate#contact">了解参与方式</a><a class="v2-button v2-button--secondary" href="/civic-orderism/north-america-nonprofit-board-preparation-manifesto">阅读筹备宣言</a></div>
 </section>
 </div>

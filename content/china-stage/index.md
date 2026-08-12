@@ -2,8 +2,8 @@
 title: "中国阶段判断"
 date: 2026-07-19
 updated: 2026-07-20
-description: "保留的旧栏目入口；阶段判断已纳入中国未来。"
-contentType: "兼容入口"
+description: "围绕财政、改革窗口、社会压力与政治转型，理解中国正在进入的现实阶段。"
+contentType: "研究归档"
 status: published
 listed: true
 folderListed: true
@@ -12,7 +12,7 @@ noindex: false
 
 # 中国阶段判断
 
-这是保留的旧栏目入口。阶段性预测、改革窗口与未来路径现统一进入 [[china-future|中国未来]]，原有文章 URL 均保持不变。
+本页汇集关于财政压力、改革窗口、社会心理与未来路径的阶段性研究。第一次访问本站，建议先从 [[articles|阅读地图]] 建立整体认识；希望继续研究未来秩序的读者，可以进入 [[china-future|中国未来]]。
 
 <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">

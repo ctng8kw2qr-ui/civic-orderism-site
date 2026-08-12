@@ -18,7 +18,7 @@ aliases:
   <h1>公民秩序主义北美非营利法人及首届董事会筹备工作已经启动</h1>
   <p class="v2-hero__tagline">建设一条低阻力、低风险、能够和平承接中国未来的政治道路</p>
   <div class="home-platform-hero__copy"><p>公民秩序主义正在从理论建设进入组织建设阶段，为长期研究、出版、公共传播和未来政治承接建立稳定、依法运行的组织基础。</p></div>
-  <div class="v2-actions"><a class="v2-button v2-button--primary" href="/preparation">了解董事会筹备</a><a class="v2-button v2-button--secondary" href="/start">了解公民秩序主义</a><a class="v2-button v2-button--text" href="/articles">阅读理论文章</a></div>
+  <div class="v2-actions"><a class="v2-button v2-button--primary" href="/preparation">了解董事会筹备</a><a class="v2-button v2-button--secondary" href="/start-here">了解公民秩序主义</a><a class="v2-button v2-button--text" href="/articles">阅读理论文章</a></div>
   <p class="home-preparation-note">当前处于前期筹备阶段，法人及首届董事会尚未依法产生。</p>
 </section>
 

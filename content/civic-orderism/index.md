@@ -22,7 +22,7 @@ noindex: false
   <p class="resource-label">从这里理解路线</p>
   <h2 id="section-route-intro-title">公民秩序主义首先是一条政治与制度路线</h2>
   <p>它面向中国未来，主张通过和平转轨、行政承接、责任区分和制度重组降低政治变化的社会成本；理论研究为路线提供基础，组织建设为路线提供长期承接。</p>
-  <div class="section-route-links"><a href="/start"><strong>5分钟了解</strong><span>建立完整的基础认识</span></a><a href="/civic-orderism/peaceful-state-transition"><strong>核心路线</strong><span>理解国家连续与低冲突转轨</span></a><a href="/participate"><strong>联系与协作</strong><span>了解传播、专业协作与长期联系</span></a></div>
+  <div class="section-route-links"><a href="/start-here"><strong>5分钟了解</strong><span>建立完整的基础认识</span></a><a href="/civic-orderism/peaceful-state-transition"><strong>核心路线</strong><span>理解国家连续与低冲突转轨</span></a><a href="/participate"><strong>联系与协作</strong><span>了解传播、专业协作与长期联系</span></a></div>
 </section>
 
 ## 推荐文章

@@ -587,7 +587,7 @@ export const ArticleCta: QuartzComponent = ({
         <div class="article-cta__item">
           <span class="article-cta__label">理论与路线</span>
           <span class="article-cta__value">
-            <a href="/start">了解公民秩序主义</a>
+            <a href="/start-here">5分钟了解公民秩序主义</a>
           </span>
         </div>
       </div>
