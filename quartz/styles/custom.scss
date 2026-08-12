@@ -3456,6 +3456,44 @@ article .preparation-section {
   margin-top: 3rem;
 }
 
+article .preparation-candidates .home-section-intro > p:last-child {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-left: 2px solid #9b7c3e;
+  background: color-mix(in srgb, var(--light) 96%, #9b7c3e);
+  color: #0a1d38;
+  font-weight: 600;
+}
+
+article .preparation-framework {
+  margin-top: 3.75rem;
+  padding: clamp(1.35rem, 3vw, 2rem);
+  border-top: 1px solid #cbd3de;
+  border-bottom: 1px solid #cbd3de;
+  background: color-mix(in srgb, var(--light) 96%, var(--lightgray));
+}
+
+article .preparation-framework__intro h2 {
+  margin: 0.45rem 0 0.7rem;
+  color: #0a1d38;
+  font-size: clamp(1.55rem, 3vw, 2rem);
+}
+
+article .preparation-framework__intro > p:last-child {
+  max-width: 720px;
+  margin: 0;
+  color: var(--darkgray);
+  line-height: 1.75;
+}
+
+article .preparation-framework__body > .preparation-section {
+  margin-top: 2.5rem;
+}
+
+article .preparation-framework__body > .preparation-section:first-child {
+  margin-top: 2rem;
+}
+
 article .preparation-principle-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

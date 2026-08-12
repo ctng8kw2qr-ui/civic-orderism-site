@@ -19,7 +19,7 @@ aliases:
   <p class="v2-hero__tagline">建设一条低阻力、低风险、能够和平承接中国未来的政治道路</p>
   <div class="home-platform-hero__copy"><p>公民秩序主义正在从理论建设进入组织建设阶段，为长期研究、出版、公共传播和未来政治承接建立稳定、依法运行的组织基础。</p></div>
   <div class="v2-actions"><a class="v2-button v2-button--primary" href="/preparation">了解董事会筹备</a><a class="v2-button v2-button--secondary" href="/start">了解公民秩序主义</a><a class="v2-button v2-button--text" href="/articles">阅读理论文章</a></div>
-  <p class="home-preparation-note">目前法人尚未完成注册，具体注册法域与首届董事会均未确定。筹备不表示已经取得任何法人或治理身份。</p>
+  <p class="home-preparation-note">当前处于前期筹备阶段，法人及首届董事会尚未依法产生。</p>
 </section>
 
 <section class="home-section home-current-stage" id="current-stage">
@@ -39,23 +39,20 @@ aliases:
 </section>
 
 <section class="home-section home-content-directions" id="content-directions">
-  <div class="home-section-intro"><p class="resource-label">理论与研究</p><h2>理论与研究</h2><p>理论研究继续为组织建设提供判断基础。首页只保留公民秩序主义、解析中共和中国未来三个方向的少量精选入口。</p></div>
+  <div class="home-section-intro"><p class="resource-label">理论与研究</p><h2>理论与研究</h2><p>理论研究继续为组织建设提供判断基础，并围绕公民秩序主义、解析中共和中国未来三个方向展开。</p></div>
   <div class="home-direction-grid"><article class="home-direction-card">
-  <p class="resource-label">内容主线</p>
   <h3><a href="/civic-orderism">公民秩序主义</a></h3>
   <p>介绍政治路线、现代政治问题意识，以及和平承接中国未来的制度方向。</p>
   <ul><li><a href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">如果你只读一篇：公民秩序主义到底想解决什么</a></li><li><a href="/civic-orderism/peaceful-state-transition">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</a></li></ul>
   <a class="home-direction-card__more" href="/civic-orderism">进入公民秩序主义 →</a>
 </article>
 <article class="home-direction-card">
-  <p class="resource-label">内容主线</p>
   <h3><a href="/china">解析中共</a></h3>
   <p>解释中共的组织运行、官僚系统、安全叙事与结构性问题。</p>
   <ul><li><a href="/china/security-is-redefining-china">安全，正在重新定义中国</a></li><li><a href="/theory/party-state-structural-failure">党国系统的结构性失效：一个组织诊断</a></li></ul>
   <a class="home-direction-card__more" href="/china">进入解析中共 →</a>
 </article>
 <article class="home-direction-card">
-  <p class="resource-label">内容主线</p>
   <h3><a href="/china-future">中国未来</a></h3>
   <p>讨论政治转型、国家治理、秩序承接与未来制度选择。</p>
   <ul><li><a href="/china-stage/ccp-second-reform-opening-possibility">中共还有没有二次改开的可能？</a></li><li><a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china">中国和平政治转型的可能性</a></li></ul>

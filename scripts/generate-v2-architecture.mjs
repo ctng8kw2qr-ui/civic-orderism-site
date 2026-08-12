@@ -876,7 +876,6 @@ const homepageDirectionCards = [
       .map((slug) => articleBySlug.get(slug))
       .filter(isEligibleArticle);
     return `<article class="home-direction-card">
-  <p class="resource-label">内容主线</p>
   <h3><a href="${direction.href}">${direction.label}</a></h3>
   <p>${direction.description}</p>
   <ul>${directionArticles.map((article) => `<li><a href="/${encodeURI(article.slug)}">${article.title}</a></li>`).join("")}</ul>
@@ -944,7 +943,7 @@ writeContent(
   <p class="v2-hero__tagline">建设一条低阻力、低风险、能够和平承接中国未来的政治道路</p>
   <div class="home-platform-hero__copy"><p>公民秩序主义正在从理论建设进入组织建设阶段，为长期研究、出版、公共传播和未来政治承接建立稳定、依法运行的组织基础。</p></div>
   <div class="v2-actions"><a class="v2-button v2-button--primary" href="/preparation">了解董事会筹备</a><a class="v2-button v2-button--secondary" href="/start">了解公民秩序主义</a><a class="v2-button v2-button--text" href="/articles">阅读理论文章</a></div>
-  <p class="home-preparation-note">目前法人尚未完成注册，具体注册法域与首届董事会均未确定。筹备不表示已经取得任何法人或治理身份。</p>
+  <p class="home-preparation-note">当前处于前期筹备阶段，法人及首届董事会尚未依法产生。</p>
 </section>
 
 <section class="home-section home-current-stage" id="current-stage">
@@ -964,7 +963,7 @@ writeContent(
 </section>
 
 <section class="home-section home-content-directions" id="content-directions">
-  <div class="home-section-intro"><p class="resource-label">理论与研究</p><h2>理论与研究</h2><p>理论研究继续为组织建设提供判断基础。首页只保留公民秩序主义、解析中共和中国未来三个方向的少量精选入口。</p></div>
+  <div class="home-section-intro"><p class="resource-label">理论与研究</p><h2>理论与研究</h2><p>理论研究继续为组织建设提供判断基础，并围绕公民秩序主义、解析中共和中国未来三个方向展开。</p></div>
   <div class="home-direction-grid">${homepageDirectionCards}</div>
 </section>
 
@@ -1195,38 +1194,41 @@ writeContent(
   <div class="preparation-principle-grid"><article><strong>守护公共使命</strong><p>确保研究、出版与组织工作持续服务于公民秩序主义的长期公共目的。</p></article><article><strong>承担法定责任</strong><p>依照最终注册法域的法律要求，对重大决策、合规与监督承担责任。</p></article><article><strong>保护组织资产</strong><p>监督财务、知识产权、域名、网站、账号、档案和其他公共资产。</p></article></div>
 </section>
 
-<section class="preparation-section">
-  <div class="home-section-intro"><p class="resource-label">拟承担的公共工作</p><h2>研究、出版、制度建设与人才培养</h2><p>具体业务范围将根据最终注册法域、章程和法律意见确定。现阶段的筹备方向包括：</p></div>
-  <ul class="preparation-work-list"><li><strong>理论研究</strong><span>持续研究中国政治、财政、社会、官僚体系与国家治理。</span></li><li><strong>政治与治理研究</strong><span>研究和平转轨、行政承接、责任区分和公共权力约束问题。</span></li><li><strong>出版与传播</strong><span>维护网站，出版研究成果，建立稳定、克制的公共传播平台。</span></li><li><strong>组织治理</strong><span>建立章程、附例、财务、档案、隐私、知识产权与信息安全制度。</span></li><li><strong>人才培养</strong><span>识别并培养能够承担研究、专业与长期治理责任的人。</span></li></ul>
-</section>
-
-<section class="preparation-section">
-  <div class="home-section-intro"><p class="resource-label">当前筹备事项</p><h2>先建立规则，再扩大参与</h2></div>
-  <ol class="preparation-steps"><li><span>01</span><div><strong>明确宗旨与业务范围</strong><p>研究适合的法人定位、公共目的和合规边界。</p></div></li><li><span>02</span><div><strong>选择注册法域</strong><p>比较加拿大及北美相关法律环境；目前尚未确定具体法域。</p></div></li><li><span>03</span><div><strong>制定章程与组织附例</strong><p>明确董事会、法定成员、授权、监督和利益冲突规则。</p></div></li><li><span>04</span><div><strong>建立内部制度</strong><p>准备财务、档案、隐私、信息安全和知识产权制度。</p></div></li><li><span>05</span><div><strong>识别首届董事候选人</strong><p>以真实治理责任、专业能力和长期合作可能为标准。</p></div></li><li><span>06</span><div><strong>完成法律程序</strong><p>在制度和人员准备成熟后，再依法申请注册并产生治理机构。</p></div></li></ol>
-</section>
-
-<section class="preparation-section preparation-governance">
-  <div><p class="resource-label">治理原则</p><h2>克制、程序、责任与安全</h2></div>
-  <ul><li>先有制度，再扩大参与；</li><li>先有责任，再授予权力；</li><li>组织资产服务公共使命，不归个人所有；</li><li>未经授权，任何人不得代表组织；</li><li>采用分级授权、最小权限和可追溯的决策记录；</li><li>重要法律、财务和信息安全事项必须经过专业审查。</li></ul>
-</section>
-
 <section class="preparation-section preparation-candidates">
   <div class="home-section-intro"><p class="resource-label">希望联系的人</p><h2>正在识别潜在首届董事候选人</h2><p>现阶段正在识别并接触潜在首届董事候选人，但不会通过公开报名直接产生董事资格。</p></div>
   <ul class="preparation-work-list"><li><strong>长期治理责任</strong><span>能够投入稳定时间，并对组织使命、风险与公共资产承担持续责任。</span></li><li><strong>基本路线理解</strong><span>对公民秩序主义的基本路线有充分理解，能够区分公共使命与个人立场。</span></li><li><strong>规则与程序约束</strong><span>能够接受章程、授权、利益冲突、记录、监督和集体决策规则。</span></li><li><strong>专业能力</strong><span>具备治理、法律、财务、研究、出版、技术或组织管理等专业能力之一。</span></li><li><strong>长期合作意愿</strong><span>能够进行稳定、克制、可靠的长期合作，并审慎处理敏感信息与风险。</span></li></ul>
   <div class="preparation-actions"><a class="v2-button v2-button--primary" href="mailto:${organization.primaryEmail}">通过邮件建立联系</a><a class="v2-button v2-button--secondary" href="${organization.routes.boardPreparation}">查看董事责任与候选人条件</a></div>
 </section>
 
-<section class="preparation-section preparation-legal-note">
-  <p class="resource-label">重要状态说明</p>
-  <h2>筹备不等于已经成立</h2>
-  <p>截至目前，北美非营利法人尚未成立，具体注册法域尚未确定，首届董事会尚未依法产生。本站所称“法人筹备”和“董事会筹备”仅描述正在进行的准备工作，不表示已经取得任何法人、慈善或免税资格。</p>
-  <p><strong>参与筹备不自动获得治理身份。</strong>董事、法定成员、官方代表及其他正式职务，均须在制度准备完成后，依照适用法律、章程与正式程序产生。</p>
-  <div class="preparation-actions"><a class="v2-button v2-button--primary" href="${organization.routes.boardPreparation}">了解董事会筹备</a><a class="v2-button v2-button--secondary" href="${organization.routes.manifesto}">阅读筹备宣言</a><a class="v2-button v2-button--secondary" href="${organization.routes.participate}">参与筹备</a></div>
-</section>
-
 <section class="preparation-section preparation-contact" id="preparation-contact">
   <div><p class="resource-label">联系方式</p><h2>进一步了解或建立联系</h2><p>如果希望了解法人筹备、首届董事会责任或专业协作边界，请通过电子邮件联系。现阶段不设置即时社群入口。</p></div>
   <dl><div><dt>主联系邮箱</dt><dd><a href="mailto:${organization.primaryEmail}">${organization.primaryEmail}</a></dd></div><div><dt>备用邮箱</dt><dd><a href="mailto:${organization.secondaryEmail}">${organization.secondaryEmail}</a></dd></div></dl>
+</section>
+
+<section class="preparation-framework" aria-labelledby="preparation-framework-title">
+  <div class="preparation-framework__intro"><p class="resource-label">深入阅读</p><h2 id="preparation-framework-title">进一步了解筹备框架</h2><p>以下内容说明拟承担的公共工作、当前筹备步骤与组织治理原则。</p></div>
+  <div class="preparation-framework__body">
+    <div class="preparation-section">
+      <div class="home-section-intro"><p class="resource-label">拟承担的公共工作</p><h2>研究、出版、制度建设与人才培养</h2><p>具体业务范围将根据最终注册法域、章程和法律意见确定。现阶段的筹备方向包括：</p></div>
+      <ul class="preparation-work-list"><li><strong>理论研究</strong><span>持续研究中国政治、财政、社会、官僚体系与国家治理。</span></li><li><strong>政治与治理研究</strong><span>研究和平转轨、行政承接、责任区分和公共权力约束问题。</span></li><li><strong>出版与传播</strong><span>维护网站，出版研究成果，建立稳定、克制的公共传播平台。</span></li><li><strong>组织治理</strong><span>建立章程、附例、财务、档案、隐私、知识产权与信息安全制度。</span></li><li><strong>人才培养</strong><span>识别并培养能够承担研究、专业与长期治理责任的人。</span></li></ul>
+    </div>
+    <div class="preparation-section">
+      <div class="home-section-intro"><p class="resource-label">当前筹备事项</p><h2>先建立规则，再扩大参与</h2></div>
+      <ol class="preparation-steps"><li><span>01</span><div><strong>明确宗旨与业务范围</strong><p>研究适合的法人定位、公共目的和合规边界。</p></div></li><li><span>02</span><div><strong>选择注册法域</strong><p>比较加拿大及北美相关法律环境；目前尚未确定具体法域。</p></div></li><li><span>03</span><div><strong>制定章程与组织附例</strong><p>明确董事会、法定成员、授权、监督和利益冲突规则。</p></div></li><li><span>04</span><div><strong>建立内部制度</strong><p>准备财务、档案、隐私、信息安全和知识产权制度。</p></div></li><li><span>05</span><div><strong>识别首届董事候选人</strong><p>以真实治理责任、专业能力和长期合作可能为标准。</p></div></li><li><span>06</span><div><strong>完成法律程序</strong><p>在制度和人员准备成熟后，再依法申请注册并产生治理机构。</p></div></li></ol>
+    </div>
+    <div class="preparation-section preparation-governance">
+      <div><p class="resource-label">治理原则</p><h2>克制、程序、责任与安全</h2></div>
+      <ul><li>先有制度，再扩大参与；</li><li>先有责任，再授予权力；</li><li>组织资产服务公共使命，不归个人所有；</li><li>未经授权，任何人不得代表组织；</li><li>采用分级授权、最小权限和可追溯的决策记录；</li><li>重要法律、财务和信息安全事项必须经过专业审查。</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="preparation-section preparation-legal-note">
+  <p class="resource-label">重要状态说明</p>
+  <h2>筹备不等于已经成立</h2>
+  <p>截至目前，北美非营利法人尚未依法成立，具体注册法域尚未确定，首届董事会尚未依法产生。本站所称“法人筹备”和“董事会筹备”仅描述正在进行的准备工作，不表示已经取得任何法人、慈善或免税资格。</p>
+  <p><strong>参与筹备不自动产生董事身份或治理权限。</strong>董事、法定成员、官方代表及其他正式治理职务，均须在制度准备完成后，依照适用法律、章程与正式程序产生。</p>
+  <div class="preparation-actions"><a class="v2-button v2-button--primary" href="${organization.routes.boardPreparation}">了解董事会筹备</a><a class="v2-button v2-button--secondary" href="${organization.routes.manifesto}">阅读筹备宣言</a><a class="v2-button v2-button--secondary" href="${organization.routes.participate}">参与筹备</a></div>
 </section>
 </div>`,
 );
@@ -1301,17 +1303,17 @@ writeContent(
 </section>
 
 <section class="participate-section participate-fit" aria-labelledby="participation-fit">
-  <div class="home-section-intro"><p class="resource-label">责任与稳定性优先</p><h2 id="participation-fit">我们希望与什么样的人建立联系</h2></div>
+  <div class="home-section-intro"><p class="resource-label">责任与稳定性优先</p><h2 id="participation-fit">公民秩序主义希望与什么样的人建立联系</h2></div>
   <ul class="participate-checklist"><li>理解和平转轨与行政承接；</li><li>认同不革命、不清算、不以报复为目的；</li><li>能够长期、稳定地参与公共事务；</li><li>尊重程序、授权、组织纪律与事实；</li><li>能够保护组织信息和成员隐私；</li><li>愿意承担真实工作和明确责任；</li><li>具备独立思考和处理分歧的能力；</li><li>拥有法律、财务、管理、技术、传播、设计、研究或运营能力之一。</li></ul>
 </section>
 
 <section class="participate-section participate-boundaries" aria-labelledby="participation-boundaries">
-  <div><p class="resource-label">我们不希望建立什么</p><h2 id="participation-boundaries">不以人数、头衔和情绪制造组织</h2><p>我们不建立个人崇拜，不依靠口号、互相攻击和敌我动员维持活跃度，不建立失控的大规模公开群组，也不允许任何人未经授权代表组织。</p><p>我们不以公开暴露身份、激进言论或不必要的冒险作为忠诚证明，不以内部热闹代替真实建设。</p></div>
+  <div><p class="resource-label">组织扩展原则</p><h2 id="participation-boundaries">公民秩序主义不以人数、头衔和情绪扩大组织</h2><p>公民秩序主义不建立个人崇拜，不依靠口号、互相攻击和敌我动员维持活跃度，不建立失控的大规模公开群组，也不允许任何人未经授权代表组织。</p><p>公民秩序主义不以公开暴露身份、激进言论或不必要的冒险作为忠诚证明，不以内部热闹代替真实建设。</p></div>
 </section>
 
 <section class="participate-section participate-security" aria-labelledby="participation-security">
   <div class="home-section-intro"><p class="resource-label">参与者保护</p><h2 id="participation-security">不人为制造风险</h2><p>未来将逐步建立信息最小化、化名参与、身份保护、分级授权、最小权限、内部资料访问控制和敏感工作独立风险评估机制。</p></div>
-  <p>我们无法承诺政治参与完全没有风险，但不会鼓励无意义的牺牲，也不会要求任何人以个人或家庭安全换取组织认可。</p>
+  <p>公民秩序主义无法承诺政治参与完全没有风险，但不会鼓励无意义的牺牲，也不会要求任何人以个人或家庭安全换取组织认可。</p>
 </section>
 
 <section class="participate-section preparation-legal-note" aria-labelledby="participation-status-boundary">
@@ -1320,7 +1322,7 @@ writeContent(
 </section>
 
 <section class="participate-section participate-contact" id="contact" aria-labelledby="participation-contact">
-  <div class="home-section-intro"><p class="resource-label">建立联系</p><h2 id="participation-contact">告诉我们你希望如何参与</h2><p>普通支持者可以直接提出建议或提供专业意见；希望参与具体协作的人，可以在邮件中说明可承担的工作方向。涉及北美法人或董事会筹备时，请说明所在国家、州或省。</p></div>
+  <div class="home-section-intro"><p class="resource-label">建立联系</p><h2 id="participation-contact">通过邮件说明参与方向</h2><p>普通支持者可以直接提出建议或提供专业意见；希望参与具体协作的人，可以在邮件中说明可承担的工作方向。涉及北美法人或董事会筹备时，请说明所在国家、州或省。</p></div>
   <div class="participate-contact-grid"><div><h3>邮件可以包括</h3><ul><li>你对公民秩序主义基本路线的理解；</li><li>希望支持或参与的方式；</li><li>专业背景和可以提供的意见；</li><li>能够投入的大致时间；</li><li>如涉及法人或董事会筹备，说明所在国家、州或省；</li><li>希望采用的称呼和联系方式。</li></ul></div><div class="participate-contact-card"><p class="resource-label">主联系邮箱</p><a href="mailto:${organization.primaryEmail}?subject=${encodeURIComponent("支持与参与公民秩序主义")}">${organization.primaryEmail}</a><p class="resource-label">备用邮箱</p><a href="mailto:${organization.secondaryEmail}?subject=${encodeURIComponent("支持与参与公民秩序主义")}">${organization.secondaryEmail}</a><small>请不要在初次邮件中发送身份证件、详细住址、护照号码、单位内部资料或其他不必要的敏感个人信息。可以先使用化名并说明希望采用的联系方式。</small></div></div>
 </section>
 </div>`,

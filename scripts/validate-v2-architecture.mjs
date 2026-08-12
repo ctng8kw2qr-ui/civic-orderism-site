@@ -535,8 +535,9 @@ assert(
 assert(
   !homepageMainHtml.includes("preparation-state-grid") &&
     homepageMainText.includes(
-      "目前法人尚未完成注册，具体注册法域与首届董事会均未确定。筹备不表示已经取得任何法人或治理身份",
-    ),
+      "当前处于前期筹备阶段，法人及首届董事会尚未依法产生",
+    ) &&
+    !homepageMainText.includes("筹备不表示已经取得任何法人或治理身份"),
   "首页程序状态没有压缩为一段简短说明",
 );
 assert(
@@ -561,6 +562,11 @@ assert(
   homepageMainText.includes("公民秩序主义") &&
     homepageMainText.includes("解析中共") &&
     homepageMainText.includes("中国未来") &&
+    homepageMainText.includes(
+      "理论研究继续为组织建设提供判断基础，并围绕公民秩序主义、解析中共和中国未来三个方向展开",
+    ) &&
+    !homepageMainText.includes("内容主线") &&
+    !homepageMainText.includes("首页只保留") &&
     homepageMainText.includes("最新文章") &&
     homepageMainHtml.includes('data-slug="introduction-manual"') &&
     homepageMainHtml.includes("mailto:civicorderism@gmail.com") &&
@@ -646,6 +652,9 @@ for (const requiredText of [
   "筹备参与不是治理身份",
   "不人为制造风险",
   "请不要在初次邮件中发送身份证件",
+  "公民秩序主义希望与什么样的人建立联系",
+  "公民秩序主义不以人数、头衔和情绪扩大组织",
+  "通过邮件说明参与方向",
 ]) {
   assert(
     participateText.includes(requiredText),
@@ -667,6 +676,10 @@ for (const anchor of ["communication", "collaboration", "contact"]) {
 assert(
   primaryEmailPosition >= 0 && secondaryEmailPosition > primaryEmailPosition,
   "参与页邮箱缺失或主备顺序错误",
+);
+assert(
+  !participateText.includes("我们"),
+  "参与页仍包含可改为机构名称表述的第一人称文案",
 );
 
 const preparationHtml = fs.readFileSync(publicHtml("preparation"), "utf8");
@@ -713,8 +726,10 @@ for (const requiredText of [
   "筹备不等于已经成立",
   "不表示已经取得任何法人、慈善或免税资格",
   "现阶段正在识别并接触潜在首届董事候选人，但不会通过公开报名直接产生董事资格",
-  "参与筹备不自动获得治理身份",
-  "均须在制度准备完成后，依照适用法律、章程与正式程序产生",
+  "进一步了解筹备框架",
+  "北美非营利法人尚未依法成立",
+  "参与筹备不自动产生董事身份或治理权限",
+  "其他正式治理职务，均须在制度准备完成后，依照适用法律、章程与正式程序产生",
 ]) {
   assert(
     preparationText.includes(requiredText),
@@ -726,6 +741,25 @@ assert(
     "当前处于北美非营利法人及首届董事会前期筹备阶段，法人尚未完成注册，首届董事会尚未依法产生",
   ) && !preparationHtml.includes("preparation-boundary"),
   "法人筹备页顶部状态说明未收紧，或正文仍重复状态提醒",
+);
+const candidatesPosition = preparationHtml.indexOf(
+  'class="preparation-section preparation-candidates"',
+);
+const contactPosition = preparationHtml.indexOf(
+  'class="preparation-section preparation-contact"',
+);
+const frameworkPosition = preparationHtml.indexOf(
+  'class="preparation-framework"',
+);
+const legalNotePosition = preparationHtml.indexOf(
+  'class="preparation-section preparation-legal-note"',
+);
+assert(
+  candidatesPosition >= 0 &&
+    contactPosition > candidatesPosition &&
+    frameworkPosition > contactPosition &&
+    legalNotePosition > frameworkPosition,
+  "法人筹备页未按核心信息、深入框架、底部状态说明分层",
 );
 for (const requiredText of [
   "治理责任，不是荣誉头衔",
