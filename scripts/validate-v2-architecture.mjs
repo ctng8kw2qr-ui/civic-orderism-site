@@ -120,6 +120,7 @@ const chinaPageSource = fs.readFileSync(
   path.join(root, "content/china/index.md"),
   "utf8",
 );
+const expectedChinaFeaturedCounts = [4, 5, 5, 5, 4];
 for (const [index, group] of chinaAnalysisConfig.groups.entries()) {
   const heading = `## ${["一", "二", "三", "四", "五"][index]}、${group.name}`;
   const groupSource = chinaPageSource.split(heading)[1]?.split("## ")[0] ?? "";
@@ -133,6 +134,20 @@ for (const [index, group] of chinaAnalysisConfig.groups.entries()) {
     JSON.stringify(renderedFeatured) === JSON.stringify(group.featured),
     `解析中共首屏代表作顺序与配置不一致：${group.name}`,
   );
+  assert(
+    group.featured.length === expectedChinaFeaturedCounts[index],
+    `解析中共首屏代表作数量不符合定型配置：${group.name}`,
+  );
+  if (group.coreFeatured) {
+    const coreArticle = migrationBySlug.get(group.coreFeatured);
+    assert(
+      coreArticle &&
+        featuredSource.includes(
+          `<a href="/${group.coreFeatured}">${coreArticle.title}</a>`,
+        ),
+      `解析中共核心阅读标题未直接使用文章 metadata：${group.coreFeatured}`,
+    );
+  }
 }
 assert(
   (chinaPageHtml.match(/<details class="china-analysis-more">/g) ?? [])
@@ -140,10 +155,22 @@ assert(
   "解析中共各子栏缺少默认折叠的更多文章",
 );
 assert(
+  !/<details class="china-analysis-more"[^>]*\sopen(?:[\s=>])/i.test(
+    chinaPageHtml,
+  ),
+  "解析中共更多文章不应默认展开",
+);
+assert(
   chinaPageHtml.includes(
     `查看全部解析中共文章（${migration.filter((article) => article.section === "解析中共" && article.status === "published").length}）`,
   ),
   "解析中共完整索引缺少动态文章数量",
+);
+assert(
+  !/<details class="page-listing section-archive"[^>]*\sopen(?:[\s=>])/i.test(
+    chinaPageHtml,
+  ) && chinaPageHtml.includes("data-section-archive-collapse"),
+  "解析中共完整索引必须默认收起并提供收起操作",
 );
 assert(
   chinaAnalysisConfig.groups
