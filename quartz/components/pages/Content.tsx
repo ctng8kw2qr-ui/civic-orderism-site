@@ -1,5 +1,6 @@
 import { ComponentChildren } from "preact";
-import type { Root } from "hast";
+import type { Element, Root, Text } from "hast";
+import { clone } from "../../util/clone";
 import { htmlToJsx } from "../../util/jsx";
 import { isArticleSlug } from "../../util/articlePage";
 import {
@@ -27,6 +28,53 @@ function isBlankText(child: Root["children"][number] | undefined): boolean {
   return child?.type === "text" && child.value.trim() === "";
 }
 
+function textContent(node: Root["children"][number]): string {
+  if (node.type === "text") return node.value;
+  if (node.type !== "element") return "";
+  return node.children.map((child) => textContent(child)).join("");
+}
+
+function replaceLeadingCoreJudgment(node: Root["children"][number]): boolean {
+  if (node.type === "text") {
+    const replaced = node.value.replace(/核心判断/, "重点句");
+    if (replaced === node.value) return false;
+    node.value = replaced;
+    return true;
+  }
+  if (node.type !== "element") return false;
+  for (const child of node.children) {
+    if (replaceLeadingCoreJudgment(child)) return true;
+  }
+  return false;
+}
+
+function normalizeLocalJudgmentLabels(tree: Root) {
+  for (const child of tree.children) {
+    if (child.type !== "element") continue;
+    if (
+      /^h[2-4]$/.test(child.tagName) &&
+      textContent(child).trim() === "核心判断"
+    ) {
+      const textNode = child.children.find(
+        (node): node is Text => node.type === "text",
+      );
+      if (textNode) textNode.value = "重点句";
+      continue;
+    }
+    if (child.tagName !== "blockquote") continue;
+    const firstParagraph = child.children.find(
+      (node): node is Element =>
+        node.type === "element" && node.tagName === "p",
+    );
+    if (
+      firstParagraph &&
+      /^核心判断[：:]/.test(textContent(firstParagraph).trim())
+    ) {
+      replaceLeadingCoreJudgment(firstParagraph);
+    }
+  }
+}
+
 const Content: QuartzComponent = ({ fileData, tree }: QuartzComponentProps) => {
   const classes: string[] = fileData.frontmatter?.cssclasses ?? [];
   const classString = ["popover-hint", ...classes].join(" ");
@@ -47,10 +95,11 @@ const Content: QuartzComponent = ({ fileData, tree }: QuartzComponentProps) => {
   while (isBlankText(tree.children[bodyStart])) {
     bodyStart += 1;
   }
-  const articleBodyTree: Root = {
+  const articleBodyTree = clone({
     ...tree,
     children: tree.children.slice(bodyStart),
-  };
+  }) as Root;
+  normalizeLocalJudgmentLabels(articleBodyTree);
   const articleBody = htmlToJsx(
     fileData.filePath!,
     articleBodyTree,

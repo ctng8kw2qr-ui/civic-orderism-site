@@ -59,12 +59,20 @@ function lineNumberFor(source, index) {
 }
 
 const articleFiles = walk(contentDir).filter(isArticleFile);
+const articleSourceBySlug = new Map();
 const errors = [];
 const intentionalBreaks = [];
+const localCoreJudgmentLabels = [];
 
 for (const filePath of articleFiles) {
   const source = fs.readFileSync(filePath, "utf8");
   const relative = path.relative(root, filePath);
+  const sourceSlug = source.match(/^slug:\s*(.+)$/m)?.[1]?.trim();
+  const fallbackSlug = path
+    .relative(contentDir, filePath)
+    .replaceAll(path.sep, "/")
+    .replace(/\.md$/, "");
+  articleSourceBySlug.set(sourceSlug || fallbackSlug, source);
 
   for (const { name, pattern } of forbiddenSourcePatterns) {
     for (const match of source.matchAll(pattern)) {
@@ -81,6 +89,19 @@ for (const filePath of articleFiles) {
 
   if (!/^#\s+\S/m.test(source)) {
     errors.push(`${relative} 缺少文章主标题`);
+  }
+
+  const localLabelPatterns = [
+    /^#{2,4}\s+核心判断\s*$/gm,
+    /^>\s+(?:\*\*)?核心判断(?:\*\*)?\s*[：:]/gm,
+  ];
+  for (const pattern of localLabelPatterns) {
+    for (const match of source.matchAll(pattern)) {
+      localCoreJudgmentLabels.push({
+        file: relative,
+        line: lineNumberFor(source, match.index ?? 0),
+      });
+    }
   }
 }
 
@@ -157,6 +178,15 @@ if (hasBuiltSite) {
       '<div class="article-content">',
       articleStart,
     );
+    const bodyEnd = html.indexOf("</article>", bodyStart);
+    const articleBody = html.slice(bodyStart, bodyEnd);
+    const coreJudgmentCards = (
+      html.match(/class="article-core-judgments key-points-card"/g) ?? []
+    ).length;
+    const hasCoreJudgments =
+      /^(?:coreJudgments|core_judgments|keyPoints|key_points):\s*\n\s+-\s+/m.test(
+        articleSourceBySlug.get(slug) ?? "",
+      );
     if (
       !pageKind ||
       headerStart < 0 ||
@@ -166,6 +196,15 @@ if (hasBuiltSite) {
       html.slice(bodyStart).includes('<p class="subtitle">')
     ) {
       errors.push(`构建页面未使用统一文章头部与正文容器：/${slug}`);
+    }
+    if (
+      coreJudgmentCards > 1 ||
+      coreJudgmentCards !== Number(hasCoreJudgments)
+    ) {
+      errors.push(`本文核心判断模块数量异常：/${slug}`);
+    }
+    if (/>(?:\s|<[^>]+>)*核心判断(?:\s|<[^>]+>)*[：:]?/.test(articleBody)) {
+      errors.push(`正文仍显示全文级“核心判断”标签：/${slug}`);
     }
   }
 }
@@ -189,5 +228,8 @@ if (errors.length > 0) {
   );
   console.log(
     `Intentional single <br> compatibility: ${breakCount} breaks across ${intentionalBreaks.length} articles.`,
+  );
+  console.log(
+    `Legacy local judgment labels normalized at render time: ${localCoreJudgmentLabels.length} labels across ${new Set(localCoreJudgmentLabels.map((entry) => entry.file)).size} articles.`,
   );
 }

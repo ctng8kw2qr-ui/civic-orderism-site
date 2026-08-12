@@ -110,12 +110,19 @@ body[data-page-kind="article"] {
   }
 
   & .key-points-card {
-    margin-top: 1.6rem;
+    margin-top: 1.85rem;
+    margin-bottom: 0;
   }
 
   & .toc-article {
-    margin-top: 1.3rem;
+    margin-top: 1.55rem;
     margin-bottom: 2.05rem;
+  }
+
+  & .tags + .toc-article,
+  & .content-meta + .toc-article,
+  & .article-header + .toc-article {
+    margin-top: 1.55rem;
   }
 
   & article.article-page {
@@ -371,11 +378,11 @@ body[data-page-kind="article"] {
     }
 
     & .key-points-card {
-      margin-top: 1.35rem;
+      margin-top: 1.55rem;
     }
 
     & .toc-article {
-      margin-top: 1rem;
+      margin-top: 1.25rem;
       margin-bottom: 1.7rem;
     }
 
