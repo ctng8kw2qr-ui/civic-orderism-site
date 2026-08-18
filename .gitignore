@@ -17,6 +17,8 @@ public/
 *.cert
 *secret*
 *token*
+# Design-system tokens file (semantic color tokens, not secrets).
+!quartz/styles/tokens.scss
 credentials.json
 content/**/未命名.md
 content/**/Untitled.md

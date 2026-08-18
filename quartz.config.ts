@@ -52,15 +52,24 @@ const config: QuartzConfig = {
           textHighlight: "rgba(181, 154, 99, 0.20)",
         },
         darkMode: {
-          light: "#111111",
-          lightgray: "#2a2a28",
-          gray: "#7b7972",
-          darkgray: "#d0cec7",
-          dark: "#f4f3ef",
-          secondary: "#e0ded7",
-          tertiary: "#aaa69b",
-          highlight: "rgba(244, 243, 239, 0.08)",
-          textHighlight: "rgba(244, 243, 239, 0.12)",
+          // Level 0 — deep navy-black page base (never pure black).
+          light: "#0b0f16",
+          // Borders / code surfaces — a Level 3-tinted navy.
+          lightgray: "#202c3c",
+          // Tertiary text (dates, labels, notes).
+          gray: "#98a2af",
+          // Body text — warm gray-white, ≥ 4.5:1 on Level 0.
+          darkgray: "#c3cad3",
+          // Headings / primary text.
+          dark: "#e8ecf2",
+          // Links — restrained steel blue-gray.
+          secondary: "#b9c9de",
+          // Brand gold accent, brightened for dark backgrounds.
+          tertiary: "#c9a961",
+          // Internal-link chip backgrounds: faint light overlay.
+          highlight: "rgba(255, 255, 255, 0.055)",
+          // Text selection / text highlight: restrained gold tint.
+          textHighlight: "rgba(201, 169, 97, 0.16)",
         },
       },
     },

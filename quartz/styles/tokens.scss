@@ -1,0 +1,103 @@
+/**
+ * Civic Orderism — Design Tokens
+ *
+ * Light Mode 与 Dark Mode 是同一套 Design System 的两种显示状态。
+ * 组件只引用下列 semantic tokens，禁止直接使用原始十六进制色值。
+ *
+ * 层级约定（Dark Mode）：
+ *   Level 0  --bg-page             页面底层（深蓝黑）
+ *   Level 1  --bg-sidebar/header   导航 / 侧栏（比 Level 0 微亮）
+ *   Level 2  --surface-primary     主内容 Surface（Hero、卡片、正文容器）
+ *   Level 3  --surface-elevated    Hover / 激活 / 重点信息（最亮一级）
+ *
+ * 文字层级：
+ *   --text-primary   标题、核心正文（高对比）
+ *   --text-secondary 副标题、说明
+ *   --text-tertiary  日期、标签、注释
+ *
+ * 品牌强调色 --accent 系列：Light 下为土金，Dark 下适度提亮以保持可读性。
+ */
+:root {
+  /* Level 0 — page base */
+  --bg-page: #f7f8fa;
+  --bg-sidebar: #f7f8fa;
+  --bg-header: #f7f8fa;
+
+  /* Level 2 — primary surfaces (cards, hero, panels) */
+  --surface-primary: #ffffff;
+  /* Slightly tinted panels (mixed surfaces) */
+  --surface-secondary: #fbfbfa;
+  /* Level 3 — elevated (hover, focus, small info cards) */
+  --surface-elevated: #fbfcfd;
+
+  /* Text hierarchy */
+  --text-primary: #0a1d38;
+  --text-secondary: #465260;
+  --text-tertiary: #7d8794;
+
+  /* Brand navy ink (headings, strong, links on surfaces) */
+  --ink: #0a1d38;
+  --ink-soft: #14253a;
+  /* Card top / left accent lines */
+  --accent-line: #0a1d38;
+
+  /* Borders */
+  --border-subtle: #d8dee6;
+  --border-subtle-soft: #cbd3de;
+
+  /* Brand gold accent */
+  --accent: #9b7c3e;
+  --accent-muted: #b59a63;
+  --accent-deep: #7e642e;
+
+  /* Buttons */
+  --btn-primary-bg: #0a1d38;
+  --btn-hover-bg: #102b4e;
+  --btn-hover-border: #29415f;
+  --ink-on-accent: #ffffff;
+
+  /* Card shadows (kept restrained; hierarchy is built with lightness first) */
+  --shadow-card: rgb(24 37 54 / 6%);
+}
+
+:root[saved-theme="dark"] {
+  /* Level 0 — deep navy-black page base. Never pure black. */
+  --bg-page: #0b0f16;
+  /* Level 1 — navigation rail */
+  --bg-sidebar: #0f1620;
+  --bg-header: #0f1620;
+
+  /* Level 2 — content surfaces */
+  --surface-primary: #151e2b;
+  --surface-secondary: #182231;
+  /* Level 3 — elevated */
+  --surface-elevated: #1c2736;
+
+  /* Text hierarchy (warm gray-white, no harsh pure white) */
+  --text-primary: #e8ecf2;
+  --text-secondary: #c3cad3;
+  --text-tertiary: #98a2af;
+
+  --ink: #e8ecf2;
+  --ink-soft: #e8ecf2;
+  /* Restrained steel navy accent lines, visible but not glaring */
+  --accent-line: #3e5b82;
+
+  /* Subtle borders — visible on Level 2, never bright */
+  --border-subtle: #263247;
+  --border-subtle-soft: #2e3b50;
+
+  /* Brand gold, brightened for dark background readability */
+  --accent: #c9a961;
+  --accent-muted: #d9be85;
+  --accent-deep: #c9a961;
+
+  /* Buttons: readable deep navy-blue distinct from surfaces */
+  --btn-primary-bg: #2a4a7a;
+  --btn-hover-bg: #335787;
+  --btn-hover-border: #3d6496;
+  --ink-on-accent: #f4f7fb;
+
+  /* Deeper, softer shadows in dark (lightness does the lifting) */
+  --shadow-card: rgb(0 0 0 / 30%);
+}
