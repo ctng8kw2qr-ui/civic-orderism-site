@@ -1021,23 +1021,27 @@ assert(
       "X · 官方账号 Official Account @CivicOrderism",
     ) &&
     visiblePageText(homepageMainHtml).includes(
-      "YouTube · 官方频道 Official Channel Civic Orderism",
+      "YouTube · 官方频道 Official Channel 公民秩序主义 Civic Orderism · @CivicOrderism",
     ) &&
-    !homepageMainHtml.includes("youtube.com") &&
-    !homepageMainHtml.includes("youtu.be") &&
+    homepageMainHtml.includes(
+      'href="https://www.youtube.com/@CivicOrderism"',
+    ) &&
     !homepageMainHtml.includes('id="contact"') &&
     !homepageMainText.includes("立即加入") &&
     !homepageMainText.includes("马上报名"),
-  "首页 Contact 双语目录、官方 X 或未链接的 YouTube 占位不符合要求",
+  "首页 Contact 双语目录、官方 X 或 YouTube 频道链接不符合要求",
 );
 const homepageYoutubeItemHtml =
   homepageMainHtml.match(
     /<div class="home-institution-contact__item home-institution-contact__item--youtube"[\s\S]*?<\/div>/,
   )?.[0] ?? "";
 assert(
-  homepageYoutubeItemHtml.includes("Civic Orderism") &&
-    !homepageYoutubeItemHtml.includes("<a "),
-  "仓库缺少官方 YouTube URL 时不应生成猜测链接",
+  homepageYoutubeItemHtml.includes("公民秩序主义 Civic Orderism") &&
+    homepageYoutubeItemHtml.includes("@CivicOrderism") &&
+    homepageYoutubeItemHtml.includes(
+      'href="https://www.youtube.com/@CivicOrderism"',
+    ),
+  "首页 YouTube 行应显示正式频道名称、handle 与官方链接",
 );
 assert(
   (

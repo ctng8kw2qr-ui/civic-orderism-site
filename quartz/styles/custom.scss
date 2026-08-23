@@ -4785,9 +4785,10 @@ article .home-institution-contact__item--x a {
   font-weight: 620;
 }
 
-article .home-institution-contact__item--youtube dd > span {
+article .home-institution-contact__item--youtube dd > a {
   color: #c2ccd5;
   font-size: 0.8rem;
+  font-weight: 500;
 }
 
 @media (max-width: 900px) {

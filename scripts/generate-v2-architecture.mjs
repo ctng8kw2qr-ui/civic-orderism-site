@@ -1149,7 +1149,7 @@ writeContent(
       <h3 id="home-official-channels-title">OFFICIAL CHANNELS <span>/ 官方平台</span></h3>
       <dl>
         <div class="home-institution-contact__item home-institution-contact__item--x"><dt><span>X · 官方账号</span><small lang="en">Official Account</small></dt><dd><a href="https://x.com/CivicOrderism" target="_blank" rel="noopener">@CivicOrderism</a></dd></div>
-        <div class="home-institution-contact__item home-institution-contact__item--youtube"><dt><span>YouTube · 官方频道</span><small lang="en">Official Channel</small></dt><dd><span>Civic Orderism</span></dd></div>
+        <div class="home-institution-contact__item home-institution-contact__item--youtube"><dt><span>YouTube · 官方频道</span><small lang="en">Official Channel</small></dt><dd><a href="https://www.youtube.com/@CivicOrderism" target="_blank" rel="noopener">公民秩序主义 Civic Orderism · @CivicOrderism</a></dd></div>
       </dl>
     </section>
   </div>
