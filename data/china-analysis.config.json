@@ -40,9 +40,9 @@
   ],
   "structuralJudgments": [
     {
-      "name": "党国结构",
-      "description": "党与国家两套逻辑如何重叠，并形成权力与责任的长期张力。",
-      "href": "/concepts/party-state-stress"
+      "name": "党国关系",
+      "description": "观察党与国家两套组织逻辑如何重叠、依赖并相互改变。",
+      "href": "/china/party-state-stress-neither-party-nor-state"
     },
     {
       "name": "官僚体系",
@@ -60,14 +60,14 @@
       "href": "/topics/local-finance"
     },
     {
-      "name": "组织信用",
-      "description": "承诺、责任和长期合作预期为何逐步衰退。",
-      "href": "/concepts/organizational-credit"
+      "name": "组织成员",
+      "description": "观察成员的忠诚、避责、自保与长期合作预期如何变化。",
+      "href": "/china/ccp-from-faith-community-to-black-box-post"
     },
     {
-      "name": "安全叙事",
-      "description": "安全如何从政策领域上升为整体治理边界。",
-      "href": "/concepts/security-recentralization"
+      "name": "安全治理",
+      "description": "观察安全如何从政策领域上升为治理优先级与行动边界。",
+      "href": "/china/security-is-redefining-china"
     },
     {
       "name": "权力集中",

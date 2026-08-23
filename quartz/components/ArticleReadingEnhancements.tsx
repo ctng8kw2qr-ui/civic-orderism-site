@@ -39,6 +39,19 @@ type ArticleSequenceItem = {
 };
 
 const MAX_RELATED_CONCEPTS = 3;
+const CORE_MODEL_CONCEPT_SLUGS = [
+  "party-state-stress",
+  "bureaucratic-shock",
+  "security-recentralization",
+  "organizational-credit",
+  "order-evaporation",
+  "security-purge-recentralization-cycle",
+] as const;
+const CORE_MODEL_CONCEPT_SET = new Set<string>(CORE_MODEL_CONCEPT_SLUGS);
+const CORE_MODEL_ROUTE_SLUGS = [
+  "civic-orderism/possibility-of-peaceful-political-transition-in-china",
+  "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+];
 const migrationBySlug = new Map<string, MigrationEntry>(
   migrationMap.map((entry) => [entry.slug, entry]),
 );
@@ -230,6 +243,19 @@ function isEligibleRecommendation(file: QuartzPluginData) {
     file.frontmatter?.status !== "draft" &&
     file.frontmatter?.status !== "archived" &&
     file.frontmatter?.published !== false,
+  );
+}
+
+function coreModelConceptForArticle(
+  file: QuartzPluginData,
+  knowledge: MigrationEntry | undefined,
+) {
+  const articleSlug = file.slug ?? "";
+  return CORE_MODEL_CONCEPT_SLUGS.map((slug) => conceptBySlug.get(slug)).find(
+    (concept) =>
+      concept &&
+      (knowledge?.concepts.includes(concept.slug) ||
+        concept.representativeArticles.includes(articleSlug)),
   );
 }
 
@@ -448,6 +474,13 @@ export const ContinueReading: QuartzComponent = ({
   const eligibleArticles = articleFiles(allFiles).filter(
     isEligibleRecommendation,
   );
+  const eligibleBySlug = new Map(
+    eligibleArticles.map((file) => [file.slug ?? "", file]),
+  );
+  const coreModel = coreModelConceptForArticle(
+    fileData,
+    knowledgeFor(fileData),
+  );
   const manualSequence = resolveReadingSequence(
     readingSequencesConfig,
     eligibleArticles,
@@ -507,6 +540,104 @@ export const ContinueReading: QuartzComponent = ({
     .sort(byRecommendationScore(fileData, currentSeries, manualRelated))
     .slice(0, 3);
 
+  const usedCoreModelArticles = new Set([fileData.slug ?? ""]);
+  const relatedCoreModelSlugs = coreModel
+    ? new Set(
+        coreModel.related.filter((slug) => CORE_MODEL_CONCEPT_SET.has(slug)),
+      )
+    : new Set<string>();
+  const orderedCoreModelSlugs = coreModel
+    ? [
+        ...CORE_MODEL_CONCEPT_SLUGS.filter(
+          (slug) => slug !== coreModel.slug && relatedCoreModelSlugs.has(slug),
+        ),
+        ...CORE_MODEL_CONCEPT_SLUGS.filter(
+          (slug) => slug !== coreModel.slug && !relatedCoreModelSlugs.has(slug),
+        ),
+      ]
+    : [];
+  const coreModelRecommendations = orderedCoreModelSlugs
+    .flatMap((conceptSlug) => {
+      const concept = conceptBySlug.get(conceptSlug);
+      if (!concept) return [];
+      const page = concept.representativeArticles
+        .map((slug) => eligibleBySlug.get(slug))
+        .find(
+          (candidate) =>
+            candidate?.slug && !usedCoreModelArticles.has(candidate.slug),
+        );
+      if (!page?.slug) return [];
+      usedCoreModelArticles.add(page.slug);
+      return [{ page, label: concept.name }];
+    })
+    .slice(0, 3);
+  const routeRecommendations = coreModel
+    ? CORE_MODEL_ROUTE_SLUGS.map((slug) => eligibleBySlug.get(slug))
+        .filter((page): page is QuartzPluginData => {
+          if (!page?.slug) return false;
+          return !usedCoreModelArticles.has(page.slug);
+        })
+        .slice(0, Math.max(0, 4 - coreModelRecommendations.length))
+    : [];
+
+  const recommendationCard = (page: QuartzPluginData, label?: string) => (
+    <a
+      class="related-card"
+      data-card="recommendation"
+      href={resolveRelative(fileData.slug!, page.slug!)}
+    >
+      {label ? <small class="related-card__eyebrow">{label}</small> : null}
+      <span class="related-card__title">{page.frontmatter?.title}</span>
+      <p class="related-card__meta">
+        {page.dates ? (
+          <Date date={getDate(cfg, page)!} locale={cfg.locale} />
+        ) : null}
+        {knowledgeFor(page)?.section || page.frontmatter?.category ? (
+          <span>
+            {String(knowledgeFor(page)?.section ?? page.frontmatter?.category)}
+          </span>
+        ) : null}
+      </p>
+      {getArticleSummary(page) ? (
+        <p class="related-card__summary">{getArticleSummary(page)}</p>
+      ) : null}
+    </a>
+  );
+
+  if (
+    coreModel &&
+    (coreModelRecommendations.length > 0 || routeRecommendations.length > 0)
+  ) {
+    return (
+      <section
+        class="related-reading related-reading--model"
+        aria-label="继续阅读"
+      >
+        <h2 class="related-reading__heading">继续阅读</h2>
+        {coreModelRecommendations.length ? (
+          <div class="continue-reading__direction">
+            <h3>继续理解这个模型</h3>
+            <div class="related-grid related-grid--compact">
+              {coreModelRecommendations.map(({ page, label }) =>
+                recommendationCard(page, label),
+              )}
+            </div>
+          </div>
+        ) : null}
+        {routeRecommendations.length ? (
+          <div class="continue-reading__direction continue-reading__direction--route">
+            <h3>从判断进入路线</h3>
+            <div class="related-grid related-grid--compact related-grid--route">
+              {routeRecommendations.map((page) =>
+                recommendationCard(page, "政治路线"),
+              )}
+            </div>
+          </div>
+        ) : null}
+      </section>
+    );
+  }
+
   if (!previousHref && !nextHref && recommendations.length === 0) return null;
 
   return (
@@ -532,33 +663,7 @@ export const ContinueReading: QuartzComponent = ({
         <div class="continue-reading__related">
           <h3>相关文章</h3>
           <div class="related-grid">
-            {recommendations.map((page) => (
-              <a
-                class="related-card"
-                data-card="recommendation"
-                href={resolveRelative(fileData.slug!, page.slug!)}
-              >
-                <span class="related-card__title">
-                  {page.frontmatter?.title}
-                </span>
-                <p class="related-card__meta">
-                  {page.dates ? (
-                    <Date date={getDate(cfg, page)!} locale={cfg.locale} />
-                  ) : null}
-                  {knowledgeFor(page)?.section || page.frontmatter?.category ? (
-                    <span>
-                      {String(
-                        knowledgeFor(page)?.section ??
-                          page.frontmatter?.category,
-                      )}
-                    </span>
-                  ) : null}
-                </p>
-                {getArticleSummary(page) ? (
-                  <p class="related-card__summary">{getArticleSummary(page)}</p>
-                ) : null}
-              </a>
-            ))}
+            {recommendations.map((page) => recommendationCard(page))}
           </div>
         </div>
       ) : null}

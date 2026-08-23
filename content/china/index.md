@@ -21,7 +21,7 @@ noindex: false
 <p class="china-analysis-intro">现实事件提供入口，结构判断解释长期问题，核心模型连接这些变化背后的运行机制。</p>
 
 <section class="china-analysis-layer china-analysis-layer--models" aria-labelledby="china-models-title">
-  <div class="china-analysis-layer__heading"><p class="resource-label">第一层</p><h2 id="china-models-title">核心模型</h2><p>用一组稳定的解释框架，理解分散事件背后的共同运行机制。</p></div>
+  <div class="china-analysis-layer__heading"><p class="resource-label">第一层</p><h2 id="china-models-title">核心模型</h2><p>公民秩序主义提出的解释模型，用于理解不同现象背后的共同运行机制。</p></div>
   <div class="china-model-grid"><a class="china-model-card" href="/concepts/party-state-stress">
   <strong>党国应力</strong>
   <span>党的政治控制逻辑与国家治理逻辑长期重叠后，不断积累的结构性张力。</span>
@@ -55,10 +55,10 @@ noindex: false
 </section>
 
 <section class="china-analysis-layer china-analysis-layer--judgments" aria-labelledby="china-judgments-title">
-  <div class="china-analysis-layer__heading"><p class="resource-label">第二层</p><h2 id="china-judgments-title">结构判断</h2><p>沿着长期问题进入专题分析，再回到相应的核心模型。</p></div>
-  <div class="china-judgment-grid"><a class="china-judgment-card" href="/concepts/party-state-stress">
-  <strong>党国结构</strong>
-  <span>党与国家两套逻辑如何重叠，并形成权力与责任的长期张力。</span>
+  <div class="china-analysis-layer__heading"><p class="resource-label">第二层</p><h2 id="china-judgments-title">结构判断</h2><p>从权力、财政、官僚、央地与国家治理等结构维度，观察中共长期运行中的矛盾。</p></div>
+  <div class="china-judgment-grid"><a class="china-judgment-card" href="/china/party-state-stress-neither-party-nor-state">
+  <strong>党国关系</strong>
+  <span>观察党与国家两套组织逻辑如何重叠、依赖并相互改变。</span>
 </a>
 <a class="china-judgment-card" href="/topics/bureaucratic-system">
   <strong>官僚体系</strong>
@@ -72,13 +72,13 @@ noindex: false
   <strong>财政与利益分配</strong>
   <span>增长放缓后，历史成本、公共责任与损失如何重新分配。</span>
 </a>
-<a class="china-judgment-card" href="/concepts/organizational-credit">
-  <strong>组织信用</strong>
-  <span>承诺、责任和长期合作预期为何逐步衰退。</span>
+<a class="china-judgment-card" href="/china/ccp-from-faith-community-to-black-box-post">
+  <strong>组织成员</strong>
+  <span>观察成员的忠诚、避责、自保与长期合作预期如何变化。</span>
 </a>
-<a class="china-judgment-card" href="/concepts/security-recentralization">
-  <strong>安全叙事</strong>
-  <span>安全如何从政策领域上升为整体治理边界。</span>
+<a class="china-judgment-card" href="/china/security-is-redefining-china">
+  <strong>安全治理</strong>
+  <span>观察安全如何从政策领域上升为治理优先级与行动边界。</span>
 </a>
 <a class="china-judgment-card" href="/topics/xi-era">
   <strong>权力集中</strong>

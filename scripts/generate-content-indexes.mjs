@@ -1027,7 +1027,7 @@ const readingRouteConfigs = [
     entries: [
       "civic-orderism/why-civic-orderism",
       "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
-      "civic-orderism/state-must-rely-on-systems-not-drivers",
+      "civic-orderism/what-civic-orderism-ultimately-solves",
       { href: "/start-here", title: "5分钟了解公民秩序主义" },
     ],
     moreHref: "/civic-orderism",

@@ -165,6 +165,32 @@ for (const judgment of chinaAnalysisConfig.structuralJudgments) {
   );
 }
 assert(
+  JSON.stringify(
+    chinaAnalysisConfig.structuralJudgments.map((judgment) => judgment.name),
+  ) ===
+    JSON.stringify([
+      "党国关系",
+      "官僚体系",
+      "中央与地方",
+      "财政与利益分配",
+      "组织成员",
+      "安全治理",
+      "权力集中",
+      "政治责任",
+      "国家治理能力",
+    ]),
+  "解析中共结构判断未保持九个观察维度",
+);
+assert(
+  chinaPageSource.includes(
+    "公民秩序主义提出的解释模型，用于理解不同现象背后的共同运行机制",
+  ) &&
+    chinaPageSource.includes(
+      "从权力、财政、官僚、央地与国家治理等结构维度，观察中共长期运行中的矛盾",
+    ),
+  "解析中共未明确区分核心模型与结构判断",
+);
+assert(
   chinaPageSource.indexOf('id="china-models-title"') <
     chinaPageSource.indexOf('id="china-judgments-title"') &&
     chinaPageSource.indexOf('id="china-judgments-title"') <
@@ -234,7 +260,14 @@ for (const article of migration) {
         (match) => match[1],
       )
     : [];
-  assert(recommendationSlugs.length <= 3, `推荐阅读超过 3 篇：${article.slug}`);
+  const hasCoreModelRecommendations = articleHtml.includes(
+    "related-reading--model",
+  );
+  const recommendationLimit = hasCoreModelRecommendations ? 4 : 3;
+  assert(
+    recommendationSlugs.length <= recommendationLimit,
+    `推荐阅读超过 ${recommendationLimit} 篇：${article.slug}`,
+  );
   assert(
     new Set(recommendationSlugs).size === recommendationSlugs.length,
     `推荐阅读出现重复：${article.slug}`,
@@ -249,7 +282,9 @@ for (const article of migration) {
   );
   assert(
     articleHtml.includes('aria-label="继续阅读"') &&
-      articleHtml.includes("相关文章") &&
+      (articleHtml.includes("相关文章") ||
+        (articleHtml.includes("继续理解这个模型") &&
+          articleHtml.includes("从判断进入路线"))) &&
       articleHtml.includes("分钟阅读"),
     `文章缺少统一继续阅读、相关文章或预计阅读时间：${article.slug}`,
   );
@@ -342,6 +377,36 @@ for (const section of institutionSections) {
     );
   }
 }
+
+const partyStateStressHtml = fs.readFileSync(
+  publicHtml("china/party-state-stress-neither-party-nor-state"),
+  "utf8",
+);
+const partyStateRecommendationSlugs = [
+  ...partyStateStressHtml.matchAll(
+    /<a class="related-card"[^>]*href="([^"]+)"/g,
+  ),
+].map((match) =>
+  decodeURI(
+    new URL(
+      match[1],
+      "https://civicorderism.com/china/party-state-stress-neither-party-nor-state",
+    ).pathname.replace(/^\//, ""),
+  ),
+);
+assert(
+  partyStateStressHtml.includes("related-reading--model") &&
+    partyStateStressHtml.includes("继续理解这个模型") &&
+    partyStateStressHtml.includes("从判断进入路线") &&
+    JSON.stringify(partyStateRecommendationSlugs) ===
+      JSON.stringify([
+        "china/why-ccp-cannot-reduce-grassroots-burden",
+        "china/security-led-governance-model",
+        "china/organization-credit-retired-officials",
+        "civic-orderism/possibility-of-peaceful-political-transition-in-china",
+      ]),
+  "党国应力文章未按相邻模型与政治路线渲染四篇继续阅读",
+);
 assert(
   migration.filter((article) => article.section === "制度设计").length === 16,
   "制度设计栏目应包含 16 篇文章",
@@ -399,6 +464,27 @@ const requiredRoutes = [
 ];
 requiredRoutes.forEach((slug) =>
   assert(publicRouteExists(slug), `缺少路由：/${slug === "index" ? "" : slug}`),
+);
+const conceptsPageHtml = fs.readFileSync(publicRouteHtml("concepts"), "utf8");
+const coreChinaConceptSlugs = [
+  "party-state-stress",
+  "bureaucratic-shock",
+  "order-evaporation",
+  "security-recentralization",
+  "organizational-credit",
+  "security-purge-recentralization-cycle",
+];
+assert(
+  conceptsPageHtml.includes("concept-grid--core") &&
+    conceptsPageHtml.includes("concept-grid--extended") &&
+    conceptsPageHtml.includes("查看延伸研究概念") &&
+    !/<details class="concept-research-more"[^>]*\sopen(?:[\s=>])/i.test(
+      conceptsPageHtml,
+    ) &&
+    coreChinaConceptSlugs.every((slug) =>
+      conceptsPageHtml.includes(`concepts/${slug}"`),
+    ),
+  "核心概念词典未区分核心概念与默认收起的延伸研究概念",
 );
 topics.forEach((topic) =>
   assert(
@@ -770,7 +856,7 @@ const readingRoutes = [
     slugs: [
       "civic-orderism/why-civic-orderism",
       "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
-      "civic-orderism/state-must-rely-on-systems-not-drivers",
+      "civic-orderism/what-civic-orderism-ultimately-solves",
       "start-here",
     ],
   },
@@ -783,6 +869,7 @@ const readingRoutes = [
   },
 ];
 let previousReadingRoutePosition = -1;
+const allReadingRouteSlugs = [];
 for (const [index, route] of readingRoutes.entries()) {
   const routePosition = articlesHtml.indexOf(`id="${route.id}"`);
   const nextRouteId = readingRoutes[index + 1]?.id;
@@ -797,6 +884,7 @@ for (const [index, route] of readingRoutes.entries()) {
   const recommendedSlugs = [
     ...recommendedBlock.matchAll(/data-slug="([^"]+)"/g),
   ].map((match) => match[1]);
+  allReadingRouteSlugs.push(...recommendedSlugs);
   assert(
     routePosition > previousReadingRoutePosition &&
       routeEnd > routePosition &&
@@ -813,6 +901,10 @@ for (const [index, route] of readingRoutes.entries()) {
   );
   previousReadingRoutePosition = routePosition;
 }
+assert(
+  new Set(allReadingRouteSlugs).size === allReadingRouteSlugs.length,
+  "五步阅读地图存在重复推荐入口",
+);
 const articleLibraryPosition = articlesHtml.indexOf('id="all-articles"');
 assert(
   articlesText.includes("这里不是完整文章目录") &&

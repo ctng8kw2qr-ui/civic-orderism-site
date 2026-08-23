@@ -845,12 +845,12 @@ ${section.description}
 <p class="china-analysis-intro">${chinaAnalysis.readingHint}</p>
 
 <section class="china-analysis-layer china-analysis-layer--models" aria-labelledby="china-models-title">
-  <div class="china-analysis-layer__heading"><p class="resource-label">第一层</p><h2 id="china-models-title">核心模型</h2><p>用一组稳定的解释框架，理解分散事件背后的共同运行机制。</p></div>
+  <div class="china-analysis-layer__heading"><p class="resource-label">第一层</p><h2 id="china-models-title">核心模型</h2><p>公民秩序主义提出的解释模型，用于理解不同现象背后的共同运行机制。</p></div>
   <div class="china-model-grid">${modelCards}</div>
 </section>
 
 <section class="china-analysis-layer china-analysis-layer--judgments" aria-labelledby="china-judgments-title">
-  <div class="china-analysis-layer__heading"><p class="resource-label">第二层</p><h2 id="china-judgments-title">结构判断</h2><p>沿着长期问题进入专题分析，再回到相应的核心模型。</p></div>
+  <div class="china-analysis-layer__heading"><p class="resource-label">第二层</p><h2 id="china-judgments-title">结构判断</h2><p>从权力、财政、官僚、央地与国家治理等结构维度，观察中共长期运行中的矛盾。</p></div>
   <div class="china-judgment-grid">${structuralJudgments}</div>
 </section>
 
@@ -1210,13 +1210,28 @@ const conceptDomain = (concept) => {
     ? "civic-orderism"
     : "china-analysis";
 };
-const conceptCard = (concept) => {
+const conceptCard = (concept, { extended = false } = {}) => {
   const status = conceptPublicationStatus(concept);
   const research = status === "reviewing";
-  return `<a class="concept-card${research ? " concept-card--research" : ""}" href="/concepts/${concept.slug}"><strong>${concept.name}</strong><span>${concept.definition}</span><small>${research ? "研究概念" : "正式概念"}</small></a>`;
+  return `<a class="concept-card${research ? " concept-card--research" : ""}${extended ? " concept-card--extended" : ""}" href="/concepts/${concept.slug}"><strong>${concept.name}</strong><span>${concept.definition}</span><small>${research ? "研究概念" : "正式概念"}</small></a>`;
 };
 const chinaConcepts = visibleConcepts.filter(
   (concept) => conceptDomain(concept) === "china-analysis",
+);
+const coreChinaConceptSlugs = [
+  "party-state-stress",
+  "bureaucratic-shock",
+  "order-evaporation",
+  "security-recentralization",
+  "organizational-credit",
+  "security-purge-recentralization-cycle",
+];
+const coreChinaConceptSet = new Set(coreChinaConceptSlugs);
+const coreChinaConcepts = coreChinaConceptSlugs
+  .map((slug) => chinaConcepts.find((concept) => concept.slug === slug))
+  .filter(Boolean);
+const extendedChinaConcepts = chinaConcepts.filter(
+  (concept) => !coreChinaConceptSet.has(concept.slug),
 );
 const civicConcepts = visibleConcepts.filter(
   (concept) => conceptDomain(concept) === "civic-orderism",
@@ -1234,7 +1249,20 @@ writeContent(
 
 <p>从党国结构、官僚系统、组织信用与安全逻辑理解中共运行方式。</p>
 
-<div class="concept-grid">${chinaConcepts.map(conceptCard).join("\n")}</div>
+### 核心概念
+
+<p>用于解释不同政治现象背后共同运行机制的稳定模型。</p>
+
+<div class="concept-grid concept-grid--core">${coreChinaConcepts.map((concept) => conceptCard(concept)).join("\n")}</div>
+
+### 延伸研究概念
+
+<p>用于查询具体判断、政策机制与辅助分析术语。</p>
+
+<details class="concept-research-more">
+<summary>查看延伸研究概念（${extendedChinaConcepts.length}）</summary>
+<div class="concept-grid concept-grid--extended">${extendedChinaConcepts.map((concept) => conceptCard(concept, { extended: true })).join("\n")}</div>
+</details>
 
 ## 公民秩序主义类
 

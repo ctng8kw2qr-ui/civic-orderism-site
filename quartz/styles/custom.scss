@@ -176,6 +176,69 @@ article a.v2-button--secondary {
   background: color-mix(in srgb, var(--surface-primary) 94%, var(--lightgray));
 }
 
+.concept-grid--core {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.concept-research-more {
+  margin: 1rem 0 2.8rem;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.concept-research-more > summary {
+  display: flex;
+  min-height: 3rem;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--darkgray);
+  cursor: pointer;
+  font-size: 0.86rem;
+  font-weight: 600;
+  list-style: none;
+}
+
+.concept-research-more > summary::-webkit-details-marker {
+  display: none;
+}
+
+.concept-research-more > summary::after {
+  content: "＋";
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+.concept-research-more[open] > summary::after {
+  content: "－";
+}
+
+.concept-grid--extended {
+  margin: 0 0 1.2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.concept-card--extended {
+  min-height: 0;
+  gap: 0.42rem;
+  padding: 0.95rem;
+  background: color-mix(in srgb, var(--surface-primary) 96%, var(--lightgray));
+}
+
+.concept-card--extended strong {
+  font-size: 0.95rem;
+}
+
+.concept-card--extended span {
+  font-size: 0.82rem;
+  line-height: 1.58;
+}
+
+.concept-card--extended small {
+  font-size: 0.72rem;
+}
+
 article .concept-status {
   display: inline-flex;
   margin: 0.2rem 0 0.8rem;
