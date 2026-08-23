@@ -30,8 +30,8 @@ coreJudgments:
   - 路线无法脱离干部网络独立运行；政策重心改变以后，组织必须重新选择执行者、评价标准与责任边界。
   - 这场重组会持续多久，不取决于预设的二十年期限，而取决于旧干部网络是否完成代际退出、新的组织关系是否稳定形成。
 relatedArticles:
-  - china/why-expulsion-from-party-becomes-standard-ending
-  - china/bureaucratic-system-under-purges
+  - china/security-led-governance-model
+  - china/security-is-redefining-china
   - china/ccp-2018-xi-era-local-growth-space
 slug: china/route-transition-why-ccp-keeps-purging-officials
 status: published

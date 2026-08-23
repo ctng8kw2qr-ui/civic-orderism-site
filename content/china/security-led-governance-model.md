@@ -29,9 +29,9 @@ coreJudgments:
   - 安全化的组织形态在选择型问题上可能有效，在分配型问题上则会系统性失效。
   - 中共可能进入安全化、清洗、再集中、再失灵的循环，表现为控制能力上升而治理效能下降。
 relatedArticles:
-  - china/what-happens-when-security-becomes-the-top-priority
+  - china/security-is-redefining-china
   - china/route-transition-why-ccp-keeps-purging-officials
-  - china/supply-side-reform-state-can-scale-not-discover-future
+  - china/ccp-2018-xi-era-local-growth-space
 slug: china/security-led-governance-model
 status: published
 ---

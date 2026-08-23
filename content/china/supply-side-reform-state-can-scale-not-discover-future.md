@@ -28,9 +28,9 @@ coreJudgments:
   - 国家可以选对产业，却同时选错许多企业、项目和投资节奏；最终筛选仍要依靠需求、利润、破产与退出。
   - 供给侧改革留下的路径依赖，是中共越来越习惯用行政力量同时完成产业扩张与错误纠正。
 relatedArticles:
-  - china-stage/china-manufacturing-cannot-stop
-  - china/ccp-2018-xi-era-local-growth-space
-  - china/information-age-impact-on-ccp-mechanisms
+  - china/xi-solved-organization-not-reality
+  - china/ccp-reform-political-balance-deadlock
+  - china/political-machine-rewards-and-limits
 slug: china/supply-side-reform-state-can-scale-not-discover-future
 status: published
 ---

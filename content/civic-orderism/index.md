@@ -33,11 +33,11 @@ noindex: false
   <h3><a href="/civic-orderism/north-america-nonprofit-board-preparation-manifesto">公民秩序主义北美非营利法人及董事会筹备宣言</a></h3>
   <p class="knowledge-card__summary">公民秩序主义正式启动北美非营利法人及首届董事会筹备，目标是为理论、制度、人才、数字资产和长期公共责任建立合法、稳定、克制的组织基础。</p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="order-evaporation state-system-upgrade low-friction-governance">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="state-system-upgrade low-friction-governance">
   <p class="knowledge-card__meta"><span>2026-05-14</span><span>6 分钟阅读</span></p>
   <h3><a href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">如果你只读一篇：公民秩序主义到底想解决什么</a></h3>
   <p class="knowledge-card__summary">公民秩序主义不是口号、政党或情绪化革命方案。它关注现代国家与普通人之间的秩序关系：问题能否进入系统、权力能否追责、行政能否持续运行、制度能否纠错，以及普通人能否持续获得解释和反馈。</p>
-  <p class="knowledge-card__chips"><span>概念：秩序蒸发</span></p>
+  <p class="knowledge-card__chips"><span>概念：国家系统升级</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="political-route">
   <p class="knowledge-card__meta"><span>2026-07-08</span><span>18 分钟阅读</span></p>
@@ -58,7 +58,7 @@ noindex: false
 <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">
   <label>专题<select data-filter-topic><option value="">全部专题</option><option value="political-transition">中国政治转型</option><option value="order-evaporation">秩序蒸发</option></select></label>
-  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="nonviolent-transition">非暴力转型</option><option value="state-system-upgrade">国家系统升级</option><option value="political-route">政治路线</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="political-debt">政治偿债</option><option value="organizational-credit">组织信用</option><option value="low-friction-governance">低摩擦治理</option><option value="bureaucratic-shock">官僚系统休克</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option><option value="fiscal-debt">财政偿债</option></select></label>
+  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="nonviolent-transition">非暴力转型</option><option value="state-system-upgrade">国家系统升级</option><option value="political-route">政治路线</option><option value="second-reform">二次改开</option><option value="bureaucratic-shock">官僚系统休克</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="political-debt">政治偿债</option><option value="fiscal-debt">财政偿债</option><option value="organizational-credit">组织信用</option><option value="low-friction-governance">低摩擦治理</option></select></label>
   <button type="button" data-filter-reset>重置</button>
 </div>
 <div class="knowledge-grid">
@@ -73,13 +73,13 @@ noindex: false
   <p class="knowledge-card__summary">中国的未来并非只有维持现状与失控崩塌两种结局。如果旧体系越来越难以提供长期预期，而新的政治道路能够保障国家运行、划清责任边界并为体制成员提供可信退路，合作就可能逐步取代对抗。</p>
   <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：非暴力转型</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route">
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route second-reform">
   <p class="knowledge-card__meta"><span>2026-07-24</span><span>7 分钟阅读</span></p>
   <h3><a href="/civic-orderism/information-age-and-political-transition">信息化时代与政治转型</a></h3>
   <p class="knowledge-card__summary">世界已经进入信息化时代，但绝大多数国家仍运行着工业时代建立起来的治理体系。本文从时代错位、改革开放遗留问题与资源约束出发，解释公民秩序主义为何在今天提出。</p>
   <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：非暴力转型</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="political-route nonviolent-transition state-system-upgrade">
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="political-route nonviolent-transition state-system-upgrade bureaucratic-shock ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-07-19</span><span>14 分钟阅读</span></p>
   <h3><a href="/civic-orderism/peaceful-state-transition">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</a></h3>
   <p class="knowledge-card__summary">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不按政治身份实施普遍追责的转轨道路。</p>
@@ -91,17 +91,17 @@ noindex: false
   <p class="knowledge-card__summary">公民秩序主义不是否定民主、自由、人权，而是试图把这些价值翻译成中国现实条件下可理解、可操作、可承接的政治路线。本文解释为什么政治变革需要路线，以及为什么“公民”“秩序”“主义”必须同时出现。</p>
   <p class="knowledge-card__chips"><span>概念：政治路线</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="order-evaporation high-fragility political-debt language-inflation state-system-upgrade">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="order-evaporation high-fragility political-debt state-system-upgrade">
   <p class="knowledge-card__meta"><span>2026-06-13</span><span>7 分钟阅读</span></p>
   <h3><a href="/theory/democracy-still-exists-but-cannot-penetrate-reality">民主还在，但越来越难穿透现实</a></h3>
   <p class="knowledge-card__summary">本文以加拿大为样本，分析信息化时代西方政党政治正在面对的结构性困境：政党垄断议题入口、与大资本形成共生、被算法推向空洞化，而公民又被碎片化和原子化困住，导致民主程序仍在，却越来越难真正穿透现实结构。</p>
   <p class="knowledge-card__chips"><span>概念：秩序蒸发</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="order-evaporation state-system-upgrade nonviolent-transition">
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="state-system-upgrade nonviolent-transition political-route fiscal-debt political-debt order-evaporation">
   <p class="knowledge-card__meta"><span>2026-06-08</span><span>10 分钟阅读</span></p>
   <h3><a href="/civic-orderism/state-must-rely-on-systems-not-drivers">国家不能只靠驾驶员：为什么现代治理必须依赖系统</a></h3>
   <p class="knowledge-card__summary">本文以现代汽车系统为比喻，说明国家作为复杂系统不能依赖单一领导人的英明，而必须依靠行政、司法、监督、财政、媒体、信息和立法等子系统的相对独立、差异性反馈与自我修复能力。文章以中共集权为反面案例，论证政党集权为何会破坏国家系统可靠性。</p>
-  <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：秩序蒸发</span></p>
+  <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：国家系统升级</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="state-system-upgrade">
   <p class="knowledge-card__meta"><span>2026-06-08</span><span>7 分钟阅读</span></p>
@@ -109,36 +109,36 @@ noindex: false
   <p class="knowledge-card__summary">本文分析政党政治在低信息、低流动、低技术时代的历史合理性，并指出信息化时代已经部分替代政党的政治基础设施功能，而政党的组织约束功能也可以由公共制度承接。因此，政党可以继续存在，但不应继续垄断政治入口。</p>
   <p class="knowledge-card__chips"><span>概念：国家系统升级</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation high-fragility political-debt">
+<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation high-fragility political-debt nonviolent-transition state-system-upgrade political-route">
   <p class="knowledge-card__meta"><span>2026-05-30</span><span>6 分钟阅读</span></p>
   <h3><a href="/theory/social-change-dynamics-when-system-no-longer-worth-it">社会变革动力学：当所有人都觉得“不值了”</a></h3>
   <p class="knowledge-card__summary">本文从利益链条、外部环境、精英分裂、信息透明、集体行动困境与情感链接断裂等角度，分析社会变革不是浪漫的觉醒，而是当维持旧体系的代价超过推倒旧体系的代价后，社会进入倒计时的动力学过程。</p>
   <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation organizational-credit high-fragility">
+<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation organizational-credit high-fragility political-debt">
   <p class="knowledge-card__meta"><span>2026-05-30</span><span>5 分钟阅读</span></p>
   <h3><a href="/theory/organizational-collapse-begins-with-loss-of-institutional-trust">组织的坍塌，始于制度信任的瓦解</a></h3>
   <p class="knowledge-card__summary">本文从门阀政治、九品中正制、东晋政治与《红楼梦》中的贾府败落出发，分析当制度信任被关系依附取代后，组织如何逐渐空心化、犬儒化，并最终在看似突然的危机中坍塌。</p>
   <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="order-evaporation state-system-upgrade low-friction-governance">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="state-system-upgrade low-friction-governance">
   <p class="knowledge-card__meta"><span>2026-05-14</span><span>6 分钟阅读</span></p>
   <h3><a href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">如果你只读一篇：公民秩序主义到底想解决什么</a></h3>
   <p class="knowledge-card__summary">公民秩序主义不是口号、政党或情绪化革命方案。它关注现代国家与普通人之间的秩序关系：问题能否进入系统、权力能否追责、行政能否持续运行、制度能否纠错，以及普通人能否持续获得解释和反馈。</p>
-  <p class="knowledge-card__chips"><span>概念：秩序蒸发</span></p>
+  <p class="knowledge-card__chips"><span>概念：国家系统升级</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
   <p class="knowledge-card__meta"><span>2026-05-14</span><span>9 分钟阅读</span></p>
   <h3><a href="/theory/why-party-politics-is-becoming-a-low-dimensional-function">为什么政党政治越来越像低维函数</a></h3>
   <p class="knowledge-card__summary">政党政治并非从来没有价值，而是它所对应的社会耦合模型正在过时。它曾经适用于问题之间相对独立、主要矛盾还能被少数主线概括的时代；但今天，社会已经进入多节点、多反馈、高耦合状态，继续要求政党政治独自承担全部复杂性处理，只会造成系统性误算。</p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock ruling-techniques crisis-management order-evaporation high-fragility">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock ruling-techniques crisis-management order-evaporation high-fragility political-debt">
   <p class="knowledge-card__meta"><span>2026-05-12</span><span>10 分钟阅读</span></p>
   <h3><a href="/theory/us-industrial-system-cannot-carry-information-age">美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代</a></h3>
   <p class="knowledge-card__summary">本文从制度适配角度分析美国危机：问题不只是民主或专制之争，而是工业时代形成的政治机器，正在难以承载信息化时代的社会结构、传播结构与冲突结构。</p>
   <p class="knowledge-card__chips"><span>概念：官僚系统休克</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="order-evaporation high-fragility political-debt language-inflation state-system-upgrade">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="order-evaporation high-fragility political-debt state-system-upgrade">
   <p class="knowledge-card__meta"><span>2026-05-12</span><span>14 分钟阅读</span></p>
   <h3><a href="/theory/us-separation-of-powers-integrative-capacity-crisis">美国三权分立的真正危机，不是分权，而是失去统合能力</a></h3>
   <p class="knowledge-card__summary">本文指出美国三权分立的真正危机不在于分权原则本身，而在于支撑分权稳定运行的统合性前提正在系统性流失。</p>
@@ -149,7 +149,7 @@ noindex: false
   <h3><a href="/theory/information-age-erodes-us-integrative-capacity">为什么信息化时代正在系统性瓦解美国的统合能力</a></h3>
   <p class="knowledge-card__summary">本文分析信息化时代如何通过共同现实破碎、平台奖励机制、媒体中枢衰退、地方整合层空心化和妥协空间压缩，系统性瓦解美国的统合能力。</p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="fiscal-debt political-debt order-evaporation language-inflation state-system-upgrade">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="fiscal-debt political-debt order-evaporation state-system-upgrade">
   <p class="knowledge-card__meta"><span>2026-05-11</span><span>16 分钟阅读</span></p>
   <h3><a href="/theory/us-supreme-court-partisan-final-battleground">美国最高法院为何滑向党争终局战场</a></h3>
   <p class="knowledge-card__summary">本文从三权分立、终身制、席位争夺、立法失能和信息化放大效应出发，分析美国最高法院为什么正承受从中立裁判者滑向党争终局战场的结构性压力。</p>
@@ -181,7 +181,7 @@ noindex: false
   <h3><a href="/civic-orderism/what-civic-orderism-ultimately-solves">公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系</a></h3>
   <p class="knowledge-card__summary">公民秩序主义最终要解决的问题，不是简单的“谁上台”，也不是抽象的“要不要民主”“要不要自由”“要不要强政府”。</p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock ruling-techniques crisis-management language-inflation fiscal-debt">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock ruling-techniques crisis-management fiscal-debt political-debt order-evaporation">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>4 分钟阅读</span></p>
   <h3><a href="/theory/overseas-political-movements-fail">海外政治运动为什么一事无成？</a></h3>
   <p class="knowledge-card__summary">分析海外中文政治运动长期低效与结构性失败的原因。</p>
@@ -229,13 +229,13 @@ noindex: false
   <h3><a href="/theory/trapped-by-process">我们不是被贫穷困住，而是被流程困住</a></h3>
   <p class="knowledge-card__summary">高生产力时代的制度摩擦与生活窒息</p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="order-evaporation high-fragility political-debt fiscal-debt nonviolent-transition">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="order-evaporation high-fragility political-debt fiscal-debt nonviolent-transition state-system-upgrade">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>18 分钟阅读</span></p>
   <h3><a href="/theory/modern-social-syndrome">现代社会候群症</a></h3>
   <p class="knowledge-card__summary">当权力从“城堡”变成“网”，普通人为何越来越无力</p>
   <p class="knowledge-card__chips"><span>概念：秩序蒸发</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="political-debt language-inflation state-system-upgrade">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="political-debt state-system-upgrade">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>9 分钟阅读</span></p>
   <h3><a href="/theory/ai-monitoring-organizational-friction">AI监控并不降低组织摩擦：一份冷静推演</a></h3>
   <p class="knowledge-card__summary">关于“用 AI 降低组织内部摩擦、提高节点效率”的设想，常见叙事是：</p>
@@ -250,8 +250,8 @@ noindex: false
 <div class="section-concept-links"><a href="/concepts/nonviolent-transition">非暴力转型</a>
 <a href="/concepts/state-system-upgrade">国家系统升级</a>
 <a href="/concepts/political-route">政治路线</a>
-<a href="/concepts/order-evaporation">秩序蒸发</a>
-<a href="/concepts/high-fragility">高脆弱态</a>
-<a href="/concepts/political-debt">政治偿债</a>
-<a href="/concepts/organizational-credit">组织信用</a>
-<a href="/concepts/low-friction-governance">低摩擦治理</a></div>
+<a href="/concepts/second-reform">二次改开</a>
+<a href="/concepts/bureaucratic-shock">官僚系统休克</a>
+<a href="/concepts/ruling-techniques">统治术</a>
+<a href="/concepts/crisis-management">危机管理</a>
+<a href="/concepts/order-evaporation">秩序蒸发</a></div>

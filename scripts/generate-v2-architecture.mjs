@@ -30,6 +30,7 @@ const chinaAnalysis = readJson("china-analysis.config.json");
 const readingPaths = readJson("reading-paths.config.json");
 const readingSequences = readJson("reading-sequences.config.json");
 const articleTopicAssignments = readJson("article-topics.config.json");
+const coreModelsConfig = readJson("core-models.config.json");
 const chinaAnalysisSectionBySlug = new Map(
   chinaAnalysis.groups.flatMap((group) =>
     group.slugs.map((slug) => [slug, group.name]),
@@ -64,6 +65,53 @@ const researchConcepts = concepts.filter(
 const visibleConcepts = [...formalConcepts, ...researchConcepts];
 const publicTopicSlugs = new Set(publicTopics.map((item) => item.slug));
 const publicConceptSlugs = new Set(visibleConcepts.map((item) => item.slug));
+const coreModelSlugs = new Set(
+  coreModelsConfig.models.map((model) => model.slug),
+);
+const coreModelBySlug = new Map(
+  coreModelsConfig.models.map((model) => [model.slug, model]),
+);
+const coreModelAssignmentByArticle = new Map(
+  coreModelsConfig.articles.map((item) => [item.slug, item]),
+);
+if (
+  coreModelBySlug.size !== coreModelsConfig.models.length ||
+  coreModelAssignmentByArticle.size !== coreModelsConfig.articles.length
+) {
+  throw new Error("Core model configuration contains duplicate slugs.");
+}
+for (const model of coreModelsConfig.models) {
+  if (!publicConceptSlugs.has(model.slug)) {
+    throw new Error(`Unknown or unpublished core model concept: ${model.slug}`);
+  }
+  if (
+    model.representativeArticles.length < 2 ||
+    model.representativeArticles.length > 4
+  ) {
+    throw new Error(
+      `Core model must contain 2–4 representative articles: ${model.slug}`,
+    );
+  }
+}
+for (const assignment of coreModelsConfig.articles) {
+  if (!coreModelSlugs.has(assignment.primaryCoreModel)) {
+    throw new Error(
+      `Unknown primary core model: ${assignment.slug} -> ${assignment.primaryCoreModel}`,
+    );
+  }
+  for (const slug of assignment.associatedCoreModels) {
+    if (!publicConceptSlugs.has(slug)) {
+      throw new Error(
+        `Unknown associated core model: ${assignment.slug} -> ${slug}`,
+      );
+    }
+    if (slug === assignment.primaryCoreModel) {
+      throw new Error(
+        `Primary core model repeated as association: ${assignment.slug} -> ${slug}`,
+      );
+    }
+  }
+}
 const existingMigrationBySlug = new Map(
   existingMigrationMap.map((item) => [item.slug, item]),
 );
@@ -115,7 +163,6 @@ const manualReviewSlugs = new Set([
   "theory/us-separation-of-powers-integrative-capacity-crisis",
   "theory/us-supreme-court-partisan-final-battleground",
   "theory/overseas-political-movements-fail",
-  "china/elite-sandification-ming-bureaucrats-ccp",
   "china/taiwan-war-risk",
   "china/diplomacy-root",
   "china/pla-political-subject-myth",
@@ -246,27 +293,36 @@ function inferredTopicSlugs(article) {
 }
 
 function conceptSlugs(article) {
-  if (manualReviewSlugs.has(article.slug)) {
-    return existingMigrationBySlug.get(article.slug)?.concepts ?? [];
-  }
+  const coreModelAssignment = coreModelAssignmentByArticle.get(article.slug);
   const text =
     `${article.slug} ${article.title} ${article.summary}`.toLowerCase();
-  const found = new Set(
+  const inferred = new Set(
     concepts
       .filter((concept) =>
         concept.representativeArticles?.includes(article.slug),
       )
       .map((concept) => concept.slug),
   );
+  if (manualReviewSlugs.has(article.slug)) {
+    for (const slug of existingMigrationBySlug.get(article.slug)?.concepts ??
+      []) {
+      inferred.add(slug);
+    }
+  }
   const topicConcepts = article.topics.flatMap(
     (slug) => topicBySlug.get(slug)?.concepts ?? [],
   );
-  topicConcepts.forEach((slug) => found.add(slug));
+  topicConcepts.forEach((slug) => inferred.add(slug));
   if (includesAny(text, ["高脆弱", "fragility", "靠不住"]))
-    found.add("high-fragility");
+    inferred.add("high-fragility");
   if (includesAny(text, ["官僚", "避责", "不担责", "躺平", "基层减负"]))
-    found.add("bureaucratic-shock");
-  return [...found].filter((slug) => publicConceptSlugs.has(slug)).slice(0, 3);
+    inferred.add("bureaucratic-shock");
+  const ordered = [
+    coreModelAssignment?.primaryCoreModel,
+    ...(coreModelAssignment?.associatedCoreModels ?? []),
+    ...inferred,
+  ].filter((slug) => slug && publicConceptSlugs.has(slug));
+  return [...new Set(ordered)].slice(0, 6);
 }
 
 const allRecommended = new Set([
@@ -321,6 +377,10 @@ const articles = walk(contentDir)
       }),
     );
     article.concepts = conceptSlugs(article);
+    const coreModelAssignment = coreModelAssignmentByArticle.get(article.slug);
+    article.primaryCoreModel = coreModelAssignment?.primaryCoreModel ?? null;
+    article.associatedCoreModels =
+      coreModelAssignment?.associatedCoreModels ?? [];
     article.featured = allFeatured.has(slug);
     article.recommended = allRecommended.has(slug);
     article.readingLevel =
@@ -435,6 +495,29 @@ for (const assignment of articleTopicAssignments) {
     throw new Error(`Primary topic article does not exist: ${assignment.slug}`);
   }
 }
+for (const assignment of coreModelsConfig.articles) {
+  if (!articleBySlug.has(assignment.slug)) {
+    throw new Error(`Core model article does not exist: ${assignment.slug}`);
+  }
+}
+for (const model of coreModelsConfig.models) {
+  const modelArticleSlugs = [
+    model.overviewArticle,
+    ...model.representativeArticles.map((item) => item.slug),
+    ...model.extendedArticles,
+  ].filter(Boolean);
+  if (new Set(modelArticleSlugs).size !== modelArticleSlugs.length) {
+    throw new Error(`Core model contains duplicate articles: ${model.slug}`);
+  }
+  for (const slug of modelArticleSlugs) {
+    const article = articleBySlug.get(slug);
+    if (!article || !isEligibleArticle(article)) {
+      throw new Error(
+        `Core model article is not published: ${model.slug} -> ${slug}`,
+      );
+    }
+  }
+}
 const migrationMap = articles.map(
   ({ body: _body, readingMinutes: _readingMinutes, ...article }) => article,
 );
@@ -454,6 +537,21 @@ function writeContent(relativePath, body) {
   const target = path.join(contentDir, relativePath);
   fs.mkdirSync(path.dirname(target), { recursive: true });
   fs.writeFileSync(target, `${body.trim()}\n`, "utf8");
+}
+
+async function writeConceptContent(relativePath, body) {
+  const target = path.join(contentDir, relativePath);
+  const raw = `${body.trim()}\n`;
+  const current = fs.existsSync(target)
+    ? fs.readFileSync(target, "utf8")
+    : undefined;
+  const conceptSlug = path.basename(relativePath, ".md");
+  const shouldFormat = coreModelSlugs.has(conceptSlug) || current !== raw;
+  const output = shouldFormat
+    ? await prettier.format(raw, { parser: "markdown" })
+    : raw;
+  fs.mkdirSync(path.dirname(target), { recursive: true });
+  fs.writeFileSync(target, output, "utf8");
 }
 
 function yamlFrontmatter({
@@ -1139,7 +1237,17 @@ for (const concept of concepts) {
   const publicationStatus = conceptPublicationStatus(concept);
   const conceptIsFormal = publicationStatus === "published";
   const conceptIsVisible = conceptIsFormal || publicationStatus === "reviewing";
-  const representativeArticles = (concept.representativeArticles ?? [])
+  const coreModel = coreModelBySlug.get(concept.slug);
+  const configuredRepresentativeSlugs = coreModel
+    ? coreModel.representativeArticles.map((item) => item.slug)
+    : (concept.representativeArticles ?? []);
+  const representativeArticles = configuredRepresentativeSlugs
+    .map((slug) => articleBySlug.get(slug))
+    .filter(isEligibleArticle);
+  const overviewArticle = coreModel?.overviewArticle
+    ? articleBySlug.get(coreModel.overviewArticle)
+    : undefined;
+  const extendedArticles = (coreModel?.extendedArticles ?? [])
     .map((slug) => articleBySlug.get(slug))
     .filter(isEligibleArticle);
   const inferredArticles = articles.filter(
@@ -1175,7 +1283,36 @@ for (const concept of concepts) {
   const conceptStatusTable = usesAlignedStatusTable
     ? `| 字段     | 内容       |\n| -------- | ---------- |\n| 更新时间 | 2026-07-20 |\n| 知识状态 | ${statusLabel}   |`
     : `| 字段 | 内容 |\n| --- | --- |\n| 更新时间 | 2026-07-20 |\n| 知识状态 | ${statusLabel} |`;
-  writeContent(
+  const representativeArticleSection = coreModel
+    ? coreModel.representativeArticles.some((item) => item.stage)
+      ? coreModel.representativeArticles
+          .map((item) => {
+            const article = articleBySlug.get(item.slug);
+            if (!isEligibleArticle(article)) return "";
+            return item.stage
+              ? `### ${item.stage}\n\n${cardGrid([article])}`
+              : cardGrid([article]);
+          })
+          .filter(Boolean)
+          .join("\n\n")
+      : cardGrid(representativeArticles)
+    : relatedArticles.length
+      ? cardGrid(relatedArticles.slice(0, 12))
+      : "";
+  const modelReadingSections = coreModel
+    ? `## 模型总论
+
+${overviewArticle ? cardGrid([overviewArticle]) : "**当前暂无专门总论。**"}
+
+## 代表文章
+
+${representativeArticleSection}
+
+${extendedArticles.length ? `<details class="concept-model-more">\n<summary>查看延伸阅读（${extendedArticles.length}）</summary>\n\n${cardGrid(extendedArticles)}\n\n</details>` : ""}`
+    : relatedArticles.length
+      ? `## 代表文章\n\n${representativeArticleSection}`
+      : "";
+  await writeConceptContent(
     `concepts/${concept.slug}.md`,
     `${yamlFrontmatter({ title: concept.name, description: concept.definition, contentType: "核心概念", status: conceptIsVisible ? "published" : "draft", listed: conceptIsFormal, folderListed: conceptIsFormal, noindex: !conceptIsFormal, publicationStatus })}
 
@@ -1187,7 +1324,7 @@ for (const concept of concepts) {
 
 ${conceptStatusTable}
 
-## 完整解释
+## ${coreModel ? "核心判断" : "完整解释"}
 
 ${concept.explanation ?? concept.publicationReason}
 
@@ -1199,7 +1336,7 @@ ${concept.mechanism}
 
 ${concept.manifestations.map((item) => `- ${item}`).join("\n")}
 
-${relatedArticles.length ? `## 代表文章\n\n${cardGrid(relatedArticles.slice(0, 12))}` : ""}
+${modelReadingSections}
 
 ${relatedTopics.length ? `## 相关专题\n\n${relatedTopics.map((topic) => `- [[topics/${topic.slug}|${topic.name}]]`).join("\n")}` : ""}
 

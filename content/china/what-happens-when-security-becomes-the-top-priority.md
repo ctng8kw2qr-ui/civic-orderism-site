@@ -30,9 +30,9 @@ coreJudgments:
   - 安全治理真正排斥的，是无法预设结果的社会生长与自组织空间。
   - 中国可能进入技术继续现代化、社会持续保守化的双重状态。
 relatedArticles:
+  - china/security-led-governance-model
   - china/security-is-redefining-china
-  - china/supply-side-reform-state-can-scale-not-discover-future
-  - china/maginot-line-of-stability-maintenance
+  - china/route-transition-why-ccp-keeps-purging-officials
 slug: china/what-happens-when-security-becomes-the-top-priority
 status: published
 ---

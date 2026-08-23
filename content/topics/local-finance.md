@@ -25,19 +25,19 @@ noindex: false
 ## 全部相关文章
 
 <div class="knowledge-grid">
-<article class="knowledge-card" data-knowledge-card data-topics="local-finance" data-concepts="fiscal-debt political-debt order-evaporation">
+<article class="knowledge-card" data-knowledge-card data-topics="local-finance" data-concepts="fiscal-debt political-debt order-evaporation high-fragility">
   <p class="knowledge-card__meta"><span>2026-06-16</span><span>11 分钟阅读</span></p>
   <h3><a href="/china-stage/china-manufacturing-cannot-stop">中国制造业不是造不出来，而是停不下来</a></h3>
   <p class="knowledge-card__summary">中国制造业的困境不是简单的订单外迁或产业衰退，而是生产能力、地方动员、债务周期、银行体系和政治责任机制共同形成的系统性困局。真正的问题不是造不出来，而是越能造、越难停、越难赚钱，最后指向秩序本身的失灵。</p>
   <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：财政偿债</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="local-finance" data-concepts="fiscal-debt political-debt order-evaporation">
+<article class="knowledge-card" data-knowledge-card data-topics="local-finance" data-concepts="order-evaporation organizational-credit fiscal-debt political-debt bureaucratic-shock ruling-techniques">
   <p class="knowledge-card__meta"><span>2026-05-11</span><span>12 分钟阅读</span></p>
   <h3><a href="/china/ccp-collapse-three-triggers-social-security-healthcare-finance">中共崩解的三大导火索：社保、医保与金融系统</a></h3>
   <p class="knowledge-card__summary">本文从社保、医保与金融系统三个领域，分析中共未来危机如何从国家信用事件转化为社会预期和官僚系统的连锁崩解。</p>
-  <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：财政偿债</span></p>
+  <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：秩序蒸发</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="local-finance" data-concepts="fiscal-debt political-debt order-evaporation">
+<article class="knowledge-card" data-knowledge-card data-topics="local-finance" data-concepts="fiscal-debt political-debt order-evaporation three-cleans-era">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>8 分钟阅读</span></p>
   <h3><a href="/china/chicken-and-cage">养鸡与换笼：民营经济被整肃的结构逻辑</a></h3>
   <p class="knowledge-card__summary">本文从中央—地方关系、官商共生、财政金融通道与组织控制逻辑出发，分析中共整肃民营经济背后的结构动因。</p>

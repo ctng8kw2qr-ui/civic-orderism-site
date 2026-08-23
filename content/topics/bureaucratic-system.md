@@ -25,13 +25,13 @@ noindex: false
 ## 全部相关文章
 
 <div class="knowledge-grid">
-<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
+<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock political-control-governance-divergence ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-07-12</span><span>14 分钟阅读</span></p>
   <h3><a href="/china/why-ccp-cannot-reduce-grassroots-burden">中共为什么永远无法真正为基层减负？</a></h3>
   <p class="knowledge-card__summary">本文认为，中共基层减负长期无法真正完成，并不是因为中央缺少组织能力，而是因为真正减负意味着重新分配政治责任。减负的收益分散而隐性，事故风险却集中而具体，最终没有人愿意为改革后的偶发事故承担无边界的政治后果。</p>
   <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚系统休克</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
+<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock organizational-credit security-purge-recentralization-cycle ruling-techniques crisis-management three-cleans-era">
   <p class="knowledge-card__meta"><span>2026-05-17</span><span>9 分钟阅读</span></p>
   <h3><a href="/china/bureaucratic-system-under-purges">高位清洗如何改变中共官僚系统</a></h3>
   <p class="knowledge-card__summary">省部级官员密集落马，表面上看是反腐问题，深层看则是官僚系统安全感与运行逻辑的变化。高位安全边界后退、经济低预期和责任倒查叠加，会推动官僚群体进入避责、观望、伪执行和系统性自保状态，使官僚系统从主动型系统转向防御型系统。</p>
@@ -43,7 +43,7 @@ noindex: false
   <p class="knowledge-card__summary">本文区分中共权力的展示形态与运行形态，指出中共权力在表面上像一条垂直权力线，但在实际运行中更像一张多节点、多阀门、多路径的权力网。</p>
   <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚系统休克</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
+<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock political-control-governance-divergence ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>10 分钟阅读</span></p>
   <h3><a href="/china/ccp-bureaucracy-double-deadlock">不抓人就躺平，一抓人就失真：中共官僚体系为何陷入双重死结</a></h3>
   <p class="knowledge-card__summary">很多人谈中国官僚体系的问题，喜欢把原因简单归结为一句话：</p>

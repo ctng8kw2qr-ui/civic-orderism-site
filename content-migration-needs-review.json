@@ -16,9 +16,10 @@
       "order-evaporation",
       "high-fragility",
       "political-debt",
-      "language-inflation",
       "state-system-upgrade"
     ],
+    "primaryCoreModel": null,
+    "associatedCoreModels": [],
     "featured": false,
     "recommended": false,
     "readingLevel": "基础",
@@ -40,6 +41,8 @@
     "relatedTopics": [],
     "topics": [],
     "concepts": ["state-system-upgrade"],
+    "primaryCoreModel": null,
+    "associatedCoreModels": [],
     "featured": false,
     "recommended": false,
     "readingLevel": "基础",
@@ -83,8 +86,11 @@
       "crisis-management",
       "order-evaporation",
       "ruling-techniques",
-      "second-reform"
+      "second-reform",
+      "political-route"
     ],
+    "primaryCoreModel": null,
+    "associatedCoreModels": [],
     "featured": false,
     "recommended": true,
     "readingLevel": "进阶",
@@ -120,8 +126,11 @@
       "ruling-techniques",
       "crisis-management",
       "order-evaporation",
-      "high-fragility"
+      "high-fragility",
+      "political-debt"
     ],
+    "primaryCoreModel": null,
+    "associatedCoreModels": [],
     "featured": false,
     "recommended": false,
     "readingLevel": "基础",
@@ -146,9 +155,10 @@
       "order-evaporation",
       "high-fragility",
       "political-debt",
-      "language-inflation",
       "state-system-upgrade"
     ],
+    "primaryCoreModel": null,
+    "associatedCoreModels": [],
     "featured": false,
     "recommended": false,
     "readingLevel": "基础",
@@ -180,9 +190,10 @@
       "fiscal-debt",
       "political-debt",
       "order-evaporation",
-      "language-inflation",
       "state-system-upgrade"
     ],
+    "primaryCoreModel": null,
+    "associatedCoreModels": [],
     "featured": false,
     "recommended": false,
     "readingLevel": "基础",
@@ -207,47 +218,15 @@
       "bureaucratic-shock",
       "ruling-techniques",
       "crisis-management",
-      "language-inflation",
-      "fiscal-debt"
+      "fiscal-debt",
+      "political-debt",
+      "order-evaporation"
     ],
+    "primaryCoreModel": null,
+    "associatedCoreModels": [],
     "featured": false,
     "recommended": false,
     "readingLevel": "基础",
-    "readingOrder": 999,
-    "author": "公民秩序主义",
-    "needsReview": true
-  },
-  {
-    "title": "沙化的忠诚：中共精英原子化与明代士大夫的历史镜像",
-    "slug": "china/elite-sandification-ming-bureaucrats-ccp",
-    "date": "2026-05-10",
-    "updated": "2026-05-10",
-    "summary": "一个体制最危险的状态，不是它的敌人足够强大，而是它的支柱已经空心，却在外表上仍然完好无损。",
-    "originalSection": "解析中共",
-    "section": "解析中共",
-    "chinaAnalysisSection": "官僚系统与组织成员",
-    "tags": [
-      "解析中共",
-      "公民秩序主义",
-      "中国政治",
-      "中共体制",
-      "明代政治",
-      "官僚系统",
-      "精英原子化"
-    ],
-    "status": "published",
-    "primaryTopic": null,
-    "relatedTopics": ["bureaucratic-system", "ccp-governance"],
-    "topics": ["bureaucratic-system", "ccp-governance"],
-    "concepts": [
-      "bureaucratic-shock",
-      "ruling-techniques",
-      "crisis-management",
-      "language-inflation"
-    ],
-    "featured": false,
-    "recommended": false,
-    "readingLevel": "进阶",
     "readingOrder": 999,
     "author": "公民秩序主义",
     "needsReview": true
@@ -267,12 +246,14 @@
     "relatedTopics": ["ccp-governance", "local-finance"],
     "topics": ["ccp-governance", "local-finance"],
     "concepts": [
-      "ruling-techniques",
       "crisis-management",
-      "language-inflation",
+      "ruling-techniques",
       "fiscal-debt",
-      "political-debt"
+      "political-debt",
+      "order-evaporation"
     ],
+    "primaryCoreModel": null,
+    "associatedCoreModels": [],
     "featured": false,
     "recommended": false,
     "readingLevel": "进阶",
@@ -294,11 +275,9 @@
     "primaryTopic": null,
     "relatedTopics": ["ccp-governance"],
     "topics": ["ccp-governance"],
-    "concepts": [
-      "ruling-techniques",
-      "crisis-management",
-      "language-inflation"
-    ],
+    "concepts": ["ruling-techniques", "crisis-management"],
+    "primaryCoreModel": null,
+    "associatedCoreModels": [],
     "featured": false,
     "recommended": false,
     "readingLevel": "进阶",
@@ -344,8 +323,11 @@
       "crisis-management",
       "order-evaporation",
       "ruling-techniques",
-      "language-inflation"
+      "fiscal-debt",
+      "political-debt"
     ],
+    "primaryCoreModel": null,
+    "associatedCoreModels": [],
     "featured": false,
     "recommended": false,
     "readingLevel": "进阶",
@@ -375,8 +357,11 @@
       "high-fragility",
       "political-debt",
       "fiscal-debt",
-      "nonviolent-transition"
+      "nonviolent-transition",
+      "state-system-upgrade"
     ],
+    "primaryCoreModel": null,
+    "associatedCoreModels": [],
     "featured": false,
     "recommended": false,
     "readingLevel": "基础",
@@ -417,8 +402,11 @@
       "crisis-management",
       "order-evaporation",
       "ruling-techniques",
-      "high-fragility"
+      "high-fragility",
+      "political-debt"
     ],
+    "primaryCoreModel": null,
+    "associatedCoreModels": [],
     "featured": false,
     "recommended": false,
     "readingLevel": "进阶",
@@ -448,11 +436,9 @@
     "primaryTopic": null,
     "relatedTopics": [],
     "topics": [],
-    "concepts": [
-      "political-debt",
-      "language-inflation",
-      "state-system-upgrade"
-    ],
+    "concepts": ["political-debt", "state-system-upgrade"],
+    "primaryCoreModel": null,
+    "associatedCoreModels": [],
     "featured": false,
     "recommended": false,
     "readingLevel": "基础",

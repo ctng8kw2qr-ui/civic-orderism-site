@@ -12,10 +12,17 @@ const concepts = readJson("data/concepts.config.json");
 const sections = readJson("data/sections.config.json");
 const institutionSections = readJson("data/institution-sections.config.json");
 const readingSequences = readJson("data/reading-sequences.config.json");
+const coreModelsConfig = readJson("data/core-models.config.json");
 const organization = readJson("data/organization.config.json");
 const navigation = readJson("data/navigation.config.json");
 const topicSlugs = new Set(topics.map((item) => item.slug));
 const conceptSlugs = new Set(concepts.map((item) => item.slug));
+const coreModelSlugs = new Set(
+  coreModelsConfig.models.map((item) => item.slug),
+);
+const coreModelAssignmentByArticle = new Map(
+  coreModelsConfig.articles.map((item) => [item.slug, item]),
+);
 const sectionNames = new Set(sections.map((item) => item.name));
 const institutionSectionIds = new Set(
   institutionSections.map((item) => item.id),
@@ -358,10 +365,36 @@ for (const article of migration) {
       `专题超过 2 个：${article.slug} -> ${article.topics.length}`,
     );
     assert(
-      article.concepts.length <= 3,
-      `核心概念超过 3 个：${article.slug} -> ${article.concepts.length}`,
+      article.concepts.length <= 6,
+      `核心概念超过 6 个：${article.slug} -> ${article.concepts.length}`,
     );
   }
+  const coreModelAssignment = coreModelAssignmentByArticle.get(article.slug);
+  assert(
+    article.primaryCoreModel ===
+      (coreModelAssignment?.primaryCoreModel ?? null),
+    `文章主模型与配置不一致：${article.slug}`,
+  );
+  assert(
+    JSON.stringify(article.associatedCoreModels) ===
+      JSON.stringify(coreModelAssignment?.associatedCoreModels ?? []),
+    `文章关联模型与配置不一致：${article.slug}`,
+  );
+  if (article.primaryCoreModel) {
+    assert(
+      coreModelSlugs.has(article.primaryCoreModel),
+      `文章包含未知主模型：${article.slug} -> ${article.primaryCoreModel}`,
+    );
+    assert(
+      article.concepts[0] === article.primaryCoreModel,
+      `文章主模型未排在概念兼容字段首位：${article.slug}`,
+    );
+  }
+  assert(
+    new Set(article.associatedCoreModels).size ===
+      article.associatedCoreModels.length,
+    `文章关联模型重复：${article.slug}`,
+  );
   assert(
     article.primaryTopic === null || topicSlugs.has(article.primaryTopic),
     `未知主专题：${article.slug} -> ${article.primaryTopic}`,
@@ -438,12 +471,12 @@ assert(
     partyStateStressHtml.includes("从判断进入路线") &&
     JSON.stringify(partyStateRecommendationSlugs) ===
       JSON.stringify([
-        "china/why-ccp-cannot-reduce-grassroots-burden",
-        "china/organization-credit-retired-officials",
-        "china/security-led-governance-model",
+        "theory/party-state-structural-failure",
+        "china/party-power-logic-and-ccp-goal-vacuum",
+        "china/xi-solved-organization-not-reality",
         "civic-orderism/possibility-of-peaceful-political-transition-in-china",
       ]),
-  "党国应力文章未按相邻模型与政治路线渲染四篇继续阅读",
+  "党国应力文章未按已确认的同模型代表作与政治路线渲染四篇继续阅读",
 );
 assert(
   migration.filter((article) => article.section === "制度设计").length === 16,
@@ -512,6 +545,69 @@ const coreChinaConceptSlugs = [
   "security-purge-recentralization-cycle",
   "political-control-governance-divergence",
 ];
+assert(
+  JSON.stringify(coreModelsConfig.models.map((model) => model.slug)) ===
+    JSON.stringify(coreChinaConceptSlugs),
+  "核心模型配置未保持已确认的六模型顺序",
+);
+assert(
+  coreModelAssignmentByArticle.size === coreModelsConfig.articles.length,
+  "核心模型文章配置存在重复 slug",
+);
+const overviewArticles = coreModelsConfig.models
+  .map((model) => model.overviewArticle)
+  .filter(Boolean);
+assert(
+  new Set(overviewArticles).size === overviewArticles.length,
+  "同一文章被配置为多个模型总论",
+);
+const representativeUsage = new Map();
+for (const model of coreModelsConfig.models) {
+  assert(
+    model.representativeArticles.length >= 2 &&
+      model.representativeArticles.length <= 4,
+    `核心模型代表文章数量异常：${model.slug}`,
+  );
+  const conceptHtml = fs.readFileSync(
+    publicHtml(`concepts/${model.slug}`),
+    "utf8",
+  );
+  assert(
+    conceptHtml.includes("核心判断") &&
+      conceptHtml.includes("模型总论") &&
+      conceptHtml.includes("代表文章"),
+    `核心模型页缺少统一阅读层级：${model.slug}`,
+  );
+  if (model.overviewArticle) {
+    assert(
+      conceptHtml.includes(`data-slug="${model.overviewArticle}"`),
+      `核心模型页缺少模型总论：${model.slug}`,
+    );
+  } else {
+    assert(
+      conceptHtml.includes("当前暂无专门总论"),
+      `无总论模型未显示状态说明：${model.slug}`,
+    );
+  }
+  for (const item of model.representativeArticles) {
+    assert(
+      conceptHtml.includes(`data-slug="${item.slug}"`),
+      `核心模型页缺少代表文章：${model.slug} -> ${item.slug}`,
+    );
+    representativeUsage.set(
+      item.slug,
+      (representativeUsage.get(item.slug) ?? 0) + 1,
+    );
+  }
+  assert(
+    conceptHtml.includes("concept-model-more") ===
+      model.extendedArticles.length > 0,
+    `核心模型延伸阅读折叠状态异常：${model.slug}`,
+  );
+}
+for (const [slug, count] of representativeUsage) {
+  assert(count <= 2, `文章在超过两个模型中作为代表文章：${slug}`);
+}
 const coreChinaConceptGrid =
   conceptsPageHtml.match(
     /<div class="concept-grid concept-grid--core">([\s\S]*?)<\/div>/,
@@ -528,6 +624,25 @@ assert(
     ) &&
     !coreChinaConceptGrid.includes('concepts/security-recentralization"'),
   "核心概念词典未区分核心概念与默认收起的延伸研究概念",
+);
+const extendedChinaConceptGrid =
+  conceptsPageHtml.match(
+    /<div class="concept-grid concept-grid--extended">([\s\S]*?)<\/div>/,
+  )?.[1] ?? "";
+assert(
+  extendedChinaConceptGrid.includes('concepts/security-recentralization"'),
+  "安全再集中未降为延伸研究概念",
+);
+const securityRecentralizationHtml = fs.readFileSync(
+  publicHtml("concepts/security-recentralization"),
+  "utf8",
+);
+assert(
+  securityRecentralizationHtml.includes("安全化循环中的关键阶段") &&
+    securityRecentralizationHtml.includes(
+      "安全化—清洗—再集中—再失灵循环中的关键阶段",
+    ),
+  "安全再集中概念页未说明其循环阶段定位",
 );
 topics.forEach((topic) =>
   assert(
@@ -677,8 +792,8 @@ for (const item of [
   assert(!(item in searchIndex), `隐藏页面进入搜索索引：/${item}`);
 }
 assert(
-  migration.filter((item) => item.needsReview).length === 14,
-  `人工复核文章应为 14 篇，当前为 ${migration.filter((item) => item.needsReview).length}`,
+  migration.filter((item) => item.needsReview).length === 13,
+  `人工复核文章应为 13 篇，当前为 ${migration.filter((item) => item.needsReview).length}`,
 );
 
 const homepageHtml = fs.readFileSync(

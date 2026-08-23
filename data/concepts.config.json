@@ -15,9 +15,9 @@
     "publicationClass": "A",
     "domain": "china-analysis",
     "representativeArticles": [
-      "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
-      "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
-      "civic-orderism/state-must-rely-on-systems-not-drivers"
+      "china/Macro-Narratives,-Opportunity-Incentives,-and-High-Fragility",
+      "theory/high-rigidity-system-ccp",
+      "theory/ccp-high-fragility-dysfunction"
     ],
     "publicationReason": "定义、机制和现实表现边界清楚，且已有多篇文章从组织信用、协作能力与预期失效三个角度提供支持。"
   },
@@ -38,7 +38,9 @@
     "domain": "china-analysis",
     "representativeArticles": [
       "china/why-ccp-cannot-reduce-grassroots-burden",
-      "china/bureaucratic-system-under-purges"
+      "china/bureaucratic-system-under-purges",
+      "theory/no-accountability-lie-flat-mentality",
+      "china/propaganda-system-hollowing-out"
     ],
     "publicationReason": "概念边界明确，官僚系统专题已有足够文章支撑，能够与一般行政低效区分。"
   },
@@ -330,16 +332,16 @@
     "publicationClass": "A",
     "domain": "china-analysis",
     "representativeArticles": [
-      "china/party-state-stress-neither-party-nor-state",
-      "theory/party-state-structural-failure"
+      "theory/party-state-structural-failure",
+      "china/party-power-logic-and-ccp-goal-vacuum"
     ],
     "publicationReason": "已有独立框架文章完整定义概念、运行机制与现实表现，能够稳定连接党国结构、官僚行为与治理能力问题。"
   },
   {
     "name": "安全再集中",
     "slug": "security-recentralization",
-    "definition": "安全优先替代发展优先后，权力、信息与责任不断重新向中心集中的治理过程。",
-    "explanation": "安全再集中不是一次性的权力调整，而是当不确定性被视为主要风险后，组织持续收紧授权、信息与责任边界的过程。它可以提高命令一致性，却也可能压缩地方和专业系统的判断空间，使更多问题回流到中央。",
+    "definition": "安全化循环中的关键阶段：安全优先级上升后，权力、信息与责任进一步向中心集中。",
+    "explanation": "安全再集中是安全化—清洗—再集中—再失灵循环中的关键阶段，而不是与完整循环并列的一级模型。它描述当不确定性被视为主要风险后，组织持续收紧授权、信息与责任边界的过程。它可以提高命令一致性，却也可能压缩地方和专业系统的判断空间，使更多问题回流到中央。",
     "mechanism": "风险上升推动授权收缩，授权收缩又使责任与决策进一步集中。",
     "manifestations": [
       "地方裁量收缩",
@@ -360,11 +362,11 @@
     "publicationClass": "A",
     "domain": "china-analysis",
     "representativeArticles": [
-      "china/security-led-governance-model",
       "china/security-is-redefining-china",
+      "china/ccp-2018-xi-era-local-growth-space",
       "china/what-happens-when-security-becomes-the-top-priority"
     ],
-    "publicationReason": "安全叙事专题已有总纲、核心判断与社会后果文章，概念边界和运行方向明确。"
+    "publicationReason": "该概念作为安全化循环中的再集中阶段保留，用于连接安全优先、授权收缩和责任上收等文章。"
   },
   {
     "name": "组织信用",
@@ -386,9 +388,9 @@
     "publicationClass": "A",
     "domain": "china-analysis",
     "representativeArticles": [
-      "china/organization-credit-retired-officials",
-      "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
-      "china/ccp-no-real-base"
+      "china/ccp-from-faith-community-to-black-box-post",
+      "china/why-expulsion-from-party-becomes-standard-ending",
+      "china/when-high-ranking-officials-are-no-longer-safe"
     ],
     "publicationReason": "已有多篇文章从组织成员、长期承诺和制度信任角度支持这一概念，能够成为稳定的结构判断节点。"
   },
@@ -417,9 +419,10 @@
     "publicationClass": "A",
     "domain": "china-analysis",
     "representativeArticles": [
-      "china/security-led-governance-model",
+      "china/security-is-redefining-china",
       "china/route-transition-why-ccp-keeps-purging-officials",
-      "china/why-ccp-will-not-relax-party-pressure"
+      "china/ccp-2018-xi-era-local-growth-space",
+      "china/xi-solved-organization-not-reality"
     ],
     "publicationReason": "已有框架文章明确描述循环机制，并有路线转换与党内高压文章提供组织层面的支持。"
   },
@@ -447,7 +450,12 @@
     "publicationStatus": "published",
     "publicationClass": "A",
     "domain": "china-analysis",
-    "representativeArticles": ["theory/high-rigidity-system-ccp"],
-    "publicationReason": "现有党国应力、官僚运行与国家能力文章已经稳定区分政治控制能力和治理效能，可以作为独立解释模型使用。"
+    "representativeArticles": [
+      "china/xi-solved-organization-not-reality",
+      "china/ccp-reform-political-balance-deadlock",
+      "china/political-machine-rewards-and-limits",
+      "china/supply-side-reform-state-can-scale-not-discover-future"
+    ],
+    "publicationReason": "当前已有多篇文章从组织集中、政策纠错与国家能力边界支持这一模型，但尚缺少一篇专门定义其完整机制和适用边界的总论文章。"
   }
 ]

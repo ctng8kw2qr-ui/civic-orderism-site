@@ -1,0 +1,293 @@
+{
+  "models": [
+    {
+      "slug": "party-state-stress",
+      "overviewArticle": "china/party-state-stress-neither-party-nor-state",
+      "representativeArticles": [
+        { "slug": "theory/party-state-structural-failure" },
+        { "slug": "china/party-power-logic-and-ccp-goal-vacuum" }
+      ],
+      "extendedArticles": [
+        "china/xi-solved-organization-not-reality",
+        "china/ccp-2018-xi-era-local-growth-space",
+        "china/ccp-reform-political-balance-deadlock"
+      ]
+    },
+    {
+      "slug": "bureaucratic-shock",
+      "overviewArticle": "china/ccp-bureaucracy-double-deadlock",
+      "representativeArticles": [
+        { "slug": "china/why-ccp-cannot-reduce-grassroots-burden" },
+        { "slug": "china/bureaucratic-system-under-purges" },
+        { "slug": "theory/no-accountability-lie-flat-mentality" },
+        { "slug": "china/propaganda-system-hollowing-out" }
+      ],
+      "extendedArticles": [
+        "china/ccp-bureaucracy-historical-bill",
+        "china/when-high-ranking-officials-are-no-longer-safe",
+        "china/elite-sandification-ming-bureaucrats-ccp"
+      ]
+    },
+    {
+      "slug": "order-evaporation",
+      "overviewArticle": "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
+      "representativeArticles": [
+        {
+          "slug": "china/Macro-Narratives,-Opportunity-Incentives,-and-High-Fragility"
+        },
+        { "slug": "theory/high-rigidity-system-ccp" },
+        { "slug": "theory/ccp-high-fragility-dysfunction" }
+      ],
+      "extendedArticles": [
+        "china/emotional-link-breakdown-and-regime-collapse",
+        "china/propaganda-system-hollowing-out",
+        "china/ccp-collapse-three-triggers-social-security-healthcare-finance"
+      ]
+    },
+    {
+      "slug": "organizational-credit",
+      "overviewArticle": "china/organization-credit-retired-officials",
+      "representativeArticles": [
+        { "slug": "china/ccp-from-faith-community-to-black-box-post" },
+        { "slug": "china/why-expulsion-from-party-becomes-standard-ending" },
+        { "slug": "china/when-high-ranking-officials-are-no-longer-safe" }
+      ],
+      "extendedArticles": [
+        "china/ccp-no-real-base",
+        "china/why-ccp-feels-less-secure-when-everyone-claims-loyalty",
+        "china/emotional-link-breakdown-and-regime-collapse",
+        "china/elite-sandification-ming-bureaucrats-ccp"
+      ]
+    },
+    {
+      "slug": "security-purge-recentralization-cycle",
+      "overviewArticle": "china/security-led-governance-model",
+      "representativeArticles": [
+        { "slug": "china/security-is-redefining-china", "stage": "安全化" },
+        {
+          "slug": "china/route-transition-why-ccp-keeps-purging-officials",
+          "stage": "清洗"
+        },
+        {
+          "slug": "china/ccp-2018-xi-era-local-growth-space",
+          "stage": "再集中"
+        },
+        {
+          "slug": "china/xi-solved-organization-not-reality",
+          "stage": "再失灵"
+        }
+      ],
+      "extendedArticles": [
+        "china/why-ccp-will-not-relax-party-pressure",
+        "china/ccp-2018-new-reform-opening",
+        "china/what-happens-when-security-becomes-the-top-priority",
+        "china/bureaucratic-system-under-purges"
+      ]
+    },
+    {
+      "slug": "political-control-governance-divergence",
+      "overviewArticle": null,
+      "representativeArticles": [
+        { "slug": "china/xi-solved-organization-not-reality" },
+        { "slug": "china/ccp-reform-political-balance-deadlock" },
+        { "slug": "china/political-machine-rewards-and-limits" },
+        {
+          "slug": "china/supply-side-reform-state-can-scale-not-discover-future"
+        }
+      ],
+      "extendedArticles": [
+        "china/party-state-stress-neither-party-nor-state",
+        "china/ccp-bureaucracy-double-deadlock",
+        "china/security-led-governance-model",
+        "theory/no-accountability-lie-flat-mentality"
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "slug": "china/party-state-stress-neither-party-nor-state",
+      "primaryCoreModel": "party-state-stress",
+      "associatedCoreModels": ["political-control-governance-divergence"]
+    },
+    {
+      "slug": "theory/party-state-structural-failure",
+      "primaryCoreModel": "party-state-stress",
+      "associatedCoreModels": [
+        "organizational-credit",
+        "bureaucratic-shock",
+        "order-evaporation"
+      ]
+    },
+    {
+      "slug": "china/party-power-logic-and-ccp-goal-vacuum",
+      "primaryCoreModel": "party-state-stress",
+      "associatedCoreModels": ["organizational-credit"]
+    },
+    {
+      "slug": "china/ccp-bureaucracy-double-deadlock",
+      "primaryCoreModel": "bureaucratic-shock",
+      "associatedCoreModels": ["political-control-governance-divergence"]
+    },
+    {
+      "slug": "china/why-ccp-cannot-reduce-grassroots-burden",
+      "primaryCoreModel": "bureaucratic-shock",
+      "associatedCoreModels": ["political-control-governance-divergence"]
+    },
+    {
+      "slug": "china/bureaucratic-system-under-purges",
+      "primaryCoreModel": "bureaucratic-shock",
+      "associatedCoreModels": [
+        "organizational-credit",
+        "security-purge-recentralization-cycle"
+      ]
+    },
+    {
+      "slug": "theory/no-accountability-lie-flat-mentality",
+      "primaryCoreModel": "bureaucratic-shock",
+      "associatedCoreModels": ["political-control-governance-divergence"]
+    },
+    {
+      "slug": "china/propaganda-system-hollowing-out",
+      "primaryCoreModel": "bureaucratic-shock",
+      "associatedCoreModels": ["order-evaporation"]
+    },
+    {
+      "slug": "china/ccp-bureaucracy-historical-bill",
+      "primaryCoreModel": "bureaucratic-shock",
+      "associatedCoreModels": ["party-state-stress"]
+    },
+    {
+      "slug": "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
+      "primaryCoreModel": "order-evaporation",
+      "associatedCoreModels": ["organizational-credit"]
+    },
+    {
+      "slug": "china/Macro-Narratives,-Opportunity-Incentives,-and-High-Fragility",
+      "primaryCoreModel": "order-evaporation",
+      "associatedCoreModels": ["organizational-credit"]
+    },
+    {
+      "slug": "theory/high-rigidity-system-ccp",
+      "primaryCoreModel": "order-evaporation",
+      "associatedCoreModels": [
+        "organizational-credit",
+        "political-control-governance-divergence"
+      ]
+    },
+    {
+      "slug": "theory/ccp-high-fragility-dysfunction",
+      "primaryCoreModel": "order-evaporation",
+      "associatedCoreModels": ["bureaucratic-shock"]
+    },
+    {
+      "slug": "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+      "primaryCoreModel": "order-evaporation",
+      "associatedCoreModels": ["organizational-credit"]
+    },
+    {
+      "slug": "china/organization-credit-retired-officials",
+      "primaryCoreModel": "organizational-credit",
+      "associatedCoreModels": ["order-evaporation", "bureaucratic-shock"]
+    },
+    {
+      "slug": "china/ccp-from-faith-community-to-black-box-post",
+      "primaryCoreModel": "organizational-credit",
+      "associatedCoreModels": ["bureaucratic-shock"]
+    },
+    {
+      "slug": "china/why-expulsion-from-party-becomes-standard-ending",
+      "primaryCoreModel": "organizational-credit",
+      "associatedCoreModels": ["bureaucratic-shock"]
+    },
+    {
+      "slug": "china/when-high-ranking-officials-are-no-longer-safe",
+      "primaryCoreModel": "organizational-credit",
+      "associatedCoreModels": ["bureaucratic-shock"]
+    },
+    {
+      "slug": "china/ccp-no-real-base",
+      "primaryCoreModel": "organizational-credit",
+      "associatedCoreModels": ["order-evaporation"]
+    },
+    {
+      "slug": "china/why-ccp-feels-less-secure-when-everyone-claims-loyalty",
+      "primaryCoreModel": "organizational-credit",
+      "associatedCoreModels": ["security-purge-recentralization-cycle"]
+    },
+    {
+      "slug": "china/emotional-link-breakdown-and-regime-collapse",
+      "primaryCoreModel": "organizational-credit",
+      "associatedCoreModels": ["order-evaporation"]
+    },
+    {
+      "slug": "china/elite-sandification-ming-bureaucrats-ccp",
+      "primaryCoreModel": "organizational-credit",
+      "associatedCoreModels": ["bureaucratic-shock", "order-evaporation"]
+    },
+    {
+      "slug": "china/security-led-governance-model",
+      "primaryCoreModel": "security-purge-recentralization-cycle",
+      "associatedCoreModels": [
+        "security-recentralization",
+        "political-control-governance-divergence"
+      ]
+    },
+    {
+      "slug": "china/security-is-redefining-china",
+      "primaryCoreModel": "security-purge-recentralization-cycle",
+      "associatedCoreModels": ["security-recentralization"]
+    },
+    {
+      "slug": "china/route-transition-why-ccp-keeps-purging-officials",
+      "primaryCoreModel": "security-purge-recentralization-cycle",
+      "associatedCoreModels": ["bureaucratic-shock"]
+    },
+    {
+      "slug": "china/ccp-2018-xi-era-local-growth-space",
+      "primaryCoreModel": "security-purge-recentralization-cycle",
+      "associatedCoreModels": [
+        "political-control-governance-divergence",
+        "security-recentralization",
+        "party-state-stress"
+      ]
+    },
+    {
+      "slug": "china/why-ccp-will-not-relax-party-pressure",
+      "primaryCoreModel": "security-purge-recentralization-cycle",
+      "associatedCoreModels": ["bureaucratic-shock"]
+    },
+    {
+      "slug": "china/ccp-2018-new-reform-opening",
+      "primaryCoreModel": "security-purge-recentralization-cycle",
+      "associatedCoreModels": ["security-recentralization"]
+    },
+    {
+      "slug": "china/what-happens-when-security-becomes-the-top-priority",
+      "primaryCoreModel": "security-purge-recentralization-cycle",
+      "associatedCoreModels": ["security-recentralization"]
+    },
+    {
+      "slug": "china/xi-solved-organization-not-reality",
+      "primaryCoreModel": "political-control-governance-divergence",
+      "associatedCoreModels": [
+        "security-purge-recentralization-cycle",
+        "party-state-stress"
+      ]
+    },
+    {
+      "slug": "china/ccp-reform-political-balance-deadlock",
+      "primaryCoreModel": "political-control-governance-divergence",
+      "associatedCoreModels": ["party-state-stress"]
+    },
+    {
+      "slug": "china/political-machine-rewards-and-limits",
+      "primaryCoreModel": "political-control-governance-divergence",
+      "associatedCoreModels": ["security-purge-recentralization-cycle"]
+    },
+    {
+      "slug": "china/supply-side-reform-state-can-scale-not-discover-future",
+      "primaryCoreModel": "political-control-governance-divergence",
+      "associatedCoreModels": []
+    }
+  ]
+}

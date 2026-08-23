@@ -17,10 +17,10 @@ publicationStatus: reviewing
 
 <p class="concept-definition">通过清晰入口、责任边界与信息系统降低公共问题处理的制度交易成本。</p>
 
-| 字段 | 内容 |
-| --- | --- |
+| 字段     | 内容       |
+| -------- | ---------- |
 | 更新时间 | 2026-07-20 |
-| 知识状态 | 研究概念 |
+| 知识状态 | 研究概念   |
 
 ## 完整解释
 
@@ -39,11 +39,11 @@ publicationStatus: reviewing
 ## 代表文章
 
 <div class="knowledge-grid">
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="order-evaporation state-system-upgrade low-friction-governance">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="state-system-upgrade low-friction-governance">
   <p class="knowledge-card__meta"><span>2026-05-14</span><span>6 分钟阅读</span></p>
   <h3><a href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">如果你只读一篇：公民秩序主义到底想解决什么</a></h3>
   <p class="knowledge-card__summary">公民秩序主义不是口号、政党或情绪化革命方案。它关注现代国家与普通人之间的秩序关系：问题能否进入系统、权力能否追责、行政能否持续运行、制度能否纠错，以及普通人能否持续获得解释和反馈。</p>
-  <p class="knowledge-card__chips"><span>概念：秩序蒸发</span></p>
+  <p class="knowledge-card__chips"><span>概念：国家系统升级</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="low-friction-governance">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>13 分钟阅读</span></p>
@@ -58,8 +58,6 @@ publicationStatus: reviewing
   <p class="knowledge-card__chips"><span>概念：低摩擦治理</span></p>
 </article>
 </div>
-
-
 
 ## 相关概念
 

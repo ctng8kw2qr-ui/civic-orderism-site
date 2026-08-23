@@ -22,6 +22,14 @@ const retitledArticle = {
   title: "安全化、再集中与治理边界",
   subtitle: "理解后改革时代中共政治运行的一套模型",
 };
+const approvedRelatedArticleChanges = new Set([
+  "china/party-state-stress-neither-party-nor-state",
+  "china/route-transition-why-ccp-keeps-purging-officials",
+  "china/security-is-redefining-china",
+  "china/security-led-governance-model",
+  "china/supply-side-reform-state-can-scale-not-discover-future",
+  "china/what-happens-when-security-becomes-the-top-priority",
+]);
 const approvedCopyNormalizations = new Map([
   [
     "china-stage/three-cleans-era-political-economic-cultural-contraction",
@@ -126,13 +134,16 @@ for (const article of sample) {
     );
   } else if (
     institutionArticleSlugs.has(article.slug) ||
-    article.slug === reclassifiedArticleSlug
+    article.slug === reclassifiedArticleSlug ||
+    approvedRelatedArticleChanges.has(article.slug)
   ) {
     const currentArticle = matter(current.toString("utf8"));
     const committedArticle = matter(committed.toString("utf8"));
-    const allowedKeys = institutionArticleSlugs.has(article.slug)
-      ? ["institutionSection", "summary"]
-      : ["category", "topics"];
+    const allowedKeys = approvedRelatedArticleChanges.has(article.slug)
+      ? ["relatedArticles"]
+      : institutionArticleSlugs.has(article.slug)
+        ? ["institutionSection", "summary"]
+        : ["category", "topics"];
     for (const key of allowedKeys) {
       delete currentArticle.data[key];
       delete committedArticle.data[key];
@@ -214,7 +225,7 @@ if (errors.length) {
   process.exitCode = 1;
 } else {
   console.log(
-    `Historical content safety passed: ${sample.length} sampled articles retain byte-identical bodies (allowing the institution metadata migration); ${documents.length} PDF sources and public copies match.`,
+    `Historical content safety passed: ${sample.length} sampled articles retain byte-identical bodies (allowing approved metadata migrations); ${documents.length} PDF sources and public copies match.`,
   );
   console.log(sample.map((article) => `- ${article.slug}`).join("\n"));
 }

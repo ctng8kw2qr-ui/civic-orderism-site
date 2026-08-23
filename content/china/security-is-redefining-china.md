@@ -30,8 +30,8 @@ coreJudgments:
   - 收护照、特斯拉和华为分别在组织纪律、日常认知与情感认同层面，将安全转化为社会共同的判断标准。
   - 持续干部整肃不只是个案反腐，也在拆除发展时代形成的横向权力节点，为更垂直、更可控的组织结构腾出空间。
 relatedArticles:
+  - china/security-led-governance-model
   - china/route-transition-why-ccp-keeps-purging-officials
-  - china/ccp-2018-new-reform-opening
   - china/ccp-2018-xi-era-local-growth-space
 slug: china/security-is-redefining-china
 status: published

@@ -30,8 +30,8 @@ coreJudgments:
   - 党不能继续无限进入国家，却也已经很难从国家中退出，最终形成权力高度集中而解决问题能力下降的状态。
 relatedArticles:
   - theory/party-state-structural-failure
-  - china/security-led-governance-model
-  - china/ccp-bureaucracy-double-deadlock
+  - china/party-power-logic-and-ccp-goal-vacuum
+  - china/xi-solved-organization-not-reality
 slug: china/party-state-stress-neither-party-nor-state
 status: published
 ---

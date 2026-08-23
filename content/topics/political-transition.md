@@ -32,23 +32,23 @@ noindex: false
   <p class="knowledge-card__summary">中国的未来并非只有维持现状与失控崩塌两种结局。如果旧体系越来越难以提供长期预期，而新的政治道路能够保障国家运行、划清责任边界并为体制成员提供可信退路，合作就可能逐步取代对抗。</p>
   <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：非暴力转型</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route">
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route second-reform">
   <p class="knowledge-card__meta"><span>2026-07-24</span><span>7 分钟阅读</span></p>
   <h3><a href="/civic-orderism/information-age-and-political-transition">信息化时代与政治转型</a></h3>
   <p class="knowledge-card__summary">世界已经进入信息化时代，但绝大多数国家仍运行着工业时代建立起来的治理体系。本文从时代错位、改革开放遗留问题与资源约束出发，解释公民秩序主义为何在今天提出。</p>
   <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：非暴力转型</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="political-route nonviolent-transition state-system-upgrade">
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="political-route nonviolent-transition state-system-upgrade bureaucratic-shock ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-07-19</span><span>14 分钟阅读</span></p>
   <h3><a href="/civic-orderism/peaceful-state-transition">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</a></h3>
   <p class="knowledge-card__summary">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不按政治身份实施普遍追责的转轨道路。</p>
   <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：政治路线</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="order-evaporation state-system-upgrade nonviolent-transition">
+<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="state-system-upgrade nonviolent-transition political-route fiscal-debt political-debt order-evaporation">
   <p class="knowledge-card__meta"><span>2026-06-08</span><span>10 分钟阅读</span></p>
   <h3><a href="/civic-orderism/state-must-rely-on-systems-not-drivers">国家不能只靠驾驶员：为什么现代治理必须依赖系统</a></h3>
   <p class="knowledge-card__summary">本文以现代汽车系统为比喻，说明国家作为复杂系统不能依赖单一领导人的英明，而必须依靠行政、司法、监督、财政、媒体、信息和立法等子系统的相对独立、差异性反馈与自我修复能力。文章以中共集权为反面案例，论证政党集权为何会破坏国家系统可靠性。</p>
-  <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：秩序蒸发</span></p>
+  <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：国家系统升级</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>11 分钟阅读</span></p>

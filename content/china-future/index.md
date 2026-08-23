@@ -27,17 +27,17 @@ noindex: false
   <p class="knowledge-card__summary">本文认为，讨论中共是否可能二次改开，真正关键不是领导人是否愿意改革，而是中共是否再次走到类似1978年的组织绝境。第一次改革开放来自旧路线破产、共同求生和全球化窗口；今天面对的则是繁荣退潮后的损失分配，因此二次改开的门槛更高。</p>
   <p class="knowledge-card__chips"><span>专题：二次改开</span><span>概念：二次改开</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="local-finance" data-concepts="fiscal-debt political-debt order-evaporation">
+<article class="knowledge-card" data-knowledge-card data-topics="local-finance" data-concepts="order-evaporation organizational-credit fiscal-debt political-debt bureaucratic-shock ruling-techniques">
   <p class="knowledge-card__meta"><span>2026-05-11</span><span>12 分钟阅读</span></p>
   <h3><a href="/china/ccp-collapse-three-triggers-social-security-healthcare-finance">中共崩解的三大导火索：社保、医保与金融系统</a></h3>
   <p class="knowledge-card__summary">本文从社保、医保与金融系统三个领域，分析中共未来危机如何从国家信用事件转化为社会预期和官僚系统的连锁崩解。</p>
-  <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：财政偿债</span></p>
+  <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：秩序蒸发</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="second-reform" data-concepts="second-reform political-route">
+<article class="knowledge-card" data-knowledge-card data-topics="second-reform" data-concepts="political-control-governance-divergence party-state-stress second-reform political-route">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>12 分钟阅读</span></p>
   <h3><a href="/china/ccp-reform-political-balance-deadlock">中共的真正死局：改革未必救经济，却一定先打破政治平衡</a></h3>
   <p class="knowledge-card__summary">一个政权最危险的时刻，不是问题最多的时候，而是它已经看清问题，却发现所有出路都比问题本身更危险的时候。</p>
-  <p class="knowledge-card__chips"><span>专题：二次改开</span><span>概念：二次改开</span></p>
+  <p class="knowledge-card__chips"><span>专题：二次改开</span><span>概念：政治控制—治理效能背离</span></p>
 </article>
 </div>
 
@@ -55,11 +55,11 @@ noindex: false
 <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">
   <label>专题<select data-filter-topic><option value="">全部专题</option><option value="three-cleans-era">三清时代</option><option value="second-reform">二次改开</option><option value="local-finance">地方财政</option></select></label>
-  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="three-cleans-era">三清时代</option><option value="fiscal-debt">财政偿债</option><option value="political-debt">政治偿债</option><option value="second-reform">二次改开</option><option value="political-route">政治路线</option><option value="order-evaporation">秩序蒸发</option></select></label>
+  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="three-cleans-era">三清时代</option><option value="fiscal-debt">财政偿债</option><option value="political-debt">政治偿债</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="second-reform">二次改开</option><option value="political-route">政治路线</option></select></label>
   <button type="button" data-filter-reset>重置</button>
 </div>
 <div class="knowledge-grid">
-<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="three-cleans-era fiscal-debt political-debt">
+<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="three-cleans-era fiscal-debt political-debt order-evaporation high-fragility">
   <p class="knowledge-card__meta"><span>2026-07-19</span><span>17 分钟阅读</span></p>
   <h3><a href="/china-stage/three-cleans-era-political-economic-cultural-contraction">时代何至如此：政治清人，经济清账，文化清声</a></h3>
   <p class="knowledge-card__summary">政治清人、经济清账、文化清声并非孤立政策，而是增长放缓、财政收缩与信心下降后，制度从发展逻辑转向风险逻辑的共同表现。本文以“三清时代”为框架，分析全面收缩如何制造官场休克、秩序蒸发，并使旧问题的清理逐渐快于新秩序的建立。</p>
@@ -71,7 +71,7 @@ noindex: false
   <p class="knowledge-card__summary">本文认为，讨论中共是否可能二次改开，真正关键不是领导人是否愿意改革，而是中共是否再次走到类似1978年的组织绝境。第一次改革开放来自旧路线破产、共同求生和全球化窗口；今天面对的则是繁荣退潮后的损失分配，因此二次改开的门槛更高。</p>
   <p class="knowledge-card__chips"><span>专题：二次改开</span><span>概念：二次改开</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="local-finance" data-concepts="fiscal-debt political-debt order-evaporation">
+<article class="knowledge-card" data-knowledge-card data-topics="local-finance" data-concepts="fiscal-debt political-debt order-evaporation high-fragility">
   <p class="knowledge-card__meta"><span>2026-06-16</span><span>11 分钟阅读</span></p>
   <h3><a href="/china-stage/china-manufacturing-cannot-stop">中国制造业不是造不出来，而是停不下来</a></h3>
   <p class="knowledge-card__summary">中国制造业的困境不是简单的订单外迁或产业衰退，而是生产能力、地方动员、债务周期、银行体系和政治责任机制共同形成的系统性困局。真正的问题不是造不出来，而是越能造、越难停、越难赚钱，最后指向秩序本身的失灵。</p>
@@ -86,6 +86,7 @@ noindex: false
 <div class="section-concept-links"><a href="/concepts/three-cleans-era">三清时代</a>
 <a href="/concepts/fiscal-debt">财政偿债</a>
 <a href="/concepts/political-debt">政治偿债</a>
+<a href="/concepts/order-evaporation">秩序蒸发</a>
+<a href="/concepts/high-fragility">高脆弱态</a>
 <a href="/concepts/second-reform">二次改开</a>
-<a href="/concepts/political-route">政治路线</a>
-<a href="/concepts/order-evaporation">秩序蒸发</a></div>
+<a href="/concepts/political-route">政治路线</a></div>

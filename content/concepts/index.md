@@ -37,7 +37,7 @@ noindex: false
 <summary>查看延伸研究概念（8）</summary>
 <div class="concept-grid concept-grid--extended"><a class="concept-card concept-card--extended" href="/concepts/second-reform"><strong>二次改开</strong><span>对中国是否可能再次通过系统性开放与改革重建增长和组织空间的判断框架。</span><small>正式概念</small></a>
 <a class="concept-card concept-card--extended" href="/concepts/high-fragility"><strong>高脆弱态</strong><span>系统表面高度集中和稳定，实际对少数节点、资源或决策失误异常敏感的状态。</span><small>正式概念</small></a>
-<a class="concept-card concept-card--extended" href="/concepts/security-recentralization"><strong>安全再集中</strong><span>安全优先替代发展优先后，权力、信息与责任不断重新向中心集中的治理过程。</span><small>正式概念</small></a>
+<a class="concept-card concept-card--extended" href="/concepts/security-recentralization"><strong>安全再集中</strong><span>安全化循环中的关键阶段：安全优先级上升后，权力、信息与责任进一步向中心集中。</span><small>正式概念</small></a>
 <a class="concept-card concept-card--research concept-card--extended" href="/concepts/three-cleans-era"><strong>三清时代</strong><span>用于观察财政清账、政治清责与组织清洗同步出现的阶段框架。</span><small>研究概念</small></a>
 <a class="concept-card concept-card--research concept-card--extended" href="/concepts/fiscal-debt"><strong>财政偿债</strong><span>对长期依赖债务、土地与未来收入形成的财政成本进行集中结算。</span><small>研究概念</small></a>
 <a class="concept-card concept-card--research concept-card--extended" href="/concepts/political-debt"><strong>政治偿债</strong><span>过去通过模糊责任、延迟改革或压缩反馈所累积政治成本的集中显现。</span><small>研究概念</small></a>

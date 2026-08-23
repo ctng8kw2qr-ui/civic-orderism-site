@@ -11,6 +11,7 @@ import topicsConfig from "../../data/topics.config.json";
 import conceptsConfig from "../../data/concepts.config.json";
 import sectionsConfig from "../../data/sections.config.json";
 import readingSequencesConfig from "../../data/reading-sequences.config.json";
+import coreModelsConfig from "../../data/core-models.config.json";
 import {
   getConceptPublicationStatus,
   isVisibleConcept,
@@ -30,6 +31,7 @@ const ARTICLE_PREFIXES = [
 
 type MigrationEntry = (typeof migrationMap)[number];
 type PublishedConcept = (typeof conceptsConfig)[number];
+type CoreModelConfig = (typeof coreModelsConfig.models)[number];
 type ArticleSequenceItem = {
   slug?: string;
   href?: string;
@@ -53,6 +55,9 @@ const CORE_MODEL_ROUTE_SLUGS = [
 ];
 const migrationBySlug = new Map<string, MigrationEntry>(
   migrationMap.map((entry) => [entry.slug, entry]),
+);
+const coreModelConfigBySlug = new Map<string, CoreModelConfig>(
+  coreModelsConfig.models.map((model) => [model.slug, model]),
 );
 const topicBySlug = new Map(
   topicsConfig
@@ -212,14 +217,14 @@ function normalizeRelatedSlug(value: string) {
     .replace(/\/$/, "");
 }
 
-function manualRelatedSlugs(file: QuartzPluginData) {
+function manualRelatedSlugList(file: QuartzPluginData) {
   const fields = [
     file.frontmatter?.relatedArticles,
     file.frontmatter?.related_articles,
     file.frontmatter?.related,
     file.frontmatter?.recommendations,
   ];
-  return new Set(fields.flatMap(asStringArray).map(normalizeRelatedSlug));
+  return [...new Set(fields.flatMap(asStringArray).map(normalizeRelatedSlug))];
 }
 
 function isEligibleRecommendation(file: QuartzPluginData) {
@@ -239,12 +244,31 @@ function coreModelConceptForArticle(
   knowledge: MigrationEntry | undefined,
 ) {
   const articleSlug = file.slug ?? "";
+  const primaryCoreModel = knowledge?.primaryCoreModel;
+  if (primaryCoreModel && CORE_MODEL_CONCEPT_SET.has(primaryCoreModel)) {
+    return conceptBySlug.get(primaryCoreModel);
+  }
   return CORE_MODEL_CONCEPT_SLUGS.map((slug) => conceptBySlug.get(slug)).find(
     (concept) =>
       concept &&
       (knowledge?.concepts.includes(concept.slug) ||
         concept.representativeArticles.includes(articleSlug)),
   );
+}
+
+function sharesAssociatedCoreModel(
+  current: MigrationEntry | undefined,
+  candidate: MigrationEntry | undefined,
+) {
+  if (!current || !candidate) return false;
+  const currentModels = new Set([
+    current.primaryCoreModel,
+    ...(current.associatedCoreModels ?? []),
+  ]);
+  return [
+    candidate.primaryCoreModel,
+    ...(candidate.associatedCoreModels ?? []),
+  ].some((slug) => slug && currentModels.has(slug));
 }
 
 function byOldestFirst(a: QuartzPluginData, b: QuartzPluginData) {
@@ -260,19 +284,29 @@ function byRecommendationScore(
   current: QuartzPluginData,
   currentSeries?: string,
   manualRelated = new Set<string>(),
+  sequenceRelated = new Set<string>(),
 ) {
   return (a: QuartzPluginData, b: QuartzPluginData) => {
     const score = (file: QuartzPluginData) => {
       let total = 0;
-      // Explicit editorial relationships and shared models should lead the
-      // reading path. Section proximity is only a fallback signal.
-      if (file.slug && manualRelated.has(file.slug)) total += 50000;
+      const currentKnowledge = knowledgeFor(current);
+      const candidateKnowledge = knowledgeFor(file);
+      if (file.slug && manualRelated.has(file.slug)) total += 60000;
+      if (
+        currentKnowledge?.primaryCoreModel &&
+        currentKnowledge.primaryCoreModel ===
+          candidateKnowledge?.primaryCoreModel
+      )
+        total += 50000;
+      if (sharesAssociatedCoreModel(currentKnowledge, candidateKnowledge))
+        total += 40000;
+      if (file.slug && sequenceRelated.has(file.slug)) total += 30000;
       if (
         currentSeries &&
         getSeries(file.frontmatter?.series) === currentSeries
       )
-        total += 30000;
-      total += sharedConceptCount(current, file) * 10000;
+        total += 25000;
+      total += sharedConceptCount(current, file) * 8000;
       total += sharedTopicCount(current, file) * 2000;
       if (sameSection(current, file)) total += 200;
       if (knowledgeFor(file)?.recommended) total += 10;
@@ -457,7 +491,8 @@ export const ContinueReading: QuartzComponent = ({
   if (!isArticlePage(fileData)) return null;
 
   const currentSeries = getSeries(fileData.frontmatter?.series);
-  const manualRelated = manualRelatedSlugs(fileData);
+  const manualRelatedList = manualRelatedSlugList(fileData);
+  const manualRelated = new Set(manualRelatedList);
   const eligibleArticles = articleFiles(allFiles).filter(
     isEligibleRecommendation,
   );
@@ -505,7 +540,6 @@ export const ContinueReading: QuartzComponent = ({
   );
   const recommendations = eligibleArticles
     .filter((file) => file.slug !== fileData.slug)
-    .filter((file) => !file.slug || !adjacentSequenceSlugs.has(file.slug))
     .filter((file) => {
       const sharedTopics = sharedTopicCount(fileData, file);
       const sharedConcepts = sharedConceptCount(fileData, file);
@@ -515,43 +549,81 @@ export const ContinueReading: QuartzComponent = ({
         sharedTopics > 0 ||
         sharedConcepts > 0 ||
         sameSection(fileData, file) ||
+        (file.slug !== undefined && adjacentSequenceSlugs.has(file.slug)) ||
         (file.slug !== undefined && manualRelated.has(file.slug))
       );
     })
-    .sort(byRecommendationScore(fileData, currentSeries, manualRelated))
+    .sort(
+      byRecommendationScore(
+        fileData,
+        currentSeries,
+        manualRelated,
+        adjacentSequenceSlugs,
+      ),
+    )
     .slice(0, 3);
 
+  const currentKnowledge = knowledgeFor(fileData);
+  const coreModelConfig = coreModel
+    ? coreModelConfigBySlug.get(coreModel.slug)
+    : undefined;
   const usedCoreModelArticles = new Set([fileData.slug ?? ""]);
-  const relatedCoreModelSlugs = coreModel
-    ? new Set(
-        coreModel.related.filter((slug) => CORE_MODEL_CONCEPT_SET.has(slug)),
-      )
-    : new Set<string>();
-  const orderedCoreModelSlugs = coreModel
-    ? [
-        ...CORE_MODEL_CONCEPT_SLUGS.filter(
-          (slug) => slug !== coreModel.slug && relatedCoreModelSlugs.has(slug),
-        ),
-        ...CORE_MODEL_CONCEPT_SLUGS.filter(
-          (slug) => slug !== coreModel.slug && !relatedCoreModelSlugs.has(slug),
-        ),
+  const coreModelRecommendations: Array<{
+    page: QuartzPluginData;
+    label: string;
+  }> = [];
+  const addCoreModelRecommendation = (slug: string, label: string) => {
+    if (coreModelRecommendations.length >= 3) return;
+    const page = eligibleBySlug.get(slug);
+    if (!page?.slug || usedCoreModelArticles.has(page.slug)) return;
+    usedCoreModelArticles.add(page.slug);
+    coreModelRecommendations.push({ page, label });
+  };
+  const labelForArticle = (slug: string, fallback: string) => {
+    const primaryModel = migrationBySlug.get(slug)?.primaryCoreModel;
+    return primaryModel
+      ? (conceptBySlug.get(primaryModel)?.name ?? fallback)
+      : fallback;
+  };
+
+  if (coreModelConfig && coreModel) {
+    manualRelatedList.forEach((slug) =>
+      addCoreModelRecommendation(slug, labelForArticle(slug, "人工关联")),
+    );
+    [
+      coreModelConfig.overviewArticle,
+      ...coreModelConfig.representativeArticles.map((item) => item.slug),
+      ...coreModelConfig.extendedArticles,
+    ]
+      .filter((slug): slug is string => Boolean(slug))
+      .forEach((slug) => addCoreModelRecommendation(slug, coreModel.name));
+
+    (currentKnowledge?.associatedCoreModels ?? []).forEach((modelSlug) => {
+      const associatedModel = coreModelConfigBySlug.get(modelSlug);
+      const associatedConcept = conceptBySlug.get(modelSlug);
+      if (!associatedModel || !associatedConcept) return;
+      [
+        associatedModel.overviewArticle,
+        ...associatedModel.representativeArticles.map((item) => item.slug),
       ]
-    : [];
-  const coreModelRecommendations = orderedCoreModelSlugs
-    .flatMap((conceptSlug) => {
-      const concept = conceptBySlug.get(conceptSlug);
-      if (!concept) return [];
-      const page = concept.representativeArticles
-        .map((slug) => eligibleBySlug.get(slug))
-        .find(
-          (candidate) =>
-            candidate?.slug && !usedCoreModelArticles.has(candidate.slug),
+        .filter((slug): slug is string => Boolean(slug))
+        .forEach((slug) =>
+          addCoreModelRecommendation(slug, associatedConcept.name),
         );
-      if (!page?.slug) return [];
-      usedCoreModelArticles.add(page.slug);
-      return [{ page, label: concept.name }];
-    })
-    .slice(0, 3);
+    });
+
+    [previousItem?.slug, nextItem?.slug]
+      .filter((slug): slug is string => Boolean(slug))
+      .forEach((slug) => addCoreModelRecommendation(slug, "阅读序列"));
+    recommendations.forEach((page) => {
+      if (page.slug) {
+        addCoreModelRecommendation(
+          page.slug,
+          labelForArticle(page.slug, "相关阅读"),
+        );
+      }
+    });
+  }
   const routeRecommendations = coreModel
     ? CORE_MODEL_ROUTE_SLUGS.map((slug) => eligibleBySlug.get(slug))
         .filter((page): page is QuartzPluginData => {
