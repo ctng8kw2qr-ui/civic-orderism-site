@@ -909,8 +909,11 @@ for (const marker of expectedHomepageSections) {
   previousHomepageSectionPosition = position;
 }
 assert(
-  (homepageMainHtml.match(/<section class="home-institution-/g) ?? [])
-    .length === 4 && !homepageMainHtml.includes('id="official-document"'),
+  (
+    homepageMainHtml.match(
+      /<section class="home-institution-(?:hero|work|theory|contact)"/g,
+    ) ?? []
+  ).length === 4 && !homepageMainHtml.includes('id="official-document"'),
   "首页主要内容不是严格的四区域结构",
 );
 assert(
@@ -1005,10 +1008,36 @@ assert(
   homepageMainHtml.includes("mailto:civicorderism@gmail.com") &&
     homepageMainHtml.includes("mailto:citizenorder@proton.me") &&
     homepageMainHtml.includes('class="home-institution-contact"') &&
+    visiblePageText(homepageMainHtml).includes("建立联系 Get in Touch") &&
+    visiblePageText(homepageMainHtml).includes(
+      "For founding board preparation, professional collaboration and long-term organizational development.",
+    ) &&
+    visiblePageText(homepageMainHtml).includes("CONTACT / 联系方式") &&
+    visiblePageText(homepageMainHtml).includes(
+      "OFFICIAL CHANNELS / 官方平台",
+    ) &&
+    homepageMainHtml.includes('href="https://x.com/CivicOrderism"') &&
+    visiblePageText(homepageMainHtml).includes(
+      "X · 官方账号 Official Account @CivicOrderism",
+    ) &&
+    visiblePageText(homepageMainHtml).includes(
+      "YouTube · 官方频道 Official Channel Civic Orderism",
+    ) &&
+    !homepageMainHtml.includes("youtube.com") &&
+    !homepageMainHtml.includes("youtu.be") &&
     !homepageMainHtml.includes('id="contact"') &&
     !homepageMainText.includes("立即加入") &&
     !homepageMainText.includes("马上报名"),
-  "首页 Footer 前联系方式缺失、过重或出现强招募表达",
+  "首页 Contact 双语目录、官方 X 或未链接的 YouTube 占位不符合要求",
+);
+const homepageYoutubeItemHtml =
+  homepageMainHtml.match(
+    /<div class="home-institution-contact__item home-institution-contact__item--youtube"[\s\S]*?<\/div>/,
+  )?.[0] ?? "";
+assert(
+  homepageYoutubeItemHtml.includes("Civic Orderism") &&
+    !homepageYoutubeItemHtml.includes("<a "),
+  "仓库缺少官方 YouTube URL 时不应生成猜测链接",
 );
 assert(
   (
@@ -1058,11 +1087,17 @@ assert(
 const footerHtml = homepageHtml.match(/<footer[\s\S]*?<\/footer>/)?.[0] ?? "";
 assert(
   visiblePageText(footerHtml).includes(
-    "5分钟了解 阅读地图 董事会筹备 核心路线 参与方式 关于",
+    "公民秩序主义 · Civic Orderism © 2026 Civic Orderism / 公民秩序主义",
   ) &&
+    visiblePageText(footerHtml).includes(
+      "5分钟了解 阅读地图 董事会筹备 核心路线 参与方式 关于",
+    ) &&
     !visiblePageText(footerHtml).includes("法人筹备") &&
-    !visiblePageText(footerHtml).includes("核心概念"),
-  "页脚链接未按路线与组织层级统一",
+    !visiblePageText(footerHtml).includes("核心概念") &&
+    !footerHtml.includes("mailto:") &&
+    !footerHtml.includes("x.com") &&
+    !visiblePageText(footerHtml).includes("YouTube"),
+  "页脚品牌、版权、站内导航或与 Contact 的职责分离不符合要求",
 );
 for (const forbidden of [
   "X 短贴",

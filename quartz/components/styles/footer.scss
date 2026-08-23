@@ -4,6 +4,14 @@ footer {
   color: var(--gray);
   opacity: 0.9;
 
+  & .footer-brand {
+    margin: 0 0 0.18rem;
+    color: var(--darkgray);
+    font-size: 0.84rem;
+    font-weight: 650;
+    line-height: 1.5;
+  }
+
   & .footer-copyright {
     margin: 0 0 0.35rem;
     font-size: 0.78rem;

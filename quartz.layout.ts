@@ -43,6 +43,7 @@ export const sharedPageComponents: SharedLayout = {
     }),
   ],
   footer: Component.Footer({
+    brand: "公民秩序主义 · Civic Orderism",
     copyright: "© 2026 Civic Orderism / 公民秩序主义",
     links: {
       "5分钟了解": "/start-here",

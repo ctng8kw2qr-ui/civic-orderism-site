@@ -4467,7 +4467,7 @@ article .home-institution-section-heading {
 }
 
 article .home-institution-section-heading > p,
-article .home-institution-contact > div > p {
+article .home-institution-contact__intro > p {
   color: #6f7b87;
   font-size: 0.64rem;
   font-weight: 720;
@@ -4488,7 +4488,7 @@ article .home-institution-contact h2 {
 }
 
 article .home-institution-section-heading > span,
-article .home-institution-contact > div > span {
+article .home-institution-contact__statement {
   display: block;
   margin-top: 1rem;
   color: #5a6774;
@@ -4646,11 +4646,12 @@ article .home-institution-contact {
   color: #fff;
 }
 
-article .home-institution-contact > div {
+article .home-institution-contact__intro {
   grid-column: 1 / span 5;
+  min-width: 0;
 }
 
-article .home-institution-contact > div > p {
+article .home-institution-contact__intro > p {
   color: #d2bf8e;
 }
 
@@ -4658,36 +4659,107 @@ article .home-institution-contact h2 {
   color: #fff;
 }
 
-article .home-institution-contact > div > span {
-  max-width: 390px;
-  color: #bec8d2;
+article .home-institution-contact h2 > span,
+article .home-institution-contact h2 > small {
+  display: block;
 }
 
-article .home-institution-contact dl {
-  display: grid;
-  grid-column: 7 / span 6;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.75rem;
-  align-self: end;
+article .home-institution-contact h2 > small {
+  margin-top: 0.45rem;
+  color: #aeb9c5;
+  font-size: 0.48em;
+  font-weight: 520;
+  letter-spacing: 0.01em;
+}
+
+article .home-institution-contact__statement {
+  max-width: 390px;
+  margin-top: 1.35rem;
+}
+
+article .home-institution-contact__statement > p {
+  color: #d3dae2;
+  font-size: 0.85rem;
+  line-height: 1.75;
+}
+
+article .home-institution-contact__statement > p[lang="en"] {
+  margin-top: 0.55rem;
+  color: #8f9dab;
+  font-size: 0.72rem;
+  line-height: 1.65;
+}
+
+article .home-institution-contact__directory {
+  grid-column: 6 / span 7;
+  min-width: 0;
+}
+
+article .home-institution-contact__group {
+  margin: 0;
   padding: 0;
 }
 
-article .home-institution-contact dl > div {
+article .home-institution-contact__group--channels {
+  margin-top: 1.8rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(210, 191, 142, 0.55);
+}
+
+article .home-institution-contact__group h3 {
+  margin: 0 0 0.9rem;
+  padding: 0;
+  border: 0;
+  color: #d2bf8e;
+  font-size: 0.61rem;
+  font-weight: 720;
+  letter-spacing: 0.13em;
+  line-height: 1.5;
+}
+
+article .home-institution-contact__group h3 span {
+  color: #aab6c2;
+  letter-spacing: 0.06em;
+}
+
+article .home-institution-contact__group dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.4rem;
+  padding: 0;
+}
+
+article .home-institution-contact__item {
   min-width: 0;
   padding-top: 0.85rem;
   border-top: 1px solid rgba(255, 255, 255, 0.24);
 }
 
 article .home-institution-contact dt {
-  color: #91a0af;
-  font-size: 0.6rem;
-  font-weight: 720;
-  letter-spacing: 0.14em;
-  line-height: 1.4;
+  color: #d4dbe2;
+  line-height: 1.45;
+}
+
+article .home-institution-contact dt > span,
+article .home-institution-contact dt > small {
+  display: block;
+}
+
+article .home-institution-contact dt > span {
+  font-size: 0.7rem;
+  font-weight: 630;
+}
+
+article .home-institution-contact dt > small {
+  margin-top: 0.2rem;
+  color: #8392a1;
+  font-size: 0.57rem;
+  font-weight: 560;
+  letter-spacing: 0.05em;
 }
 
 article .home-institution-contact dd {
-  margin: 0.48rem 0 0;
+  margin: 0.55rem 0 0;
 }
 
 article .home-institution-contact a {
@@ -4696,6 +4768,26 @@ article .home-institution-contact a {
   overflow-wrap: anywhere;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.22em;
+}
+
+article .home-institution-contact__item--primary a {
+  font-size: 1rem;
+  font-weight: 650;
+}
+
+article .home-institution-contact__item--secondary a {
+  color: #c2ccd5;
+  font-size: 0.76rem;
+}
+
+article .home-institution-contact__item--x a {
+  font-size: 0.9rem;
+  font-weight: 620;
+}
+
+article .home-institution-contact__item--youtube dd > span {
+  color: #c2ccd5;
+  font-size: 0.8rem;
 }
 
 @media (max-width: 900px) {
@@ -4720,7 +4812,7 @@ article .home-institution-contact a {
     grid-column: 2;
   }
 
-  article .home-institution-contact dl {
+  article .home-institution-contact__group dl {
     grid-template-columns: minmax(0, 1fr);
     gap: 1.25rem;
   }
@@ -4746,8 +4838,8 @@ article .home-institution-contact a {
   article .home-institution-work__body,
   article .home-institution-research,
   article .home-institution-first-reading,
-  article .home-institution-contact > div,
-  article .home-institution-contact dl {
+  article .home-institution-contact__intro,
+  article .home-institution-contact__directory {
     grid-column: 1;
   }
 
@@ -4808,7 +4900,7 @@ article .home-institution-contact a {
     padding: 3.25rem 1.2rem;
   }
 
-  article .home-institution-contact dl {
+  article .home-institution-contact__group dl {
     grid-template-columns: minmax(0, 1fr);
   }
 }
