@@ -33,6 +33,7 @@ import {
   ArticleCoreJudgmentCard,
   ArticleEndingCta,
   ArticleKnowledgeContext,
+  ArticleReadingFooter,
   ArticleReadingProgress,
   ArticleSeriesNavigation,
 } from "./ArticleReadingEnhancements";
@@ -72,6 +73,7 @@ export {
   ArticleCoreJudgmentCard,
   ArticleEndingCta,
   ArticleKnowledgeContext,
+  ArticleReadingFooter,
   ArticleReadingProgress,
   ArticleSeriesNavigation,
 };

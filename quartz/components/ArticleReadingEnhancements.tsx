@@ -628,6 +628,24 @@ export const ContinueReading: QuartzComponent = ({
   );
 };
 
+/**
+ * Keep recommendations and their knowledge context on the same render path.
+ * They used to be registered as two independent `afterBody` components, which
+ * made it possible to inspect or reuse only the knowledge-context half of the
+ * article footer.  The combined component makes the public article footer an
+ * atomic unit while preserving the existing DOM order and visual treatment.
+ */
+export const ReadingFooter: QuartzComponent = (props: QuartzComponentProps) => {
+  if (!isArticlePage(props.fileData)) return null;
+
+  return (
+    <>
+      <ContinueReading {...props} />
+      <KnowledgeContext {...props} />
+    </>
+  );
+};
+
 export const ArticleCta: QuartzComponent = ({
   fileData,
 }: QuartzComponentProps) => {
@@ -672,6 +690,8 @@ CoreJudgmentCard.css = style;
 SeriesNavigation.css = style;
 ContinueReading.css = style;
 KnowledgeContext.css = style;
+ReadingFooter.css = style;
+ReadingFooter.afterDOMLoaded = script;
 ArticleCta.css = style;
 
 export const ArticleCoreJudgmentCard = (() =>
@@ -682,6 +702,8 @@ export const ArticleContinueReading = (() =>
   ContinueReading) satisfies QuartzComponentConstructor;
 export const ArticleKnowledgeContext = (() =>
   KnowledgeContext) satisfies QuartzComponentConstructor;
+export const ArticleReadingFooter = (() =>
+  ReadingFooter) satisfies QuartzComponentConstructor;
 export const ArticleEndingCta = (() =>
   ArticleCta) satisfies QuartzComponentConstructor;
 export const ArticleReadingProgress = (() =>

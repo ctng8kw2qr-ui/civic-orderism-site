@@ -301,6 +301,11 @@ for (const article of migration) {
     `文章尾部顺序不是继续阅读 → 知识关联 → 组织 CTA：${article.slug}`,
   );
   assert(
+    articleHtml.includes('aria-label="继续阅读"') &&
+      articleHtml.includes('class="article-knowledge"'),
+    `文章尾部未同时生成继续阅读与知识关联：${article.slug}`,
+  );
+  assert(
     !articleHtml.includes("related-card__summary") &&
       !articleHtml.includes("related-card__meta"),
     `文章相关推荐仍包含长摘要或文章元信息：${article.slug}`,
