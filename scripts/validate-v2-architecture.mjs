@@ -934,6 +934,15 @@ const theoryHtml =
   homepageMainHtml.match(
     /<section class="home-institution-theory"[\s\S]*?<\/section>/,
   )?.[0] ?? "";
+const homepageResearchItems =
+  theoryHtml.match(
+    /<a class="home-institution-research__link[^"]*"[\s\S]*?<\/a>/g,
+  ) ?? [];
+const expectedHomepageResearchItems = [
+  ["01", "公民秩序主义", "政治路线与和平转轨框架"],
+  ["02", "解析中共", "党国体系、官僚系统与现实政治分析"],
+  ["03", "中国未来", "政治转轨与未来国家秩序"],
+];
 assert(
   (theoryHtml.match(/home-institution-research__link/g) ?? []).length === 3 &&
     (theoryHtml.match(/home-institution-research__number/g) ?? []).length ===
@@ -962,6 +971,34 @@ assert(
     visiblePageText(theoryHtml).includes("02 解析中共") &&
     visiblePageText(theoryHtml).includes("03 中国未来"),
   "首页理论与研究没有保持为语义分离的编号化研究索引",
+);
+assert(
+  homepageResearchItems.length === expectedHomepageResearchItems.length &&
+    homepageResearchItems.every((itemHtml, index) => {
+      const [number, title, summary] = expectedHomepageResearchItems[index];
+      const numberPosition = itemHtml.indexOf(
+        `<span class="home-institution-research__number">${number}</span>`,
+      );
+      const titlePosition = itemHtml.indexOf(
+        `<strong class="home-institution-research__title">${title}</strong>`,
+      );
+      const summaryPosition = itemHtml.indexOf(
+        `<span class="home-institution-research__summary">${summary}</span>`,
+      );
+      const hintPosition = itemHtml.indexOf(
+        '<span class="home-institution-research__hint">',
+      );
+      return (
+        numberPosition >= 0 &&
+        numberPosition < titlePosition &&
+        titlePosition < summaryPosition &&
+        summaryPosition < hintPosition &&
+        /<span class="home-institution-research__hint">\s*<span>进入栏目<\/span>\s*<span aria-hidden="true">→<\/span>\s*<\/span>/.test(
+          itemHtml,
+        )
+      );
+    }),
+  "首页三条研究索引的编号、标题、摘要与入口提示必须是顺序明确的独立元素",
 );
 for (const removedHomepageText of [
   "为什么需要组织",
@@ -1011,6 +1048,20 @@ assert(
     !homepageMainText.includes("马上报名"),
   "首页 Contact 双语目录、官方 X 或 YouTube 频道链接不符合要求",
 );
+for (const [zhText, enText] of [
+  ["建立联系", "Get in Touch"],
+  ["主联系邮箱", "Primary Contact"],
+  ["备用邮箱", "Alternative Contact"],
+  ["X · 官方账号", "Official Account"],
+  ["YouTube · 官方频道", "Official Channel"],
+]) {
+  assert(
+    new RegExp(
+      `<span lang="zh-Hans">${zhText}<\\/span>\\s+<small lang="en">${enText}<\\/small>`,
+    ).test(homepageMainHtml),
+    `首页 Contact 中英文标签没有使用独立语义元素：${zhText} / ${enText}`,
+  );
+}
 const homepageYoutubeItemHtml =
   homepageMainHtml.match(
     /<div class="home-institution-contact__item home-institution-contact__item--youtube"[\s\S]*?<\/div>/,

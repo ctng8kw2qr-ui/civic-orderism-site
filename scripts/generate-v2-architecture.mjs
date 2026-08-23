@@ -1123,7 +1123,10 @@ writeContent(
 <section class="home-institution-contact" aria-labelledby="home-institution-contact-title">
   <div class="home-institution-contact__intro">
     <p>CONTACT</p>
-    <h2 id="home-institution-contact-title"><span>建立联系</span><small lang="en">Get in Touch</small></h2>
+    <h2 id="home-institution-contact-title">
+      <span lang="zh-Hans">建立联系</span>
+      <small lang="en">Get in Touch</small>
+    </h2>
     <div class="home-institution-contact__statement">
       <p>围绕首届董事会筹备、专业合作与长期组织建设建立联系。</p>
       <p lang="en">For founding board preparation, professional collaboration and long-term organizational development.</p>
@@ -1133,15 +1136,27 @@ writeContent(
     <section class="home-institution-contact__group" aria-labelledby="home-contact-methods-title">
       <h3 id="home-contact-methods-title">CONTACT <span>/ 联系方式</span></h3>
       <dl>
-        <div class="home-institution-contact__item home-institution-contact__item--primary"><dt><span>主联系邮箱</span><small lang="en">Primary Contact</small></dt><dd><a href="mailto:${organization.primaryEmail}">${organization.primaryEmail}</a></dd></div>
-        <div class="home-institution-contact__item home-institution-contact__item--secondary"><dt><span>备用邮箱</span><small lang="en">Alternative Contact</small></dt><dd><a href="mailto:${organization.secondaryEmail}">${organization.secondaryEmail}</a></dd></div>
+        <div class="home-institution-contact__item home-institution-contact__item--primary"><dt>
+          <span lang="zh-Hans">主联系邮箱</span>
+          <small lang="en">Primary Contact</small>
+        </dt><dd><a href="mailto:${organization.primaryEmail}">${organization.primaryEmail}</a></dd></div>
+        <div class="home-institution-contact__item home-institution-contact__item--secondary"><dt>
+          <span lang="zh-Hans">备用邮箱</span>
+          <small lang="en">Alternative Contact</small>
+        </dt><dd><a href="mailto:${organization.secondaryEmail}">${organization.secondaryEmail}</a></dd></div>
       </dl>
     </section>
     <section class="home-institution-contact__group home-institution-contact__group--channels" aria-labelledby="home-official-channels-title">
       <h3 id="home-official-channels-title">OFFICIAL CHANNELS <span>/ 官方平台</span></h3>
       <dl>
-        <div class="home-institution-contact__item home-institution-contact__item--x"><dt><span>X · 官方账号</span><small lang="en">Official Account</small></dt><dd><a href="https://x.com/CivicOrderism" target="_blank" rel="noopener">@CivicOrderism</a></dd></div>
-        <div class="home-institution-contact__item home-institution-contact__item--youtube"><dt><span>YouTube · 官方频道</span><small lang="en">Official Channel</small></dt><dd><a href="https://www.youtube.com/@CivicOrderism" target="_blank" rel="noopener">公民秩序主义 Civic Orderism · @CivicOrderism</a></dd></div>
+        <div class="home-institution-contact__item home-institution-contact__item--x"><dt>
+          <span lang="zh-Hans">X · 官方账号</span>
+          <small lang="en">Official Account</small>
+        </dt><dd><a href="https://x.com/CivicOrderism" target="_blank" rel="noopener">@CivicOrderism</a></dd></div>
+        <div class="home-institution-contact__item home-institution-contact__item--youtube"><dt>
+          <span lang="zh-Hans">YouTube · 官方频道</span>
+          <small lang="en">Official Channel</small>
+        </dt><dd><a href="https://www.youtube.com/@CivicOrderism" target="_blank" rel="noopener">公民秩序主义 Civic Orderism · @CivicOrderism</a></dd></div>
       </dl>
     </section>
   </div>
