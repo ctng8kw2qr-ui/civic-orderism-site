@@ -241,13 +241,17 @@ for (const article of migration) {
     `文章发布日期不是标准日期：${article.slug} -> ${article.date}`,
   );
   const articleHtml = fs.readFileSync(publicHtml(article.slug), "utf8");
-  const relatedReadingPosition = articleHtml.indexOf("data-related-reading=");
+  const relatedReadingPosition = articleHtml.indexOf(
+    "data-article-continuation=",
+  );
   const knowledgeContextPosition = articleHtml.indexOf(
     'class="article-knowledge"',
   );
   const endingCtaPosition = articleHtml.indexOf('class="article-cta"');
   const recommendationHrefs = [
-    ...articleHtml.matchAll(/<a class="related-card"[^>]*href="([^"]+)"/g),
+    ...articleHtml.matchAll(
+      /<a class="article-continuation-card"[^>]*href="([^"]+)"/g,
+    ),
   ].map((match) => match[1]);
   const recommendationSlugs = recommendationHrefs.map((href) =>
     decodeURI(
@@ -266,7 +270,7 @@ for (const article of migration) {
       )
     : [];
   const hasCoreModelRecommendations = articleHtml.includes(
-    "related-reading--model",
+    "article-continuation--model",
   );
   const recommendationLimit = hasCoreModelRecommendations ? 4 : 3;
   assert(
@@ -306,8 +310,8 @@ for (const article of migration) {
     `文章尾部未同时生成继续阅读与知识关联：${article.slug}`,
   );
   assert(
-    !articleHtml.includes("related-card__summary") &&
-      !articleHtml.includes("related-card__meta"),
+    !articleHtml.includes("article-continuation-card__summary") &&
+      !articleHtml.includes("article-continuation-card__meta"),
     `文章相关推荐仍包含长摘要或文章元信息：${article.slug}`,
   );
   assert(
@@ -406,7 +410,7 @@ const partyStateStressHtml = fs.readFileSync(
 );
 const partyStateRecommendationSlugs = [
   ...partyStateStressHtml.matchAll(
-    /<a class="related-card"[^>]*href="([^"]+)"/g,
+    /<a class="article-continuation-card"[^>]*href="([^"]+)"/g,
   ),
 ].map((match) =>
   decodeURI(
@@ -417,7 +421,7 @@ const partyStateRecommendationSlugs = [
   ),
 );
 assert(
-  partyStateStressHtml.includes("related-reading--model") &&
+  partyStateStressHtml.includes("article-continuation--model") &&
     partyStateStressHtml.includes("继续理解这个模型") &&
     partyStateStressHtml.includes("从判断进入路线") &&
     JSON.stringify(partyStateRecommendationSlugs) ===

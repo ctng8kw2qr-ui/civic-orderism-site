@@ -563,12 +563,16 @@ export const ContinueReading: QuartzComponent = ({
 
   const recommendationCard = (page: QuartzPluginData, label?: string) => (
     <a
-      class="related-card"
+      class="article-continuation-card"
       data-card="recommendation"
       href={resolveRelative(fileData.slug!, page.slug!)}
     >
-      {label ? <small class="related-card__eyebrow">{label}</small> : null}
-      <span class="related-card__title">{page.frontmatter?.title}</span>
+      {label ? (
+        <small class="article-continuation-card__eyebrow">{label}</small>
+      ) : null}
+      <span class="article-continuation-card__title">
+        {page.frontmatter?.title}
+      </span>
     </a>
   );
 
@@ -578,15 +582,15 @@ export const ContinueReading: QuartzComponent = ({
   ) {
     return (
       <section
-        class="related-reading related-reading--model"
+        class="article-continuation article-continuation--model"
         aria-label="继续阅读"
-        data-related-reading="core-model"
+        data-article-continuation="core-model"
       >
-        <h2 class="related-reading__heading">继续阅读</h2>
+        <h2 class="article-continuation__heading">继续阅读</h2>
         {coreModelRecommendations.length ? (
-          <div class="continue-reading__direction">
+          <div class="article-continuation__direction">
             <h3>继续理解这个模型</h3>
-            <div class="related-grid related-grid--compact">
+            <div class="article-continuation__grid article-continuation__grid--compact">
               {coreModelRecommendations.map(({ page, label }) =>
                 recommendationCard(page, label),
               )}
@@ -594,9 +598,9 @@ export const ContinueReading: QuartzComponent = ({
           </div>
         ) : null}
         {routeRecommendations.length ? (
-          <div class="continue-reading__direction continue-reading__direction--route">
+          <div class="article-continuation__direction article-continuation__direction--route">
             <h3>从判断进入路线</h3>
-            <div class="related-grid related-grid--compact related-grid--route">
+            <div class="article-continuation__grid article-continuation__grid--compact article-continuation__grid--route">
               {routeRecommendations.map((page) =>
                 recommendationCard(page, "政治路线"),
               )}
@@ -611,15 +615,15 @@ export const ContinueReading: QuartzComponent = ({
 
   return (
     <section
-      class="related-reading"
+      class="article-continuation"
       aria-label="继续阅读"
-      data-related-reading="standard"
+      data-article-continuation="standard"
     >
-      <h2 class="related-reading__heading">继续阅读</h2>
+      <h2 class="article-continuation__heading">继续阅读</h2>
       {recommendations.length ? (
-        <div class="continue-reading__related">
+        <div class="article-continuation__related">
           <h3>相关文章</h3>
-          <div class="related-grid">
+          <div class="article-continuation__grid">
             {recommendations.map((page) => recommendationCard(page))}
           </div>
         </div>
@@ -639,10 +643,10 @@ export const ReadingFooter: QuartzComponent = (props: QuartzComponentProps) => {
   if (!isArticlePage(props.fileData)) return null;
 
   return (
-    <>
+    <div class="article-reading-footer" data-article-reading-footer="true">
       <ContinueReading {...props} />
       <KnowledgeContext {...props} />
-    </>
+    </div>
   );
 };
 

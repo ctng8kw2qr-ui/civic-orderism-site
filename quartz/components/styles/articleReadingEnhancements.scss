@@ -16,7 +16,7 @@
 .key-points-card,
 .article-series-nav,
 .article-knowledge,
-.related-reading,
+.article-continuation,
 .article-cta {
   box-sizing: border-box;
   max-width: 780px;
@@ -298,7 +298,11 @@ article blockquote[data-callout="key-point"] {
   }
 }
 
-.related-reading {
+.article-reading-footer {
+  display: contents;
+}
+
+.article-continuation {
   margin: 2.9rem 0 2.2rem;
 
   & h2 {
@@ -310,14 +314,14 @@ article blockquote[data-callout="key-point"] {
   }
 }
 
-.continue-reading__related > h3 {
+.article-continuation__related > h3 {
   margin: 0 0 0.8rem;
   color: var(--dark);
   font-size: 0.95rem;
   font-weight: 600;
 }
 
-.related-reading--model {
+.article-continuation--model {
   padding-top: 1.05rem;
   border-top: 2px solid
     color-mix(in srgb, var(--secondary) 28%, var(--lightgray));
@@ -328,38 +332,38 @@ article blockquote[data-callout="key-point"] {
   }
 }
 
-.continue-reading__direction + .continue-reading__direction {
+.article-continuation__direction + .article-continuation__direction {
   margin-top: 1.4rem;
 }
 
-.continue-reading__direction > h3 {
+.article-continuation__direction > h3 {
   margin: 0 0 0.75rem;
   color: var(--dark);
   font-size: 0.92rem;
   font-weight: 600;
 }
 
-.related-grid {
+.article-continuation__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.75rem;
   align-items: stretch;
 }
 
-.related-grid--compact {
+.article-continuation__grid--compact {
   gap: 0.8rem;
 }
 
-.related-grid--compact .related-card {
+.article-continuation__grid--compact .article-continuation-card {
   padding: 0.9rem 0.95rem;
 }
 
-.related-grid--route {
+.article-continuation__grid--route {
   grid-template-columns: minmax(0, 1fr);
   max-width: 34rem;
 }
 
-.related-card {
+.article-continuation-card {
   position: relative;
   display: flex;
   min-width: 0;
@@ -380,14 +384,14 @@ article blockquote[data-callout="key-point"] {
     box-shadow 160ms ease;
 }
 
-.related-card:hover {
+.article-continuation-card:hover {
   border-color: color-mix(in srgb, var(--secondary) 38%, var(--gray));
   background: color-mix(in srgb, var(--surface-primary) 96%, var(--lightgray));
   box-shadow: none;
   color: var(--dark);
 }
 
-.related-card::before {
+.article-continuation-card::before {
   content: "";
   position: absolute;
   inset: 0 auto auto 0;
@@ -397,7 +401,7 @@ article blockquote[data-callout="key-point"] {
   background: color-mix(in srgb, var(--secondary) 34%, var(--lightgray));
 }
 
-.related-card__eyebrow {
+.article-continuation-card__eyebrow {
   order: 0;
   color: var(--secondary);
   font-size: 0.7rem;
@@ -405,7 +409,7 @@ article blockquote[data-callout="key-point"] {
   letter-spacing: 0.04em;
 }
 
-.related-card__title {
+.article-continuation-card__title {
   order: 1;
   display: block;
   margin: 0;
@@ -565,7 +569,7 @@ article blockquote[data-callout="key-point"] {
 }
 
 @media all and (max-width: 900px) {
-  .related-grid,
+  .article-continuation__grid,
   .article-cta {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -579,7 +583,7 @@ article blockquote[data-callout="key-point"] {
   .key-points-card,
   .article-series-nav,
   .article-knowledge,
-  .related-reading,
+  .article-continuation,
   .article-cta {
     max-width: 100%;
   }
@@ -620,11 +624,11 @@ article blockquote[data-callout="key-point"] {
     bottom: 0.7rem;
   }
 
-  .related-reading {
+  .article-continuation {
     margin-top: 2.4rem;
   }
 
-  .related-grid {
+  .article-continuation__grid {
     gap: 1rem;
   }
 
