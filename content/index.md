@@ -27,35 +27,62 @@ aliases:
       <a class="home-institution-document__cover" href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener" aria-label="打开《公民秩序主义北美非营利组织及首届董事会筹备文件》PDF">
         <img src="/files/civic-orderism-founding-board-brief-2026-cover.png" alt="《公民秩序主义北美非营利组织及首届董事会筹备文件》封面" width="1191" height="1684">
       </a>
-      <p class="home-institution-document__caption"><span>OFFICIAL DOCUMENT</span><strong>CO-2026-002 · VERSION 1.0</strong></p>
+      <p class="home-institution-document__caption">OFFICIAL DOCUMENT · CO-2026-002 · VERSION 1.0</p>
     </div>
   </div>
-  <dl class="home-institution-status" aria-label="当前组织阶段">
-    <div><dt>CURRENT</dt><dd>组织建设</dd></div>
-    <div><dt>LEGAL</dt><dd>北美非营利组织筹备</dd></div>
-    <div><dt>GOVERNANCE</dt><dd>首届董事会筹备</dd></div>
-    <div><dt>DOCUMENT</dt><dd>CO-2026-002</dd></div>
-  </dl>
 </section>
 
 <section class="home-institution-work" id="board-preparation" aria-labelledby="home-institution-work-title">
-  <header class="home-institution-section-heading"><p>FOUNDING BOARD</p><h2 id="home-institution-work-title">当前组织工作</h2><span>当前工作重点是建立北美非营利组织基础，并完成首届董事会筹备。</span></header>
+  <header class="home-institution-section-heading"><p>FOUNDING BOARD PREPARATION</p><h2 id="home-institution-work-title">当前组织工作</h2></header>
   <div class="home-institution-work__body">
-    <ol class="home-institution-progress">
-      <li><span>01</span><div><strong>非营利组织筹备</strong><p>建立合法、稳定的现实组织载体。</p></div></li>
-      <li><span>02</span><div><strong>首届董事会筹备</strong><p>建立治理、监督与责任机制。</p></div></li>
-      <li><span>03</span><div><strong>组织能力建设</strong><p>逐步形成法律、财务、人员与长期连续性。</p></div></li>
-    </ol>
-    <a class="home-institution-section-link" href="/preparation">查看董事会筹备 →</a>
+    <p>公民秩序主义当前正在推进北美非营利组织及首届董事会筹备，并逐步建立长期组织运行所需要的法律、治理与人员基础。</p>
+    <div class="home-institution-work__actions"><a class="home-institution-section-link" href="/preparation">董事会筹备 →</a><a class="home-institution-section-link" href="/participate">参与方式 →</a></div>
   </div>
 </section>
 
 <section class="home-institution-theory" id="theory-and-research" aria-labelledby="home-institution-theory-title">
   <header class="home-institution-section-heading"><p>THEORY & RESEARCH</p><h2 id="home-institution-theory-title">理论与研究</h2><span>组织建设建立在持续的政治判断、现实分析与中国未来研究之上。</span></header>
-  <nav class="home-institution-research" aria-label="理论与研究入口"><a class="home-institution-research__link" href="/civic-orderism"><span class="home-institution-research__number">01</span><span class="home-institution-research__text"><strong>公民秩序主义</strong><small>政治路线与和平转轨框架</small></span><span class="home-institution-research__arrow" aria-hidden="true">→</span></a>
-<a class="home-institution-research__link" href="/china"><span class="home-institution-research__number">02</span><span class="home-institution-research__text"><strong>解析中共</strong><small>党国体系、官僚系统与现实政治分析</small></span><span class="home-institution-research__arrow" aria-hidden="true">→</span></a>
-<a class="home-institution-research__link" href="/china-future"><span class="home-institution-research__number">03</span><span class="home-institution-research__text"><strong>中国未来</strong><small>政治转轨与未来国家秩序</small></span><span class="home-institution-research__arrow" aria-hidden="true">→</span></a></nav>
-  <div class="home-institution-first-reading"><span>FIRST READING</span><strong>第一次了解公民秩序主义</strong><a href="/introduction-manual">阅读《公民秩序主义介绍手册》 →</a></div>
+  <nav class="home-institution-research" aria-label="理论与研究入口"><a class="home-institution-research__link" href="/civic-orderism">
+  <span class="home-institution-research__number">01</span>
+  <span class="home-institution-research__text">
+    <strong class="home-institution-research__title">公民秩序主义</strong>
+    <span class="home-institution-research__summary">政治路线与和平转轨框架</span>
+  </span>
+  <span class="home-institution-research__hint">
+    <span>进入栏目</span>
+    <span aria-hidden="true">→</span>
+  </span>
+</a>
+<a class="home-institution-research__link" href="/china">
+  <span class="home-institution-research__number">02</span>
+  <span class="home-institution-research__text">
+    <strong class="home-institution-research__title">解析中共</strong>
+    <span class="home-institution-research__summary">党国体系、官僚系统与现实政治分析</span>
+  </span>
+  <span class="home-institution-research__hint">
+    <span>进入栏目</span>
+    <span aria-hidden="true">→</span>
+  </span>
+</a>
+<a class="home-institution-research__link" href="/china-future">
+  <span class="home-institution-research__number">03</span>
+  <span class="home-institution-research__text">
+    <strong class="home-institution-research__title">中国未来</strong>
+    <span class="home-institution-research__summary">政治转轨与未来国家秩序</span>
+  </span>
+  <span class="home-institution-research__hint">
+    <span>进入栏目</span>
+    <span aria-hidden="true">→</span>
+  </span>
+</a></nav>
+  <div class="home-institution-first-reading">
+    <span class="home-institution-first-reading__label">FIRST READING</span>
+    <strong class="home-institution-first-reading__title">第一次了解公民秩序主义</strong>
+    <a href="/introduction-manual">
+      <span>阅读《公民秩序主义介绍手册》</span>
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
 </section>
 
 <section class="home-institution-contact" aria-labelledby="home-institution-contact-title">

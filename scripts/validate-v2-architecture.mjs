@@ -886,6 +886,9 @@ assert(
     homepageHeroHtml.includes('class="home-institution-document"') &&
     visiblePageText(homepageHeroHtml).includes("OFFICIAL DOCUMENT") &&
     visiblePageText(homepageHeroHtml).includes("CO-2026-002 · VERSION 1.0") &&
+    homepageHeroHtml.includes(
+      '<p class="home-institution-document__caption">OFFICIAL DOCUMENT · CO-2026-002 · VERSION 1.0</p>',
+    ) &&
     !homepageHeroHtml.includes("home-focus-document") &&
     !homepageHeroHtml.includes("Document ID"),
   "首页首屏没有以正式文件展示台承载唯一强视觉对象",
@@ -911,15 +914,11 @@ assert(
   "首页主要内容不是严格的四区域结构",
 );
 assert(
-  (homepageHeroHtml.match(/home-institution-status/g) ?? []).length === 1 &&
-    (homepageHeroHtml.match(/<dt>/g) ?? []).length === 4 &&
-    [
-      "CURRENT 组织建设",
-      "LEGAL 北美非营利组织筹备",
-      "GOVERNANCE 首届董事会筹备",
-      "DOCUMENT CO-2026-002",
-    ].every((item) => visiblePageText(homepageHeroHtml).includes(item)),
-  "首页首屏状态信息带不是四列机构状态导航",
+  !homepageMainHtml.includes("home-institution-status") &&
+    !homepageHeroHtml.includes("<dl") &&
+    !homepageHeroHtml.includes("<dt") &&
+    !homepageHeroHtml.includes("<dd"),
+  "首页首屏仍保留重复的四列状态信息带",
 );
 const homepagePreparationHtml =
   homepageMainHtml.match(
@@ -927,17 +926,26 @@ const homepagePreparationHtml =
   )?.[0] ?? "";
 assert(
   visiblePageText(homepagePreparationHtml).includes("当前组织工作") &&
-    visiblePageText(homepagePreparationHtml).includes("非营利组织筹备") &&
-    visiblePageText(homepagePreparationHtml).includes("首届董事会筹备") &&
-    visiblePageText(homepagePreparationHtml).includes("组织能力建设") &&
-    (homepagePreparationHtml.match(/<li>/g) ?? []).length === 3 &&
+    visiblePageText(homepagePreparationHtml).includes(
+      "FOUNDING BOARD PREPARATION",
+    ) &&
+    visiblePageText(homepagePreparationHtml).includes(
+      "公民秩序主义当前正在推进北美非营利组织及首届董事会筹备，并逐步建立长期组织运行所需要的法律、治理与人员基础",
+    ) &&
     homepagePreparationHtml.includes('data-slug="preparation"') &&
-    !homepagePreparationHtml.includes('data-slug="participate"') &&
+    homepagePreparationHtml.includes('data-slug="participate"') &&
+    (homepagePreparationHtml.match(/home-institution-section-link/g) ?? [])
+      .length === 2 &&
+    visiblePageText(homepagePreparationHtml).includes("董事会筹备 →") &&
+    visiblePageText(homepagePreparationHtml).includes("参与方式 →") &&
+    !homepagePreparationHtml.includes("<ol") &&
+    !homepagePreparationHtml.includes("<li") &&
+    !homepagePreparationHtml.includes("home-institution-progress") &&
     !homepagePreparationHtml.includes("home-institution-button") &&
     !visiblePageText(homepagePreparationHtml).includes(
       "董事会存在的第一个意义",
     ),
-  "首页当前组织工作没有保持为三条编辑式进展入口",
+  "首页当前组织工作没有收束为公告正文与两个入口",
 );
 const theoryHtml =
   homepageMainHtml.match(
@@ -945,19 +953,32 @@ const theoryHtml =
   )?.[0] ?? "";
 assert(
   (theoryHtml.match(/home-institution-research__link/g) ?? []).length === 3 &&
+    (theoryHtml.match(/home-institution-research__number/g) ?? []).length ===
+      3 &&
+    (theoryHtml.match(/home-institution-research__title/g) ?? []).length ===
+      3 &&
+    (theoryHtml.match(/home-institution-research__summary/g) ?? []).length ===
+      3 &&
+    (theoryHtml.match(/home-institution-research__hint/g) ?? []).length === 3 &&
     theoryHtml.includes('data-slug="civic-orderism"') &&
     theoryHtml.includes('data-slug="china"') &&
     theoryHtml.includes('data-slug="china-future"') &&
     theoryHtml.includes('data-slug="introduction-manual"') &&
     visiblePageText(theoryHtml).includes("第一次了解公民秩序主义") &&
     visiblePageText(theoryHtml).includes("阅读《公民秩序主义介绍手册》 →") &&
+    (visiblePageText(theoryHtml).match(/进入栏目 →/g) ?? []).length === 3 &&
     !theoryHtml.includes("<article") &&
     !theoryHtml.includes("<img") &&
     !theoryHtml.includes("<li>") &&
+    /home-institution-research__number[^>]*>01<\/span>\s+<span class="home-institution-research__text"/.test(
+      theoryHtml,
+    ) &&
+    theoryHtml.includes('class="home-institution-first-reading__label"') &&
+    theoryHtml.includes('class="home-institution-first-reading__title"') &&
     visiblePageText(theoryHtml).includes("01 公民秩序主义") &&
     visiblePageText(theoryHtml).includes("02 解析中共") &&
     visiblePageText(theoryHtml).includes("03 中国未来"),
-  "首页理论与研究没有保持为编号化研究索引",
+  "首页理论与研究没有保持为语义分离的编号化研究索引",
 );
 for (const removedHomepageText of [
   "为什么需要组织",
