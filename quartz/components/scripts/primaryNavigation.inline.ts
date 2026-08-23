@@ -1,10 +1,6 @@
 function setupPrimaryNavigation() {
-  for (const nav of document.querySelectorAll<HTMLElement>(
-    ".primary-navigation",
-  )) {
-    const toggle = nav.querySelector<HTMLButtonElement>(
-      ".primary-navigation__toggle",
-    );
+  for (const nav of document.querySelectorAll<HTMLElement>(".inst4-nav")) {
+    const toggle = nav.querySelector<HTMLButtonElement>(".inst4-nav__toggle");
     if (!toggle || toggle.dataset.bound === "true") continue;
     toggle.dataset.bound = "true";
 
@@ -29,40 +25,79 @@ function setupPrimaryNavigation() {
     };
     const onLinkClick = () => setOpen(false);
     const links = nav.querySelectorAll<HTMLAnchorElement>(
-      ".primary-navigation__links a",
+      ".inst4-nav__links a",
     );
-    const submenuToggles = nav.querySelectorAll<HTMLButtonElement>(
-      ".primary-navigation__submenu-toggle",
-    );
+    const onScroll = () => {
+      nav.classList.toggle("is-scrolled", window.scrollY > 8);
+    };
 
     toggle.addEventListener("click", onClick);
     document.addEventListener("pointerdown", onOutsidePointer);
     document.addEventListener("keydown", onKeyDown);
     links.forEach((link) => link.addEventListener("click", onLinkClick));
-    submenuToggles.forEach((submenuToggle) => {
-      if (submenuToggle.dataset.bound === "true") return;
-      submenuToggle.dataset.bound = "true";
-      const item = submenuToggle.closest<HTMLElement>(
-        ".primary-navigation__item",
-      );
-      const setSubmenu = (open: boolean) => {
-        submenuToggle.setAttribute("aria-expanded", String(open));
-        item?.setAttribute("data-submenu-open", String(open));
-      };
-      const onSubmenuClick = () => {
-        setSubmenu(submenuToggle.getAttribute("aria-expanded") !== "true");
-      };
-      submenuToggle.addEventListener("click", onSubmenuClick);
-      window.addCleanup(() =>
-        submenuToggle.removeEventListener("click", onSubmenuClick),
-      );
-    });
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
     window.addCleanup(() => {
       toggle.removeEventListener("click", onClick);
       document.removeEventListener("pointerdown", onOutsidePointer);
       document.removeEventListener("keydown", onKeyDown);
       links.forEach((link) => link.removeEventListener("click", onLinkClick));
+      window.removeEventListener("scroll", onScroll);
     });
+  }
+
+  // Header search trigger -> opens the shared Quartz search overlay.
+  for (const trigger of document.querySelectorAll<HTMLElement>(
+    "[data-inst4-search]",
+  )) {
+    if (trigger.dataset.bound === "true") continue;
+    trigger.dataset.bound = "true";
+    const openSearch = () => {
+      const container = document.querySelector<HTMLElement>(
+        ".search .search-container",
+      );
+      const bar = document.querySelector<HTMLInputElement>(
+        ".search .search-bar",
+      );
+      container?.classList.add("active");
+      bar?.focus();
+      for (const nav of document.querySelectorAll<HTMLElement>(".inst4-nav")) {
+        nav.dataset.open = "false";
+        nav
+          .querySelector<HTMLButtonElement>(".inst4-nav__toggle")
+          ?.setAttribute("aria-expanded", "false");
+      }
+    };
+    trigger.addEventListener("click", openSearch);
+    window.addCleanup(() => trigger.removeEventListener("click", openSearch));
+  }
+
+  // Restrained section reveal on the institutional homepage.
+  const revealTargets = document.querySelectorAll<HTMLElement>(
+    ".inst4-hero, .inst4-work, .inst4-research",
+  );
+  if (
+    revealTargets.length &&
+    !document.querySelector("[data-inst-reveal-bound]")
+  ) {
+    document.documentElement.setAttribute("data-inst-reveal-bound", "true");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          }
+        },
+        { rootMargin: "0px 0px -8% 0px", threshold: 0.05 },
+      );
+      revealTargets.forEach((target) => observer.observe(target));
+      window.addCleanup(() => observer.disconnect());
+    } else {
+      revealTargets.forEach((target) => target.classList.add("is-visible"));
+    }
   }
 
   for (const browser of document.querySelectorAll<HTMLElement>(

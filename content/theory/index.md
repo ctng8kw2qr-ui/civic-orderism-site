@@ -1,146 +1,185 @@
 ---
-title: "旧秩序失效"
+title: "研究"
 date: 2026-07-19
 updated: 2026-07-20
-description: "从政党政治、工业型治理与程序问责的结构性局限，理解信息化时代的政治转型问题。"
-contentType: "研究归档"
+description: "公民秩序主义的研究体系：理解现在、准备转轨、准备未来。"
+contentType: "栏目"
 status: published
 listed: true
 folderListed: true
 noindex: false
 ---
 
-# 旧秩序失效
+<div class="inst4 inst4l inst4l-research">
+  <section class="inst4l-hero">
+<p class="inst4-eyebrow">RESEARCH &amp; POLITICAL WORK</p>
+<h1 class="inst4l-title">研究</h1>
+<p class="inst4l-lead">公民秩序主义研究中国政治为什么正在变化、变化可以如何发生，以及变化之后国家如何继续运行。研究不是为评论而评论，而是为一条可执行的政治路线与制度建设建立认识基础。</p>
+  </section>
 
-本页汇集关于政党政治、工业型治理、程序问责与信息化社会结构变化的研究。第一次访问本站，建议先从 [[articles|阅读地图]] 选择阅读路线；已经明确研究方向的读者，可以直接浏览以下文章。
+  <section class="inst4l-section">
+  <div class="inst4l-section__head">
+<p class="inst4-eyebrow">研究框架</p>
+<h2 class="inst4l-section__title">从理解旧秩序，到准备新的政治秩序</h2>
+<p class="inst4l-section__desc">三个方向构成研究的核心阅读逻辑：理解现在，准备转轨，准备未来。</p>
+  </div>
+  <div class="inst4l-axes">
+<a class="inst4l-axis" href="/china/">
+  <span class="inst4l-axis__num" aria-hidden="true">01</span>
+  <span class="inst4l-axis__cell"><span class="inst4l-axis__phase">理解现在</span><span class="inst4l-axis__title">解析中共</span></span>
+  <span class="inst4l-axis__desc">解析中共如何运行、为何失灵，以及正在发生什么变化。完整研究程序见「解析中共」。</span>
+  <span class="inst4l-axis__arrow" aria-hidden="true">→</span>
+</a>
+<a class="inst4l-axis" href="/civic-orderism/">
+  <span class="inst4l-axis__num" aria-hidden="true">02</span>
+  <span class="inst4l-axis__cell"><span class="inst4l-axis__phase">准备转轨</span><span class="inst4l-axis__title">政治路线</span></span>
+  <span class="inst4l-axis__desc">理解旧秩序本身并不能产生新秩序。政治路线研究现实可执行、低阻力、保持国家连续性的和平转轨路径。</span>
+  <span class="inst4l-axis__arrow" aria-hidden="true">→</span>
+</a>
+<a class="inst4l-axis" href="/china-future/">
+  <span class="inst4l-axis__num" aria-hidden="true">03</span>
+  <span class="inst4l-axis__cell"><span class="inst4l-axis__phase">准备未来</span><span class="inst4l-axis__title">中国未来</span></span>
+  <span class="inst4l-axis__desc">政治转型最终必须回答国家如何继续运行，以及新的政治秩序如何建立。</span>
+  <span class="inst4l-axis__arrow" aria-hidden="true">→</span>
+</a>
+</div>
+</section>
 
-<div class="knowledge-browser" data-knowledge-browser data-page-size="10">
-<div class="knowledge-filters" aria-label="文章筛选">
-  <label>专题<select data-filter-topic><option value="">全部专题</option><option value="order-evaporation">秩序蒸发</option><option value="political-transition">中国政治转型</option></select></label>
-  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="political-debt">政治偿债</option><option value="state-system-upgrade">国家系统升级</option><option value="nonviolent-transition">非暴力转型</option><option value="political-route">政治路线</option><option value="organizational-credit">组织信用</option><option value="bureaucratic-shock">官僚系统休克</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option><option value="fiscal-debt">财政偿债</option><option value="party-state-stress">党国应力</option><option value="political-control-governance-divergence">政治控制—治理效能背离</option></select></label>
-  <button type="button" data-filter-reset>重置</button>
+  <section class="inst4l-section">
+  <div class="inst4l-section__head">
+<p class="inst4-eyebrow">精选研究</p>
+<h2 class="inst4l-section__title">当前重点</h2>
+<p class="inst4l-section__desc">当前正在推进的重点研究。</p>
+  </div>
+  <div class="inst4l-list">
+<a class="inst4l-row" href="/theory/party-state-structural-failure">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">解析中共</span><span class="inst4l-row__title">党国系统的结构性失效：一个组织诊断</span></span>
+  <span class="inst4l-row__desc">理解中共的未来，存在两种常见误区。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+<a class="inst4l-row" href="/china/xi-power-centralization">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">解析中共</span><span class="inst4l-row__title">习近平权力集中背后的系统逻辑</span></span>
+  <span class="inst4l-row__desc">从中共官僚系统的资源收缩、风险感知与组织防御逻辑，解释习近平权力集中的结构性来源。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+<a class="inst4l-row" href="/civic-orderism/peaceful-state-transition">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">公民秩序主义</span><span class="inst4l-row__title">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</span></span>
+  <span class="inst4l-row__desc">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不按政治身份实施普遍追责的转轨道路。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+<a class="inst4l-row" href="/china-stage/ccp-second-reform-opening-possibility">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">中国未来</span><span class="inst4l-row__title">中共还有没有二次改开的可能？</span></span>
+  <span class="inst4l-row__desc">本文认为，讨论中共是否可能二次改开，真正关键不是领导人是否愿意改革，而是中共是否再次走到类似1978年的组织绝境。第一次改革开放来自旧路线破产、共同求生和全球化窗口；今天面对的则是繁荣退潮后的损失分配，因此二次改开的门槛更高。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+<a class="inst4l-row" href="/china-stage/china-manufacturing-cannot-stop">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">中国未来</span><span class="inst4l-row__title">中国制造业不是造不出来，而是停不下来</span></span>
+  <span class="inst4l-row__desc">中国制造业的困境不是简单的订单外迁或产业衰退，而是生产能力、地方动员、债务周期、银行体系和政治责任机制共同形成的系统性困局。真正的问题不是造不出来，而是越能造、越难停、越难赚钱，最后指向秩序本身的失灵。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
 </div>
-<div class="knowledge-grid">
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="order-evaporation high-fragility political-debt state-system-upgrade">
-  <p class="knowledge-card__meta"><span>2026-06-13</span><span>7 分钟阅读</span></p>
-  <h3><a href="/theory/democracy-still-exists-but-cannot-penetrate-reality">民主还在，但越来越难穿透现实</a></h3>
-  <p class="knowledge-card__summary">本文以加拿大为样本，分析信息化时代西方政党政治正在面对的结构性困境：政党垄断议题入口、与大资本形成共生、被算法推向空洞化，而公民又被碎片化和原子化困住，导致民主程序仍在，却越来越难真正穿透现实结构。</p>
-  <p class="knowledge-card__chips"><span>概念：秩序蒸发</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="state-system-upgrade">
-  <p class="knowledge-card__meta"><span>2026-06-08</span><span>7 分钟阅读</span></p>
-  <h3><a href="/theory/end-of-party-politics-in-information-age">政党的历史终结：信息化时代为什么不再需要政党垄断政治入口</a></h3>
-  <p class="knowledge-card__summary">本文分析政党政治在低信息、低流动、低技术时代的历史合理性，并指出信息化时代已经部分替代政党的政治基础设施功能，而政党的组织约束功能也可以由公共制度承接。因此，政党可以继续存在，但不应继续垄断政治入口。</p>
-  <p class="knowledge-card__chips"><span>概念：国家系统升级</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation high-fragility political-debt nonviolent-transition state-system-upgrade political-route">
-  <p class="knowledge-card__meta"><span>2026-05-30</span><span>6 分钟阅读</span></p>
-  <h3><a href="/theory/social-change-dynamics-when-system-no-longer-worth-it">社会变革动力学：当所有人都觉得“不值了”</a></h3>
-  <p class="knowledge-card__summary">本文从利益链条、外部环境、精英分裂、信息透明、集体行动困境与情感链接断裂等角度，分析社会变革不是浪漫的觉醒，而是当维持旧体系的代价超过推倒旧体系的代价后，社会进入倒计时的动力学过程。</p>
-  <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
-  <p class="knowledge-card__meta"><span>2026-05-30</span><span>7 分钟阅读</span></p>
-  <h3><a href="/theory/ccp-completed-historical-task-refuses-exit">中共完成了历史任务，但拒绝被历史淘汰</a></h3>
-  <p class="knowledge-card__summary">本文从文明发展史角度重新定位中共，认为它不是中国历史的偶然灾难，而是中国迟到工业化过程中形成的高压组织工具。它曾经完成把农业中国压入工业时代的历史任务，但在信息化时代拒绝退场，因此从历史工具变成文明阻碍。</p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation organizational-credit high-fragility political-debt">
-  <p class="knowledge-card__meta"><span>2026-05-30</span><span>5 分钟阅读</span></p>
-  <h3><a href="/theory/organizational-collapse-begins-with-loss-of-institutional-trust">组织的坍塌，始于制度信任的瓦解</a></h3>
-  <p class="knowledge-card__summary">本文从门阀政治、九品中正制、东晋政治与《红楼梦》中的贾府败落出发，分析当制度信任被关系依附取代后，组织如何逐渐空心化、犬儒化，并最终在看似突然的危机中坍塌。</p>
-  <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
-  <p class="knowledge-card__meta"><span>2026-05-14</span><span>9 分钟阅读</span></p>
-  <h3><a href="/theory/why-party-politics-is-becoming-a-low-dimensional-function">为什么政党政治越来越像低维函数</a></h3>
-  <p class="knowledge-card__summary">政党政治并非从来没有价值，而是它所对应的社会耦合模型正在过时。它曾经适用于问题之间相对独立、主要矛盾还能被少数主线概括的时代；但今天，社会已经进入多节点、多反馈、高耦合状态，继续要求政党政治独自承担全部复杂性处理，只会造成系统性误算。</p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock ruling-techniques crisis-management order-evaporation high-fragility political-debt">
-  <p class="knowledge-card__meta"><span>2026-05-12</span><span>10 分钟阅读</span></p>
-  <h3><a href="/theory/us-industrial-system-cannot-carry-information-age">美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代</a></h3>
-  <p class="knowledge-card__summary">本文从制度适配角度分析美国危机：问题不只是民主或专制之争，而是工业时代形成的政治机器，正在难以承载信息化时代的社会结构、传播结构与冲突结构。</p>
-  <p class="knowledge-card__chips"><span>概念：官僚系统休克</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="order-evaporation high-fragility political-debt state-system-upgrade">
-  <p class="knowledge-card__meta"><span>2026-05-12</span><span>14 分钟阅读</span></p>
-  <h3><a href="/theory/us-separation-of-powers-integrative-capacity-crisis">美国三权分立的真正危机，不是分权，而是失去统合能力</a></h3>
-  <p class="knowledge-card__summary">本文指出美国三权分立的真正危机不在于分权原则本身，而在于支撑分权稳定运行的统合性前提正在系统性流失。</p>
-  <p class="knowledge-card__chips"><span>概念：秩序蒸发</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
-  <p class="knowledge-card__meta"><span>2026-05-12</span><span>15 分钟阅读</span></p>
-  <h3><a href="/theory/information-age-erodes-us-integrative-capacity">为什么信息化时代正在系统性瓦解美国的统合能力</a></h3>
-  <p class="knowledge-card__summary">本文分析信息化时代如何通过共同现实破碎、平台奖励机制、媒体中枢衰退、地方整合层空心化和妥协空间压缩，系统性瓦解美国的统合能力。</p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="fiscal-debt political-debt order-evaporation state-system-upgrade">
-  <p class="knowledge-card__meta"><span>2026-05-11</span><span>16 分钟阅读</span></p>
-  <h3><a href="/theory/us-supreme-court-partisan-final-battleground">美国最高法院为何滑向党争终局战场</a></h3>
-  <p class="knowledge-card__summary">本文从三权分立、终身制、席位争夺、立法失能和信息化放大效应出发，分析美国最高法院为什么正承受从中立裁判者滑向党争终局战场的结构性压力。</p>
-  <p class="knowledge-card__chips"><span>概念：财政偿债</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
-  <p class="knowledge-card__meta"><span>2026-05-11</span><span>7 分钟阅读</span></p>
-  <h3><a href="/theory/costly-industrial-governance-information-age">一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价</a></h3>
-  <p class="knowledge-card__summary">本文从工业型治理的历史合理性出发，分析它在信息化时代为什么会压制反馈、尝试与协作信任，并把越来越高的系统成本转移给普通人。</p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="party-state-stress organizational-credit bureaucratic-shock order-evaporation high-fragility">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>10 分钟阅读</span></p>
-  <h3><a href="/theory/party-state-structural-failure">党国系统的结构性失效：一个组织诊断</a></h3>
-  <p class="knowledge-card__summary">理解中共的未来，存在两种常见误区。</p>
-  <p class="knowledge-card__chips"><span>概念：党国应力</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock ruling-techniques crisis-management fiscal-debt political-debt order-evaporation">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>4 分钟阅读</span></p>
-  <h3><a href="/theory/overseas-political-movements-fail">海外政治运动为什么一事无成？</a></h3>
-  <p class="knowledge-card__summary">分析海外中文政治运动长期低效与结构性失败的原因。</p>
-  <p class="knowledge-card__chips"><span>概念：官僚系统休克</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="order-evaporation organizational-credit political-control-governance-divergence">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>7 分钟阅读</span></p>
-  <h3><a href="/theory/high-rigidity-system-ccp">解析高刚性体制：中共无以为继的结构性根因</a></h3>
-  <p class="knowledge-card__summary">中共体制无以为继的根因，并不在外部环境，也不在所谓敌对势力的反对。</p>
-  <p class="knowledge-card__chips"><span>概念：秩序蒸发</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>11 分钟阅读</span></p>
-  <h3><a href="/theory/internal-change-external-change">内变引外变：现代政治为何走到十字路口</a></h3>
-  <p class="knowledge-card__summary">现代政治已经走到了一个历史性的十字路口。</p>
-  <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：非暴力转型</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation bureaucratic-shock high-fragility political-debt">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>9 分钟阅读</span></p>
-  <h3><a href="/theory/ccp-high-fragility-dysfunction">它还在，但越来越靠不住：为什么中共更可能“失灵”而非“倒台”</a></h3>
-  <p class="knowledge-card__summary">谈到中共的未来，人们习惯在两个极端之间摇摆：</p>
-  <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="bureaucratic-shock political-control-governance-divergence">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>10 分钟阅读</span></p>
-  <h3><a href="/theory/no-accountability-lie-flat-mentality">为什么“无人担责的躺平心态”会从根本上摧毁一个超大型执政组织</a></h3>
-  <p class="knowledge-card__summary">现代社会的日常问题洪流、传染机制与三段式阈值模型</p>
-  <p class="knowledge-card__chips"><span>概念：官僚系统休克</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>8 分钟阅读</span></p>
-  <h3><a href="/theory/procedural-accountability-organized-power">为什么程序性问责，常常敌不过组织化权力</a></h3>
-  <p class="knowledge-card__summary">加拿大式代议政治的深层困境</p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>13 分钟阅读</span></p>
-  <h3><a href="/theory/trapped-by-process">我们不是被贫穷困住，而是被流程困住</a></h3>
-  <p class="knowledge-card__summary">高生产力时代的制度摩擦与生活窒息</p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="order-evaporation high-fragility political-debt fiscal-debt nonviolent-transition state-system-upgrade">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>18 分钟阅读</span></p>
-  <h3><a href="/theory/modern-social-syndrome">现代社会候群症</a></h3>
-  <p class="knowledge-card__summary">当权力从“城堡”变成“网”，普通人为何越来越无力</p>
-  <p class="knowledge-card__chips"><span>概念：秩序蒸发</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="political-debt state-system-upgrade">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>9 分钟阅读</span></p>
-  <h3><a href="/theory/ai-monitoring-organizational-friction">AI监控并不降低组织摩擦：一份冷静推演</a></h3>
-  <p class="knowledge-card__summary">关于“用 AI 降低组织内部摩擦、提高节点效率”的设想，常见叙事是：</p>
-  <p class="knowledge-card__chips"><span>概念：政治偿债</span></p>
-</article>
+</section>
+
+  <section class="inst4l-section">
+  <div class="inst4l-section__head">
+<p class="inst4-eyebrow">专题</p>
+<h2 class="inst4l-section__title">研究专题</h2>
+<p class="inst4l-section__desc">围绕持续性政治问题组织长期研究，而不是按照新闻事件分类。</p>
+  </div>
+  <div class="inst4l-list">
+<a class="inst4l-row" href="/topics/political-transition">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">专题 · 6 篇研究</span><span class="inst4l-row__title">中国政治转型</span></span>
+  <span class="inst4l-row__desc">讨论低冲突转型、国家重组与制度接续的现实路径。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+<a class="inst4l-row" href="/topics/bureaucratic-system">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">专题 · 4 篇研究</span><span class="inst4l-row__title">官僚系统</span></span>
+  <span class="inst4l-row__desc">研究整肃、问责、避责与多头治理如何改变官僚系统的行为。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+<a class="inst4l-row" href="/topics/order-evaporation">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">专题 · 6 篇研究</span><span class="inst4l-row__title">秩序蒸发</span></span>
+  <span class="inst4l-row__desc">观察制度形式仍在、实际协作与可信承诺却逐步失效的过程。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+<a class="inst4l-row" href="/topics/second-reform">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">专题 · 4 篇研究</span><span class="inst4l-row__title">二次改开</span></span>
+  <span class="inst4l-row__desc">讨论改革窗口是否仍存在，以及第二次改革开放面对的组织约束。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
 </div>
-<div class="knowledge-pagination" aria-label="文章分页"><button type="button" data-page-prev>上一页</button><span data-page-status></span><button type="button" data-page-next>下一页</button></div>
+</section>
+
+  <div class="inst4l-index-links">
+<p class="inst4l-link"><a href="/topics/">浏览全部研究专题 <span aria-hidden="true">→</span></a></p>
+  </div>
+
+  <section class="inst4l-section">
+  <div class="inst4l-section__head">
+<p class="inst4-eyebrow">核心概念</p>
+<h2 class="inst4l-section__title">核心概念</h2>
+<p class="inst4l-section__desc">公民秩序主义使用这些概念理解中国政治变化与国家秩序。</p>
+  </div>
+  <div class="inst4l-list">
+<a class="inst4l-row" href="/concepts/party-state-stress">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta"></span><span class="inst4l-row__title">党国应力</span></span>
+  <span class="inst4l-row__desc">党的政治控制逻辑与国家治理逻辑长期重叠后，不断积累的结构性张力。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+<a class="inst4l-row" href="/concepts/bureaucratic-shock">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta"></span><span class="inst4l-row__title">官僚系统休克</span></span>
+  <span class="inst4l-row__desc">官僚系统在高风险、强问责和低授权环境中出现的集体行动冻结。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+<a class="inst4l-row" href="/concepts/order-evaporation">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta"></span><span class="inst4l-row__title">秩序蒸发</span></span>
+  <span class="inst4l-row__desc">制度形式仍然存在，但可信承诺、协作能力和社会预期逐步流失的过程。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+<a class="inst4l-row" href="/concepts/high-fragility">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta"></span><span class="inst4l-row__title">高脆弱态</span></span>
+  <span class="inst4l-row__desc">系统表面高度集中和稳定，实际对少数节点、资源或决策失误异常敏感的状态。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+<a class="inst4l-row" href="/concepts/security-purge-recentralization-cycle">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta"></span><span class="inst4l-row__title">安全化—清洗—再集中—再失灵模型</span></span>
+  <span class="inst4l-row__desc">安全化推动组织清洗和权力再集中，而再集中又削弱治理反馈并产生新一轮失灵的循环模型。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+<a class="inst4l-row" href="/concepts/organizational-credit">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta"></span><span class="inst4l-row__title">组织信用</span></span>
+  <span class="inst4l-row__desc">组织能否持续兑现承诺、分配责任并让成员相信长期合作仍然有意义的能力。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+</div>
+</section>
+
+  <div class="inst4l-index-links">
+<p class="inst4l-link"><a href="/concepts/">浏览全部核心概念 <span aria-hidden="true">→</span></a></p>
+  </div>
+
+  <section class="inst4l-section">
+  <div class="inst4l-section__head">
+<p class="inst4-eyebrow">阅读</p>
+<h2 class="inst4l-section__title">继续阅读</h2>
+    
+  </div>
+  <div class="inst4l-list">
+<a class="inst4l-row" href="/articles/">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">阅读路线</span><span class="inst4l-row__title">阅读地图</span></span>
+  <span class="inst4l-row__desc">第一次来到这里，选择一条适合自己的阅读路线。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+<a class="inst4l-row" href="/articles/all">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">索引</span><span class="inst4l-row__title">全部文章</span></span>
+  <span class="inst4l-row__desc">按栏目浏览全部已发布研究。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+<a class="inst4l-row" href="/china-future/">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">研究</span><span class="inst4l-row__title">中国未来</span></span>
+  <span class="inst4l-row__desc">政治转型之后，国家如何继续运行，以及新的政治秩序如何建立。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+</div>
+</section>
 </div>

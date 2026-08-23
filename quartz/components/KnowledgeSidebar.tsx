@@ -61,6 +61,9 @@ const KnowledgeSidebar: QuartzComponent = ({
   const researchExpanded =
     isActive("/theory") || researchSubLinks.some((link) => isActive(link.href));
 
+  // The institutional homepage does not carry the knowledge sidebar.
+  if (slug === "index") return null;
+
   return (
     <nav class="knowledge-sidebar" aria-label="站点结构">
       <p class="knowledge-sidebar__label">栏目</p>

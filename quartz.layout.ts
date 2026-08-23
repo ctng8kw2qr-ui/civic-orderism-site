@@ -17,13 +17,33 @@ const institutionalPageSlugs = new Set([
 
 const shouldShowContentMeta = (page: QuartzComponentProps) => {
   const slug = (page.fileData.slug ?? "").replace(/\/index$/, "");
+  const isTopicOrConceptPage =
+    slug.startsWith("topics/") || slug.startsWith("concepts/");
   return (
     slug !== "index" &&
     slug !== "articles" &&
     slug !== "articles/all" &&
-    !institutionalPageSlugs.has(slug)
+    !institutionalPageSlugs.has(slug) &&
+    !landingPageSlugs.has(slug) &&
+    !isTopicOrConceptPage
   );
 };
+
+const landingPageSlugs = new Set([
+  "about",
+  "theory",
+  "civic-orderism",
+  "china",
+  "china-future",
+  "china-stage",
+  "institution",
+  "institution-design",
+  "topics",
+  "concepts",
+  "start-here",
+  "preparation",
+  "participate",
+]);
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -35,34 +55,41 @@ export const sharedPageComponents: SharedLayout = {
     Component.ArticleEndingCta(),
     Component.ConditionalRender({
       component: Component.ManualModals(),
-      condition: (page) => page.fileData.slug === "index",
+      condition: () => false,
     }),
     Component.ConditionalRender({
       component: Component.ArticleAttribution(),
       condition: isArticleContentPage,
     }),
+    Component.Search(),
   ],
   footer: Component.Footer({
-    brand: "公民秩序主义 · Civic Orderism",
-    copyright: "© 2026 Civic Orderism / 公民秩序主义",
-    links: {
-      董事会筹备: "/preparation",
-      政治路线: "/civic-orderism",
-      理论研究: "/theory",
-      关于: "/about",
-      联系: "/about#联系方式",
+    brand: "CIVIC ORDERISM",
+    nameZh: "公民秩序主义",
+    tagline: "北美非营利法人及首届董事会筹备中",
+    navLinks: [
+      { label: "关于", href: "/about" },
+      { label: "研究", href: "/theory" },
+      { label: "政治路线", href: "/civic-orderism" },
+      { label: "董事会筹备", href: "/preparation" },
+    ],
+    contact: {
+      email: "civicorderism@gmail.com",
+      emailLabel: "civicorderism@gmail.com",
+      secondaryEmail: "citizenorder@proton.me",
+      secondaryEmailLabel: "citizenorder@proton.me",
+      x: "https://x.com/CivicOrderism",
+      xLabel: "@CivicOrderism",
+      youtube: "https://www.youtube.com/@CivicOrderism",
+      youtubeLabel: "Civic Orderism",
     },
-    secondaryLinks: {
-      "5分钟了解": "/start-here",
-      阅读地图: "/articles",
-    },
+    copyright: "© 2026 Civic Orderism",
   }),
 };
 
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
-    Component.ArticleReadingProgress(),
     Component.ConditionalRender({
       component: Component.Breadcrumbs({ rootName: "首页", spacerSymbol: "/" }),
       condition: (page) => page.fileData.slug !== "index",
@@ -83,21 +110,7 @@ export const defaultContentPageLayout: PageLayout = {
       condition: isArticleContentPage,
     }),
   ],
-  left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [
-        {
-          Component: Component.Search(),
-          grow: true,
-        },
-        { Component: Component.Darkmode() },
-        { Component: Component.ReaderMode() },
-      ],
-    }),
-    Component.KnowledgeSidebar(),
-  ],
+  left: [],
   right: [
     Component.ConditionalRender({
       component: Component.DesktopOnly(Component.TableOfContents()),
@@ -115,19 +128,6 @@ export const defaultListPageLayout: PageLayout = {
       condition: shouldShowContentMeta,
     }),
   ],
-  left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [
-        {
-          Component: Component.Search(),
-          grow: true,
-        },
-        { Component: Component.Darkmode() },
-      ],
-    }),
-    Component.KnowledgeSidebar(),
-  ],
+  left: [],
   right: [],
 };

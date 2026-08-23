@@ -1,7 +1,6 @@
 [
-  { "label": "首页", "href": "/" },
-  { "label": "董事会筹备", "href": "/preparation" },
+  { "label": "当前工作", "href": "/preparation" },
   { "label": "政治路线", "href": "/civic-orderism" },
-  { "label": "理论研究", "href": "/theory" },
+  { "label": "研究与出版", "href": "/theory" },
   { "label": "关于", "href": "/about" }
 ]

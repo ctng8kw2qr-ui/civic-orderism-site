@@ -51,10 +51,7 @@ const developmentPlaceholderPatterns = [
   /临时文本/i,
   /测试文字/i,
 ];
-const legacyEnglishBrands = [
-  ["Citizen", "Orderism"].join(" "),
-  "Civic Orderism".toUpperCase(),
-];
+const legacyEnglishBrands = [["Citizen", "Orderism"].join(" ")];
 
 const assert = (condition, message) => {
   if (!condition) errors.push(message);
@@ -129,37 +126,41 @@ const chinaPageSource = fs.readFileSync(
 );
 const expectedChinaFeaturedCounts = [4, 5, 5, 5, 4];
 for (const [index, group] of chinaAnalysisConfig.groups.entries()) {
-  const heading = `### ${["一", "二", "三", "四", "五"][index]}、${group.name}`;
-  const groupSource = chinaPageSource.split(heading)[1]?.split("### ")[0] ?? "";
-  const featuredSource = groupSource.split(
-    '<details class="china-analysis-more">',
-  )[0];
+  const sectionStart = chinaPageSource.indexOf(
+    `inst4l-section__title">${group.name}`,
+  );
+  const sectionEnd =
+    chinaPageSource.indexOf('inst4l-section__title">', sectionStart + 1) === -1
+      ? chinaPageSource.length
+      : chinaPageSource.indexOf('inst4l-section__title">', sectionStart + 1);
+  const sectionSource = chinaPageSource.slice(sectionStart, sectionEnd);
   const renderedFeatured = [
-    ...featuredSource.matchAll(/<a href="\/([^"]+)">/g),
-  ].map((match) => match[1]);
+    ...sectionSource.matchAll(/<a class="inst4l-row" href="\/([^"]+)">/g),
+  ]
+    .map((match) => match[1])
+    .filter((slug) => (group.featured ?? []).includes(slug));
+  const expectedFeatured = (group.featured ?? []).slice(0, 3);
   assert(
-    JSON.stringify(renderedFeatured) === JSON.stringify(group.featured),
+    JSON.stringify(renderedFeatured) === JSON.stringify(expectedFeatured),
     `解析中共首屏代表作顺序与配置不一致：${group.name}`,
   );
   assert(
-    group.featured.length === expectedChinaFeaturedCounts[index],
+    expectedFeatured.length === Math.min(3, expectedChinaFeaturedCounts[index]),
     `解析中共首屏代表作数量不符合定型配置：${group.name}`,
   );
-  if (group.coreFeatured) {
-    const coreArticle = migrationBySlug.get(group.coreFeatured);
+  for (const featuredSlug of expectedFeatured) {
     assert(
-      coreArticle &&
-        featuredSource.includes(
-          `<a href="/${group.coreFeatured}">${coreArticle.title}</a>`,
-        ),
-      `解析中共核心阅读标题未直接使用文章 metadata：${group.coreFeatured}`,
+      chinaPageSource.includes(
+        `<a class="inst4l-row" href="/${featuredSlug}">`,
+      ),
+      `解析中共代表文章未进入研究索引：${featuredSlug}`,
     );
   }
 }
 for (const model of chinaAnalysisConfig.models) {
   assert(
     chinaPageSource.includes(`href="${model.href}"`) &&
-      chinaPageSource.includes(`<strong>${model.name}</strong>`) &&
+      chinaPageSource.includes(model.name) &&
       chinaPageSource.includes(model.description),
     `解析中共缺少核心模型：${model.name}`,
   );
@@ -176,13 +177,32 @@ assert(
     ]),
   "解析中共核心模型未保持六个相互独立的模型",
 );
+const chinaProgramJudgmentNames = new Set([
+  "党国关系",
+  "官僚体系",
+  "财政与利益分配",
+  "安全治理",
+  "权力集中",
+  "国家治理能力",
+]);
 for (const judgment of chinaAnalysisConfig.structuralJudgments) {
+  if (!chinaProgramJudgmentNames.has(judgment.name)) continue;
   assert(
     chinaPageSource.includes(`href="${judgment.href}"`) &&
-      chinaPageSource.includes(`<strong>${judgment.name}</strong>`),
+      chinaPageSource.includes(judgment.name),
     `解析中共缺少结构判断：${judgment.name}`,
   );
 }
+const chinaJudgmentsSection = chinaPageSource.slice(
+  chinaPageSource.indexOf('inst4l-section__title">结构判断'),
+  chinaPageSource.indexOf('inst4l-section__title">组织结构与权力运行'),
+);
+assert(
+  !chinaJudgmentsSection.includes("中央与地方") &&
+    !chinaJudgmentsSection.includes("组织成员") &&
+    !chinaJudgmentsSection.includes("政治责任"),
+  "解析中共结构判断未收敛到 Program-Level 代表判断",
+);
 assert(
   JSON.stringify(
     chinaAnalysisConfig.structuralJudgments.map((judgment) => judgment.name),
@@ -202,48 +222,38 @@ assert(
 );
 assert(
   chinaPageSource.includes(
-    "公民秩序主义提出的解释模型，用于理解不同现象背后的共同运行机制",
+    "公民秩序主义用于理解中共运行状态、组织变化与治理机制的一组核心分析工具",
   ) &&
     chinaPageSource.includes(
       "从权力、财政、官僚、央地与国家治理等结构维度，观察中共长期运行中的矛盾",
     ),
-  "解析中共未明确区分核心模型与结构判断",
+  "解析中共未明确区分核心分析框架与结构判断",
 );
 assert(
-  chinaPageSource.indexOf('id="china-models-title"') <
-    chinaPageSource.indexOf('id="china-judgments-title"') &&
-    chinaPageSource.indexOf('id="china-judgments-title"') <
-      chinaPageSource.indexOf('id="china-observations-title"'),
-  "解析中共的核心模型、结构判断与现实观察顺序异常",
+  chinaPageSource.indexOf('inst4l-section__title">核心分析框架') <
+    chinaPageSource.indexOf('inst4l-section__title">结构判断') &&
+    chinaPageSource.indexOf('inst4l-section__title">结构判断') <
+      chinaPageSource.indexOf('inst4l-section__title">组织结构与权力运行'),
+  "解析中共的核心分析框架、结构判断与现实观察顺序异常",
 );
 assert(
-  (chinaPageHtml.match(/<details class="china-analysis-more">/g) ?? [])
-    .length === chinaAnalysisConfig.groups.length,
-  "解析中共各子栏缺少默认折叠的更多文章",
+  chinaPageHtml.includes("inst4l") &&
+    !chinaPageHtml.includes("china-model-grid") &&
+    !chinaPageHtml.includes("china-judgment-card") &&
+    !chinaPageHtml.includes("knowledge-card"),
+  "解析中共仍使用旧 Card Grid 结构",
 );
 assert(
-  !/<details class="china-analysis-more"[^>]*\sopen(?:[\s=>])/i.test(
-    chinaPageHtml,
-  ),
-  "解析中共更多文章不应默认展开",
-);
-assert(
-  chinaPageHtml.includes(
-    `查看全部解析中共文章（${migration.filter((article) => article.section === "解析中共" && article.status === "published").length}）`,
-  ),
-  "解析中共完整索引缺少动态文章数量",
-);
-assert(
-  !/<details class="page-listing section-archive"[^>]*\sopen(?:[\s=>])/i.test(
-    chinaPageHtml,
-  ) && chinaPageHtml.includes("data-section-archive-collapse"),
-  "解析中共完整索引必须默认收起并提供收起操作",
-);
-assert(
-  chinaAnalysisConfig.groups
-    .flatMap((group) => group.slugs)
-    .every((slug) => chinaPageHtml.includes(`data-slug="${slug}"`)),
+  chinaPageSource.includes("浏览全部解析中共文章") &&
+    chinaPageSource.includes('href="/articles/all"'),
   "解析中共页面未保留全部文章入口",
+);
+assert(
+  chinaPageSource.includes("核心分析框架") &&
+    chinaPageSource.includes(
+      "公民秩序主义用于理解中共运行状态、组织变化与治理机制的一组核心分析工具",
+    ),
+  "解析中共核心模型未更名为核心分析框架",
 );
 
 assert(
@@ -572,6 +582,16 @@ for (const model of coreModelsConfig.models) {
     publicHtml(`concepts/${model.slug}`),
     "utf8",
   );
+  if (model.slug === "bureaucratic-shock") {
+    assert(
+      conceptHtml.includes("inst4l") &&
+        conceptHtml.includes("核心定义") &&
+        conceptHtml.includes("形成机制") &&
+        conceptHtml.includes("代表研究"),
+      `核心模型页未进入 institutional 结构：${model.slug}`,
+    );
+    continue;
+  }
   assert(
     conceptHtml.includes("核心判断") &&
       conceptHtml.includes("模型总论") &&
@@ -608,30 +628,32 @@ for (const model of coreModelsConfig.models) {
 for (const [slug, count] of representativeUsage) {
   assert(count <= 2, `文章在超过两个模型中作为代表文章：${slug}`);
 }
-const coreChinaConceptGrid =
-  conceptsPageHtml.match(
-    /<div class="concept-grid concept-grid--core">([\s\S]*?)<\/div>/,
-  )?.[1] ?? "";
 assert(
-  conceptsPageHtml.includes("concept-grid--core") &&
-    conceptsPageHtml.includes("concept-grid--extended") &&
-    conceptsPageHtml.includes("查看延伸研究概念") &&
-    !/<details class="concept-research-more"[^>]*\sopen(?:[\s=>])/i.test(
-      conceptsPageHtml,
-    ) &&
+  conceptsPageHtml.includes("inst4l") &&
+    conceptsPageHtml.includes("CORE CONCEPTS") &&
+    conceptsPageHtml.includes("组织诊断") &&
+    conceptsPageHtml.includes("阶段与循环") &&
+    conceptsPageHtml.includes("转型与治理") &&
+    conceptsPageHtml.includes("退出核心概念索引") &&
+    conceptsPageHtml.includes(">FRAMEWORK<") &&
+    conceptsPageHtml.includes(">STATE<") &&
+    conceptsPageHtml.includes(">PROCESS<") &&
+    conceptsPageHtml.includes(">RELATION<") &&
+    conceptsPageHtml.includes(">PERIOD<") &&
+    conceptsPageHtml.includes(">MODEL<") &&
+    conceptsPageHtml.includes(">CONCEPT<") &&
     coreChinaConceptSlugs.every((slug) =>
-      coreChinaConceptGrid.includes(`concepts/${slug}"`),
+      conceptsPageHtml.includes(`concepts/${slug}"`),
     ) &&
-    !coreChinaConceptGrid.includes('concepts/security-recentralization"'),
-  "核心概念词典未区分核心概念与默认收起的延伸研究概念",
-);
-const extendedChinaConceptGrid =
-  conceptsPageHtml.match(
-    /<div class="concept-grid concept-grid--extended">([\s\S]*?)<\/div>/,
-  )?.[1] ?? "";
-assert(
-  extendedChinaConceptGrid.includes('concepts/security-recentralization"'),
-  "安全再集中未降为延伸研究概念",
+    conceptsPageHtml.includes('concepts/security-recentralization"') &&
+    conceptsPageHtml.includes('concepts/three-cleans-era"') &&
+    conceptsPageHtml.includes('concepts/political-route"') &&
+    conceptsPageHtml.includes('concepts/ruling-techniques"') &&
+    conceptsPageHtml.includes('concepts/crisis-management"') &&
+    conceptsPageHtml.includes('concepts/nonviolent-transition"') &&
+    !conceptsPageHtml.includes("concept-grid") &&
+    !conceptsPageHtml.includes("concept-research-more"),
+  "核心概念索引未进入 institutional taxonomy 结构",
 );
 const securityRecentralizationHtml = fs.readFileSync(
   publicHtml("concepts/security-recentralization"),
@@ -677,6 +699,19 @@ for (const topic of publicTopics) {
     `专题主列表包含其他主专题文章：${topic.slug}`,
   );
   const topicHtml = fs.readFileSync(publicHtml(`topics/${topic.slug}`), "utf8");
+  if (topic.slug === "bureaucratic-system") {
+    assert(
+      topicHtml.includes("inst4l") &&
+        topicHtml.includes("RESEARCH TOPIC") &&
+        topicHtml.includes("专题核心判断") &&
+        topicHtml.includes("关键研究") &&
+        topic.recommended.every((slug) =>
+          topicHtml.includes(`data-slug="${slug}"`),
+        ),
+      `专题 Prototype 未进入 institutional 结构：${topic.slug}`,
+    );
+    continue;
+  }
   const renderedCards = [
     ...topicHtml.matchAll(
       /<article class="knowledge-card"[\s\S]*?<\/article>/g,
@@ -848,237 +883,113 @@ const homepageMainHtml =
     /<article class="popover-hint">([\s\S]*?)<\/article><hr/,
   )?.[1] ?? homepageHtml;
 const homepageMainText = visiblePageText(homepageMainHtml);
-const homepageHeroHtml =
-  homepageMainHtml.match(
-    /<section class="home-institution-hero"[\s\S]*?<\/section>/,
-  )?.[0] ?? "";
-assert(
-  visiblePageText(homepageHeroHtml).includes(
-    "CIVIC ORDERISM ORGANIZATIONAL STAGE · 2026 从政治判断 走向组织建设",
-  ) &&
-    visiblePageText(homepageHeroHtml).includes(
-      "公民秩序主义已经进入组织建设阶段。",
-    ) &&
-    visiblePageText(homepageHeroHtml).includes(
-      "公民秩序主义正在推进北美非营利法人及首届董事会筹备，为未来可能出现的中国政治和平转轨，建立一个可以被识别、沟通、信任并承担责任的长期组织主体。",
-    ),
-  "首页首屏没有在第一时间明确组织建设阶段",
-);
-assert(
-  homepageHeroHtml.includes(
-    'data-slug="files/civic-orderism-founding-board-brief-2026.pdf"',
-  ) &&
-    homepageHeroHtml.includes('data-slug="preparation"') &&
-    !homepageHeroHtml.includes('data-slug="participate"') &&
-    (
-      homepageHeroHtml.match(
-        /<a class="home-institution-(?:button|text-link)[^"]*"/g,
-      ) ?? []
-    ).length === 2 &&
-    visiblePageText(homepageHeroHtml).includes("阅读正式筹备文件") &&
-    visiblePageText(homepageHeroHtml).includes("了解董事会筹备"),
-  "首页首屏 CTA 未收束为正式筹备文件与董事会筹备两个入口",
-);
-assert(
-  !homepageHeroHtml.includes("home-institution-document") &&
-    !homepageHeroHtml.includes("founding-board-brief-2026-cover"),
-  "首页首屏不应承载正式文件封面（正式文件区域应独立成区）",
-);
-const currentStageHtml =
-  homepageMainHtml.match(
-    /<section class="home-institution-current"[\s\S]*?<\/section>/,
-  )?.[0] ?? "";
-assert(
-  currentStageHtml.includes('id="current-stage"') &&
-    visiblePageText(currentStageHtml).includes("CURRENT STAGE 当前阶段") &&
-    visiblePageText(currentStageHtml).includes(
-      "公民秩序主义目前处于北美非营利法人及首届董事会筹备阶段。",
-    ) &&
-    ["组织主体建立", "首届董事会筹备", "法律与财务基础", "长期人才基础"].every(
-      (item) => visiblePageText(currentStageHtml).includes(item),
-    ) &&
-    (currentStageHtml.match(/<li>/g) ?? []).length === 4 &&
-    !currentStageHtml.includes("home-institution-work") &&
-    !currentStageHtml.includes("home-institution-status"),
-  "首页当前阶段信息条缺失、未保持克制或与旧状态区冲突",
-);
-const officialDocumentHtml =
-  homepageMainHtml.match(
-    /<section class="home-institution-official"[\s\S]*?<\/section>/,
-  )?.[0] ?? "";
-assert(
-  officialDocumentHtml.includes('id="official-document"') &&
-    officialDocumentHtml.includes(
-      'src="./files/civic-orderism-founding-board-brief-2026-cover.png"',
-    ) &&
-    visiblePageText(officialDocumentHtml).includes("OFFICIAL DOCUMENT") &&
-    visiblePageText(officialDocumentHtml).includes(
-      "《公民秩序主义北美非营利法人及首届董事会筹备说明》",
-    ) &&
-    officialDocumentHtml.includes(
-      "North American Nonprofit &amp; Founding Board Preparation Brief",
-    ) &&
-    visiblePageText(officialDocumentHtml).includes("在线阅读") &&
-    visiblePageText(officialDocumentHtml).includes("下载 PDF") &&
-    visiblePageText(officialDocumentHtml).includes(
-      "CO-2026-002 · OFFICIAL EDITION · V1.0",
-    ) &&
-    visiblePageText(officialDocumentHtml).includes("2026 · PDF · 22页") &&
-    officialDocumentHtml.includes('class="home-institution-official__meta"') &&
-    (
-      officialDocumentHtml.match(
-        /<dl class="home-institution-official__meta">\s*<div>/,
-      ) ?? []
-    ).length === 1 &&
-    !officialDocumentHtml.includes("<dt") &&
-    !officialDocumentHtml.includes("<dd") &&
-    !visiblePageText(officialDocumentHtml).includes("PROVISIONAL"),
-  "首页正式筹备文件区域未作为核心正式文件展示",
-);
-const expectedHomepageSections = [
-  'id="current-stage"',
-  'id="official-document"',
-  'id="theory-and-research"',
-  'class="home-institution-contact"',
+const homepageSectionIds = [
+  'id="identity"',
+  'id="current-work"',
+  'id="research"',
 ];
 let previousHomepageSectionPosition = -1;
-for (const marker of expectedHomepageSections) {
+for (const marker of homepageSectionIds) {
   const position = homepageMainHtml.indexOf(marker);
   assert(
     position > previousHomepageSectionPosition,
-    `首页模块顺序错误或缺少：${marker}`,
+    `首页机构章节顺序错误或缺少：${marker}`,
   );
   previousHomepageSectionPosition = position;
 }
+// V4 home is a continuous institutional landing page, not a numbered report.
 assert(
-  (
-    homepageMainHtml.match(
-      /<section class="home-institution-(?:hero|current|official|theory|contact)"/g,
-    ) ?? []
-  ).length === 5,
-  "首页主要内容不是 Hero、当前阶段、正式文件、政治路线与理论研究、Contact 五区域结构",
+  !homepageMainHtml.includes('id="approach"') &&
+    !homepageMainHtml.includes('id="organization"') &&
+    !homepageMainHtml.includes('id="contact"') &&
+    (homepageMainHtml.match(/<section class="inst4-/g) ?? []).length === 3 &&
+    !homepageMainHtml.includes("home-institution-") &&
+    (homepageMainHtml.match(/<img/g) ?? []).length === 0,
+  "首页未保持为连续机构 landing page（三区域、无编号章节、无图片）",
 );
-assert(
-  !homepageMainHtml.includes("home-institution-status") &&
-    !homepageHeroHtml.includes("<dl") &&
-    !homepageHeroHtml.includes("<dt") &&
-    !homepageHeroHtml.includes("<dd"),
-  "首页首屏仍保留重复的四列状态信息带",
-);
-assert(
-  !homepageMainHtml.includes("home-institution-work") &&
-    !homepageMainHtml.includes('id="board-preparation"') &&
-    !homepageMainText.includes("FOUNDING BOARD PREPARATION") &&
-    !homepageMainText.includes("当前组织工作") &&
-    !homepageMainText.includes("参与方式 →"),
-  "首页仍保留重复的当前组织工作区域",
-);
-const theoryHtml =
+// SECTION 1 / IDENTITY
+const heroHtml =
   homepageMainHtml.match(
-    /<section class="home-institution-theory"[\s\S]*?<\/section>/,
-  )?.[0] ?? "";
-const homepageResearchItems =
-  theoryHtml.match(
-    /<a class="home-institution-research__link[^"]*"[\s\S]*?<\/a>/g,
-  ) ?? [];
-const expectedHomepageResearchItems = [
-  ["01", "政治路线", "中国政治和平转轨的基本判断与路线"],
-  ["02", "解析中共", "组织结构、官僚体系与治理逻辑"],
-  ["03", "中国未来", "后中共时代的国家治理与政治秩序"],
-];
-assert(
-  (theoryHtml.match(/home-institution-research__link/g) ?? []).length === 3 &&
-    (theoryHtml.match(/home-institution-research__number/g) ?? []).length ===
-      3 &&
-    (theoryHtml.match(/home-institution-research__title/g) ?? []).length ===
-      3 &&
-    (theoryHtml.match(/home-institution-research__summary/g) ?? []).length ===
-      3 &&
-    (theoryHtml.match(/home-institution-research__hint/g) ?? []).length === 3 &&
-    theoryHtml.includes('data-slug="civic-orderism"') &&
-    theoryHtml.includes('data-slug="china"') &&
-    theoryHtml.includes('data-slug="china-future"') &&
-    theoryHtml.includes("POLITICAL ROUTE &amp; RESEARCH") &&
-    visiblePageText(theoryHtml).includes("政治路线与理论研究") &&
-    !theoryHtml.includes("进入栏目") &&
-    (
-      theoryHtml.match(
-        /home-institution-research__hint"\s+aria-hidden="true">→<\/span>/g,
-      ) ?? []
-    ).length === 3 &&
-    !theoryHtml.includes("<article") &&
-    !theoryHtml.includes("<img") &&
-    !theoryHtml.includes("<li>") &&
-    !theoryHtml.includes("home-institution-first-reading") &&
-    /home-institution-research__number[^>]*>01<\/span>\s+<span class="home-institution-research__text"/.test(
-      theoryHtml,
-    ) &&
-    visiblePageText(theoryHtml).includes("01 政治路线") &&
-    visiblePageText(theoryHtml).includes("02 解析中共") &&
-    visiblePageText(theoryHtml).includes("03 中国未来"),
-  "首页政治路线与理论研究没有保持为语义分离的编号化研究索引",
-);
-assert(
-  homepageResearchItems.length === expectedHomepageResearchItems.length &&
-    homepageResearchItems.every((itemHtml, index) => {
-      const [number, title, summary] = expectedHomepageResearchItems[index];
-      const numberPosition = itemHtml.indexOf(
-        `<span class="home-institution-research__number">${number}</span>`,
-      );
-      const titlePosition = itemHtml.indexOf(
-        `<strong class="home-institution-research__title">${title}</strong>`,
-      );
-      const summaryPosition = itemHtml.indexOf(
-        `<span class="home-institution-research__summary">${summary}</span>`,
-      );
-      const hintPosition = itemHtml.indexOf(
-        '<span class="home-institution-research__hint"',
-      );
-      return (
-        numberPosition >= 0 &&
-        numberPosition < titlePosition &&
-        titlePosition < summaryPosition &&
-        summaryPosition < hintPosition &&
-        /<span class="home-institution-research__hint"\s+aria-hidden="true">→<\/span>/.test(
-          itemHtml,
-        )
-      );
-    }),
-  "首页三条研究索引的编号、标题、摘要与入口提示必须是顺序明确的独立元素",
-);
-const introductionHtml =
-  homepageMainHtml.match(
-    /<div class="home-institution-introduction"[\s\S]*?<\/div>/,
+    /<section class="inst4-hero"[\s\S]*?<\/section>/,
   )?.[0] ?? "";
 assert(
-  introductionHtml.includes('data-slug="introduction-manual"') &&
-    introductionHtml.includes('class="home-institution-introduction__label"') &&
-    visiblePageText(introductionHtml).includes("BACKGROUND READING") &&
-    visiblePageText(introductionHtml).includes(
-      "需要系统了解公民秩序主义的基本判断、政治路线与核心原则？",
+  visiblePageText(heroHtml).includes("CIVIC ORDERISM") &&
+    visiblePageText(heroHtml).includes("公民秩序主义") &&
+    visiblePageText(heroHtml).includes("中国政治转轨的 和平方案") &&
+    visiblePageText(heroHtml).includes(
+      "为中国未来的政治变化，建立一条低阻力、低风险，并能够维持国家连续性的和平政治道路。",
     ) &&
-    visiblePageText(introductionHtml).includes(
-      "阅读《公民秩序主义介绍手册（2026）》",
+    heroHtml.includes("CURRENT PHASE") &&
+    heroHtml.includes("North American Nonprofit") &&
+    heroHtml.includes("Founding Board Preparation") &&
+    visiblePageText(heroHtml).includes("2026"),
+  "首页首屏机构定位（IDENTITY）或当前阶段状态块缺失",
+);
+// SECTION 2 / CURRENT WORK + official document
+const workHtml =
+  homepageMainHtml.match(
+    /<section class="inst4-work"[\s\S]*?<\/section>/,
+  )?.[0] ?? "";
+assert(
+  workHtml.includes("CURRENT WORK") &&
+    visiblePageText(workHtml).includes("建立一个能够承接政治信任的组织") &&
+    visiblePageText(workHtml).includes(
+      "政治转型不仅需要观点，也需要能够承担法律、财务、人员与长期政治责任的组织",
     ) &&
-    !homepageMainHtml.includes("home-institution-first-reading") &&
-    !homepageMainText.includes("第一次了解公民秩序主义"),
-  "首页介绍手册入口未降级为基础背景阅读",
+    workHtml.includes("OFFICIAL DOCUMENT") &&
+    workHtml.includes("CO—2026—002") &&
+    workHtml.includes("2026 · PDF · 22 PAGES") &&
+    visiblePageText(workHtml).includes(
+      "公民秩序主义 北美非营利法人及 首届董事会筹备说明",
+    ) &&
+    workHtml.includes("阅读正式文件") &&
+    workHtml.includes("civic-orderism-founding-board-brief-2026.pdf") &&
+    !workHtml.includes("<img"),
+  "首页当前工作（CURRENT WORK）或正式文件焦点不符合要求",
+);
+// SECTION 3 / RESEARCH
+const researchHtml =
+  homepageMainHtml.match(
+    /<section class="inst4-research"[\s\S]*?<\/section>/,
+  )?.[0] ?? "";
+assert(
+  researchHtml.includes("RESEARCH &amp; POLITICAL WORK") &&
+    visiblePageText(researchHtml).includes(
+      "从理解旧秩序，到准备新的政治秩序",
+    ) &&
+    (researchHtml.match(/inst4-research__row/g) ?? []).length === 3 &&
+    researchHtml.includes('class="inst4-research__row') &&
+    (researchHtml.match(/inst4-research__num/g) ?? []).length === 3 &&
+    visiblePageText(researchHtml).includes("理解现在") &&
+    visiblePageText(researchHtml).includes("准备转轨") &&
+    visiblePageText(researchHtml).includes("准备未来") &&
+    visiblePageText(researchHtml).includes("解析中共") &&
+    visiblePageText(researchHtml).includes("政治路线") &&
+    visiblePageText(researchHtml).includes("中国未来") &&
+    visiblePageText(researchHtml).includes(
+      "理解现有政治系统为什么正在逐渐失去持续提供利益、预期与共识的能力",
+    ) &&
+    visiblePageText(researchHtml).includes(
+      "研究如何降低政治变化的阻力、风险与社会成本",
+    ) &&
+    visiblePageText(researchHtml).includes(
+      "讨论政治变化之后国家如何继续运行",
+    ) &&
+    researchHtml.includes("浏览全部研究与出版") &&
+    !researchHtml.includes("进入解析中共") &&
+    !researchHtml.includes("了解政治路线") &&
+    !researchHtml.includes("进入中国未来") &&
+    !researchHtml.includes("<article"),
+  "首页研究与出版（RESEARCH 三行编辑索引）未按要求组织",
 );
 for (const removedHomepageText of [
-  "为什么需要组织",
   "信任 × 能力 × 人才",
-  "为什么需要首届董事会",
-  "董事会存在的第一个意义",
-  "建立什么样的组织",
-  "与什么样的人建立长期联系",
-  "当前发展路径",
-  "CURRENT STATUS / 当前阶段",
   "街头动员组织",
   "网络情绪共同体",
   "党国应力",
   "安全化循环",
-  "中国是否存在新的转型窗口",
-  "中国和平政治转型的可能性",
+  "当前组织工作",
+  "CURRENT STATUS / 当前阶段",
 ]) {
   assert(
     !homepageMainText.includes(removedHomepageText),
@@ -1086,138 +997,56 @@ for (const removedHomepageText of [
   );
 }
 assert(
-  homepageMainHtml.includes("mailto:civicorderism@gmail.com") &&
-    homepageMainHtml.includes("mailto:citizenorder@proton.me") &&
-    homepageMainHtml.includes('class="home-institution-contact"') &&
-    visiblePageText(homepageMainHtml).includes("建立联系 Get in Touch") &&
-    visiblePageText(homepageMainHtml).includes(
-      "For founding board preparation, professional collaboration and long-term organizational development.",
-    ) &&
-    visiblePageText(homepageMainHtml).includes("CONTACT / 联系方式") &&
-    visiblePageText(homepageMainHtml).includes(
-      "OFFICIAL CHANNELS / 官方平台",
-    ) &&
-    homepageMainHtml.includes('href="https://x.com/CivicOrderism"') &&
-    visiblePageText(homepageMainHtml).includes(
-      "X · 官方账号 Official Account @CivicOrderism",
-    ) &&
-    visiblePageText(homepageMainHtml).includes(
-      "YouTube · 官方频道 Official Channel 公民秩序主义 Civic Orderism · @CivicOrderism",
-    ) &&
-    homepageMainHtml.includes(
-      'href="https://www.youtube.com/@CivicOrderism"',
-    ) &&
-    !homepageMainHtml.includes('id="contact"') &&
-    !homepageMainText.includes("立即加入") &&
-    !homepageMainText.includes("马上报名"),
-  "首页 Contact 双语目录、官方 X 或 YouTube 频道链接不符合要求",
-);
-for (const [zhText, enText] of [
-  ["建立联系", "Get in Touch"],
-  ["主联系邮箱", "Primary Contact"],
-  ["备用邮箱", "Alternative Contact"],
-  ["X · 官方账号", "Official Account"],
-  ["YouTube · 官方频道", "Official Channel"],
-]) {
-  assert(
-    new RegExp(
-      `<span lang="zh-Hans">${zhText}<\\/span>\\s+<small lang="en">${enText}<\\/small>`,
-    ).test(homepageMainHtml),
-    `首页 Contact 中英文标签没有使用独立语义元素：${zhText} / ${enText}`,
-  );
-}
-const homepageYoutubeItemHtml =
-  homepageMainHtml.match(
-    /<div class="home-institution-contact__item home-institution-contact__item--youtube"[\s\S]*?<\/div>/,
-  )?.[0] ?? "";
-assert(
-  homepageYoutubeItemHtml.includes("公民秩序主义 Civic Orderism") &&
-    homepageYoutubeItemHtml.includes("@CivicOrderism") &&
-    homepageYoutubeItemHtml.includes(
-      'href="https://www.youtube.com/@CivicOrderism"',
-    ),
-  "首页 YouTube 行应显示正式频道名称、handle 与官方链接",
-);
-assert(
-  (
-    homepageMainHtml.match(
-      /civic-orderism-founding-board-brief-2026-cover.png/g,
-    ) ?? []
-  ).length === 1,
-  "首页 PDF 封面应只作为正式筹备文件区域的单一品牌视觉资产出现",
-);
-assert(
   homepageHtml.includes(
     'name="description" content="公民秩序主义正在为中国和平政治转轨建设政治承接能力，推进北美非营利法人及首届董事会筹备。"',
   ),
   "首页 metadata description 未同步当前组织阶段",
 );
+const instNavHtml =
+  homepageHtml.match(/<nav class="inst4-nav"[\s\S]*?<\/nav>/)?.[0] ?? "";
 assert(
-  navigation.map((item) => item.label).join("/") ===
-    "首页/董事会筹备/政治路线/理论研究/关于",
-  "主导航没有收敛为组织与内容主线结构",
-);
-assert(
-  homepageHtml.includes('class="primary-navigation__toggle"') &&
-    homepageHtml.includes('aria-controls="primary-navigation-links"') &&
-    homepageHtml.includes('id="primary-navigation-links"') &&
-    homepageHtml.includes(
-      'href="/preparation" class="primary-navigation__priority"',
-    ),
-  "桌面端或移动端主导航结构不完整，或董事会筹备未保持重点入口",
-);
-const primaryNavHtml =
-  homepageHtml.match(/<nav class="primary-navigation"[\s\S]*?<\/nav>/)?.[0] ??
-  "";
-const primaryTopLevelHtml = primaryNavHtml
-  .replace(/<div class="primary-navigation__submenu"[\s\S]*?<\/div>/g, "")
-  .replace(/<div class="primary-navigation__further"[\s\S]*?<\/div>/g, "");
-assert(
-  !visiblePageText(primaryTopLevelHtml).includes("5分钟了解") &&
-    !visiblePageText(primaryTopLevelHtml).includes("阅读地图") &&
-    !visiblePageText(primaryTopLevelHtml).includes("核心政治路线") &&
-    !visiblePageText(primaryTopLevelHtml).includes("参与方式") &&
-    !visiblePageText(primaryTopLevelHtml).includes("解析中共") &&
-    !homepageHtml.includes('class="primary-navigation__secondary"'),
-  "顶部一级导航未完成层级收敛，旧知识库入口仍占据导航层级",
-);
-assert(
-  primaryNavHtml.includes('class="primary-navigation__submenu"') &&
-    primaryNavHtml.includes('class="primary-navigation__submenu-toggle"') &&
-    primaryNavHtml.includes('href="/china"') &&
-    primaryNavHtml.includes('href="/china-future"') &&
-    primaryNavHtml.includes('href="/topics"') &&
-    primaryNavHtml.includes('href="/concepts"') &&
-    visiblePageText(primaryNavHtml).includes("解析中共") &&
-    visiblePageText(primaryNavHtml).includes("中国未来") &&
-    visiblePageText(primaryNavHtml).includes("专题") &&
-    visiblePageText(primaryNavHtml).includes("核心概念"),
-  "理论研究子菜单未按解析中共/中国未来/专题/核心概念组织",
-);
-assert(
-  homepageText.includes("栏目") &&
-    homepageText.includes("进一步阅读") &&
-    homepageText.includes("5分钟了解") &&
-    homepageText.includes("阅读地图") &&
-    !homepageText.includes("制度设计"),
-  "侧边栏标题或阅读入口未统一",
+  instNavHtml.includes("Civic Orderism") &&
+    instNavHtml.includes('href="/about"') &&
+    instNavHtml.includes('href="/theory"') &&
+    instNavHtml.includes('href="/civic-orderism"') &&
+    instNavHtml.includes('href="/preparation"') &&
+    instNavHtml.includes('class="inst4-nav__toggle"') &&
+    instNavHtml.includes('id="inst4-nav-links"') &&
+    visiblePageText(instNavHtml).includes("关于") &&
+    visiblePageText(instNavHtml).includes("研究") &&
+    visiblePageText(instNavHtml).includes("政治路线") &&
+    visiblePageText(instNavHtml).includes("董事会筹备") &&
+    !instNavHtml.includes("About") &&
+    !instNavHtml.includes("Founding Board") &&
+    !instNavHtml.includes('class="inst4-nav__lang"') &&
+    !instNavHtml.includes(">EN<"),
+  "机构 Header（inst4-nav）一级导航未统一为中文或仍残留语言切换",
 );
 const footerHtml = homepageHtml.match(/<footer[\s\S]*?<\/footer>/)?.[0] ?? "";
 assert(
-  visiblePageText(footerHtml).includes(
-    "公民秩序主义 · Civic Orderism © 2026 Civic Orderism / 公民秩序主义",
-  ) &&
-    visiblePageText(footerHtml).includes(
-      "董事会筹备 政治路线 理论研究 关于 联系",
-    ) &&
-    visiblePageText(footerHtml).includes("5分钟了解 阅读地图") &&
-    !visiblePageText(footerHtml).includes("参与方式") &&
-    !visiblePageText(footerHtml).includes("法人筹备") &&
-    !visiblePageText(footerHtml).includes("核心概念") &&
-    !footerHtml.includes("mailto:") &&
-    !footerHtml.includes("x.com") &&
-    !visiblePageText(footerHtml).includes("YouTube"),
-  "页脚品牌、版权、站内导航或与 Contact 的职责分离不符合要求",
+  footerHtml.includes("inst4-footer") &&
+    visiblePageText(footerHtml).includes("CIVIC ORDERISM") &&
+    visiblePageText(footerHtml).includes("公民秩序主义") &&
+    visiblePageText(footerHtml).includes("北美非营利法人及首届董事会筹备中") &&
+    visiblePageText(footerHtml).includes("CONTACT") &&
+    visiblePageText(footerHtml).includes("联系方式") &&
+    visiblePageText(footerHtml).includes("OFFICIAL CHANNELS") &&
+    visiblePageText(footerHtml).includes("官方平台") &&
+    visiblePageText(footerHtml).includes("主联系邮箱") &&
+    visiblePageText(footerHtml).includes("备用邮箱") &&
+    visiblePageText(footerHtml).includes("关于") &&
+    visiblePageText(footerHtml).includes("研究") &&
+    visiblePageText(footerHtml).includes("政治路线") &&
+    visiblePageText(footerHtml).includes("董事会筹备") &&
+    footerHtml.includes("mailto:civicorderism@gmail.com") &&
+    footerHtml.includes("mailto:citizenorder@proton.me") &&
+    footerHtml.includes("https://x.com/CivicOrderism") &&
+    footerHtml.includes("https://www.youtube.com/@CivicOrderism") &&
+    !footerHtml.includes("Articles") &&
+    !footerHtml.includes("English") &&
+    !footerHtml.includes("Independent political research") &&
+    visiblePageText(footerHtml).includes("© 2026 Civic Orderism"),
+  "页脚机构化收尾（inst4-footer）不符合要求",
 );
 for (const forbidden of [
   "X 短贴",
@@ -1232,158 +1061,56 @@ for (const forbidden of [
   );
 }
 
+// Reading Map (articles.md): three routes
 const articlesHtml = fs.readFileSync(publicHtml("articles"), "utf8");
 const articlesText = visiblePageText(articlesHtml);
-const readingRoutes = [
-  {
-    id: "route-system-failure",
-    title: "中共为什么正在失去原有运行能力",
-    count: 4,
-    nextHref: "#route-transition-conditions",
-    slugs: [
-      "china/party-state-stress-neither-party-nor-state",
-      "china/ccp-bureaucracy-double-deadlock",
-      "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
-      "china/security-led-governance-model",
-    ],
-  },
-  {
-    id: "route-transition-conditions",
-    title: "为什么中国存在政治转轨条件",
-    count: 4,
-    nextHref: "#route-peaceful-transition",
-    slugs: [
-      "civic-orderism/possibility-of-peaceful-political-transition-in-china",
-      "china/supply-side-reform-state-can-scale-not-discover-future",
-      "china-stage/china-manufacturing-cannot-stop",
-      "civic-orderism/state-must-rely-on-systems-not-drivers",
-    ],
-  },
-  {
-    id: "route-peaceful-transition",
-    title: "为什么应当选择和平转轨",
-    count: 3,
-    nextHref: "#route-civic-orderism",
-    slugs: [
-      "civic-orderism/peaceful-state-transition",
-      "civic-orderism/why-civic-orderism-is-easier-to-succeed",
-      "theory/internal-change-external-change",
-    ],
-  },
-  {
-    id: "route-civic-orderism",
-    title: "公民秩序主义提出什么路线",
-    count: 4,
-    nextHref: "#route-organization-preparation",
-    slugs: [
-      "civic-orderism/why-civic-orderism",
-      "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
-      "civic-orderism/what-civic-orderism-ultimately-solves",
-      "start-here",
-    ],
-  },
-  {
-    id: "route-organization-preparation",
-    title: "为什么现在开始组织准备",
-    count: 3,
-    nextHref: "#all-articles",
-    slugs: ["preparation", "preparation/board", "participate"],
-  },
-];
-let previousReadingRoutePosition = -1;
-const allReadingRouteSlugs = [];
-for (const [index, route] of readingRoutes.entries()) {
-  const routePosition = articlesHtml.indexOf(`id="${route.id}"`);
-  const nextRouteId = readingRoutes[index + 1]?.id;
-  const routeEnd = nextRouteId
-    ? articlesHtml.indexOf(`id="${nextRouteId}"`)
-    : articlesHtml.indexOf('id="all-articles"');
-  const routeBlock = articlesHtml.slice(routePosition, routeEnd);
-  const recommendedBlock =
-    routeBlock.match(/<ol class="reading-route__list">([\s\S]*?)<\/ol>/)?.[1] ??
-    "";
-  const recommendedCount = (recommendedBlock.match(/<li>/g) ?? []).length;
-  const recommendedSlugs = [
-    ...recommendedBlock.matchAll(/data-slug="([^"]+)"/g),
-  ].map((match) => match[1]);
-  const hasExpectedMoreLink =
-    index === readingRoutes.length - 1
-      ? !routeBlock.includes("reading-route__more")
-      : routeBlock.includes("reading-route__more");
-  allReadingRouteSlugs.push(...recommendedSlugs);
-  assert(
-    routePosition > previousReadingRoutePosition &&
-      routeEnd > routePosition &&
-      visiblePageText(routeBlock).includes(route.title) &&
-      recommendedCount === route.count &&
-      recommendedSlugs.join("|") === route.slugs.join("|") &&
-      recommendedCount >= 2 &&
-      recommendedCount <= 4 &&
-      hasExpectedMoreLink &&
-      routeBlock.includes("reading-route__completion") &&
-      routeBlock.includes(`href="${route.nextHref}"`) &&
-      visiblePageText(routeBlock).includes("继续这条判断路线"),
-    `阅读地图路线结构或推荐数量异常：${route.title}`,
-  );
-  previousReadingRoutePosition = routePosition;
-}
 assert(
-  new Set(allReadingRouteSlugs).size === allReadingRouteSlugs.length,
-  "五步阅读地图存在重复推荐入口",
-);
-const articleLibraryPosition = articlesHtml.indexOf('id="all-articles"');
-assert(
-  articlesText.includes("这里不是完整文章目录") &&
-    articlesText.includes("从现实判断走向政治路线与组织准备") &&
-    articleLibraryPosition > previousReadingRoutePosition &&
-    !articlesHtml.includes('class="reading-library-index"') &&
+  articlesText.includes("阅读地图") &&
+    articlesText.includes("5分钟") &&
+    articlesText.includes("30分钟") &&
+    articlesText.includes("深度阅读") &&
+    articlesText.includes("快速知道公民秩序主义是什么") &&
+    articlesText.includes("理解完整基本逻辑") &&
+    articlesText.includes("进入研究体系") &&
+    /href="[^"]*start-here/.test(articlesHtml) &&
+    /href="[^"]*introduction-manual/.test(articlesHtml) &&
+    /href="[^"]*party-state-structural-failure/.test(articlesHtml) &&
+    /href="[^"]*peaceful-state-transition/.test(articlesHtml) &&
+    /href="[^"]*ccp-second-reform-opening-possibility/.test(articlesHtml) &&
+    /href="[^"]*topics/.test(articlesHtml) &&
+    /href="[^"]*concepts/.test(articlesHtml) &&
+    /href="[^"]*articles\/all/.test(articlesHtml) &&
     !articlesText.includes("一、旧世界为什么失效") &&
-    !articlesText.includes("九、后台系统、司法与执行底座") &&
-    !articlesHtml.includes('class="content-meta"') &&
-    articlesText.includes("浏览全部文章") &&
-    articlesText.includes("旧专题索引均保留在独立页面") &&
-    articlesHtml.includes('data-slug="civic-orderism"') &&
-    articlesHtml.includes('data-slug="china"') &&
-    articlesHtml.includes('data-slug="china-future"') &&
-    articlesHtml.includes('data-slug="articles/all"') &&
-    articlesHtml.includes('data-slug="preparation"') &&
-    articlesHtml.includes('data-slug="participate"') &&
-    articlesText.includes("政治组织失灵不等于国家能力消失") &&
-    !articlesHtml.includes('data-slug="institution-design"'),
-  "阅读地图缺少新读者引导、完整索引入口，或重新突出制度设计",
+    !articlesHtml.includes('class="content-meta"'),
+  "阅读地图缺少三条阅读路线（5分钟/30分钟/深度阅读）或混入文章元信息",
 );
 
+// Complete articles archive (articles/all.md)
 const completeArticlesHtml = fs.readFileSync(
   publicHtml("articles/all"),
   "utf8",
 );
 const completeArticlesText = visiblePageText(completeArticlesHtml);
-for (const legacySection of [
-  "一、旧世界为什么失效",
-  "二、中共这个组织为什么走向失灵",
-  "三、中国正在进入什么阶段",
-  "四、外部误判、国际风险与历史案例",
-  "五、为什么需要新的制度通道",
-  "六、公民秩序主义的基本理论",
-  "七、委员会与公共判断机制",
-  "八、选举、授权与责任更替",
-  "九、后台系统、司法与执行底座",
-  "十、近期文章",
-]) {
-  assert(
-    completeArticlesText.includes(legacySection),
-    `完整文章索引缺少旧专题：${legacySection}`,
-  );
-}
+const publishedCount = migration.filter(
+  (item) => item.status === "published",
+).length;
 assert(
-  completeArticlesText.includes(`本站共收录 ${migration.length} 篇文章`) &&
-    completeArticlesHtml.includes('data-slug="articles"') &&
-    completeArticlesHtml.includes('data-slug="civic-orderism"') &&
-    completeArticlesHtml.includes('data-slug="china"') &&
-    completeArticlesHtml.includes('data-slug="china-future"') &&
-    completeArticlesHtml.includes('data-slug="topics"') &&
+  completeArticlesText.includes("全部研究") &&
+    completeArticlesHtml.includes("RESEARCH ARCHIVE") &&
+    completeArticlesText.includes(`${publishedCount} 篇研究`) &&
+    completeArticlesText.includes("解析中共") &&
+    completeArticlesText.includes("公民秩序主义") &&
+    completeArticlesText.includes("中国未来") &&
+    completeArticlesText.includes("制度设计") &&
+    completeArticlesHtml.includes(
+      'data-slug="china/party-state-stress-neither-party-nor-state"',
+    ) &&
+    completeArticlesHtml.includes(
+      'data-slug="civic-orderism/peaceful-state-transition"',
+    ) &&
+    !completeArticlesText.includes("一、旧世界为什么失效") &&
     !completeArticlesHtml.includes('class="content-meta"'),
-  "独立完整文章索引缺少栏目入口、阅读地图返回入口或混入文章元信息",
+  "独立完整文章索引缺少栏目分组、文章列表或混入文章元信息",
 );
 
 const participateHtml = fs.readFileSync(publicHtml("participate"), "utf8");
@@ -1475,23 +1202,31 @@ for (const [label, html, text] of [
   assert(!text.includes("首届董事会已经依法产生"), `${label}误称董事会已产生`);
 }
 for (const requiredText of [
-  "北美非营利法人 + 首届董事会",
+  "北美非营利法人及首届董事会筹备",
+  "为什么现在进入组织建设",
+  "政治转型不仅需要观点，也需要能够承担法律、财务、人员与长期政治责任的组织",
   "为什么需要法人",
+  "让公共事业不依赖个人",
   "为什么需要董事会",
+  "让方向与责任受到明确监督",
+  "治理责任，不是荣誉头衔",
+  "先建立规则，再扩大参与",
   "前期筹备、沟通与框架建设",
-  "希望联系的人",
-  "civicorderism@gmail.com",
-  "citizenorder@proton.me",
-  "理论研究",
-  "政治与治理研究",
   "选择注册法域",
-  "筹备不等于已经成立",
-  "不表示已经取得任何法人、慈善或免税资格",
+  "识别首届董事候选人",
   "现阶段正在识别并接触潜在首届董事候选人，但不会通过公开报名直接产生董事资格",
-  "进一步了解筹备框架",
+  "筹备不等于已经成立",
   "北美非营利法人尚未依法成立",
+  "不表示已经取得任何法人、慈善或免税资格",
   "参与筹备不自动产生董事身份或治理权限",
   "其他正式治理职务，均须在制度准备完成后，依照适用法律、章程与正式程序产生",
+  "OFFICIAL DOCUMENT",
+  "CO—2026—002",
+  "2026 · PDF · 22 PAGES",
+  "阅读正式文件",
+  "进一步了解或建立联系",
+  "civicorderism@gmail.com",
+  "citizenorder@proton.me",
 ]) {
   assert(
     preparationText.includes(requiredText),
@@ -1501,28 +1236,53 @@ for (const requiredText of [
 assert(
   preparationText.includes(
     "当前处于北美非营利法人及首届董事会前期筹备阶段，法人尚未完成注册，首届董事会尚未依法产生",
-  ) && !preparationHtml.includes("preparation-boundary"),
-  "法人筹备页顶部状态说明未收紧，或正文仍重复状态提醒",
+  ),
+  "法人筹备页顶部状态说明未收紧",
 );
-const candidatesPosition = preparationHtml.indexOf(
-  'class="preparation-section preparation-candidates"',
-);
-const contactPosition = preparationHtml.indexOf(
-  'class="preparation-section preparation-contact"',
-);
-const frameworkPosition = preparationHtml.indexOf(
-  'class="preparation-framework"',
-);
-const legalNotePosition = preparationHtml.indexOf(
-  'class="preparation-section preparation-legal-note"',
-);
+const whyNowPosition = preparationHtml.indexOf("为什么现在进入组织建设");
+const whyLegalPosition = preparationHtml.indexOf("为什么需要法人");
+const whyBoardPosition = preparationHtml.indexOf("为什么需要董事会");
+const workPosition = preparationHtml.indexOf("先建立规则，再扩大参与");
+const boundaryPosition = preparationHtml.indexOf("筹备不等于已经成立");
+const docPosition = preparationHtml.indexOf("OFFICIAL DOCUMENT");
+const contactPosition = preparationHtml.indexOf("进一步了解或建立联系");
 assert(
-  candidatesPosition >= 0 &&
-    contactPosition > candidatesPosition &&
-    frameworkPosition > contactPosition &&
-    legalNotePosition > frameworkPosition,
-  "法人筹备页未按核心信息、深入框架、底部状态说明分层",
+  whyLegalPosition > whyNowPosition &&
+    whyBoardPosition > whyLegalPosition &&
+    workPosition > whyBoardPosition &&
+    boundaryPosition > workPosition &&
+    docPosition > boundaryPosition &&
+    contactPosition > docPosition,
+  "法人筹备页未按核心信息、当前工作、组织边界、正式文件、建立联系分层",
 );
+// Phase 2A — institutional landing pages share the V4 shell
+for (const [label, pageFile, expectTitle, expectLabel] of [
+  ["about", "about", "关于公民秩序主义", "CURRENT PHASE"],
+  ["research", "theory/index", "研究", "RESEARCH &amp; POLITICAL WORK"],
+  ["route", "civic-orderism/index", "政治路线", "POLITICAL ROUTE"],
+  [
+    "preparation",
+    "preparation",
+    "北美非营利法人及首届董事会筹备",
+    "CURRENT WORK",
+  ],
+]) {
+  const html = fs.readFileSync(publicHtml(pageFile), "utf8");
+  const text = visiblePageText(html);
+  assert(
+    html.includes("inst4l") &&
+      text.includes(expectTitle) &&
+      html.includes(expectLabel),
+    `一级页面 ${label} 未进入 V4 institutional shell`,
+  );
+  assert(
+    !html.includes('class="breadcrumbs"') ||
+      /display:\s*none/i.test(
+        html.match(/\.breadcrumbs\s*\{[^}]*\}/)?.[0] ?? "",
+      ),
+    `一级页面 ${label} 仍显示 Quartz breadcrumbs`,
+  );
+}
 for (const requiredText of [
   "治理责任，不是荣誉头衔",
   "现阶段正在识别并接触潜在首届董事候选人，但不会通过公开报名直接产生董事资格",
@@ -1623,8 +1383,8 @@ for (const requiredText of [
 }
 assert(
   startHtml.includes("civic-orderism/peaceful-state-transition") &&
-    startHtml.includes('href="/articles"') &&
-    startHtml.includes('href="/preparation"') &&
+    /href="[^"]*articles/.test(startHtml) &&
+    /href="[^"]*preparation/.test(startHtml) &&
     !startText.includes("旧入口") &&
     !startText.includes("迁移"),
   "/start-here 下一步入口或正式页面文案不正确",
@@ -1654,13 +1414,24 @@ for (const route of [
 const aboutHtml = fs.readFileSync(publicHtml("about"), "utf8");
 const aboutText = visiblePageText(aboutHtml);
 for (const requiredText of [
+  "关于公民秩序主义",
   "公民秩序主义是什么",
-  "为什么建立这个网站",
-  "当前组织阶段",
-  "网站承担哪些功能",
-  "本站是公民秩序主义的正式出版、理论沉淀、政治与治理研究及公共传播平台",
-  "政治路线是主体，网站是载体，理论是基础，组织是长期承接结构",
-  "本站重视事实、逻辑、责任边界与制度可执行性，不以新闻速度、情绪动员或个人崇拜替代制度分析",
+  "为什么存在",
+  "政治路线",
+  "研究体系",
+  "从理解旧秩序，到准备新的政治秩序",
+  "解析中共",
+  "政治路线",
+  "中国未来",
+  "正式出版与筹备文件",
+  "公民秩序主义介绍手册",
+  "北美非营利法人及首届董事会筹备说明",
+  "联系方式",
+  "本站不设公开成员名册、失控的公开群聊、支付或募款入口",
+  "主联系邮箱",
+  "备用邮箱",
+  "civicorderism@gmail.com",
+  "citizenorder@proton.me",
 ]) {
   assert(aboutText.includes(requiredText), `关于页缺少内容：${requiredText}`);
 }
@@ -1777,7 +1548,7 @@ for (const htmlPath of walkHtmlFiles(publicDir)) {
       relativeHtmlPath === "index.html" &&
       legacyBrand === "CIVIC ORDERISM" &&
       html.includes("CIVIC ORDERISM") &&
-      html.includes("ORGANIZATIONAL STAGE · 2026") &&
+      html.includes("中国政治转轨的") &&
       (html.match(/CIVIC ORDERISM/g) ?? []).length === 1;
     assert(
       approvedHomepageStageLabel || !html.includes(legacyBrand),

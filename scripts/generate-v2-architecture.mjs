@@ -539,6 +539,26 @@ function writeContent(relativePath, body) {
   fs.writeFileSync(target, `${body.trim()}\n`, "utf8");
 }
 
+/* Indented HTML inside a markdown body can be parsed as a fenced code block.
+   Strip leading whitespace from any line that starts with a block-level HTML
+   tag so raw markup renders as markup rather than source code. */
+function deindentHtml(body) {
+  return body
+    .split("\n")
+    .map((line) =>
+      /^ {4,}<(\/?)(section|div|aside|header|nav|footer|ul|ol|li|p|h[1-6]|blockquote|table)/u.test(
+        line,
+      )
+        ? line.replace(/^ {2,}/, "")
+        : line,
+    )
+    .join("\n");
+}
+
+function writeInstitutionalContent(relativePath, body) {
+  writeContent(relativePath, deindentHtml(body));
+}
+
 async function writeConceptContent(relativePath, body) {
   const target = path.join(contentDir, relativePath);
   const raw = `${body.trim()}\n`;
@@ -1011,35 +1031,6 @@ const homepageTheoryLinks = homepageRecommendations
   )
   .join("\n");
 
-const homepageResearchLinks = [
-  {
-    label: "政治路线",
-    href: "/civic-orderism",
-    description: "中国政治和平转轨的基本判断与路线",
-  },
-  {
-    label: "解析中共",
-    href: "/china",
-    description: "组织结构、官僚体系与治理逻辑",
-  },
-  {
-    label: "中国未来",
-    href: "/china-future",
-    description: "后中共时代的国家治理与政治秩序",
-  },
-]
-  .map((direction, index) => {
-    return `<a class="home-institution-research__link" href="${direction.href}">
-  <span class="home-institution-research__number">${String(index + 1).padStart(2, "0")}</span>
-  <span class="home-institution-research__text">
-    <strong class="home-institution-research__title">${direction.label}</strong>
-    <span class="home-institution-research__summary">${direction.description}</span>
-  </span>
-  <span class="home-institution-research__hint" aria-hidden="true">→</span>
-</a>`;
-  })
-  .join("\n");
-
 const homepageTopics = readingPaths.homepageTopics
   .map((slug) => topicBySlug.get(slug))
   .filter((topic) => topic?.status === "published");
@@ -1085,111 +1076,80 @@ writeContent(
   "index.md",
   `${yamlFrontmatter({ title: site.name, description: site.description, contentType: "首页", aliases: ["article_priority_index", "article_summaries"] })}
 
-<div class="home-institution-page">
-<section class="home-institution-hero" id="home-hero" aria-labelledby="home-institution-title">
-  <div class="home-institution-hero__grid">
-    <div class="home-institution-hero__content">
-      <p class="home-institution-stage"><span>CIVIC ORDERISM</span><i aria-hidden="true"></i><span>ORGANIZATIONAL STAGE · 2026</span></p>
-      <h1 id="home-institution-title"><span>从政治判断</span><strong>走向组织建设</strong></h1>
-      <p class="home-institution-hero__lead">公民秩序主义已经进入组织建设阶段。</p>
-      <p class="home-institution-hero__copy">公民秩序主义正在推进北美非营利法人及首届董事会筹备，为未来可能出现的中国政治和平转轨，建立一个可以被识别、沟通、信任并承担责任的长期组织主体。</p>
-      <div class="home-institution-actions"><a class="home-institution-button" href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">阅读正式筹备文件</a><a class="home-institution-text-link" href="/preparation">了解董事会筹备 <span aria-hidden="true">→</span></a></div>
+<div class="inst4">
+
+<!-- SECTION 1 / IDENTITY -->
+<section class="inst4-hero" id="identity">
+  <div class="inst4-hero__grid">
+    <div class="inst4-hero__left">
+      <p class="inst4-hero__brand">CIVIC ORDERISM <span aria-hidden="true">·</span> 公民秩序主义</p>
+      <h1 class="inst4-hero__title">中国政治转轨的<span>和平方案</span></h1>
+      <p class="inst4-hero__statement">为中国未来的政治变化，建立一条低阻力、低风险，并能够维持国家连续性的和平政治道路。</p>
+      <p class="inst4-hero__en" lang="en">A peaceful political transition framework for China's future.</p>
+    </div>
+    <div class="inst4-hero__status" aria-label="当前阶段">
+      <p class="inst4-hero__status-label">CURRENT PHASE</p>
+      <p class="inst4-hero__status-body">North American Nonprofit<br>&amp; Founding Board Preparation</p>
+      <p class="inst4-hero__status-year">2026</p>
     </div>
   </div>
 </section>
 
-<section class="home-institution-current" id="current-stage" aria-labelledby="home-institution-current-title">
-  <header class="home-institution-current__head">
-    <p>CURRENT STAGE</p>
-    <h2 id="home-institution-current-title">当前阶段</h2>
-    <span>公民秩序主义目前处于北美非营利法人及首届董事会筹备阶段。</span>
-  </header>
-  <ol class="home-institution-current__items">
-    <li><span>01</span><strong>组织主体建立</strong></li>
-    <li><span>02</span><strong>首届董事会筹备</strong></li>
-    <li><span>03</span><strong>法律与财务基础</strong></li>
-    <li><span>04</span><strong>长期人才基础</strong></li>
-  </ol>
-</section>
-
-<section class="home-institution-official" id="official-document" aria-labelledby="home-institution-official-title">
-  <header class="home-institution-official__heading">
-    <p>OFFICIAL DOCUMENT</p>
-    <h2 id="home-institution-official-title">正式筹备文件</h2>
-    <span>公民秩序主义组织建设阶段的核心正式文件。</span>
-  </header>
-  <div class="home-institution-official__panel">
-    <div class="home-institution-document" aria-label="正式筹备文件">
-      <a class="home-institution-document__cover" href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener" aria-label="打开《公民秩序主义北美非营利法人及首届董事会筹备说明》PDF">
-        <img src="/files/civic-orderism-founding-board-brief-2026-cover.png" alt="《公民秩序主义北美非营利法人及首届董事会筹备说明》封面" width="1191" height="1684">
-      </a>
+<!-- SECTION 2 / CURRENT WORK -->
+<section class="inst4-work" id="current-work">
+  <div class="inst4-work__grid">
+    <div class="inst4-work__intro">
+      <p class="inst4-eyebrow">CURRENT WORK</p>
+      <h2 class="inst4-work__title">建立一个能够承接政治信任的组织</h2>
+      <p class="inst4-work__text">政治转型不仅需要观点，也需要能够承担法律、财务、人员与长期政治责任的组织。公民秩序主义当前正在推进北美非营利法人及首届董事会筹备。</p>
     </div>
-    <div class="home-institution-official__body">
-      <p class="home-institution-official__label">OFFICIAL DOCUMENT</p>
-      <h3>《公民秩序主义北美非营利法人及首届董事会筹备说明》</h3>
-      <p class="home-institution-official__en" lang="en">North American Nonprofit &amp; Founding Board Preparation Brief</p>
-      <p class="home-institution-official__summary">本文件说明公民秩序主义为什么需要从理论表达进入组织建设，以及首届董事会、北美非营利法人和长期组织能力建设所承担的功能。</p>
-      <div class="home-institution-official__actions"><a class="home-institution-button" href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">在线阅读</a><a class="home-institution-button home-institution-button--secondary" href="/files/civic-orderism-founding-board-brief-2026.pdf" download>下载 PDF</a></div>
-      <dl class="home-institution-official__meta">
-        <div>CO-2026-002 · OFFICIAL EDITION · V1.0</div>
-        <div>2026 · PDF · 22页</div>
-      </dl>
+    <div class="inst4-document">
+      <p class="inst4-document__label">OFFICIAL DOCUMENT <span aria-hidden="true">·</span> CO—2026—002</p>
+      <h3 class="inst4-document__title"><a href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">公民秩序主义<br>北美非营利法人及<br>首届董事会筹备说明</a></h3>
+      <p class="inst4-document__meta">2026 · PDF · 22 PAGES</p>
+      <p class="inst4-document__cta"><a href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">阅读正式文件 <span aria-hidden="true">→</span></a></p>
     </div>
   </div>
 </section>
 
-<section class="home-institution-theory" id="theory-and-research" aria-labelledby="home-institution-theory-title">
-  <header class="home-institution-section-heading"><p>POLITICAL ROUTE &amp; RESEARCH</p><h2 id="home-institution-theory-title">政治路线与理论研究</h2><span>组织建设建立在持续的政治判断、现实分析与中国未来研究之上。</span></header>
-  <nav class="home-institution-research" aria-label="政治路线与理论研究入口">${homepageResearchLinks}</nav>
+<!-- SECTION 3 / RESEARCH -->
+<section class="inst4-research" id="research">
+  <div class="inst4-research__head">
+    <p class="inst4-eyebrow">RESEARCH &amp; POLITICAL WORK</p>
+    <h2 class="inst4-research__title">从理解旧秩序，到准备新的政治秩序</h2>
+  </div>
+  <div class="inst4-research__list">
+    <a class="inst4-research__row" href="/china">
+      <span class="inst4-research__num" aria-hidden="true">01</span>
+      <span class="inst4-research__cell">
+        <span class="inst4-research__phase">理解现在</span>
+        <span class="inst4-research__col-title">解析中共</span>
+      </span>
+      <span class="inst4-research__desc">理解现有政治系统为什么正在逐渐失去持续提供利益、预期与共识的能力。</span>
+      <span class="inst4-research__arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="inst4-research__row" href="/civic-orderism">
+      <span class="inst4-research__num" aria-hidden="true">02</span>
+      <span class="inst4-research__cell">
+        <span class="inst4-research__phase">准备转轨</span>
+        <span class="inst4-research__col-title">政治路线</span>
+      </span>
+      <span class="inst4-research__desc">研究如何降低政治变化的阻力、风险与社会成本，并建立新旧政治力量之间可信的沟通路径。</span>
+      <span class="inst4-research__arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="inst4-research__row" href="/china-future">
+      <span class="inst4-research__num" aria-hidden="true">03</span>
+      <span class="inst4-research__cell">
+        <span class="inst4-research__phase">准备未来</span>
+        <span class="inst4-research__col-title">中国未来</span>
+      </span>
+      <span class="inst4-research__desc">讨论政治变化之后国家如何继续运行，以及新的政治秩序如何建立。</span>
+      <span class="inst4-research__arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+  <p class="inst4-research__all"><a href="/theory">浏览全部研究与出版 <span aria-hidden="true">→</span></a></p>
 </section>
 
-<div class="home-institution-introduction">
-  <span class="home-institution-introduction__label">BACKGROUND READING</span>
-  <p>需要系统了解公民秩序主义的基本判断、政治路线与核心原则？</p>
-  <a href="/introduction-manual">阅读《公民秩序主义介绍手册（2026）》 <span aria-hidden="true">→</span></a>
-</div>
-
-<section class="home-institution-contact" aria-labelledby="home-institution-contact-title">
-  <div class="home-institution-contact__intro">
-    <p>CONTACT</p>
-    <h2 id="home-institution-contact-title">
-      <span lang="zh-Hans">建立联系</span>
-      <small lang="en">Get in Touch</small>
-    </h2>
-    <div class="home-institution-contact__statement">
-      <p>围绕首届董事会筹备、专业合作与长期组织建设建立联系。</p>
-      <p lang="en">For founding board preparation, professional collaboration and long-term organizational development.</p>
-    </div>
-  </div>
-  <div class="home-institution-contact__directory">
-    <section class="home-institution-contact__group" aria-labelledby="home-contact-methods-title">
-      <h3 id="home-contact-methods-title">CONTACT <span>/ 联系方式</span></h3>
-      <dl>
-        <div class="home-institution-contact__item home-institution-contact__item--primary"><dt>
-          <span lang="zh-Hans">主联系邮箱</span>
-          <small lang="en">Primary Contact</small>
-        </dt><dd><a href="mailto:${organization.primaryEmail}">${organization.primaryEmail}</a></dd></div>
-        <div class="home-institution-contact__item home-institution-contact__item--secondary"><dt>
-          <span lang="zh-Hans">备用邮箱</span>
-          <small lang="en">Alternative Contact</small>
-        </dt><dd><a href="mailto:${organization.secondaryEmail}">${organization.secondaryEmail}</a></dd></div>
-      </dl>
-    </section>
-    <section class="home-institution-contact__group home-institution-contact__group--channels" aria-labelledby="home-official-channels-title">
-      <h3 id="home-official-channels-title">OFFICIAL CHANNELS <span>/ 官方平台</span></h3>
-      <dl>
-        <div class="home-institution-contact__item home-institution-contact__item--x"><dt>
-          <span lang="zh-Hans">X · 官方账号</span>
-          <small lang="en">Official Account</small>
-        </dt><dd><a href="https://x.com/CivicOrderism" target="_blank" rel="noopener">@CivicOrderism</a></dd></div>
-        <div class="home-institution-contact__item home-institution-contact__item--youtube"><dt>
-          <span lang="zh-Hans">YouTube · 官方频道</span>
-          <small lang="en">Official Channel</small>
-        </dt><dd><a href="https://www.youtube.com/@CivicOrderism" target="_blank" rel="noopener">公民秩序主义 Civic Orderism · @CivicOrderism</a></dd></div>
-      </dl>
-    </section>
-  </div>
-</section>
 </div>`,
 );
 
@@ -1447,7 +1407,7 @@ writeContent(
 <div class="concept-grid">${civicConcepts.map(conceptCard).join("\n")}</div>`,
 );
 
-writeContent(
+writeInstitutionalContent(
   "preparation.md",
   `${yamlFrontmatter({ title: "北美非营利法人及首届董事会筹备", description: "了解公民秩序主义北美非营利法人及首届董事会筹备的目的、当前阶段、治理责任、候选人方向与联系方式。", contentType: "筹备页面", date: "2026-07-19", updated: "2026-08-11" })}
 
@@ -1616,7 +1576,7 @@ writeContent(
 </div>`,
 );
 
-writeContent(
+writeInstitutionalContent(
   "about.md",
   `${yamlFrontmatter({ title: "关于", description: "了解公民秩序主义的政治与制度路线、官方网站使命、当前组织阶段与公共工作。", contentType: "页面" })}
 
@@ -1680,7 +1640,7 @@ ${site.documents.map((doc) => `- [${doc.title}](${doc.href}) — ${doc.descripti
 本站不设公开成员名册、失控的公开群聊、支付或募款入口。无论身处何地，只要认同基本路线，都可以阅读 [[participate|参与说明]]；北美长期居住者还可以进一步了解法人和董事会筹备。`,
 );
 
-writeContent(
+writeInstitutionalContent(
   "theory/index.md",
   `${yamlFrontmatter({ title: "旧秩序失效", description: "从政党政治、工业型治理与程序问责的结构性局限，理解信息化时代的政治转型问题。", contentType: "研究归档" })}
 
@@ -1711,6 +1671,1031 @@ writeContent(
 本页汇集委员会、行政、议会、选举、司法、监督与后台系统等进阶制度研究。建议先完成 [[articles#route-civic-orderism|公民秩序主义政治路线]]，再按具体问题浏览以下文章。
 
 ${filterPanel(articles.filter((article) => article.section === "制度设计"))}`,
+);
+
+/* __PHASE2A_BLOCK__ */
+/* ================================================================
+   Phase 2A — institutional landing pages.
+   About / Research / Political Route / Founding Board share the
+   V4 institutional design shell (inst4l-*).
+   ================================================================ */
+
+function inst4lRow({ href, meta, title, desc }) {
+  return `<a class="inst4l-row" href="${href}">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">${meta}</span><span class="inst4l-row__title">${title}</span></span>
+  <span class="inst4l-row__desc">${desc}</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>`;
+}
+
+function inst4lRows(rows) {
+  return `<div class="inst4l-list">\n${rows.map(inst4lRow).join("\n")}\n</div>`;
+}
+
+function inst4lSection(label, title, body, desc = "") {
+  return `<section class="inst4l-section">
+  <div class="inst4l-section__head">
+    <p class="inst4-eyebrow">${label}</p>
+    <h2 class="inst4l-section__title">${title}</h2>
+    ${desc ? `<p class="inst4l-section__desc">${desc}</p>` : ""}
+  </div>
+  ${body}
+</section>`;
+}
+
+const inst4lAxes = [
+  {
+    num: "01",
+    phase: "理解现在",
+    title: "解析中共",
+    desc: "解析中共如何运行、为何失灵，以及正在发生什么变化。完整研究程序见「解析中共」。",
+    href: "/china/",
+  },
+  {
+    num: "02",
+    phase: "准备转轨",
+    title: "政治路线",
+    desc: "理解旧秩序本身并不能产生新秩序。政治路线研究现实可执行、低阻力、保持国家连续性的和平转轨路径。",
+    href: "/civic-orderism/",
+  },
+  {
+    num: "03",
+    phase: "准备未来",
+    title: "中国未来",
+    desc: "政治转型最终必须回答国家如何继续运行，以及新的政治秩序如何建立。",
+    href: "/china-future/",
+  },
+];
+
+function inst4lAxesBlock() {
+  return `<div class="inst4l-axes">\n${inst4lAxes
+    .map(
+      (axis) => `<a class="inst4l-axis" href="${axis.href}">
+  <span class="inst4l-axis__num" aria-hidden="true">${axis.num}</span>
+  <span class="inst4l-axis__cell"><span class="inst4l-axis__phase">${axis.phase}</span><span class="inst4l-axis__title">${axis.title}</span></span>
+  <span class="inst4l-axis__desc">${axis.desc}</span>
+  <span class="inst4l-axis__arrow" aria-hidden="true">→</span>
+</a>`,
+    )
+    .join("\n")}\n</div>`;
+}
+
+function inst4lContactBlock() {
+  return `<div class="inst4l-contact">
+  <p class="inst4l-contact__entry"><span>主联系邮箱</span><a href="mailto:${organization.primaryEmail}">${organization.primaryEmail}</a></p>
+  <p class="inst4l-contact__entry"><span>备用邮箱</span><a href="mailto:${organization.secondaryEmail}">${organization.secondaryEmail}</a></p>
+</div>`;
+}
+
+function inst4lDocBlock() {
+  return `<div class="inst4l-doc">
+  <p class="inst4l-doc__label">OFFICIAL DOCUMENT <span aria-hidden="true">·</span> CO—2026—002</p>
+  <h3 class="inst4l-doc__title"><a href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">公民秩序主义<br>北美非营利法人及<br>首届董事会筹备说明</a></h3>
+  <p class="inst4l-doc__meta">2026 · PDF · 22 PAGES</p>
+  <p class="inst4l-doc__cta"><a href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">阅读正式文件 <span aria-hidden="true">→</span></a></p>
+</div>`;
+}
+
+writeInstitutionalContent(
+  "about.md",
+  `${yamlFrontmatter({ title: "关于", description: "了解公民秩序主义的政治与制度路线、当前组织阶段与正式文件。", contentType: "页面" })}
+
+<div class="inst4 inst4l inst4l-about">
+  <section class="inst4l-hero">
+    <p class="inst4-eyebrow">ABOUT</p>
+    <h1 class="inst4l-title">关于公民秩序主义</h1>
+    <p class="inst4l-lead">公民秩序主义是一条面向中国未来的政治与制度路线：通过和平转轨、行政承接、责任区分与制度重组，降低政治变化的社会成本，保持国家与公共服务连续，并建立能够限制权力、明确责任与持续纠错的新秩序。</p>
+  </section>
+
+  <div class="inst4l-body">
+    <div class="inst4l-main">
+      ${inst4lSection(
+        "定位",
+        "公民秩序主义是什么",
+        `<p>公民秩序主义首先是一条面向中国未来的政治与制度路线。它主张通过和平转轨、行政承接、责任区分和制度重组，降低政治变化的社会成本，保持国家与公共服务连续，并建立能够限制权力、明确责任和持续纠错的新秩序。</p>
+<p>理论是这条路线的基础，用于解释国家失灵、公共秩序和制度能力；组织建设是长期承接结构，使路线能够被持续研究、传播、完善和实践。</p>`,
+      )}
+
+      ${inst4lSection(
+        "为什么存在",
+        "为什么存在",
+        `<p>中国正在进入政治、财政与社会结构变化的长期过程。公民秩序主义认为，政治变化不应当以摧毁国家和集体报复为代价，而应当通过接管、纠偏、重组与再解释，在保持国家连续性的同时建立新秩序。</p>
+<p>本站不是新闻信息流，也不以高频更新或情绪动员作为主要功能。网站服务于一条长期政治路线，而不是把公民秩序主义缩减为单纯的内容集合。</p>`,
+      )}
+
+      ${inst4lSection(
+        "路线",
+        "政治路线",
+        `<p>政治转型的目标不是摧毁国家，而是改变政治。公民秩序主义主张一条不依赖革命、不以清算为目，并保持国家连续性的和平转轨路线。</p>
+<p class="inst4l-link"><a href="/civic-orderism/">阅读政治路线 <span aria-hidden="true">→</span></a></p>`,
+      )}
+
+      ${inst4lSection("研究体系", "从理解旧秩序，到准备新的政治秩序", inst4lAxesBlock(), "研究围绕三个方向展开：理解现在、准备转轨、准备未来。")}
+
+      ${inst4lSection(
+        "正式文件",
+        "正式出版与筹备文件",
+        inst4lRows([
+          {
+            href: "/files/civic-orderism-introduction-manual.pdf",
+            meta: "PDF · 入门手册",
+            title: "公民秩序主义介绍手册",
+            desc: "第一次理解公民秩序主义的基础文本；也可以在线阅读 HTML 版。",
+          },
+          {
+            href: "/files/civic-orderism-founding-board-brief-2026.pdf",
+            meta: "PDF · CO—2026—002",
+            title: "北美非营利法人及首届董事会筹备说明",
+            desc: "说明公民秩序主义为什么需要从理论表达进入组织建设，以及筹备所承担的功能。",
+          },
+        ]),
+      )}
+
+      ${inst4lSection("联系方式", "联系方式", inst4lContactBlock(), "本站不设公开成员名册、失控的公开群聊、支付或募款入口。")}
+    </div>
+
+    <aside class="inst4l-side">
+      <div class="inst4l-status">
+        <p class="inst4-eyebrow">CURRENT PHASE</p>
+        <h2>当前阶段</h2>
+        <p>北美非营利法人及<br>首届董事会前期筹备</p>
+        <p class="inst4l-status__year">2026</p>
+      </div>
+      <nav class="inst4l-quicklinks" aria-label="快速入口">
+        <a href="/start-here/">5分钟了解 <span aria-hidden="true">→</span></a>
+        <a href="/articles/">阅读地图 <span aria-hidden="true">→</span></a>
+        <a href="/preparation/">董事会筹备 <span aria-hidden="true">→</span></a>
+        <a href="/introduction-manual">在线阅读介绍手册 <span aria-hidden="true">→</span></a>
+      </nav>
+    </aside>
+  </div>
+</div>`,
+);
+const researchLandingTopicSlugs = [
+  "political-transition",
+  "bureaucratic-system",
+  "order-evaporation",
+  "second-reform",
+];
+const researchLandingConceptSlugs = [
+  "party-state-stress",
+  "bureaucratic-shock",
+  "order-evaporation",
+  "high-fragility",
+  "security-purge-recentralization-cycle",
+  "organizational-credit",
+];
+const researchFocusItems = [
+  "theory/party-state-structural-failure",
+  "china/xi-power-centralization",
+  "civic-orderism/peaceful-state-transition",
+  "china-stage/ccp-second-reform-opening-possibility",
+  "china-stage/china-manufacturing-cannot-stop",
+]
+  .map((slug) => articleBySlug.get(slug))
+  .filter((article) => article?.status === "published");
+
+writeInstitutionalContent(
+  "theory/index.md",
+  `${yamlFrontmatter({ title: "研究", description: "公民秩序主义的研究体系：理解现在、准备转轨、准备未来。", contentType: "栏目" })}
+
+<div class="inst4 inst4l inst4l-research">
+  <section class="inst4l-hero">
+    <p class="inst4-eyebrow">RESEARCH &amp; POLITICAL WORK</p>
+    <h1 class="inst4l-title">研究</h1>
+    <p class="inst4l-lead">公民秩序主义研究中国政治为什么正在变化、变化可以如何发生，以及变化之后国家如何继续运行。研究不是为评论而评论，而是为一条可执行的政治路线与制度建设建立认识基础。</p>
+  </section>
+
+  ${inst4lSection("研究框架", "从理解旧秩序，到准备新的政治秩序", inst4lAxesBlock(), "三个方向构成研究的核心阅读逻辑：理解现在，准备转轨，准备未来。")}
+
+  ${inst4lSection(
+    "精选研究",
+    "当前重点",
+    inst4lRows(
+      researchFocusItems.map((article) => ({
+        href: `/${article.slug}`,
+        meta: article.section,
+        title: article.title,
+        desc: article.summary || "",
+      })),
+    ),
+    "当前正在推进的重点研究。",
+  )}
+
+  ${inst4lSection(
+    "专题",
+    "研究专题",
+    inst4lRows(
+      researchLandingTopicSlugs
+        .map((slug) => topicBySlug.get(slug))
+        .filter((topic) => topic?.status === "published")
+        .map((topic) => {
+          const count = getPrimaryTopicArticles(articles, topic.slug).length;
+          return {
+            href: `/topics/${topic.slug}`,
+            meta: `专题 · ${count} 篇研究`,
+            title: topic.name,
+            desc: topic.description || "",
+          };
+        }),
+    ),
+    "围绕持续性政治问题组织长期研究，而不是按照新闻事件分类。",
+  )}
+
+  <div class="inst4l-index-links">
+    <p class="inst4l-link"><a href="/topics/">浏览全部研究专题 <span aria-hidden="true">→</span></a></p>
+  </div>
+
+  ${inst4lSection(
+    "核心概念",
+    "核心概念",
+    inst4lRows(
+      researchLandingConceptSlugs
+        .map((slug) => conceptBySlug.get(slug))
+        .filter(
+          (concept) =>
+            concept &&
+            (conceptPublicationStatus(concept) === "published" ||
+              conceptPublicationStatus(concept) === "reviewing"),
+        )
+        .map((concept) => ({
+          href: `/concepts/${concept.slug}`,
+          meta: "",
+          title: concept.name,
+          desc: concept.definition || "",
+        })),
+    ),
+    "公民秩序主义使用这些概念理解中国政治变化与国家秩序。",
+  )}
+
+  <div class="inst4l-index-links">
+    <p class="inst4l-link"><a href="/concepts/">浏览全部核心概念 <span aria-hidden="true">→</span></a></p>
+  </div>
+
+  ${inst4lSection(
+    "阅读",
+    "继续阅读",
+    inst4lRows([
+      {
+        href: "/articles/",
+        meta: "阅读路线",
+        title: "阅读地图",
+        desc: "第一次来到这里，选择一条适合自己的阅读路线。",
+      },
+      {
+        href: "/articles/all",
+        meta: "索引",
+        title: "全部文章",
+        desc: "按栏目浏览全部已发布研究。",
+      },
+      {
+        href: "/china-future/",
+        meta: "研究",
+        title: "中国未来",
+        desc: "政治转型之后，国家如何继续运行，以及新的政治秩序如何建立。",
+      },
+    ]),
+  )}
+</div>`,
+);
+const civicOrderismSection = sectionByName.get("公民秩序主义");
+const routeCoreJudgment = civicOrderismSection?.coreJudgment ?? "";
+const routeArticles = articles.filter(
+  (article) =>
+    article.section === "公民秩序主义" && article.status === "published",
+);
+const routePrimary = [
+  "civic-orderism/peaceful-state-transition",
+  "civic-orderism/possibility-of-peaceful-political-transition-in-china",
+  "civic-orderism/why-civic-orderism",
+  "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+  "civic-orderism/civic-orderism-manual",
+]
+  .map((slug) => articleBySlug.get(slug))
+  .filter((article) => article?.status === "published");
+const routeMore = routeArticles
+  .filter((article) => !routePrimary.some((item) => item.slug === article.slug))
+  .slice(0, 8);
+
+writeInstitutionalContent(
+  "civic-orderism/index.md",
+  `${yamlFrontmatter({ title: "政治路线", description: "公民秩序主义：不依赖革命、不以清算为目，保持国家连续性的中国和平政治转轨路线。", contentType: "栏目" })}
+
+<div class="inst4 inst4l inst4l-route">
+  <section class="inst4l-hero">
+    <p class="inst4-eyebrow">POLITICAL ROUTE</p>
+    <h1 class="inst4l-title">政治路线</h1>
+    <p class="inst4l-lead">${routeCoreJudgment}</p>
+  </section>
+
+  ${inst4lSection("核心判断", "政治转型的目标不是摧毁国家，而是改变政治", `<p class="inst4l-statement">${routeCoreJudgment}</p>`)}
+
+  ${inst4lSection(
+    "基本原则",
+    "路线的基本原则",
+    `<ul class="inst4l-principles">
+<li><strong>不革命</strong><span>政治变化不依赖暴力革命与群众动员。</span></li>
+<li><strong>不清算</strong><span>不以历史清算与集体报复作为转轨代价。</span></li>
+<li><strong>国家连续性</strong><span>在政治变化中保持国家、行政与公共服务的连续。</span></li>
+<li><strong>降低转轨阻力</strong><span>控制政治变化的阻力、风险与社会成本。</span></li>
+<li><strong>建立可信任承接主体</strong><span>由能够承担法律、财务与长期政治责任的组织承接公共功能。</span></li>
+</ul>`,
+    "以下原则来自已公开的正式内容，不包含尚未公开的制度设计细节。",
+  )}
+
+  ${inst4lSection(
+    "转轨逻辑",
+    "为什么和平转轨可能发生",
+    inst4lRows(
+      routePrimary.map((article) => ({
+        href: `/${article.slug}`,
+        meta: "核心文章",
+        title: article.title,
+        desc: article.summary || "",
+      })),
+    ),
+    "围绕和平转轨的可能条件与基本路径，只展示目前已公开的原则。",
+  )}
+
+  ${inst4lSection(
+    "进一步阅读",
+    "政治路线研究",
+    inst4lRows(
+      routeMore.map((article) => ({
+        href: `/${article.slug}`,
+        meta: "政治路线研究",
+        title: article.title,
+        desc: article.summary || "",
+      })),
+    ),
+    "继续深入公民秩序主义路线研究。",
+  )}
+
+  ${inst4lSection(
+    "正式文件",
+    "入门文本",
+    inst4lRows([
+      {
+        href: "/files/civic-orderism-introduction-manual.pdf",
+        meta: "PDF · 入门手册",
+        title: "公民秩序主义介绍手册",
+        desc: "第一次理解公民秩序主义的基础文本。",
+      },
+      {
+        href: "/introduction-manual",
+        meta: "在线阅读",
+        title: "介绍手册（在线版）",
+        desc: "以网页形式阅读介绍手册全文。",
+      },
+    ]),
+  )}
+</div>`,
+);
+
+writeInstitutionalContent(
+  "preparation.md",
+  `${yamlFrontmatter({ title: "北美非营利法人及首届董事会筹备", description: "公民秩序主义正在为正式出版、政治与治理研究、公共传播、人才协作和数字资产保护建立依法运行的承接结构。", contentType: "筹备页面", date: "2026-07-19", updated: "2026-08-11" })}
+
+<div class="inst4 inst4l inst4l-work">
+  <section class="inst4l-hero">
+    <p class="inst4-eyebrow">CURRENT WORK</p>
+    <h1 class="inst4l-title">北美非营利法人及<br>首届董事会筹备</h1>
+    <p class="inst4l-lead">公民秩序主义正在为正式出版、政治与治理研究、公共传播、人才协作和数字资产保护建立依法运行的承接结构。现阶段同时推进北美非营利法人和首届董事会的前期准备。</p>
+    <p class="inst4l-status">当前处于北美非营利法人及首届董事会前期筹备阶段，${organization.statusLabels.registration}，${organization.statusLabels.board}。</p>
+  </section>
+
+  ${inst4lSection(
+    "为什么现在",
+    "为什么现在进入组织建设",
+    `<p>政治转型不仅需要观点，也需要能够承担法律、财务、人员与长期政治责任的组织。公民秩序主义当前正在推进北美非营利法人及首届董事会筹备，从理论表达进入组织基础建设阶段。</p>
+<p>现阶段重点是理论建设、公共传播、专业协作网络建设和北美非营利组织筹备，而不是追求短期声势或迅速扩张成员。</p>`,
+  )}
+
+  <div class="inst4l-grid2">
+    ${inst4lSection(
+      "为什么需要法人",
+      "让公共事业不依赖个人",
+      `<p>法人不是目的，而是明确责任、保护公共资产、建立持续治理和依法开展工作的基础设施。</p>
+<ul class="inst4l-checklist"><li><strong>治理可持续</strong><span>以章程、董事会、授权和记录制度代替个人化管理。</span></li><li><strong>责任可识别</strong><span>明确谁能够决策、谁承担监督、谁对财务和公共资产负责。</span></li><li><strong>资产可保护</strong><span>长期管理理论成果、品牌、域名、网站、账号、档案与出版物。</span></li></ul>`,
+    )}
+
+    ${inst4lSection(
+      "为什么需要董事会",
+      "让方向与责任受到明确监督",
+      `<p>董事会不是象征性头衔，而是非营利法人的治理机构。首届董事需要共同建立组织最初的责任边界和工作规则。</p>
+<ul class="inst4l-checklist"><li><strong>守护公共使命</strong><span>确保研究、出版与组织工作持续服务于长期公共目的。</span></li><li><strong>承担法定责任</strong><span>依照最终注册法域的法律要求，对重大决策、合规与监督承担责任。</span></li><li><strong>保护组织资产</strong><span>监督财务、知识产权、域名、网站、账号、档案和其他公共资产。</span></li></ul>`,
+      "治理责任，不是荣誉头衔。",
+    )}
+  </div>
+
+  ${inst4lSection(
+    "当前工作",
+    "先建立规则，再扩大参与",
+    `<ol class="inst4l-steps">
+<li><span>01</span><div><strong>明确宗旨与业务范围</strong><p>研究适合的法人定位、公共目的和合规边界。</p></div></li>
+<li><span>02</span><div><strong>选择注册法域</strong><p>比较加拿大及北美相关法律环境；目前尚未确定具体法域。</p></div></li>
+<li><span>03</span><div><strong>制定章程与组织附例</strong><p>明确董事会、法定成员、授权、监督和利益冲突规则。</p></div></li>
+<li><span>04</span><div><strong>建立内部制度</strong><p>准备财务、档案、隐私、信息安全和知识产权制度。</p></div></li>
+<li><span>05</span><div><strong>识别首届董事候选人</strong><p>现阶段正在识别并接触潜在首届董事候选人，但不会通过公开报名直接产生董事资格。</p></div></li>
+<li><span>06</span><div><strong>完成法律程序</strong><p>在制度和人员准备成熟后，再依法申请注册并产生治理机构。</p></div></li>
+</ol>`,
+    "当前处于前期筹备、沟通与框架建设阶段。",
+  )}
+
+  ${inst4lSection(
+    "组织边界",
+    "筹备不等于已经成立",
+    `<p>截至目前，北美非营利法人尚未依法成立，具体注册法域尚未确定，首届董事会尚未依法产生。本站所称“法人筹备”和“董事会筹备”仅描述正在进行的准备工作，不表示已经取得任何法人、慈善或免税资格。</p>
+<p><strong>参与筹备不自动产生董事身份或治理权限。</strong>董事、法定成员、官方代表及其他正式治理职务，均须在制度准备完成后，依照适用法律、章程与正式程序产生。</p>`,
+  )}
+
+  ${inst4lSection("正式筹备文件", "正式文件", inst4lDocBlock())}
+
+  ${inst4lSection(
+    "建立联系",
+    "进一步了解或建立联系",
+    `<p>如果希望了解法人筹备、首届董事会责任或专业协作边界，请通过电子邮件联系。现阶段不设置即时社群入口。</p>
+${inst4lContactBlock()}`,
+    "当前正在识别潜在首届董事候选人，并建立专业协作联系。",
+  )}
+</div>`,
+);
+
+/* Phase 2A.5 — 解析中共 editorial research index prototype */
+const chinaSectionConfig = sectionByName.get("解析中共");
+const chinaCoreJudgment = chinaSectionConfig?.coreJudgment ?? "";
+const chinaModelRows = (chinaAnalysis.models ?? []).map((model) => ({
+  href: model.href ?? `/${model.article}`,
+  meta: "",
+  title: model.name,
+  desc: model.description || "",
+}));
+/* Program-level structural judgments: the five-to-six statements that explain
+   the current operating state of the system and connect the core models. */
+const chinaCoreJudgmentNames = new Set([
+  "党国关系",
+  "官僚体系",
+  "财政与利益分配",
+  "安全治理",
+  "权力集中",
+  "国家治理能力",
+]);
+const chinaJudgmentRows = (chinaAnalysis.structuralJudgments ?? [])
+  .filter((item) => chinaCoreJudgmentNames.has(item.name))
+  .map((item) => ({
+    href: item.href,
+    meta: "结构判断",
+    title: item.name,
+    desc: item.description || "",
+  }));
+const chinaGroupBlocks = (chinaAnalysis.groups ?? []).map((group) => {
+  const items = (group.featured ?? group.slugs ?? [])
+    .map((slug) => articleBySlug.get(slug))
+    .filter((article) => article?.status === "published")
+    .slice(0, 3);
+  return {
+    name: group.name,
+    desc: group.description || "",
+    rows: items.map((article) => ({
+      href: `/${article.slug}`,
+      meta: "延伸阅读",
+      title: article.title,
+      desc: article.summary || "",
+    })),
+  };
+});
+const chinaItems = chinaAnalysisSlugs
+  .map((slug) => articleBySlug.get(slug))
+  .filter((article) => article?.status === "published");
+const chinaLatest = [...chinaItems].sort(
+  (a, b) =>
+    b.updated.localeCompare(a.updated) ||
+    a.title.localeCompare(b.title, "zh-CN"),
+)[0]?.updated;
+
+writeInstitutionalContent(
+  "china/index.md",
+  `${yamlFrontmatter({ title: "解析中共", description: chinaSectionConfig?.description ?? "", contentType: "栏目" })}
+
+<div class="inst4 inst4l inst4l-china">
+  <section class="inst4l-hero">
+    <p class="inst4-eyebrow">UNDERSTANDING THE PRESENT</p>
+    <h1 class="inst4l-title">解析中共</h1>
+    <p class="inst4l-lead">${chinaSectionConfig?.description ?? ""}</p>
+    <p class="inst4l-status">${chinaItems.length} 篇研究 · 3 个阅读层级 · 更新至 ${chinaLatest || "2026-07-19"}</p>
+  </section>
+
+  ${inst4lSection("CORE JUDGMENT", "栏目核心判断", `<p class="inst4l-statement">${chinaCoreJudgment}</p>`)}
+
+  ${inst4lSection(
+    "01",
+    "核心分析框架",
+    inst4lRows(chinaModelRows),
+    "公民秩序主义用于理解中共运行状态、组织变化与治理机制的一组核心分析工具。",
+  )}
+
+  ${inst4lSection("02", "结构判断", inst4lRows(chinaJudgmentRows), "从权力、财政、官僚、央地与国家治理等结构维度，观察中共长期运行中的矛盾。")}
+
+  ${chinaGroupBlocks
+    .map((block, index) =>
+      inst4lSection(
+        String(index + 3).padStart(2, "0"),
+        block.name,
+        inst4lRows(block.rows) +
+          `<p class="inst4l-link"><a href="/articles/all">查看该方向全部研究 <span aria-hidden="true">→</span></a></p>`,
+        block.desc,
+      ),
+    )
+    .join("\n")}
+
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">全部研究</p>
+      <h2 class="inst4l-section__title">浏览全部解析中共文章</h2>
+      <p class="inst4l-section__desc">进入独立文章索引，按专题与概念继续筛选阅读。</p>
+    </div>
+    <p class="inst4l-link"><a href="/articles/all">进入文章索引 <span aria-hidden="true">→</span></a></p>
+  </section>
+</div>`,
+);
+
+/* Phase 2B — 中国未来 landing */
+const chinaFutureSectionConfig = sectionByName.get("中国未来");
+const chinaFutureArticles = articles.filter(
+  (article) =>
+    article.section === "中国未来" && article.status === "published",
+);
+const chinaFutureLatest = [...chinaFutureArticles].sort((a, b) =>
+  b.updated.localeCompare(a.updated),
+)[0]?.updated;
+const chinaFutureIssues = [
+  {
+    name: "政治经济收缩",
+    desc: "政治整肃与财政、经济、文化收缩相互推进，正在压缩中国继续扩张的空间。",
+    slugs: ["china-stage/three-cleans-era-political-economic-cultural-contraction"],
+  },
+  {
+    name: "改革窗口与二次改开",
+    desc: "中国是否还有第二次改革开放的可能，取决于政治平衡能否承受新一轮改革。",
+    slugs: ["china-stage/ccp-second-reform-opening-possibility"],
+  },
+  {
+    name: "产业、财政与国家能力",
+    desc: "制造业与财政体系的运行惯性，决定国家在收缩中仍然维持运转的能力边界。",
+    slugs: ["china-stage/china-manufacturing-cannot-stop"],
+  },
+].map((issue, index) => ({
+  ...issue,
+  num: String(index + 1).padStart(2, "0"),
+  rows: issue.slugs
+    .map((slug) => articleBySlug.get(slug))
+    .filter((article) => article?.status === "published")
+    .map((article) => ({
+      href: `/${article.slug}`,
+      meta: "代表研究",
+      title: article.title,
+      desc: article.summary || "",
+    })),
+}));
+
+writeInstitutionalContent(
+  "china-future/index.md",
+  `${yamlFrontmatter({ title: "中国未来", description: "如果旧政治秩序发生变化，中国接下来如何继续运行？讨论政治转型之后的国家连续性、治理秩序与长期政治稳定。", contentType: "栏目" })}
+
+<div class="inst4 inst4l inst4l-future">
+  <section class="inst4l-hero">
+    <p class="inst4-eyebrow">PREPARING THE FUTURE</p>
+    <h1 class="inst4l-title">中国未来</h1>
+    <p class="inst4l-lead">如果旧政治秩序发生变化，中国接下来如何继续运行？这里讨论的不是新闻预测，而是政治转型之后的国家连续性、治理秩序、制度安排与长期政治稳定。</p>
+    <p class="inst4l-status">${chinaFutureArticles.length} 篇研究 · ${chinaFutureIssues.length} 个核心议题 · 更新至 ${chinaFutureLatest || "2026-08-23"}</p>
+  </section>
+
+  ${inst4lSection("CORE JUDGMENT", "核心判断", `<p class="inst4l-statement">${chinaFutureSectionConfig?.coreJudgment ?? ""}</p>`)}
+
+  ${chinaFutureIssues
+    .map((issue) =>
+      inst4lSection(
+        issue.num,
+        issue.name,
+        inst4lRows(issue.rows) +
+          `<p class="inst4l-link"><a href="/articles/all">查看该议题全部研究 <span aria-hidden="true">→</span></a></p>`,
+        issue.desc,
+      ),
+    )
+    .join("\n")}
+
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">全部研究</p>
+      <h2 class="inst4l-section__title">浏览全部中国未来研究</h2>
+      <p class="inst4l-section__desc">进入独立文章索引，继续浏览转型窗口与国家治理研究。</p>
+    </div>
+    <p class="inst4l-link"><a href="/articles/all">进入文章索引 <span aria-hidden="true">→</span></a></p>
+  </section>
+</div>`,
+);
+/* Phase 2B — Topic Index */
+const topicIndexRows = publicTopics.map((topic, index) => ({
+  href: "/topics/" + topic.slug,
+  meta:
+    "专题 " +
+    String(index + 1).padStart(2, "0") +
+    " · " +
+    getPrimaryTopicArticles(articles, topic.slug).length +
+    " 篇研究",
+  title: topic.name,
+  desc: topic.coreJudgment || topic.description || "",
+}));
+const topicsIndexBody = inst4lSection(
+  "专题索引",
+  "正在研究的持续性政治问题",
+  inst4lRows(topicIndexRows),
+  "研究专题组织的是问题本身，而不是文章分类。",
+);
+
+writeInstitutionalContent(
+  "topics/index.md",
+  `${yamlFrontmatter({ title: "研究专题", description: "围绕持续性政治问题组织的长期研究线索。", contentType: "专题索引" })}
+
+<div class="inst4 inst4l inst4l-topics">
+  <section class="inst4l-hero">
+    <p class="inst4-eyebrow">RESEARCH TOPICS</p>
+    <h1 class="inst4l-title">研究专题</h1>
+    <p class="inst4l-lead">围绕持续性政治问题组织长期研究，而不是按照新闻事件分类文章。每个专题对应一组正在被持续研究的问题。</p>
+  </section>
+
+  ${topicsIndexBody}
+</div>`,
+);
+
+/* Phase 2B — Topic Prototype: 官僚系统 */
+const bureauTopicConfig = topicBySlug.get("bureaucratic-system");
+const bureauTopicArticles = getPrimaryTopicArticles(
+  articles,
+  "bureaucratic-system",
+);
+const bureauTopicRecommended = (bureauTopicConfig?.recommended ?? [])
+  .map((slug) => articleBySlug.get(slug))
+  .filter(isEligibleArticle)
+  .slice(0, 5);
+const bureauTopicConcepts = (bureauTopicConfig?.concepts ?? [])
+  .map((slug) => conceptBySlug.get(slug))
+  .filter((concept) => concept && publicConceptSlugs.has(concept.slug))
+  .slice(0, 3);
+const bureauTopicLatest = [...bureauTopicArticles].sort((a, b) =>
+  b.updated.localeCompare(a.updated),
+)[0]?.updated;
+
+writeInstitutionalContent(
+  "topics/bureaucratic-system.md",
+  `${yamlFrontmatter({ title: "官僚系统", description: bureauTopicConfig?.description ?? "", contentType: "专题" })}
+
+<div class="inst4 inst4l inst4l-topic">
+  <section class="inst4l-hero">
+    <p class="inst4-eyebrow">RESEARCH TOPIC</p>
+    <h1 class="inst4l-title">官僚系统</h1>
+    <p class="inst4l-lead">${bureauTopicConfig?.description ?? ""}</p>
+    <p class="inst4l-status">${bureauTopicArticles.length} 篇研究 · 更新至 ${bureauTopicLatest || "2026-08-23"}</p>
+  </section>
+
+  ${inst4lSection("CORE JUDGMENT", "专题核心判断", `<p class="inst4l-statement">${bureauTopicConfig?.coreJudgment ?? ""}</p>`)}
+
+  ${inst4lSection("为什么重要", "官僚系统是理解中共治理的核心切面", `<p>整肃、问责、避责与多头治理相互叠加，使官僚系统的行为持续偏离公共任务：责任被层层下压，授权却同步收缩，主动决策的个人成本高于等待、请示和留痕。</p>
+<p>当这种风险结构覆盖整个体系时，官僚系统会从执行转向自保，形成系统性休克。理解这一机制，是理解中共治理能力为何与组织规模脱节的关键。</p>`)}
+
+  ${inst4lSection(
+    "关键研究",
+    "代表研究",
+    inst4lRows(
+      bureauTopicRecommended.map((article) => ({
+        href: `/${article.slug}`,
+        meta: "关键研究",
+        title: article.title,
+        desc: article.summary || "",
+      })),
+    ),
+    "最能说明官僚系统行为变化的核心研究。",
+  )}
+
+  ${inst4lSection(
+    "相关概念",
+    "相关概念",
+    inst4lRows(
+      bureauTopicConcepts.map((concept) => ({
+        href: `/concepts/${concept.slug}`,
+        meta: "概念",
+        title: concept.name,
+        desc: concept.definition || "",
+      })),
+    ),
+    "用于理解官僚系统行为的核心概念。",
+  )}
+
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">全部研究</p>
+      <h2 class="inst4l-section__title">浏览全部官僚系统研究</h2>
+      <p class="inst4l-section__desc">进入独立文章索引，继续筛选与阅读。</p>
+    </div>
+    <p class="inst4l-link"><a href="/articles/all">浏览该专题全部文章 <span aria-hidden="true">→</span></a></p>
+  </section>
+</div>`,
+);
+
+/* Phase 2B.1 — Concept Taxonomy */
+const conceptTypeBySlug = {
+  "party-state-stress": "FRAMEWORK",
+  "bureaucratic-shock": "STATE",
+  "order-evaporation": "PROCESS",
+  "organizational-credit": "CONCEPT",
+  "political-control-governance-divergence": "RELATION",
+  "high-fragility": "STATE",
+  "security-purge-recentralization-cycle": "MODEL",
+  "security-recentralization": "PROCESS",
+  "three-cleans-era": "PERIOD",
+  "fiscal-debt": "PROCESS",
+  "political-debt": "PROCESS",
+  "second-reform": "CONCEPT",
+  "state-system-upgrade": "CONCEPT",
+  "low-friction-governance": "CONCEPT",
+};
+const conceptGroups = [
+  {
+    label: "A",
+    title: "组织诊断",
+    desc: "回答现有政治组织发生了什么：结构状态与组织反应。",
+    slugs: [
+      "party-state-stress",
+      "bureaucratic-shock",
+      "order-evaporation",
+      "organizational-credit",
+      "political-control-governance-divergence",
+      "high-fragility",
+    ],
+  },
+  {
+    label: "B",
+    title: "阶段与循环",
+    desc: "回答这些变化如何演进：政治周期与运行阶段。",
+    slugs: [
+      "security-purge-recentralization-cycle",
+      "security-recentralization",
+      "three-cleans-era",
+      "fiscal-debt",
+      "political-debt",
+    ],
+  },
+  {
+    label: "C",
+    title: "转型与治理",
+    desc: "回答政治转型与未来治理如何被理解。",
+    slugs: ["second-reform", "state-system-upgrade", "low-friction-governance"],
+  },
+];
+const conceptGroupBodies = conceptGroups.map((group) =>
+  inst4lSection(
+    group.label,
+    group.title,
+    inst4lRows(
+      group.slugs
+        .map((slug) => conceptBySlug.get(slug))
+        .filter(Boolean)
+        .map((concept) => ({
+          href: "/concepts/" + concept.slug,
+          meta: conceptTypeBySlug[concept.slug] ?? "CONCEPT",
+          title: concept.name,
+          desc: concept.definition || "",
+        })),
+    ),
+    group.desc,
+  ),
+);
+const supportingConceptRows = [
+  { slug: "political-route", type: "ROUTE" },
+  { slug: "nonviolent-transition", type: "PRINCIPLE" },
+  { slug: "ruling-techniques", type: "TOPIC" },
+  { slug: "crisis-management", type: "SUPPORTING" },
+]
+  .map((item) => ({ item, concept: conceptBySlug.get(item.slug) }))
+  .filter(({ concept }) => concept)
+  .map(({ item, concept }) => ({
+    href: "/concepts/" + concept.slug,
+    meta: item.type,
+    title: concept.name,
+    desc: concept.definition || "",
+  }));
+const supportingConceptsBody = inst4lSection(
+  "其他",
+  "保留页面、退出核心概念索引的对象",
+  inst4lRows(supportingConceptRows),
+  "以下对象保留独立页面，但属于路线、原则、专题或辅助概念，不再作为核心分析概念平铺。",
+);
+
+writeInstitutionalContent(
+  "concepts/index.md",
+  `${yamlFrontmatter({ title: "核心概念", description: "公民秩序主义使用什么概念理解中国政治变化与国家秩序。", contentType: "概念索引" })}
+
+<div class="inst4 inst4l inst4l-concepts">
+  <section class="inst4l-hero">
+    <p class="inst4-eyebrow">CORE CONCEPTS</p>
+    <h1 class="inst4l-title">核心概念</h1>
+    <p class="inst4l-lead">研究专题回答正在研究什么问题；核心概念回答公民秩序主义使用什么概念理解这些问题。概念按分析功能分组，而不是全部平铺为同一层级。</p>
+  </section>
+
+  ${conceptGroupBodies.join("\n")}
+
+  ${supportingConceptsBody}
+</div>`,
+);
+
+/* Phase 2B — Concept Prototype: 官僚系统休克 */
+const bureauShockConfig = conceptBySlug.get("bureaucratic-shock");
+const bureauShockArticles = (bureauShockConfig?.representativeArticles ?? [])
+  .map((slug) => articleBySlug.get(slug))
+  .filter(isEligibleArticle)
+  .slice(0, 4);
+const bureauShockRelated = (bureauShockConfig?.related ?? [])
+  .map((slug) => conceptBySlug.get(slug))
+  .filter((concept) => concept && publicConceptSlugs.has(concept.slug));
+const bureauShockManifestationRows = (bureauShockConfig?.manifestations ?? []).map(
+  (item, index) => ({
+    href: "/articles/all",
+    meta: "表现 " + String(index + 1).padStart(2, "0"),
+    title: item,
+    desc: "",
+  }),
+);
+const bureauShockRelatedRows = bureauShockRelated.map((concept) => ({
+  href: "/concepts/" + concept.slug,
+  meta: "概念",
+  title: concept.name,
+  desc: concept.definition || "",
+}));
+const bureauShockArticleRows = bureauShockArticles.map((article) => ({
+  href: "/" + article.slug,
+  meta: "代表研究",
+  title: article.title,
+  desc: article.summary || "",
+}));
+
+writeInstitutionalContent(
+  "concepts/bureaucratic-shock.md",
+  `${yamlFrontmatter({ title: "官僚系统休克", description: bureauShockConfig?.definition ?? "", contentType: "概念" })}
+
+<div class="inst4 inst4l inst4l-concept">
+  <section class="inst4l-hero">
+    <p class="inst4-eyebrow">CORE CONCEPT</p>
+    <h1 class="inst4l-title">官僚系统休克</h1>
+    <p class="inst4l-lead">${bureauShockConfig?.definition ?? ""}</p>
+  </section>
+
+  ${inst4lSection("核心定义", "它是什么", `<p class="inst4l-statement">${bureauShockConfig?.definition ?? ""}</p>
+<p>官僚休克描述的不是个别干部懒惰，而是组织激励共同把行动导向最低风险：责任持续下压，必要授权却同步收缩，主动决策的个人成本高于等待、请示和留痕。结果是每个成员都可能作出理性自保选择，系统整体却失去处理现实问题的能力。</p>`)}
+
+  ${inst4lSection("形成机制", "它为什么发生", `<p class="inst4l-statement">${bureauShockConfig?.mechanism ?? ""}</p>
+<p>${bureauShockConfig?.explanation ?? ""}</p>`)}
+
+  ${inst4lSection(
+    "如何识别",
+    "它的现实表现",
+    inst4lRows(bureauShockManifestationRows),
+    "这些表现共同构成官僚系统从执行转向自保的信号。",
+  )}
+
+  ${inst4lSection(
+    "相关概念",
+    "与其他概念的关系",
+    inst4lRows(bureauShockRelatedRows),
+    "依据现有概念关系配置，不预设因果链条。",
+  )}
+
+  ${inst4lSection(
+    "代表研究",
+    "相关研究",
+    inst4lRows(bureauShockArticleRows),
+    "最能体现官僚系统休克机制的研究。",
+  )}
+
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">全部研究</p>
+      <h2 class="inst4l-section__title">浏览全部相关研究</h2>
+      <p class="inst4l-section__desc">进入独立文章索引，继续筛选与阅读。</p>
+    </div>
+    <p class="inst4l-link"><a href="/articles/all">查看全部相关研究 <span aria-hidden="true">→</span></a></p>
+  </section>
+</div>`,
+);
+/* Phase 2B — Reading Map (articles.md): three routes */
+const readingMapFiveRows = [
+  { href: "/start-here/", meta: "入口", title: "5分钟了解公民秩序主义", desc: "用五个问题建立基础认识。" },
+  { href: "/introduction-manual", meta: "入门文本", title: "公民秩序主义介绍手册（在线版）", desc: "系统了解整体框架的简短文本。" },
+  { href: "/civic-orderism/peaceful-state-transition", meta: "核心文章", title: "国家如何平稳转轨", desc: "公民秩序主义最核心的一篇路线说明。" },
+];
+const readingMapThirtyRows = [
+  {
+    meta: "理解现在",
+    title: "解析中共",
+    desc: "理解旧政治秩序为什么正在失去持续提供利益、预期与共识的能力。",
+    href: "/theory/party-state-structural-failure",
+  },
+  {
+    meta: "准备转轨",
+    title: "政治路线",
+    desc: "理解为什么和平转轨可能发生，以及如何保持国家连续性。",
+    href: "/civic-orderism/peaceful-state-transition",
+  },
+  {
+    meta: "准备未来",
+    title: "中国未来",
+    desc: "理解政治变化之后国家如何继续运行。",
+    href: "/china-stage/ccp-second-reform-opening-possibility",
+  },
+];
+const readingMapDeepRows = [
+  { href: "/china/", meta: "研究框架", title: "核心模型与研究框架", desc: "进入解析中共的研究程序。" },
+  { href: "/topics/", meta: "研究专题", title: "研究专题", desc: "围绕持续性政治问题组织的研究线索。" },
+  { href: "/concepts/", meta: "核心概念", title: "核心概念", desc: "公民秩序主义使用的解释概念。" },
+  { href: "/articles/all", meta: "完整研究", title: "全部研究", desc: "按栏目浏览全部已发布文章。" },
+];
+
+writeInstitutionalContent(
+  "articles.md",
+  `${yamlFrontmatter({ title: "阅读地图", description: "第一次来到这里，应该怎么读？三条阅读路线：5分钟、30分钟、深度阅读。", contentType: "索引" })}
+
+<div class="inst4 inst4l inst4l-reading-map">
+  <section class="inst4l-hero">
+    <p class="inst4-eyebrow">READING MAP</p>
+    <h1 class="inst4l-title">阅读地图</h1>
+    <p class="inst4l-lead">这里不是完整文章目录，而是为第一次来到本站的读者准备的阅读入口。选择一条适合你的路线。</p>
+  </section>
+
+  ${inst4lSection(
+    "01 · 5分钟",
+    "快速知道公民秩序主义是什么",
+    inst4lRows(readingMapFiveRows),
+    "只提供最少必要入口。",
+  )}
+
+  ${inst4lSection(
+    "02 · 30分钟",
+    "理解完整基本逻辑",
+    inst4lRows(readingMapThirtyRows),
+    "理解现在 → 准备转轨 → 准备未来。每一步只推荐极少数代表内容。",
+  )}
+
+  ${inst4lSection(
+    "03 · 深度阅读",
+    "进入研究体系",
+    inst4lRows(readingMapDeepRows),
+    "已经建立基础认识后，按研究框架继续深入。",
+  )}
+</div>`,
+);
+
+/* Phase 2B — Archive Template (articles/all.md) */
+const archiveGroups = ["解析中共", "公民秩序主义", "中国未来", "制度设计"]
+  .map((name, index) => ({
+    num: String(index + 1).padStart(2, "0"),
+    name,
+    items: articles.filter(
+      (article) => article.section === name && article.status === "published",
+    ),
+  }))
+  .filter((group) => group.items.length);
+const publishedCount = articles.filter(
+  (article) => article.status === "published",
+).length;
+const archiveSectionBodies = archiveGroups.map((group) =>
+  inst4lSection(
+    group.num,
+    group.name,
+    inst4lRows(
+      group.items.map((article) => ({
+        href: "/" + article.slug,
+        meta: article.date || "日期待补",
+        title: article.title,
+        desc: (article.summary || "").slice(0, 60),
+      })),
+    ),
+    group.items.length + " 篇研究",
+  ),
+);
+
+writeInstitutionalContent(
+  "articles/all.md",
+  `${yamlFrontmatter({ title: "全部文章", description: "按栏目浏览公民秩序主义全部已发布研究。", contentType: "文章索引" })}
+
+<div class="inst4 inst4l inst4l-archive">
+  <section class="inst4l-hero">
+    <p class="inst4-eyebrow">RESEARCH ARCHIVE</p>
+    <h1 class="inst4l-title">全部研究</h1>
+    <p class="inst4l-lead">按栏目浏览全部已发布研究。需要按问题搜索时，可以使用页面上方的搜索入口。</p>
+    <p class="inst4l-status">${publishedCount} 篇研究 · 4 个研究栏目</p>
+  </section>
+
+  ${archiveSectionBodies.join("\n")}
+</div>`,
 );
 
 console.log(

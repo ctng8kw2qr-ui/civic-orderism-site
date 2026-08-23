@@ -43,6 +43,36 @@ export default ((opts?: Partial<FolderContentOptions>) => {
   const FolderContent: QuartzComponent = (props: QuartzComponentProps) => {
     const { tree, fileData, allFiles, cfg } = props;
 
+    // Institutional landing pages carry their own content and index rows;
+    // do not append the Quartz folder listing on top of them.
+    let hasInstitutionalLanding = false;
+    const visit = (node: unknown) => {
+      if (hasInstitutionalLanding) return;
+      const el = node as {
+        type?: string;
+        properties?: { className?: unknown };
+        children?: unknown[];
+      };
+      if (el?.type === "element") {
+        const cls = String(el.properties?.className ?? "");
+        if (cls === "inst4" || cls.includes("inst4l")) {
+          hasInstitutionalLanding = true;
+          return;
+        }
+      }
+      (el?.children ?? []).forEach(visit);
+    };
+    visit(tree);
+    if (hasInstitutionalLanding) {
+      // Render the landing page body itself (institutional content)
+      // instead of the Quartz folder listing.
+      const content = htmlToJsx(
+        fileData.filePath!,
+        tree,
+      ) as ComponentChildren;
+      return <article class="popover-hint">{content}</article>;
+    }
+
     const trie = (props.ctx.trie ??= trieFromAllFiles(allFiles));
     const folder = trie.findNode(fileData.slug!.split("/"));
     if (!folder) {
