@@ -32,8 +32,8 @@ export const sharedPageComponents: SharedLayout = {
   header: [Component.PrimaryNavigation()],
   afterBody: [
     Component.ArticleSeriesNavigation(),
-    Component.ArticleKnowledgeContext(),
     Component.ArticleContinueReading(),
+    Component.ArticleKnowledgeContext(),
     Component.ArticleEndingCta(),
     Component.ConditionalRender({
       component: Component.ManualModals(),

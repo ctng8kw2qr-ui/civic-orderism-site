@@ -5,7 +5,6 @@ import {
   QuartzComponentConstructor,
   QuartzComponentProps,
 } from "./types";
-import { Date, getDate } from "./Date";
 import style from "./styles/articleReadingEnhancements.scss";
 import migrationMap from "../../content-migration-map.json";
 import topicsConfig from "../../data/topics.config.json";
@@ -156,17 +155,6 @@ function conceptsForArticle(
     .slice(0, MAX_RELATED_CONCEPTS)
     .map(([slug]) => conceptBySlug.get(slug))
     .filter((concept): concept is PublishedConcept => concept !== undefined);
-}
-
-function getArticleSummary(file: QuartzPluginData) {
-  const raw =
-    file.frontmatter?.summary ??
-    file.frontmatter?.description ??
-    file.description ??
-    "";
-  const summary = String(raw).replace(/\s+/g, " ").trim();
-  if (summary.length <= 66) return summary;
-  return `${summary.slice(0, 66)}...`;
 }
 
 function getSeries(value: unknown): string | undefined {
@@ -463,7 +451,6 @@ export const SeriesNavigation: QuartzComponent = ({
 };
 
 export const ContinueReading: QuartzComponent = ({
-  cfg,
   fileData,
   allFiles,
 }: QuartzComponentProps) => {
@@ -511,12 +498,6 @@ export const ContinueReading: QuartzComponent = ({
           file: fallbackSequence[fallbackIndex + 1],
         }
       : undefined;
-  const itemHref = (item: ArticleSequenceItem | undefined) =>
-    item?.href ?? (item?.slug ? `/${item.slug}` : undefined);
-  const itemTitle = (item: ArticleSequenceItem | undefined) =>
-    item?.title ?? item?.file?.frontmatter?.title;
-  const previousHref = itemHref(previousItem);
-  const nextHref = itemHref(nextItem);
   const adjacentSequenceSlugs = new Set(
     [previousItem?.slug, nextItem?.slug].filter((slug): slug is string =>
       Boolean(slug),
@@ -588,19 +569,6 @@ export const ContinueReading: QuartzComponent = ({
     >
       {label ? <small class="related-card__eyebrow">{label}</small> : null}
       <span class="related-card__title">{page.frontmatter?.title}</span>
-      <p class="related-card__meta">
-        {page.dates ? (
-          <Date date={getDate(cfg, page)!} locale={cfg.locale} />
-        ) : null}
-        {knowledgeFor(page)?.section || page.frontmatter?.category ? (
-          <span>
-            {String(knowledgeFor(page)?.section ?? page.frontmatter?.category)}
-          </span>
-        ) : null}
-      </p>
-      {getArticleSummary(page) ? (
-        <p class="related-card__summary">{getArticleSummary(page)}</p>
-      ) : null}
     </a>
   );
 
@@ -612,6 +580,7 @@ export const ContinueReading: QuartzComponent = ({
       <section
         class="related-reading related-reading--model"
         aria-label="继续阅读"
+        data-related-reading="core-model"
       >
         <h2 class="related-reading__heading">继续阅读</h2>
         {coreModelRecommendations.length ? (
@@ -638,27 +607,15 @@ export const ContinueReading: QuartzComponent = ({
     );
   }
 
-  if (!previousHref && !nextHref && recommendations.length === 0) return null;
+  if (recommendations.length === 0) return null;
 
   return (
-    <section class="related-reading" aria-label="继续阅读">
+    <section
+      class="related-reading"
+      aria-label="继续阅读"
+      data-related-reading="standard"
+    >
       <h2 class="related-reading__heading">继续阅读</h2>
-      {previousHref || nextHref ? (
-        <nav class="continue-reading__nav" aria-label="上一篇和下一篇">
-          {previousHref ? (
-            <a href={previousHref} data-slug={previousItem?.slug}>
-              <small>上一篇</small>
-              <strong>{itemTitle(previousItem)}</strong>
-            </a>
-          ) : null}
-          {nextHref ? (
-            <a href={nextHref} data-slug={nextItem?.slug}>
-              <small>下一篇</small>
-              <strong>{itemTitle(nextItem)}</strong>
-            </a>
-          ) : null}
-        </nav>
-      ) : null}
       {recommendations.length ? (
         <div class="continue-reading__related">
           <h3>相关文章</h3>

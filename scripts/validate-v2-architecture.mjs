@@ -241,6 +241,11 @@ for (const article of migration) {
     `文章发布日期不是标准日期：${article.slug} -> ${article.date}`,
   );
   const articleHtml = fs.readFileSync(publicHtml(article.slug), "utf8");
+  const relatedReadingPosition = articleHtml.indexOf("data-related-reading=");
+  const knowledgeContextPosition = articleHtml.indexOf(
+    'class="article-knowledge"',
+  );
+  const endingCtaPosition = articleHtml.indexOf('class="article-cta"');
   const recommendationHrefs = [
     ...articleHtml.matchAll(/<a class="related-card"[^>]*href="([^"]+)"/g),
   ].map((match) => match[1]);
@@ -268,6 +273,7 @@ for (const article of migration) {
     recommendationSlugs.length <= recommendationLimit,
     `推荐阅读超过 ${recommendationLimit} 篇：${article.slug}`,
   );
+  assert(recommendationSlugs.length >= 2, `推荐阅读少于 2 篇：${article.slug}`);
   assert(
     new Set(recommendationSlugs).size === recommendationSlugs.length,
     `推荐阅读出现重复：${article.slug}`,
@@ -287,6 +293,17 @@ for (const article of migration) {
           articleHtml.includes("从判断进入路线"))) &&
       articleHtml.includes("分钟阅读"),
     `文章缺少统一继续阅读、相关文章或预计阅读时间：${article.slug}`,
+  );
+  assert(
+    relatedReadingPosition > -1 &&
+      relatedReadingPosition < knowledgeContextPosition &&
+      knowledgeContextPosition < endingCtaPosition,
+    `文章尾部顺序不是继续阅读 → 知识关联 → 组织 CTA：${article.slug}`,
+  );
+  assert(
+    !articleHtml.includes("related-card__summary") &&
+      !articleHtml.includes("related-card__meta"),
+    `文章相关推荐仍包含长摘要或文章元信息：${article.slug}`,
   );
   assert(
     readingPathSlugs.every((slug) => !recommendationSlugs.includes(slug)),
