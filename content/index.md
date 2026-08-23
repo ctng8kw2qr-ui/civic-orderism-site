@@ -2,7 +2,7 @@
 title: "公民秩序主义"
 date: 2026-07-19
 updated: 2026-07-20
-description: "公民秩序主义正在为中国和平政治转轨建设政治承接能力，推进北美非营利组织及首届董事会筹备。"
+description: "公民秩序主义正在为中国和平政治转轨建设政治承接能力，推进北美非营利法人及首届董事会筹备。"
 contentType: "首页"
 status: published
 listed: true
@@ -14,68 +14,91 @@ aliases:
 ---
 
 <div class="home-institution-page">
-<section class="home-institution-hero" id="current-stage" aria-labelledby="home-institution-title">
+<section class="home-institution-hero" id="home-hero" aria-labelledby="home-institution-title">
   <div class="home-institution-hero__grid">
     <div class="home-institution-hero__content">
-      <p class="home-institution-stage"><span>CIVIC ORDERISM</span><i aria-hidden="true"></i><span>CURRENT STAGE · 2026</span></p>
+      <p class="home-institution-stage"><span>CIVIC ORDERISM</span><i aria-hidden="true"></i><span>ORGANIZATIONAL STAGE · 2026</span></p>
       <h1 id="home-institution-title"><span>从政治判断</span><strong>走向组织建设</strong></h1>
-      <p class="home-institution-hero__lead">北美非营利组织及首届董事会筹备已经启动。</p>
-      <p class="home-institution-hero__copy">公民秩序主义正在从公共理论表达进入组织建设阶段，为未来可能出现的和平政治转轨，建立一个可以被识别、沟通、信任并承担责任的长期组织主体。</p>
-      <div class="home-institution-actions"><a class="home-institution-button" href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">阅读正式文件</a><a class="home-institution-text-link" href="/preparation">了解董事会筹备 →</a></div>
+      <p class="home-institution-hero__lead">公民秩序主义已经进入组织建设阶段。</p>
+      <p class="home-institution-hero__copy">公民秩序主义正在推进北美非营利法人及首届董事会筹备，为未来可能出现的中国政治和平转轨，建立一个可以被识别、沟通、信任并承担责任的长期组织主体。</p>
+      <div class="home-institution-actions"><a class="home-institution-button" href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">阅读正式筹备文件</a><a class="home-institution-text-link" href="/preparation">了解董事会筹备 <span aria-hidden="true">→</span></a></div>
     </div>
+  </div>
+</section>
+
+<section class="home-institution-current" id="current-stage" aria-labelledby="home-institution-current-title">
+  <header class="home-institution-current__head">
+    <p>CURRENT STAGE</p>
+    <h2 id="home-institution-current-title">当前阶段</h2>
+    <span>公民秩序主义目前处于北美非营利法人及首届董事会筹备阶段。</span>
+  </header>
+  <ol class="home-institution-current__items">
+    <li><span>01</span><strong>组织主体建立</strong></li>
+    <li><span>02</span><strong>首届董事会筹备</strong></li>
+    <li><span>03</span><strong>法律与财务基础</strong></li>
+    <li><span>04</span><strong>长期人才基础</strong></li>
+  </ol>
+</section>
+
+<section class="home-institution-official" id="official-document" aria-labelledby="home-institution-official-title">
+  <header class="home-institution-official__heading">
+    <p>OFFICIAL DOCUMENT</p>
+    <h2 id="home-institution-official-title">正式筹备文件</h2>
+    <span>公民秩序主义组织建设阶段的核心正式文件。</span>
+  </header>
+  <div class="home-institution-official__panel">
     <div class="home-institution-document" aria-label="正式筹备文件">
-      <a class="home-institution-document__cover" href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener" aria-label="打开《公民秩序主义北美非营利组织及首届董事会筹备文件》PDF">
-        <img src="/files/civic-orderism-founding-board-brief-2026-cover.png" alt="《公民秩序主义北美非营利组织及首届董事会筹备文件》封面" width="1191" height="1684">
+      <a class="home-institution-document__cover" href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener" aria-label="打开《公民秩序主义北美非营利法人及首届董事会筹备说明》PDF">
+        <img src="/files/civic-orderism-founding-board-brief-2026-cover.png" alt="《公民秩序主义北美非营利法人及首届董事会筹备说明》封面" width="1191" height="1684">
       </a>
-      <p class="home-institution-document__caption">OFFICIAL DOCUMENT · CO-2026-002 · VERSION 1.0</p>
+    </div>
+    <div class="home-institution-official__body">
+      <p class="home-institution-official__label">OFFICIAL DOCUMENT</p>
+      <h3>《公民秩序主义北美非营利法人及首届董事会筹备说明》</h3>
+      <p class="home-institution-official__en" lang="en">North American Nonprofit &amp; Founding Board Preparation Brief</p>
+      <p class="home-institution-official__summary">本文件说明公民秩序主义为什么需要从理论表达进入组织建设，以及首届董事会、北美非营利法人和长期组织能力建设所承担的功能。</p>
+      <div class="home-institution-official__actions"><a class="home-institution-button" href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">在线阅读</a><a class="home-institution-button home-institution-button--secondary" href="/files/civic-orderism-founding-board-brief-2026.pdf" download>下载 PDF</a></div>
+      <dl class="home-institution-official__meta">
+        <div>CO-2026-002 · OFFICIAL EDITION · V1.0</div>
+        <div>2026 · PDF · 22页</div>
+      </dl>
     </div>
   </div>
 </section>
 
 <section class="home-institution-theory" id="theory-and-research" aria-labelledby="home-institution-theory-title">
-  <header class="home-institution-section-heading"><p>THEORY & RESEARCH</p><h2 id="home-institution-theory-title">理论与研究</h2><span>组织建设建立在持续的政治判断、现实分析与中国未来研究之上。</span></header>
-  <nav class="home-institution-research" aria-label="理论与研究入口"><a class="home-institution-research__link" href="/china">
+  <header class="home-institution-section-heading"><p>POLITICAL ROUTE &amp; RESEARCH</p><h2 id="home-institution-theory-title">政治路线与理论研究</h2><span>组织建设建立在持续的政治判断、现实分析与中国未来研究之上。</span></header>
+  <nav class="home-institution-research" aria-label="政治路线与理论研究入口"><a class="home-institution-research__link" href="/civic-orderism">
   <span class="home-institution-research__number">01</span>
   <span class="home-institution-research__text">
-    <strong class="home-institution-research__title">解析中共</strong>
-    <span class="home-institution-research__summary">党国体系、官僚系统与现实政治分析</span>
+    <strong class="home-institution-research__title">政治路线</strong>
+    <span class="home-institution-research__summary">中国政治和平转轨的基本判断与路线</span>
   </span>
-  <span class="home-institution-research__hint">
-    <span>进入栏目</span>
-    <span aria-hidden="true">→</span>
-  </span>
+  <span class="home-institution-research__hint" aria-hidden="true">→</span>
 </a>
-<a class="home-institution-research__link" href="/civic-orderism">
+<a class="home-institution-research__link" href="/china">
   <span class="home-institution-research__number">02</span>
   <span class="home-institution-research__text">
-    <strong class="home-institution-research__title">公民秩序主义</strong>
-    <span class="home-institution-research__summary">政治路线与和平转轨框架</span>
+    <strong class="home-institution-research__title">解析中共</strong>
+    <span class="home-institution-research__summary">组织结构、官僚体系与治理逻辑</span>
   </span>
-  <span class="home-institution-research__hint">
-    <span>进入栏目</span>
-    <span aria-hidden="true">→</span>
-  </span>
+  <span class="home-institution-research__hint" aria-hidden="true">→</span>
 </a>
 <a class="home-institution-research__link" href="/china-future">
   <span class="home-institution-research__number">03</span>
   <span class="home-institution-research__text">
     <strong class="home-institution-research__title">中国未来</strong>
-    <span class="home-institution-research__summary">政治转轨与未来国家秩序</span>
+    <span class="home-institution-research__summary">后中共时代的国家治理与政治秩序</span>
   </span>
-  <span class="home-institution-research__hint">
-    <span>进入栏目</span>
-    <span aria-hidden="true">→</span>
-  </span>
+  <span class="home-institution-research__hint" aria-hidden="true">→</span>
 </a></nav>
-  <div class="home-institution-first-reading">
-    <span class="home-institution-first-reading__label">FIRST READING</span>
-    <strong class="home-institution-first-reading__title">第一次了解公民秩序主义</strong>
-    <a href="/introduction-manual">
-      <span>阅读《公民秩序主义介绍手册》</span>
-      <span aria-hidden="true">→</span>
-    </a>
-  </div>
 </section>
+
+<div class="home-institution-introduction">
+  <span class="home-institution-introduction__label">BACKGROUND READING</span>
+  <p>需要系统了解公民秩序主义的基本判断、政治路线与核心原则？</p>
+  <a href="/introduction-manual">阅读《公民秩序主义介绍手册（2026）》 <span aria-hidden="true">→</span></a>
+</div>
 
 <section class="home-institution-contact" aria-labelledby="home-institution-contact-title">
   <div class="home-institution-contact__intro">

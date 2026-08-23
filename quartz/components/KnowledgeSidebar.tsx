@@ -1,5 +1,4 @@
 import migration from "../../content-migration-map.json";
-import chinaAnalysis from "../../data/china-analysis.config.json";
 import sections from "../../data/sections.config.json";
 import topics from "../../data/topics.config.json";
 import {
@@ -9,16 +8,23 @@ import {
 } from "./types";
 
 const primaryLinks = [
-  { label: "5分钟了解", href: "/start-here" },
-  { label: "阅读地图", href: "/articles" },
+  { label: "首页", href: "/" },
   { label: "董事会筹备", href: "/preparation" },
-  { label: "公民秩序主义", href: "/civic-orderism" },
-  { label: "核心路线", href: "/civic-orderism/peaceful-state-transition" },
+  { label: "政治路线", href: "/civic-orderism" },
+  { label: "理论研究", href: "/theory" },
+  { label: "关于", href: "/about" },
+];
+
+const researchSubLinks = [
   { label: "解析中共", href: "/china" },
   { label: "中国未来", href: "/china-future" },
   { label: "专题", href: "/topics" },
   { label: "核心概念", href: "/concepts" },
-  { label: "关于", href: "/about" },
+];
+
+const furtherReadingLinks = [
+  { label: "5分钟了解", href: "/start-here" },
+  { label: "阅读地图", href: "/articles" },
 ];
 
 const sectionByName = new Map(
@@ -28,10 +34,6 @@ const topicBySlug = new Map(topics.map((topic) => [topic.slug, topic]));
 const articleSectionBySlug = new Map(
   migration.map((article) => [article.slug, article.section]),
 );
-const chinaAnalysisLinks = chinaAnalysis.groups.map((group, index) => ({
-  label: group.name,
-  href: `/china#${["一", "二", "三", "四", "五"][index]}${group.name.replace(/[、，,]/g, "")}`,
-}));
 
 function activeSection(slug: string) {
   const directSection = sections.find(
@@ -56,10 +58,12 @@ const KnowledgeSidebar: QuartzComponent = ({
     if (currentSection && href === `/${currentSection.slug}`) return true;
     return slug === target || slug.startsWith(`${target}/`);
   };
+  const researchExpanded =
+    isActive("/theory") || researchSubLinks.some((link) => isActive(link.href));
 
   return (
-    <nav class="knowledge-sidebar" aria-label="站点地图">
-      <p class="knowledge-sidebar__label">内容目录</p>
+    <nav class="knowledge-sidebar" aria-label="站点结构">
+      <p class="knowledge-sidebar__label">栏目</p>
       <ul>
         {primaryLinks.map((item) => {
           const section = sections.find(
@@ -77,7 +81,11 @@ const KnowledgeSidebar: QuartzComponent = ({
           return (
             <li
               class={
-                expanded ? "knowledge-sidebar__section is-expanded" : undefined
+                expanded
+                  ? "knowledge-sidebar__section is-expanded"
+                  : researchExpanded && item.href === "/theory"
+                    ? "knowledge-sidebar__section is-expanded"
+                    : undefined
               }
             >
               <a
@@ -86,27 +94,36 @@ const KnowledgeSidebar: QuartzComponent = ({
               >
                 {item.label}
               </a>
-              {expanded && section ? (
+              {item.href === "/theory" && researchExpanded ? (
                 <div class="knowledge-sidebar__section-links">
-                  {section.slug === "china" ? (
-                    chinaAnalysisLinks.map((link) => (
-                      <a href={link.href}>{link.label}</a>
-                    ))
-                  ) : (
-                    <>
-                      <a href={`/${section.slug}#推荐文章`}>推荐阅读</a>
-                      {sectionTopics.map((topic) => (
-                        <a href={`/topics/${topic!.slug}`}>{topic!.name}</a>
-                      ))}
-                      <a href={`/${section.slug}#全部文章`}>查看全部文章</a>
-                    </>
-                  )}
+                  {researchSubLinks.map((link) => (
+                    <a href={link.href}>{link.label}</a>
+                  ))}
+                </div>
+              ) : null}
+              {item.href === "/civic-orderism" && expanded && section ? (
+                <div class="knowledge-sidebar__section-links">
+                  <a href="/civic-orderism#推荐文章">推荐阅读</a>
+                  {sectionTopics.map((topic) => (
+                    <a href={`/topics/${topic!.slug}`}>{topic!.name}</a>
+                  ))}
+                  <a href="/civic-orderism#全部文章">查看全部文章</a>
                 </div>
               ) : null}
             </li>
           );
         })}
       </ul>
+      <div class="knowledge-sidebar__further">
+        <p class="knowledge-sidebar__label">进一步阅读</p>
+        <ul>
+          {furtherReadingLinks.map((item) => (
+            <li>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };
@@ -181,6 +198,23 @@ KnowledgeSidebar.css = `
 .knowledge-sidebar__section-links a:focus-visible {
   color: var(--dark);
   outline: none;
+}
+
+.knowledge-sidebar__further {
+  margin-top: 1.4rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--lightgray);
+}
+
+.knowledge-sidebar__further .knowledge-sidebar__label {
+  color: var(--gray);
+  opacity: 0.8;
+  font-size: 0.64rem;
+}
+
+.knowledge-sidebar__further a {
+  color: var(--gray);
+  font-size: 0.78rem;
 }
 
 @media (max-width: 800px) {

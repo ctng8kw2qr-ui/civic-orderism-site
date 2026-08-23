@@ -31,11 +31,32 @@ function setupPrimaryNavigation() {
     const links = nav.querySelectorAll<HTMLAnchorElement>(
       ".primary-navigation__links a",
     );
+    const submenuToggles = nav.querySelectorAll<HTMLButtonElement>(
+      ".primary-navigation__submenu-toggle",
+    );
 
     toggle.addEventListener("click", onClick);
     document.addEventListener("pointerdown", onOutsidePointer);
     document.addEventListener("keydown", onKeyDown);
     links.forEach((link) => link.addEventListener("click", onLinkClick));
+    submenuToggles.forEach((submenuToggle) => {
+      if (submenuToggle.dataset.bound === "true") return;
+      submenuToggle.dataset.bound = "true";
+      const item = submenuToggle.closest<HTMLElement>(
+        ".primary-navigation__item",
+      );
+      const setSubmenu = (open: boolean) => {
+        submenuToggle.setAttribute("aria-expanded", String(open));
+        item?.setAttribute("data-submenu-open", String(open));
+      };
+      const onSubmenuClick = () => {
+        setSubmenu(submenuToggle.getAttribute("aria-expanded") !== "true");
+      };
+      submenuToggle.addEventListener("click", onSubmenuClick);
+      window.addCleanup(() =>
+        submenuToggle.removeEventListener("click", onSubmenuClick),
+      );
+    });
     window.addCleanup(() => {
       toggle.removeEventListener("click", onClick);
       document.removeEventListener("pointerdown", onOutsidePointer);

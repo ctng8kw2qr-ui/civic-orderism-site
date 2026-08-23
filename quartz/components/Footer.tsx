@@ -7,6 +7,7 @@ import style from "./styles/footer.scss";
 
 interface Options {
   links: Record<string, string>;
+  secondaryLinks?: Record<string, string>;
   brand?: string;
   copyright?: string;
 }
@@ -14,6 +15,7 @@ interface Options {
 export default ((opts?: Options) => {
   const Footer: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {
     const links = opts?.links ?? [];
+    const secondaryLinks = opts?.secondaryLinks ?? [];
     return (
       <footer class={`${displayClass ?? ""}`}>
         {opts?.brand ? <p class="footer-brand">{opts.brand}</p> : null}
@@ -27,6 +29,15 @@ export default ((opts?: Options) => {
             </li>
           ))}
         </ul>
+        {Object.keys(secondaryLinks).length ? (
+          <ul class="footer-secondary">
+            {Object.entries(secondaryLinks).map(([text, link]) => (
+              <li>
+                <a href={link}>{text}</a>
+              </li>
+            ))}
+          </ul>
+        ) : null}
       </footer>
     );
   };

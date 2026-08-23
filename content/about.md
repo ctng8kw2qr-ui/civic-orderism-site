@@ -59,7 +59,7 @@ noindex: false
 
 ## 核心文档
 
-- [公民秩序主义北美非营利组织及首届董事会筹备文件](/files/civic-orderism-founding-board-brief-2026.pdf) — 说明组织建设、政治承接能力与首届董事会筹备的正式文件。
+- [公民秩序主义北美非营利法人及首届董事会筹备说明（2026）](/files/civic-orderism-founding-board-brief-2026.pdf) — 说明公民秩序主义为什么需要从理论表达进入组织建设，以及首届董事会、北美非营利法人和长期组织能力建设所承担功能的正式文件。
 - [公民秩序主义介绍手册](/files/civic-orderism-introduction-manual.pdf) — 第一次理解公民秩序主义的基础文本。
 
 ## 联系方式

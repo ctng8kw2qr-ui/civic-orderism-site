@@ -8,14 +8,16 @@ import style from "./styles/primaryNavigation.scss";
 // @ts-ignore
 import script from "./scripts/primaryNavigation.inline";
 
-const secondaryNavigation = [
+const researchSubLinks = [
+  { label: "解析中共", href: "/china" },
+  { label: "中国未来", href: "/china-future" },
+  { label: "专题", href: "/topics" },
+  { label: "核心概念", href: "/concepts" },
+];
+
+const furtherReadingLinks = [
   { label: "5分钟了解", href: "/start-here" },
   { label: "阅读地图", href: "/articles" },
-  {
-    label: "核心政治路线",
-    href: "/civic-orderism/peaceful-state-transition",
-  },
-  { label: "参与方式", href: "/participate" },
 ];
 
 const PrimaryNavigation: QuartzComponent = ({
@@ -61,6 +63,40 @@ const PrimaryNavigation: QuartzComponent = ({
       </a>
       <div class="primary-navigation__links" id="primary-navigation-links">
         {navigation.map((item) => {
+          if (item.href === "/theory") {
+            return (
+              <div
+                class="primary-navigation__item"
+                data-submenu
+                aria-expanded="false"
+              >
+                <a
+                  href={item.href}
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                >
+                  {item.label}
+                </a>
+                <button
+                  class="primary-navigation__submenu-toggle"
+                  type="button"
+                  aria-label="展开理论研究子菜单"
+                  aria-expanded="false"
+                >
+                  <span aria-hidden="true">+</span>
+                </button>
+                <div class="primary-navigation__submenu">
+                  {researchSubLinks.map((link) => (
+                    <a
+                      href={link.href}
+                      aria-current={isActive(link.href) ? "page" : undefined}
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            );
+          }
           return (
             <a
               href={item.href}
@@ -75,13 +111,14 @@ const PrimaryNavigation: QuartzComponent = ({
             </a>
           );
         })}
-        <div class="primary-navigation__secondary" aria-label="次级导航">
-          {secondaryNavigation.map((item) => (
+        <div class="primary-navigation__further">
+          <span>进一步阅读</span>
+          {furtherReadingLinks.map((link) => (
             <a
-              href={item.href}
-              aria-current={isActive(item.href) ? "page" : undefined}
+              href={link.href}
+              aria-current={isActive(link.href) ? "page" : undefined}
             >
-              {item.label}
+              {link.label}
             </a>
           ))}
         </div>

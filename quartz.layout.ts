@@ -46,12 +46,15 @@ export const sharedPageComponents: SharedLayout = {
     brand: "公民秩序主义 · Civic Orderism",
     copyright: "© 2026 Civic Orderism / 公民秩序主义",
     links: {
+      董事会筹备: "/preparation",
+      政治路线: "/civic-orderism",
+      理论研究: "/theory",
+      关于: "/about",
+      联系: "/about#联系方式",
+    },
+    secondaryLinks: {
       "5分钟了解": "/start-here",
       阅读地图: "/articles",
-      董事会筹备: "/preparation",
-      核心路线: "/civic-orderism/peaceful-state-transition",
-      参与方式: "/participate",
-      关于: "/about",
     },
   }),
 };
