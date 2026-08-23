@@ -850,64 +850,48 @@ const homepageMainHtml =
 const homepageMainText = visiblePageText(homepageMainHtml);
 const homepageHeroHtml =
   homepageMainHtml.match(
-    /<section class="home-brief-hero"[\s\S]*?<\/section>/,
+    /<section class="home-focus-hero"[\s\S]*?<\/section>/,
   )?.[0] ?? "";
 assert(
   visiblePageText(homepageHeroHtml).includes(
-    "FOUNDING BOARD PREPARATION · 2026 公民秩序主义 北美非营利组织及首届董事会筹备",
+    "CIVIC ORDERISM · CURRENT STAGE 从政治判断 走向组织建设",
   ) &&
     visiblePageText(homepageHeroHtml).includes(
-      "为和平政治转轨建立信任、能力与人才",
+      "公民秩序主义正在筹备北美非营利组织及首届董事会",
     ) &&
     visiblePageText(homepageHeroHtml).includes(
-      "当前重点是建立北美非营利组织、筹备首届董事会，并逐步形成能够被识别、建立信任、承担责任的政治承接能力",
+      "公民秩序主义正在从公共理论表达进入组织建设阶段，为未来可能出现的和平政治转轨，准备一个可以被识别、可以沟通、能够承担承诺并履行责任的长期组织主体",
     ),
-  "首页首屏没有以最新筹备文件建立当前组织阶段定位",
+  "首页首屏没有在五秒内明确当前组织建设阶段",
 );
 assert(
   homepageHeroHtml.includes(
     'data-slug="files/civic-orderism-founding-board-brief-2026.pdf"',
   ) &&
-    homepageHeroHtml.includes('data-slug="participate"') &&
-    !homepageHeroHtml.includes('data-slug="preparation"') &&
-    !homepageHeroHtml.includes('data-slug="start-here"') &&
-    !homepageHeroHtml.includes('data-slug="articles"') &&
-    (homepageHeroHtml.match(/<a class="home-brief-button /g) ?? []).length ===
+    homepageHeroHtml.includes('data-slug="preparation"') &&
+    !homepageHeroHtml.includes('data-slug="participate"') &&
+    (homepageHeroHtml.match(/<a class="home-focus-button /g) ?? []).length ===
       2 &&
     visiblePageText(homepageHeroHtml).includes("阅读正式文件") &&
-    visiblePageText(homepageHeroHtml).includes("参与董事会筹备"),
-  "首页首屏没有收束为正式文件与董事会筹备两个入口",
+    visiblePageText(homepageHeroHtml).includes("董事会筹备"),
+  "首页首屏没有收束为正式文件与董事会筹备两个 CTA",
 );
 assert(
   homepageHeroHtml.includes(
     'src="./files/civic-orderism-founding-board-brief-2026-cover.png"',
   ) &&
-    visiblePageText(homepageHeroHtml).includes("Version 1.0 · 2026") &&
-    visiblePageText(homepageHeroHtml).includes("Document ID · CO-2026-002"),
-  "首页首屏缺少正式文件封面或文档信息",
-);
-assert(
-  homepageHeroHtml.includes('class="home-brief-status"') &&
-    visiblePageText(homepageHeroHtml).includes(
-      "CURRENT STATUS / 当前阶段 当前处于前期筹备阶段，非营利法人尚未完成注册，首届董事会尚未依法产生",
-    ),
-  "首页首屏没有突出当前筹备事实状态",
+    !visiblePageText(homepageHeroHtml).includes("Version 1.0 · 2026") &&
+    !visiblePageText(homepageHeroHtml).includes("Document ID") &&
+    !homepageHeroHtml.includes("home-brief-status"),
+  "首页首屏封面没有保持为单一、无附加卡片的视觉主体",
 );
 const expectedHomepageSections = [
-  'id="why-organization"',
-  'id="political-capacity"',
-  'id="why-board"',
-  'id="organization-boundaries"',
-  'id="long-term-cooperation"',
-  'id="development-path"',
+  'id="current-stage"',
   'id="official-document"',
+  'id="board-preparation"',
   'id="theory-and-research"',
-  'id="introduction-manual-entry"',
-  'id="contact"',
 ];
-let previousHomepageSectionPosition = homepageMainHtml.indexOf(
-  'class="home-brief-hero"',
-);
+let previousHomepageSectionPosition = -1;
 for (const marker of expectedHomepageSections) {
   const position = homepageMainHtml.indexOf(marker);
   assert(
@@ -916,42 +900,13 @@ for (const marker of expectedHomepageSections) {
   );
   previousHomepageSectionPosition = position;
 }
-for (const requiredText of [
-  "只有组织，才能与组织建立稳定的政治信任",
-  "信任 × 能力 × 人才 = 政治承接能力",
-  "董事会存在的第一个意义，是证明这个组织不属于任何一个人",
-  "董事会不是形式要求，而是组织开始接受约束的制度起点",
-  "共同程序原则与基本和平转轨方向，比理论完全一致更重要",
-  "国家有秩序，人民有尊严；权力受约束，生活有保障，社会有预期",
-  "和平政治转轨的长期组织准备：可以被信任、能够承担责任、具备长期承接能力",
-]) {
-  assert(
-    homepageMainText.includes(requiredText),
-    `首页筹备文件叙事缺少：${requiredText}`,
-  );
-}
-for (const stage of [
-  "理论形成",
-  "公共传播",
-  "组织建设",
-  "非营利法人",
-  "首届董事会",
-  "组织信用",
-  "长期政治承接能力",
-]) {
-  assert(homepageMainText.includes(stage), `首页发展路径缺少：${stage}`);
-}
 assert(
-  homepageMainHtml.includes('class="home-brief-path"') &&
-    homepageMainHtml.includes("home-brief-path__group--complete") &&
-    homepageMainHtml.includes("home-brief-path__group--current") &&
-    homepageMainHtml.includes("home-brief-path__group--future") &&
-    (homepageMainText.match(/CURRENT STAGE/g) ?? []).length === 1,
-  "首页发展路径没有形成已完成、当前阶段与长期目标的分组",
+  (homepageMainHtml.match(/<section class="home-focus-/g) ?? []).length === 4,
+  "首页主要内容不是严格的四区域结构",
 );
 const officialDocumentHtml =
   homepageMainHtml.match(
-    /<section class="home-brief-section home-brief-document"[\s\S]*?<\/section>/,
+    /<section class="home-focus-document"[\s\S]*?<\/section>/,
   )?.[0] ?? "";
 assert(
   officialDocumentHtml.includes(
@@ -961,49 +916,57 @@ assert(
     visiblePageText(officialDocumentHtml).includes(
       "OFFICIAL DOCUMENT · CO-2026-002",
     ) &&
-    officialDocumentHtml.includes(
-      'src="./files/civic-orderism-founding-board-brief-2026-cover.png"',
-    ),
-  "首页正式文件区缺少 PDF、文档信息或明确 CTA",
-);
-const directionCards = [
-  ...homepageMainHtml.matchAll(
-    /<article class="home-direction-card">([\s\S]*?)<\/article>/g,
-  ),
-].map((match) => match[1]);
-assert(
-  directionCards.length === 3 &&
-    directionCards.every(
-      (card) =>
-        (card.match(/home-direction-card__more/g) ?? []).length === 1 &&
-        !card.includes("<ul>") &&
-        !card.includes("<li>"),
+    visiblePageText(officialDocumentHtml).includes(
+      "为和平政治转轨建立信任、能力与人才",
     ) &&
-    homepageMainText.includes("公民秩序主义") &&
-    homepageMainText.includes("解析中共") &&
-    homepageMainText.includes("中国未来"),
-  "首页理论与研究未保留三个精简研究入口",
+    visiblePageText(officialDocumentHtml).includes("Version 1.0 · 2026") &&
+    visiblePageText(officialDocumentHtml).includes(
+      "Document ID · CO-2026-002",
+    ) &&
+    officialDocumentHtml.includes('data-slug="preparation"') &&
+    !officialDocumentHtml.includes("<img"),
+  "首页正式文件区没有成为独立核心入口",
 );
-assert(
-  !homepageMainHtml.includes("home-brief-latest") &&
-    !homepageMainText.includes("近期发布") &&
-    !homepageMainText.includes("最新文章"),
-  "首页仍保留近期发布文章流",
-);
-const foundationHtml =
+const homepagePreparationHtml =
   homepageMainHtml.match(
-    /<section class="home-brief-section home-brief-foundation"[\s\S]*?<\/section>/,
+    /<section class="home-focus-preparation"[\s\S]*?<\/section>/,
   )?.[0] ?? "";
 assert(
-  foundationHtml.includes('data-slug="introduction-manual"') &&
-    visiblePageText(foundationHtml).includes(
+  visiblePageText(homepagePreparationHtml).includes("首届董事会筹备") &&
+    homepagePreparationHtml.includes('data-slug="preparation"') &&
+    homepagePreparationHtml.includes('data-slug="participate"') &&
+    !visiblePageText(homepagePreparationHtml).includes(
+      "董事会存在的第一个意义",
+    ),
+  "首页董事会筹备区没有保持简洁行动导流",
+);
+const theoryHtml =
+  homepageMainHtml.match(
+    /<section class="home-focus-theory"[\s\S]*?<\/section>/,
+  )?.[0] ?? "";
+assert(
+  (theoryHtml.match(/home-focus-research-link/g) ?? []).length === 3 &&
+    theoryHtml.includes('data-slug="civic-orderism"') &&
+    theoryHtml.includes('data-slug="china"') &&
+    theoryHtml.includes('data-slug="china-future"') &&
+    theoryHtml.includes('data-slug="introduction-manual"') &&
+    visiblePageText(theoryHtml).includes(
       "第一次了解公民秩序主义？阅读《公民秩序主义介绍手册》 →",
     ) &&
-    (foundationHtml.match(/<a /g) ?? []).length === 1 &&
-    !foundationHtml.includes("civic-orderism-introduction-manual.pdf"),
-  "介绍手册没有降级为单一基础阅读入口",
+    !theoryHtml.includes("<article") &&
+    !theoryHtml.includes("<img") &&
+    !theoryHtml.includes("<li>"),
+  "首页理论与研究没有保持为三条纯文字入口",
 );
 for (const removedHomepageText of [
+  "为什么需要组织",
+  "信任 × 能力 × 人才",
+  "为什么需要首届董事会",
+  "董事会存在的第一个意义",
+  "建立什么样的组织",
+  "与什么样的人建立长期联系",
+  "当前发展路径",
+  "CURRENT STATUS / 当前阶段",
   "街头动员组织",
   "网络情绪共同体",
   "党国应力",
@@ -1019,9 +982,19 @@ for (const removedHomepageText of [
 assert(
   homepageMainHtml.includes("mailto:civicorderism@gmail.com") &&
     homepageMainHtml.includes("mailto:citizenorder@proton.me") &&
+    homepageMainHtml.includes('class="home-focus-contact"') &&
+    !homepageMainHtml.includes('id="contact"') &&
     !homepageMainText.includes("立即加入") &&
     !homepageMainText.includes("马上报名"),
-  "首页联系方式缺失或出现强招募表达",
+  "首页 Footer 前联系方式缺失、过重或出现强招募表达",
+);
+assert(
+  (
+    homepageMainHtml.match(
+      /civic-orderism-founding-board-brief-2026-cover.png/g,
+    ) ?? []
+  ).length === 1,
+  "首页 PDF 封面应只作为 Hero 的单一品牌视觉资产出现",
 );
 assert(
   homepageHtml.includes(
@@ -1621,10 +1594,16 @@ for (const file of ["sitemap.xml", "index.xml", "robots.txt"]) {
 for (const htmlPath of walkHtmlFiles(publicDir)) {
   const html = fs.readFileSync(htmlPath, "utf8");
   const pageText = visiblePageText(html);
+  const relativeHtmlPath = path.relative(publicDir, htmlPath);
   for (const legacyBrand of legacyEnglishBrands) {
+    const approvedHomepageStageLabel =
+      relativeHtmlPath === "index.html" &&
+      legacyBrand === "CIVIC ORDERISM" &&
+      html.includes("CIVIC ORDERISM · CURRENT STAGE") &&
+      (html.match(/CIVIC ORDERISM/g) ?? []).length === 1;
     assert(
-      !html.includes(legacyBrand),
-      `公开页面仍包含旧英文品牌：${path.relative(publicDir, htmlPath)} -> ${legacyBrand}`,
+      approvedHomepageStageLabel || !html.includes(legacyBrand),
+      `公开页面仍包含旧英文品牌：${relativeHtmlPath} -> ${legacyBrand}`,
     );
   }
   for (const pattern of developmentPlaceholderPatterns) {
