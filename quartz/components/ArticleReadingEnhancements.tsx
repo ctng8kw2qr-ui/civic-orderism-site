@@ -250,15 +250,17 @@ function byRecommendationScore(
   return (a: QuartzPluginData, b: QuartzPluginData) => {
     const score = (file: QuartzPluginData) => {
       let total = 0;
-      if (sameSection(current, file)) total += 10000;
-      total += sharedConceptCount(current, file) * 1000;
-      if (file.slug && manualRelated.has(file.slug)) total += 500;
-      total += sharedTopicCount(current, file) * 100;
+      // Explicit editorial relationships and shared models should lead the
+      // reading path. Section proximity is only a fallback signal.
+      if (file.slug && manualRelated.has(file.slug)) total += 50000;
       if (
         currentSeries &&
         getSeries(file.frontmatter?.series) === currentSeries
       )
-        total += 50;
+        total += 30000;
+      total += sharedConceptCount(current, file) * 10000;
+      total += sharedTopicCount(current, file) * 2000;
+      if (sameSection(current, file)) total += 200;
       if (knowledgeFor(file)?.recommended) total += 10;
       const time =
         file.dates?.published?.getTime() ?? file.dates?.created?.getTime() ?? 0;

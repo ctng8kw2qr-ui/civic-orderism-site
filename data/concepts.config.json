@@ -13,6 +13,7 @@
     "status": "published",
     "publicationStatus": "published",
     "publicationClass": "A",
+    "domain": "china-analysis",
     "representativeArticles": [
       "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
       "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
@@ -21,7 +22,7 @@
     "publicationReason": "定义、机制和现实表现边界清楚，且已有多篇文章从组织信用、协作能力与预期失效三个角度提供支持。"
   },
   {
-    "name": "官僚休克",
+    "name": "官僚系统休克",
     "slug": "bureaucratic-shock",
     "definition": "官僚系统在高风险、强问责和低授权环境中出现的集体行动冻结。",
     "explanation": "官僚休克描述的不是个别干部懒惰，而是组织激励共同把行动导向最低风险：责任持续下压，必要授权却同步收缩，主动决策的个人成本高于等待、请示和留痕。结果是每个成员都可能作出理性自保选择，系统整体却失去处理现实问题的能力。",
@@ -34,6 +35,7 @@
     "status": "published",
     "publicationStatus": "published",
     "publicationClass": "A",
+    "domain": "china-analysis",
     "representativeArticles": [
       "china/why-ccp-cannot-reduce-grassroots-burden",
       "china/bureaucratic-system-under-purges"
@@ -53,6 +55,7 @@
     "status": "draft",
     "publicationStatus": "reviewing",
     "publicationClass": "B",
+    "domain": "china-analysis",
     "representativeArticles": [
       "china-stage/three-cleans-era-political-economic-cultural-contraction",
       "china/why-expulsion-from-party-becomes-standard-ending",
@@ -94,6 +97,7 @@
     "status": "draft",
     "publicationStatus": "reviewing",
     "publicationClass": "B",
+    "domain": "china-analysis",
     "representativeArticles": [
       "china-stage/three-cleans-era-political-economic-cultural-contraction",
       "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
@@ -114,6 +118,7 @@
     "status": "draft",
     "publicationStatus": "reviewing",
     "publicationClass": "B",
+    "domain": "china-analysis",
     "representativeArticles": [
       "china/ccp-bureaucracy-historical-bill",
       "china/organization-credit-retired-officials"
@@ -133,6 +138,7 @@
     "status": "draft",
     "publicationStatus": "reviewing",
     "publicationClass": "B",
+    "domain": "china-analysis",
     "representativeArticles": [
       "china/why-ccp-will-not-relax-party-pressure",
       "china/political-machine-rewards-and-limits",
@@ -227,6 +233,7 @@
     "status": "draft",
     "publicationStatus": "reviewing",
     "publicationClass": "B",
+    "domain": "civic-orderism",
     "representativeArticles": [
       "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
       "civic-orderism/state-must-rely-on-systems-not-drivers",
@@ -247,6 +254,7 @@
     "status": "draft",
     "publicationStatus": "reviewing",
     "publicationClass": "B",
+    "domain": "civic-orderism",
     "representativeArticles": [
       "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
       "civic-orderism/backend-system-under-civic-orderism",
@@ -267,6 +275,7 @@
     "status": "draft",
     "publicationStatus": "reviewing",
     "publicationClass": "B",
+    "domain": "civic-orderism",
     "representativeArticles": [
       "civic-orderism/why-civic-orderism",
       "civic-orderism/civic-orderism-manual",
@@ -287,11 +296,127 @@
     "status": "draft",
     "publicationStatus": "reviewing",
     "publicationClass": "B",
+    "domain": "civic-orderism",
     "representativeArticles": [
       "civic-orderism/peaceful-state-transition",
       "civic-orderism/why-civic-orderism-is-easier-to-succeed",
       "theory/internal-change-external-change"
     ],
     "publicationReason": "价值方向清楚，但与政治路线、国家系统升级的分工尚未充分展开，相关文章也未形成稳定概念用法。"
+  },
+  {
+    "name": "党国应力",
+    "slug": "party-state-stress",
+    "definition": "党的政治控制逻辑与国家治理逻辑长期重叠后，不断积累的结构性张力。",
+    "explanation": "党国应力关注党与国家两套不同运行逻辑被置于同一权力系统后形成的长期张力：党要求忠诚、安全和路线统一，国家治理则必须回应财政、人口、公共服务和责任分配等现实约束。增长可以暂时掩盖这种张力，进入损失分配阶段后，控制继续集中与治理能力下降便可能相互强化。",
+    "mechanism": "政治控制持续进入国家治理，权力与责任同步集中，现实问题又反过来推动进一步控制。",
+    "manifestations": [
+      "党承担无限政治责任",
+      "行政判断让位于政治安全",
+      "控制增强而治理效能下降"
+    ],
+    "topics": ["ccp-governance", "bureaucratic-system"],
+    "related": [
+      "bureaucratic-shock",
+      "organizational-credit",
+      "security-recentralization"
+    ],
+    "firstUsed": "2026-08-22",
+    "needsReview": false,
+    "status": "published",
+    "publicationStatus": "published",
+    "publicationClass": "A",
+    "domain": "china-analysis",
+    "representativeArticles": [
+      "china/party-state-stress-neither-party-nor-state",
+      "theory/party-state-structural-failure"
+    ],
+    "publicationReason": "已有独立框架文章完整定义概念、运行机制与现实表现，能够稳定连接党国结构、官僚行为与治理能力问题。"
+  },
+  {
+    "name": "安全再集中",
+    "slug": "security-recentralization",
+    "definition": "安全优先替代发展优先后，权力、信息与责任不断重新向中心集中的治理过程。",
+    "explanation": "安全再集中不是一次性的权力调整，而是当不确定性被视为主要风险后，组织持续收紧授权、信息与责任边界的过程。它可以提高命令一致性，却也可能压缩地方和专业系统的判断空间，使更多问题回流到中央。",
+    "mechanism": "风险上升推动授权收缩，授权收缩又使责任与决策进一步集中。",
+    "manifestations": [
+      "地方裁量收缩",
+      "信息与责任上收",
+      "发展目标服从安全边界"
+    ],
+    "topics": ["ccp-governance", "xi-era"],
+    "related": [
+      "party-state-stress",
+      "bureaucratic-shock",
+      "security-purge-recentralization-cycle"
+    ],
+    "firstUsed": "2026-08-21",
+    "needsReview": false,
+    "status": "published",
+    "publicationStatus": "published",
+    "publicationClass": "A",
+    "domain": "china-analysis",
+    "representativeArticles": [
+      "china/security-led-governance-model",
+      "china/security-is-redefining-china",
+      "china/what-happens-when-security-becomes-the-top-priority"
+    ],
+    "publicationReason": "安全叙事专题已有总纲、核心判断与社会后果文章，概念边界和运行方向明确。"
+  },
+  {
+    "name": "组织信用",
+    "slug": "organizational-credit",
+    "definition": "组织能否持续兑现承诺、分配责任并让成员相信长期合作仍然有意义的能力。",
+    "explanation": "组织信用不等于宣传认同，而是成员对承诺、责任和规则能否跨越时间得到兑现的判断。退休责任、终身承诺、政策连续性与责任分配都会影响组织信用；当成员不再相信长期承诺，服从可能仍然存在，主动合作却会逐步消失。",
+    "mechanism": "承诺无法稳定兑现，使成员由长期合作转向短期自保。",
+    "manifestations": ["长期承诺失效", "成员转向自保", "组织协作能力下降"],
+    "topics": ["bureaucratic-system", "order-evaporation"],
+    "related": [
+      "order-evaporation",
+      "bureaucratic-shock",
+      "party-state-stress"
+    ],
+    "firstUsed": "2026-08-18",
+    "needsReview": false,
+    "status": "published",
+    "publicationStatus": "published",
+    "publicationClass": "A",
+    "domain": "china-analysis",
+    "representativeArticles": [
+      "china/organization-credit-retired-officials",
+      "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
+      "china/ccp-no-real-base"
+    ],
+    "publicationReason": "已有多篇文章从组织成员、长期承诺和制度信任角度支持这一概念，能够成为稳定的结构判断节点。"
+  },
+  {
+    "name": "安全化—清洗—再集中—再失灵模型",
+    "slug": "security-purge-recentralization-cycle",
+    "definition": "安全化推动组织清洗和权力再集中，而再集中又削弱治理反馈并产生新一轮失灵的循环模型。",
+    "explanation": "这一模型把安全优先、官员清洗、权力集中和治理能力下降视为连续机制，而不是彼此孤立的政策现象。组织用清洗和集中回应不确定性，却可能进一步削弱专业反馈和地方行动，新的失灵又被解释为控制仍然不足。",
+    "mechanism": "安全化触发清洗，清洗推动再集中，再集中压缩反馈与行动能力，失灵由此再次积累。",
+    "manifestations": [
+      "清洗常态化",
+      "决策继续上收",
+      "失灵被再次解释为控制不足"
+    ],
+    "topics": ["ccp-governance", "xi-era", "bureaucratic-system"],
+    "related": [
+      "security-recentralization",
+      "bureaucratic-shock",
+      "party-state-stress"
+    ],
+    "firstUsed": "2026-08-21",
+    "needsReview": false,
+    "status": "published",
+    "publicationStatus": "published",
+    "publicationClass": "A",
+    "domain": "china-analysis",
+    "representativeArticles": [
+      "china/security-led-governance-model",
+      "china/route-transition-why-ccp-keeps-purging-officials",
+      "china/why-ccp-will-not-relax-party-pressure"
+    ],
+    "publicationReason": "已有框架文章明确描述循环机制，并有路线转换与党内高压文章提供组织层面的支持。"
   }
 ]

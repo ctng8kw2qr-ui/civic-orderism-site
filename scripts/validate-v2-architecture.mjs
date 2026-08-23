@@ -122,8 +122,8 @@ const chinaPageSource = fs.readFileSync(
 );
 const expectedChinaFeaturedCounts = [4, 5, 5, 5, 4];
 for (const [index, group] of chinaAnalysisConfig.groups.entries()) {
-  const heading = `## ${["一", "二", "三", "四", "五"][index]}、${group.name}`;
-  const groupSource = chinaPageSource.split(heading)[1]?.split("## ")[0] ?? "";
+  const heading = `### ${["一", "二", "三", "四", "五"][index]}、${group.name}`;
+  const groupSource = chinaPageSource.split(heading)[1]?.split("### ")[0] ?? "";
   const featuredSource = groupSource.split(
     '<details class="china-analysis-more">',
   )[0];
@@ -149,6 +149,28 @@ for (const [index, group] of chinaAnalysisConfig.groups.entries()) {
     );
   }
 }
+for (const model of chinaAnalysisConfig.models) {
+  assert(
+    chinaPageSource.includes(`href="${model.href}"`) &&
+      chinaPageSource.includes(`<strong>${model.name}</strong>`) &&
+      chinaPageSource.includes(model.description),
+    `解析中共缺少核心模型：${model.name}`,
+  );
+}
+for (const judgment of chinaAnalysisConfig.structuralJudgments) {
+  assert(
+    chinaPageSource.includes(`href="${judgment.href}"`) &&
+      chinaPageSource.includes(`<strong>${judgment.name}</strong>`),
+    `解析中共缺少结构判断：${judgment.name}`,
+  );
+}
+assert(
+  chinaPageSource.indexOf('id="china-models-title"') <
+    chinaPageSource.indexOf('id="china-judgments-title"') &&
+    chinaPageSource.indexOf('id="china-judgments-title"') <
+      chinaPageSource.indexOf('id="china-observations-title"'),
+  "解析中共的核心模型、结构判断与现实观察顺序异常",
+);
 assert(
   (chinaPageHtml.match(/<details class="china-analysis-more">/g) ?? [])
     .length === chinaAnalysisConfig.groups.length,
@@ -626,8 +648,12 @@ assert(
   "首页缺少克制的当前筹备参与入口，或出现强招募表达",
 );
 for (const title of [
-  "如果你只读一篇：公民秩序主义到底想解决什么",
-  "党国系统的结构性失效：一个组织诊断",
+  "和平转轨",
+  "保留国家，改变政治",
+  "不革命、不清算",
+  "党国应力",
+  "官僚系统休克",
+  "安全再集中",
   "中国和平政治转型的可能性",
 ]) {
   assert(homepageMainText.includes(title), `首页理论入口缺少：${title}`);
@@ -702,63 +728,58 @@ const articlesHtml = fs.readFileSync(publicHtml("articles"), "utf8");
 const articlesText = visiblePageText(articlesHtml);
 const readingRoutes = [
   {
-    id: "route-first-visit",
-    title: "第一次了解公民秩序主义",
+    id: "route-system-failure",
+    title: "中共为什么正在失去原有运行能力",
     count: 4,
-    audience: "第一次访问本站，希望快速建立整体认识的读者",
-    duration: "约 30–45 分钟",
-    nextHref: "#route-china-reality",
+    nextHref: "#route-transition-conditions",
     slugs: [
-      "introduction-manual",
-      "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
-      "civic-orderism/why-civic-orderism",
-      "civic-orderism/possibility-of-peaceful-political-transition-in-china",
+      "china/party-state-stress-neither-party-nor-state",
+      "china/ccp-bureaucracy-double-deadlock",
+      "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
+      "china/security-led-governance-model",
     ],
   },
   {
-    id: "route-china-reality",
-    title: "理解今天的中国",
-    count: 5,
-    audience: "希望从中共组织运行与中国现实问题进入的读者",
-    duration: "约 35–50 分钟",
-    nextHref: "#route-theory",
+    id: "route-transition-conditions",
+    title: "为什么中国存在政治转轨条件",
+    count: 4,
+    nextHref: "#route-peaceful-transition",
     slugs: [
-      "china/ccp-no-real-base",
-      "theory/party-state-structural-failure",
-      "china/route-transition-why-ccp-keeps-purging-officials",
-      "china/what-happens-when-security-becomes-the-top-priority",
       "civic-orderism/possibility-of-peaceful-political-transition-in-china",
-    ],
-  },
-  {
-    id: "route-theory",
-    title: "理解公民秩序主义的理论路线",
-    count: 5,
-    audience: "希望理解公民秩序主义完整理论逻辑的读者",
-    duration: "约 45–60 分钟",
-    nextHref: "#route-institution-research",
-    slugs: [
-      "civic-orderism/information-age-and-political-transition",
-      "theory/end-of-party-politics-in-information-age",
+      "china/supply-side-reform-state-can-scale-not-discover-future",
+      "china-stage/china-manufacturing-cannot-stop",
       "civic-orderism/state-must-rely-on-systems-not-drivers",
-      "civic-orderism/why-weaken-party-politics",
-      "civic-orderism/why-civic-orderism",
     ],
   },
   {
-    id: "route-institution-research",
-    title: "进阶制度研究",
-    count: 5,
-    audience: "已经完成基础阅读、希望深入制度研究的读者",
-    duration: "约 60–120 分钟",
-    nextHref: "#all-articles",
+    id: "route-peaceful-transition",
+    title: "为什么应当选择和平转轨",
+    count: 3,
+    nextHref: "#route-civic-orderism",
     slugs: [
-      "civic-orderism/what-is-committee-system",
-      "civic-orderism/election-logic-under-civic-orderism",
-      "civic-orderism/backend-system-under-civic-orderism",
-      "civic-orderism/why-justice-serves-reality",
-      "civic-orderism/state-operation-process-under-civic-orderism",
+      "civic-orderism/peaceful-state-transition",
+      "civic-orderism/why-civic-orderism-is-easier-to-succeed",
+      "theory/internal-change-external-change",
     ],
+  },
+  {
+    id: "route-civic-orderism",
+    title: "公民秩序主义提出什么路线",
+    count: 4,
+    nextHref: "#route-organization-preparation",
+    slugs: [
+      "civic-orderism/why-civic-orderism",
+      "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+      "civic-orderism/state-must-rely-on-systems-not-drivers",
+      "start-here",
+    ],
+  },
+  {
+    id: "route-organization-preparation",
+    title: "为什么现在开始组织准备",
+    count: 3,
+    nextHref: "#all-articles",
+    slugs: ["preparation", "preparation/board", "participate"],
   },
 ];
 let previousReadingRoutePosition = -1;
@@ -780,24 +801,22 @@ for (const [index, route] of readingRoutes.entries()) {
     routePosition > previousReadingRoutePosition &&
       routeEnd > routePosition &&
       visiblePageText(routeBlock).includes(route.title) &&
-      visiblePageText(routeBlock).includes(route.audience) &&
-      visiblePageText(routeBlock).includes(route.duration) &&
       recommendedCount === route.count &&
       recommendedSlugs.join("|") === route.slugs.join("|") &&
-      recommendedCount >= 3 &&
-      recommendedCount <= 5 &&
+      recommendedCount >= 2 &&
+      recommendedCount <= 4 &&
       routeBlock.includes("reading-route__more") &&
       routeBlock.includes("reading-route__completion") &&
       routeBlock.includes(`href="${route.nextHref}"`) &&
-      visiblePageText(routeBlock).includes("完成这条路线后"),
+      visiblePageText(routeBlock).includes("继续这条判断路线"),
     `阅读地图路线结构或推荐数量异常：${route.title}`,
   );
   previousReadingRoutePosition = routePosition;
 }
 const articleLibraryPosition = articlesHtml.indexOf('id="all-articles"');
 assert(
-  articlesText.includes("如果第一次来到这里，不建议直接浏览全部文章") &&
-    articlesText.includes("请选择下面的一条阅读路线开始") &&
+  articlesText.includes("这里不是完整文章目录") &&
+    articlesText.includes("从现实判断走向政治路线与组织准备") &&
     articleLibraryPosition > previousReadingRoutePosition &&
     !articlesHtml.includes('class="reading-library-index"') &&
     !articlesText.includes("一、旧世界为什么失效") &&
@@ -811,7 +830,7 @@ assert(
     articlesHtml.includes('data-slug="articles/all"') &&
     articlesHtml.includes('data-slug="preparation"') &&
     articlesHtml.includes('data-slug="participate"') &&
-    articlesText.includes("已经理解基本路线") &&
+    articlesText.includes("政治组织失灵不等于国家能力消失") &&
     !articlesHtml.includes('data-slug="institution-design"'),
   "阅读地图缺少新读者引导、完整索引入口，或重新突出制度设计",
 );

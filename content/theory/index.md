@@ -17,7 +17,7 @@ noindex: false
 <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">
   <label>专题<select data-filter-topic><option value="">全部专题</option><option value="order-evaporation">秩序蒸发</option><option value="political-transition">中国政治转型</option></select></label>
-  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="political-debt">政治偿债</option><option value="state-system-upgrade">国家系统升级</option><option value="bureaucratic-shock">官僚休克</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option><option value="fiscal-debt">财政偿债</option><option value="nonviolent-transition">非暴力转型</option><option value="political-route">政治路线</option></select></label>
+  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="political-debt">政治偿债</option><option value="state-system-upgrade">国家系统升级</option><option value="organizational-credit">组织信用</option><option value="bureaucratic-shock">官僚系统休克</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option><option value="fiscal-debt">财政偿债</option><option value="party-state-stress">党国应力</option><option value="nonviolent-transition">非暴力转型</option><option value="political-route">政治路线</option></select></label>
   <button type="button" data-filter-reset>重置</button>
 </div>
 <div class="knowledge-grid">
@@ -44,7 +44,7 @@ noindex: false
   <h3><a href="/theory/ccp-completed-historical-task-refuses-exit">中共完成了历史任务，但拒绝被历史淘汰</a></h3>
   <p class="knowledge-card__summary">本文从文明发展史角度重新定位中共，认为它不是中国历史的偶然灾难，而是中国迟到工业化过程中形成的高压组织工具。它曾经完成把农业中国压入工业时代的历史任务，但在信息化时代拒绝退场，因此从历史工具变成文明阻碍。</p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation high-fragility political-debt">
+<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation organizational-credit high-fragility">
   <p class="knowledge-card__meta"><span>2026-05-30</span><span>5 分钟阅读</span></p>
   <h3><a href="/theory/organizational-collapse-begins-with-loss-of-institutional-trust">组织的坍塌，始于制度信任的瓦解</a></h3>
   <p class="knowledge-card__summary">本文从门阀政治、九品中正制、东晋政治与《红楼梦》中的贾府败落出发，分析当制度信任被关系依附取代后，组织如何逐渐空心化、犬儒化，并最终在看似突然的危机中坍塌。</p>
@@ -59,7 +59,7 @@ noindex: false
   <p class="knowledge-card__meta"><span>2026-05-12</span><span>10 分钟阅读</span></p>
   <h3><a href="/theory/us-industrial-system-cannot-carry-information-age">美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代</a></h3>
   <p class="knowledge-card__summary">本文从制度适配角度分析美国危机：问题不只是民主或专制之争，而是工业时代形成的政治机器，正在难以承载信息化时代的社会结构、传播结构与冲突结构。</p>
-  <p class="knowledge-card__chips"><span>概念：官僚休克</span></p>
+  <p class="knowledge-card__chips"><span>概念：官僚系统休克</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="order-evaporation high-fragility political-debt language-inflation state-system-upgrade">
   <p class="knowledge-card__meta"><span>2026-05-12</span><span>14 分钟阅读</span></p>
@@ -83,7 +83,7 @@ noindex: false
   <h3><a href="/theory/costly-industrial-governance-information-age">一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价</a></h3>
   <p class="knowledge-card__summary">本文从工业型治理的历史合理性出发，分析它在信息化时代为什么会压制反馈、尝试与协作信任，并把越来越高的系统成本转移给普通人。</p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="high-fragility">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="high-fragility party-state-stress">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>10 分钟阅读</span></p>
   <h3><a href="/theory/party-state-structural-failure">党国系统的结构性失效：一个组织诊断</a></h3>
   <p class="knowledge-card__summary">理解中共的未来，存在两种常见误区。</p>
@@ -93,7 +93,7 @@ noindex: false
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>4 分钟阅读</span></p>
   <h3><a href="/theory/overseas-political-movements-fail">海外政治运动为什么一事无成？</a></h3>
   <p class="knowledge-card__summary">分析海外中文政治运动长期低效与结构性失败的原因。</p>
-  <p class="knowledge-card__chips"><span>概念：官僚休克</span></p>
+  <p class="knowledge-card__chips"><span>概念：官僚系统休克</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>7 分钟阅读</span></p>
@@ -116,7 +116,7 @@ noindex: false
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>10 分钟阅读</span></p>
   <h3><a href="/theory/no-accountability-lie-flat-mentality">为什么“无人担责的躺平心态”会从根本上摧毁一个超大型执政组织</a></h3>
   <p class="knowledge-card__summary">现代社会的日常问题洪流、传染机制与三段式阈值模型</p>
-  <p class="knowledge-card__chips"><span>概念：官僚休克</span></p>
+  <p class="knowledge-card__chips"><span>概念：官僚系统休克</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>8 分钟阅读</span></p>

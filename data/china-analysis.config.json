@@ -1,5 +1,90 @@
 {
-  "readingHint": "从组织结构出发，观察官僚行为、结构性失灵、防御转型及其外部影响。",
+  "readingHint": "现实事件提供入口，结构判断解释长期问题，核心模型连接这些变化背后的运行机制。",
+  "models": [
+    {
+      "name": "党国应力",
+      "description": "党的政治控制逻辑与国家治理逻辑长期重叠后，不断积累的结构性张力。",
+      "href": "/concepts/party-state-stress",
+      "article": "china/party-state-stress-neither-party-nor-state"
+    },
+    {
+      "name": "官僚系统休克",
+      "description": "官僚系统在高风险、强问责和低授权环境中出现的集体行动冻结。",
+      "href": "/concepts/bureaucratic-shock",
+      "article": "china/ccp-bureaucracy-double-deadlock"
+    },
+    {
+      "name": "秩序蒸发",
+      "description": "制度形式仍然存在，但可信承诺、协作能力和社会预期逐步流失。",
+      "href": "/concepts/order-evaporation",
+      "article": "theory/organizational-collapse-begins-with-loss-of-institutional-trust"
+    },
+    {
+      "name": "安全再集中",
+      "description": "安全优先替代发展优先后，权力、信息与责任重新向中心集中的治理过程。",
+      "href": "/concepts/security-recentralization",
+      "article": "china/security-led-governance-model"
+    },
+    {
+      "name": "组织信用",
+      "description": "组织能否持续兑现承诺、分配责任并让成员相信长期合作仍有意义的能力。",
+      "href": "/concepts/organizational-credit",
+      "article": "china/organization-credit-retired-officials"
+    },
+    {
+      "name": "安全化—清洗—再集中—再失灵模型",
+      "description": "安全化推动清洗和再集中，而再集中又削弱治理反馈并产生新一轮失灵。",
+      "href": "/concepts/security-purge-recentralization-cycle",
+      "article": "china/security-led-governance-model"
+    }
+  ],
+  "structuralJudgments": [
+    {
+      "name": "党国结构",
+      "description": "党与国家两套逻辑如何重叠，并形成权力与责任的长期张力。",
+      "href": "/concepts/party-state-stress"
+    },
+    {
+      "name": "官僚体系",
+      "description": "高压、问责和授权收缩如何改变官员的行动方式。",
+      "href": "/topics/bureaucratic-system"
+    },
+    {
+      "name": "中央与地方",
+      "description": "权力网络、地方空间和中央协调之间的真实关系。",
+      "href": "/china/ccp-power-network-not-line"
+    },
+    {
+      "name": "财政与利益分配",
+      "description": "增长放缓后，历史成本、公共责任与损失如何重新分配。",
+      "href": "/topics/local-finance"
+    },
+    {
+      "name": "组织信用",
+      "description": "承诺、责任和长期合作预期为何逐步衰退。",
+      "href": "/concepts/organizational-credit"
+    },
+    {
+      "name": "安全叙事",
+      "description": "安全如何从政策领域上升为整体治理边界。",
+      "href": "/concepts/security-recentralization"
+    },
+    {
+      "name": "权力集中",
+      "description": "集中如何提高命令一致性，又如何改变系统反馈。",
+      "href": "/topics/xi-era"
+    },
+    {
+      "name": "政治责任",
+      "description": "责任持续集中后，组织如何面对历史成本与治理失败。",
+      "href": "/china/ccp-bureaucracy-historical-bill"
+    },
+    {
+      "name": "国家治理能力",
+      "description": "政治控制能力与持续解决现实问题的能力为何可能分离。",
+      "href": "/china/supply-side-reform-state-can-scale-not-discover-future"
+    }
+  ],
   "groups": [
     {
       "name": "组织结构与权力运行",

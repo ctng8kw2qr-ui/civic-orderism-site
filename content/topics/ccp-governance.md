@@ -25,29 +25,29 @@ noindex: false
 ## 全部相关文章
 
 <div class="knowledge-grid">
-<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management">
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="party-state-stress ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-08-22</span><span>9 分钟阅读</span></p>
   <h3><a href="/china/party-state-stress-neither-party-nor-state">既不党，也不国：党国体制最终会变成什么？</a></h3>
   <p class="knowledge-card__summary">党和国家原本是两种不同性质的组织。增长时代，两套逻辑之间的矛盾可以被资源扩张掩盖；进入损失分配时代以后，党不断加强控制，国家却越来越难按照治理规律运行。本文以“党国应力”解释党国系统为何最终走向既不党、也不国。</p>
-  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：党国应力</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management order-evaporation">
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="security-recentralization security-purge-recentralization-cycle ruling-techniques">
   <p class="knowledge-card__meta"><span>2026-08-12</span><span>15 分钟阅读</span></p>
   <h3><a href="/china/security-led-governance-model">安全化、再集中与治理边界</a></h3>
   <p class="knowledge-card__summary">当安全、统一和组织控制在中共治理排序中的权重持续上升，一个“安全化—清洗—再集中—再失灵”的循环正在形成。本文区分选择型与分配型问题，解释控制能力为何可能上升而治理效能反而下降。</p>
-  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：安全再集中</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management bureaucratic-shock">
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="security-recentralization ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-08-10</span><span>9 分钟阅读</span></p>
   <h3><a href="/china/security-is-redefining-china">安全，正在重新定义中国</a></h3>
   <p class="knowledge-card__summary">从收护照、特斯拉、华为与干部系统清洗出发，观察安全如何从一项政策目标变成重新计算人员、技术、资本、产业与权力网络的上位原则。</p>
-  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：安全再集中</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management">
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="security-recentralization ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-08-10</span><span>6 分钟阅读</span></p>
   <h3><a href="/china/what-happens-when-security-becomes-the-top-priority">中共全面进入安全叙事后，中国会怎么样？</a></h3>
   <p class="knowledge-card__summary">当“是否安全、是否可控”成为政策的前置条件，变化的不只是某几项政策，而是整个国家的发展排序。技术和工业能力仍可能继续增强，文化、公共空间与社会自主性则会承担更高的制度成本。</p>
-  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：安全再集中</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management fiscal-debt">
   <p class="knowledge-card__meta"><span>2026-07-28</span><span>16 分钟阅读</span></p>
@@ -55,7 +55,7 @@ noindex: false
   <p class="knowledge-card__summary">新能源汽车、光伏和动力电池的成功，说明中国国家体系能够把制造业中的产业信号迅速放大为全国性产能；芯片烂尾、造车淘汰和周期性过剩则提醒我们，放大能力不等于发现能力。本文讨论供给侧改革如何改变中央、地方、企业与市场之间的分工。</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management bureaucratic-shock">
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques security-purge-recentralization-cycle crisis-management">
   <p class="knowledge-card__meta"><span>2026-07-09</span><span>8 分钟阅读</span></p>
   <h3><a href="/china/why-ccp-will-not-relax-party-pressure">中共为什么不会真正放松党内高压？</a></h3>
   <p class="knowledge-card__summary">本文提出一个可检验的假说：当体制的利益分配能力持续下降，而组织存续又高度依赖中央集权时，审查、追责和清洗会系统性地替代利益激励，成为维持干部服从和组织运转的主要工具。</p>

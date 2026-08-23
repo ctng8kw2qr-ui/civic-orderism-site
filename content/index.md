@@ -42,20 +42,20 @@ aliases:
   <div class="home-section-intro"><p class="resource-label">理论与研究</p><h2>理论与研究</h2><p>理论研究继续为组织建设提供判断基础，并围绕公民秩序主义、解析中共和中国未来三个方向展开。</p></div>
   <div class="home-direction-grid"><article class="home-direction-card">
   <h3><a href="/civic-orderism">公民秩序主义</a></h3>
-  <p>介绍政治路线、现代政治问题意识，以及和平承接中国未来的制度方向。</p>
-  <ul><li><a href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">如果你只读一篇：公民秩序主义到底想解决什么</a></li><li><a href="/civic-orderism/peaceful-state-transition">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</a></li></ul>
+  <p>介绍和平转轨、国家连续与低阻力政治承接的基本路线。</p>
+  <ul><li><a href="/civic-orderism/peaceful-state-transition">和平转轨</a></li><li><a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china">保留国家，改变政治</a></li><li><a href="/civic-orderism/why-civic-orderism-is-easier-to-succeed">不革命、不清算</a></li></ul>
   <a class="home-direction-card__more" href="/civic-orderism">进入公民秩序主义 →</a>
 </article>
 <article class="home-direction-card">
   <h3><a href="/china">解析中共</a></h3>
-  <p>解释中共的组织运行、官僚系统、安全叙事与结构性问题。</p>
-  <ul><li><a href="/china/security-is-redefining-china">安全，正在重新定义中国</a></li><li><a href="/theory/party-state-structural-failure">党国系统的结构性失效：一个组织诊断</a></li></ul>
+  <p>从党国结构、官僚系统与安全逻辑出发，理解旧体制为什么正在失去原有运行能力。</p>
+  <ul><li><a href="/concepts/party-state-stress">党国应力</a></li><li><a href="/concepts/bureaucratic-shock">官僚系统休克</a></li><li><a href="/concepts/security-recentralization">安全再集中</a></li></ul>
   <a class="home-direction-card__more" href="/china">进入解析中共 →</a>
 </article>
 <article class="home-direction-card">
   <h3><a href="/china-future">中国未来</a></h3>
   <p>讨论政治转型、国家治理、秩序承接与未来制度选择。</p>
-  <ul><li><a href="/china-stage/ccp-second-reform-opening-possibility">中共还有没有二次改开的可能？</a></li><li><a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china">中国和平政治转型的可能性</a></li></ul>
+  <ul><li><a href="/china-stage/ccp-second-reform-opening-possibility">中国是否存在新的转型窗口</a></li><li><a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china">中国和平政治转型的可能性</a></li></ul>
   <a class="home-direction-card__more" href="/china-future">进入中国未来 →</a>
 </article></div>
 </section>

@@ -45,17 +45,11 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">很多人谈基层问题，都会说一句话：</p>
   <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：三清时代</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="political-debt high-fragility order-evaporation">
+<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="political-debt high-fragility organizational-credit">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>8 分钟阅读</span></p>
   <h3><a href="/china/organization-credit-retired-officials">组织信用的最后一关：退休官员、终身承诺与中共的功能性衰竭</a></h3>
   <p class="knowledge-card__summary">在任何长期执政型组织中，真正构成稳定基础的，从来不是全民支持，而是一个相对封闭的核心群体。</p>
   <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：政治偿债</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="three-cleans-era fiscal-debt political-debt">
-  <p class="knowledge-card__meta"><span>2026-07-31</span><span>11 分钟阅读</span></p>
-  <h3><a href="/china/route-transition-why-ccp-keeps-purging-officials">路线转换：中共为什么必须不断清洗自己的官员</a></h3>
-  <p class="knowledge-card__summary">本文将持续反腐放在路线转换中理解：当中共从发展优先、地方放权和增量交换，转向政治安全、集中控制与存量追责，旧发展路线形成的干部网络就会被重新评价。纪律案件处理真实腐败，也为组织拆除旧节点、改变选人标准和重塑官僚行为提供了工具。</p>
-  <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：三清时代</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="three-cleans-era fiscal-debt political-debt">
   <p class="knowledge-card__meta"><span>2026-07-19</span><span>17 分钟阅读</span></p>
@@ -87,12 +81,6 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">本文从利益链条、外部环境、精英分裂、信息透明、集体行动困境与情感链接断裂等角度，分析社会变革不是浪漫的觉醒，而是当维持旧体系的代价超过推倒旧体系的代价后，社会进入倒计时的动力学过程。</p>
   <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation high-fragility political-debt">
-  <p class="knowledge-card__meta"><span>2026-05-30</span><span>5 分钟阅读</span></p>
-  <h3><a href="/theory/organizational-collapse-begins-with-loss-of-institutional-trust">组织的坍塌，始于制度信任的瓦解</a></h3>
-  <p class="knowledge-card__summary">本文从门阀政治、九品中正制、东晋政治与《红楼梦》中的贾府败落出发，分析当制度信任被关系依附取代后，组织如何逐渐空心化、犬儒化，并最终在看似突然的危机中坍塌。</p>
-  <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
-</article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="fiscal-debt political-debt order-evaporation">
   <p class="knowledge-card__meta"><span>2026-05-19</span><span>12 分钟阅读</span></p>
   <h3><a href="/china/information-age-impact-on-ccp-mechanisms">信息化时代冲击中共的机制</a></h3>
@@ -110,6 +98,18 @@ publicationStatus: reviewing
   <h3><a href="/china/ccp-collapse-three-triggers-social-security-healthcare-finance">中共崩解的三大导火索：社保、医保与金融系统</a></h3>
   <p class="knowledge-card__summary">本文从社保、医保与金融系统三个领域，分析中共未来危机如何从国家信用事件转化为社会预期和官僚系统的连锁崩解。</p>
   <p class="knowledge-card__chips"><span>专题：地方财政</span><span>概念：财政偿债</span></p>
+</article>
+<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="three-cleans-era fiscal-debt political-debt">
+  <p class="knowledge-card__meta"><span>2026-05-10</span><span>12 分钟阅读</span></p>
+  <h3><a href="/china/when-high-ranking-officials-are-no-longer-safe">当高位者也不再安全：这不是普通反腐，而是权力的深度焦虑</a></h3>
+  <p class="knowledge-card__summary">一个体制是否稳定，看的从来不只是它还能不能抓人，而是它为什么越来越需要抓人。</p>
+  <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：三清时代</span></p>
+</article>
+<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="high-fragility order-evaporation political-debt">
+  <p class="knowledge-card__meta"><span>2026-05-10</span><span>9 分钟阅读</span></p>
+  <h3><a href="/theory/ccp-high-fragility-dysfunction">它还在，但越来越靠不住：为什么中共更可能“失灵”而非“倒台”</a></h3>
+  <p class="knowledge-card__summary">谈到中共的未来，人们习惯在两个极端之间摇摆：</p>
+  <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：高脆弱态</span></p>
 </article>
 </div>
 

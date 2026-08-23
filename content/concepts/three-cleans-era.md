@@ -57,11 +57,11 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">很多人谈基层问题，都会说一句话：</p>
   <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：三清时代</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="three-cleans-era fiscal-debt political-debt">
+<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="security-purge-recentralization-cycle three-cleans-era fiscal-debt">
   <p class="knowledge-card__meta"><span>2026-07-31</span><span>11 分钟阅读</span></p>
   <h3><a href="/china/route-transition-why-ccp-keeps-purging-officials">路线转换：中共为什么必须不断清洗自己的官员</a></h3>
   <p class="knowledge-card__summary">本文将持续反腐放在路线转换中理解：当中共从发展优先、地方放权和增量交换，转向政治安全、集中控制与存量追责，旧发展路线形成的干部网络就会被重新评价。纪律案件处理真实腐败，也为组织拆除旧节点、改变选人标准和重塑官僚行为提供了工具。</p>
-  <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：三清时代</span></p>
+  <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：安全化—清洗—再集中—再失灵模型</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="three-cleans-era fiscal-debt political-debt">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>12 分钟阅读</span></p>

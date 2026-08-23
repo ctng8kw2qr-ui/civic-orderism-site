@@ -89,7 +89,7 @@ noindex: false
   <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">
   <fieldset class="knowledge-section-filters"><legend>制度模块</legend><div role="group" aria-label="按制度模块筛选"><button type="button" data-filter-section="" aria-pressed="true">全部</button><button type="button" data-filter-section="overview" aria-pressed="false">制度总览</button><button type="button" data-filter-section="committee" aria-pressed="false">委员会体系</button><button type="button" data-filter-section="administration" aria-pressed="false">行政与后台系统</button><button type="button" data-filter-section="election" aria-pressed="false">选举与政治官员</button><button type="button" data-filter-section="council" aria-pressed="false">议会与社会授权</button><button type="button" data-filter-section="rule-of-law" aria-pressed="false">法治、透明与责任</button></div></fieldset>
-  <label class="knowledge-filter--secondary">核心概念<select data-filter-concept><option value="">全部概念</option><option value="state-system-upgrade">国家系统升级</option><option value="low-friction-governance">低摩擦治理</option><option value="bureaucratic-shock">官僚休克</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option></select></label>
+  <label class="knowledge-filter--secondary">核心概念<select data-filter-concept><option value="">全部概念</option><option value="state-system-upgrade">国家系统升级</option><option value="low-friction-governance">低摩擦治理</option><option value="bureaucratic-shock">官僚系统休克</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option></select></label>
   <button type="button" data-filter-reset>重置</button>
 </div>
 <div class="knowledge-grid">
@@ -118,7 +118,7 @@ noindex: false
   <h3><a href="/civic-orderism/top-level-power-structure-under-civic-orderism">公民秩序主义下顶层权力结构的布局：为什么国家最高层不能只有一个权力中心，也不能碎片化成互相消耗的多头政治</a></h3>
   <p class="knowledge-card__summary">说明顶层权力如何在方向、判断、执行、确认、裁判和制度免疫之间分置并保持统合。</p>
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>15 分钟阅读</span></p>
-  <p class="knowledge-card__chips"><span>概念：官僚休克</span></p>
+  <p class="knowledge-card__chips"><span>概念：官僚系统休克</span></p>
 </article>
 <article class="knowledge-card knowledge-card--institution" data-knowledge-card data-topics="" data-concepts="" data-institution-section="committee">
   <p class="knowledge-card__section">制度模块：<strong>委员会体系</strong></p>
@@ -202,7 +202,7 @@ noindex: false
   <div class="institution-section-heading"><p class="resource-label">辅助线索</p><h2>相关核心概念</h2></div>
   <div class="section-concept-links"><a href="/concepts/state-system-upgrade">国家系统升级</a>
 <a href="/concepts/low-friction-governance">低摩擦治理</a>
-<a href="/concepts/bureaucratic-shock">官僚休克</a>
+<a href="/concepts/bureaucratic-shock">官僚系统休克</a>
 <a href="/concepts/ruling-techniques">统治术</a>
 <a href="/concepts/crisis-management">危机管理</a></div>
 </section>

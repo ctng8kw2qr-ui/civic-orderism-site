@@ -780,6 +780,23 @@ ${relatedConcepts.length ? `<div class="section-concept-links">${relatedConcepts
 }
 
 function chinaAnalysisPage(section) {
+  const modelCards = chinaAnalysis.models
+    .map(
+      (model) => `<a class="china-model-card" href="${model.href}">
+  <strong>${model.name}</strong>
+  <span>${model.description}</span>
+  <small>进入模型 →</small>
+</a>`,
+    )
+    .join("\n");
+  const structuralJudgments = chinaAnalysis.structuralJudgments
+    .map(
+      (judgment) => `<a class="china-judgment-card" href="${judgment.href}">
+  <strong>${judgment.name}</strong>
+  <span>${judgment.description}</span>
+</a>`,
+    )
+    .join("\n");
   const groups = chinaAnalysis.groups.map((group, index) => {
     const featuredSlugs = group.featured ?? group.slugs.slice(0, 5);
     const featuredItems = featuredSlugs
@@ -791,7 +808,7 @@ function chinaAnalysisPage(section) {
       .map((slug) => articleBySlug.get(slug))
       .filter((article) => article?.status === "published");
     const number = ["一", "二", "三", "四", "五"][index];
-    return `## ${number}、${group.name}
+    return `### ${number}、${group.name}
 
 ${group.description}
 
@@ -821,13 +838,27 @@ ${chinaAnalysisGrid(moreItems)}
 
 ${section.description}
 
-<div class="section-stats"><span>${items.length} 篇已发布文章</span><span>5 个分析层次</span><span>更新至 ${latestUpdate || "2026-07-19"}</span></div>
+<div class="section-stats"><span>${items.length} 篇已发布文章</span><span>3 个阅读层级</span><span>更新至 ${latestUpdate || "2026-07-19"}</span></div>
 
 <div class="section-core-judgment"><strong>栏目核心判断</strong><p>${section.coreJudgment}</p></div>
 
-${chinaAnalysis.readingHint}
+<p class="china-analysis-intro">${chinaAnalysis.readingHint}</p>
 
-${groups.join("\n\n")}`;
+<section class="china-analysis-layer china-analysis-layer--models" aria-labelledby="china-models-title">
+  <div class="china-analysis-layer__heading"><p class="resource-label">第一层</p><h2 id="china-models-title">核心模型</h2><p>用一组稳定的解释框架，理解分散事件背后的共同运行机制。</p></div>
+  <div class="china-model-grid">${modelCards}</div>
+</section>
+
+<section class="china-analysis-layer china-analysis-layer--judgments" aria-labelledby="china-judgments-title">
+  <div class="china-analysis-layer__heading"><p class="resource-label">第二层</p><h2 id="china-judgments-title">结构判断</h2><p>沿着长期问题进入专题分析，再回到相应的核心模型。</p></div>
+  <div class="china-judgment-grid">${structuralJudgments}</div>
+</section>
+
+<section class="china-analysis-layer china-analysis-layer--observations" aria-labelledby="china-observations-title">
+  <div class="china-analysis-layer__heading"><p class="resource-label">第三层</p><h2 id="china-observations-title">现实观察与延伸阅读</h2><p>从人物、政策和现实政治信号进入，并按既有分析线索继续阅读。默认只展示代表文章，其余内容可按需展开。</p></div>
+
+${groups.join("\n\n")}
+</section>`;
 }
 
 for (const section of sections) {
@@ -886,40 +917,51 @@ const homepageDirectionCards = [
   {
     label: "公民秩序主义",
     href: "/civic-orderism",
-    description:
-      "介绍政治路线、现代政治问题意识，以及和平承接中国未来的制度方向。",
-    articles: [
-      "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
-      "civic-orderism/peaceful-state-transition",
+    description: "介绍和平转轨、国家连续与低阻力政治承接的基本路线。",
+    links: [
+      { title: "和平转轨", href: "/civic-orderism/peaceful-state-transition" },
+      {
+        title: "保留国家，改变政治",
+        href: "/civic-orderism/possibility-of-peaceful-political-transition-in-china",
+      },
+      {
+        title: "不革命、不清算",
+        href: "/civic-orderism/why-civic-orderism-is-easier-to-succeed",
+      },
     ],
   },
   {
     label: "解析中共",
     href: "/china",
-    description: "解释中共的组织运行、官僚系统、安全叙事与结构性问题。",
-    articles: [
-      "china/security-is-redefining-china",
-      "theory/party-state-structural-failure",
+    description:
+      "从党国结构、官僚系统与安全逻辑出发，理解旧体制为什么正在失去原有运行能力。",
+    links: [
+      { title: "党国应力", href: "/concepts/party-state-stress" },
+      { title: "官僚系统休克", href: "/concepts/bureaucratic-shock" },
+      { title: "安全再集中", href: "/concepts/security-recentralization" },
     ],
   },
   {
     label: "中国未来",
     href: "/china-future",
     description: "讨论政治转型、国家治理、秩序承接与未来制度选择。",
-    articles: [
-      "china-stage/ccp-second-reform-opening-possibility",
-      "civic-orderism/possibility-of-peaceful-political-transition-in-china",
+    links: [
+      {
+        title: "中国是否存在新的转型窗口",
+        href: "/china-stage/ccp-second-reform-opening-possibility",
+      },
+      {
+        title: "中国和平政治转型的可能性",
+        href: "/civic-orderism/possibility-of-peaceful-political-transition-in-china",
+      },
     ],
   },
 ]
   .map((direction) => {
-    const directionArticles = direction.articles
-      .map((slug) => articleBySlug.get(slug))
-      .filter(isEligibleArticle);
     return `<article class="home-direction-card">
   <h3><a href="${direction.href}">${direction.label}</a></h3>
   <p>${direction.description}</p>
-  <ul>${directionArticles.map((article) => `<li><a href="/${encodeURI(article.slug)}">${article.title}</a></li>`).join("")}</ul>
+  <ul>${direction.links.map((link) => `<li><a href="${link.href}">${link.title}</a></li>`).join("")}</ul>
   <a class="home-direction-card__more" href="${direction.href}">进入${direction.label} →</a>
 </article>`;
   })
@@ -1160,23 +1202,45 @@ ${relatedConcepts.length ? `## 相关概念\n\n${relatedConcepts.map((item) => `
   );
 }
 
+const conceptDomain = (concept) => {
+  if (concept.domain) return concept.domain;
+  return concept.topics.some((slug) =>
+    ["political-transition", "institutional-mechanisms"].includes(slug),
+  )
+    ? "civic-orderism"
+    : "china-analysis";
+};
+const conceptCard = (concept) => {
+  const status = conceptPublicationStatus(concept);
+  const research = status === "reviewing";
+  return `<a class="concept-card${research ? " concept-card--research" : ""}" href="/concepts/${concept.slug}"><strong>${concept.name}</strong><span>${concept.definition}</span><small>${research ? "研究概念" : "正式概念"}</small></a>`;
+};
+const chinaConcepts = visibleConcepts.filter(
+  (concept) => conceptDomain(concept) === "china-analysis",
+);
+const civicConcepts = visibleConcepts.filter(
+  (concept) => conceptDomain(concept) === "civic-orderism",
+);
+
 writeContent(
   "concepts/index.md",
-  `${yamlFrontmatter({ title: "核心概念库", description: "公民秩序主义研究中的核心概念与知识节点。", contentType: "概念索引" })}
+  `${yamlFrontmatter({ title: "核心概念词典", description: "按解析中共与公民秩序主义两条主线浏览全站核心概念。", contentType: "概念索引" })}
 
-# 核心概念库
+# 核心概念词典
 
-这里区分已经稳定使用的正式概念与仍在论证中的研究概念。研究概念可以阅读，但暂不进入搜索与站点地图；保留或合并状态的内部框架不在公开索引中显示。
+这里汇集全站持续使用的解释模型与政治路线概念。正式概念已经形成稳定定义；研究概念仍在完善边界，但可以作为继续阅读的知识节点。
 
-## 正式概念
+## 解析中共类
 
-<div class="concept-grid">${formalConcepts.map((concept) => `<a class="concept-card" href="/concepts/${concept.slug}"><strong>${concept.name}</strong><span>${concept.definition}</span><small>正式概念</small></a>`).join("\n")}</div>
+<p>从党国结构、官僚系统、组织信用与安全逻辑理解中共运行方式。</p>
 
-## 研究概念
+<div class="concept-grid">${chinaConcepts.map(conceptCard).join("\n")}</div>
 
-<p>以下概念已有明确研究方向，但定义边界或机制解释仍在完善。</p>
+## 公民秩序主义类
 
-<div class="concept-grid concept-grid--research">${researchConcepts.map((concept) => `<a class="concept-card concept-card--research" href="/concepts/${concept.slug}"><strong>${concept.name}</strong><span>${concept.definition}</span><small>研究概念 · 暂不索引</small></a>`).join("\n")}</div>`,
+<p>从和平转轨、国家连续、低阻力治理与政治路线理解公民秩序主义的方案。</p>
+
+<div class="concept-grid">${civicConcepts.map(conceptCard).join("\n")}</div>`,
 );
 
 writeContent(
@@ -1440,7 +1504,7 @@ writeContent(
 
 # 制度机制
 
-本页汇集委员会、行政、议会、选举、司法、监督与后台系统等进阶制度研究。建议先完成 [[articles#route-institution-research|进阶制度研究路线]]，再按具体问题浏览以下文章。
+本页汇集委员会、行政、议会、选举、司法、监督与后台系统等进阶制度研究。建议先完成 [[articles#route-civic-orderism|公民秩序主义政治路线]]，再按具体问题浏览以下文章。
 
 ${filterPanel(articles.filter((article) => article.section === "制度设计"))}`,
 );

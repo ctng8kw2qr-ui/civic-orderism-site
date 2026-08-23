@@ -267,6 +267,167 @@ body:is([data-slug="china"], [data-slug="china/index"])
   font-size: 1.14rem;
 }
 
+body:is([data-slug="china"], [data-slug="china/index"])
+  article
+  .china-analysis-intro {
+  max-width: 760px;
+  margin: 1.2rem 0 0;
+  color: var(--darkgray);
+  line-height: 1.75;
+}
+
+body:is([data-slug="china"], [data-slug="china/index"])
+  article
+  .china-analysis-layer {
+  margin-top: 3.6rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-subtle-soft);
+}
+
+body:is([data-slug="china"], [data-slug="china/index"])
+  article
+  .china-analysis-layer--models {
+  margin-top: 2.4rem;
+  padding: clamp(1.35rem, 3vw, 2rem);
+  border: 1px solid var(--border-subtle);
+  border-top: 3px solid var(--accent-line);
+  border-radius: 7px;
+  background: color-mix(in srgb, var(--surface-primary) 97%, var(--lightgray));
+}
+
+body:is([data-slug="china"], [data-slug="china/index"])
+  article
+  .china-analysis-layer__heading
+  h2 {
+  margin: 0.4rem 0 0.7rem;
+  padding: 0;
+  border: 0;
+  color: var(--ink);
+  font-size: clamp(1.55rem, 3vw, 2rem);
+}
+
+body:is([data-slug="china"], [data-slug="china/index"])
+  article
+  .china-analysis-layer__heading
+  > p:not(.resource-label) {
+  max-width: 760px;
+  margin: 0;
+  color: var(--darkgray);
+  line-height: 1.7;
+}
+
+body:is([data-slug="china"], [data-slug="china/index"])
+  article
+  .china-model-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+body:is([data-slug="china"], [data-slug="china/index"])
+  article
+  .china-model-card {
+  display: flex;
+  min-width: 0;
+  min-height: 9.2rem;
+  flex-direction: column;
+  gap: 0.65rem;
+  box-sizing: border-box;
+  padding: 1.25rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  background: var(--surface-primary);
+  color: var(--darkgray);
+  text-decoration: none;
+  background-image: none;
+}
+
+body:is([data-slug="china"], [data-slug="china/index"])
+  article
+  .china-model-card:hover,
+body:is([data-slug="china"], [data-slug="china/index"])
+  article
+  .china-model-card:focus-visible {
+  border-color: color-mix(in srgb, var(--gray) 55%, var(--lightgray));
+  background: var(--surface-elevated);
+  outline: none;
+}
+
+body:is([data-slug="china"], [data-slug="china/index"])
+  article
+  .china-model-card
+  strong {
+  color: var(--ink);
+  font-size: 1.08rem;
+  line-height: 1.45;
+}
+
+body:is([data-slug="china"], [data-slug="china/index"])
+  article
+  .china-model-card
+  span {
+  flex: 1;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+body:is([data-slug="china"], [data-slug="china/index"])
+  article
+  .china-model-card
+  small {
+  color: var(--accent-deep);
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+body:is([data-slug="china"], [data-slug="china/index"])
+  article
+  .china-judgment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 1.35rem;
+  border: 1px solid var(--border-subtle);
+  background: var(--border-subtle);
+}
+
+body:is([data-slug="china"], [data-slug="china/index"])
+  article
+  .china-judgment-card {
+  display: grid;
+  min-width: 0;
+  gap: 0.45rem;
+  padding: 1rem;
+  background: var(--surface-primary);
+  color: var(--darkgray);
+  text-decoration: none;
+  background-image: none;
+}
+
+body:is([data-slug="china"], [data-slug="china/index"])
+  article
+  .china-judgment-card
+  strong {
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+body:is([data-slug="china"], [data-slug="china/index"])
+  article
+  .china-judgment-card
+  span {
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+body:is([data-slug="china"], [data-slug="china/index"])
+  article
+  .china-analysis-layer--observations
+  > h3 {
+  margin-top: 2.6rem;
+}
+
 .china-analysis-more {
   margin: 1.15rem 0 2.35rem;
   border-top: 1px solid var(--lightgray);
@@ -982,6 +1143,35 @@ article .reading-route-card h3 {
   .start-entry-card,
   .topic-entry-card,
   .concept-card {
+    min-height: 0;
+  }
+
+  body:is([data-slug="china"], [data-slug="china/index"])
+    article
+    .china-analysis-layer {
+    margin-top: 2.7rem;
+    padding-top: 1.4rem;
+  }
+
+  body:is([data-slug="china"], [data-slug="china/index"])
+    article
+    .china-analysis-layer--models {
+    margin-top: 2rem;
+    padding: 1.2rem 1rem;
+  }
+
+  body:is([data-slug="china"], [data-slug="china/index"])
+    article
+    .china-model-grid,
+  body:is([data-slug="china"], [data-slug="china/index"])
+    article
+    .china-judgment-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body:is([data-slug="china"], [data-slug="china/index"])
+    article
+    .china-model-card {
     min-height: 0;
   }
 

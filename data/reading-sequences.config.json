@@ -1,5 +1,66 @@
 [
   {
+    "id": "political-judgment-route",
+    "name": "从旧体制失灵到组织准备",
+    "items": [
+      {
+        "slug": "china/party-state-stress-neither-party-nor-state"
+      },
+      {
+        "slug": "china/ccp-bureaucracy-double-deadlock"
+      },
+      {
+        "slug": "theory/organizational-collapse-begins-with-loss-of-institutional-trust"
+      },
+      {
+        "slug": "china/security-led-governance-model"
+      },
+      {
+        "slug": "civic-orderism/possibility-of-peaceful-political-transition-in-china"
+      },
+      {
+        "slug": "china/supply-side-reform-state-can-scale-not-discover-future"
+      },
+      {
+        "slug": "china-stage/china-manufacturing-cannot-stop"
+      },
+      {
+        "slug": "civic-orderism/state-must-rely-on-systems-not-drivers"
+      },
+      {
+        "slug": "civic-orderism/peaceful-state-transition"
+      },
+      {
+        "slug": "civic-orderism/why-civic-orderism-is-easier-to-succeed"
+      },
+      {
+        "slug": "theory/internal-change-external-change"
+      },
+      {
+        "slug": "civic-orderism/why-civic-orderism"
+      },
+      {
+        "slug": "civic-orderism/what-civic-orderism-solves-if-you-read-only-one"
+      },
+      {
+        "href": "/start-here",
+        "title": "5分钟了解公民秩序主义"
+      },
+      {
+        "href": "/preparation",
+        "title": "北美非营利法人及首届董事会筹备"
+      },
+      {
+        "href": "/preparation/board",
+        "title": "首届董事会筹备"
+      },
+      {
+        "href": "/participate",
+        "title": "参与方式"
+      }
+    ]
+  },
+  {
     "id": "civic-orderism-introduction",
     "name": "公民秩序主义入门",
     "items": [
@@ -22,30 +83,6 @@
       {
         "href": "/participate",
         "title": "参与公民秩序主义"
-      }
-    ]
-  },
-  {
-    "id": "understanding-current-ccp",
-    "name": "理解中共当前状态",
-    "items": [
-      {
-        "slug": "theory/ccp-high-fragility-dysfunction"
-      },
-      {
-        "slug": "china/why-ccp-cannot-reduce-grassroots-burden"
-      },
-      {
-        "slug": "theory/organizational-collapse-begins-with-loss-of-institutional-trust"
-      },
-      {
-        "slug": "china-stage/three-cleans-era-political-economic-cultural-contraction"
-      },
-      {
-        "slug": "china-stage/ccp-second-reform-opening-possibility"
-      },
-      {
-        "slug": "china/why-ccp-will-not-relax-party-pressure"
       }
     ]
   }

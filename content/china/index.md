@@ -2,7 +2,7 @@
 title: "解析中共"
 date: 2026-07-19
 updated: 2026-07-20
-description: "不以情绪、立场或单一事件为起点，而是把中共视为一个现实运行中的政治组织，从权力结构、组织成员、结构性困境、防御转型及其外部影响五个层面观察其变化。"
+description: "不以情绪、立场或单一事件为起点，而是通过核心模型、结构判断与现实观察三个层级，理解中共作为政治组织的运行方式及其变化。"
 contentType: "栏目"
 status: published
 listed: true
@@ -12,15 +12,92 @@ noindex: false
 
 # 解析中共
 
-不以情绪、立场或单一事件为起点，而是把中共视为一个现实运行中的政治组织，从权力结构、组织成员、结构性困境、防御转型及其外部影响五个层面观察其变化。
+不以情绪、立场或单一事件为起点，而是通过核心模型、结构判断与现实观察三个层级，理解中共作为政治组织的运行方式及其变化。
 
-<div class="section-stats"><span>48 篇已发布文章</span><span>5 个分析层次</span><span>更新至 2026-08-22</span></div>
+<div class="section-stats"><span>48 篇已发布文章</span><span>3 个阅读层级</span><span>更新至 2026-08-22</span></div>
 
 <div class="section-core-judgment"><strong>栏目核心判断</strong><p>理解中共的变化，需要沿着权力如何运行、成员如何行动、结构为何失灵、组织如何防御，以及压力如何向外溢出的完整链条展开。</p></div>
 
-从组织结构出发，观察官僚行为、结构性失灵、防御转型及其外部影响。
+<p class="china-analysis-intro">现实事件提供入口，结构判断解释长期问题，核心模型连接这些变化背后的运行机制。</p>
 
-## 一、组织结构与权力运行
+<section class="china-analysis-layer china-analysis-layer--models" aria-labelledby="china-models-title">
+  <div class="china-analysis-layer__heading"><p class="resource-label">第一层</p><h2 id="china-models-title">核心模型</h2><p>用一组稳定的解释框架，理解分散事件背后的共同运行机制。</p></div>
+  <div class="china-model-grid"><a class="china-model-card" href="/concepts/party-state-stress">
+  <strong>党国应力</strong>
+  <span>党的政治控制逻辑与国家治理逻辑长期重叠后，不断积累的结构性张力。</span>
+  <small>进入模型 →</small>
+</a>
+<a class="china-model-card" href="/concepts/bureaucratic-shock">
+  <strong>官僚系统休克</strong>
+  <span>官僚系统在高风险、强问责和低授权环境中出现的集体行动冻结。</span>
+  <small>进入模型 →</small>
+</a>
+<a class="china-model-card" href="/concepts/order-evaporation">
+  <strong>秩序蒸发</strong>
+  <span>制度形式仍然存在，但可信承诺、协作能力和社会预期逐步流失。</span>
+  <small>进入模型 →</small>
+</a>
+<a class="china-model-card" href="/concepts/security-recentralization">
+  <strong>安全再集中</strong>
+  <span>安全优先替代发展优先后，权力、信息与责任重新向中心集中的治理过程。</span>
+  <small>进入模型 →</small>
+</a>
+<a class="china-model-card" href="/concepts/organizational-credit">
+  <strong>组织信用</strong>
+  <span>组织能否持续兑现承诺、分配责任并让成员相信长期合作仍有意义的能力。</span>
+  <small>进入模型 →</small>
+</a>
+<a class="china-model-card" href="/concepts/security-purge-recentralization-cycle">
+  <strong>安全化—清洗—再集中—再失灵模型</strong>
+  <span>安全化推动清洗和再集中，而再集中又削弱治理反馈并产生新一轮失灵。</span>
+  <small>进入模型 →</small>
+</a></div>
+</section>
+
+<section class="china-analysis-layer china-analysis-layer--judgments" aria-labelledby="china-judgments-title">
+  <div class="china-analysis-layer__heading"><p class="resource-label">第二层</p><h2 id="china-judgments-title">结构判断</h2><p>沿着长期问题进入专题分析，再回到相应的核心模型。</p></div>
+  <div class="china-judgment-grid"><a class="china-judgment-card" href="/concepts/party-state-stress">
+  <strong>党国结构</strong>
+  <span>党与国家两套逻辑如何重叠，并形成权力与责任的长期张力。</span>
+</a>
+<a class="china-judgment-card" href="/topics/bureaucratic-system">
+  <strong>官僚体系</strong>
+  <span>高压、问责和授权收缩如何改变官员的行动方式。</span>
+</a>
+<a class="china-judgment-card" href="/china/ccp-power-network-not-line">
+  <strong>中央与地方</strong>
+  <span>权力网络、地方空间和中央协调之间的真实关系。</span>
+</a>
+<a class="china-judgment-card" href="/topics/local-finance">
+  <strong>财政与利益分配</strong>
+  <span>增长放缓后，历史成本、公共责任与损失如何重新分配。</span>
+</a>
+<a class="china-judgment-card" href="/concepts/organizational-credit">
+  <strong>组织信用</strong>
+  <span>承诺、责任和长期合作预期为何逐步衰退。</span>
+</a>
+<a class="china-judgment-card" href="/concepts/security-recentralization">
+  <strong>安全叙事</strong>
+  <span>安全如何从政策领域上升为整体治理边界。</span>
+</a>
+<a class="china-judgment-card" href="/topics/xi-era">
+  <strong>权力集中</strong>
+  <span>集中如何提高命令一致性，又如何改变系统反馈。</span>
+</a>
+<a class="china-judgment-card" href="/china/ccp-bureaucracy-historical-bill">
+  <strong>政治责任</strong>
+  <span>责任持续集中后，组织如何面对历史成本与治理失败。</span>
+</a>
+<a class="china-judgment-card" href="/china/supply-side-reform-state-can-scale-not-discover-future">
+  <strong>国家治理能力</strong>
+  <span>政治控制能力与持续解决现实问题的能力为何可能分离。</span>
+</a></div>
+</section>
+
+<section class="china-analysis-layer china-analysis-layer--observations" aria-labelledby="china-observations-title">
+  <div class="china-analysis-layer__heading"><p class="resource-label">第三层</p><h2 id="china-observations-title">现实观察与延伸阅读</h2><p>从人物、政策和现实政治信号进入，并按既有分析线索继续阅读。默认只展示代表文章，其余内容可按需展开。</p></div>
+
+### 一、组织结构与权力运行
 
 观察中共作为政治组织的结构、权力节点、决策机制与最高权力运行方式，理解权力如何形成、集中、传递与维持。
 
@@ -53,7 +130,7 @@ noindex: false
 </div>
 </details>
 
-## 二、官僚系统与组织成员
+### 二、官僚系统与组织成员
 
 观察中共内部的人如何行动：官僚如何服从、避责、自保和表达忠诚，以及组织与成员之间的现实关系如何发生变化。
 
@@ -122,7 +199,7 @@ noindex: false
 </div>
 </details>
 
-## 三、结构性困境与组织失灵
+### 三、结构性困境与组织失灵
 
 讨论中共今天面对的深层问题为什么越来越难以通过局部政策修补，以及增长模式、财政结构、社会结构和组织机制如何共同形成系统性压力。
 
@@ -191,7 +268,7 @@ noindex: false
 </div>
 </details>
 
-## 四、安全叙事与防御转型
+### 四、安全叙事与防御转型
 
 当增长、改革和发展逻辑越来越难以维持，中共正在把治理重心进一步转向安全、控制、组织稳定与风险防范。本栏目观察这种战略转型如何展开。
 
@@ -244,7 +321,7 @@ noindex: false
 </div>
 </details>
 
-## 五、外交、军事与外溢风险
+### 五、外交、军事与外溢风险
 
 观察中共内部治理逻辑如何向外交、军事、台海及国际关系外溢，以及组织压力如何增加战略误判与外部风险。
 
@@ -276,3 +353,4 @@ noindex: false
 </article>
 </div>
 </details>
+</section>

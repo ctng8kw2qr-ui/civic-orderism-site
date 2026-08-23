@@ -22,7 +22,11 @@
     "primaryTopic": "ccp-governance",
     "relatedTopics": [],
     "topics": ["ccp-governance"],
-    "concepts": ["ruling-techniques", "crisis-management"],
+    "concepts": [
+      "party-state-stress",
+      "ruling-techniques",
+      "crisis-management"
+    ],
     "featured": false,
     "recommended": false,
     "readingLevel": "进阶",
@@ -53,7 +57,11 @@
     "primaryTopic": "ccp-governance",
     "relatedTopics": ["order-evaporation"],
     "topics": ["ccp-governance", "order-evaporation"],
-    "concepts": ["ruling-techniques", "crisis-management", "order-evaporation"],
+    "concepts": [
+      "security-recentralization",
+      "security-purge-recentralization-cycle",
+      "ruling-techniques"
+    ],
     "featured": false,
     "recommended": false,
     "readingLevel": "进阶",
@@ -118,9 +126,9 @@
     "relatedTopics": ["bureaucratic-system"],
     "topics": ["ccp-governance", "bureaucratic-system"],
     "concepts": [
+      "security-recentralization",
       "ruling-techniques",
-      "crisis-management",
-      "bureaucratic-shock"
+      "crisis-management"
     ],
     "featured": false,
     "recommended": false,
@@ -185,7 +193,11 @@
     "primaryTopic": "ccp-governance",
     "relatedTopics": [],
     "topics": ["ccp-governance"],
-    "concepts": ["ruling-techniques", "crisis-management"],
+    "concepts": [
+      "security-recentralization",
+      "ruling-techniques",
+      "crisis-management"
+    ],
     "featured": false,
     "recommended": false,
     "readingLevel": "进阶",
@@ -278,7 +290,11 @@
     "primaryTopic": "three-cleans-era",
     "relatedTopics": ["bureaucratic-system"],
     "topics": ["three-cleans-era", "bureaucratic-system"],
-    "concepts": ["three-cleans-era", "fiscal-debt", "political-debt"],
+    "concepts": [
+      "security-purge-recentralization-cycle",
+      "three-cleans-era",
+      "fiscal-debt"
+    ],
     "featured": false,
     "recommended": false,
     "readingLevel": "进阶",
@@ -646,8 +662,8 @@
     "topics": ["ccp-governance", "bureaucratic-system"],
     "concepts": [
       "ruling-techniques",
-      "crisis-management",
-      "bureaucratic-shock"
+      "security-purge-recentralization-cycle",
+      "crisis-management"
     ],
     "featured": false,
     "recommended": false,
@@ -710,7 +726,7 @@
     "primaryTopic": null,
     "relatedTopics": [],
     "topics": [],
-    "concepts": [],
+    "concepts": ["organizational-credit"],
     "featured": false,
     "recommended": false,
     "readingLevel": "进阶",
@@ -938,7 +954,11 @@
     "primaryTopic": "order-evaporation",
     "relatedTopics": [],
     "topics": ["order-evaporation"],
-    "concepts": ["order-evaporation", "high-fragility", "political-debt"],
+    "concepts": [
+      "order-evaporation",
+      "organizational-credit",
+      "high-fragility"
+    ],
     "featured": false,
     "recommended": false,
     "readingLevel": "基础",
@@ -1569,7 +1589,7 @@
     "primaryTopic": null,
     "relatedTopics": [],
     "topics": [],
-    "concepts": ["high-fragility"],
+    "concepts": ["high-fragility", "party-state-stress"],
     "featured": false,
     "recommended": true,
     "readingLevel": "进阶",
@@ -2784,7 +2804,7 @@
     "primaryTopic": "order-evaporation",
     "relatedTopics": [],
     "topics": ["order-evaporation"],
-    "concepts": ["political-debt", "high-fragility", "order-evaporation"],
+    "concepts": ["political-debt", "high-fragility", "organizational-credit"],
     "featured": false,
     "recommended": true,
     "readingLevel": "进阶",

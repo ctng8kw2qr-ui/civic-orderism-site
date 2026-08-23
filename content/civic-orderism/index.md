@@ -58,7 +58,7 @@ noindex: false
 <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">
   <label>专题<select data-filter-topic><option value="">全部专题</option><option value="political-transition">中国政治转型</option><option value="order-evaporation">秩序蒸发</option></select></label>
-  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="nonviolent-transition">非暴力转型</option><option value="state-system-upgrade">国家系统升级</option><option value="political-route">政治路线</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="political-debt">政治偿债</option><option value="low-friction-governance">低摩擦治理</option><option value="bureaucratic-shock">官僚休克</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option><option value="fiscal-debt">财政偿债</option></select></label>
+  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="nonviolent-transition">非暴力转型</option><option value="state-system-upgrade">国家系统升级</option><option value="political-route">政治路线</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="political-debt">政治偿债</option><option value="organizational-credit">组织信用</option><option value="low-friction-governance">低摩擦治理</option><option value="bureaucratic-shock">官僚系统休克</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option><option value="fiscal-debt">财政偿债</option></select></label>
   <button type="button" data-filter-reset>重置</button>
 </div>
 <div class="knowledge-grid">
@@ -115,7 +115,7 @@ noindex: false
   <p class="knowledge-card__summary">本文从利益链条、外部环境、精英分裂、信息透明、集体行动困境与情感链接断裂等角度，分析社会变革不是浪漫的觉醒，而是当维持旧体系的代价超过推倒旧体系的代价后，社会进入倒计时的动力学过程。</p>
   <p class="knowledge-card__chips"><span>专题：秩序蒸发</span><span>概念：秩序蒸发</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation high-fragility political-debt">
+<article class="knowledge-card" data-knowledge-card data-topics="order-evaporation" data-concepts="order-evaporation organizational-credit high-fragility">
   <p class="knowledge-card__meta"><span>2026-05-30</span><span>5 分钟阅读</span></p>
   <h3><a href="/theory/organizational-collapse-begins-with-loss-of-institutional-trust">组织的坍塌，始于制度信任的瓦解</a></h3>
   <p class="knowledge-card__summary">本文从门阀政治、九品中正制、东晋政治与《红楼梦》中的贾府败落出发，分析当制度信任被关系依附取代后，组织如何逐渐空心化、犬儒化，并最终在看似突然的危机中坍塌。</p>
@@ -136,7 +136,7 @@ noindex: false
   <p class="knowledge-card__meta"><span>2026-05-12</span><span>10 分钟阅读</span></p>
   <h3><a href="/theory/us-industrial-system-cannot-carry-information-age">美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代</a></h3>
   <p class="knowledge-card__summary">本文从制度适配角度分析美国危机：问题不只是民主或专制之争，而是工业时代形成的政治机器，正在难以承载信息化时代的社会结构、传播结构与冲突结构。</p>
-  <p class="knowledge-card__chips"><span>概念：官僚休克</span></p>
+  <p class="knowledge-card__chips"><span>概念：官僚系统休克</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="order-evaporation high-fragility political-debt language-inflation state-system-upgrade">
   <p class="knowledge-card__meta"><span>2026-05-12</span><span>14 分钟阅读</span></p>
@@ -185,7 +185,7 @@ noindex: false
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>4 分钟阅读</span></p>
   <h3><a href="/theory/overseas-political-movements-fail">海外政治运动为什么一事无成？</a></h3>
   <p class="knowledge-card__summary">分析海外中文政治运动长期低效与结构性失败的原因。</p>
-  <p class="knowledge-card__chips"><span>概念：官僚休克</span></p>
+  <p class="knowledge-card__chips"><span>概念：官僚系统休克</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>11 分钟阅读</span></p>
@@ -253,5 +253,5 @@ noindex: false
 <a href="/concepts/order-evaporation">秩序蒸发</a>
 <a href="/concepts/high-fragility">高脆弱态</a>
 <a href="/concepts/political-debt">政治偿债</a>
-<a href="/concepts/low-friction-governance">低摩擦治理</a>
-<a href="/concepts/bureaucratic-shock">官僚休克</a></div>
+<a href="/concepts/organizational-credit">组织信用</a>
+<a href="/concepts/low-friction-governance">低摩擦治理</a></div>

@@ -964,99 +964,93 @@ const recent = articles
 
 const readingRouteConfigs = [
   {
-    id: "route-first-visit",
+    id: "route-system-failure",
     number: "01",
-    label: "优先入口",
-    title: "第一次了解公民秩序主义",
+    label: "现实判断",
+    title: "中共为什么正在失去原有运行能力",
     description:
-      "用少量核心材料理解公民秩序主义是什么、为什么提出这条路线、试图解决什么问题，以及当前已经进入什么组织阶段。",
-    audience: "第一次访问本站，希望快速建立整体认识的读者",
-    duration: "约 30–45 分钟",
+      "旧有党国系统越来越难继续提供稳定利益、组织信用和共同预期，控制能力与治理能力正在出现分离。",
     entries: [
-      { href: "/introduction-manual", title: "公民秩序主义介绍手册" },
-      "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
-      "civic-orderism/why-civic-orderism",
-      "civic-orderism/possibility-of-peaceful-political-transition-in-china",
+      "china/party-state-stress-neither-party-nor-state",
+      "china/ccp-bureaucracy-double-deadlock",
+      "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
+      "china/security-led-governance-model",
     ],
-    moreHref: "/civic-orderism",
-    moreLabel: "查看本路线延伸阅读 →",
-    nextHref: "#route-china-reality",
-    nextLabel: "继续：理解今天的中国 →",
-    organizationLinks: [
-      { href: "/preparation", title: "了解董事会筹备" },
-      { href: "/participate", title: "了解参与方式" },
-    ],
+    moreHref: "/china",
+    moreLabel: "继续阅读解析中共 →",
+    nextHref: "#route-transition-conditions",
+    nextLabel: "下一步：为什么中国存在政治转轨条件 →",
     primary: true,
   },
   {
-    id: "route-china-reality",
+    id: "route-transition-conditions",
     number: "02",
-    label: "现实判断",
-    title: "理解今天的中国",
+    label: "转轨条件",
+    title: "为什么中国存在政治转轨条件",
     description:
-      "从中共的组织结构、官僚系统、路线调整与安全叙事出发，理解中国当前正在进入什么阶段，以及为什么现有治理逻辑越来越难以处理结构性问题。",
-    audience: "希望从中共组织运行与中国现实问题进入的读者",
-    duration: "约 35–50 分钟",
+      "政治组织失灵不等于国家能力消失。中国的行政、工业、技术和社会能力仍可成为和平承接的现实基础。",
     entries: [
-      "china/ccp-no-real-base",
-      "theory/party-state-structural-failure",
-      "china/route-transition-why-ccp-keeps-purging-officials",
-      "china/what-happens-when-security-becomes-the-top-priority",
       "civic-orderism/possibility-of-peaceful-political-transition-in-china",
-    ],
-    moreHref: "/china",
-    moreLabel: "查看本路线延伸阅读 →",
-    nextHref: "#route-theory",
-    nextLabel: "继续：理解公民秩序主义的理论路线 →",
-  },
-  {
-    id: "route-theory",
-    number: "03",
-    label: "理论路线",
-    title: "理解公民秩序主义的理论路线",
-    description:
-      "从工业时代政治制度与信息化社会之间的错位进入，理解为什么需要新的政治组织方式，以及秩序、责任、专业判断和制度承接如何形成一条完整路线。",
-    audience: "希望理解公民秩序主义完整理论逻辑的读者",
-    duration: "约 45–60 分钟",
-    entries: [
-      "civic-orderism/information-age-and-political-transition",
-      "theory/end-of-party-politics-in-information-age",
+      "china/supply-side-reform-state-can-scale-not-discover-future",
+      "china-stage/china-manufacturing-cannot-stop",
       "civic-orderism/state-must-rely-on-systems-not-drivers",
-      "civic-orderism/why-weaken-party-politics",
-      "civic-orderism/why-civic-orderism",
     ],
-    moreHref: "/theory",
-    moreLabel: "查看本路线延伸阅读 →",
-    nextHref: "#route-institution-research",
-    nextLabel: "进入：进阶制度研究 →",
+    moreHref: "/china-future",
+    moreLabel: "继续阅读中国未来 →",
+    nextHref: "#route-peaceful-transition",
+    nextLabel: "下一步：为什么应当选择和平转轨 →",
   },
   {
-    id: "route-institution-research",
-    number: "04",
-    label: "进阶阅读",
-    title: "进阶制度研究",
+    id: "route-peaceful-transition",
+    number: "03",
+    label: "路线选择",
+    title: "为什么应当选择和平转轨",
     description:
-      "适合已经了解公民秩序主义基本路线，希望进一步阅读委员会、选举、司法、行政执行、监督机制与后台系统的读者。",
-    audience: "已经完成基础阅读、希望深入制度研究的读者",
-    duration: "约 60–120 分钟",
+      "不革命、不清算不是回避政治变化，而是降低政治阻力、社会成本和国家失序风险的必要前提。",
     entries: [
-      "civic-orderism/what-is-committee-system",
-      "civic-orderism/election-logic-under-civic-orderism",
-      {
-        slug: "civic-orderism/backend-system-under-civic-orderism",
-        title: "公民秩序主义对后台系统的重视",
-      },
-      "civic-orderism/why-justice-serves-reality",
-      {
-        slug: "civic-orderism/state-operation-process-under-civic-orderism",
-        title: "公民秩序主义下国家运行的大概流程",
-      },
+      "civic-orderism/peaceful-state-transition",
+      "civic-orderism/why-civic-orderism-is-easier-to-succeed",
+      "theory/internal-change-external-change",
     ],
     moreHref: "/civic-orderism",
-    moreLabel: "查看本路线延伸阅读 →",
+    moreLabel: "继续阅读政治路线 →",
+    nextHref: "#route-civic-orderism",
+    nextLabel: "下一步：公民秩序主义提出什么路线 →",
+  },
+  {
+    id: "route-civic-orderism",
+    number: "04",
+    label: "政治路线",
+    title: "公民秩序主义提出什么路线",
+    description:
+      "保留国家、改变政治，维持行政连续性，并通过新旧双方可理解的信任与谈判完成制度转换。",
+    entries: [
+      "civic-orderism/why-civic-orderism",
+      "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+      "civic-orderism/state-must-rely-on-systems-not-drivers",
+      { href: "/start-here", title: "5分钟了解公民秩序主义" },
+    ],
+    moreHref: "/civic-orderism",
+    moreLabel: "继续阅读公民秩序主义 →",
+    nextHref: "#route-organization-preparation",
+    nextLabel: "下一步：为什么现在开始组织准备 →",
+  },
+  {
+    id: "route-organization-preparation",
+    number: "05",
+    label: "组织准备",
+    title: "为什么现在开始组织准备",
+    description:
+      "理论不能永久停留在文章层面。非营利法人、首届董事会与长期研究准备，是把政治路线转化为现实能力的开始。",
+    entries: [
+      { href: "/preparation", title: "北美非营利法人及首届董事会筹备" },
+      { href: "/preparation/board", title: "首届董事会筹备" },
+      { href: "/participate", title: "参与方式" },
+    ],
+    moreHref: "/organization-manual",
+    moreLabel: "继续了解组织原则 →",
     nextHref: "#all-articles",
-    nextLabel: "浏览全部文章 →",
-    advanced: true,
+    nextLabel: "按需浏览全部文章 →",
   },
 ];
 
@@ -1078,23 +1072,12 @@ const readingRouteHtml = readingRouteConfigs
           : entry.title || article.title;
       return `<li><span>${String(index + 1).padStart(2, "0")}</span><a href="${href}">${title}</a></li>`;
     });
-    const modifiers = [
-      route.primary ? "reading-route--primary" : "",
-      route.advanced ? "reading-route--advanced" : "",
-    ]
+    const modifiers = [route.primary ? "reading-route--primary" : ""]
       .filter(Boolean)
       .join(" ");
-    const organizationLinks = route.organizationLinks
-      ? `<div class="reading-route__organization"><p>已经理解基本路线？</p><div>${route.organizationLinks
-          .map(
-            (link) =>
-              `<a href="${link.href}">${link.title}<span aria-hidden="true"> →</span></a>`,
-          )
-          .join("")}</div></div>`
-      : "";
     return `<section class="reading-route${modifiers ? ` ${modifiers}` : ""}" id="${route.id}" aria-labelledby="${route.id}-title">
-  <div class="reading-route__heading"><span class="reading-route__number">${route.number}</span><div><p class="resource-label">${route.label}</p><h2 id="${route.id}-title">${route.title}</h2><p>${route.description}</p><dl class="reading-route__meta"><div><dt>适合</dt><dd>${route.audience}</dd></div><div><dt>预计阅读时间</dt><dd>${route.duration}</dd></div></dl></div></div>
-  <div class="reading-route__body"><div class="reading-route__label"><span>推荐阅读</span><span>${entries.length} 篇</span></div><ol class="reading-route__list">${entries.join("")}</ol><a class="reading-route__more" href="${route.moreHref}">${route.moreLabel}</a><footer class="reading-route__completion"><p>完成这条路线后</p><a href="${route.nextHref}">${route.nextLabel}</a>${organizationLinks}</footer></div>
+  <div class="reading-route__heading"><span class="reading-route__number">${route.number}</span><div><p class="resource-label">${route.label}</p><h2 id="${route.id}-title">${route.title}</h2><p>${route.description}</p></div></div>
+  <div class="reading-route__body"><div class="reading-route__label"><span>推荐阅读</span><span>${entries.length} 个入口</span></div><ol class="reading-route__list">${entries.join("")}</ol><a class="reading-route__more" href="${route.moreHref}">${route.moreLabel}</a><footer class="reading-route__completion"><p>继续这条判断路线</p><a href="${route.nextHref}">${route.nextLabel}</a></footer></div>
 </section>`;
   })
   .join("\n\n");
@@ -1108,16 +1091,16 @@ updated: 2026-08-11
 category: "索引"
 tags:
   - index
-description: "按照第一次了解、中国现实、理论路线与进阶制度研究四条路径阅读公民秩序主义。"
+description: "按照旧体制失灵、转轨条件、和平转轨、政治路线与组织准备五步理解公民秩序主义。"
 status: published
 enableToc: false
 ---
 
 <header class="reading-map-hero">
-  <p class="resource-label">选择一条路线开始</p>
+  <p class="resource-label">政治判断路线</p>
   <h1>阅读地图</h1>
-  <p>如果第一次来到这里，不建议直接浏览全部文章。</p>
-  <p>请选择下面的一条阅读路线开始。不同路线分别用于了解公民秩序主义、中国现实、理论框架与进阶制度研究。</p>
+  <p>这里不是完整文章目录，而是一条从现实判断走向政治路线与组织准备的五步阅读路径。</p>
+  <p>不需要先读完全部理论。可以从中共为什么正在失去原有运行能力开始，也可以直接进入公民秩序主义提出的和平转轨路线。</p>
 </header>
 
 ${readingRouteHtml}
