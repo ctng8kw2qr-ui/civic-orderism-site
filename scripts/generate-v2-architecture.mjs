@@ -1013,14 +1013,14 @@ const homepageTheoryLinks = homepageRecommendations
 
 const homepageResearchLinks = [
   {
-    label: "公民秩序主义",
-    href: "/civic-orderism",
-    description: "政治路线与和平转轨框架",
-  },
-  {
     label: "解析中共",
     href: "/china",
     description: "党国体系、官僚系统与现实政治分析",
+  },
+  {
+    label: "公民秩序主义",
+    href: "/civic-orderism",
+    description: "政治路线与和平转轨框架",
   },
   {
     label: "中国未来",

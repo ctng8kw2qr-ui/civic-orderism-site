@@ -939,8 +939,8 @@ const homepageResearchItems =
     /<a class="home-institution-research__link[^"]*"[\s\S]*?<\/a>/g,
   ) ?? [];
 const expectedHomepageResearchItems = [
-  ["01", "公民秩序主义", "政治路线与和平转轨框架"],
-  ["02", "解析中共", "党国体系、官僚系统与现实政治分析"],
+  ["01", "解析中共", "党国体系、官僚系统与现实政治分析"],
+  ["02", "公民秩序主义", "政治路线与和平转轨框架"],
   ["03", "中国未来", "政治转轨与未来国家秩序"],
 ];
 assert(
@@ -967,8 +967,8 @@ assert(
     ) &&
     theoryHtml.includes('class="home-institution-first-reading__label"') &&
     theoryHtml.includes('class="home-institution-first-reading__title"') &&
-    visiblePageText(theoryHtml).includes("01 公民秩序主义") &&
-    visiblePageText(theoryHtml).includes("02 解析中共") &&
+    visiblePageText(theoryHtml).includes("01 解析中共") &&
+    visiblePageText(theoryHtml).includes("02 公民秩序主义") &&
     visiblePageText(theoryHtml).includes("03 中国未来"),
   "首页理论与研究没有保持为语义分离的编号化研究索引",
 );

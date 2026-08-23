@@ -34,22 +34,22 @@ aliases:
 
 <section class="home-institution-theory" id="theory-and-research" aria-labelledby="home-institution-theory-title">
   <header class="home-institution-section-heading"><p>THEORY & RESEARCH</p><h2 id="home-institution-theory-title">理论与研究</h2><span>组织建设建立在持续的政治判断、现实分析与中国未来研究之上。</span></header>
-  <nav class="home-institution-research" aria-label="理论与研究入口"><a class="home-institution-research__link" href="/civic-orderism">
+  <nav class="home-institution-research" aria-label="理论与研究入口"><a class="home-institution-research__link" href="/china">
   <span class="home-institution-research__number">01</span>
   <span class="home-institution-research__text">
-    <strong class="home-institution-research__title">公民秩序主义</strong>
-    <span class="home-institution-research__summary">政治路线与和平转轨框架</span>
+    <strong class="home-institution-research__title">解析中共</strong>
+    <span class="home-institution-research__summary">党国体系、官僚系统与现实政治分析</span>
   </span>
   <span class="home-institution-research__hint">
     <span>进入栏目</span>
     <span aria-hidden="true">→</span>
   </span>
 </a>
-<a class="home-institution-research__link" href="/china">
+<a class="home-institution-research__link" href="/civic-orderism">
   <span class="home-institution-research__number">02</span>
   <span class="home-institution-research__text">
-    <strong class="home-institution-research__title">解析中共</strong>
-    <span class="home-institution-research__summary">党国体系、官僚系统与现实政治分析</span>
+    <strong class="home-institution-research__title">公民秩序主义</strong>
+    <span class="home-institution-research__summary">政治路线与和平转轨框架</span>
   </span>
   <span class="home-institution-research__hint">
     <span>进入栏目</span>
