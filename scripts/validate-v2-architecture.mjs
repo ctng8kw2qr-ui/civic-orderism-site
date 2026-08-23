@@ -742,7 +742,6 @@ for (const sequence of readingSequences) {
 
 for (const file of [
   "public/files/civic-orderism-introduction-manual.pdf",
-  "public/files/civic-orderism-organization-manual.pdf",
   "public/sitemap.xml",
   "public/index.xml",
   "public/robots.txt",
@@ -753,6 +752,28 @@ for (const file of [
 }
 
 const sitemap = fs.readFileSync(path.join(publicDir, "sitemap.xml"), "utf8");
+assert(
+  !publicRouteExists("organization-manual"),
+  "已删除页面仍有构建产物：/organization-manual",
+);
+assert(
+  !fs.existsSync(
+    path.join(publicDir, "files/civic-orderism-organization-manual.pdf"),
+  ) &&
+    !fs.existsSync(
+      path.join(publicDir, "files/civic-orderism-organization-manual.html"),
+    ),
+  "已删除的组织建设旧文档仍有构建产物",
+);
+assert(
+  !sitemap.includes("organization-manual"),
+  "已删除页面仍进入 sitemap：/organization-manual",
+);
+const redirects = fs.readFileSync(path.join(publicDir, "_redirects"), "utf8");
+assert(
+  /^\/organization-manual\s+\/preparation\s+301$/m.test(redirects),
+  "旧页面缺少 301 重定向：/organization-manual -> /preparation",
+);
 for (const route of [
   "china-future",
   "institution-design",
@@ -790,6 +811,11 @@ const rss = fs.readFileSync(path.join(publicDir, "index.xml"), "utf8");
 assert(rss.includes("<rss") && rss.includes("<item>"), "RSS 结构不完整");
 assert(!rss.includes("<title>核心概念库"), "RSS 混入非文章页面");
 const searchIndex = readJson("public/static/contentIndex.json");
+assert(
+  !("organization-manual" in searchIndex) &&
+    !JSON.stringify(searchIndex).includes("organization-manual"),
+  "已删除页面仍进入搜索索引：/organization-manual",
+);
 assert(
   Object.values(searchIndex).some((item) => item.contentType === "专题"),
   "搜索索引缺少专题类型",
@@ -952,6 +978,15 @@ assert(
     "首页/董事会筹备/公民秩序主义/解析中共/中国未来/关于",
   "主导航没有采用董事会筹备与三条内容主线优先的结构",
 );
+assert(
+  homepageHtml.includes('class="primary-navigation__toggle"') &&
+    homepageHtml.includes('aria-controls="primary-navigation-links"') &&
+    homepageHtml.includes('id="primary-navigation-links"') &&
+    homepageHtml.includes(
+      'href="/preparation" class="primary-navigation__priority"',
+    ),
+  "桌面端或移动端主导航结构不完整，或董事会筹备未保持重点入口",
+);
 const secondaryNavigationHtml =
   homepageHtml.match(
     /<div class="primary-navigation__secondary"[\s\S]*?<\/div>/,
@@ -1065,6 +1100,10 @@ for (const [index, route] of readingRoutes.entries()) {
   const recommendedSlugs = [
     ...recommendedBlock.matchAll(/data-slug="([^"]+)"/g),
   ].map((match) => match[1]);
+  const hasExpectedMoreLink =
+    index === readingRoutes.length - 1
+      ? !routeBlock.includes("reading-route__more")
+      : routeBlock.includes("reading-route__more");
   allReadingRouteSlugs.push(...recommendedSlugs);
   assert(
     routePosition > previousReadingRoutePosition &&
@@ -1074,7 +1113,7 @@ for (const [index, route] of readingRoutes.entries()) {
       recommendedSlugs.join("|") === route.slugs.join("|") &&
       recommendedCount >= 2 &&
       recommendedCount <= 4 &&
-      routeBlock.includes("reading-route__more") &&
+      hasExpectedMoreLink &&
       routeBlock.includes("reading-route__completion") &&
       routeBlock.includes(`href="${route.nextHref}"`) &&
       visiblePageText(routeBlock).includes("继续这条判断路线"),
@@ -1397,7 +1436,6 @@ for (const route of [
   "preparation",
   "preparation/board",
   "participate",
-  "organization-manual",
   "about",
 ]) {
   const html = fs.readFileSync(publicRouteHtml(route), "utf8");

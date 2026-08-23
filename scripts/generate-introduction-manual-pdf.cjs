@@ -7,13 +7,7 @@ const ROOT = path.resolve(__dirname, "..");
 const SOURCE_PATH =
   process.env.INTRODUCTION_MANUAL_SOURCE ||
   path.join(__dirname, "source", "introduction-manual.txt");
-const REFERENCE_HTML = path.join(
-  ROOT,
-  "quartz",
-  "static",
-  "files",
-  "civic-orderism-organization-manual.html",
-);
+const STYLE_PATH = path.join(__dirname, "source", "introduction-manual.css");
 const LOGO_PATH = path.join(ROOT, "quartz", "static", "logo.png");
 const HTML_PATH = path.join(
   ROOT,
@@ -186,12 +180,7 @@ function escapeHtml(value) {
 }
 
 function readReferenceStyle() {
-  const html = fs.readFileSync(REFERENCE_HTML, "utf8");
-  const match = html.match(/<style>([\s\S]*?)<\/style>/);
-  if (!match) {
-    throw new Error("未能从《组织手册》HTML 中读取参考样式。");
-  }
-  return match[1];
+  return fs.readFileSync(STYLE_PATH, "utf8");
 }
 
 function parseSource() {
@@ -1353,8 +1342,8 @@ ${referenceStyle}
 }
 
 async function main() {
-  if (!fs.existsSync(REFERENCE_HTML)) {
-    throw new Error("未找到《组织手册》HTML 源文件，无法保证版式一致。");
+  if (!fs.existsSync(STYLE_PATH)) {
+    throw new Error("未找到《公民秩序主义介绍手册》样式文件。");
   }
   const lines = parseSource();
   fs.mkdirSync(path.dirname(HTML_PATH), { recursive: true });

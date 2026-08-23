@@ -189,10 +189,7 @@ for (const [slug, requiredTexts] of approvedCopyNormalizations) {
   }
 }
 
-const documents = [
-  "civic-orderism-introduction-manual.pdf",
-  "civic-orderism-organization-manual.pdf",
-];
+const documents = ["civic-orderism-introduction-manual.pdf"];
 for (const filename of documents) {
   const source = path.join(root, "quartz/static/files", filename);
   const built = path.join(root, "public/files", filename);

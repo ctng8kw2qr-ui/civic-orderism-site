@@ -1633,7 +1633,7 @@ article .home-first-reading ul {
   margin-bottom: 1.25rem;
 }
 
-article .organization-manual-entry,
+article .manual-entry-card,
 article .manual-overview,
 article .formal-resources,
 article .articles-reading-note {
@@ -1642,7 +1642,7 @@ article .articles-reading-note {
   background: color-mix(in srgb, var(--light) 94%, var(--dark) 6%);
 }
 
-article .organization-manual-entry {
+article .manual-entry-card {
   margin: 2.5rem 0 2.8rem;
   padding: 1.5rem 1.6rem;
 }
@@ -1663,11 +1663,7 @@ article .introduction-manual-entry {
   margin-bottom: 1.15rem;
 }
 
-article .introduction-manual-entry + .organization-manual-entry {
-  margin-top: 0;
-}
-
-article .organization-manual-entry h2 {
+article .manual-entry-card h2 {
   margin: 0.35rem 0 0.35rem;
   padding: 0;
   border: 0;
@@ -5243,13 +5239,13 @@ body:is(
     font-size: 0.84rem;
   }
 
-  article .organization-manual-entry,
+  article .manual-entry-card,
   article .manual-overview,
   article .formal-resources {
     padding: 1.15rem;
   }
 
-  article .organization-manual-entry {
+  article .manual-entry-card {
     width: 100%;
     max-width: 100%;
     margin: 1.65rem 0 2rem;
@@ -5271,11 +5267,7 @@ body:is(
     margin-bottom: 0.85rem;
   }
 
-  article .introduction-manual-entry + .organization-manual-entry {
-    margin-top: 0;
-  }
-
-  article .organization-manual-entry .resource-label {
+  article .manual-entry-card .resource-label {
     margin-bottom: 8px;
     font-size: 0.8125rem;
     line-height: 1.35;
@@ -5283,21 +5275,19 @@ body:is(
     opacity: 0.78;
   }
 
-  article .organization-manual-entry h2 {
+  article .manual-entry-card h2 {
     margin: 0 0 8px;
     font-size: 1.5rem;
     line-height: 1.25;
   }
 
-  article .organization-manual-entry .resource-subtitle {
+  article .manual-entry-card .resource-subtitle {
     margin: 0 0 10px;
     font-size: 1rem;
     line-height: 1.45;
   }
 
-  article
-    .organization-manual-entry
-    > p:not(.resource-label):not(.resource-subtitle) {
+  article .manual-entry-card > p:not(.resource-label):not(.resource-subtitle) {
     margin: 0;
     font-size: 0.96875rem;
     line-height: 1.6;
@@ -5308,7 +5298,7 @@ body:is(
     grid-template-columns: 1fr;
   }
 
-  article .organization-manual-entry .resource-actions {
+  article .manual-entry-card .resource-actions {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -5323,7 +5313,7 @@ body:is(
     width: 100%;
   }
 
-  article .organization-manual-entry .resource-button {
+  article .manual-entry-card .resource-button {
     display: flex;
     width: 100%;
     max-width: 100%;
@@ -5336,9 +5326,7 @@ body:is(
     line-height: 1.25;
   }
 
-  article
-    .organization-manual-entry
-    .resource-button:not(.resource-button-primary) {
+  article .manual-entry-card .resource-button:not(.resource-button-primary) {
     border-color: color-mix(in srgb, var(--gray) 72%, var(--lightgray));
   }
 

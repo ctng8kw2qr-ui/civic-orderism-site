@@ -12,7 +12,6 @@ const institutionalPageSlugs = new Set([
   "preparation",
   "preparation/board",
   "participate",
-  "organization-manual",
   "about",
 ]);
 

@@ -24,6 +24,7 @@ Sitemap: https://civicorderism.com/sitemap.xml
   _redirects: `/article_priority_index  /  301
 /article_summaries       /  301
 /start                   /start-here  301
+/organization-manual     /preparation  301
 `,
 };
 

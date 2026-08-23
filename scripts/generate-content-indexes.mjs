@@ -309,7 +309,7 @@ ${bulletList(
 
 const introductionManualEntry = `<p class="home-manual-note">完整入门说明可先阅读<a href="/introduction-manual">《公民秩序主义介绍手册》</a>。</p>
 
-<section class="organization-manual-entry introduction-manual-entry manual-entry-card">
+<section class="introduction-manual-entry manual-entry-card">
 
 <p class="resource-label">入门手册</p>
 
@@ -322,23 +322,6 @@ const introductionManualEntry = `<p class="home-manual-note">完整入门说明�
 <div class="resource-actions manual-entry-actions">
   <a class="resource-button resource-button-primary manual-entry-button" href="/files/civic-orderism-introduction-manual.pdf">下载 PDF</a>
   <button class="resource-button manual-entry-button" type="button" data-manual-modal="introduction">阅读说明</button>
-</div>
-
-</section>`;
-
-const organizationManualEntry = `<section class="organization-manual-entry manual-entry-card">
-
-<p class="resource-label">正式资料</p>
-
-## 公民秩序主义组织手册
-
-<p class="resource-subtitle">了解公民秩序主义的组织原则、协作边界、长期参与方式与治理要求。</p>
-
-这份手册不是宣言，也不是情绪动员，而是一份面向长期参与者的组织说明。建议已经了解公民秩序主义基本路线后，再阅读本手册。
-
-<div class="resource-actions manual-entry-actions">
-  <a class="resource-button resource-button-primary manual-entry-button" href="/files/civic-orderism-organization-manual.pdf">下载 PDF</a>
-  <button class="resource-button manual-entry-button" type="button" data-manual-modal="organization">阅读说明</button>
 </div>
 
 </section>`;
@@ -484,18 +467,6 @@ enableToc: false
 <p class="resource-subtitle">第一次了解公民秩序主义的基础文本</p>
 
 <a class="resource-button resource-button-primary" href="/files/civic-orderism-introduction-manual.pdf">阅读 PDF</a>
-
-</section>
-
-<section class="publication-card">
-
-<p class="resource-label">OFFICIAL PUBLICATION</p>
-
-### 公民秩序主义组织手册
-
-<p class="resource-subtitle">进一步了解组织原则、参与方式与合作边界</p>
-
-<a class="resource-button resource-button-primary" href="/files/civic-orderism-organization-manual.pdf">阅读 PDF</a>
 
 </section>
 
@@ -710,7 +681,6 @@ status: published
 ## 正式资料
 
 <ol>
-  <li><a href="/organization-manual"><strong>公民秩序主义组织手册</strong></a><br><span>了解公民秩序主义的组织原则、协作边界、长期参与方式与治理要求。</span></li>
   <li><a href="/civic-orderism/civic-orderism-manual">公民秩序主义说明书</a></li>
   <li><a href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">如果你只读一篇：公民秩序主义到底想解决什么</a></li>
 </ol>
@@ -1047,8 +1017,6 @@ const readingRouteConfigs = [
       { href: "/preparation/board", title: "首届董事会筹备" },
       { href: "/participate", title: "参与方式" },
     ],
-    moreHref: "/organization-manual",
-    moreLabel: "继续了解组织原则 →",
     nextHref: "#all-articles",
     nextLabel: "按需浏览全部文章 →",
   },
@@ -1077,7 +1045,7 @@ const readingRouteHtml = readingRouteConfigs
       .join(" ");
     return `<section class="reading-route${modifiers ? ` ${modifiers}` : ""}" id="${route.id}" aria-labelledby="${route.id}-title">
   <div class="reading-route__heading"><span class="reading-route__number">${route.number}</span><div><p class="resource-label">${route.label}</p><h2 id="${route.id}-title">${route.title}</h2><p>${route.description}</p></div></div>
-  <div class="reading-route__body"><div class="reading-route__label"><span>推荐阅读</span><span>${entries.length} 个入口</span></div><ol class="reading-route__list">${entries.join("")}</ol><a class="reading-route__more" href="${route.moreHref}">${route.moreLabel}</a><footer class="reading-route__completion"><p>继续这条判断路线</p><a href="${route.nextHref}">${route.nextLabel}</a></footer></div>
+  <div class="reading-route__body"><div class="reading-route__label"><span>推荐阅读</span><span>${entries.length} 个入口</span></div><ol class="reading-route__list">${entries.join("")}</ol>${route.moreHref ? `<a class="reading-route__more" href="${route.moreHref}">${route.moreLabel}</a>` : ""}<footer class="reading-route__completion"><p>继续这条判断路线</p><a href="${route.nextHref}">${route.nextLabel}</a></footer></div>
 </section>`;
   })
   .join("\n\n");

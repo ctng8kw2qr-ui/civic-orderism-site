@@ -60,7 +60,6 @@ noindex: false
 ## 核心文档
 
 - [公民秩序主义介绍手册](/files/civic-orderism-introduction-manual.pdf) — 第一次理解公民秩序主义的基础文本。
-- [公民秩序主义组织手册](/files/civic-orderism-organization-manual.pdf) — 说明组织原则、参与路径、协作边界与长期承接方向。
 
 ## 联系方式
 

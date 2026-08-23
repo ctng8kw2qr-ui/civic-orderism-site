@@ -39,7 +39,7 @@ enableToc: false
 
 <section class="reading-route" id="route-organization-preparation" aria-labelledby="route-organization-preparation-title">
   <div class="reading-route__heading"><span class="reading-route__number">05</span><div><p class="resource-label">组织准备</p><h2 id="route-organization-preparation-title">为什么现在开始组织准备</h2><p>理论不能永久停留在文章层面。非营利法人、首届董事会与长期研究准备，是把政治路线转化为现实能力的开始。</p></div></div>
-  <div class="reading-route__body"><div class="reading-route__label"><span>推荐阅读</span><span>3 个入口</span></div><ol class="reading-route__list"><li><span>01</span><a href="/preparation">北美非营利法人及首届董事会筹备</a></li><li><span>02</span><a href="/preparation/board">首届董事会筹备</a></li><li><span>03</span><a href="/participate">参与方式</a></li></ol><a class="reading-route__more" href="/organization-manual">继续了解组织原则 →</a><footer class="reading-route__completion"><p>继续这条判断路线</p><a href="#all-articles">按需浏览全部文章 →</a></footer></div>
+  <div class="reading-route__body"><div class="reading-route__label"><span>推荐阅读</span><span>3 个入口</span></div><ol class="reading-route__list"><li><span>01</span><a href="/preparation">北美非营利法人及首届董事会筹备</a></li><li><span>02</span><a href="/preparation/board">首届董事会筹备</a></li><li><span>03</span><a href="/participate">参与方式</a></li></ol><footer class="reading-route__completion"><p>继续这条判断路线</p><a href="#all-articles">按需浏览全部文章 →</a></footer></div>
 </section>
 
 <section class="reading-library" id="all-articles" aria-labelledby="all-articles-title">
