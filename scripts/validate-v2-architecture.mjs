@@ -644,6 +644,20 @@ assert(
     ),
   "安全再集中概念页未说明其循环阶段定位",
 );
+const governanceDivergenceHtml = fs.readFileSync(
+  publicHtml("concepts/political-control-governance-divergence"),
+  "utf8",
+);
+assert(
+  governanceDivergenceHtml.includes(
+    "一个系统可以越来越有能力控制人，却越来越没有能力解决问题",
+  ) &&
+    governanceDivergenceHtml.includes("与安全化循环的区别") &&
+    governanceDivergenceHtml.includes("动态过程模型") &&
+    governanceDivergenceHtml.includes("能力分离模型") &&
+    governanceDivergenceHtml.includes("当前暂无专门总论"),
+  "政治控制—治理效能背离概念页未明确能力分离模型及其与安全化循环的边界",
+);
 topics.forEach((topic) =>
   assert(
     fs.existsSync(publicHtml(`topics/${topic.slug}`)),
@@ -897,11 +911,20 @@ for (const title of [
   "不革命、不清算",
   "党国应力",
   "官僚系统休克",
-  "安全再集中",
+  "安全化循环",
   "中国和平政治转型的可能性",
 ]) {
   assert(homepageMainText.includes(title), `首页理论入口缺少：${title}`);
 }
+assert(
+  homepageMainHtml.includes(
+    'data-slug="concepts/security-purge-recentralization-cycle"',
+  ) &&
+    !homepageMainHtml.includes(
+      'data-slug="concepts/security-recentralization"',
+    ),
+  "首页解析中共入口未从安全再集中切换为完整安全化循环",
+);
 assert(
   homepageMainText.includes("公民秩序主义") &&
     homepageMainText.includes("解析中共") &&

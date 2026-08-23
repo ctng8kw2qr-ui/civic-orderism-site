@@ -27,7 +27,7 @@ noindex: false
 <a class="concept-card" href="/concepts/order-evaporation"><strong>秩序蒸发</strong><span>制度形式仍然存在，但可信承诺、协作能力和社会预期逐步流失的过程。</span><small>正式概念</small></a>
 <a class="concept-card" href="/concepts/organizational-credit"><strong>组织信用</strong><span>组织能否持续兑现承诺、分配责任并让成员相信长期合作仍然有意义的能力。</span><small>正式概念</small></a>
 <a class="concept-card" href="/concepts/security-purge-recentralization-cycle"><strong>安全化—清洗—再集中—再失灵模型</strong><span>安全化推动组织清洗和权力再集中，而再集中又削弱治理反馈并产生新一轮失灵的循环模型。</span><small>正式概念</small></a>
-<a class="concept-card" href="/concepts/political-control-governance-divergence"><strong>政治控制—治理效能背离</strong><span>党的政治控制能力不断上升，但国家解决复杂治理问题的能力却可能同步下降。</span><small>正式概念</small></a></div>
+<a class="concept-card" href="/concepts/political-control-governance-divergence"><strong>政治控制—治理效能背离</strong><span>政治控制能力与国家治理能力开始沿不同方向发展：组织纪律、权力集中和政治执行持续增强，财政协调、专业判断、政策纠错与复杂问题处理能力却可能同步下降。</span><small>正式概念</small></a></div>
 
 ### 延伸研究概念
 

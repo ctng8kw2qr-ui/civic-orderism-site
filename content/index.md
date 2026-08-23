@@ -48,8 +48,8 @@ aliases:
 </article>
 <article class="home-direction-card">
   <h3><a href="/china">解析中共</a></h3>
-  <p>从党国结构、官僚系统与安全逻辑出发，理解旧体制为什么正在失去原有运行能力。</p>
-  <ul><li><a href="/concepts/party-state-stress">党国应力</a></li><li><a href="/concepts/bureaucratic-shock">官僚系统休克</a></li><li><a href="/concepts/security-recentralization">安全再集中</a></li></ul>
+  <p>从党国结构、官僚系统与安全化循环出发，理解安全化如何经过清洗与权力再集中，重新制造治理失灵。</p>
+  <ul><li><a href="/concepts/party-state-stress">党国应力</a></li><li><a href="/concepts/bureaucratic-shock">官僚系统休克</a></li><li><a href="/concepts/security-purge-recentralization-cycle">安全化循环</a></li></ul>
   <a class="home-direction-card__more" href="/china">进入解析中共 →</a>
 </article>
 <article class="home-direction-card">

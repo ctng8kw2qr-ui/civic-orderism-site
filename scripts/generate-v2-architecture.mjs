@@ -1032,11 +1032,14 @@ const homepageDirectionCards = [
     label: "解析中共",
     href: "/china",
     description:
-      "从党国结构、官僚系统与安全逻辑出发，理解旧体制为什么正在失去原有运行能力。",
+      "从党国结构、官僚系统与安全化循环出发，理解安全化如何经过清洗与权力再集中，重新制造治理失灵。",
     links: [
       { title: "党国应力", href: "/concepts/party-state-stress" },
       { title: "官僚系统休克", href: "/concepts/bureaucratic-shock" },
-      { title: "安全再集中", href: "/concepts/security-recentralization" },
+      {
+        title: "安全化循环",
+        href: "/concepts/security-purge-recentralization-cycle",
+      },
     ],
   },
   {
@@ -1336,7 +1339,7 @@ ${concept.mechanism}
 
 ${concept.manifestations.map((item) => `- ${item}`).join("\n")}
 
-${modelReadingSections}
+${concept.boundaryTitle && concept.boundary ? `## ${concept.boundaryTitle}\n\n${concept.boundary}\n\n` : ""}${modelReadingSections}
 
 ${relatedTopics.length ? `## 相关专题\n\n${relatedTopics.map((topic) => `- [[topics/${topic.slug}|${topic.name}]]`).join("\n")}` : ""}
 
