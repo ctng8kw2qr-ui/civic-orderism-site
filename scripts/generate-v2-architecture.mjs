@@ -1164,7 +1164,11 @@ for (const concept of concepts) {
   const statusLabel = conceptIsFormal ? "正式概念" : "研究概念";
   const usesAlignedStatusTable = [
     "fiscal-debt",
+    "organizational-credit",
+    "party-state-stress",
     "political-debt",
+    "security-purge-recentralization-cycle",
+    "security-recentralization",
     "three-cleans-era",
   ].includes(concept.slug);
   const conceptStatusTable = usesAlignedStatusTable
