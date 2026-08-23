@@ -4368,8 +4368,7 @@ article .home-institution-button:focus-visible {
   outline: none;
 }
 
-article .home-institution-text-link,
-article .home-institution-section-link {
+article .home-institution-text-link {
   color: var(--home-navy);
   font-size: 0.84rem;
   font-weight: 650;
@@ -4377,8 +4376,7 @@ article .home-institution-section-link {
   background-image: none;
 }
 
-article .home-institution-text-link:hover,
-article .home-institution-section-link:hover {
+article .home-institution-text-link:hover {
   color: #75602f;
 }
 
@@ -4446,18 +4444,11 @@ article .home-institution-document__caption {
   text-align: center;
 }
 
-article .home-institution-work,
 article .home-institution-theory,
 article .home-institution-contact {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: clamp(0.75rem, 2vw, 1.4rem);
-}
-
-article .home-institution-work {
-  margin-top: clamp(4rem, 7vw, 6rem);
-  padding: clamp(2.7rem, 5vw, 4rem) clamp(0.9rem, 3vw, 2.25rem);
-  background: var(--home-surface);
 }
 
 article .home-institution-section-heading {
@@ -4496,35 +4487,9 @@ article .home-institution-contact__statement {
   line-height: 1.75;
 }
 
-article .home-institution-work__body {
-  grid-column: 5 / span 8;
-  min-width: 0;
-}
-
-article .home-institution-work__body > p {
-  max-width: 650px;
-  color: #5b6875;
-  font-size: 0.92rem;
-  line-height: 1.85;
-}
-
-article .home-institution-work__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.8rem;
-  margin-top: 1.4rem;
-  padding-top: 1rem;
-  border-top: 1px solid #c5cdd5;
-}
-
-article .home-institution-section-link {
-  display: inline-block;
-}
-
 article .home-institution-theory {
-  margin-top: clamp(4.5rem, 8vw, 7rem);
-  padding: 1.3rem clamp(0.9rem, 3vw, 2.25rem) 0;
-  border-top: 1px solid var(--home-rule);
+  margin-top: clamp(4rem, 7vw, 6rem);
+  padding: 0 clamp(0.9rem, 3vw, 2.25rem);
 }
 
 article .home-institution-research {
@@ -4821,7 +4786,6 @@ article .home-institution-contact__item--youtube dd > a {
 
 @media (max-width: 700px) {
   article .home-institution-hero__grid,
-  article .home-institution-work,
   article .home-institution-theory,
   article .home-institution-contact {
     grid-template-columns: minmax(0, 1fr);
@@ -4836,7 +4800,6 @@ article .home-institution-contact__item--youtube dd > a {
   article .home-institution-hero__content,
   article .home-institution-document,
   article .home-institution-section-heading,
-  article .home-institution-work__body,
   article .home-institution-research,
   article .home-institution-first-reading,
   article .home-institution-contact__intro,
@@ -4866,18 +4829,12 @@ article .home-institution-contact__item--youtube dd > a {
     margin-left: auto;
   }
 
-  article .home-institution-work,
   article .home-institution-theory {
     gap: 2rem;
   }
 
-  article .home-institution-work {
-    margin-top: 4rem;
-    padding: 3rem 1.1rem;
-  }
-
   article .home-institution-theory {
-    margin-top: 4rem;
+    margin-top: 3.5rem;
     padding-right: 0.25rem;
     padding-left: 0.25rem;
   }

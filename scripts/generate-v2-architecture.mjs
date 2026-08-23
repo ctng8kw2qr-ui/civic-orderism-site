@@ -1107,14 +1107,6 @@ writeContent(
   </div>
 </section>
 
-<section class="home-institution-work" id="board-preparation" aria-labelledby="home-institution-work-title">
-  <header class="home-institution-section-heading"><p>FOUNDING BOARD PREPARATION</p><h2 id="home-institution-work-title">当前组织工作</h2></header>
-  <div class="home-institution-work__body">
-    <p>公民秩序主义当前正在推进北美非营利组织及首届董事会筹备，并逐步建立长期组织运行所需要的法律、治理与人员基础。</p>
-    <div class="home-institution-work__actions"><a class="home-institution-section-link" href="/preparation">董事会筹备 →</a><a class="home-institution-section-link" href="${organization.routes.participate}">参与方式 →</a></div>
-  </div>
-</section>
-
 <section class="home-institution-theory" id="theory-and-research" aria-labelledby="home-institution-theory-title">
   <header class="home-institution-section-heading"><p>THEORY & RESEARCH</p><h2 id="home-institution-theory-title">理论与研究</h2><span>组织建设建立在持续的政治判断、现实分析与中国未来研究之上。</span></header>
   <nav class="home-institution-research" aria-label="理论与研究入口">${homepageResearchLinks}</nav>

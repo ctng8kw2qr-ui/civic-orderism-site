@@ -895,7 +895,6 @@ assert(
 );
 const expectedHomepageSections = [
   'id="current-stage"',
-  'id="board-preparation"',
   'id="theory-and-research"',
   'class="home-institution-contact"',
 ];
@@ -911,10 +910,10 @@ for (const marker of expectedHomepageSections) {
 assert(
   (
     homepageMainHtml.match(
-      /<section class="home-institution-(?:hero|work|theory|contact)"/g,
+      /<section class="home-institution-(?:hero|theory|contact)"/g,
     ) ?? []
-  ).length === 4 && !homepageMainHtml.includes('id="official-document"'),
-  "首页主要内容不是严格的四区域结构",
+  ).length === 3 && !homepageMainHtml.includes('id="official-document"'),
+  "首页主要内容不是严格的 Hero、理论与研究、Contact 三区域结构",
 );
 assert(
   !homepageMainHtml.includes("home-institution-status") &&
@@ -923,32 +922,13 @@ assert(
     !homepageHeroHtml.includes("<dd"),
   "首页首屏仍保留重复的四列状态信息带",
 );
-const homepagePreparationHtml =
-  homepageMainHtml.match(
-    /<section class="home-institution-work"[\s\S]*?<\/section>/,
-  )?.[0] ?? "";
 assert(
-  visiblePageText(homepagePreparationHtml).includes("当前组织工作") &&
-    visiblePageText(homepagePreparationHtml).includes(
-      "FOUNDING BOARD PREPARATION",
-    ) &&
-    visiblePageText(homepagePreparationHtml).includes(
-      "公民秩序主义当前正在推进北美非营利组织及首届董事会筹备，并逐步建立长期组织运行所需要的法律、治理与人员基础",
-    ) &&
-    homepagePreparationHtml.includes('data-slug="preparation"') &&
-    homepagePreparationHtml.includes('data-slug="participate"') &&
-    (homepagePreparationHtml.match(/home-institution-section-link/g) ?? [])
-      .length === 2 &&
-    visiblePageText(homepagePreparationHtml).includes("董事会筹备 →") &&
-    visiblePageText(homepagePreparationHtml).includes("参与方式 →") &&
-    !homepagePreparationHtml.includes("<ol") &&
-    !homepagePreparationHtml.includes("<li") &&
-    !homepagePreparationHtml.includes("home-institution-progress") &&
-    !homepagePreparationHtml.includes("home-institution-button") &&
-    !visiblePageText(homepagePreparationHtml).includes(
-      "董事会存在的第一个意义",
-    ),
-  "首页当前组织工作没有收束为公告正文与两个入口",
+  !homepageMainHtml.includes("home-institution-work") &&
+    !homepageMainHtml.includes('id="board-preparation"') &&
+    !homepageMainText.includes("FOUNDING BOARD PREPARATION") &&
+    !homepageMainText.includes("当前组织工作") &&
+    !homepageMainText.includes("参与方式 →"),
+  "首页仍保留重复的当前组织工作区域",
 );
 const theoryHtml =
   homepageMainHtml.match(
