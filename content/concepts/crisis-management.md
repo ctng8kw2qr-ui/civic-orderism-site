@@ -45,6 +45,12 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">一个难以言说的防线：从“液压维稳”到当代的马其诺防线的结构分析与研究笔记。</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：危机管理</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management">
+  <p class="knowledge-card__meta"><span>2026-08-22</span><span>9 分钟阅读</span></p>
+  <h3><a href="/china/party-state-stress-neither-party-nor-state">既不党，也不国：党国体制最终会变成什么？</a></h3>
+  <p class="knowledge-card__summary">党和国家原本是两种不同性质的组织。增长时代，两套逻辑之间的矛盾可以被资源扩张掩盖；进入损失分配时代以后，党不断加强控制，国家却越来越难按照治理规律运行。本文以“党国应力”解释党国系统为何最终走向既不党、也不国。</p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management order-evaporation">
   <p class="knowledge-card__meta"><span>2026-08-12</span><span>15 分钟阅读</span></p>
   <h3><a href="/china/security-led-governance-model">安全化、再集中与治理边界</a></h3>
@@ -103,12 +109,6 @@ publicationStatus: reviewing
   <p class="knowledge-card__meta"><span>2026-05-30</span><span>9 分钟阅读</span></p>
   <h3><a href="/china/political-machine-rewards-and-limits">机器的奖赏与机器的尽头</a></h3>
   <p class="knowledge-card__summary">本文以“政治机器”为框架，分析中共如何通过奖罚机制、意义叙事、地方权力重组、反腐集权和机器自保逻辑维持自身运行，并说明为什么习近平修复后的机器短期更稳、长期更脆。</p>
-  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management">
-  <p class="knowledge-card__meta"><span>2026-05-30</span><span>6 分钟阅读</span></p>
-  <h3><a href="/china/party-power-logic-and-ccp-goal-vacuum">政党存在的权力逻辑与中共的目标困境</a></h3>
-  <p class="knowledge-card__summary">本文从政党作为组织的权力逻辑出发，分析中共在长期垄断国家最高权力之后所面临的目标真空、信念断层、制度信任崩塌和自我维持型衰变，说明一个完成夺权目标的政党如何从使命导向转向防御性维稳。</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
 </article>
 </div>

@@ -839,7 +839,7 @@ for (const legacySection of [
   );
 }
 assert(
-  completeArticlesText.includes("本站共收录 98 篇文章") &&
+  completeArticlesText.includes(`本站共收录 ${migration.length} 篇文章`) &&
     completeArticlesHtml.includes('data-slug="articles"') &&
     completeArticlesHtml.includes('data-slug="civic-orderism"') &&
     completeArticlesHtml.includes('data-slug="china"') &&

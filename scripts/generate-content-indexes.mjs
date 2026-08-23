@@ -210,6 +210,7 @@ const slugs = {
     "theory/party-state-structural-failure",
     "china/information-age-impact-on-ccp-mechanisms",
     "theory/high-rigidity-system-ccp",
+    "china/party-state-stress-neither-party-nor-state",
     "china/xi-power-centralization",
     "china/xi-solved-organization-not-reality",
     "china/ccp-power-network-not-line",

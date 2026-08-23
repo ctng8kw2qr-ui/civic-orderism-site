@@ -62,12 +62,12 @@ aliases:
 
 <section class="home-section home-latest" id="latest-articles">
   <div class="home-section-heading"><div><p class="resource-label">最新文章</p><h2>近期发布</h2><p>继续阅读最新的理论、现实分析与中国未来讨论。</p></div><a href="/articles">查看全部文章 →</a></div>
-  <div class="recent-article-list"><a href="/china/security-led-governance-model"><span>安全化、再集中与治理边界</span><time datetime="2026-08-12">2026-08-12</time></a>
+  <div class="recent-article-list"><a href="/china/party-state-stress-neither-party-nor-state"><span>既不党，也不国：党国体制最终会变成什么？</span><time datetime="2026-08-22">2026-08-22</time></a>
+<a href="/china/security-led-governance-model"><span>安全化、再集中与治理边界</span><time datetime="2026-08-12">2026-08-12</time></a>
 <a href="/china/an-era-change-beginning-in-the-united-states"><span>一场起始于美国的时代变革</span><time datetime="2026-08-11">2026-08-11</time></a>
 <a href="/china/security-is-redefining-china"><span>安全，正在重新定义中国</span><time datetime="2026-08-10">2026-08-10</time></a>
 <a href="/china/why-ccp-feels-less-secure-when-everyone-claims-loyalty"><span>当所有人都说忠诚：中共为什么反而越来越没有安全感</span><time datetime="2026-08-10">2026-08-10</time></a>
-<a href="/china/what-happens-when-security-becomes-the-top-priority"><span>中共全面进入安全叙事后，中国会怎么样？</span><time datetime="2026-08-10">2026-08-10</time></a>
-<a href="/civic-orderism/north-america-nonprofit-board-preparation-manifesto"><span>公民秩序主义北美非营利法人及董事会筹备宣言</span><time datetime="2026-08-05">2026-08-05</time></a></div>
+<a href="/china/what-happens-when-security-becomes-the-top-priority"><span>中共全面进入安全叙事后，中国会怎么样？</span><time datetime="2026-08-10">2026-08-10</time></a></div>
 </section>
 
 <section class="home-section home-closing" id="introduction-manual-entry">

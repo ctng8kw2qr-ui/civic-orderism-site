@@ -14,7 +14,7 @@ noindex: false
 
 不以情绪、立场或单一事件为起点，而是把中共视为一个现实运行中的政治组织，从权力结构、组织成员、结构性困境、防御转型及其外部影响五个层面观察其变化。
 
-<div class="section-stats"><span>47 篇已发布文章</span><span>5 个分析层次</span><span>更新至 2026-08-12</span></div>
+<div class="section-stats"><span>48 篇已发布文章</span><span>5 个分析层次</span><span>更新至 2026-08-22</span></div>
 
 <div class="section-core-judgment"><strong>栏目核心判断</strong><p>理解中共的变化，需要沿着权力如何运行、成员如何行动、结构为何失灵、组织如何防御，以及压力如何向外溢出的完整链条展开。</p></div>
 
@@ -150,8 +150,12 @@ noindex: false
 </div>
 
 <details class="china-analysis-more">
-<summary>更多文章（8）</summary>
+<summary>更多文章（9）</summary>
 <div class="knowledge-grid">
+<article class="knowledge-card">
+  <p class="knowledge-card__meta"><span>2026-08-22</span><span>9 分钟阅读</span></p>
+  <h3><a href="/china/party-state-stress-neither-party-nor-state">既不党，也不国：党国体制最终会变成什么？</a></h3>
+</article>
 <article class="knowledge-card">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>9 分钟阅读</span></p>
   <h3><a href="/theory/ccp-high-fragility-dysfunction">它还在，但越来越靠不住：为什么中共更可能“失灵”而非“倒台”</a></h3>

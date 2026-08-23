@@ -57,6 +57,12 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">这些年，中文舆论场上一个越来越明显的现象是：</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management">
+  <p class="knowledge-card__meta"><span>2026-08-22</span><span>9 分钟阅读</span></p>
+  <h3><a href="/china/party-state-stress-neither-party-nor-state">既不党，也不国：党国体制最终会变成什么？</a></h3>
+  <p class="knowledge-card__summary">党和国家原本是两种不同性质的组织。增长时代，两套逻辑之间的矛盾可以被资源扩张掩盖；进入损失分配时代以后，党不断加强控制，国家却越来越难按照治理规律运行。本文以“党国应力”解释党国系统为何最终走向既不党、也不国。</p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management order-evaporation">
   <p class="knowledge-card__meta"><span>2026-08-12</span><span>15 分钟阅读</span></p>
   <h3><a href="/china/security-led-governance-model">安全化、再集中与治理边界</a></h3>
@@ -103,12 +109,6 @@ publicationStatus: reviewing
   <p class="knowledge-card__meta"><span>2026-05-13</span><span>11 分钟阅读</span></p>
   <h3><a href="/china/ccp-power-network-not-line">中共的权力布局不是一条线，而是一张网</a></h3>
   <p class="knowledge-card__summary">本文区分中共权力的展示形态与运行形态，指出中共权力在表面上像一条垂直权力线，但在实际运行中更像一张多节点、多阀门、多路径的权力网。</p>
-  <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚休克</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>10 分钟阅读</span></p>
-  <h3><a href="/china/ccp-bureaucracy-double-deadlock">不抓人就躺平，一抓人就失真：中共官僚体系为何陷入双重死结</a></h3>
-  <p class="knowledge-card__summary">很多人谈中国官僚体系的问题，喜欢把原因简单归结为一句话：</p>
   <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚休克</span></p>
 </article>
 </div>

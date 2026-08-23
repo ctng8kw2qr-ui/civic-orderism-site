@@ -14,7 +14,7 @@ noindex: false
 
 分析压力传导、组织控制、宣传与危机管理的实际机制。
 
-<div class="topic-hero-note"><strong>核心判断</strong><p>统治能力并不等于治理能力；短期控制工具的叠加，可能持续消耗长期组织信用。</p><small>9 篇相关文章 · 最近更新 2026-08-12</small></div>
+<div class="topic-hero-note"><strong>核心判断</strong><p>统治能力并不等于治理能力；短期控制工具的叠加，可能持续消耗长期组织信用。</p><small>10 篇相关文章 · 最近更新 2026-08-22</small></div>
 
 ## 推荐阅读顺序
 
@@ -25,6 +25,12 @@ noindex: false
 ## 全部相关文章
 
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management">
+  <p class="knowledge-card__meta"><span>2026-08-22</span><span>9 分钟阅读</span></p>
+  <h3><a href="/china/party-state-stress-neither-party-nor-state">既不党，也不国：党国体制最终会变成什么？</a></h3>
+  <p class="knowledge-card__summary">党和国家原本是两种不同性质的组织。增长时代，两套逻辑之间的矛盾可以被资源扩张掩盖；进入损失分配时代以后，党不断加强控制，国家却越来越难按照治理规律运行。本文以“党国应力”解释党国系统为何最终走向既不党、也不国。</p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management order-evaporation">
   <p class="knowledge-card__meta"><span>2026-08-12</span><span>15 分钟阅读</span></p>
   <h3><a href="/china/security-led-governance-model">安全化、再集中与治理边界</a></h3>

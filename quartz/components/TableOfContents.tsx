@@ -11,6 +11,7 @@ import script from "./scripts/toc.inline";
 import { i18n } from "../i18n";
 import OverflowListFactory from "./OverflowList";
 import { concatenateResources } from "../util/resources";
+import { isArticleSlug } from "../util/articlePage";
 
 interface Options {
   layout: "modern" | "legacy";
@@ -19,6 +20,15 @@ interface Options {
 const defaultOptions: Options = {
   layout: "modern",
 };
+
+function tocEntryText(
+  fileData: QuartzComponentProps["fileData"],
+  text: string,
+) {
+  return isArticleSlug(fileData.slug) && text.trim() === "核心判断"
+    ? "重点句"
+    : text;
+}
 
 let numTocs = 0;
 export default ((opts?: Partial<Options>) => {
@@ -77,7 +87,7 @@ export default ((opts?: Partial<Options>) => {
           {fileData.toc.map((tocEntry) => (
             <li key={tocEntry.slug} class={`depth-${tocEntry.depth}`}>
               <a href={`#${tocEntry.slug}`} data-for={tocEntry.slug}>
-                {tocEntry.text}
+                {tocEntryText(fileData, tocEntry.text)}
               </a>
             </li>
           ))}
@@ -108,7 +118,7 @@ export default ((opts?: Partial<Options>) => {
           {fileData.toc.map((tocEntry) => (
             <li key={tocEntry.slug} class={`depth-${tocEntry.depth}`}>
               <a href={`#${tocEntry.slug}`} data-for={tocEntry.slug}>
-                {tocEntry.text}
+                {tocEntryText(fileData, tocEntry.text)}
               </a>
             </li>
           ))}
