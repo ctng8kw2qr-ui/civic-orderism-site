@@ -25,18 +25,19 @@ noindex: false
 <div class="concept-grid concept-grid--core"><a class="concept-card" href="/concepts/party-state-stress"><strong>党国应力</strong><span>党的政治控制逻辑与国家治理逻辑长期重叠后，不断积累的结构性张力。</span><small>正式概念</small></a>
 <a class="concept-card" href="/concepts/bureaucratic-shock"><strong>官僚系统休克</strong><span>官僚系统在高风险、强问责和低授权环境中出现的集体行动冻结。</span><small>正式概念</small></a>
 <a class="concept-card" href="/concepts/order-evaporation"><strong>秩序蒸发</strong><span>制度形式仍然存在，但可信承诺、协作能力和社会预期逐步流失的过程。</span><small>正式概念</small></a>
-<a class="concept-card" href="/concepts/security-recentralization"><strong>安全再集中</strong><span>安全优先替代发展优先后，权力、信息与责任不断重新向中心集中的治理过程。</span><small>正式概念</small></a>
 <a class="concept-card" href="/concepts/organizational-credit"><strong>组织信用</strong><span>组织能否持续兑现承诺、分配责任并让成员相信长期合作仍然有意义的能力。</span><small>正式概念</small></a>
-<a class="concept-card" href="/concepts/security-purge-recentralization-cycle"><strong>安全化—清洗—再集中—再失灵模型</strong><span>安全化推动组织清洗和权力再集中，而再集中又削弱治理反馈并产生新一轮失灵的循环模型。</span><small>正式概念</small></a></div>
+<a class="concept-card" href="/concepts/security-purge-recentralization-cycle"><strong>安全化—清洗—再集中—再失灵模型</strong><span>安全化推动组织清洗和权力再集中，而再集中又削弱治理反馈并产生新一轮失灵的循环模型。</span><small>正式概念</small></a>
+<a class="concept-card" href="/concepts/political-control-governance-divergence"><strong>政治控制—治理效能背离</strong><span>党的政治控制能力不断上升，但国家解决复杂治理问题的能力却可能同步下降。</span><small>正式概念</small></a></div>
 
 ### 延伸研究概念
 
 <p>用于查询具体判断、政策机制与辅助分析术语。</p>
 
 <details class="concept-research-more">
-<summary>查看延伸研究概念（7）</summary>
+<summary>查看延伸研究概念（8）</summary>
 <div class="concept-grid concept-grid--extended"><a class="concept-card concept-card--extended" href="/concepts/second-reform"><strong>二次改开</strong><span>对中国是否可能再次通过系统性开放与改革重建增长和组织空间的判断框架。</span><small>正式概念</small></a>
 <a class="concept-card concept-card--extended" href="/concepts/high-fragility"><strong>高脆弱态</strong><span>系统表面高度集中和稳定，实际对少数节点、资源或决策失误异常敏感的状态。</span><small>正式概念</small></a>
+<a class="concept-card concept-card--extended" href="/concepts/security-recentralization"><strong>安全再集中</strong><span>安全优先替代发展优先后，权力、信息与责任不断重新向中心集中的治理过程。</span><small>正式概念</small></a>
 <a class="concept-card concept-card--research concept-card--extended" href="/concepts/three-cleans-era"><strong>三清时代</strong><span>用于观察财政清账、政治清责与组织清洗同步出现的阶段框架。</span><small>研究概念</small></a>
 <a class="concept-card concept-card--research concept-card--extended" href="/concepts/fiscal-debt"><strong>财政偿债</strong><span>对长期依赖债务、土地与未来收入形成的财政成本进行集中结算。</span><small>研究概念</small></a>
 <a class="concept-card concept-card--research concept-card--extended" href="/concepts/political-debt"><strong>政治偿债</strong><span>过去通过模糊责任、延迟改革或压缩反馈所累积政治成本的集中显现。</span><small>研究概念</small></a>

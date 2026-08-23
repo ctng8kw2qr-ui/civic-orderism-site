@@ -70,3 +70,4 @@ publicationStatus: published
 - [[concepts/security-recentralization|安全再集中]]
 - [[concepts/bureaucratic-shock|官僚系统休克]]
 - [[concepts/party-state-stress|党国应力]]
+- [[concepts/political-control-governance-divergence|政治控制—治理效能背离]]

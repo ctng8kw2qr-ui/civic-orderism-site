@@ -1166,6 +1166,7 @@ for (const concept of concepts) {
     "fiscal-debt",
     "organizational-credit",
     "party-state-stress",
+    "political-control-governance-divergence",
     "political-debt",
     "security-purge-recentralization-cycle",
     "security-recentralization",
@@ -1226,9 +1227,9 @@ const coreChinaConceptSlugs = [
   "party-state-stress",
   "bureaucratic-shock",
   "order-evaporation",
-  "security-recentralization",
   "organizational-credit",
   "security-purge-recentralization-cycle",
+  "political-control-governance-divergence",
 ];
 const coreChinaConceptSet = new Set(coreChinaConceptSlugs);
 const coreChinaConcepts = coreChinaConceptSlugs

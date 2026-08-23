@@ -20,12 +20,6 @@
       "article": "theory/organizational-collapse-begins-with-loss-of-institutional-trust"
     },
     {
-      "name": "安全再集中",
-      "description": "安全优先替代发展优先后，权力、信息与责任重新向中心集中的治理过程。",
-      "href": "/concepts/security-recentralization",
-      "article": "china/security-led-governance-model"
-    },
-    {
       "name": "组织信用",
       "description": "组织能否持续兑现承诺、分配责任并让成员相信长期合作仍有意义的能力。",
       "href": "/concepts/organizational-credit",
@@ -36,6 +30,12 @@
       "description": "安全化推动清洗和再集中，而再集中又削弱治理反馈并产生新一轮失灵。",
       "href": "/concepts/security-purge-recentralization-cycle",
       "article": "china/security-led-governance-model"
+    },
+    {
+      "name": "政治控制—治理效能背离",
+      "description": "党的政治控制能力不断上升，但国家解决复杂治理问题的能力却可能同步下降。",
+      "href": "/concepts/political-control-governance-divergence",
+      "article": "china/party-state-stress-neither-party-nor-state"
     }
   ],
   "structuralJudgments": [

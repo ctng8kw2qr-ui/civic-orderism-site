@@ -37,11 +37,6 @@ noindex: false
   <span>制度形式仍然存在，但可信承诺、协作能力和社会预期逐步流失。</span>
   <small>进入模型 →</small>
 </a>
-<a class="china-model-card" href="/concepts/security-recentralization">
-  <strong>安全再集中</strong>
-  <span>安全优先替代发展优先后，权力、信息与责任重新向中心集中的治理过程。</span>
-  <small>进入模型 →</small>
-</a>
 <a class="china-model-card" href="/concepts/organizational-credit">
   <strong>组织信用</strong>
   <span>组织能否持续兑现承诺、分配责任并让成员相信长期合作仍有意义的能力。</span>
@@ -50,6 +45,11 @@ noindex: false
 <a class="china-model-card" href="/concepts/security-purge-recentralization-cycle">
   <strong>安全化—清洗—再集中—再失灵模型</strong>
   <span>安全化推动清洗和再集中，而再集中又削弱治理反馈并产生新一轮失灵。</span>
+  <small>进入模型 →</small>
+</a>
+<a class="china-model-card" href="/concepts/political-control-governance-divergence">
+  <strong>政治控制—治理效能背离</strong>
+  <span>党的政治控制能力不断上升，但国家解决复杂治理问题的能力却可能同步下降。</span>
   <small>进入模型 →</small>
 </a></div>
 </section>

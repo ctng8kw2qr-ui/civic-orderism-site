@@ -319,7 +319,9 @@
     "related": [
       "bureaucratic-shock",
       "organizational-credit",
-      "security-recentralization"
+      "security-recentralization",
+      "security-purge-recentralization-cycle",
+      "political-control-governance-divergence"
     ],
     "firstUsed": "2026-08-22",
     "needsReview": false,
@@ -348,7 +350,8 @@
     "related": [
       "party-state-stress",
       "bureaucratic-shock",
-      "security-purge-recentralization-cycle"
+      "security-purge-recentralization-cycle",
+      "political-control-governance-divergence"
     ],
     "firstUsed": "2026-08-21",
     "needsReview": false,
@@ -404,7 +407,8 @@
     "related": [
       "security-recentralization",
       "bureaucratic-shock",
-      "party-state-stress"
+      "party-state-stress",
+      "political-control-governance-divergence"
     ],
     "firstUsed": "2026-08-21",
     "needsReview": false,
@@ -418,5 +422,32 @@
       "china/why-ccp-will-not-relax-party-pressure"
     ],
     "publicationReason": "已有框架文章明确描述循环机制，并有路线转换与党内高压文章提供组织层面的支持。"
+  },
+  {
+    "name": "政治控制—治理效能背离",
+    "slug": "political-control-governance-divergence",
+    "definition": "党的政治控制能力不断上升，但国家解决复杂治理问题的能力却可能同步下降。",
+    "explanation": "政治控制—治理效能背离，是指党国系统在不断强化政治控制、组织纪律和集中统一的同时，国家在财政协调、利益分配、政策纠错、专业决策和官僚主动性等方面的治理效能反而下降。党的控制能力和国家治理能力不是同一个指标；增长时代两者可以同时上升，进入复杂治理和损失分配阶段以后，两者可能开始分离。",
+    "mechanism": "安全与问责压力推动命令、责任和决策持续集中，同时压缩专业判断、地方裁量和官僚主动性，使控制能力与解决问题的能力逐步分离。",
+    "manifestations": [
+      "命令更加统一但问题仍然积累",
+      "官员更加服从但更少主动担责",
+      "社会更加安静但矛盾并未减少"
+    ],
+    "topics": ["ccp-governance", "bureaucratic-system"],
+    "related": [
+      "party-state-stress",
+      "bureaucratic-shock",
+      "organizational-credit",
+      "security-purge-recentralization-cycle"
+    ],
+    "firstUsed": "2026-08-23",
+    "needsReview": false,
+    "status": "published",
+    "publicationStatus": "published",
+    "publicationClass": "A",
+    "domain": "china-analysis",
+    "representativeArticles": ["theory/high-rigidity-system-ccp"],
+    "publicationReason": "现有党国应力、官僚运行与国家能力文章已经稳定区分政治控制能力和治理效能，可以作为独立解释模型使用。"
   }
 ]

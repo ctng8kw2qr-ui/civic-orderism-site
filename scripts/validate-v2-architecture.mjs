@@ -157,6 +157,18 @@ for (const model of chinaAnalysisConfig.models) {
     `解析中共缺少核心模型：${model.name}`,
   );
 }
+assert(
+  JSON.stringify(chinaAnalysisConfig.models.map((model) => model.name)) ===
+    JSON.stringify([
+      "党国应力",
+      "官僚系统休克",
+      "秩序蒸发",
+      "组织信用",
+      "安全化—清洗—再集中—再失灵模型",
+      "政治控制—治理效能背离",
+    ]),
+  "解析中共核心模型未保持六个相互独立的模型",
+);
 for (const judgment of chinaAnalysisConfig.structuralJudgments) {
   assert(
     chinaPageSource.includes(`href="${judgment.href}"`) &&
@@ -427,8 +439,8 @@ assert(
     JSON.stringify(partyStateRecommendationSlugs) ===
       JSON.stringify([
         "china/why-ccp-cannot-reduce-grassroots-burden",
-        "china/security-led-governance-model",
         "china/organization-credit-retired-officials",
+        "china/security-led-governance-model",
         "civic-orderism/possibility-of-peaceful-political-transition-in-china",
       ]),
   "党国应力文章未按相邻模型与政治路线渲染四篇继续阅读",
@@ -496,10 +508,14 @@ const coreChinaConceptSlugs = [
   "party-state-stress",
   "bureaucratic-shock",
   "order-evaporation",
-  "security-recentralization",
   "organizational-credit",
   "security-purge-recentralization-cycle",
+  "political-control-governance-divergence",
 ];
+const coreChinaConceptGrid =
+  conceptsPageHtml.match(
+    /<div class="concept-grid concept-grid--core">([\s\S]*?)<\/div>/,
+  )?.[1] ?? "";
 assert(
   conceptsPageHtml.includes("concept-grid--core") &&
     conceptsPageHtml.includes("concept-grid--extended") &&
@@ -508,8 +524,9 @@ assert(
       conceptsPageHtml,
     ) &&
     coreChinaConceptSlugs.every((slug) =>
-      conceptsPageHtml.includes(`concepts/${slug}"`),
-    ),
+      coreChinaConceptGrid.includes(`concepts/${slug}"`),
+    ) &&
+    !coreChinaConceptGrid.includes('concepts/security-recentralization"'),
   "核心概念词典未区分核心概念与默认收起的延伸研究概念",
 );
 topics.forEach((topic) =>

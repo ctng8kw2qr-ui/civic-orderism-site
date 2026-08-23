@@ -41,10 +41,10 @@ const MAX_RELATED_CONCEPTS = 3;
 const CORE_MODEL_CONCEPT_SLUGS = [
   "party-state-stress",
   "bureaucratic-shock",
-  "security-recentralization",
-  "organizational-credit",
   "order-evaporation",
+  "organizational-credit",
   "security-purge-recentralization-cycle",
+  "political-control-governance-divergence",
 ] as const;
 const CORE_MODEL_CONCEPT_SET = new Set<string>(CORE_MODEL_CONCEPT_SLUGS);
 const CORE_MODEL_ROUTE_SLUGS = [

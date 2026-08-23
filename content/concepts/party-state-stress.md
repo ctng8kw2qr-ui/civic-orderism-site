@@ -63,3 +63,5 @@ publicationStatus: published
 - [[concepts/bureaucratic-shock|官僚系统休克]]
 - [[concepts/organizational-credit|组织信用]]
 - [[concepts/security-recentralization|安全再集中]]
+- [[concepts/security-purge-recentralization-cycle|安全化—清洗—再集中—再失灵模型]]
+- [[concepts/political-control-governance-divergence|政治控制—治理效能背离]]

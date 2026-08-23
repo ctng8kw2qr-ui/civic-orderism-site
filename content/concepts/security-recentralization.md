@@ -69,3 +69,4 @@ publicationStatus: published
 - [[concepts/party-state-stress|党国应力]]
 - [[concepts/bureaucratic-shock|官僚系统休克]]
 - [[concepts/security-purge-recentralization-cycle|安全化—清洗—再集中—再失灵模型]]
+- [[concepts/political-control-governance-divergence|政治控制—治理效能背离]]

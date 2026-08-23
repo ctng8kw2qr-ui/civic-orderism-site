@@ -17,7 +17,7 @@ noindex: false
 <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">
   <label>专题<select data-filter-topic><option value="">全部专题</option><option value="order-evaporation">秩序蒸发</option><option value="political-transition">中国政治转型</option></select></label>
-  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="political-debt">政治偿债</option><option value="state-system-upgrade">国家系统升级</option><option value="organizational-credit">组织信用</option><option value="bureaucratic-shock">官僚系统休克</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option><option value="fiscal-debt">财政偿债</option><option value="party-state-stress">党国应力</option><option value="nonviolent-transition">非暴力转型</option><option value="political-route">政治路线</option></select></label>
+  <label>核心概念<select data-filter-concept><option value="">全部概念</option><option value="order-evaporation">秩序蒸发</option><option value="high-fragility">高脆弱态</option><option value="political-debt">政治偿债</option><option value="state-system-upgrade">国家系统升级</option><option value="organizational-credit">组织信用</option><option value="bureaucratic-shock">官僚系统休克</option><option value="ruling-techniques">统治术</option><option value="crisis-management">危机管理</option><option value="fiscal-debt">财政偿债</option><option value="party-state-stress">党国应力</option><option value="political-control-governance-divergence">政治控制—治理效能背离</option><option value="nonviolent-transition">非暴力转型</option><option value="political-route">政治路线</option></select></label>
   <button type="button" data-filter-reset>重置</button>
 </div>
 <div class="knowledge-grid">
@@ -95,10 +95,11 @@ noindex: false
   <p class="knowledge-card__summary">分析海外中文政治运动长期低效与结构性失败的原因。</p>
   <p class="knowledge-card__chips"><span>概念：官僚系统休克</span></p>
 </article>
-<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="">
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="political-control-governance-divergence">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>7 分钟阅读</span></p>
   <h3><a href="/theory/high-rigidity-system-ccp">解析高刚性体制：中共无以为继的结构性根因</a></h3>
   <p class="knowledge-card__summary">中共体制无以为继的根因，并不在外部环境，也不在所谓敌对势力的反对。</p>
+  <p class="knowledge-card__chips"><span>概念：政治控制—治理效能背离</span></p>
 </article>
 <article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route">
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>11 分钟阅读</span></p>
