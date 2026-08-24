@@ -941,7 +941,7 @@ assert(
     visiblePageText(heroHtml).includes("公民秩序主义") &&
     visiblePageText(heroHtml).includes("中国政治转轨的 和平方案") &&
     visiblePageText(heroHtml).includes(
-      "为中国未来的政治变化，建立一条低阻力、低风险，并能够维持国家连续性的和平政治道路。",
+      "不革命、不清算，在保持国家连续运行的前提下，为中国未来建立一条低阻力、低风险的政治转轨路径。",
     ) &&
     heroHtml.includes("CURRENT PHASE") &&
     heroHtml.includes("North American Nonprofit") &&
@@ -958,7 +958,13 @@ assert(
   workHtml.includes("CURRENT WORK") &&
     visiblePageText(workHtml).includes("建立一个能够承接政治信任的组织") &&
     visiblePageText(workHtml).includes(
-      "政治转型不仅需要观点，也需要能够承担法律、财务、人员与长期政治责任的组织",
+      "旧政治秩序需要一个具备政治信誉、责任能力和承接能力的新组织，才能建立真正的沟通与信任。",
+    ) &&
+    visiblePageText(workHtml).includes(
+      "只有组织，才能与组织建立稳定的政治信任。",
+    ) &&
+    visiblePageText(workHtml).includes(
+      "承担法律、财务、人员与长期政治责任的正式组织",
     ) &&
     workHtml.includes("OFFICIAL DOCUMENT") &&
     workHtml.includes("CO—2026—002") &&
@@ -980,6 +986,9 @@ assert(
   researchHtml.includes("RESEARCH &amp; POLITICAL WORK") &&
     visiblePageText(researchHtml).includes(
       "从理解旧秩序，到准备新的政治秩序",
+    ) &&
+    visiblePageText(researchHtml).includes(
+      "组织承接政治责任，研究提供判断基础。",
     ) &&
     (researchHtml.match(/inst4-research__row/g) ?? []).length === 3 &&
     researchHtml.includes('class="inst4-research__row') &&

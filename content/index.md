@@ -21,7 +21,7 @@ aliases:
     <div class="inst4-hero__left">
       <p class="inst4-hero__brand">CIVIC ORDERISM <span aria-hidden="true">·</span> 公民秩序主义</p>
       <h1 class="inst4-hero__title">中国政治转轨的<span>和平方案</span></h1>
-      <p class="inst4-hero__statement">为中国未来的政治变化，建立一条低阻力、低风险，并能够维持国家连续性的和平政治道路。</p>
+      <p class="inst4-hero__statement">不革命、不清算，在保持国家连续运行的前提下，为中国未来建立一条低阻力、低风险的政治转轨路径。</p>
       <p class="inst4-hero__en" lang="en">A peaceful political transition framework for China's future.</p>
     </div>
     <div class="inst4-hero__status" aria-label="当前阶段">
@@ -38,7 +38,8 @@ aliases:
     <div class="inst4-work__intro">
       <p class="inst4-eyebrow">CURRENT WORK</p>
       <h2 class="inst4-work__title">建立一个能够承接政治信任的组织</h2>
-      <p class="inst4-work__text">政治转型不仅需要观点，也需要能够承担法律、财务、人员与长期政治责任的组织。公民秩序主义当前正在推进北美非营利法人及首届董事会筹备。</p>
+      <p class="inst4-work__judgment">旧政治秩序需要一个具备政治信誉、责任能力和承接能力的新组织，才能建立真正的沟通与信任。</p>
+      <p class="inst4-work__text">政治转轨不能只依靠观点。只有组织，才能与组织建立稳定的政治信任。因此需要建立能够承担法律、财务、人员与长期政治责任的正式组织。公民秩序主义当前正在推进北美非营利法人及首届董事会筹备。</p>
     </div>
     <div class="inst4-document">
       <div class="inst4-document__head">
@@ -63,6 +64,7 @@ aliases:
   <div class="inst4-research__head">
     <p class="inst4-eyebrow">RESEARCH &amp; POLITICAL WORK</p>
     <h2 class="inst4-research__title">从理解旧秩序，到准备新的政治秩序</h2>
+    <p class="inst4-research__bridge">组织承接政治责任，研究提供判断基础。</p>
   </div>
   <div class="inst4-research__list">
     <a class="inst4-research__row" href="/china">
