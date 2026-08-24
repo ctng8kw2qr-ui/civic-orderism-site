@@ -8429,7 +8429,7 @@ body[data-slug="index"] article {
 
 /* ---- SECTION 2 / CURRENT WORK ---- */
 .inst4-work {
-  padding: clamp(6rem, 11vw, 9rem) 0;
+  padding: clamp(6rem, 11vw, 9rem) 0 clamp(4rem, 7vw, 5.5rem);
   border-top: 1px solid var(--inst4-line);
 }
 
@@ -8441,7 +8441,7 @@ body[data-slug="index"] article {
 }
 
 .inst4-work__intro {
-  grid-column: 1 / span 7;
+  grid-column: 1 / span 9;
   min-width: 0;
   padding-top: 0.4rem;
 }
@@ -8457,7 +8457,7 @@ body[data-slug="index"] article {
 }
 
 .inst4-work__text {
-  max-width: 460px;
+  max-width: 720px;
   margin-top: 1.2rem;
   color: var(--inst4-ink-2);
   font-size: 1.04rem;
@@ -8466,7 +8466,7 @@ body[data-slug="index"] article {
 }
 
 .inst4-work__judgment {
-  max-width: 520px;
+  max-width: 720px;
   margin-top: 1.6rem;
   padding-top: 1.35rem;
   border-top: 1px solid var(--inst4-line-soft);
@@ -8476,32 +8476,44 @@ body[data-slug="index"] article {
   line-height: 1.75;
 }
 
-/* The single official document focus — a publication cover, not a card. */
-.inst4-document {
-  grid-column: 8 / span 5;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  min-height: clamp(480px, 38vw, 600px);
-  padding: clamp(2rem, 3.5vw, 2.8rem);
-  border: 1px solid var(--inst4-line);
-  background: color-mix(in srgb, var(--inst4-bg-soft) 52%, var(--inst4-bg));
-  box-shadow: inset 0 3px 0 var(--inst4-accent);
-  color: var(--inst4-ink);
-  transition: border-color 200ms ease;
+.inst4-work__status {
+  max-width: 720px;
+  margin-top: 1rem;
+  color: var(--inst4-ink-2);
+  font-size: 1.04rem;
+  font-weight: 500;
+  line-height: 1.85;
 }
 
-.inst4-document:hover,
-.inst4-document:focus-within {
-  border-color: var(--inst4-line);
+/* The official document follows the organizational rationale as a formal filing. */
+.inst4-document {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-areas:
+    "head head"
+    "cover foot";
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.38fr);
+  column-gap: clamp(2.5rem, 5vw, 5rem);
+  min-width: 0;
+  min-height: 0;
+  margin-top: clamp(3.5rem, 6vw, 5rem);
+  padding: clamp(2rem, 3.5vw, 2.8rem);
+  border: 0;
+  border-top: 2px solid var(--inst4-accent);
+  border-bottom: 1px solid var(--inst4-line);
+  background: color-mix(in srgb, var(--inst4-bg-soft) 42%, var(--inst4-bg));
+  color: var(--inst4-ink);
 }
 
 /* Top: document type + number, evenly spaced */
 .inst4-document__head {
+  grid-area: head;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--inst4-line-soft);
 }
 
 .inst4-document__label {
@@ -8526,10 +8538,12 @@ body[data-slug="index"] article {
 
 /* Middle: publisher + document title, positioned slightly above centre */
 .inst4-document__cover {
+  grid-area: cover;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: clamp(3.5rem, 6vw, 5rem);
+  min-width: 0;
+  padding: clamp(2rem, 4vw, 3rem) 0 0.5rem;
 }
 
 .inst4-document__org {
@@ -8543,8 +8557,9 @@ body[data-slug="index"] article {
 
 .inst4-document__title {
   margin: 0.9rem 0 0;
+  max-width: 19em;
   color: var(--inst4-ink);
-  font-size: clamp(1.9rem, 3.1vw, 2.55rem);
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
   font-weight: 560;
   letter-spacing: -0.02em;
   line-height: 1.36;
@@ -8578,8 +8593,15 @@ body[data-slug="index"] article {
 
 /* Bottom: metadata + thin rule + action, anchored as a bottom zone */
 .inst4-document__foot {
-  margin-top: auto;
-  padding-top: 2.4rem;
+  grid-area: foot;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  min-width: 0;
+  margin: 0;
+  padding: clamp(2rem, 4vw, 3rem) 0 0.5rem clamp(2rem, 4vw, 3rem);
+  border-left: 1px solid var(--inst4-line-soft);
 }
 
 .inst4-document__meta {
@@ -8594,13 +8616,13 @@ body[data-slug="index"] article {
 .inst4-document__divider {
   width: 100%;
   height: 1px;
-  margin: 1.6rem 0 0;
+  margin: 1.25rem 0 0;
   border: 0;
   background: var(--inst4-line-soft);
 }
 
 .inst4-document__cta {
-  margin-top: 1.4rem;
+  margin-top: 1.25rem;
 }
 
 .inst4-document__cta a {
@@ -8613,6 +8635,7 @@ body[data-slug="index"] article {
   font-size: 1rem;
   font-weight: 620;
   line-height: 1.5;
+  min-height: 44px;
   text-decoration: none;
   background-image: none;
   transition: color 180ms ease;
@@ -8635,7 +8658,7 @@ body[data-slug="index"] article {
 
 /* ---- SECTION 3 / RESEARCH ---- */
 .inst4-research {
-  padding: clamp(6rem, 11vw, 9rem) 0;
+  padding: clamp(4rem, 7vw, 5.5rem) 0 clamp(6rem, 11vw, 9rem);
   border-top: 1px solid var(--inst4-line);
 }
 
@@ -8825,12 +8848,11 @@ body[data-slug="index"] article {
 
   .inst4-work__intro {
     grid-column: 1 / span 12;
-    margin-bottom: 2.5rem;
+    margin-bottom: 0;
   }
 
   .inst4-document {
     grid-column: 1 / span 12;
-    min-height: 0;
   }
 
   .inst4-research__row {
@@ -8870,9 +8892,12 @@ body[data-slug="index"] article {
     grid-column: 1 / span 12;
   }
 
-  .inst4-work,
+  .inst4-work {
+    padding: clamp(3.75rem, 14vw, 5rem) 0 clamp(3.25rem, 12vw, 4.25rem);
+  }
+
   .inst4-research {
-    padding: clamp(3.75rem, 14vw, 5rem) 0;
+    padding: clamp(3.25rem, 12vw, 4.25rem) 0 clamp(3.75rem, 14vw, 5rem);
   }
 
   .inst4-work__title,
@@ -8881,20 +8906,29 @@ body[data-slug="index"] article {
   }
 
   .inst4-document {
+    grid-template-areas:
+      "head"
+      "cover"
+      "foot";
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 2.5rem;
     padding: 1.6rem 1.3rem;
   }
 
   .inst4-document__cover {
-    padding-top: 2rem;
+    padding: 1.75rem 0 1.5rem;
   }
 
   .inst4-document__title {
-    font-size: 1.45rem;
+    max-width: 13em;
+    font-size: 1.65rem;
     line-height: 1.42;
   }
 
   .inst4-document__foot {
-    margin-top: 1.8rem;
+    padding: 1.35rem 0 0;
+    border-top: 1px solid var(--inst4-line-soft);
+    border-left: 0;
   }
 
   .inst4-document__divider {

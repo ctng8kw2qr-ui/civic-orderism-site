@@ -1103,6 +1103,7 @@ writeContent(
       <h2 class="inst4-work__title">建立一个能够承接政治信任的组织</h2>
       <p class="inst4-work__judgment">旧政治秩序需要一个具备政治信誉、责任能力和承接能力的新组织，才能建立真正的沟通与信任。</p>
       <p class="inst4-work__text">政治转型不能只依靠观点。只有组织，才能与组织建立稳定的政治信任。因此需要建立能够承担法律、财务、人员与长期政治责任的正式组织。</p>
+      <p class="inst4-work__status">公民秩序主义当前正在推进北美非营利法人及首届董事会筹备。</p>
     </div>
     <div class="inst4-document">
       <div class="inst4-document__head">

@@ -966,6 +966,9 @@ assert(
     visiblePageText(workHtml).includes(
       "承担法律、财务、人员与长期政治责任的正式组织",
     ) &&
+    visiblePageText(workHtml).includes(
+      "公民秩序主义当前正在推进北美非营利法人及首届董事会筹备。",
+    ) &&
     workHtml.includes("OFFICIAL DOCUMENT") &&
     workHtml.includes("CO—2026—002") &&
     workHtml.includes("2026 · PDF · 22 PAGES") &&
