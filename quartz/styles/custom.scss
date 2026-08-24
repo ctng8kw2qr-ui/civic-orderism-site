@@ -8567,6 +8567,15 @@ body[data-slug="index"] article {
   transition: color 180ms ease;
 }
 
+.inst4-document__summary {
+  max-width: 24rem;
+  margin-top: 1.25rem;
+  color: var(--inst4-gray);
+  font-size: 0.88rem;
+  font-weight: 460;
+  line-height: 1.7;
+}
+
 /* Bottom: metadata + thin rule + action, anchored as a bottom zone */
 .inst4-document__foot {
   margin-top: auto;
@@ -8598,6 +8607,8 @@ body[data-slug="index"] article {
   display: inline-flex;
   gap: 0.5rem;
   align-items: baseline;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--inst4-line);
   color: var(--inst4-ink);
   font-size: 1rem;
   font-weight: 620;
@@ -8613,6 +8624,7 @@ body[data-slug="index"] article {
 
 .inst4-document:hover .inst4-document__cta a,
 .inst4-document:focus-within .inst4-document__cta a {
+  border-color: var(--inst4-accent);
   color: var(--inst4-accent);
 }
 

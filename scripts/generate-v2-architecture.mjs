@@ -1102,7 +1102,7 @@ writeContent(
       <p class="inst4-eyebrow">CURRENT WORK</p>
       <h2 class="inst4-work__title">建立一个能够承接政治信任的组织</h2>
       <p class="inst4-work__judgment">旧政治秩序需要一个具备政治信誉、责任能力和承接能力的新组织，才能建立真正的沟通与信任。</p>
-      <p class="inst4-work__text">政治转轨不能只依靠观点。只有组织，才能与组织建立稳定的政治信任。因此需要建立能够承担法律、财务、人员与长期政治责任的正式组织。公民秩序主义当前正在推进北美非营利法人及首届董事会筹备。</p>
+      <p class="inst4-work__text">政治转型不能只依靠观点。只有组织，才能与组织建立稳定的政治信任。因此需要建立能够承担法律、财务、人员与长期政治责任的正式组织。</p>
     </div>
     <div class="inst4-document">
       <div class="inst4-document__head">
@@ -1112,6 +1112,7 @@ writeContent(
       <div class="inst4-document__cover">
         <p class="inst4-document__org">公民秩序主义</p>
         <h3 class="inst4-document__title"><a href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">北美非营利法人及<br>首届董事会筹备说明</a></h3>
+        <p class="inst4-document__summary">当前组织建设的正式筹备文件</p>
       </div>
       <div class="inst4-document__foot">
         <p class="inst4-document__meta">2026 · PDF · 22 PAGES</p>

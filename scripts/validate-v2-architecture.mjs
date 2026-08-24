@@ -961,7 +961,7 @@ assert(
       "旧政治秩序需要一个具备政治信誉、责任能力和承接能力的新组织，才能建立真正的沟通与信任。",
     ) &&
     visiblePageText(workHtml).includes(
-      "只有组织，才能与组织建立稳定的政治信任。",
+      "政治转型不能只依靠观点。只有组织，才能与组织建立稳定的政治信任。",
     ) &&
     visiblePageText(workHtml).includes(
       "承担法律、财务、人员与长期政治责任的正式组织",
@@ -973,6 +973,7 @@ assert(
       "公民秩序主义 北美非营利法人及 首届董事会筹备说明",
     ) &&
     workHtml.includes("阅读正式文件") &&
+    visiblePageText(workHtml).includes("当前组织建设的正式筹备文件") &&
     workHtml.includes("civic-orderism-founding-board-brief-2026.pdf") &&
     !workHtml.includes("<img"),
   "首页当前工作（CURRENT WORK）或正式文件焦点不符合要求",
