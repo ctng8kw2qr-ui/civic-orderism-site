@@ -7,6 +7,31 @@ const isArticleContentPage = (page: QuartzComponentProps) => {
   return isArticleSlug(page.fileData.slug ?? "");
 };
 
+// All formal articles use the approved Institutional Article System.
+// The Prototype opt-in (frontmatter.articleType) is now a formal Page Type
+// rule: any article page routes into the same institutional shell.
+const isInstitutionalArticle = (page: QuartzComponentProps) => {
+  return isArticleContentPage(page);
+};
+
+const isNotInstitutionalArticle = (page: QuartzComponentProps) => {
+  return !isInstitutionalArticle(page);
+};
+
+// Institutional template shows a TOC only when the article is long enough.
+// Rule: at least 8 H2 headings. Quartz's toc depth is normalized relative
+// depth (H2 → 0, H3 → 1), so the threshold counts depth-0 entries.
+const institutionalArticleToc = (page: QuartzComponentProps) => {
+  if (!isInstitutionalArticle(page)) return false;
+  const toc = page.fileData.toc ?? [];
+  return toc.filter((entry) => entry.depth === 0).length >= 8;
+};
+
+const articleToc = (page: QuartzComponentProps) => {
+  if (isInstitutionalArticle(page)) return institutionalArticleToc(page);
+  return isArticleContentPage(page);
+};
+
 const institutionalPageSlugs = new Set([
   "start-here",
   "preparation",
@@ -52,14 +77,18 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [
     Component.ArticleSeriesNavigation(),
     Component.ArticleReadingFooter(),
-    Component.ArticleEndingCta(),
+    Component.ConditionalRender({
+      component: Component.ArticleEndingCta(),
+      condition: isNotInstitutionalArticle,
+    }),
     Component.ConditionalRender({
       component: Component.ManualModals(),
       condition: () => false,
     }),
     Component.ConditionalRender({
       component: Component.ArticleAttribution(),
-      condition: isArticleContentPage,
+      condition: (page) =>
+        isArticleContentPage(page) && !isInstitutionalArticle(page),
     }),
     Component.Search(),
   ],
@@ -91,30 +120,48 @@ export const sharedPageComponents: SharedLayout = {
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
     Component.ConditionalRender({
+      component: Component.ArticleInstitutionalHeader(),
+      condition: isInstitutionalArticle,
+    }),
+    Component.ConditionalRender({
+      component: Component.ArticleInstitutionalCoreJudgment(),
+      condition: isInstitutionalArticle,
+    }),
+    Component.ConditionalRender({
       component: Component.Breadcrumbs({ rootName: "首页", spacerSymbol: "/" }),
-      condition: (page) => page.fileData.slug !== "index",
+      condition: (page) =>
+        page.fileData.slug !== "index" && !isInstitutionalArticle(page),
     }),
     Component.ConditionalRender({
       component: Component.ArticleHeader(),
-      condition: isArticleContentPage,
+      condition: (page) =>
+        isArticleContentPage(page) && !isInstitutionalArticle(page),
     }),
     Component.ConditionalRender({
       component: Component.ContentMeta(),
-      condition: shouldShowContentMeta,
+      condition: (page) =>
+        shouldShowContentMeta(page) && !isInstitutionalArticle(page),
     }),
-    Component.TagList(),
+    Component.ConditionalRender({
+      component: Component.TagList(),
+      condition: isNotInstitutionalArticle,
+    }),
     Component.ArticleSeriesNavigation(),
-    Component.ArticleCoreJudgmentCard(),
+    Component.ConditionalRender({
+      component: Component.ArticleCoreJudgmentCard(),
+      condition: isNotInstitutionalArticle,
+    }),
     Component.ConditionalRender({
       component: Component.TableOfContents(),
-      condition: isArticleContentPage,
+      condition: articleToc,
     }),
   ],
   left: [],
   right: [
     Component.ConditionalRender({
       component: Component.DesktopOnly(Component.TableOfContents()),
-      condition: isArticleContentPage,
+      condition: (page) =>
+        !isInstitutionalArticle(page) && isArticleContentPage(page),
     }),
   ],
 };
