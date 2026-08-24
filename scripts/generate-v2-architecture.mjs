@@ -1101,9 +1101,26 @@ writeContent(
     <div class="inst4-work__intro">
       <p class="inst4-eyebrow">CURRENT WORK</p>
       <h2 class="inst4-work__title">建立一个能够承接政治信任的组织</h2>
-      <p class="inst4-work__judgment">旧政治秩序需要一个具备政治信誉、责任能力和承接能力的新组织，才能建立真正的沟通与信任。</p>
-      <p class="inst4-work__text">政治转型不能只依靠观点。只有组织，才能与组织建立稳定的政治信任。因此需要建立能够承担法律、财务、人员与长期政治责任的正式组织。</p>
-      <p class="inst4-work__status">公民秩序主义当前正在推进北美非营利法人及首届董事会筹备。</p>
+      <div class="inst4-work__points">
+        <article class="inst4-work__point">
+          <p class="inst4-work__number">01</p>
+          <div class="inst4-work__point-body">
+            <h3 class="inst4-work__point-title">旧政治秩序需要一个可信的新组织</h3>
+            <p class="inst4-work__point-text">只有具备政治信誉、责任能力和承接能力，新的政治力量才能与旧政治秩序建立真正的沟通与信任。</p>
+          </div>
+        </article>
+        <article class="inst4-work__point">
+          <p class="inst4-work__number">02</p>
+          <div class="inst4-work__point-body">
+            <h3 class="inst4-work__point-title">政治转型不能只依靠观点</h3>
+            <p class="inst4-work__point-text">组织必须能够承担法律、财务、人员与长期政治责任，才能成为稳定的政治沟通主体。</p>
+          </div>
+        </article>
+      </div>
+      <div class="inst4-work__initiative">
+        <p class="inst4-work__initiative-label">CURRENT INITIATIVE</p>
+        <h3 class="inst4-work__initiative-title">北美非营利法人及首届董事会筹备</h3>
+      </div>
     </div>
     <div class="inst4-document">
       <div class="inst4-document__head">

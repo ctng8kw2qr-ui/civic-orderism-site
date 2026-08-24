@@ -958,15 +958,20 @@ assert(
   workHtml.includes("CURRENT WORK") &&
     visiblePageText(workHtml).includes("建立一个能够承接政治信任的组织") &&
     visiblePageText(workHtml).includes(
-      "旧政治秩序需要一个具备政治信誉、责任能力和承接能力的新组织，才能建立真正的沟通与信任。",
+      "旧政治秩序需要一个可信的新组织",
     ) &&
     visiblePageText(workHtml).includes(
-      "政治转型不能只依靠观点。只有组织，才能与组织建立稳定的政治信任。",
+      "只有具备政治信誉、责任能力和承接能力，新的政治力量才能与旧政治秩序建立真正的沟通与信任。",
     ) &&
+    visiblePageText(workHtml).includes("政治转型不能只依靠观点") &&
     visiblePageText(workHtml).includes(
-      "承担法律、财务、人员与长期政治责任的正式组织",
+      "组织必须能够承担法律、财务、人员与长期政治责任，才能成为稳定的政治沟通主体。",
     ) &&
-    visiblePageText(workHtml).includes(
+    workHtml.includes("inst4-work__number\">01") &&
+    workHtml.includes("inst4-work__number\">02") &&
+    workHtml.includes("CURRENT INITIATIVE") &&
+    visiblePageText(workHtml).includes("北美非营利法人及首届董事会筹备") &&
+    !visiblePageText(workHtml).includes(
       "公民秩序主义当前正在推进北美非营利法人及首届董事会筹备。",
     ) &&
     workHtml.includes("OFFICIAL DOCUMENT") &&

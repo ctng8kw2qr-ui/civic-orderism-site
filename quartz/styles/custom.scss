@@ -8429,7 +8429,7 @@ body[data-slug="index"] article {
 
 /* ---- SECTION 2 / CURRENT WORK ---- */
 .inst4-work {
-  padding: clamp(6rem, 11vw, 9rem) 0 clamp(4rem, 7vw, 5.5rem);
+  padding: clamp(6rem, 11vw, 9rem) 0 clamp(6rem, 9vw, 7.5rem);
   border-top: 1px solid var(--inst4-line);
 }
 
@@ -8456,33 +8456,82 @@ body[data-slug="index"] article {
   line-height: 1.25;
 }
 
-.inst4-work__text {
+.inst4-work__points {
   max-width: 720px;
-  margin-top: 1.2rem;
-  color: var(--inst4-ink-2);
-  font-size: 1.04rem;
-  font-weight: 440;
-  line-height: 1.85;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  border-top: 1px solid var(--inst4-line);
 }
 
-.inst4-work__judgment {
-  max-width: 720px;
-  margin-top: 1.6rem;
-  padding-top: 1.35rem;
+.inst4-work__point {
+  display: grid;
+  grid-template-columns: minmax(0, 3rem) minmax(0, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  align-items: start;
+  padding: clamp(1.7rem, 3vw, 2.25rem) 0;
   border-top: 1px solid var(--inst4-line-soft);
-  color: var(--inst4-ink);
-  font-size: 1.12rem;
-  font-weight: 500;
-  line-height: 1.75;
 }
 
-.inst4-work__status {
-  max-width: 720px;
+.inst4-work__point:first-child {
+  border-top: 0;
+}
+
+.inst4-work__number {
+  margin: 0;
+  color: var(--inst4-accent);
+  font-size: 0.72rem;
+  font-weight: 560;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+  font-variant-numeric: tabular-nums;
+}
+
+.inst4-work__point-body {
+  min-width: 0;
+}
+
+.inst4-work__point-title {
+  margin: 0;
+  color: var(--inst4-ink);
+  font-size: clamp(1.28rem, 2vw, 1.55rem);
+  font-weight: 540;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+}
+
+.inst4-work__point-text {
+  max-width: 620px;
   margin-top: 1rem;
   color: var(--inst4-ink-2);
-  font-size: 1.04rem;
-  font-weight: 500;
-  line-height: 1.85;
+  font-size: 1rem;
+  font-weight: 440;
+  line-height: 1.8;
+}
+
+.inst4-work__initiative {
+  max-width: 720px;
+  margin-top: clamp(2.75rem, 5vw, 3.75rem);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--inst4-line);
+}
+
+.inst4-work__initiative-label {
+  margin: 0;
+  color: var(--inst4-muted);
+  font-size: 0.66rem;
+  font-weight: 560;
+  letter-spacing: 0.16em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.inst4-work__initiative-title {
+  margin: 0.8rem 0 0;
+  color: var(--inst4-ink);
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-weight: 520;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
 }
 
 /* The official document follows the organizational rationale as a formal filing. */
@@ -8496,7 +8545,7 @@ body[data-slug="index"] article {
   column-gap: clamp(2.5rem, 5vw, 5rem);
   min-width: 0;
   min-height: 0;
-  margin-top: clamp(3.5rem, 6vw, 5rem);
+  margin-top: clamp(1.75rem, 3vw, 2.5rem);
   padding: clamp(2rem, 3.5vw, 2.8rem);
   border: 0;
   border-top: 2px solid var(--inst4-accent);
@@ -8559,7 +8608,7 @@ body[data-slug="index"] article {
   margin: 0.9rem 0 0;
   max-width: 19em;
   color: var(--inst4-ink);
-  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  font-size: clamp(2rem, 3.3vw, 2.8rem);
   font-weight: 560;
   letter-spacing: -0.02em;
   line-height: 1.36;
@@ -8893,7 +8942,7 @@ body[data-slug="index"] article {
   }
 
   .inst4-work {
-    padding: clamp(3.75rem, 14vw, 5rem) 0 clamp(3.25rem, 12vw, 4.25rem);
+    padding: clamp(3.75rem, 14vw, 5rem) 0 clamp(4.5rem, 18vw, 5.5rem);
   }
 
   .inst4-research {
@@ -8905,13 +8954,45 @@ body[data-slug="index"] article {
     font-size: clamp(1.9rem, 8vw, 2.3rem);
   }
 
+  .inst4-work__points {
+    margin-top: 2.5rem;
+  }
+
+  .inst4-work__point {
+    display: block;
+    padding: 1.65rem 0 1.8rem;
+  }
+
+  .inst4-work__point-title {
+    margin-top: 0.7rem;
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+
+  .inst4-work__point-text {
+    margin-top: 0.75rem;
+    font-size: 0.98rem;
+    line-height: 1.78;
+  }
+
+  .inst4-work__initiative {
+    margin-top: 2.75rem;
+    padding-top: 1.35rem;
+  }
+
+  .inst4-work__initiative-title {
+    margin-top: 0.7rem;
+    font-size: 1.35rem;
+    line-height: 1.5;
+  }
+
   .inst4-document {
     grid-template-areas:
       "head"
       "cover"
       "foot";
     grid-template-columns: minmax(0, 1fr);
-    margin-top: 2.5rem;
+    margin-top: 1.75rem;
     padding: 1.6rem 1.3rem;
   }
 
