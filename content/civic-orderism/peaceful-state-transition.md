@@ -4,6 +4,7 @@ date: 2026-07-19
 updated: 2026-07-19
 category: 公民秩序主义
 section: 价值与路线
+articleType: institutional
 tags:
   - 公民秩序主义
   - 国家转轨

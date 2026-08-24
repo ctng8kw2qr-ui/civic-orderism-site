@@ -1,0 +1,675 @@
+@use "./variables.scss" as *;
+
+/* ================================================================
+   Phase 2C — Institutional Article Reading System (Prototype)
+   Applied only to pages tagged `articleType: institutional` in
+   frontmatter (body[data-article-type="institutional"]).
+
+   Design principles:
+   - Same institutional design language as Homepage / Research program.
+   - Reading-first density: narrower measure, editorial rhythm, no cards.
+   - Every component below is reusable; the attribute gate is the only
+     thing that scopes this layer to the 3 Prototype articles today.
+   ================================================================ */
+body[data-article-type="institutional"] {
+  /* Reading rhythm overrides (relative to the shared article token set):
+     slightly more paragraph air to reduce fragmented short-paragraph feel,
+     H2 kept as a clear section turn without landing-page whitespace. */
+  --article-paragraph-spacing: 1.32em;
+  --article-h2-spacing: 2.4em;
+  --article-h3-spacing: 1.95em;
+  --article-block-spacing: 1.9em;
+
+  /* ---- Research Context / breadcrumb (restrained) ---- */
+  & .article-inst {
+    display: block;
+    padding-top: 1.6rem;
+  }
+
+  & .article-inst__context {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.5rem;
+    color: var(--inst-muted);
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  & .article-inst__context-link {
+    color: var(--inst-muted);
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  & .article-inst__context-link:hover {
+    color: var(--inst-accent);
+    text-decoration: underline;
+    text-underline-offset: 0.22em;
+  }
+
+  & .article-inst__context-sep {
+    color: var(--inst-muted);
+    opacity: 0.55;
+  }
+
+  & .article-inst__context-static {
+    color: var(--inst-muted);
+    font-weight: 500;
+  }
+
+  & .article-inst__context-current {
+    color: var(--inst-gray);
+    font-weight: 550;
+  }
+
+  /* ---- Program label ---- */
+  & .article-inst__program {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 2.4rem 0 0;
+    color: var(--inst-gray);
+    font-size: 0.76rem;
+    font-weight: 550;
+  }
+
+  & .article-inst__program-label {
+    color: var(--inst-accent);
+    font-weight: 650;
+    letter-spacing: 0.16em;
+  }
+
+  & .article-inst__program-sep {
+    color: var(--inst-muted);
+  }
+
+  /* ---- Article title ---- */
+  & .article-inst__title {
+    max-width: 21em;
+    margin: 0.95rem 0 0;
+    color: var(--inst-ink);
+    font-size: clamp(2.4rem, 3.4vw, 3.1rem);
+    font-weight: 620;
+    letter-spacing: -0.024em;
+    line-height: 1.24;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  & .article-inst__deck {
+    max-width: 42em;
+    margin: 1.2rem 0 0;
+    color: var(--inst-ink-2);
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.72;
+  }
+
+  /* ---- Metadata ---- */
+  & .article-inst__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 0.55rem;
+    margin: 1.4rem 0 0;
+    color: var(--inst-muted);
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  & .article-inst__meta > * + *::before {
+    content: "·";
+    margin-right: 0.55rem;
+    color: var(--inst-muted);
+    opacity: 0.6;
+  }
+
+  /* ================================================================
+     Core Judgment — editorial statement, not a UI widget.
+     Article title > Core Judgment text > body.
+     ================================================================ */
+  & .article-inst-judgment {
+    margin-top: 2.9rem;
+  }
+
+  & .article-inst-judgment__label {
+    color: var(--inst-accent);
+    font-size: 0.76rem;
+    font-weight: 650;
+    letter-spacing: 0.16em;
+    line-height: 1.4;
+  }
+
+  & .article-inst-judgment__rule {
+    width: 100%;
+    height: 1px;
+    margin: 0.75rem 0 0;
+    border: 0;
+    background: color-mix(in srgb, var(--inst-accent) 38%, var(--inst-rule));
+  }
+
+  & .article-inst-judgment__statements {
+    margin-top: 1.15rem;
+  }
+
+  & .article-inst-judgment__text {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin: 0;
+    color: var(--inst-ink-2);
+    font-size: 1.1rem;
+    font-weight: 520;
+    line-height: 1.8;
+    text-wrap: pretty;
+  }
+
+  & .article-inst-judgment__number {
+    min-width: 2ch;
+    color: var(--inst-muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+  }
+
+  & .article-inst-judgment__text + .article-inst-judgment__text {
+    margin-top: 0.72rem;
+  }
+  /* ================================================================
+     Table of contents (Quartz component, institutional styling)
+     - Folded entry lives below the Core Judgment.
+     - Desktop keeps a minimal sticky rail that shows H2 only.
+     ================================================================ */
+  & .toc-article {
+    margin-top: 2.7rem;
+    margin-bottom: 0;
+    border-top: 1px solid var(--inst-rule-soft);
+    padding-top: 1.1rem;
+  }
+
+  & .toc-article .toc-header {
+    padding: 0;
+    color: var(--inst-gray);
+    font-size: 0.86rem;
+    font-weight: 600;
+  }
+
+  & .toc-article .toc-header h3 {
+    margin: 0;
+    color: inherit;
+    font-size: inherit;
+    font-weight: 600;
+  }
+
+  & .toc-article .toc-content {
+    margin-top: 0.7rem;
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+
+  & .toc-article .toc-content li {
+    margin: 0;
+  }
+
+  & .toc-article .toc-content a {
+    padding: 0.42rem 0;
+    color: var(--inst-gray);
+    font-size: 0.86rem;
+    font-weight: 500;
+    line-height: 1.5;
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--inst-rule-soft) 55%, transparent);
+  }
+
+  & .toc-article .toc-content a:hover {
+    color: var(--inst-accent);
+  }
+
+  /* H2-only outline: hide deeper heading levels for the folded TOC. */
+  & .toc-article .toc-content li:not(.depth-0) {
+    display: none;
+  }
+
+  /* Desktop sticky rail */
+  & .toc-desktop {
+    position: sticky;
+    top: 1.6rem;
+    max-height: calc(100vh - 3.2rem);
+    overflow-y: auto;
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+
+  & .toc-desktop .toc-header {
+    display: none;
+  }
+
+  & .toc-desktop .toc-content {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  & .toc-desktop .toc-content li {
+    margin: 0;
+  }
+
+  & .toc-desktop .toc-content a {
+    position: relative;
+    display: block;
+    padding: 0.42rem 0 0.42rem 0.9rem;
+    color: var(--inst-muted);
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+
+  & .toc-desktop .toc-content a:hover {
+    color: var(--inst-ink);
+  }
+
+  & .toc-desktop .toc-content a::before {
+    content: "";
+    position: absolute;
+    inset: 0.4rem auto 0.4rem 0;
+    width: 2px;
+    border-radius: 2px;
+    background: transparent;
+  }
+
+  & .toc-desktop .toc-content a.active,
+  & .toc-desktop .toc-content a.in-view {
+    color: var(--inst-ink);
+    font-weight: 600;
+  }
+
+  & .toc-desktop .toc-content a.active::before,
+  & .toc-desktop .toc-content a.in-view::before {
+    background: var(--inst-accent);
+  }
+
+  & .toc-desktop .toc-content li:not(.depth-0) {
+    display: none;
+  }
+
+  /* ================================================================
+     Key Sentence — the author's own pivotal statement.
+     Editorial Emphasis: fine rule + slightly larger/semibold text +
+     generous vertical air. The「重点句」label is deliberately quiet.
+     ================================================================ */
+  & .article-content blockquote.key-sentence {
+    margin: 3.2em 0;
+    padding: 0.15em 0 0.15em 1.4em;
+    border: 0;
+    border-left: 2px solid
+      color-mix(in srgb, var(--inst-accent) 50%, var(--inst-rule));
+    background: none;
+  }
+
+  & .article-content blockquote.key-sentence > :first-child {
+    margin-top: 0;
+  }
+
+  & .article-content blockquote.key-sentence > :last-child {
+    margin-bottom: 0;
+  }
+
+  & .article-content blockquote.key-sentence .key-sentence__label {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: var(--inst-muted);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    line-height: 1.4;
+  }
+
+  & .article-content blockquote.key-sentence .key-sentence__body {
+    margin: 0;
+    color: var(--inst-ink);
+    font-size: 1.07em;
+    line-height: 1.9;
+    font-weight: 540;
+    text-wrap: pretty;
+  }
+
+  /* `> [!key-point]` callouts carry the same「重点句」semantics.
+     Same editorial Key Sentence treatment, quiet label. */
+  & .article-content blockquote.callout.key-point {
+    box-sizing: border-box;
+    margin: 3.2em 0;
+    padding: 0 0 0 1.4em;
+    border: 0;
+    border-left: 2px solid
+      color-mix(in srgb, var(--inst-accent) 50%, var(--inst-rule));
+    border-radius: 0;
+    background: none;
+    overflow: visible;
+  }
+
+  & .article-content blockquote.callout.key-point .callout-title {
+    gap: 0.5rem;
+    padding: 0;
+    color: var(--inst-muted);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+  }
+
+  & .article-content blockquote.callout.key-point .callout-title .callout-icon,
+  & .article-content blockquote.callout.key-point .callout-title .fold-callout-icon {
+    display: none;
+  }
+
+  & .article-content blockquote.callout.key-point .callout-title-inner p {
+    margin: 0;
+    color: var(--inst-muted);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+  }
+
+  & .article-content blockquote.callout.key-point .callout-content {
+    display: block;
+    overflow: visible;
+  }
+
+  & .article-content blockquote.callout.key-point .callout-content p {
+    margin: 0.6rem 0 0;
+    color: var(--inst-ink);
+    font-size: 1.07em;
+    line-height: 1.9;
+    font-weight: 540;
+  }
+
+  & .article-content blockquote.callout.key-point .callout-content > :last-child {
+    margin-bottom: 0;
+  }
+
+  /* ================================================================
+     Blockquote — genuine quoted / external text.
+     Deliberately different from Key Sentence: body-near size, weaker
+     color, subtle indent, thin quiet rule. No background block.
+     ================================================================ */
+  & .article-content blockquote:not([data-callout]):not(.key-sentence) {
+    box-sizing: border-box;
+    margin: 2.2em 0;
+    padding: 0.1em 0 0.1em 1.15em;
+    border: 0;
+    border-left: 2px solid
+      color-mix(in srgb, var(--inst-rule) 70%, transparent);
+    background: none;
+    color: var(--inst-gray);
+    font-size: 0.97em;
+    line-height: 1.82;
+  }
+
+  & .article-content blockquote:not([data-callout]):not(.key-sentence) > :first-child {
+    margin-top: 0;
+  }
+
+  & .article-content blockquote:not([data-callout]):not(.key-sentence) > :last-child {
+    margin-bottom: 0;
+  }
+
+  /* ================================================================
+     Reading rhythm — stable progression across paragraphs, section
+     turns and pivotal statements. Small corrections only.
+     ================================================================ */
+  & .article-content hr {
+    margin: 2.2em 0;
+  }
+
+  /* ================================================================
+     Related Research — editorial rows (01 · title →), not cards.
+     ================================================================ */
+  & .article-continuation__grid,
+  & .article-continuation__grid--compact,
+  & .article-continuation__grid--route {
+    display: block;
+    max-width: 44rem;
+    counter-reset: inst-continue;
+  }
+
+  & .article-continuation__related > h3,
+  & .article-continuation__direction > h3 {
+    margin: 0 0 0.9rem;
+    color: var(--inst-gray);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  & .article-continuation-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 1.1rem;
+    min-height: 0;
+    padding: 1.12rem 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    counter-increment: inst-continue;
+  }
+
+  & .article-continuation-card + .article-continuation-card {
+    border-top: 1px solid var(--inst-rule-soft);
+  }
+
+  & .article-continuation__direction + .article-continuation__direction
+    .article-continuation-card:first-child {
+    border-top: 1px solid var(--inst-rule-soft);
+  }
+
+  & .article-continuation-card:hover {
+    border: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  & .article-continuation-card::before {
+    content: counter(inst-continue, decimal-leading-zero);
+    min-width: 2.1ch;
+    color: var(--inst-muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+  }
+
+  & .article-continuation-card::after {
+    content: "→";
+    flex-shrink: 0;
+    color: var(--inst-muted);
+    font-size: 0.95rem;
+    transition: transform 160ms ease, color 160ms ease;
+  }
+
+  & .article-continuation-card:hover::after {
+    transform: translateX(4px);
+    color: var(--inst-accent);
+  }
+
+  & .article-continuation-card__eyebrow {
+    display: none;
+  }
+
+  & .article-continuation-card__title {
+    flex: 1 1 auto;
+    min-width: 0;
+    color: var(--inst-ink);
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.55;
+  }
+
+  & .article-continuation-card__summary {
+    flex: 1 1 100%;
+    min-width: 0;
+    margin-left: 0;
+    color: var(--inst-muted);
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  & .article-continuation-card:hover .article-continuation-card__title {
+    color: var(--inst-accent);
+  }
+
+  /* ================================================================
+     Research Context after article —「本文属于」, no chips, no cards.
+     ================================================================ */
+  & .article-knowledge {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.7rem;
+    margin-top: 3.6rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--inst-rule);
+  }
+
+  & .article-knowledge__group {
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+  }
+
+  & .article-knowledge__group h2 {
+    margin: 0 0 0.85rem;
+    padding: 0;
+    border: 0;
+    color: var(--inst-accent);
+    font-size: 0.76rem;
+    font-weight: 650;
+    letter-spacing: 0.16em;
+  }
+
+  & .article-knowledge__links,
+  & .article-knowledge__reading-path nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 1.5rem;
+    margin: 0;
+  }
+
+  & .article-knowledge__links a,
+  & .article-knowledge__links span,
+  & .article-knowledge__reading-path a,
+  & .article-knowledge__reading-path span {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    color: var(--inst-link);
+    font-size: 1rem;
+    font-weight: 550;
+    line-height: 1.6;
+    text-decoration: none;
+    background-image: none;
+  }
+
+  & .article-knowledge__links a:hover,
+  & .article-knowledge__reading-path a:hover {
+    color: var(--inst-accent);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  & .article-knowledge__details {
+    grid-column: 1 / -1;
+    margin-top: 0.4rem;
+    color: var(--inst-muted);
+    font-size: 0.8rem;
+  }
+
+  & .article-knowledge__details dl {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  /* ================================================================
+     Footer transition — enough air after Related Research.
+     ================================================================ */
+  & .article-cta {
+    margin-top: 4.2rem;
+  }
+
+  & .article-attribution {
+    margin-top: 1.2rem;
+  }
+}
+
+
+/* One TOC system per article. The template renders exactly one TOC instance
+   before the body; the inline script relocates it into the right rail on
+   desktop (sticky) and keeps it as the folded「本文目录」on mobile. */
+
+/* ================================================================
+   Mobile — the article must stand alone when opened directly.
+   ================================================================ */
+@media all and ($mobile) {
+  body[data-article-type="institutional"] {
+    & .article-inst {
+      padding-top: 0.9rem;
+    }
+
+    & .article-inst__program {
+      margin-top: 1.7rem;
+    }
+
+    & .article-inst__title {
+      font-size: clamp(1.9rem, 7.6vw, 2.3rem);
+      letter-spacing: -0.016em;
+      line-height: 1.28;
+    }
+
+    & .article-inst__deck {
+      margin-top: 0.95rem;
+      font-size: 1.02rem;
+      line-height: 1.68;
+    }
+
+    & .article-inst__meta {
+      margin-top: 1.1rem;
+      font-size: 0.78rem;
+    }
+
+    & .article-inst-judgment {
+      margin-top: 2.1rem;
+    }
+
+    & .article-inst-judgment__text {
+      font-size: 1.02rem;
+      line-height: 1.78;
+    }
+
+    /* Key Sentence + genuine quotes: tighter air on phones, same semantics. */
+    & .article-content blockquote.key-sentence,
+    & .article-content blockquote.callout.key-point {
+      margin: 2.5em 0;
+      padding-left: 1.1em;
+    }
+
+    & .article-content blockquote.key-sentence .key-sentence__body,
+    & .article-content blockquote.callout.key-point .callout-content p {
+      font-size: 1.04em;
+      line-height: 1.85;
+    }
+
+    & .article-content blockquote:not([data-callout]):not(.key-sentence) {
+      margin: 1.8em 0;
+      padding-left: 1em;
+      font-size: 0.96em;
+    }
+
+    & .article-knowledge__details dl {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+

@@ -4,6 +4,8 @@ import FolderContent from "./pages/FolderContent";
 import NotFound from "./pages/404";
 import ArticleTitle from "./ArticleTitle";
 import ArticleHeader from "./ArticleHeader";
+import ArticleInstitutionalHeader from "./ArticleInstitutionalHeader";
+import ArticleInstitutionalCoreJudgment from "./ArticleInstitutionalCoreJudgment";
 import Darkmode from "./Darkmode";
 import ReaderMode from "./ReaderMode";
 import Head from "./Head";
@@ -41,6 +43,8 @@ import {
 export {
   ArticleTitle,
   ArticleHeader,
+  ArticleInstitutionalHeader,
+  ArticleInstitutionalCoreJudgment,
   Content,
   TagContent,
   FolderContent,

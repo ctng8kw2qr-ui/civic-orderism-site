@@ -75,7 +75,7 @@ const PrimaryNavigation: QuartzComponent = ({
 
   return (
     <nav class="inst4-nav" aria-label="主要导航">
-      <a class="inst4-nav__brand" href="/" aria-label="Civic Orderism 首页">
+      <a class="inst4-nav__brand" href="/" aria-label="返回公民秩序主义首页">
         Civic Orderism
       </a>
       <button

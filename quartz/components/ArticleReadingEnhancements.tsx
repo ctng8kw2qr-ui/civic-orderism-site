@@ -280,6 +280,49 @@ function byOldestFirst(a: QuartzPluginData, b: QuartzPluginData) {
   return (a.frontmatter?.title ?? "").localeCompare(b.frontmatter?.title ?? "");
 }
 
+type InstitutionalArticleType = "model" | "route" | "topic";
+
+function institutionalArticleType(
+  fileData: QuartzPluginData,
+): InstitutionalArticleType | undefined {
+  const fm = (fileData.frontmatter ?? {}) as Record<string, unknown>;
+  const category = typeof fm.category === "string" ? fm.category : "";
+  const section = typeof fm.section === "string" ? fm.section : "";
+  if (section === "价值与路线" || category === "公民秩序主义") return "route";
+  if (coreModelConceptForArticle(fileData, knowledgeFor(fileData))) {
+    return "model";
+  }
+  return "topic";
+}
+
+function recommendationSummary(page: QuartzPluginData): string {
+  const value = page.frontmatter?.description ?? page.frontmatter?.summary;
+  if (typeof value !== "string" || value.trim() === "") return "";
+  const clean = value.trim().replace(/\s+/g, " ");
+  return clean.length > 54 ? `${clean.slice(0, 54)}…` : clean;
+}
+
+const RELATED_SECTION_HEADINGS: Record<
+  Exclude<InstitutionalArticleType, undefined>,
+  string
+> = {
+  model: "继续理解这个模型",
+  route: "继续理解这条路线",
+  topic: "继续研究这一问题",
+};
+
+// Object type precision from the taxonomy layer (scripts/generate-v2-architecture.mjs).
+// ROUTE / PRINCIPLE / TOPIC objects are not Concepts and must not appear in the
+// article「核心概念」group; CONCEPT / SUPPORTING keep their slot.
+const CONCEPT_TYPES: Record<string, string> = {
+  "political-route": "ROUTE",
+  "nonviolent-transition": "PRINCIPLE",
+  "ruling-techniques": "TOPIC",
+  "crisis-management": "SUPPORTING",
+};
+const NON_CONCEPT_TYPES = new Set(["ROUTE", "PRINCIPLE", "TOPIC"]);
+
+
 function byRecommendationScore(
   current: QuartzPluginData,
   currentSeries?: string,
@@ -333,6 +376,15 @@ export const KnowledgeContext: QuartzComponent = ({
     .map((slug) => topicBySlug.get(slug))
     .filter(Boolean);
   const concepts = conceptsForArticle(fileData, knowledge);
+  const institutionalArticle = true;
+  const visibleConcepts = institutionalArticle
+    ? concepts.filter(
+        (concept) =>
+          !NON_CONCEPT_TYPES.has(
+            CONCEPT_TYPES[concept?.slug ?? ""] ?? "CONCEPT",
+          ),
+      )
+    : concepts;
 
   return (
     <section class="article-knowledge" aria-label="文章知识关联">
@@ -356,15 +408,16 @@ export const KnowledgeContext: QuartzComponent = ({
       </div>
       <div class="article-knowledge__group">
         <h2>核心概念</h2>
-        {concepts.length ? (
+        {visibleConcepts.length ? (
           <p class="article-knowledge__links">
-            {concepts.map((concept) => (
+            {visibleConcepts.map((concept) => (
               <a
                 class={`article-knowledge__concept article-knowledge__concept--${getConceptPublicationStatus(concept!)}`}
                 href={`/concepts/${concept!.slug}`}
               >
                 {concept!.name}
-                {getConceptPublicationStatus(concept!) === "reviewing" ? (
+                {!institutionalArticle &&
+                getConceptPublicationStatus(concept!) === "reviewing" ? (
                   <small>研究概念</small>
                 ) : null}
               </a>
@@ -374,27 +427,29 @@ export const KnowledgeContext: QuartzComponent = ({
           <p>暂无关联核心概念</p>
         )}
       </div>
-      <details class="article-knowledge__details">
-        <summary>文章信息</summary>
-        <dl>
-          <div>
-            <dt>首次发布</dt>
-            <dd>{knowledge.date || "待补充"}</dd>
-          </div>
-          <div>
-            <dt>最后更新</dt>
-            <dd>{knowledge.updated || knowledge.date || "待补充"}</dd>
-          </div>
-          <div>
-            <dt>所属栏目</dt>
-            <dd>{knowledge.section}</dd>
-          </div>
-          <div>
-            <dt>阅读层级</dt>
-            <dd>{knowledge.readingLevel}</dd>
-          </div>
-        </dl>
-      </details>
+      {institutionalArticle ? null : (
+        <details class="article-knowledge__details">
+          <summary>文章信息</summary>
+          <dl>
+            <div>
+              <dt>首次发布</dt>
+              <dd>{knowledge.date || "待补充"}</dd>
+            </div>
+            <div>
+              <dt>最后更新</dt>
+              <dd>{knowledge.updated || knowledge.date || "待补充"}</dd>
+            </div>
+            <div>
+              <dt>所属栏目</dt>
+              <dd>{knowledge.section}</dd>
+            </div>
+            <div>
+              <dt>阅读层级</dt>
+              <dd>{knowledge.readingLevel}</dd>
+            </div>
+          </dl>
+        </details>
+      )}
     </section>
   );
 };
@@ -489,6 +544,12 @@ export const ContinueReading: QuartzComponent = ({
   allFiles,
 }: QuartzComponentProps) => {
   if (!isArticlePage(fileData)) return null;
+  const institutionalArticle = true;
+  const headingText = institutionalArticle ? "继续研究" : "继续阅读";
+  const institutionalType = institutionalArticleType(fileData);
+  const relatedSectionHeading = institutionalType
+    ? RELATED_SECTION_HEADINGS[institutionalType]
+    : undefined;
 
   const currentSeries = getSeries(fileData.frontmatter?.series);
   const manualRelatedList = manualRelatedSlugList(fileData);
@@ -630,8 +691,63 @@ export const ContinueReading: QuartzComponent = ({
           if (!page?.slug) return false;
           return !usedCoreModelArticles.has(page.slug);
         })
-        .slice(0, Math.max(0, 4 - coreModelRecommendations.length))
+        .slice(
+          0,
+          Math.max(
+            0,
+            (institutionalArticle ? 3 : 4) -
+              coreModelRecommendations.length,
+          ),
+        )
     : [];
+
+  /* Political Route articles keep a route-shaped recommendation set:
+     route overviews first, then same-section route articles — never the
+     analytic model cluster of another research program. */
+  const routeArticleRecommendations =
+    institutionalType === "route"
+      ? eligibleArticles
+          .filter((file) => file.slug !== fileData.slug)
+          .filter((file) => {
+            const fm = (file.frontmatter ?? {}) as Record<string, unknown>;
+            const category =
+              typeof fm.category === "string" ? fm.category : "";
+            const section = typeof fm.section === "string" ? fm.section : "";
+            return (
+              CORE_MODEL_ROUTE_SLUGS.includes(file.slug ?? "") ||
+              section === "价值与路线" ||
+              category === "公民秩序主义"
+            );
+          })
+          .sort((a, b) => {
+            const aRoute = CORE_MODEL_ROUTE_SLUGS.includes(a.slug ?? "")
+              ? 1
+              : 0;
+            const bRoute = CORE_MODEL_ROUTE_SLUGS.includes(b.slug ?? "")
+              ? 1
+              : 0;
+            if (aRoute !== bRoute) return bRoute - aRoute;
+            return byRecommendationScore(
+              fileData,
+              currentSeries,
+              manualRelated,
+              adjacentSequenceSlugs,
+            )(a, b);
+          })
+          .slice(0, 3)
+      : [];
+
+  // Single source of truth for the whole section: if no valid related
+  // article survives filtering, the entire Related Research component —
+  // heading, rows, dividers, spacing — is absent from the DOM.
+  const hasValidRelated =
+    institutionalType === "route"
+      ? routeArticleRecommendations.length > 0
+      : institutionalType === "model"
+        ? coreModelRecommendations.length > 0 ||
+          routeRecommendations.length > 0
+        : recommendations.length > 0;
+  if (!hasValidRelated) return null;
 
   const recommendationCard = (page: QuartzPluginData, label?: string) => (
     <a
@@ -645,8 +761,36 @@ export const ContinueReading: QuartzComponent = ({
       <span class="article-continuation-card__title">
         {page.frontmatter?.title}
       </span>
+      {institutionalArticle ? (
+        <span class="article-continuation-card__summary">
+          {recommendationSummary(page)}
+        </span>
+      ) : null}
     </a>
   );
+
+  /* Political Route articles keep a route-shaped recommendation set:
+     route overviews first, then same-section route articles — never the
+     analytic model cluster of another research program. */
+  if (institutionalType === "route") {
+    return (
+      <section
+        class="article-continuation"
+        aria-label="继续阅读"
+        data-article-continuation="route"
+      >
+        <h2 class="article-continuation__heading">{headingText}</h2>
+        <div class="article-continuation__related">
+          <h3>{relatedSectionHeading}</h3>
+          <div class="article-continuation__grid article-continuation__grid--route">
+            {routeArticleRecommendations.map((page) =>
+              recommendationCard(page, "政治路线"),
+            )}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   if (
     coreModel &&
@@ -658,10 +802,10 @@ export const ContinueReading: QuartzComponent = ({
         aria-label="继续阅读"
         data-article-continuation="core-model"
       >
-        <h2 class="article-continuation__heading">继续阅读</h2>
+        <h2 class="article-continuation__heading">{headingText}</h2>
         {coreModelRecommendations.length ? (
           <div class="article-continuation__direction">
-            <h3>继续理解这个模型</h3>
+            <h3>{relatedSectionHeading ?? "继续理解这个模型"}</h3>
             <div class="article-continuation__grid article-continuation__grid--compact">
               {coreModelRecommendations.map(({ page, label }) =>
                 recommendationCard(page, label),
@@ -691,10 +835,10 @@ export const ContinueReading: QuartzComponent = ({
       aria-label="继续阅读"
       data-article-continuation="standard"
     >
-      <h2 class="article-continuation__heading">继续阅读</h2>
+      <h2 class="article-continuation__heading">{headingText}</h2>
       {recommendations.length ? (
         <div class="article-continuation__related">
-          <h3>相关文章</h3>
+          <h3>{relatedSectionHeading ?? "相关文章"}</h3>
           <div class="article-continuation__grid">
             {recommendations.map((page) => recommendationCard(page))}
           </div>
@@ -714,10 +858,21 @@ export const ContinueReading: QuartzComponent = ({
 export const ReadingFooter: QuartzComponent = (props: QuartzComponentProps) => {
   if (!isArticlePage(props.fileData)) return null;
 
+  const institutionalArticle = true;
+
   return (
     <div class="article-reading-footer" data-article-reading-footer="true">
-      <ContinueReading {...props} />
-      <KnowledgeContext {...props} />
+      {institutionalArticle ? (
+        <>
+          <KnowledgeContext {...props} />
+          <ContinueReading {...props} />
+        </>
+      ) : (
+        <>
+          <ContinueReading {...props} />
+          <KnowledgeContext {...props} />
+        </>
+      )}
     </div>
   );
 };

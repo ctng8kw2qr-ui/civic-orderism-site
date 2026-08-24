@@ -153,10 +153,19 @@ function createRouter() {
       if (!url || event.ctrlKey || event.metaKey) return
       event.preventDefault()
 
-      if (isSamePage(url) && url.hash) {
-        const el = document.getElementById(decodeURIComponent(url.hash.substring(1)))
-        el?.scrollIntoView()
-        history.pushState({}, "", url)
+      if (isSamePage(url)) {
+        if (url.hash) {
+          const el = document.getElementById(
+            decodeURIComponent(url.hash.substring(1)),
+          )
+          el?.scrollIntoView()
+          history.pushState({}, "", url)
+        } else {
+          // Same-page navigation (e.g. clicking the brand while already on
+          // the home page) should scroll to top instead of re-fetching and
+          // re-morphing the whole body, which can flash a blank page.
+          window.scrollTo({ top: 0 })
+        }
         return
       }
 

@@ -1,6 +1,7 @@
 @use "./base.scss";
 @use "./tokens.scss";
 @use "./articleTypography.scss";
+@use "./institutionalArticle.scss";
 
 body {
   letter-spacing: 0;
@@ -8440,7 +8441,7 @@ body[data-slug="index"] article {
 }
 
 .inst4-work__intro {
-  grid-column: 1 / span 5;
+  grid-column: 1 / span 7;
   min-width: 0;
   padding-top: 0.4rem;
 }
@@ -8464,48 +8465,77 @@ body[data-slug="index"] article {
   line-height: 1.85;
 }
 
-/* The single official document focus — a publication cover, not a download card. */
+/* The single official document focus — a publication cover, not a card. */
 .inst4-document {
-  grid-column: 7 / span 6;
+  grid-column: 8 / span 5;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   min-width: 0;
-  min-height: clamp(540px, 42vw, 680px);
-  padding: clamp(2.4rem, 4.5vw, 3.6rem);
-  border: 1px solid var(--inst4-line);
-  background: var(--inst4-bg-soft);
+  min-height: clamp(480px, 38vw, 600px);
+  padding: clamp(2rem, 3.5vw, 2.8rem);
+  border: 1px solid var(--inst4-line-soft);
+  background: color-mix(in srgb, var(--inst4-bg-soft) 38%, var(--inst4-bg));
   color: var(--inst4-ink);
   transition: border-color 200ms ease;
 }
 
 .inst4-document:hover,
 .inst4-document:focus-within {
-  border-color: var(--inst4-muted);
+  border-color: var(--inst4-line);
+}
+
+/* Top: document type + number, evenly spaced */
+.inst4-document__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .inst4-document__label {
+  margin: 0;
   color: var(--inst4-muted);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 560;
   letter-spacing: 0.16em;
   line-height: 1.5;
   text-transform: uppercase;
 }
 
-.inst4-document__label span {
-  margin: 0 0.35rem;
-  color: var(--inst4-line);
+.inst4-document__id {
+  margin: 0;
+  color: var(--inst4-muted);
+  font-size: 0.72rem;
+  font-weight: 520;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Middle: publisher + document title, positioned slightly above centre */
+.inst4-document__cover {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: clamp(3.5rem, 6vw, 5rem);
+}
+
+.inst4-document__org {
+  margin: 0;
+  color: var(--inst4-muted);
+  font-size: 0.9rem;
+  font-weight: 460;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
 }
 
 .inst4-document__title {
-  margin-top: auto;
-  padding-top: 3rem;
+  margin: 0.9rem 0 0;
   color: var(--inst4-ink);
-  font-size: clamp(1.7rem, 3vw, 2.4rem);
-  font-weight: 480;
-  letter-spacing: -0.015em;
-  line-height: 1.4;
+  font-size: clamp(1.75rem, 2.9vw, 2.4rem);
+  font-weight: 540;
+  letter-spacing: -0.02em;
+  line-height: 1.36;
 }
 
 .inst4-document__title a[role="anchor"],
@@ -8525,8 +8555,31 @@ body[data-slug="index"] article {
   transition: color 180ms ease;
 }
 
+/* Bottom: metadata + thin rule + action, anchored as a bottom zone */
+.inst4-document__foot {
+  margin-top: auto;
+  padding-top: 2.4rem;
+}
+
+.inst4-document__meta {
+  margin: 0;
+  color: var(--inst4-muted);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+}
+
+.inst4-document__divider {
+  width: 100%;
+  height: 1px;
+  margin: 1.6rem 0 0;
+  border: 0;
+  background: var(--inst4-line-soft);
+}
+
 .inst4-document__cta {
-  margin-top: 1.8rem;
+  margin-top: 1.4rem;
 }
 
 .inst4-document__cta a {
@@ -8535,7 +8588,7 @@ body[data-slug="index"] article {
   align-items: baseline;
   color: var(--inst4-ink);
   font-size: 0.95rem;
-  font-weight: 560;
+  font-weight: 580;
   line-height: 1.5;
   text-decoration: none;
   background-image: none;
@@ -8553,16 +8606,7 @@ body[data-slug="index"] article {
 
 .inst4-document:hover .inst4-document__cta a span,
 .inst4-document:focus-within .inst4-document__cta a span {
-  transform: translateX(3px);
-}
-
-.inst4-document__meta {
-  margin-top: 1.5rem;
-  color: var(--inst4-muted);
-  font-size: 0.74rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  line-height: 1.6;
+  transform: translateX(4px);
 }
 
 /* ---- SECTION 3 / RESEARCH ---- */
@@ -8804,12 +8848,24 @@ body[data-slug="index"] article {
   }
 
   .inst4-document {
-    padding: 1.8rem 1.4rem;
+    padding: 1.6rem 1.3rem;
+  }
+
+  .inst4-document__cover {
+    padding-top: 2rem;
   }
 
   .inst4-document__title {
     font-size: 1.35rem;
-    padding-top: 2.2rem;
+    line-height: 1.42;
+  }
+
+  .inst4-document__foot {
+    margin-top: 1.8rem;
+  }
+
+  .inst4-document__divider {
+    margin-top: 1.2rem;
   }
 
   .inst4-research__col-title {

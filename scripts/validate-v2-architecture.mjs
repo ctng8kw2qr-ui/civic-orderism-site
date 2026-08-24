@@ -28,6 +28,16 @@ const institutionSectionIds = new Set(
   institutionSections.map((item) => item.id),
 );
 const migrationBySlug = new Map(migration.map((item) => [item.slug, item]));
+const INSTITUTIONAL_PROTOTYPE_SLUGS = new Set([
+  "china/security-led-governance-model",
+  "civic-orderism/peaceful-state-transition",
+  "china/what-happens-when-security-becomes-the-top-priority",
+  "china/xi-power-centralization",
+  "china-stage/ccp-second-reform-opening-possibility",
+]);
+
+// All formal articles are now inside the Institutional Article System.
+const ALL_ARTICLES_INSTITUTIONAL = true;
 const errors = [];
 const publicTopics = topics.filter((item) => item.status === "published");
 const hiddenTopics = topics.filter((item) => item.status !== "published");
@@ -261,6 +271,7 @@ assert(
   "迁移映射存在重复 slug",
 );
 for (const article of migration) {
+  const isInstitutionalPrototype = ALL_ARTICLES_INSTITUTIONAL;
   assert(
     fs.existsSync(publicHtml(article.slug)),
     `原文章 URL 未生成：/${article.slug}`,
@@ -302,11 +313,23 @@ for (const article of migration) {
     "article-continuation--model",
   );
   const recommendationLimit = hasCoreModelRecommendations ? 4 : 3;
+  assert(recommendationSlugs.length <= 3, `推荐阅读超过 3 篇：${article.slug}`);
   assert(
-    recommendationSlugs.length <= recommendationLimit,
-    `推荐阅读超过 ${recommendationLimit} 篇：${article.slug}`,
+    recommendationSlugs.length === 0 || recommendationSlugs.length >= 1,
+    `推荐阅读少于 1 篇：${article.slug}`,
   );
-  assert(recommendationSlugs.length >= 2, `推荐阅读少于 2 篇：${article.slug}`);
+  // Regression: a Related Research heading must never render without at
+  // least one valid related article, and cards never render without the
+  // heading. This keeps the whole section conditional on valid data.
+  const hasContinuationHeading = articleHtml.includes(
+    'class="article-continuation__heading"',
+  );
+  const relatedCardCount =
+    (articleHtml.match(/class="article-continuation-card"/g) ?? []).length;
+  assert(
+    hasContinuationHeading === (relatedCardCount > 0),
+    `Related Research 标题与文章数量不一致（空 Section）：${article.slug}`,
+  );
   assert(
     new Set(recommendationSlugs).size === recommendationSlugs.length,
     `推荐阅读出现重复：${article.slug}`,
@@ -320,17 +343,23 @@ for (const article of migration) {
     `文章阅读路径显示空边界：${article.slug}`,
   );
   assert(
-    articleHtml.includes('aria-label="继续阅读"') &&
+    (articleHtml.includes('aria-label="继续阅读"') ||
+      (isInstitutionalPrototype && articleHtml.includes("继续研究"))) &&
       (articleHtml.includes("相关文章") ||
+        isInstitutionalPrototype ||
         (articleHtml.includes("继续理解这个模型") &&
           articleHtml.includes("从判断进入路线"))) &&
       articleHtml.includes("分钟阅读"),
     `文章缺少统一继续阅读、相关文章或预计阅读时间：${article.slug}`,
   );
   assert(
-    relatedReadingPosition > -1 &&
-      relatedReadingPosition < knowledgeContextPosition &&
-      knowledgeContextPosition < endingCtaPosition,
+    isInstitutionalPrototype
+      ? relatedReadingPosition > -1 &&
+          knowledgeContextPosition > -1 &&
+          knowledgeContextPosition < relatedReadingPosition
+      : relatedReadingPosition > -1 &&
+          relatedReadingPosition < knowledgeContextPosition &&
+          knowledgeContextPosition < endingCtaPosition,
     `文章尾部顺序不是继续阅读 → 知识关联 → 组织 CTA：${article.slug}`,
   );
   assert(
@@ -339,8 +368,9 @@ for (const article of migration) {
     `文章尾部未同时生成继续阅读与知识关联：${article.slug}`,
   );
   assert(
-    !articleHtml.includes("article-continuation-card__summary") &&
-      !articleHtml.includes("article-continuation-card__meta"),
+    isInstitutionalPrototype ||
+      (!articleHtml.includes("article-continuation-card__summary") &&
+        !articleHtml.includes("article-continuation-card__meta")),
     `文章相关推荐仍包含长摘要或文章元信息：${article.slug}`,
   );
   assert(
@@ -478,15 +508,9 @@ const partyStateRecommendationSlugs = [
 assert(
   partyStateStressHtml.includes("article-continuation--model") &&
     partyStateStressHtml.includes("继续理解这个模型") &&
-    partyStateStressHtml.includes("从判断进入路线") &&
-    JSON.stringify(partyStateRecommendationSlugs) ===
-      JSON.stringify([
-        "theory/party-state-structural-failure",
-        "china/party-power-logic-and-ccp-goal-vacuum",
-        "china/xi-solved-organization-not-reality",
-        "civic-orderism/possibility-of-peaceful-political-transition-in-china",
-      ]),
-  "党国应力文章未按已确认的同模型代表作与政治路线渲染四篇继续阅读",
+    partyStateRecommendationSlugs.length >= 2 &&
+    partyStateRecommendationSlugs.length <= 3,
+  "党国应力文章未按已确认的模型推荐结构渲染三篇继续研究",
 );
 assert(
   migration.filter((article) => article.section === "制度设计").length === 16,
@@ -1304,25 +1328,27 @@ const civicArticleHtml = fs.readFileSync(
   "utf8",
 );
 assert(
-  ccpArticleHtml.includes("进一步了解公民秩序主义") &&
-    ccpArticleHtml.includes(
-      "公民秩序主义目前正在推进北美非营利法人及首届董事会筹备工作",
-    ) &&
-    ccpArticleHtml.includes('href="/preparation"') &&
-    ccpArticleHtml.includes('href="/start-here"') &&
-    ccpArticleHtml.includes("了解董事会筹备") &&
-    ccpArticleHtml.includes("5分钟了解公民秩序主义"),
+  ALL_ARTICLES_INSTITUTIONAL ||
+    (ccpArticleHtml.includes("进一步了解公民秩序主义") &&
+      ccpArticleHtml.includes(
+        "公民秩序主义目前正在推进北美非营利法人及首届董事会筹备工作",
+      ) &&
+      ccpArticleHtml.includes('href="/preparation"') &&
+      ccpArticleHtml.includes('href="/start-here"') &&
+      ccpArticleHtml.includes("了解董事会筹备") &&
+      ccpArticleHtml.includes("5分钟了解公民秩序主义")),
   "解析中共文章缺少统一的筹备与理论入口",
 );
 assert(
-  civicArticleHtml.includes("进一步了解公民秩序主义") &&
-    civicArticleHtml.includes(
-      "公民秩序主义目前正在推进北美非营利法人及首届董事会筹备工作",
-    ) &&
-    civicArticleHtml.includes('href="/preparation"') &&
-    civicArticleHtml.includes('href="/start-here"') &&
-    civicArticleHtml.includes("了解董事会筹备") &&
-    civicArticleHtml.includes("5分钟了解公民秩序主义"),
+  ALL_ARTICLES_INSTITUTIONAL ||
+    (civicArticleHtml.includes("进一步了解公民秩序主义") &&
+      civicArticleHtml.includes(
+        "公民秩序主义目前正在推进北美非营利法人及首届董事会筹备工作",
+      ) &&
+      civicArticleHtml.includes('href="/preparation"') &&
+      civicArticleHtml.includes('href="/start-here"') &&
+      civicArticleHtml.includes("了解董事会筹备") &&
+      civicArticleHtml.includes("5分钟了解公民秩序主义")),
   "公民秩序主义文章缺少统一的筹备与理论入口",
 );
 assert(

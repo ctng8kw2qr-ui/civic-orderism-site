@@ -1104,10 +1104,19 @@ writeContent(
       <p class="inst4-work__text">政治转型不仅需要观点，也需要能够承担法律、财务、人员与长期政治责任的组织。公民秩序主义当前正在推进北美非营利法人及首届董事会筹备。</p>
     </div>
     <div class="inst4-document">
-      <p class="inst4-document__label">OFFICIAL DOCUMENT <span aria-hidden="true">·</span> CO—2026—002</p>
-      <h3 class="inst4-document__title"><a href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">公民秩序主义<br>北美非营利法人及<br>首届董事会筹备说明</a></h3>
-      <p class="inst4-document__meta">2026 · PDF · 22 PAGES</p>
-      <p class="inst4-document__cta"><a href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">阅读正式文件 <span aria-hidden="true">→</span></a></p>
+      <div class="inst4-document__head">
+        <p class="inst4-document__label">OFFICIAL DOCUMENT</p>
+        <p class="inst4-document__id">CO—2026—002</p>
+      </div>
+      <div class="inst4-document__cover">
+        <p class="inst4-document__org">公民秩序主义</p>
+        <h3 class="inst4-document__title"><a href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">北美非营利法人及<br>首届董事会筹备说明</a></h3>
+      </div>
+      <div class="inst4-document__foot">
+        <p class="inst4-document__meta">2026 · PDF · 22 PAGES</p>
+        <hr class="inst4-document__divider" aria-hidden="true">
+        <p class="inst4-document__cta"><a href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">阅读正式文件 <span aria-hidden="true">→</span></a></p>
+      </div>
     </div>
   </div>
 </section>

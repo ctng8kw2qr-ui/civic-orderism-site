@@ -3,6 +3,7 @@ title: 中共还有没有二次改开的可能？
 date: 2026-07-19
 category: 中国阶段判断
 section: 产业、债务与秩序失灵
+articleType: institutional
 tags:
   - 中国阶段判断
   - 二次改开

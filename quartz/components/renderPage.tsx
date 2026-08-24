@@ -263,7 +263,11 @@ export function renderPage(
   const doc = (
     <html lang={lang} dir={direction}>
       <Head {...componentData} />
-      <body data-slug={slug} data-page-kind={isArticleSlug(slug) ? "article" : undefined}>
+      <body
+        data-slug={slug}
+        data-page-kind={isArticleSlug(slug) ? "article" : undefined}
+        data-article-type={isArticleSlug(slug) ? "institutional" : undefined}
+      >
         <div id="quartz-root" class="page">
           <Body {...componentData}>
             {LeftComponent}

@@ -2,6 +2,7 @@
 title: 习近平权力集中背后的系统逻辑
 date: '2026-05-10'
 category: 解析中共
+articleType: institutional
 tags:
   - 解析中共
   - 中国政治

@@ -4,6 +4,7 @@ date: 2026-08-12
 updated: 2026-08-12
 category: 解析中共
 section: 安全叙事与防御转型
+articleType: institutional
 tags:
   - 解析中共
   - 安全叙事
