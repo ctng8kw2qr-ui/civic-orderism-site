@@ -113,6 +113,14 @@ const articleHeaderComponent = fs.readFileSync(
   path.join(root, "quartz/components/ArticleHeader.tsx"),
   "utf8",
 );
+const institutionalHeaderComponent = fs.readFileSync(
+  path.join(root, "quartz/components/ArticleInstitutionalHeader.tsx"),
+  "utf8",
+);
+const institutionalJudgmentComponent = fs.readFileSync(
+  path.join(root, "quartz/components/ArticleInstitutionalCoreJudgment.tsx"),
+  "utf8",
+);
 const articleTypography = fs.readFileSync(
   path.join(root, "quartz/styles/articleTypography.scss"),
   "utf8",
@@ -132,9 +140,14 @@ if (
   !articleHeaderComponent.includes('class="article-header"') ||
   !articleHeaderComponent.includes('class="article-header__title"') ||
   !articleHeaderComponent.includes('class="article-header__subtitle"') ||
-  !articleLayout.includes("Component.ArticleHeader()")
+  !institutionalHeaderComponent.includes('class="article-inst"') ||
+  !institutionalHeaderComponent.includes('class="article-inst__title"') ||
+  !institutionalHeaderComponent.includes('class="article-inst__deck"') ||
+  !institutionalJudgmentComponent.includes('class="article-inst-judgment"') ||
+  !articleLayout.includes("Component.ArticleHeader()") ||
+  !articleLayout.includes("Component.ArticleInstitutionalHeader()")
 ) {
-  errors.push("文章页未使用统一 ArticleHeader");
+  errors.push("文章页未使用统一文章头部");
 }
 
 const requiredTypographyTokens = [
@@ -166,9 +179,16 @@ if (hasBuiltSite) {
 
     const html = fs.readFileSync(file, "utf8");
     const pageKind = html.includes('data-page-kind="article"');
-    const headerStart = html.indexOf('<header class="article-header">');
+    const institutional = html.includes('data-article-type="institutional"');
+    const headerStart = html.indexOf(
+      institutional
+        ? '<header class="article-inst">'
+        : '<header class="article-header">',
+    );
     const titleStart = html.indexOf(
-      '<h1 class="article-header__title">',
+      institutional
+        ? '<h1 class="article-inst__title">'
+        : '<h1 class="article-header__title">',
       headerStart,
     );
     const articleStart = html.search(
@@ -180,9 +200,10 @@ if (hasBuiltSite) {
     );
     const bodyEnd = html.indexOf("</article>", bodyStart);
     const articleBody = html.slice(bodyStart, bodyEnd);
-    const coreJudgmentCards = (
-      html.match(/class="article-core-judgments key-points-card"/g) ?? []
-    ).length;
+    const coreJudgmentCards = institutional
+      ? (html.match(/class="article-inst-judgment"/g) ?? []).length
+      : (html.match(/class="article-core-judgments key-points-card"/g) ?? [])
+          .length;
     const hasCoreJudgments =
       /^(?:coreJudgments|core_judgments|keyPoints|key_points):\s*\n\s+-\s+/m.test(
         articleSourceBySlug.get(slug) ?? "",

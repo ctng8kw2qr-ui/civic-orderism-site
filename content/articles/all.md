@@ -15,19 +15,24 @@ noindex: false
 <p class="inst4-eyebrow">RESEARCH ARCHIVE</p>
 <h1 class="inst4l-title">全部研究</h1>
 <p class="inst4l-lead">按栏目浏览全部已发布研究。需要按问题搜索时，可以使用页面上方的搜索入口。</p>
-<p class="inst4l-status">100 篇研究 · 4 个研究栏目</p>
+<p class="inst4l-status">101 篇研究 · 4 个研究栏目</p>
   </section>
 
   <section class="inst4l-section">
   <div class="inst4l-section__head">
 <p class="inst4-eyebrow">01</p>
 <h2 class="inst4l-section__title">解析中共</h2>
-<p class="inst4l-section__desc">49 篇研究</p>
+<p class="inst4l-section__desc">50 篇研究</p>
   </div>
   <div class="inst4l-list">
 <a class="inst4l-row" href="/china/chengguan-power-logic">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">2026-08-25</span><span class="inst4l-row__title">城管背后的权力逻辑：中共如何制度化统治，又如何灵活化治理</span></span>
   <span class="inst4l-row__desc">城管的特殊之处，不在于它管什么，而在于它的权力如何形成。公民秩序主义认为，中共并不是按照社会治理需求平均制度化国家权力，</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+<a class="inst4l-row" href="/china/what-is-the-ccp-becoming">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">2026-08-25</span><span class="inst4l-row__title">中共正在变成什么？</span></span>
+  <span class="inst4l-row__desc">中共今天真正发生的变化，不是简单的强大或衰落，而是它正在从一个能够制造增长、分配利益、组织合作和提供未来预期的政治组织，</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
 <a class="inst4l-row" href="/china/party-state-stress-neither-party-nor-state">

@@ -105,6 +105,16 @@
   ],
   "articles": [
     {
+      "slug": "china/what-is-the-ccp-becoming",
+      "primaryCoreModel": "security-purge-recentralization-cycle",
+      "associatedCoreModels": [
+        "political-control-governance-divergence",
+        "organizational-credit",
+        "bureaucratic-shock",
+        "order-evaporation"
+      ]
+    },
+    {
       "slug": "china/party-state-stress-neither-party-nor-state",
       "primaryCoreModel": "party-state-stress",
       "associatedCoreModels": ["political-control-governance-divergence"]

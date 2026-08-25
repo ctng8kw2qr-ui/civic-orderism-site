@@ -15,7 +15,7 @@ noindex: false
 <p class="inst4-eyebrow">UNDERSTANDING THE PRESENT</p>
 <h1 class="inst4l-title">解析中共</h1>
 <p class="inst4l-lead">不以情绪、立场或单一事件为起点，而是通过核心分析框架、结构判断与现实观察三个层级，理解中共作为政治组织的运行方式及其变化。</p>
-<p class="inst4l-status">49 篇研究 · 3 个阅读层级 · 更新至 2026-08-25</p>
+<p class="inst4l-status">50 篇研究 · 3 个阅读层级 · 更新至 2026-08-25</p>
   </section>
 
   <section class="inst4l-section">
@@ -25,6 +25,21 @@ noindex: false
     
   </div>
   <p class="inst4l-statement">理解中共的变化，需要沿着权力如何运行、成员如何行动、结构为何失灵、组织如何防御，以及压力如何向外溢出的完整链条展开。</p>
+</section>
+
+  <section class="inst4l-section">
+  <div class="inst4l-section__head">
+<p class="inst4-eyebrow">总论 / 核心阅读</p>
+<h2 class="inst4l-section__title">从这里进入「解析中共」</h2>
+<p class="inst4l-section__desc">公民秩序主义关于中共的总论与最高层理论入口。</p>
+  </div>
+  <div class="inst4l-list">
+<a class="inst4l-row" href="/china/what-is-the-ccp-becoming">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">总论</span><span class="inst4l-row__title">中共正在变成什么？</span></span>
+  <span class="inst4l-row__desc">中共今天真正发生的变化，不是简单的强大或衰落，而是它正在从一个能够制造增长、分配利益、组织合作和提供未来预期的政治组织，逐渐转变为一个以安全、控制、组织防御和损失分配为主要任务的政治系统。理解这一变化，是公民秩序主义解析今天中共的起点。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+</div>
 </section>
 
   <section class="inst4l-section">

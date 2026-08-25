@@ -36,6 +36,9 @@ const chinaAnalysisSectionBySlug = new Map(
     group.slugs.map((slug) => [slug, group.name]),
   ),
 );
+if (chinaAnalysis.overview) {
+  chinaAnalysisSectionBySlug.set(chinaAnalysis.overview, "总论 / 核心阅读");
+}
 const existingMigrationMap = fs.existsSync(
   path.join(rootDir, "content-migration-map.json"),
 )
@@ -381,20 +384,27 @@ const articles = walk(contentDir)
     article.primaryCoreModel = coreModelAssignment?.primaryCoreModel ?? null;
     article.associatedCoreModels =
       coreModelAssignment?.associatedCoreModels ?? [];
-    article.featured = allFeatured.has(slug);
-    article.recommended = allRecommended.has(slug);
+    article.featured =
+      parsed.data.featured === true || allFeatured.has(slug);
+    article.recommended =
+      parsed.data.recommended === true || allRecommended.has(slug);
     article.readingLevel =
-      article.section === "制度设计"
-        ? "制度"
-        : article.section === "公民秩序主义"
-          ? "基础"
-          : "进阶";
-    article.readingOrder = Math.min(
-      ...topics
-        .map((topic) => topic.recommended.indexOf(slug))
-        .filter((index) => index >= 0),
-      999,
-    );
+      typeof parsed.data.readingLevel === "string"
+        ? parsed.data.readingLevel
+        : article.section === "制度设计"
+          ? "制度"
+          : article.section === "公民秩序主义"
+            ? "基础"
+            : "进阶";
+    article.readingOrder =
+      typeof parsed.data.readingOrder === "number"
+        ? parsed.data.readingOrder
+        : Math.min(
+            ...topics
+              .map((topic) => topic.recommended.indexOf(slug))
+              .filter((index) => index >= 0),
+            999,
+          );
     article.author = String(parsed.data.author ?? "公民秩序主义");
     article.needsReview = manualReviewSlugs.has(slug);
     article.readingMinutes = Math.max(1, Math.ceil(article.body.length / 500));
@@ -407,10 +417,16 @@ const articles = walk(contentDir)
   );
 
 const articleBySlug = new Map(articles.map((item) => [item.slug, item]));
-const chinaAnalysisSlugs = chinaAnalysis.groups.flatMap((group) => group.slugs);
+const chinaAnalysisGroupSlugs = chinaAnalysis.groups.flatMap(
+  (group) => group.slugs,
+);
+const chinaAnalysisSlugs = [
+  ...(chinaAnalysis.overview ? [chinaAnalysis.overview] : []),
+  ...chinaAnalysisGroupSlugs,
+];
 if (
   chinaAnalysis.groups.length !== 5 ||
-  new Set(chinaAnalysisSlugs).size !== chinaAnalysisSlugs.length
+  new Set(chinaAnalysisGroupSlugs).size !== chinaAnalysisGroupSlugs.length
 ) {
   throw new Error(
     "China analysis configuration must contain five groups with unique article slugs.",
@@ -2154,6 +2170,24 @@ ${inst4lContactBlock()}`,
 /* Phase 2A.5 — 解析中共 editorial research index prototype */
 const chinaSectionConfig = sectionByName.get("解析中共");
 const chinaCoreJudgment = chinaSectionConfig?.coreJudgment ?? "";
+const chinaOverviewArticle = chinaAnalysis.overview
+  ? articleBySlug.get(chinaAnalysis.overview)
+  : undefined;
+if (chinaAnalysis.overview && !chinaOverviewArticle) {
+  throw new Error(
+    `China analysis overview article does not exist: ${chinaAnalysis.overview}`,
+  );
+}
+const chinaOverviewRows = chinaOverviewArticle
+  ? [
+      {
+        meta: "总论",
+        title: chinaOverviewArticle.title,
+        desc: chinaOverviewArticle.summary,
+        href: `/${chinaOverviewArticle.slug}`,
+      },
+    ]
+  : [];
 const chinaModelRows = (chinaAnalysis.models ?? []).map((model) => ({
   href: model.href ?? `/${model.article}`,
   meta: "",
@@ -2216,6 +2250,8 @@ writeInstitutionalContent(
   </section>
 
   ${inst4lSection("CORE JUDGMENT", "栏目核心判断", `<p class="inst4l-statement">${chinaCoreJudgment}</p>`)}
+
+  ${chinaOverviewRows.length ? inst4lSection("总论 / 核心阅读", "从这里进入「解析中共」", inst4lRows(chinaOverviewRows), "公民秩序主义关于中共的总论与最高层理论入口。") : ""}
 
   ${inst4lSection(
     "01",
