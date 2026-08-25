@@ -14,7 +14,7 @@ noindex: false
 
 分析压力传导、组织控制、宣传与危机管理的实际机制。
 
-<div class="topic-hero-note"><strong>核心判断</strong><p>统治能力并不等于治理能力；短期控制工具的叠加，可能持续消耗长期组织信用。</p><small>10 篇相关文章 · 最近更新 2026-08-22</small></div>
+<div class="topic-hero-note"><strong>核心判断</strong><p>统治能力并不等于治理能力；短期控制工具的叠加，可能持续消耗长期组织信用。</p><small>11 篇相关文章 · 最近更新 2026-08-25</small></div>
 
 ## 推荐阅读顺序
 
@@ -25,6 +25,12 @@ noindex: false
 ## 全部相关文章
 
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management">
+  <p class="knowledge-card__meta"><span>2026-08-25</span><span>8 分钟阅读</span></p>
+  <h3><a href="/china/chengguan-power-logic">城管背后的权力逻辑：中共如何制度化统治，又如何灵活化治理</a></h3>
+  <p class="knowledge-card__summary">城管的特殊之处，不在于它管什么，而在于它的权力如何形成。公民秩序主义认为，中共并不是按照社会治理需求平均制度化国家权力，而是按照政治价值对权力进行差序配置：越接近政治安全，权力越清晰、越集中；越接近日常治理，越强调综合、划转、下沉和灵活调用。</p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="party-state-stress political-control-governance-divergence ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-08-22</span><span>9 分钟阅读</span></p>
   <h3><a href="/china/party-state-stress-neither-party-nor-state">既不党，也不国：党国体制最终会变成什么？</a></h3>

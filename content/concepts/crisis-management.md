@@ -45,6 +45,12 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">一个难以言说的防线：从“液压维稳”到当代的马其诺防线的结构分析与研究笔记。</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：危机管理</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management">
+  <p class="knowledge-card__meta"><span>2026-08-25</span><span>8 分钟阅读</span></p>
+  <h3><a href="/china/chengguan-power-logic">城管背后的权力逻辑：中共如何制度化统治，又如何灵活化治理</a></h3>
+  <p class="knowledge-card__summary">城管的特殊之处，不在于它管什么，而在于它的权力如何形成。公民秩序主义认为，中共并不是按照社会治理需求平均制度化国家权力，而是按照政治价值对权力进行差序配置：越接近政治安全，权力越清晰、越集中；越接近日常治理，越强调综合、划转、下沉和灵活调用。</p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="party-state-stress political-control-governance-divergence ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-08-22</span><span>9 分钟阅读</span></p>
   <h3><a href="/china/party-state-stress-neither-party-nor-state">既不党，也不国：党国体制最终会变成什么？</a></h3>
@@ -104,12 +110,6 @@ publicationStatus: reviewing
   <h3><a href="/china/ccp-2018-xi-era-local-growth-space">中共2018：习近平元年</a></h3>
   <p class="knowledge-card__summary">2018年并不是最喧闹的年份，却可能是习近平时代真正制度化的年份。修宪、党和国家机构改革、国地税合并三条制度线路，分别改变权力的时间结构、组织结构与利益结构，共同推动中共从依靠地方弹性创造增长，转向依靠中央穿透维持控制。</p>
   <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：安全化—清洗—再集中—再失灵模型</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="security-purge-recentralization-cycle bureaucratic-shock ruling-techniques crisis-management">
-  <p class="knowledge-card__meta"><span>2026-07-09</span><span>8 分钟阅读</span></p>
-  <h3><a href="/china/why-ccp-will-not-relax-party-pressure">中共为什么不会真正放松党内高压？</a></h3>
-  <p class="knowledge-card__summary">本文提出一个可检验的假说：当体制的利益分配能力持续下降，而组织存续又高度依赖中央集权时，审查、追责和清洗会系统性地替代利益激励，成为维持干部服从和组织运转的主要工具。</p>
-  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：安全化—清洗—再集中—再失灵模型</span></p>
 </article>
 </div>
 

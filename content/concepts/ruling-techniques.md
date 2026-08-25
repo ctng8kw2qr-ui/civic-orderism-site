@@ -57,6 +57,12 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">这些年，中文舆论场上一个越来越明显的现象是：</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：官僚系统休克</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management">
+  <p class="knowledge-card__meta"><span>2026-08-25</span><span>8 分钟阅读</span></p>
+  <h3><a href="/china/chengguan-power-logic">城管背后的权力逻辑：中共如何制度化统治，又如何灵活化治理</a></h3>
+  <p class="knowledge-card__summary">城管的特殊之处，不在于它管什么，而在于它的权力如何形成。公民秩序主义认为，中共并不是按照社会治理需求平均制度化国家权力，而是按照政治价值对权力进行差序配置：越接近政治安全，权力越清晰、越集中；越接近日常治理，越强调综合、划转、下沉和灵活调用。</p>
+  <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：统治术</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="party-state-stress political-control-governance-divergence ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-08-22</span><span>9 分钟阅读</span></p>
   <h3><a href="/china/party-state-stress-neither-party-nor-state">既不党，也不国：党国体制最终会变成什么？</a></h3>
@@ -104,12 +110,6 @@ publicationStatus: reviewing
   <h3><a href="/civic-orderism/peaceful-state-transition">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</a></h3>
   <p class="knowledge-card__summary">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不按政治身份实施普遍追责的转轨道路。</p>
   <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：政治路线</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="three-cleans-era" data-concepts="organizational-credit bureaucratic-shock three-cleans-era fiscal-debt political-debt ruling-techniques">
-  <p class="knowledge-card__meta"><span>2026-07-14</span><span>17 分钟阅读</span></p>
-  <h3><a href="/china/why-expulsion-from-party-becomes-standard-ending">为什么“开除党籍”正在成为中共处理高级干部的标准结局？</a></h3>
-  <p class="knowledge-card__summary">本文认为，高级干部被开除党籍的常态化，不能简单解释为反腐更严格或制度更刚性。真正值得注意的是，中共在拥有巨大政治裁量空间的情况下，越来越主动选择最彻底、最不可逆的处理方式，把组织失败个体化，把党籍从终身政治身份退化为条件性资格。</p>
-  <p class="knowledge-card__chips"><span>专题：三清时代</span><span>概念：组织信用</span></p>
 </article>
 </div>
 

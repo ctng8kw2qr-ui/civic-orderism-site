@@ -50,7 +50,7 @@ noindex: false
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
 <a class="inst4l-row" href="/topics/ccp-governance">
-  <span class="inst4l-row__cell"><span class="inst4l-row__meta">专题 06 · 10 篇研究</span><span class="inst4l-row__title">中共统治术</span></span>
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">专题 06 · 11 篇研究</span><span class="inst4l-row__title">中共统治术</span></span>
   <span class="inst4l-row__desc">统治能力并不等于治理能力；短期控制工具的叠加，可能持续消耗长期组织信用。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>

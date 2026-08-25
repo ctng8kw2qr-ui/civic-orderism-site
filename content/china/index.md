@@ -15,7 +15,7 @@ noindex: false
 <p class="inst4-eyebrow">UNDERSTANDING THE PRESENT</p>
 <h1 class="inst4l-title">解析中共</h1>
 <p class="inst4l-lead">不以情绪、立场或单一事件为起点，而是通过核心分析框架、结构判断与现实观察三个层级，理解中共作为政治组织的运行方式及其变化。</p>
-<p class="inst4l-status">48 篇研究 · 3 个阅读层级 · 更新至 2026-08-22</p>
+<p class="inst4l-status">49 篇研究 · 3 个阅读层级 · 更新至 2026-08-25</p>
   </section>
 
   <section class="inst4l-section">

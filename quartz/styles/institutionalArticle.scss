@@ -167,6 +167,8 @@ body[data-article-type="institutional"] {
 
   & .article-inst-judgment__number {
     min-width: 2ch;
+    flex-shrink: 0;
+    white-space: nowrap;
     color: var(--inst-muted);
     font-size: 0.78rem;
     font-weight: 600;
@@ -672,4 +674,3 @@ body[data-article-type="institutional"] {
     }
   }
 }
-
