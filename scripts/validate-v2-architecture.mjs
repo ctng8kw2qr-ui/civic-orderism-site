@@ -1266,7 +1266,7 @@ assert(
 for (const [label, pageFile, expectTitle, expectLabel] of [
   ["about", "about", "关于公民秩序主义", "CURRENT PHASE"],
   ["research", "theory/index", "研究", "RESEARCH &amp; POLITICAL WORK"],
-  ["route", "civic-orderism/index", "政治路线", "POLITICAL ROUTE"],
+  ["route", "civic-orderism/index", "公民秩序主义", "CIVIC ORDERISM"],
   [
     "preparation",
     "preparation",

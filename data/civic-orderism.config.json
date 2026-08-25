@@ -1,0 +1,214 @@
+{
+  "overview": "civic-orderism/civic-orderism-overview",
+  "chinaOverview": "china/what-is-the-ccp-becoming",
+  "hero": {
+    "title": "公民秩序主义",
+    "en": "Civic Orderism",
+    "judgment": "保留国家，改变政治。",
+    "description": "一条面向中国未来的低阻力、低风险和平政治转型路线。",
+    "intro": "公民秩序主义关注的，不只是旧政治秩序如何结束，而是中国如何在保持国家连续性的前提下，建立下一套能够长期运行的政治秩序。"
+  },
+  "question": {
+    "title": "中国真正面对的问题是什么？",
+    "judgment": "真正的问题不是旧秩序什么时候结束，而是谁能够承接它。",
+    "points": [
+      "制造共同未来的能力",
+      "协调长期利益的能力",
+      "维持组织信用的能力",
+      "形成社会共识的能力"
+    ]
+  },
+  "route": {
+    "title": "一条不同于维持现状与革命的政治路线",
+    "options": [
+      {
+        "name": "维持现状",
+        "desc": "旧政治秩序继续承担越来越高的治理、财政和社会成本。"
+      },
+      {
+        "name": "革命与全面清算",
+        "desc": "通过摧毁旧秩序重新开始，同时承担国家失序、社会撕裂和政治报复风险。"
+      },
+      {
+        "name": "公民秩序主义",
+        "desc": "保留国家，改变政治。通过降低转型阻力、建立新旧政治信任和制度承接能力，完成和平政治转型。"
+      }
+    ]
+  },
+  "principles": [
+    {
+      "num": "01",
+      "name": "保留国家",
+      "desc": "政治制度可以改变，国家不能停摆。行政、财政、教育、医疗、交通、司法、社保和基本公共服务保持连续。"
+    },
+    {
+      "num": "02",
+      "name": "改变政治",
+      "desc": "保留国家不意味着保留旧的权力运行方式。权力必须重新进入规则、责任、监督和制度边界。"
+    },
+    {
+      "num": "03",
+      "name": "不革命、不清算",
+      "desc": "政治转型不能建立在无限扩大社会敌人和身份清算的基础上。明确犯罪进入公开司法程序，普通旧体系成员不因身份本身受到政治追究。"
+    },
+    {
+      "num": "04",
+      "name": "和平承接",
+      "desc": "旧秩序衰退不会自动产生新秩序。必须提前形成能够承担政治责任、建立信任并承接国家运行的新政治力量。"
+    }
+  ],
+  "transition": {
+    "title": "政治转型如何成为可能？",
+    "chain": [
+      "旧秩序失去持续制造利益与共同预期的能力",
+      "体制内外利益与政治预期重新分化",
+      "新的政治力量建立信誉与承接能力",
+      "新旧政治力量形成沟通与信任",
+      "政治谈判",
+      "国家连续性下的政治转型",
+      "新的制度秩序"
+    ]
+  },
+  "lowResistance": {
+    "title": "为什么强调低阻力？",
+    "judgment": "政治转型首先是现实中的人做出的选择。",
+    "actors": [
+      "官僚",
+      "企业",
+      "地方政府",
+      "军警系统",
+      "普通家庭",
+      "既有利益群体"
+    ],
+    "conclusion": "成熟的政治转型，不是让所有人喜欢新制度，而是让越来越多人发现：接受改变，比阻止改变更加安全。"
+  },
+  "organization": {
+    "title": "为什么必须提前建立组织？",
+    "judgment": "政治转型发生之前，承接政治转型的能力就必须开始形成。",
+    "capabilities": [
+      "政治信誉",
+      "组织能力",
+      "责任能力",
+      "人才基础",
+      "法律与财务能力",
+      "长期政治信任"
+    ],
+    "entryHref": "/civic-orderism/north-america-nonprofit-board-preparation-manifesto",
+    "entryLabel": "了解当前组织工作"
+  },
+  "state": {
+    "title": "最终要建立什么？",
+    "principles": [
+      {
+        "name": "有边界的权力",
+        "desc": "政府知道权力在哪里结束。"
+      },
+      {
+        "name": "有责任的政治",
+        "desc": "政治权力必须承担可以识别的公共责任。"
+      },
+      {
+        "name": "有连续性的国家",
+        "desc": "政治竞争和权力更替不能导致国家停摆。"
+      },
+      {
+        "name": "有保障的社会",
+        "desc": "基本社会保障与弱势群体保护构成政治秩序的底线。"
+      },
+      {
+        "name": "有尊严的公民",
+        "desc": "个人的自由、财产、安全和基本权利不依赖某一个领导人的善意。"
+      },
+      {
+        "name": "有纠错能力的制度",
+        "desc": "政治失败可以通过制度修正，而不需要依靠革命重新开始。"
+      }
+    ],
+    "closing": "一个有边界、有责任、有秩序、有尊严，也能够不断自我纠错的正常国家。"
+  },
+  "readingStages": [
+    {
+      "num": "01",
+      "name": "总论",
+      "desc": "理解整个理论体系、政治路线和基本原则的第一篇文章。",
+      "representative": ["civic-orderism/civic-orderism-overview"],
+      "extended": []
+    },
+    {
+      "num": "02",
+      "name": "为什么中国需要新的政治路线",
+      "desc": "旧政治秩序为什么失去未来能力、为什么内部改革难以发生、为什么政治转型必须提前准备。",
+      "representative": [
+        "civic-orderism/why-civic-orderism",
+        "civic-orderism/information-age-and-political-transition",
+        "civic-orderism/what-civic-orderism-solves-if-you-read-only-one"
+      ],
+      "extended": [
+        "civic-orderism/civic-orderism-manual",
+        "civic-orderism/what-civic-orderism-ultimately-solves",
+        "civic-orderism/why-not-left-right-democracy-autocracy"
+      ]
+    },
+    {
+      "num": "03",
+      "name": "和平转型如何发生",
+      "desc": "和平转轨、新旧政治信任、降低转型阻力、旧体系成员的安全预期与国家连续性。",
+      "representative": [
+        "civic-orderism/peaceful-state-transition",
+        "civic-orderism/possibility-of-peaceful-political-transition-in-china"
+      ],
+      "extended": [
+        "civic-orderism/why-civic-orderism-is-easier-to-succeed",
+        "civic-orderism/why-against-moral-narrative"
+      ]
+    },
+    {
+      "num": "04",
+      "name": "如何承接国家",
+      "desc": "保留行政体系、政治与国家的区别、政治责任、组织能力、政治信誉与国家连续性。",
+      "representative": [
+        "civic-orderism/north-america-nonprofit-board-preparation-manifesto",
+        "civic-orderism/state-must-rely-on-systems-not-drivers"
+      ],
+      "extended": [
+        "civic-orderism/backend-system-under-civic-orderism",
+        "civic-orderism/public-politics-without-party-dominance",
+        "civic-orderism/why-civic-orderism-emphasizes-experience-and-records"
+      ]
+    },
+    {
+      "num": "05",
+      "name": "新秩序的基本原则",
+      "desc": "权力边界、责任、监督、公民尊严、社会保障、制度纠错与国家社会关系。",
+      "representative": [
+        "civic-orderism/top-level-power-structure-under-civic-orderism",
+        "civic-orderism/state-operation-process-under-civic-orderism",
+        "civic-orderism/why-dual-track-committee-administration"
+      ],
+      "extended": [
+        "civic-orderism/what-is-committee-system",
+        "civic-orderism/committee-administration-opposite-incentives",
+        "civic-orderism/why-committees-cannot-directly-take-cases",
+        "civic-orderism/election-logic-under-civic-orderism",
+        "civic-orderism/why-elections-reject-political-donations",
+        "civic-orderism/why-part-time-representatives",
+        "civic-orderism/why-proposals-from-social-organizations",
+        "civic-orderism/why-weaken-party-politics",
+        "civic-orderism/why-no-bicameral-parliament",
+        "civic-orderism/why-not-simple-separation-of-powers",
+        "civic-orderism/why-information-transparency",
+        "civic-orderism/why-justice-serves-reality",
+        "civic-orderism/why-emphasize-reciprocity-and-equality",
+        "civic-orderism/why-focus-on-invisible-power-nodes"
+      ]
+    }
+  ],
+  "final": {
+    "statement": "中国未来真正需要解决的，不只是旧政治秩序是否会结束。",
+    "big": "而是旧政治秩序之后，中国是否已经准备好了下一套政治秩序。",
+    "closing": [
+      "不是等待旧世界倒下。",
+      "而是提前准备一个能够接住中国未来的新秩序。"
+    ]
+  }
+}

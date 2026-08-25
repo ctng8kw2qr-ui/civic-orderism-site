@@ -10086,6 +10086,381 @@ body[data-slug="preparation"] {
   }
 }
 
+/* ---- 公民秩序主义政治路线（inst4l-route）---- */
+.inst4-route__en {
+  margin: 0.6rem 0 0;
+  color: var(--inst4-muted);
+  font-size: 0.84rem;
+  font-weight: 520;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.inst4-route__judgment {
+  max-width: 720px;
+  margin: 2rem 0 0;
+  color: var(--inst4-ink);
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  font-weight: 480;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+}
+
+.inst4-route__intro {
+  max-width: 660px;
+  margin: 1.4rem 0 0;
+  color: var(--inst4-ink-2);
+  font-size: 1rem;
+  font-weight: 440;
+  line-height: 1.85;
+}
+
+.inst4-route__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  align-items: baseline;
+  margin: 2rem 0 0;
+}
+
+.inst4-route__cta a {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  color: var(--inst4-ink);
+  font-size: 0.98rem;
+  font-weight: 560;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--inst4-ink);
+  padding-bottom: 0.2rem;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.inst4-route__cta a span {
+  transition: transform 180ms ease;
+}
+
+.inst4-route__cta a:hover,
+.inst4-route__cta a:focus-visible {
+  color: var(--inst4-accent);
+  border-bottom-color: var(--inst4-accent);
+  outline: none;
+}
+
+.inst4-route__cta a:hover span,
+.inst4-route__cta a:focus-visible span {
+  transform: translateX(3px);
+}
+
+.inst4-route__statement {
+  max-width: 720px;
+  margin: 1.6rem 0 0;
+  color: var(--inst4-ink);
+  font-size: clamp(1.15rem, 2.1vw, 1.45rem);
+  font-weight: 480;
+  line-height: 1.7;
+}
+
+.inst4-route__list {
+  margin: 1.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.inst4-route__list li {
+  position: relative;
+  padding: 0.55rem 0 0.55rem 1.6rem;
+  color: var(--inst4-ink-2);
+  font-size: 0.98rem;
+  font-weight: 440;
+  line-height: 1.7;
+}
+
+.inst4-route__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.1rem;
+  width: 0.7rem;
+  height: 1px;
+  background: var(--inst4-accent);
+}
+
+.inst4-route__quote {
+  max-width: 720px;
+  margin: 2rem 0 0;
+  padding: 1.4rem 1.6rem;
+  border-left: 2px solid var(--inst4-accent);
+  background: var(--inst4-bg-soft);
+  color: var(--inst4-ink);
+  font-size: clamp(1.15rem, 2.1vw, 1.4rem);
+  font-weight: 480;
+  line-height: 1.7;
+}
+
+/* 三路线 */
+.inst4-route__options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 1.8rem;
+  border-top: 1px solid var(--inst4-line);
+  border-left: 1px solid var(--inst4-line);
+  background: var(--inst4-line);
+}
+
+.inst4-route__option {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-width: 0;
+  padding: 1.5rem 1.4rem;
+  background: var(--inst4-bg);
+}
+
+.inst4-route__option--chosen {
+  background: var(--inst4-bg-soft);
+  box-shadow: inset 0 2px 0 0 var(--inst4-accent);
+}
+
+.inst4-route__option h3 {
+  margin: 0;
+  color: var(--inst4-ink);
+  font-size: 1.05rem;
+  font-weight: 540;
+  line-height: 1.5;
+}
+
+.inst4-route__option--chosen h3 {
+  color: var(--inst4-accent);
+}
+
+.inst4-route__option p {
+  margin: 0;
+  color: var(--inst4-gray);
+  font-size: 0.86rem;
+  font-weight: 440;
+  line-height: 1.7;
+}
+
+/* 四原则 */
+.inst4-route__principles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.2rem 3rem;
+  margin-top: 1.8rem;
+}
+
+.inst4-route__principle {
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--inst4-line);
+}
+
+.inst4-route__principle-num {
+  display: block;
+  color: var(--inst4-muted);
+  font-size: 0.74rem;
+  font-weight: 520;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+}
+
+.inst4-route__principle h3 {
+  margin: 0.5rem 0 0;
+  color: var(--inst4-ink);
+  font-size: 1.12rem;
+  font-weight: 540;
+  line-height: 1.45;
+}
+
+.inst4-route__principle p {
+  margin: 0.55rem 0 0;
+  color: var(--inst4-gray);
+  font-size: 0.9rem;
+  font-weight: 440;
+  line-height: 1.75;
+}
+
+/* 转型链条 */
+.inst4-route__chain {
+  margin: 1.8rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.inst4-route__chain li {
+  display: grid;
+  grid-template-columns: minmax(0, 2.4rem) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--inst4-line-soft);
+}
+
+.inst4-route__chain li:last-child {
+  border-bottom: 0;
+}
+
+.inst4-route__chain li span {
+  color: var(--inst4-muted);
+  font-size: 0.8rem;
+  font-weight: 520;
+  letter-spacing: 0.08em;
+}
+
+.inst4-route__chain li p {
+  margin: 0;
+  color: var(--inst4-ink-2);
+  font-size: 0.98rem;
+  font-weight: 440;
+  line-height: 1.7;
+}
+
+/* 低阻力主体 */
+.inst4-route__actor-line {
+  max-width: 680px;
+  margin: 1.2rem 0 0;
+  color: var(--inst4-ink-2);
+  font-size: 0.96rem;
+  font-weight: 440;
+  line-height: 1.8;
+}
+
+.inst4-route__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.inst4-route__chips li {
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--inst4-line);
+  color: var(--inst4-ink-2);
+  font-size: 0.82rem;
+  font-weight: 460;
+  line-height: 1.5;
+}
+
+/* 国家原则 */
+.inst4-route__state-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 1.8rem;
+  border-top: 1px solid var(--inst4-line);
+  border-left: 1px solid var(--inst4-line);
+  background: var(--inst4-line);
+}
+
+.inst4-route__state-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 0;
+  padding: 1.3rem 1.2rem;
+  background: var(--inst4-bg);
+}
+
+.inst4-route__state-item h3 {
+  margin: 0;
+  color: var(--inst4-ink);
+  font-size: 0.98rem;
+  font-weight: 540;
+  line-height: 1.5;
+}
+
+.inst4-route__state-item p {
+  margin: 0;
+  color: var(--inst4-gray);
+  font-size: 0.84rem;
+  font-weight: 440;
+  line-height: 1.7;
+}
+
+.inst4-route__closing {
+  max-width: 720px;
+  margin: 2.2rem 0 0;
+  color: var(--inst4-ink);
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+  font-weight: 480;
+  line-height: 1.65;
+}
+
+/* Reading Map */
+.inst4-route__readstage {
+  margin-top: 2.4rem;
+}
+
+.inst4-route__readstage-head {
+  margin-bottom: 0.4rem;
+}
+
+.inst4-route__readstage-title {
+  margin: 0.45rem 0 0;
+  color: var(--inst4-ink);
+  font-size: 1.3rem;
+  font-weight: 520;
+  line-height: 1.4;
+}
+
+.inst4-route__readstage-desc {
+  margin: 0.5rem 0 0;
+  color: var(--inst4-gray);
+  font-size: 0.9rem;
+  font-weight: 440;
+  line-height: 1.75;
+}
+
+/* Final */
+.inst4-route__final {
+  padding-left: clamp(1.4rem, 4vw, 3rem);
+  padding-right: clamp(1.4rem, 4vw, 3rem);
+  background: var(--inst4-bg-soft);
+}
+
+.inst4-route__big {
+  max-width: 780px;
+  margin: 1.4rem 0 0;
+  color: var(--inst4-ink);
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.4;
+}
+
+.inst4-route__final-line {
+  max-width: 720px;
+  margin: 0.5rem 0 0;
+  color: var(--inst4-ink-2);
+  font-size: 1rem;
+  font-weight: 460;
+  line-height: 1.75;
+}
+
+.inst4-route__final .inst4-route__final-line:first-of-type {
+  margin-top: 1.6rem;
+}
+
+@media (max-width: 900px) {
+  .inst4-route__options {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .inst4-route__principles {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.8rem;
+  }
+
+  .inst4-route__state-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 /* ---- Phase 2A.5 — global shell cleanup ----
    The Quartz persistent sidebar exits the frontend architecture.
    #quartz-body is re-laid out without the CSS grid columns so no

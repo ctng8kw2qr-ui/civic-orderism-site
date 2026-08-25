@@ -27,6 +27,7 @@ const topics = readJson("topics.config.json");
 const concepts = readJson("concepts.config.json");
 const institutionSections = readJson("institution-sections.config.json");
 const chinaAnalysis = readJson("china-analysis.config.json");
+const civicOrderismConfig = readJson("civic-orderism.config.json");
 const readingPaths = readJson("reading-paths.config.json");
 const readingSequences = readJson("reading-sequences.config.json");
 const articleTopicAssignments = readJson("article-topics.config.json");
@@ -2026,97 +2027,189 @@ writeInstitutionalContent(
 </div>`,
 );
 const civicOrderismSection = sectionByName.get("公民秩序主义");
-const routeCoreJudgment = civicOrderismSection?.coreJudgment ?? "";
-const routeArticles = articles.filter(
-  (article) =>
-    article.section === "公民秩序主义" && article.status === "published",
+const civicOverviewArticle = civicOrderismConfig.overview
+  ? articleBySlug.get(civicOrderismConfig.overview)
+  : undefined;
+const civicChinaOverviewArticle = civicOrderismConfig.chinaOverview
+  ? articleBySlug.get(civicOrderismConfig.chinaOverview)
+  : undefined;
+const civicReadingStages = (civicOrderismConfig.readingStages ?? []).map(
+  (stage) => {
+    const repItems = (stage.representative ?? [])
+      .map((slug) => articleBySlug.get(slug))
+      .filter((article) => article?.status === "published");
+    const extItems = (stage.extended ?? [])
+      .map((slug) => articleBySlug.get(slug))
+      .filter((article) => article?.status === "published");
+    return { ...stage, repItems, extItems };
+  },
 );
-const routePrimary = [
-  "civic-orderism/civic-orderism-overview",
-  "civic-orderism/peaceful-state-transition",
-  "civic-orderism/possibility-of-peaceful-political-transition-in-china",
-  "civic-orderism/why-civic-orderism",
-  "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
-  "civic-orderism/civic-orderism-manual",
-]
-  .map((slug) => articleBySlug.get(slug))
-  .filter((article) => article?.status === "published");
-const routeMore = routeArticles
-  .filter((article) => !routePrimary.some((item) => item.slug === article.slug))
-  .slice(0, 8);
 
 writeInstitutionalContent(
   "civic-orderism/index.md",
-  `${yamlFrontmatter({ title: "政治路线", description: "公民秩序主义：不依赖革命、不以清算为目，保持国家连续性的中国和平政治转轨路线。", contentType: "栏目" })}
+  `${yamlFrontmatter({ title: "公民秩序主义", description: "一条面向中国未来的低阻力、低风险和平政治转型路线：保留国家，改变政治；承接秩序，重建规则。", contentType: "栏目" })}
 
 <div class="inst4 inst4l inst4l-route">
   <section class="inst4l-hero">
-    <p class="inst4-eyebrow">POLITICAL ROUTE</p>
-    <h1 class="inst4l-title">政治路线</h1>
-    <p class="inst4l-lead">${routeCoreJudgment}</p>
+    <p class="inst4-eyebrow">CIVIC ORDERISM · 政治路线</p>
+    <h1 class="inst4l-title">公民秩序主义</h1>
+    <p class="inst4-route__en">Civic Orderism</p>
+    <p class="inst4-route__judgment">${civicOrderismConfig.hero?.judgment ?? ""}</p>
+    <p class="inst4l-lead">${civicOrderismConfig.hero?.description ?? ""}</p>
+    <p class="inst4-route__intro">${civicOrderismConfig.hero?.intro ?? ""}</p>
+    <div class="inst4-route__cta">
+      <a href="${civicOverviewArticle ? `/${civicOverviewArticle.slug}` : "/civic-orderism/civic-orderism-overview"}">阅读《公民秩序主义总论》 <span aria-hidden="true">→</span></a>
+      <a href="#route">了解政治转型路线 <span aria-hidden="true">→</span></a>
+    </div>
   </section>
 
-  ${inst4lSection("核心判断", "政治转型的目标不是摧毁国家，而是改变政治", `<p class="inst4l-statement">${routeCoreJudgment}</p>`)}
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">THE QUESTION</p>
+      <h2 class="inst4l-section__title">${civicOrderismConfig.question?.title ?? ""}</h2>
+    </div>
+    <p class="inst4-route__statement">旧政治秩序仍然拥有强大的控制能力，但正在失去：</p>
+    <ul class="inst4-route__list">
+      ${(civicOrderismConfig.question?.points ?? []).map((point) => `<li>${point}</li>`).join("\n")}
+    </ul>
+    <p class="inst4-route__quote">${civicOrderismConfig.question?.judgment ?? ""}</p>
+    ${civicChinaOverviewArticle ? `<p class="inst4l-link"><a href="/china/what-is-the-ccp-becoming">为什么旧秩序正在失去能力 · 解析中共总论 <span aria-hidden="true">→</span></a></p>` : ""}
+  </section>
 
-  ${inst4lSection(
-    "基本原则",
-    "路线的基本原则",
-    `<ul class="inst4l-principles">
-<li><strong>不革命</strong><span>政治变化不依赖暴力革命与群众动员。</span></li>
-<li><strong>不清算</strong><span>不以历史清算与集体报复作为转轨代价。</span></li>
-<li><strong>国家连续性</strong><span>在政治变化中保持国家、行政与公共服务的连续。</span></li>
-<li><strong>降低转轨阻力</strong><span>控制政治变化的阻力、风险与社会成本。</span></li>
-<li><strong>建立可信任承接主体</strong><span>由能够承担法律、财务与长期政治责任的组织承接公共功能。</span></li>
-</ul>`,
-    "以下原则来自已公开的正式内容，不包含尚未公开的制度设计细节。",
-  )}
+  <section class="inst4l-section" id="route">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">THE ROUTE</p>
+      <h2 class="inst4l-section__title">${civicOrderismConfig.route?.title ?? ""}</h2>
+    </div>
+    <div class="inst4-route__options">
+      ${(civicOrderismConfig.route?.options ?? [])
+        .map(
+          (option, index) => `<div class="inst4-route__option${index === 2 ? " inst4-route__option--chosen" : ""}">
+        <h3>${option.name}</h3>
+        <p>${option.desc}</p>
+      </div>`,
+        )
+        .join("\n")}
+    </div>
+  </section>
 
-  ${inst4lSection(
-    "转轨逻辑",
-    "为什么和平转轨可能发生",
-    inst4lRows(
-      routePrimary.map((article) => ({
-        href: `/${article.slug}`,
-        meta: "核心文章",
-        title: article.title,
-        desc: article.summary || "",
-      })),
-    ),
-    "围绕和平转轨的可能条件与基本路径，只展示目前已公开的原则。",
-  )}
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">FOUR PRINCIPLES</p>
+      <h2 class="inst4l-section__title">四个基本原则</h2>
+    </div>
+    <div class="inst4-route__principles">
+      ${(civicOrderismConfig.principles ?? [])
+        .map(
+          (principle) => `<div class="inst4-route__principle"><span class="inst4-route__principle-num">${principle.num}</span><h3>${principle.name}</h3><p>${principle.desc}</p></div>`,
+        )
+        .join("\n")}
+    </div>
+  </section>
 
-  ${inst4lSection(
-    "进一步阅读",
-    "政治路线研究",
-    inst4lRows(
-      routeMore.map((article) => ({
-        href: `/${article.slug}`,
-        meta: "政治路线研究",
-        title: article.title,
-        desc: article.summary || "",
-      })),
-    ),
-    "继续深入公民秩序主义路线研究。",
-  )}
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">TRANSITION LOGIC</p>
+      <h2 class="inst4l-section__title">${civicOrderismConfig.transition?.title ?? ""}</h2>
+    </div>
+    <ol class="inst4-route__chain">
+      ${(civicOrderismConfig.transition?.chain ?? [])
+        .map(
+          (node, index) => `<li><span>${index + 1}</span><p>${node}</p></li>`,
+        )
+        .join("\n")}
+    </ol>
+  </section>
 
-  ${inst4lSection(
-    "正式文件",
-    "入门文本",
-    inst4lRows([
-      {
-        href: "/files/civic-orderism-introduction-manual.pdf",
-        meta: "PDF · 入门手册",
-        title: "公民秩序主义介绍手册",
-        desc: "第一次理解公民秩序主义的基础文本。",
-      },
-      {
-        href: "/introduction-manual",
-        meta: "在线阅读",
-        title: "介绍手册（在线版）",
-        desc: "以网页形式阅读介绍手册全文。",
-      },
-    ]),
-  )}
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">WHY LOW RESISTANCE</p>
+      <h2 class="inst4l-section__title">${civicOrderismConfig.lowResistance?.title ?? ""}</h2>
+    </div>
+    <p class="inst4-route__statement">${civicOrderismConfig.lowResistance?.judgment ?? ""}</p>
+    <p class="inst4-route__actor-line">官僚、企业、地方政府、军警系统、普通家庭、既有利益群体 —— 他们都会判断：改变以后，我会失去什么？</p>
+    <ul class="inst4-route__chips">
+      ${(civicOrderismConfig.lowResistance?.actors ?? []).map((actor) => `<li>${actor}</li>`).join("")}
+    </ul>
+    <p class="inst4-route__quote">${civicOrderismConfig.lowResistance?.conclusion ?? ""}</p>
+  </section>
+
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">ORGANIZATION</p>
+      <h2 class="inst4l-section__title">${civicOrderismConfig.organization?.title ?? ""}</h2>
+    </div>
+    <p class="inst4-route__statement">${civicOrderismConfig.organization?.judgment ?? ""}</p>
+    <ul class="inst4-route__list">
+      ${(civicOrderismConfig.organization?.capabilities ?? []).map((capability) => `<li>${capability}</li>`).join("\n")}
+    </ul>
+    <p class="inst4l-link"><a href="${civicOrderismConfig.organization?.entryHref ?? ""}">${civicOrderismConfig.organization?.entryLabel ?? "了解当前组织工作"} <span aria-hidden="true">→</span></a></p>
+  </section>
+
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">WHAT KIND OF STATE</p>
+      <h2 class="inst4l-section__title">${civicOrderismConfig.state?.title ?? ""}</h2>
+    </div>
+    <div class="inst4-route__state-grid">
+      ${(civicOrderismConfig.state?.principles ?? [])
+        .map(
+          (principle) => `<div class="inst4-route__state-item"><h3>${principle.name}</h3><p>${principle.desc}</p></div>`,
+        )
+        .join("\n")}
+    </div>
+    <p class="inst4-route__closing">${civicOrderismConfig.state?.closing ?? ""}</p>
+  </section>
+
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">READING MAP</p>
+      <h2 class="inst4l-section__title">从哪里开始理解公民秩序主义？</h2>
+      <p class="inst4l-section__desc">围绕总论，按五个阅读阶段组织全部正式文章。每一阶段只展示代表文章，其余进入“查看这一主题的全部研究”。</p>
+    </div>
+    ${civicReadingStages
+      .map(
+        (stage) => `<div class="inst4-route__readstage">
+      <div class="inst4-route__readstage-head">
+        <p class="inst4-eyebrow">${stage.num}</p>
+        <h3 class="inst4-route__readstage-title">${stage.name}</h3>
+        <p class="inst4-route__readstage-desc">${stage.desc}</p>
+      </div>
+      ${inst4lRows(
+        stage.repItems.map((article) => ({
+          href: `/${article.slug}`,
+          meta: "代表文章",
+          title: article.title,
+          desc: article.summary || "",
+        })),
+      )}
+      ${
+        stage.extItems.length
+          ? `<details class="china-analysis-more"><summary>查看这一主题的全部研究（${stage.extItems.length}）</summary>${inst4lRows(
+              stage.extItems.map((article) => ({
+                href: `/${article.slug}`,
+                meta: "延伸阅读",
+                title: article.title,
+                desc: article.summary || "",
+              })),
+            )}</details>`
+          : ""
+      }
+    </div>`,
+      )
+      .join("\n")}
+  </section>
+
+  <section class="inst4l-section inst4-route__final">
+    <p class="inst4-route__statement">${civicOrderismConfig.final?.statement ?? ""}</p>
+    <p class="inst4-route__big">${civicOrderismConfig.final?.big ?? ""}</p>
+    <p class="inst4-route__final-line">公民秩序主义选择提前准备。</p>
+    ${(civicOrderismConfig.final?.closing ?? []).map((line) => `<p class="inst4-route__final-line">${line}</p>`).join("\n")}
+    <div class="inst4-route__cta">
+      <a href="${civicOverviewArticle ? `/${civicOverviewArticle.slug}` : "/civic-orderism/civic-orderism-overview"}">阅读总论 <span aria-hidden="true">→</span></a>
+      <a href="${civicOrderismConfig.organization?.entryHref ?? ""}">了解组织工作 <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
 </div>`,
 );
 
