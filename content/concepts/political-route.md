@@ -57,6 +57,12 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不按政治身份实施普遍追责的转轨道路。</p>
   <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：政治路线</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="nonviolent-transition state-system-upgrade political-route">
+  <p class="knowledge-card__meta"><span>2026-08-25</span><span>8 分钟阅读</span></p>
+  <h3><a href="/civic-orderism/civic-orderism-overview">公民秩序主义总论：保留国家，改变政治</a></h3>
+  <p class="knowledge-card__summary">公民秩序主义首先回答的，不是什么制度最理想，而是一个更加现实的问题：当旧政治秩序逐渐失去制造共同未来、协调社会利益和维持政治信任的能力，中国应该如何完成下一次政治转型？答案：保留国家，改变政治；承接秩序，重建规则。</p>
+  <p class="knowledge-card__chips"><span>概念：非暴力转型</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="second-reform" data-concepts="second-reform political-route">
   <p class="knowledge-card__meta"><span>2026-08-11</span><span>10 分钟阅读</span></p>
   <h3><a href="/china/an-era-change-beginning-in-the-united-states">一场起始于美国的时代变革</a></h3>
@@ -103,12 +109,6 @@ publicationStatus: reviewing
   <p class="knowledge-card__meta"><span>2026-05-10</span><span>11 分钟阅读</span></p>
   <h3><a href="/theory/internal-change-external-change">内变引外变：现代政治为何走到十字路口</a></h3>
   <p class="knowledge-card__summary">现代政治已经走到了一个历史性的十字路口。</p>
-  <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：非暴力转型</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route">
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>13 分钟阅读</span></p>
-  <h3><a href="/civic-orderism/why-civic-orderism-is-easier-to-succeed">为什么公民秩序主义在未来接替难度最小：它不是推倒国家，而是接管、校正和重组国家运行系统</a></h3>
-  <p class="knowledge-card__summary">公民秩序主义在未来如果面对中国秩序重建问题，它的接替难度相对最小，原因不在于它最激进，也不在于它口号最响，而在于它最接近中国现实国家机器的真实形态。</p>
   <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：非暴力转型</span></p>
 </article>
 </div>

@@ -15,7 +15,7 @@ noindex: false
 <p class="inst4-eyebrow">RESEARCH ARCHIVE</p>
 <h1 class="inst4l-title">全部研究</h1>
 <p class="inst4l-lead">按栏目浏览全部已发布研究。需要按问题搜索时，可以使用页面上方的搜索入口。</p>
-<p class="inst4l-status">101 篇研究 · 4 个研究栏目</p>
+<p class="inst4l-status">102 篇研究 · 4 个研究栏目</p>
   </section>
 
   <section class="inst4l-section">
@@ -281,9 +281,14 @@ noindex: false
   <div class="inst4l-section__head">
 <p class="inst4-eyebrow">02</p>
 <h2 class="inst4l-section__title">公民秩序主义</h2>
-<p class="inst4l-section__desc">32 篇研究</p>
+<p class="inst4l-section__desc">33 篇研究</p>
   </div>
   <div class="inst4l-list">
+<a class="inst4l-row" href="/civic-orderism/civic-orderism-overview">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">2026-08-25</span><span class="inst4l-row__title">公民秩序主义总论：保留国家，改变政治</span></span>
+  <span class="inst4l-row__desc">公民秩序主义首先回答的，不是什么制度最理想，而是一个更加现实的问题：当旧政治秩序逐渐失去制造共同未来、协调社会利益和维持</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
 <a class="inst4l-row" href="/civic-orderism/north-america-nonprofit-board-preparation-manifesto">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">2026-08-05</span><span class="inst4l-row__title">公民秩序主义北美非营利法人及董事会筹备宣言</span></span>
   <span class="inst4l-row__desc">公民秩序主义正式启动北美非营利法人及首届董事会筹备，目标是为理论、制度、人才、数字资产和长期公共责任建立合法、稳定、克制</span>

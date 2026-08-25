@@ -57,6 +57,12 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">从普通人的问题出发，说明问题如何进入制度，并经过整理、判断、执行、留痕和纠偏形成完整国家运行链条。</p>
   <p class="knowledge-card__chips"><span>概念：国家系统升级</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="" data-concepts="nonviolent-transition state-system-upgrade political-route">
+  <p class="knowledge-card__meta"><span>2026-08-25</span><span>8 分钟阅读</span></p>
+  <h3><a href="/civic-orderism/civic-orderism-overview">公民秩序主义总论：保留国家，改变政治</a></h3>
+  <p class="knowledge-card__summary">公民秩序主义首先回答的，不是什么制度最理想，而是一个更加现实的问题：当旧政治秩序逐渐失去制造共同未来、协调社会利益和维持政治信任的能力，中国应该如何完成下一次政治转型？答案：保留国家，改变政治；承接秩序，重建规则。</p>
+  <p class="knowledge-card__chips"><span>概念：非暴力转型</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="nonviolent-transition state-system-upgrade political-route">
   <p class="knowledge-card__meta"><span>2026-08-05</span><span>8 分钟阅读</span></p>
   <h3><a href="/civic-orderism/possibility-of-peaceful-political-transition-in-china">中国和平政治转型的可能性</a></h3>

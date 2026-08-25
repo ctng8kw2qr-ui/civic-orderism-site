@@ -2032,6 +2032,7 @@ const routeArticles = articles.filter(
     article.section === "公民秩序主义" && article.status === "published",
 );
 const routePrimary = [
+  "civic-orderism/civic-orderism-overview",
   "civic-orderism/peaceful-state-transition",
   "civic-orderism/possibility-of-peaceful-political-transition-in-china",
   "civic-orderism/why-civic-orderism",

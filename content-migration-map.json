@@ -36,6 +36,33 @@
     "needsReview": false
   },
   {
+    "title": "公民秩序主义总论：保留国家，改变政治",
+    "slug": "civic-orderism/civic-orderism-overview",
+    "date": "2026-08-25",
+    "updated": "2026-08-25",
+    "summary": "公民秩序主义首先回答的，不是什么制度最理想，而是一个更加现实的问题：当旧政治秩序逐渐失去制造共同未来、协调社会利益和维持政治信任的能力，中国应该如何完成下一次政治转型？答案：保留国家，改变政治；承接秩序，重建规则。",
+    "originalSection": "公民秩序主义",
+    "section": "公民秩序主义",
+    "tags": ["公民秩序主义", "总论", "和平转轨", "国家连续性", "政治路线"],
+    "status": "published",
+    "primaryTopic": null,
+    "relatedTopics": ["political-transition"],
+    "topics": ["political-transition"],
+    "concepts": [
+      "nonviolent-transition",
+      "state-system-upgrade",
+      "political-route"
+    ],
+    "primaryCoreModel": null,
+    "associatedCoreModels": [],
+    "featured": true,
+    "recommended": true,
+    "readingLevel": "基础",
+    "readingOrder": 0,
+    "author": "公民秩序主义",
+    "needsReview": false
+  },
+  {
     "title": "中共正在变成什么？",
     "slug": "china/what-is-the-ccp-becoming",
     "date": "2026-08-25",

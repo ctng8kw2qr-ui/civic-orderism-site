@@ -48,6 +48,11 @@ noindex: false
 <p class="inst4l-section__desc">围绕和平转轨的可能条件与基本路径，只展示目前已公开的原则。</p>
   </div>
   <div class="inst4l-list">
+<a class="inst4l-row" href="/civic-orderism/civic-orderism-overview">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">核心文章</span><span class="inst4l-row__title">公民秩序主义总论：保留国家，改变政治</span></span>
+  <span class="inst4l-row__desc">公民秩序主义首先回答的，不是什么制度最理想，而是一个更加现实的问题：当旧政治秩序逐渐失去制造共同未来、协调社会利益和维持政治信任的能力，中国应该如何完成下一次政治转型？答案：保留国家，改变政治；承接秩序，重建规则。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
 <a class="inst4l-row" href="/civic-orderism/peaceful-state-transition">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">核心文章</span><span class="inst4l-row__title">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</span></span>
   <span class="inst4l-row__desc">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不按政治身份实施普遍追责的转轨道路。</span>
