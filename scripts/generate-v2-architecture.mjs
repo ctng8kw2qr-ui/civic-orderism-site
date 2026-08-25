@@ -31,11 +31,19 @@ const readingPaths = readJson("reading-paths.config.json");
 const readingSequences = readJson("reading-sequences.config.json");
 const articleTopicAssignments = readJson("article-topics.config.json");
 const coreModelsConfig = readJson("core-models.config.json");
-const chinaAnalysisSectionBySlug = new Map(
-  chinaAnalysis.groups.flatMap((group) =>
-    group.slugs.map((slug) => [slug, group.name]),
-  ),
-);
+const chinaAnalysisSectionBySlug = new Map();
+for (const stage of chinaAnalysis.stages ?? []) {
+  for (const slug of [...(stage.featured ?? []), ...(stage.slugs ?? [])]) {
+    chinaAnalysisSectionBySlug.set(slug, `${stage.num} ${stage.title}`);
+  }
+}
+for (const topic of chinaAnalysis.topics ?? []) {
+  for (const slug of topic.slugs ?? []) {
+    if (!chinaAnalysisSectionBySlug.has(slug)) {
+      chinaAnalysisSectionBySlug.set(slug, topic.name);
+    }
+  }
+}
 if (chinaAnalysis.overview) {
   chinaAnalysisSectionBySlug.set(chinaAnalysis.overview, "总论 / 核心阅读");
 }
@@ -417,20 +425,49 @@ const articles = walk(contentDir)
   );
 
 const articleBySlug = new Map(articles.map((item) => [item.slug, item]));
-const chinaAnalysisGroupSlugs = chinaAnalysis.groups.flatMap(
-  (group) => group.slugs,
+const chinaStageSlugs = (chinaAnalysis.stages ?? []).flatMap((stage) => [
+  ...(stage.featured ?? []),
+  ...(stage.slugs ?? []),
+]);
+const chinaTopicSlugs = (chinaAnalysis.topics ?? []).flatMap(
+  (topic) => topic.slugs ?? [],
 );
 const chinaAnalysisSlugs = [
   ...(chinaAnalysis.overview ? [chinaAnalysis.overview] : []),
-  ...chinaAnalysisGroupSlugs,
+  ...chinaStageSlugs,
+  ...chinaTopicSlugs,
 ];
-if (
-  chinaAnalysis.groups.length !== 5 ||
-  new Set(chinaAnalysisGroupSlugs).size !== chinaAnalysisGroupSlugs.length
-) {
+if (chinaAnalysis.stages.length !== 4) {
   throw new Error(
-    "China analysis configuration must contain five groups with unique article slugs.",
+    "China analysis configuration must contain four causal stages.",
   );
+}
+if (chinaAnalysis.topics.length !== 5) {
+  throw new Error(
+    "China analysis configuration must contain five research topics.",
+  );
+}
+if (new Set(chinaStageSlugs).size !== chinaStageSlugs.length) {
+  throw new Error("China analysis stage slugs must be unique.");
+}
+for (const stage of chinaAnalysis.stages) {
+  if (
+    !stage.num ||
+    !stage.title ||
+    !stage.judgment ||
+    !stage.model ||
+    !Array.isArray(stage.featured) ||
+    !Array.isArray(stage.slugs)
+  ) {
+    throw new Error(
+      `China analysis stage is incomplete: ${stage.num ?? "(missing num)"}`,
+    );
+  }
+  if (stage.featured.length < 2) {
+    throw new Error(
+      `China analysis stage featured list must contain at least two articles: ${stage.title}`,
+    );
+  }
 }
 for (const slug of chinaAnalysisSlugs) {
   const article = articleBySlug.get(slug);
@@ -443,27 +480,10 @@ for (const slug of chinaAnalysisSlugs) {
     );
   }
 }
-for (const group of chinaAnalysis.groups) {
-  const featured = group.featured ?? [];
-  if (
-    featured.length < 4 ||
-    featured.length > 5 ||
-    new Set(featured).size !== featured.length
-  ) {
+for (const topic of chinaAnalysis.topics) {
+  if (!topic.name || !topic.href || !Array.isArray(topic.slugs)) {
     throw new Error(
-      `China analysis featured list must contain 4–5 unique articles: ${group.name}`,
-    );
-  }
-  for (const slug of featured) {
-    if (!group.slugs.includes(slug)) {
-      throw new Error(
-        `China analysis featured article is outside its group: ${group.name} -> ${slug}`,
-      );
-    }
-  }
-  if (group.coreFeatured && !featured.includes(group.coreFeatured)) {
-    throw new Error(
-      `China analysis core featured article is not featured: ${group.name} -> ${group.coreFeatured}`,
+      `China analysis topic is incomplete: ${topic.name ?? "(missing name)"}`,
     );
   }
 }
@@ -996,10 +1016,11 @@ ${groups.join("\n\n")}
 }
 
 for (const section of sections) {
-  const route =
-    section.slug === "china" || section.slug === "civic-orderism"
-      ? `${section.slug}/index.md`
-      : `${section.slug}/index.md`;
+  if (section.slug === "china") {
+    // china/index.md is generated separately by the four-stage overview block.
+    continue;
+  }
+  const route = `${section.slug}/index.md`;
   writeContent(route, sectionPage(section));
 }
 
@@ -2194,41 +2215,70 @@ const chinaModelRows = (chinaAnalysis.models ?? []).map((model) => ({
   title: model.name,
   desc: model.description || "",
 }));
-/* Program-level structural judgments: the five-to-six statements that explain
-   the current operating state of the system and connect the core models. */
-const chinaCoreJudgmentNames = new Set([
-  "党国关系",
-  "官僚体系",
-  "财政与利益分配",
-  "安全治理",
-  "权力集中",
-  "国家治理能力",
-]);
-const chinaJudgmentRows = (chinaAnalysis.structuralJudgments ?? [])
-  .filter((item) => chinaCoreJudgmentNames.has(item.name))
-  .map((item) => ({
-    href: item.href,
-    meta: "结构判断",
-    title: item.name,
-    desc: item.description || "",
-  }));
-const chinaGroupBlocks = (chinaAnalysis.groups ?? []).map((group) => {
-  const items = (group.featured ?? group.slugs ?? [])
+const chinaStageBlocks = (chinaAnalysis.stages ?? []).map((stage) => {
+  const featuredItems = (stage.featured ?? [])
     .map((slug) => articleBySlug.get(slug))
-    .filter((article) => article?.status === "published")
-    .slice(0, 3);
+    .filter((article) => article?.status === "published");
+  const moreItems = (stage.slugs ?? [])
+    .map((slug) => articleBySlug.get(slug))
+    .filter((article) => article?.status === "published");
   return {
-    name: group.name,
-    desc: group.description || "",
-    rows: items.map((article) => ({
+    num: stage.num,
+    title: stage.title,
+    judgment: stage.judgment,
+    model: stage.model,
+    finalModel: stage.finalModel ?? "",
+    featuredRows: featuredItems.map((article) => ({
       href: `/${article.slug}`,
-      meta: "延伸阅读",
+      meta: "代表研究",
+      title: article.title,
+      desc: article.summary || "",
+    })),
+    moreRows: moreItems.map((article) => ({
+      href: `/${article.slug}`,
+      meta: "本阶段研究",
       title: article.title,
       desc: article.summary || "",
     })),
   };
 });
-const chinaItems = chinaAnalysisSlugs
+const chinaTopicBlocks = (chinaAnalysis.topics ?? []).map((topic) => {
+  const items = (topic.slugs ?? [])
+    .map((slug) => articleBySlug.get(slug))
+    .filter((article) => article?.status === "published");
+  return {
+    name: topic.name,
+    desc: topic.description || "",
+    href: topic.href,
+    count: items.length,
+    rows: items.slice(0, 3).map((article) => ({
+      href: `/${article.slug}`,
+      meta: "",
+      title: article.title,
+      desc: article.summary || "",
+    })),
+  };
+});
+function inst4lStageSection(stage) {
+  const featured = inst4lRows(stage.featuredRows);
+  const more = stage.moreRows.length
+    ? `<details class="china-analysis-more"><summary>查看这一阶段的全部研究（${stage.moreRows.length}）</summary>${inst4lRows(stage.moreRows)}</details>`
+    : `<p class="inst4l-link"><a href="/articles/all">查看这一阶段的全部研究 <span aria-hidden="true">→</span></a></p>`;
+  const model = stage.finalModel
+    ? `<p class="inst4l-stage__model">${stage.model}</p><p class="inst4l-stage__model inst4l-stage__model--final">${stage.finalModel}</p>`
+    : `<p class="inst4l-stage__model">${stage.model}</p>`;
+  return `<section class="inst4l-section inst4l-stage" id="china-stage-${stage.num}">
+  <div class="inst4l-section__head">
+    <p class="inst4-eyebrow">${stage.num}</p>
+    <h2 class="inst4l-section__title">${stage.title}</h2>
+  </div>
+  <p class="inst4l-stage__judgment">${stage.judgment}</p>
+  ${model}
+  ${featured}
+  ${more}
+</section>`;
+}
+const chinaItems = [...new Set(chinaAnalysisSlugs)]
   .map((slug) => articleBySlug.get(slug))
   .filter((article) => article?.status === "published");
 const chinaLatest = [...chinaItems].sort(
@@ -2246,33 +2296,52 @@ writeInstitutionalContent(
     <p class="inst4-eyebrow">UNDERSTANDING THE PRESENT</p>
     <h1 class="inst4l-title">解析中共</h1>
     <p class="inst4l-lead">${chinaSectionConfig?.description ?? ""}</p>
-    <p class="inst4l-status">${chinaItems.length} 篇研究 · 3 个阅读层级 · 更新至 ${chinaLatest || "2026-07-19"}</p>
+    <div class="inst4l-hero__judgments">
+      <p class="inst4l-statement">${chinaAnalysis.heroJudgment ?? ""}</p>
+      <p class="inst4l-statement inst4l-statement--result">${chinaAnalysis.resultJudgment ?? ""}</p>
+    </div>
+    <p class="inst4l-status">${chinaItems.length} 篇研究 · 更新至 ${chinaLatest || "2026-07-19"}</p>
   </section>
 
-  ${inst4lSection("CORE JUDGMENT", "栏目核心判断", `<p class="inst4l-statement">${chinaCoreJudgment}</p>`)}
+  ${chinaOverviewRows.length ? `<section class="inst4l-section inst4l-pillar">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">总论 / 核心阅读</p>
+      <h2 class="inst4l-section__title"><a href="${chinaOverviewRows[0].href}">${chinaOverviewRows[0].title}</a></h2>
+      <p class="inst4l-section__desc">公民秩序主义关于中共的总论</p>
+    </div>
+    <p class="inst4l-pillar__summary">${chinaOverviewRows[0].desc}</p>
+    <p class="inst4l-pillar__cta"><a href="${chinaOverviewRows[0].href}">阅读总论 <span aria-hidden="true">→</span></a></p>
+  </section>` : ""}
 
-  ${chinaOverviewRows.length ? inst4lSection("总论 / 核心阅读", "从这里进入「解析中共」", inst4lRows(chinaOverviewRows), "公民秩序主义关于中共的总论与最高层理论入口。") : ""}
+  ${chinaStageBlocks.map(inst4lStageSection).join("\n")}
 
-  ${inst4lSection(
-    "01",
-    "核心分析框架",
-    inst4lRows(chinaModelRows),
-    "公民秩序主义用于理解中共运行状态、组织变化与治理机制的一组核心分析工具。",
-  )}
+  <section class="inst4l-section inst4l-tools">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">分析工具</p>
+      <h2 class="inst4l-section__title">进一步理解的工具箱</h2>
+      <p class="inst4l-section__desc">以下概念用于进一步理解中共具体政治现象。它们不是与总论平行的另一套理论，而是总论模型中的分析工具。</p>
+    </div>
+    <div class="inst4l-tools">${chinaModelRows
+      .map(
+        (model) => `<a class="inst4l-tool" href="${model.href}"><strong>${model.title}</strong><span>${model.desc}</span></a>`,
+      )
+      .join("\n")}</div>
+  </section>
 
-  ${inst4lSection("02", "结构判断", inst4lRows(chinaJudgmentRows), "从权力、财政、官僚、央地与国家治理等结构维度，观察中共长期运行中的矛盾。")}
-
-  ${chinaGroupBlocks
-    .map((block, index) =>
-      inst4lSection(
-        String(index + 3).padStart(2, "0"),
-        block.name,
-        inst4lRows(block.rows) +
-          `<p class="inst4l-link"><a href="/articles/all">查看该方向全部研究 <span aria-hidden="true">→</span></a></p>`,
-        block.desc,
-      ),
-    )
-    .join("\n")}
+  <section class="inst4l-section inst4l-research-topics">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">专题研究</p>
+      <h2 class="inst4l-section__title">按领域深入</h2>
+      <p class="inst4l-section__desc">四阶段回答“如何理解中共”，专题研究回答“我想研究某个具体领域”。这是次级研究索引。</p>
+    </div>
+    <div class="inst4l-topic-grid">
+      ${chinaTopicBlocks
+        .map(
+          (topic) => `<a class="inst4l-topic" href="${topic.href}"><strong>${topic.name}</strong><span>${topic.desc}</span><small>${topic.count} 篇研究</small></a>`,
+        )
+        .join("\n")}
+    </div>
+  </section>
 
   <section class="inst4l-section">
     <div class="inst4l-section__head">

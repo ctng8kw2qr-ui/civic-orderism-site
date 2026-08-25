@@ -1,6 +1,80 @@
 {
-  "readingHint": "现实事件提供入口，结构判断解释长期问题，核心模型连接这些变化背后的运行机制。",
+  "readingHint": "总论提供唯一阅读主线；01—04 构成一条完整因果链；分析工具与专题研究提供纵深。",
   "overview": "china/what-is-the-ccp-becoming",
+  "heroJudgment": "中共正在从一个依靠增长、利益和未来预期维持合作的发展型政治组织，转变为一个越来越依靠安全、纪律、控制和损失分配维持自身的防御型政治系统。",
+  "resultJudgment": "政治控制能力不断上升，国家治理效能却不断下降。",
+  "stages": [
+    {
+      "num": "01",
+      "title": "为什么中共曾经有效？",
+      "judgment": "如果不知道中共为什么曾经有效，就无法理解它今天为什么失灵。",
+      "model": "增长 → 利益 → 预期 → 合作",
+      "featured": [
+        "china/ccp-2018-xi-era-local-growth-space",
+        "china/political-machine-rewards-and-limits"
+      ],
+      "slugs": []
+    },
+    {
+      "num": "02",
+      "title": "为什么这套系统开始失效？",
+      "judgment": "过去的核心问题是如何分配增长，今天越来越重要的问题是如何分配损失。",
+      "model": "增长下降 → 历史承诺兑现 → 增量不足 → 损失分配 → 组织信用下降",
+      "featured": [
+        "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+        "china/ccp-bureaucracy-historical-bill",
+        "china/organization-credit-retired-officials"
+      ],
+      "slugs": [
+        "china/information-age-impact-on-ccp-mechanisms",
+        "china/industrial-system-failure-in-information-age",
+        "china/ccp-reform-political-balance-deadlock",
+        "china/why-ccp-cannot-reduce-grassroots-burden"
+      ]
+    },
+    {
+      "num": "03",
+      "title": "中共正在如何自救？",
+      "judgment": "习近平时代首先是一场组织回应：当利益越来越难以维持合作，中共开始越来越依靠纪律、安全和权力集中维持服从。",
+      "model": "失灵 → 不安全感 → 安全化 → 纪律强化 → 权力再集中",
+      "featured": [
+        "china/route-transition-why-ccp-keeps-purging-officials",
+        "china/xi-power-centralization",
+        "china/security-is-redefining-china"
+      ],
+      "slugs": [
+        "china/ccp-2018-new-reform-opening",
+        "china/chicken-and-cage",
+        "china/why-ccp-will-not-relax-party-pressure",
+        "china/why-expulsion-from-party-becomes-standard-ending"
+      ]
+    },
+    {
+      "num": "04",
+      "title": "为什么越自救，反而越失灵？",
+      "judgment": "中共解决了“谁服从谁”的组织问题，却解决不了组织真正面对的问题。",
+      "model": "安全化 → 清洗 → 再集中 → 反馈下降 → 官僚避责 → 治理失灵 → 再安全化",
+      "finalModel": "安全化 → 清洗 → 再集中 → 再失灵",
+      "featured": [
+        "china/Macro-Narratives,-Opportunity-Incentives,-and-High-Fragility",
+        "china/ccp-bureaucracy-double-deadlock",
+        "china/when-high-ranking-officials-are-no-longer-safe"
+      ],
+      "slugs": [
+        "china/security-led-governance-model",
+        "china/what-happens-when-security-becomes-the-top-priority",
+        "china/bureaucratic-system-under-purges",
+        "china/why-ccp-feels-less-secure-when-everyone-claims-loyalty",
+        "china/ccp-from-faith-community-to-black-box-post",
+        "china/ccp-no-real-base",
+        "china/emotional-link-breakdown-and-regime-collapse",
+        "china/maginot-line-of-stability-maintenance",
+        "china/xi-solved-organization-not-reality",
+        "china/party-power-logic-and-ccp-goal-vacuum",
+        "china/propaganda-system-hollowing-out"
+      ]
+    }
+  ],
   "models": [
     {
       "name": "党国应力",
@@ -39,165 +113,86 @@
       "article": null
     }
   ],
-  "structuralJudgments": [
+  "topics": [
     {
-      "name": "党国关系",
-      "description": "观察党与国家两套组织逻辑如何重叠、依赖并相互改变。",
-      "href": "/china/party-state-stress-neither-party-nor-state"
-    },
-    {
-      "name": "官僚体系",
-      "description": "高压、问责和授权收缩如何改变官员的行动方式。",
-      "href": "/topics/bureaucratic-system"
-    },
-    {
-      "name": "中央与地方",
-      "description": "权力网络、地方空间和中央协调之间的真实关系。",
-      "href": "/china/ccp-power-network-not-line"
-    },
-    {
-      "name": "财政与利益分配",
-      "description": "增长放缓后，历史成本、公共责任与损失如何重新分配。",
-      "href": "/topics/local-finance"
-    },
-    {
-      "name": "组织成员",
-      "description": "观察成员的忠诚、避责、自保与长期合作预期如何变化。",
-      "href": "/china/ccp-from-faith-community-to-black-box-post"
-    },
-    {
-      "name": "安全治理",
-      "description": "观察安全如何从政策领域上升为治理优先级与行动边界。",
-      "href": "/china/security-is-redefining-china"
-    },
-    {
-      "name": "权力集中",
-      "description": "集中如何提高命令一致性，又如何改变系统反馈。",
-      "href": "/topics/xi-era"
-    },
-    {
-      "name": "政治责任",
-      "description": "责任持续集中后，组织如何面对历史成本与治理失败。",
-      "href": "/china/ccp-bureaucracy-historical-bill"
-    },
-    {
-      "name": "国家治理能力",
-      "description": "政治控制能力与持续解决现实问题的能力为何可能分离。",
-      "href": "/china/supply-side-reform-state-can-scale-not-discover-future"
-    }
-  ],
-  "groups": [
-    {
-      "name": "组织结构与权力运行",
-      "description": "观察中共作为政治组织的结构、权力节点、决策机制与最高权力运行方式，理解权力如何形成、集中、传递与维持。",
-      "featured": [
-        "china/ccp-power-network-not-line",
-        "china/xi-power-centralization",
-        "china/xi-successor-and-bureaucratic-accountability",
-        "china/xi-succession-crisis-gray-rhino"
-      ],
+      "name": "权力与党国结构",
+      "description": "党国关系、权力运行、中央地方、制度授权与国家能力的边界。",
+      "href": "/topics/ccp-governance",
       "slugs": [
-        "china/chengguan-power-logic",
-        "china/ccp-power-network-not-line",
-        "china/xi-power-centralization",
-        "china/mao-death-release-xi-death-weightlessness",
-        "china/xi-succession-crisis-gray-rhino",
-        "china/xi-successor-and-bureaucratic-accountability"
-      ]
-    },
-    {
-      "name": "官僚系统与组织成员",
-      "description": "观察中共内部的人如何行动：官僚如何服从、避责、自保和表达忠诚，以及组织与成员之间的现实关系如何发生变化。",
-      "featured": [
-        "china/ccp-from-faith-community-to-black-box-post",
-        "china/why-ccp-feels-less-secure-when-everyone-claims-loyalty",
-        "china/ccp-no-real-base",
-        "china/ccp-bureaucracy-double-deadlock",
-        "china/organization-credit-retired-officials"
-      ],
-      "slugs": [
-        "china/why-ccp-feels-less-secure-when-everyone-claims-loyalty",
-        "china/ccp-from-faith-community-to-black-box-post",
-        "china/ccp-no-real-base",
-        "china/bureaucratic-system-under-purges",
-        "china/ccp-bureaucracy-double-deadlock",
-        "china/why-ccp-cannot-reduce-grassroots-burden",
-        "china/why-expulsion-from-party-becomes-standard-ending",
-        "china/elite-sandification-ming-bureaucrats-ccp",
-        "china/organization-credit-retired-officials",
-        "china/propaganda-system-hollowing-out",
-        "china/ccp-bureaucracy-historical-bill",
-        "china/emotional-link-breakdown-and-regime-collapse",
-        "china/party-power-logic-and-ccp-goal-vacuum",
-        "theory/no-accountability-lie-flat-mentality"
-      ]
-    },
-    {
-      "name": "结构性困境与组织失灵",
-      "description": "讨论中共今天面对的深层问题为什么越来越难以通过局部政策修补，以及增长模式、财政结构、社会结构和组织机制如何共同形成系统性压力。",
-      "featured": [
-        "china/Macro-Narratives,-Opportunity-Incentives,-and-High-Fragility",
-        "theory/party-state-structural-failure",
-        "china/information-age-impact-on-ccp-mechanisms",
-        "china/ccp-reform-political-balance-deadlock",
-        "china/supply-side-reform-state-can-scale-not-discover-future"
-      ],
-      "slugs": [
-        "theory/party-state-structural-failure",
         "china/party-state-stress-neither-party-nor-state",
-        "china/Macro-Narratives,-Opportunity-Incentives,-and-High-Fragility",
-        "theory/ccp-high-fragility-dysfunction",
-        "theory/high-rigidity-system-ccp",
-        "china/information-age-impact-on-ccp-mechanisms",
-        "china/industrial-system-failure-in-information-age",
+        "china/ccp-power-network-not-line",
+        "china/chengguan-power-logic",
         "china/supply-side-reform-state-can-scale-not-discover-future",
-        "china/ccp-reform-political-balance-deadlock",
-        "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
-        "china/political-machine-rewards-and-limits",
         "china/xi-solved-organization-not-reality",
-        "theory/ccp-completed-historical-task-refuses-exit",
+        "china/xi-power-centralization",
+        "china/ccp-2018-xi-era-local-growth-space",
+        "theory/party-state-structural-failure",
         "institution/despotism-cancer-ming-1566"
       ]
     },
     {
-      "name": "安全叙事与防御转型",
-      "description": "当增长、改革和发展逻辑越来越难以维持，中共正在把治理重心进一步转向安全、控制、组织稳定与风险防范。本栏目观察这种战略转型如何展开。",
-      "featured": [
-        "china/security-led-governance-model",
-        "china/security-is-redefining-china",
-        "china/route-transition-why-ccp-keeps-purging-officials",
-        "china/ccp-2018-xi-era-local-growth-space",
-        "china/what-happens-when-security-becomes-the-top-priority"
-      ],
-      "coreFeatured": "china/security-led-governance-model",
+      "name": "官僚系统与组织成员",
+      "description": "官员、组织成员、晋升、退休、组织信用与官僚行为。",
+      "href": "/topics/bureaucratic-system",
       "slugs": [
-        "china/security-led-governance-model",
-        "china/what-happens-when-security-becomes-the-top-priority",
-        "china/security-is-redefining-china",
-        "china/ccp-2018-new-reform-opening",
-        "china/ccp-2018-xi-era-local-growth-space",
+        "china/ccp-bureaucracy-double-deadlock",
+        "china/organization-credit-retired-officials",
+        "china/ccp-bureaucracy-historical-bill",
+        "china/bureaucratic-system-under-purges",
+        "china/why-ccp-cannot-reduce-grassroots-burden",
+        "china/why-expulsion-from-party-becomes-standard-ending",
+        "china/ccp-from-faith-community-to-black-box-post",
+        "china/ccp-no-real-base",
+        "china/propaganda-system-hollowing-out",
+        "china/elite-sandification-ming-bureaucrats-ccp",
+        "theory/high-rigidity-system-ccp",
+        "theory/no-accountability-lie-flat-mentality"
+      ]
+    },
+    {
+      "name": "财政、利益与组织失灵",
+      "description": "财政、地方债、社保、房地产、利益分配、高脆弱态与治理失灵。",
+      "href": "/topics/local-finance",
+      "slugs": [
+        "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+        "china/information-age-impact-on-ccp-mechanisms",
+        "china/industrial-system-failure-in-information-age",
+        "china/ccp-reform-political-balance-deadlock",
+        "china/Macro-Narratives,-Opportunity-Incentives,-and-High-Fragility",
+        "china/emotional-link-breakdown-and-regime-collapse",
+        "theory/ccp-high-fragility-dysfunction",
+        "theory/ccp-completed-historical-task-refuses-exit"
+      ]
+    },
+    {
+      "name": "安全治理与习近平时代",
+      "description": "习近平、权力集中、反腐、清洗、安全叙事与纪律政治。",
+      "href": "/topics/xi-era",
+      "slugs": [
         "china/route-transition-why-ccp-keeps-purging-officials",
-        "china/why-ccp-will-not-relax-party-pressure",
+        "china/security-is-redefining-china",
+        "china/security-led-governance-model",
         "china/when-high-ranking-officials-are-no-longer-safe",
-        "china/chicken-and-cage",
-        "china/maginot-line-of-stability-maintenance"
+        "china/why-ccp-will-not-relax-party-pressure",
+        "china/what-happens-when-security-becomes-the-top-priority",
+        "china/why-ccp-feels-less-secure-when-everyone-claims-loyalty",
+        "china/xi-successor-and-bureaucratic-accountability",
+        "china/xi-succession-crisis-gray-rhino",
+        "china/mao-death-release-xi-death-weightlessness",
+        "china/ccp-2018-new-reform-opening",
+        "china/chicken-and-cage"
       ]
     },
     {
       "name": "外交、军事与外溢风险",
-      "description": "观察中共内部治理逻辑如何向外交、军事、台海及国际关系外溢，以及组织压力如何增加战略误判与外部风险。",
-      "featured": [
-        "china/diplomacy-root",
-        "china/pla-political-subject-myth",
-        "china/taiwan-war-risk",
-        "china/taiwan-war-controllable-escalation-illusion"
-      ],
+      "description": "外交、台湾、军事、国际关系与内部政治逻辑的外溢。",
+      "href": "/articles/all",
       "slugs": [
-        "china/an-era-change-beginning-in-the-united-states",
         "china/diplomacy-root",
         "china/pla-political-subject-myth",
         "china/taiwan-war-risk",
-        "china/taiwan-war-controllable-escalation-illusion"
+        "china/taiwan-war-controllable-escalation-illusion",
+        "china/an-era-change-beginning-in-the-united-states"
       ]
     }
   ]

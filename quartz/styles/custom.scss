@@ -9884,6 +9884,208 @@ body[data-slug="preparation"] {
   }
 }
 
+/* ---- 解析中共四阶段 overview（inst4l-china）---- */
+.inst4l-hero__judgments {
+  margin-top: 2rem;
+}
+
+.inst4l-hero__judgments .inst4l-statement {
+  margin-top: 1.3rem !important;
+}
+
+.inst4l-hero__judgments .inst4l-statement--result {
+  color: var(--inst4-gray);
+  font-size: clamp(1.05rem, 1.9vw, 1.25rem);
+  font-weight: 460;
+}
+
+/* 总论 Pillar */
+.inst4l-pillar .inst4l-section__title {
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  font-weight: 520;
+}
+
+.inst4l-pillar .inst4l-section__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.inst4l-pillar .inst4l-section__title a:hover,
+.inst4l-pillar .inst4l-section__title a:focus-visible {
+  color: var(--inst4-accent);
+  outline: none;
+}
+
+.inst4l-pillar__summary {
+  max-width: 720px;
+  margin: 1.4rem 0 0;
+  color: var(--inst4-ink-2);
+  font-size: 1.02rem;
+  font-weight: 440;
+  line-height: 1.85;
+}
+
+.inst4l-pillar__cta {
+  margin: 1.8rem 0 0;
+}
+
+.inst4l-pillar__cta a {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  color: var(--inst4-ink);
+  font-size: 1rem;
+  font-weight: 560;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--inst4-ink);
+  padding-bottom: 0.2rem;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.inst4l-pillar__cta a span {
+  transition: transform 180ms ease;
+}
+
+.inst4l-pillar__cta a:hover,
+.inst4l-pillar__cta a:focus-visible {
+  color: var(--inst4-accent);
+  border-bottom-color: var(--inst4-accent);
+  outline: none;
+}
+
+.inst4l-pillar__cta a:hover span,
+.inst4l-pillar__cta a:focus-visible span {
+  transform: translateX(3px);
+}
+
+/* 四阶段：判断句与模型链 */
+.inst4l-stage__judgment {
+  max-width: 720px;
+  margin: 1.6rem 0 0 !important;
+  color: var(--inst4-ink);
+  font-size: clamp(1.05rem, 1.9vw, 1.28rem);
+  font-weight: 480;
+  line-height: 1.7;
+}
+
+.inst4l-stage__model {
+  margin: 1.1rem 0 0 !important;
+  padding: 0.7rem 1rem;
+  border-left: 2px solid var(--inst4-line-soft);
+  color: var(--inst4-gray);
+  font-size: 0.9rem;
+  font-weight: 460;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  overflow-wrap: anywhere;
+}
+
+.inst4l-stage__model--final {
+  margin-top: 0.45rem !important;
+  border-left-color: var(--inst4-accent);
+  color: var(--inst4-ink-2);
+  font-weight: 540;
+}
+
+/* 分析工具 */
+.inst4l-tools {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 1.8rem;
+  border-top: 1px solid var(--inst4-line);
+  border-left: 1px solid var(--inst4-line);
+  background: var(--inst4-line);
+}
+
+.inst4l-tool {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 0;
+  padding: 1.2rem 1.3rem;
+  background: var(--inst4-bg);
+  transition: background 160ms ease;
+}
+
+.inst4l-tool:hover,
+.inst4l-tool:focus-visible {
+  background: var(--inst4-bg-soft);
+  outline: none;
+}
+
+.inst4l-tool strong {
+  color: var(--inst4-ink-2);
+  font-size: 0.92rem;
+  font-weight: 560;
+  line-height: 1.5;
+}
+
+.inst4l-tool span {
+  color: var(--inst4-gray);
+  font-size: 0.82rem;
+  font-weight: 440;
+  line-height: 1.65;
+}
+
+/* 专题研究 */
+.inst4l-topic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.8rem;
+}
+
+.inst4l-topic {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+  padding: 1.4rem 0;
+  border-top: 1px solid var(--inst4-line);
+  border-bottom: 1px solid var(--inst4-line);
+}
+
+.inst4l-topic strong {
+  color: var(--inst4-ink);
+  font-size: 1.02rem;
+  font-weight: 540;
+  line-height: 1.5;
+  transition: color 160ms ease;
+}
+
+.inst4l-topic span {
+  color: var(--inst4-gray);
+  font-size: 0.86rem;
+  font-weight: 440;
+  line-height: 1.7;
+}
+
+.inst4l-topic small {
+  color: var(--inst4-muted);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.inst4l-topic:hover strong,
+.inst4l-topic:focus-visible strong {
+  color: var(--inst4-accent);
+}
+
+.inst4l-topic:focus-visible {
+  outline: none;
+}
+
+@media (max-width: 900px) {
+  .inst4l-tools,
+  .inst4l-topic-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 /* ---- Phase 2A.5 — global shell cleanup ----
    The Quartz persistent sidebar exits the frontend architecture.
    #quartz-body is re-laid out without the CSS grid columns so no

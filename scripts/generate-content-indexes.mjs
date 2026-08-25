@@ -607,10 +607,19 @@ status: published
 
 ## 文章列表
 
-${chinaAnalysis.groups
+${chinaAnalysis.stages
   .map(
-    (group, index) =>
-      `### ${["一", "二", "三", "四", "五"][index]}、${group.name}\n\n${group.description}\n\n${articleLines(group.slugs, { sort: "manual" })}`,
+    (stage) =>
+      `### ${stage.num}、${stage.title}\n\n${stage.model}\n\n${articleLines([...stage.featured, ...stage.slugs], { sort: "manual" })}`,
+  )
+  .join("\n\n")}
+
+## 专题研究
+
+${chinaAnalysis.topics
+  .map(
+    (topic) =>
+      `### ${topic.name}\n\n${topic.description}\n\n${articleLines(topic.slugs, { sort: "manual" })}`,
   )
   .join("\n\n")}`,
 );

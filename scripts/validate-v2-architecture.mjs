@@ -134,45 +134,53 @@ const chinaPageSource = fs.readFileSync(
   path.join(root, "content/china/index.md"),
   "utf8",
 );
-const expectedChinaFeaturedCounts = [4, 5, 5, 5, 4];
-for (const [index, group] of chinaAnalysisConfig.groups.entries()) {
+const expectedChinaStageCounts = [2, 3, 3, 3];
+for (const [index, stage] of chinaAnalysisConfig.stages.entries()) {
   const sectionStart = chinaPageSource.indexOf(
-    `inst4l-section__title">${group.name}`,
+    `inst4l-section__title">${stage.title}`,
+  );
+  assert(
+    sectionStart !== -1,
+    `解析中共缺少四阶段区块：${stage.title}`,
   );
   const sectionEnd =
     chinaPageSource.indexOf('inst4l-section__title">', sectionStart + 1) === -1
       ? chinaPageSource.length
       : chinaPageSource.indexOf('inst4l-section__title">', sectionStart + 1);
   const sectionSource = chinaPageSource.slice(sectionStart, sectionEnd);
+  assert(
+    chinaPageSource.includes(`id="china-stage-${stage.num}"`) &&
+      chinaPageSource.includes(`class="inst4-eyebrow">${stage.num}`),
+    `解析中共四阶段编号异常：${stage.title}`,
+  );
+  assert(
+    sectionSource.includes(stage.judgment),
+    `解析中共四阶段缺少核心判断：${stage.title}`,
+  );
+  assert(
+    sectionSource.includes(stage.model),
+    `解析中共四阶段缺少模型链：${stage.title}`,
+  );
   const renderedFeatured = [
     ...sectionSource.matchAll(/<a class="inst4l-row" href="\/([^"]+)">/g),
   ]
     .map((match) => match[1])
-    .filter((slug) => (group.featured ?? []).includes(slug));
-  const expectedFeatured = (group.featured ?? []).slice(0, 3);
+    .filter((slug) => (stage.featured ?? []).includes(slug));
   assert(
-    JSON.stringify(renderedFeatured) === JSON.stringify(expectedFeatured),
-    `解析中共首屏代表作顺序与配置不一致：${group.name}`,
+    JSON.stringify(renderedFeatured) === JSON.stringify(stage.featured ?? []),
+    `解析中共四阶段代表作顺序与配置不一致：${stage.title}`,
   );
   assert(
-    expectedFeatured.length === Math.min(3, expectedChinaFeaturedCounts[index]),
-    `解析中共首屏代表作数量不符合定型配置：${group.name}`,
+    (stage.featured ?? []).length === expectedChinaStageCounts[index],
+    `解析中共四阶段代表作数量不符合定型配置：${stage.title}`,
   );
-  for (const featuredSlug of expectedFeatured) {
-    assert(
-      chinaPageSource.includes(
-        `<a class="inst4l-row" href="/${featuredSlug}">`,
-      ),
-      `解析中共代表文章未进入研究索引：${featuredSlug}`,
-    );
-  }
 }
 for (const model of chinaAnalysisConfig.models) {
   assert(
     chinaPageSource.includes(`href="${model.href}"`) &&
       chinaPageSource.includes(model.name) &&
       chinaPageSource.includes(model.description),
-    `解析中共缺少核心模型：${model.name}`,
+    `解析中共缺少分析工具：${model.name}`,
   );
 }
 assert(
@@ -185,66 +193,25 @@ assert(
       "安全化—清洗—再集中—再失灵模型",
       "政治控制—治理效能背离",
     ]),
-  "解析中共核心模型未保持六个相互独立的模型",
+  "解析中共分析工具未保持六个相互独立的概念",
 );
-const chinaProgramJudgmentNames = new Set([
-  "党国关系",
-  "官僚体系",
-  "财政与利益分配",
-  "安全治理",
-  "权力集中",
-  "国家治理能力",
-]);
-for (const judgment of chinaAnalysisConfig.structuralJudgments) {
-  if (!chinaProgramJudgmentNames.has(judgment.name)) continue;
+for (const topic of chinaAnalysisConfig.topics) {
   assert(
-    chinaPageSource.includes(`href="${judgment.href}"`) &&
-      chinaPageSource.includes(judgment.name),
-    `解析中共缺少结构判断：${judgment.name}`,
+    chinaPageSource.includes(`inst4l-topic" href="${topic.href}"`) &&
+      chinaPageSource.includes(topic.name) &&
+      chinaPageSource.includes(topic.description),
+    `解析中共缺少专题研究入口：${topic.name}`,
   );
 }
-const chinaJudgmentsSection = chinaPageSource.slice(
-  chinaPageSource.indexOf('inst4l-section__title">结构判断'),
-  chinaPageSource.indexOf('inst4l-section__title">组织结构与权力运行'),
+assert(
+  chinaPageSource.includes(chinaAnalysisConfig.heroJudgment) &&
+    chinaPageSource.includes(chinaAnalysisConfig.resultJudgment),
+  "解析中共 Hero 未包含主判断与结果判断",
 );
 assert(
-  !chinaJudgmentsSection.includes("中央与地方") &&
-    !chinaJudgmentsSection.includes("组织成员") &&
-    !chinaJudgmentsSection.includes("政治责任"),
-  "解析中共结构判断未收敛到 Program-Level 代表判断",
-);
-assert(
-  JSON.stringify(
-    chinaAnalysisConfig.structuralJudgments.map((judgment) => judgment.name),
-  ) ===
-    JSON.stringify([
-      "党国关系",
-      "官僚体系",
-      "中央与地方",
-      "财政与利益分配",
-      "组织成员",
-      "安全治理",
-      "权力集中",
-      "政治责任",
-      "国家治理能力",
-    ]),
-  "解析中共结构判断未保持九个观察维度",
-);
-assert(
-  chinaPageSource.includes(
-    "公民秩序主义用于理解中共运行状态、组织变化与治理机制的一组核心分析工具",
-  ) &&
-    chinaPageSource.includes(
-      "从权力、财政、官僚、央地与国家治理等结构维度，观察中共长期运行中的矛盾",
-    ),
-  "解析中共未明确区分核心分析框架与结构判断",
-);
-assert(
-  chinaPageSource.indexOf('inst4l-section__title">核心分析框架') <
-    chinaPageSource.indexOf('inst4l-section__title">结构判断') &&
-    chinaPageSource.indexOf('inst4l-section__title">结构判断') <
-      chinaPageSource.indexOf('inst4l-section__title">组织结构与权力运行'),
-  "解析中共的核心分析框架、结构判断与现实观察顺序异常",
+  chinaPageSource.includes("inst4l-pillar") &&
+    chinaPageSource.includes("阅读总论"),
+  "解析中共总论 Pillar 入口缺失",
 );
 assert(
   chinaPageHtml.includes("inst4l") &&
@@ -259,11 +226,9 @@ assert(
   "解析中共页面未保留全部文章入口",
 );
 assert(
-  chinaPageSource.includes("核心分析框架") &&
-    chinaPageSource.includes(
-      "公民秩序主义用于理解中共运行状态、组织变化与治理机制的一组核心分析工具",
-    ),
-  "解析中共核心模型未更名为核心分析框架",
+  chinaPageSource.includes("分析工具") &&
+    chinaPageSource.includes("专题研究"),
+  "解析中共未明确区分分析工具与专题研究",
 );
 
 assert(
