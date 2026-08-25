@@ -583,7 +583,7 @@ function deindentHtml(body) {
   return body
     .split("\n")
     .map((line) =>
-      /^ {4,}<(\/?)(section|div|aside|header|nav|footer|ul|ol|li|p|h[1-6]|blockquote|table)/u.test(
+      /^ {4,}<(\/?)(section|div|aside|header|nav|footer|ul|ol|li|p|h[1-6]|blockquote|table|details|summary)/u.test(
         line,
       )
         ? line.replace(/^ {2,}/, "")

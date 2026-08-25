@@ -180,7 +180,7 @@ noindex: false
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
 </div>
-      <details class="china-analysis-more"><summary>查看这一主题的全部研究（3）</summary><div class="inst4l-list">
+<details class="china-analysis-more"><summary>查看这一主题的全部研究（3）</summary><div class="inst4l-list">
 <a class="inst4l-row" href="/civic-orderism/civic-orderism-manual">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">延伸阅读</span><span class="inst4l-row__title">公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案</span></span>
   <span class="inst4l-row__desc">公民秩序主义，是一套面向现代社会，尤其面向中国现实问题的国家治理理论。</span>
@@ -202,7 +202,7 @@ noindex: false
 <div class="inst4-route__readstage-head">
 <p class="inst4-eyebrow">03</p>
 <h3 class="inst4-route__readstage-title">和平转型如何发生</h3>
-<p class="inst4-route__readstage-desc">和平转轨、新旧政治信任、降低转型阻力、旧体系成员的安全预期与国家连续性。</p>
+<p class="inst4-route__readstage-desc">为什么旧体系成员会接受改变、如何形成新旧政治信任、如何降低政治阻力、如何进入沟通与和平转型。</p>
 </div>
 <div class="inst4l-list">
 <a class="inst4l-row" href="/civic-orderism/peaceful-state-transition">
@@ -216,7 +216,7 @@ noindex: false
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
 </div>
-      <details class="china-analysis-more"><summary>查看这一主题的全部研究（2）</summary><div class="inst4l-list">
+<details class="china-analysis-more"><summary>查看这一主题的全部研究（2）</summary><div class="inst4l-list">
 <a class="inst4l-row" href="/civic-orderism/why-civic-orderism-is-easier-to-succeed">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">延伸阅读</span><span class="inst4l-row__title">为什么公民秩序主义在未来接替难度最小：它不是推倒国家，而是接管、校正和重组国家运行系统</span></span>
   <span class="inst4l-row__desc">公民秩序主义在未来如果面对中国秩序重建问题，它的接替难度相对最小，原因不在于它最激进，也不在于它口号最响，而在于它最接近中国现实国家机器的真实形态。</span>
@@ -233,21 +233,16 @@ noindex: false
 <div class="inst4-route__readstage-head">
 <p class="inst4-eyebrow">04</p>
 <h3 class="inst4-route__readstage-title">如何承接国家</h3>
-<p class="inst4-route__readstage-desc">保留行政体系、政治与国家的区别、政治责任、组织能力、政治信誉与国家连续性。</p>
+<p class="inst4-route__readstage-desc">转型发生后哪些国家系统必须继续运行、如何保留行政连续性、如何区分国家与政权、如何处理责任边界、如何避免政治真空与国家失序。</p>
 </div>
 <div class="inst4l-list">
-<a class="inst4l-row" href="/civic-orderism/north-america-nonprofit-board-preparation-manifesto">
-  <span class="inst4l-row__cell"><span class="inst4l-row__meta">代表文章</span><span class="inst4l-row__title">公民秩序主义北美非营利法人及董事会筹备宣言</span></span>
-  <span class="inst4l-row__desc">公民秩序主义正式启动北美非营利法人及首届董事会筹备，目标是为理论、制度、人才、数字资产和长期公共责任建立合法、稳定、克制的组织基础。</span>
-  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
-</a>
 <a class="inst4l-row" href="/civic-orderism/state-must-rely-on-systems-not-drivers">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">代表文章</span><span class="inst4l-row__title">国家不能只靠驾驶员：为什么现代治理必须依赖系统</span></span>
   <span class="inst4l-row__desc">本文以现代汽车系统为比喻，说明国家作为复杂系统不能依赖单一领导人的英明，而必须依靠行政、司法、监督、财政、媒体、信息和立法等子系统的相对独立、差异性反馈与自我修复能力。文章以中共集权为反面案例，论证政党集权为何会破坏国家系统可靠性。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
 </div>
-      <details class="china-analysis-more"><summary>查看这一主题的全部研究（3）</summary><div class="inst4l-list">
+<details class="china-analysis-more"><summary>查看这一主题的全部研究（3）</summary><div class="inst4l-list">
 <a class="inst4l-row" href="/civic-orderism/backend-system-under-civic-orderism">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">延伸阅读</span><span class="inst4l-row__title">公民秩序主义对后台系统的重视：为什么培训、秘书处、专业事务与留痕系统，是现代国家真正的底座</span></span>
   <span class="inst4l-row__desc">说明培训、秘书处、专业事务和留痕系统如何构成现代国家稳定运行的后台底座。</span>
@@ -288,7 +283,7 @@ noindex: false
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
 </div>
-      <details class="china-analysis-more"><summary>查看这一主题的全部研究（14）</summary><div class="inst4l-list">
+<details class="china-analysis-more"><summary>查看这一主题的全部研究（14）</summary><div class="inst4l-list">
 <a class="inst4l-row" href="/civic-orderism/what-is-committee-system">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">延伸阅读</span><span class="inst4l-row__title">什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构</span></span>
   <span class="inst4l-row__desc">系统说明委员会的职责边界、工作流程，以及它与行政、秘书处和社会问题入口之间的关系。</span>
