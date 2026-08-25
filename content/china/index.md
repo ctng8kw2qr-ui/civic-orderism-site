@@ -51,7 +51,7 @@ noindex: false
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
 </div>
-  <p class="inst4l-link"><a href="/articles/all">查看这一阶段的全部研究 <span aria-hidden="true">→</span></a></p>
+  <p class="inst4l-link"><a href="/articles/all">浏览全部解析中共研究 <span aria-hidden="true">→</span></a></p>
 </section>
 <section class="inst4l-section inst4l-stage" id="china-stage-02">
   <div class="inst4l-section__head">
@@ -153,7 +153,7 @@ noindex: false
 <h2 class="inst4l-section__title">为什么越自救，反而越失灵？</h2>
   </div>
   <p class="inst4l-stage__judgment">中共解决了“谁服从谁”的组织问题，却解决不了组织真正面对的问题。</p>
-  <p class="inst4l-stage__model">安全化 → 清洗 → 再集中 → 反馈下降 → 官僚避责 → 治理失灵 → 再安全化</p><p class="inst4l-stage__model inst4l-stage__model--final">安全化 → 清洗 → 再集中 → 再失灵</p>
+  <p class="inst4l-stage__model">安全化 → 清洗 → 再集中 → 反馈下降 → 官僚避责 → 治理失灵 → 再安全化</p>
   <div class="inst4l-list">
 <a class="inst4l-row" href="/china/Macro-Narratives,-Opportunity-Incentives,-and-High-Fragility">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">代表研究</span><span class="inst4l-row__title">宏观叙事、机会激励与高脆弱态：中共为何更可能“失灵”而非“倒台”</span></span>

@@ -2263,7 +2263,7 @@ function inst4lStageSection(stage) {
   const featured = inst4lRows(stage.featuredRows);
   const more = stage.moreRows.length
     ? `<details class="china-analysis-more"><summary>查看这一阶段的全部研究（${stage.moreRows.length}）</summary>${inst4lRows(stage.moreRows)}</details>`
-    : `<p class="inst4l-link"><a href="/articles/all">查看这一阶段的全部研究 <span aria-hidden="true">→</span></a></p>`;
+    : `<p class="inst4l-link"><a href="/articles/all">浏览全部解析中共研究 <span aria-hidden="true">→</span></a></p>`;
   const model = stage.finalModel
     ? `<p class="inst4l-stage__model">${stage.model}</p><p class="inst4l-stage__model inst4l-stage__model--final">${stage.finalModel}</p>`
     : `<p class="inst4l-stage__model">${stage.model}</p>`;
