@@ -174,16 +174,16 @@ noindex: false
   <span class="inst4l-row__desc">世界已经进入信息化时代，但绝大多数国家仍运行着工业时代建立起来的治理体系。本文从时代错位、改革开放遗留问题与资源约束出发，解释公民秩序主义为何在今天提出。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
-<a class="inst4l-row" href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">
-  <span class="inst4l-row__cell"><span class="inst4l-row__meta">代表文章</span><span class="inst4l-row__title">如果你只读一篇：公民秩序主义到底想解决什么</span></span>
-  <span class="inst4l-row__desc">公民秩序主义不是口号、政党或情绪化革命方案。它关注现代国家与普通人之间的秩序关系：问题能否进入系统、权力能否追责、行政能否持续运行、制度能否纠错，以及普通人能否持续获得解释和反馈。</span>
-  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
-</a>
 </div>
-<details class="china-analysis-more"><summary>查看这一主题的全部研究（3）</summary><div class="inst4l-list">
+<details class="china-analysis-more"><summary>查看这一主题的全部研究（4）</summary><div class="inst4l-list">
 <a class="inst4l-row" href="/civic-orderism/civic-orderism-manual">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">延伸阅读</span><span class="inst4l-row__title">公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案</span></span>
   <span class="inst4l-row__desc">公民秩序主义，是一套面向现代社会，尤其面向中国现实问题的国家治理理论。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+<a class="inst4l-row" href="/civic-orderism/what-civic-orderism-solves-if-you-read-only-one">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">延伸阅读</span><span class="inst4l-row__title">如果你只读一篇：公民秩序主义到底想解决什么</span></span>
+  <span class="inst4l-row__desc">公民秩序主义不是口号、政党或情绪化革命方案。它关注现代国家与普通人之间的秩序关系：问题能否进入系统、权力能否追责、行政能否持续运行、制度能否纠错，以及普通人能否持续获得解释和反馈。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
 <a class="inst4l-row" href="/civic-orderism/what-civic-orderism-ultimately-solves">
@@ -263,8 +263,8 @@ noindex: false
 <div class="inst4-route__readstage">
 <div class="inst4-route__readstage-head">
 <p class="inst4-eyebrow">05</p>
-<h3 class="inst4-route__readstage-title">新秩序的基本原则</h3>
-<p class="inst4-route__readstage-desc">权力边界、责任、监督、公民尊严、社会保障、制度纠错与国家社会关系。</p>
+<h3 class="inst4-route__readstage-title">新秩序如何运行</h3>
+<p class="inst4-route__readstage-desc">从权力边界、责任与监督出发，进一步理解公民秩序主义关于国家运行、权力结构、公共判断与制度纠错的基本构想。</p>
 </div>
 <div class="inst4l-list">
 <a class="inst4l-row" href="/civic-orderism/top-level-power-structure-under-civic-orderism">
