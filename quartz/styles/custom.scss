@@ -8427,6 +8427,123 @@ body[data-slug="index"] article {
   line-height: 1.2;
 }
 
+/* ---- PERMANENT CORE POLITICAL STATEMENT ---- */
+.inst4-core-statement {
+  padding: clamp(4.75rem, 9vw, 7rem) 0 clamp(5rem, 10vw, 7.5rem);
+  border-top: 1px solid var(--inst4-line);
+}
+
+.inst4-core-statement__grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: start;
+}
+
+.inst4-core-statement__identity {
+  grid-column: 1 / span 3;
+  min-width: 0;
+  padding-top: 0.35rem;
+}
+
+.inst4-core-statement__label {
+  margin-top: 0.85rem;
+  color: var(--inst4-gray);
+  font-size: 0.92rem;
+  font-weight: 540;
+  letter-spacing: 0.08em;
+  line-height: 1.55;
+}
+
+.inst4-core-statement__body {
+  grid-column: 5 / span 8;
+  min-width: 0;
+}
+
+.inst4-core-statement__title {
+  max-width: 12em;
+  margin: 0;
+  color: var(--inst4-ink);
+  font-size: clamp(2.5rem, 4.4vw, 3.65rem);
+  font-weight: 520;
+  letter-spacing: -0.026em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.inst4-core-statement__title a[role="anchor"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.inst4-core-statement__question {
+  max-width: 32em;
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+  padding: 0 0 0 clamp(1rem, 2vw, 1.4rem);
+  border: 0;
+  border-left: 2px solid var(--inst4-accent);
+  color: var(--inst4-ink-2);
+  background: transparent;
+}
+
+.inst4-core-statement__question p {
+  margin: 0;
+  font-size: clamp(1.18rem, 2vw, 1.45rem);
+  font-weight: 470;
+  line-height: 1.72;
+}
+
+.inst4-core-statement__judgment {
+  max-width: 38em;
+  margin-top: 1.65rem;
+  color: var(--inst4-gray);
+  font-size: 0.98rem;
+  font-weight: 440;
+  line-height: 1.82;
+}
+
+.inst4-core-statement__cta {
+  margin-top: 2rem;
+}
+
+.inst4-core-statement__cta a {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  min-height: 44px;
+  padding: 0.62rem 0;
+  border-bottom: 1px solid var(--inst4-line);
+  color: var(--inst4-ink);
+  font-size: 0.94rem;
+  font-weight: 620;
+  line-height: 1.5;
+  text-decoration: none;
+  background-image: none;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.inst4-core-statement__cta a span {
+  transition: transform 180ms ease;
+}
+
+.inst4-core-statement__cta a:hover,
+.inst4-core-statement__cta a:focus-visible {
+  border-color: var(--inst4-accent);
+  color: var(--inst4-accent);
+  outline: none;
+}
+
+.inst4-core-statement__cta a:hover span,
+.inst4-core-statement__cta a:focus-visible span {
+  transform: translateX(4px);
+}
+
 /* ---- SECTION 2 / CURRENT WORK ---- */
 .inst4-work {
   padding: clamp(6rem, 11vw, 9rem) 0 clamp(6rem, 9vw, 7.5rem);
@@ -8855,6 +8972,7 @@ body[data-slug="index"] article {
 
 /* ---- Motion: restrained reveal ---- */
 .inst4-hero,
+.inst4-core-statement,
 .inst4-work,
 .inst4-research {
   opacity: 0;
@@ -8865,6 +8983,7 @@ body[data-slug="index"] article {
 }
 
 .inst4-hero.is-visible,
+.inst4-core-statement.is-visible,
 .inst4-work.is-visible,
 .inst4-research.is-visible {
   opacity: 1;
@@ -8873,6 +8992,7 @@ body[data-slug="index"] article {
 
 @media (prefers-reduced-motion: reduce) {
   .inst4-hero,
+  .inst4-core-statement,
   .inst4-work,
   .inst4-research {
     opacity: 1;
@@ -8898,6 +9018,14 @@ body[data-slug="index"] article {
   .inst4-work__intro {
     grid-column: 1 / span 12;
     margin-bottom: 0;
+  }
+
+  .inst4-core-statement__identity {
+    grid-column: 1 / span 4;
+  }
+
+  .inst4-core-statement__body {
+    grid-column: 5 / span 8;
   }
 
   .inst4-document {
@@ -8943,6 +9071,40 @@ body[data-slug="index"] article {
 
   .inst4-work {
     padding: clamp(3.75rem, 14vw, 5rem) 0 clamp(4.5rem, 18vw, 5.5rem);
+  }
+
+  .inst4-core-statement {
+    padding: 3.75rem 0 4.5rem;
+  }
+
+  .inst4-core-statement__identity,
+  .inst4-core-statement__body {
+    grid-column: 1 / span 12;
+  }
+
+  .inst4-core-statement__body {
+    margin-top: 2.2rem;
+  }
+
+  .inst4-core-statement__title {
+    max-width: 11em;
+    font-size: clamp(2rem, 9.5vw, 2.65rem);
+    line-height: 1.24;
+  }
+
+  .inst4-core-statement__question {
+    margin-top: 1.8rem;
+  }
+
+  .inst4-core-statement__question p {
+    font-size: 1.1rem;
+    line-height: 1.72;
+  }
+
+  .inst4-core-statement__judgment {
+    margin-top: 1.35rem;
+    font-size: 0.94rem;
+    line-height: 1.78;
   }
 
   .inst4-research {

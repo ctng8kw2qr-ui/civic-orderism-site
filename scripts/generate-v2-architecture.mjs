@@ -210,6 +210,7 @@ function originalSection(slug, data) {
 }
 
 function newSection(slug) {
+  if (slug === site.corePoliticalStatement?.slug) return "核心政治总论";
   if (slug === "institution/despotism-cancer-ming-1566") return "解析中共";
   if (institutionSlugs.has(slug) || slug.startsWith("institution/"))
     return "制度设计";
@@ -380,6 +381,12 @@ const articles = walk(contentDir)
       tags: Array.isArray(parsed.data.tags) ? parsed.data.tags.map(String) : [],
       status: String(parsed.data.status ?? "published"),
     };
+    if (parsed.data.corePoliticalStatement === true) {
+      article.corePoliticalStatement = true;
+      article.articleRole = String(
+        parsed.data.articleRole ?? "core-political-statement",
+      );
+    }
     Object.assign(
       article,
       resolveTopicRelations({
@@ -1129,6 +1136,22 @@ writeContent(
       <p class="inst4-hero__status-label">CURRENT PHASE</p>
       <p class="inst4-hero__status-body">North American Nonprofit<br>&amp; Founding Board Preparation</p>
       <p class="inst4-hero__status-year">2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- CORE POLITICAL STATEMENT / PERMANENT -->
+<section class="inst4-core-statement" id="core-political-statement" aria-labelledby="core-political-statement-title">
+  <div class="inst4-core-statement__grid">
+    <div class="inst4-core-statement__identity">
+      <p class="inst4-eyebrow">${site.corePoliticalStatement.englishLabel}</p>
+      <p class="inst4-core-statement__label">${site.corePoliticalStatement.label}</p>
+    </div>
+    <div class="inst4-core-statement__body">
+      <h2 class="inst4-core-statement__title" id="core-political-statement-title">${site.corePoliticalStatement.title}</h2>
+      <blockquote class="inst4-core-statement__question"><p>${site.corePoliticalStatement.question}</p></blockquote>
+      <p class="inst4-core-statement__judgment">${site.corePoliticalStatement.judgment}</p>
+      <p class="inst4-core-statement__cta"><a href="/${site.corePoliticalStatement.slug}">阅读核心政治总论 <span aria-hidden="true">→</span></a></p>
     </div>
   </div>
 </section>
@@ -2883,16 +2906,19 @@ writeInstitutionalContent(
 );
 
 /* Phase 2B — Archive Template (articles/all.md) */
+const archiveArticles = articles.filter(
+  (article) => article.corePoliticalStatement !== true,
+);
 const archiveGroups = ["解析中共", "公民秩序主义", "中国未来", "制度设计"]
   .map((name, index) => ({
     num: String(index + 1).padStart(2, "0"),
     name,
-    items: articles.filter(
+    items: archiveArticles.filter(
       (article) => article.section === name && article.status === "published",
     ),
   }))
   .filter((group) => group.items.length);
-const publishedCount = articles.filter(
+const publishedCount = archiveArticles.filter(
   (article) => article.status === "published",
 ).length;
 const archiveSectionBodies = archiveGroups.map((group) =>

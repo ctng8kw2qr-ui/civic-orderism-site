@@ -74,7 +74,7 @@ function setupPrimaryNavigation() {
 
   // Restrained section reveal on the institutional homepage.
   const revealTargets = document.querySelectorAll<HTMLElement>(
-    ".inst4-hero, .inst4-work, .inst4-research",
+    ".inst4-hero, .inst4-core-statement, .inst4-work, .inst4-research",
   );
   if (
     revealTargets.length &&

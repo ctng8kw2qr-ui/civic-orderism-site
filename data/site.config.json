@@ -5,6 +5,14 @@
   "description": "公民秩序主义正在为中国和平政治转轨建设政治承接能力，推进北美非营利法人及首届董事会筹备。",
   "primaryEmail": "civicorderism@gmail.com",
   "secondaryEmail": "citizenorder@proton.me",
+  "corePoliticalStatement": {
+    "slug": "civic-orderism/this-time-let-china-be-your-pride",
+    "title": "这一次，让中国成为你的骄傲",
+    "label": "核心政治总论",
+    "englishLabel": "CORE POLITICAL STATEMENT",
+    "question": "中国，什么时候能让生活在这里的人，因为自己的生活而感到骄傲？",
+    "judgment": "一个国家真正的荣耀，不只出现在新闻报道里，更应该写在每一个普通人的生活里。"
+  },
   "documents": [
     {
       "title": "公民秩序主义北美非营利法人及首届董事会筹备说明（2026）",

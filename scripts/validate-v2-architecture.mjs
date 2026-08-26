@@ -15,6 +15,7 @@ const readingSequences = readJson("data/reading-sequences.config.json");
 const coreModelsConfig = readJson("data/core-models.config.json");
 const organization = readJson("data/organization.config.json");
 const navigation = readJson("data/navigation.config.json");
+const site = readJson("data/site.config.json");
 const topicSlugs = new Set(topics.map((item) => item.slug));
 const conceptSlugs = new Set(concepts.map((item) => item.slug));
 const coreModelSlugs = new Set(
@@ -28,6 +29,9 @@ const institutionSectionIds = new Set(
   institutionSections.map((item) => item.id),
 );
 const migrationBySlug = new Map(migration.map((item) => [item.slug, item]));
+const corePoliticalStatements = migration.filter(
+  (item) => item.corePoliticalStatement === true,
+);
 const INSTITUTIONAL_PROTOTYPE_SLUGS = new Set([
   "china/security-led-governance-model",
   "civic-orderism/peaceful-state-transition",
@@ -66,6 +70,12 @@ const legacyEnglishBrands = [["Citizen", "Orderism"].join(" ")];
 const assert = (condition, message) => {
   if (!condition) errors.push(message);
 };
+assert(
+  corePoliticalStatements.length === 1 &&
+    corePoliticalStatements[0]?.slug === site.corePoliticalStatement?.slug &&
+    corePoliticalStatements[0]?.articleRole === "core-political-statement",
+  "核心政治总论必须唯一，并与站点固定 slug / articleRole 一致",
+);
 const publicHtml = (slug) => path.join(publicDir, `${slug}.html`);
 const publicRouteHtml = (slug) => {
   const flatPath = publicHtml(slug);
@@ -237,6 +247,7 @@ assert(
 );
 for (const article of migration) {
   const isInstitutionalPrototype = ALL_ARTICLES_INSTITUTIONAL;
+  const isCorePoliticalStatement = article.corePoliticalStatement === true;
   assert(
     fs.existsSync(publicHtml(article.slug)),
     `原文章 URL 未生成：/${article.slug}`,
@@ -309,6 +320,8 @@ for (const article of migration) {
   );
   assert(
     (articleHtml.includes('aria-label="继续阅读"') ||
+      (isCorePoliticalStatement &&
+        articleHtml.includes('aria-label="核心政治总论阅读路径"')) ||
       (isInstitutionalPrototype && articleHtml.includes("继续研究"))) &&
       (articleHtml.includes("相关文章") ||
         isInstitutionalPrototype ||
@@ -328,7 +341,9 @@ for (const article of migration) {
     `文章尾部顺序不是继续阅读 → 知识关联 → 组织 CTA：${article.slug}`,
   );
   assert(
-    articleHtml.includes('aria-label="继续阅读"') &&
+    (articleHtml.includes('aria-label="继续阅读"') ||
+      (isCorePoliticalStatement &&
+        articleHtml.includes('aria-label="核心政治总论阅读路径"'))) &&
       articleHtml.includes('class="article-knowledge"'),
     `文章尾部未同时生成继续阅读与知识关联：${article.slug}`,
   );
@@ -354,7 +369,7 @@ for (const article of migration) {
     );
   }
   assert(
-    sectionNames.has(article.section),
+    sectionNames.has(article.section) || isCorePoliticalStatement,
     `未知一级栏目：${article.slug} -> ${article.section}`,
   );
   if (article.section === "制度设计") {
@@ -874,6 +889,7 @@ const homepageMainHtml =
 const homepageMainText = visiblePageText(homepageMainHtml);
 const homepageSectionIds = [
   'id="identity"',
+  'id="core-political-statement"',
   'id="current-work"',
   'id="research"',
 ];
@@ -891,10 +907,10 @@ assert(
   !homepageMainHtml.includes('id="approach"') &&
     !homepageMainHtml.includes('id="organization"') &&
     !homepageMainHtml.includes('id="contact"') &&
-    (homepageMainHtml.match(/<section class="inst4-/g) ?? []).length === 3 &&
+    (homepageMainHtml.match(/<section class="inst4-/g) ?? []).length === 4 &&
     !homepageMainHtml.includes("home-institution-") &&
     (homepageMainHtml.match(/<img/g) ?? []).length === 0,
-  "首页未保持为连续机构 landing page（三区域、无编号章节、无图片）",
+  "首页未保持为连续机构 landing page（四区域、无编号章节、无图片）",
 );
 // SECTION 1 / IDENTITY
 const heroHtml =
@@ -913,6 +929,33 @@ assert(
     heroHtml.includes("Founding Board Preparation") &&
     visiblePageText(heroHtml).includes("2026"),
   "首页首屏机构定位（IDENTITY）或当前阶段状态块缺失",
+);
+// Permanent Core Political Statement — fixed between identity and current work.
+const coreStatementHomepageHtml =
+  homepageMainHtml.match(
+    /<section class="inst4-core-statement"[\s\S]*?<\/section>/,
+  )?.[0] ?? "";
+assert(
+  coreStatementHomepageHtml.includes(
+    site.corePoliticalStatement.englishLabel,
+  ) &&
+    visiblePageText(coreStatementHomepageHtml).includes(
+      site.corePoliticalStatement.label,
+    ) &&
+    visiblePageText(coreStatementHomepageHtml).includes(
+      site.corePoliticalStatement.title,
+    ) &&
+    visiblePageText(coreStatementHomepageHtml).includes(
+      site.corePoliticalStatement.question,
+    ) &&
+    visiblePageText(coreStatementHomepageHtml).includes(
+      site.corePoliticalStatement.judgment,
+    ) &&
+    coreStatementHomepageHtml.includes(
+      `data-slug="${site.corePoliticalStatement.slug}"`,
+    ) &&
+    visiblePageText(coreStatementHomepageHtml).includes("阅读核心政治总论"),
+  "首页缺少固定核心政治总论入口或其正式文案",
 );
 // SECTION 2 / CURRENT WORK + official document
 const workHtml =
@@ -1099,7 +1142,7 @@ const completeArticlesHtml = fs.readFileSync(
 );
 const completeArticlesText = visiblePageText(completeArticlesHtml);
 const publishedCount = migration.filter(
-  (item) => item.status === "published",
+  (item) => item.status === "published" && item.corePoliticalStatement !== true,
 ).length;
 assert(
   completeArticlesText.includes("全部研究") &&
@@ -1115,9 +1158,54 @@ assert(
     completeArticlesHtml.includes(
       'data-slug="civic-orderism/peaceful-state-transition"',
     ) &&
+    !completeArticlesText.includes(site.corePoliticalStatement.title) &&
     !completeArticlesText.includes("一、旧世界为什么失效") &&
     !completeArticlesHtml.includes('class="content-meta"'),
   "独立完整文章索引缺少栏目分组、文章列表或混入文章元信息",
+);
+
+const coreStatementHtml = fs.readFileSync(
+  publicHtml(site.corePoliticalStatement.slug),
+  "utf8",
+);
+const coreStatementText = visiblePageText(coreStatementHtml);
+assert(
+  coreStatementHtml.includes('data-core-political-statement="true"') &&
+    coreStatementHtml.includes("CORE POLITICAL STATEMENT") &&
+    coreStatementText.includes("核心政治总论") &&
+    coreStatementText.includes(site.corePoliticalStatement.title) &&
+    coreStatementText.includes(site.corePoliticalStatement.question) &&
+    coreStatementText.includes(
+      "不只是人民证明自己热爱中国。 也让中国证明，它值得人民热爱。",
+    ) &&
+    coreStatementText.includes("这一次，让中国成为你的骄傲。") &&
+    coreStatementHtml.includes(
+      'data-article-continuation="core-political-statement"',
+    ) &&
+    coreStatementText.includes("理解现实") &&
+    coreStatementText.includes("理解路线") &&
+    coreStatementHtml.includes('href="../china/what-is-the-ccp-becoming"') &&
+    coreStatementHtml.includes('href="../civic-orderism/civic-orderism-overview"'),
+  "核心政治总论文章身份、正文或分层阅读路径不完整",
+);
+assert(
+  coreStatementHtml.includes(
+    `<link rel="canonical" href="https://civicorderism.com/${site.corePoliticalStatement.slug}"`,
+  ) &&
+    coreStatementHtml.includes(
+      `<meta property="og:url" content="https://civicorderism.com/${site.corePoliticalStatement.slug}"`,
+    ) &&
+    coreStatementHtml.includes('property="og:type" content="article"') &&
+    coreStatementHtml.includes(
+      'name="twitter:card" content="summary_large_image"',
+    ) &&
+    coreStatementHtml.includes('"articleSection":"Core Political Statement"') &&
+    fs
+      .readFileSync(path.join(publicDir, "sitemap.xml"), "utf8")
+      .includes(
+        `https://civicorderism.com/${site.corePoliticalStatement.slug}`,
+      ),
+  "核心政治总论的 canonical、分享元数据、结构化数据或 sitemap 不完整",
 );
 
 const participateHtml = fs.readFileSync(publicHtml("participate"), "utf8");

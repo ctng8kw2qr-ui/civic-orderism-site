@@ -140,7 +140,8 @@ if (
   !articleHeaderComponent.includes('class="article-header"') ||
   !articleHeaderComponent.includes('class="article-header__title"') ||
   !articleHeaderComponent.includes('class="article-header__subtitle"') ||
-  !institutionalHeaderComponent.includes('class="article-inst"') ||
+  (!institutionalHeaderComponent.includes('class="article-inst"') &&
+    !institutionalHeaderComponent.includes('class={`article-inst${')) ||
   !institutionalHeaderComponent.includes('class="article-inst__title"') ||
   !institutionalHeaderComponent.includes('class="article-inst__deck"') ||
   !institutionalJudgmentComponent.includes('class="article-inst-judgment"') ||
@@ -182,7 +183,7 @@ if (hasBuiltSite) {
     const institutional = html.includes('data-article-type="institutional"');
     const headerStart = html.indexOf(
       institutional
-        ? '<header class="article-inst">'
+        ? '<header class="article-inst'
         : '<header class="article-header">',
     );
     const titleStart = html.indexOf(

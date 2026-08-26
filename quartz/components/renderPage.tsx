@@ -267,6 +267,9 @@ export function renderPage(
         data-slug={slug}
         data-page-kind={isArticleSlug(slug) ? "article" : undefined}
         data-article-type={isArticleSlug(slug) ? "institutional" : undefined}
+        data-core-political-statement={
+          componentData.fileData.frontmatter?.corePoliticalStatement === true ? "true" : undefined
+        }
       >
         <div id="quartz-root" class="page">
           <Body {...componentData}>

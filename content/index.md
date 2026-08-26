@@ -32,6 +32,22 @@ aliases:
   </div>
 </section>
 
+<!-- CORE POLITICAL STATEMENT / PERMANENT -->
+<section class="inst4-core-statement" id="core-political-statement" aria-labelledby="core-political-statement-title">
+  <div class="inst4-core-statement__grid">
+    <div class="inst4-core-statement__identity">
+      <p class="inst4-eyebrow">CORE POLITICAL STATEMENT</p>
+      <p class="inst4-core-statement__label">核心政治总论</p>
+    </div>
+    <div class="inst4-core-statement__body">
+      <h2 class="inst4-core-statement__title" id="core-political-statement-title">这一次，让中国成为你的骄傲</h2>
+      <blockquote class="inst4-core-statement__question"><p>中国，什么时候能让生活在这里的人，因为自己的生活而感到骄傲？</p></blockquote>
+      <p class="inst4-core-statement__judgment">一个国家真正的荣耀，不只出现在新闻报道里，更应该写在每一个普通人的生活里。</p>
+      <p class="inst4-core-statement__cta"><a href="/civic-orderism/this-time-let-china-be-your-pride">阅读核心政治总论 <span aria-hidden="true">→</span></a></p>
+    </div>
+  </div>
+</section>
+
 <!-- SECTION 2 / CURRENT WORK -->
 <section class="inst4-work" id="current-work">
   <div class="inst4-work__grid">

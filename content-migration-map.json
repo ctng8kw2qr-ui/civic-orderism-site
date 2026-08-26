@@ -1,5 +1,36 @@
 [
   {
+    "title": "这一次，让中国成为你的骄傲",
+    "slug": "civic-orderism/this-time-let-china-be-your-pride",
+    "date": "2026-08-26",
+    "updated": "2026-08-26",
+    "summary": "公民秩序主义的核心政治总论，回答我们希望中国最终成为一个什么样的国家：让国家的强大成为人民生活的保障，让社会的进步成为每个人发展的机会，让生活在这里本身成为一件值得骄傲的事。",
+    "originalSection": "核心政治总论",
+    "section": "核心政治总论",
+    "tags": [
+      "公民秩序主义",
+      "核心政治总论",
+      "国家愿景",
+      "公民尊严",
+      "人民生活"
+    ],
+    "status": "published",
+    "corePoliticalStatement": true,
+    "articleRole": "core-political-statement",
+    "primaryTopic": null,
+    "relatedTopics": [],
+    "topics": [],
+    "concepts": [],
+    "primaryCoreModel": null,
+    "associatedCoreModels": [],
+    "featured": true,
+    "recommended": true,
+    "readingLevel": "基础",
+    "readingOrder": 0,
+    "author": "公民秩序主义",
+    "needsReview": false
+  },
+  {
     "title": "城管背后的权力逻辑：中共如何制度化统治，又如何灵活化治理",
     "slug": "china/chengguan-power-logic",
     "date": "2026-08-25",

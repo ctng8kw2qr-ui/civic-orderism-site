@@ -251,7 +251,7 @@ function coreModelConceptForArticle(
   return CORE_MODEL_CONCEPT_SLUGS.map((slug) => conceptBySlug.get(slug)).find(
     (concept) =>
       concept &&
-      (knowledge?.concepts.includes(concept.slug) ||
+      (asStringArray(knowledge?.concepts).includes(concept.slug) ||
         concept.representativeArticles.includes(articleSlug)),
   );
 }
@@ -545,6 +545,8 @@ export const ContinueReading: QuartzComponent = ({
 }: QuartzComponentProps) => {
   if (!isArticlePage(fileData)) return null;
   const institutionalArticle = true;
+  const corePoliticalStatement =
+    fileData.frontmatter?.corePoliticalStatement === true;
   const headingText = institutionalArticle ? "继续研究" : "继续阅读";
   const institutionalType = institutionalArticleType(fileData);
   const relatedSectionHeading = institutionalType
@@ -768,6 +770,38 @@ export const ContinueReading: QuartzComponent = ({
       ) : null}
     </a>
   );
+
+  if (corePoliticalStatement) {
+    const readingPathLabels = new Map([
+      ["china/what-is-the-ccp-becoming", "理解现实"],
+      ["civic-orderism/civic-orderism-overview", "理解路线"],
+    ]);
+    const readingPathArticles = manualRelatedList
+      .map((slug) => eligibleBySlug.get(slug))
+      .filter((page): page is QuartzPluginData => Boolean(page?.slug));
+    if (readingPathArticles.length === 0) return null;
+
+    return (
+      <section
+        class="article-continuation article-continuation--core-statement"
+        aria-label="核心政治总论阅读路径"
+        data-article-continuation="core-political-statement"
+      >
+        <h2 class="article-continuation__heading">从愿景继续阅读</h2>
+        <div class="article-continuation__related">
+          <h3>理解现实与政治路线</h3>
+          <div class="article-continuation__grid article-continuation__grid--route">
+            {readingPathArticles.map((page) =>
+              recommendationCard(
+                page,
+                readingPathLabels.get(page.slug ?? "") ?? "进一步阅读",
+              ),
+            )}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   /* Political Route articles keep a route-shaped recommendation set:
      route overviews first, then same-section route articles — never the

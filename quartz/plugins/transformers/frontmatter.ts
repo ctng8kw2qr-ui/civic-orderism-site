@@ -110,6 +110,7 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (
             delete data.key_points;
             data.featured ??= false;
             data.recommended ??= false;
+            data.corePoliticalStatement ??= false;
             data.readingLevel ??= "进阶";
             data.readingOrder ??= 999;
             data.author ??= "公民秩序主义";
@@ -219,6 +220,8 @@ declare module "vfile" {
           | "rule-of-law";
         featured: boolean;
         recommended: boolean;
+        corePoliticalStatement: boolean;
+        articleRole: string;
         readingLevel: string;
         readingOrder: number;
         author: string;

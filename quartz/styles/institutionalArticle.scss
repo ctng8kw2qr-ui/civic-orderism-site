@@ -606,6 +606,34 @@ body[data-article-type="institutional"] {
   }
 }
 
+/* A permanent semantic identity inside the shared article system. The core
+   statement keeps the same template and reading measure; only its hierarchy
+   label and opening rhythm are made more formal. */
+body[data-core-political-statement="true"] {
+  & .article-inst--core-statement {
+    padding-top: 2.2rem;
+  }
+
+  & .article-inst--core-statement .article-inst__program {
+    margin-top: 2.8rem;
+  }
+
+  & .article-inst--core-statement .article-inst__title {
+    max-width: 14em;
+    font-size: clamp(2.7rem, 3.8vw, 3.45rem);
+    font-weight: 600;
+    line-height: 1.22;
+  }
+
+  & .article-inst--core-statement .article-inst__meta {
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid var(--inst-line);
+  }
+
+  & .article-content > p:first-of-type {
+    font-size: 1.08em;
+  }
+}
 
 /* One TOC system per article. The template renders exactly one TOC instance
    before the body; the inline script relocates it into the right rail on
@@ -671,6 +699,21 @@ body[data-article-type="institutional"] {
 
     & .article-knowledge__details dl {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  body[data-core-political-statement="true"] {
+    & .article-inst--core-statement {
+      padding-top: 1.1rem;
+    }
+
+    & .article-inst--core-statement .article-inst__program {
+      margin-top: 1.9rem;
+    }
+
+    & .article-inst--core-statement .article-inst__title {
+      font-size: clamp(2.05rem, 8.4vw, 2.5rem);
+      line-height: 1.28;
     }
   }
 }

@@ -115,37 +115,50 @@ const ArticleInstitutionalHeader: QuartzComponent = ({
   const dateText = formattedDate(fm.date);
   const minutes = estimatedReadingMinutes(fileData);
   const slug = (fileData.slug ?? "") as FullSlug;
+  const isCorePoliticalStatement = fm.corePoliticalStatement === true;
 
   // Research Program comes from the real migration mapping (一级栏目),
   // with the frontmatter category as fallback. The third breadcrumb level
   // uses the frontmatter section, falling back to the primary topic name.
   const knowledge = migrationBySlug.get(fileData.slug ?? "");
-  const programName =
-    (knowledge?.section && SECTION_HREF[knowledge.section]
-      ? knowledge.section
-      : SECTION_HREF[category]
-        ? category
-        : knowledge?.section) || category;
+  const programName = isCorePoliticalStatement
+    ? "核心政治总论"
+    : (knowledge?.section && SECTION_HREF[knowledge.section]
+        ? knowledge.section
+        : SECTION_HREF[category]
+          ? category
+          : knowledge?.section) || category;
   const programHref = SECTION_HREF[programName];
-  const programLabel = PROGRAM_LABELS[programName] ?? "RESEARCH";
+  const programLabel = isCorePoliticalStatement
+    ? "CORE POLITICAL STATEMENT"
+    : (PROGRAM_LABELS[programName] ?? "RESEARCH");
   const primaryTopic = knowledge?.primaryTopic
     ? topicBySlug.get(knowledge.primaryTopic)
     : undefined;
-  const thirdLevel = section || primaryTopic?.name || "";
+  const thirdLevel = isCorePoliticalStatement
+    ? ""
+    : section || primaryTopic?.name || "";
 
   return (
-    <header class="article-inst">
+    <header
+      class={`article-inst${isCorePoliticalStatement ? " article-inst--core-statement" : ""}`}
+    >
       <nav class="article-inst__context" aria-label="研究路径">
         <a
           class="article-inst__context-link"
-          href={resolveRelative(slug, "/theory/" as FullSlug)}
+          href={resolveRelative(
+            slug,
+            (isCorePoliticalStatement ? "/" : "/theory/") as FullSlug,
+          )}
         >
-          研究
+          {isCorePoliticalStatement ? "首页" : "研究"}
         </a>
         <span class="article-inst__context-sep" aria-hidden="true">
           /
         </span>
-        {programHref ? (
+        {isCorePoliticalStatement ? (
+          <span class="article-inst__context-current">核心政治总论</span>
+        ) : programHref ? (
           <a
             class="article-inst__context-link"
             href={resolveRelative(slug, programHref as FullSlug)}
@@ -181,9 +194,13 @@ const ArticleInstitutionalHeader: QuartzComponent = ({
       {deck ? <p class="article-inst__deck">{deck}</p> : null}
 
       <p class="article-inst__meta">
-        {dateText ? <time>{dateText}</time> : null}
+        {!isCorePoliticalStatement && dateText ? <time>{dateText}</time> : null}
         {minutes ? <span>约 {minutes} 分钟阅读</span> : null}
-        {programName ? <span>研究项目：{programName}</span> : null}
+        {isCorePoliticalStatement ? (
+          <span>公民秩序主义核心政治文本</span>
+        ) : programName ? (
+          <span>研究项目：{programName}</span>
+        ) : null}
       </p>
     </header>
   );

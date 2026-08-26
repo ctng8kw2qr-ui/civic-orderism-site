@@ -63,6 +63,8 @@ export default (() => {
       !slug.endsWith("/index") &&
       articlePrefixes.some((prefix) => slug.startsWith(prefix));
     const contentType = String(fileData.frontmatter?.contentType ?? "页面");
+    const isCorePoliticalStatement =
+      fileData.frontmatter?.corePoliticalStatement === true;
     const published = fileData.dates?.published?.toISOString();
     const modified = fileData.dates?.modified?.toISOString() ?? published;
     const breadcrumbParts = simplifySlug(slug).split("/").filter(Boolean);
@@ -97,6 +99,9 @@ export default (() => {
           author: { "@type": "Organization", name: "公民秩序主义" },
           publisher: { "@type": "Organization", name: "公民秩序主义" },
           mainEntityOfPage: canonicalUrl,
+          articleSection: isCorePoliticalStatement
+            ? "Core Political Statement"
+            : contentType,
         }
       : [
             "栏目",
