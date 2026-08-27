@@ -793,9 +793,15 @@ for (const file of [
 }
 
 const sitemap = fs.readFileSync(path.join(publicDir, "sitemap.xml"), "utf8");
+const orgManualPath = publicHtml("organization-manual");
+const orgManualHtml = fs.existsSync(orgManualPath)
+  ? fs.readFileSync(orgManualPath, "utf8")
+  : "";
 assert(
-  !publicRouteExists("organization-manual"),
-  "已删除页面仍有构建产物：/organization-manual",
+  orgManualHtml.includes('rel="canonical" href="/preparation"') &&
+    orgManualHtml.includes("http-equiv=\"refresh\"") &&
+    !orgManualHtml.includes("inst4l"),
+  "organization-manual 未正确作为重定向 stub（应指向 /preparation，且不应包含内容页结构）",
 );
 assert(
   !fs.existsSync(

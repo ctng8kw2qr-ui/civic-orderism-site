@@ -1658,13 +1658,13 @@ writeContent(
 
 writeInstitutionalContent(
   "about.md",
-  `${yamlFrontmatter({ title: "关于", description: "了解公民秩序主义的政治与制度路线、官方网站使命、当前组织阶段与公共工作。", contentType: "页面" })}
+  `${yamlFrontmatter({ title: "关于", description: "了解公民秩序主义的政治路线、官方网站使命、当前组织阶段与公共工作。", contentType: "页面" })}
 
 # 关于
 
 ## 公民秩序主义是什么
 
-公民秩序主义首先是一条面向中国未来的政治与制度路线。它主张通过和平转轨、行政承接、责任区分和制度重组，降低政治变化的社会成本，保持国家与公共服务连续，并建立能够限制权力、明确责任和持续纠错的新秩序。
+公民秩序主义首先是一条面向中国未来政治转型的政治路线。它主张通过和平转轨、行政承接、责任区分和制度重组，降低政治变化的社会成本，保持国家与公共服务连续，并建立能够限制权力、明确责任和持续纠错的新秩序。
 
 理论是这条路线的基础，用于解释国家失灵、公共秩序和制度能力；组织建设是长期承接结构，使路线能够被持续研究、传播、完善和实践。
 
@@ -1838,13 +1838,13 @@ function inst4lDocBlock() {
 
 writeInstitutionalContent(
   "about.md",
-  `${yamlFrontmatter({ title: "关于", description: "了解公民秩序主义的政治与制度路线、当前组织阶段与正式文件。", contentType: "页面" })}
+  `${yamlFrontmatter({ title: "关于", description: "了解公民秩序主义的政治路线、当前组织阶段与正式文件。", contentType: "页面" })}
 
 <div class="inst4 inst4l inst4l-about">
   <section class="inst4l-hero">
     <p class="inst4-eyebrow">ABOUT</p>
     <h1 class="inst4l-title">关于公民秩序主义</h1>
-    <p class="inst4l-lead">公民秩序主义是一条面向中国未来的政治与制度路线：通过和平转轨、行政承接、责任区分与制度重组，降低政治变化的社会成本，保持国家与公共服务连续，并建立能够限制权力、明确责任与持续纠错的新秩序。</p>
+    <p class="inst4l-lead">公民秩序主义是一条面向中国未来政治转型的政治路线：通过和平转轨、行政承接、责任区分与制度重组，降低政治变化的社会成本，保持国家与公共服务连续，并建立能够限制权力、明确责任与持续纠错的新秩序。</p>
   </section>
 
   <div class="inst4l-body">
@@ -1852,7 +1852,7 @@ writeInstitutionalContent(
       ${inst4lSection(
         "定位",
         "公民秩序主义是什么",
-        `<p>公民秩序主义首先是一条面向中国未来的政治与制度路线。它主张通过和平转轨、行政承接、责任区分和制度重组，降低政治变化的社会成本，保持国家与公共服务连续，并建立能够限制权力、明确责任和持续纠错的新秩序。</p>
+        `<p>公民秩序主义首先是一条面向中国未来政治转型的政治路线。它主张通过和平转轨、行政承接、责任区分和制度重组，降低政治变化的社会成本，保持国家与公共服务连续，并建立能够限制权力、明确责任和持续纠错的新秩序。</p>
 <p>理论是这条路线的基础，用于解释国家失灵、公共秩序和制度能力；组织建设是长期承接结构，使路线能够被持续研究、传播、完善和实践。</p>`,
       )}
 
@@ -2246,7 +2246,7 @@ writeInstitutionalContent(
 
 writeInstitutionalContent(
   "preparation.md",
-  `${yamlFrontmatter({ title: "北美非营利法人及首届董事会筹备", description: "公民秩序主义正在为正式出版、政治与治理研究、公共传播、人才协作和数字资产保护建立依法运行的承接结构。", contentType: "筹备页面", date: "2026-07-19", updated: "2026-08-11" })}
+  `${yamlFrontmatter({ title: "北美非营利法人及首届董事会筹备", description: "公民秩序主义正在为正式出版、政治与治理研究、公共传播、人才协作和数字资产保护建立依法运行的承接结构。", contentType: "筹备页面", date: "2026-07-19", updated: "2026-08-11", aliases: ["organization-manual"] })}
 
 <div class="inst4 inst4l inst4l-work">
   <section class="inst4l-hero">
@@ -2260,7 +2260,7 @@ writeInstitutionalContent(
     "为什么现在",
     "为什么现在进入组织建设",
     `<p>政治转型不仅需要观点，也需要能够承担法律、财务、人员与长期政治责任的组织。公民秩序主义当前正在推进北美非营利法人及首届董事会筹备，从理论表达进入组织基础建设阶段。</p>
-<p>现阶段重点是理论建设、公共传播、专业协作网络建设和北美非营利组织筹备，而不是追求短期声势或迅速扩张成员。</p>`,
+<p>现阶段重点是理论建设、公共传播以及北美非营利法人和首届董事会筹备，而不是追求短期声势或迅速扩大参与规模。</p>`,
   )}
 
   <div class="inst4l-grid2">

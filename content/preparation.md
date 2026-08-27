@@ -8,6 +8,8 @@ status: published
 listed: true
 folderListed: true
 noindex: false
+aliases:
+  - organization-manual
 ---
 
 <div class="inst4 inst4l inst4l-work">
@@ -25,7 +27,7 @@ noindex: false
     
   </div>
   <p>政治转型不仅需要观点，也需要能够承担法律、财务、人员与长期政治责任的组织。公民秩序主义当前正在推进北美非营利法人及首届董事会筹备，从理论表达进入组织基础建设阶段。</p>
-<p>现阶段重点是理论建设、公共传播、专业协作网络建设和北美非营利组织筹备，而不是追求短期声势或迅速扩张成员。</p>
+<p>现阶段重点是理论建设、公共传播以及北美非营利法人和首届董事会筹备，而不是追求短期声势或迅速扩大参与规模。</p>
 </section>
 
   <div class="inst4l-grid2">
