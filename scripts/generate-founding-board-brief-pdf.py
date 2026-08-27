@@ -189,7 +189,7 @@ def draw_footer(c: canvas.Canvas, page_no: int) -> None:
     c.setFillColor(MUTED)
     c.setFont(FONT_EN, 6.2)
     c.drawString(M, 23, "Civic Orderism · civicorderism.com")
-    c.drawRightString(PAGE_W - M, 23, f"{page_no} / 13")
+    c.drawRightString(PAGE_W - M, 23, f"{page_no} / 14")
 
 
 def begin_page(c: canvas.Canvas, page_no: int, english: str, chinese: str, title: str, *, title_size: float = 23) -> float:
@@ -428,7 +428,7 @@ def draw_full_three_line_motif(c: canvas.Canvas) -> None:
 
 def draw_path_page(c: canvas.Canvas) -> None:
     """PATH page component (P12): full three-line motif + forward stages."""
-    begin_page(c, 12, "DEVELOPMENT PATH", "发展路径", "发展路径")
+    begin_page(c, 13, "DEVELOPMENT PATH", "发展路径", "发展路径")
     draw_full_three_line_motif(c)
 
     stages = [
@@ -870,27 +870,100 @@ def page_06(c: canvas.Canvas) -> None:
     c.showPage()
 
 
-def page_07(c: canvas.Canvas) -> None:
-    y = begin_page(c, 7, "BOARD RESPONSIBILITIES", "董事会责任", "董事会成立后承担什么责任？")
+def part_header(c: canvas.Canvas, english: str, chinese: str, y: float) -> None:
+    """Part label inside a page (gold micro-label, restrained English)."""
+    tracked_text(c, english, M, y, font=FONT_EN_BOLD, size=5.6, color=GOLD, char_space=0.5)
+    ew = width(english, FONT_EN_BOLD, 5.6) + max(0, len(english) - 1) * 0.5
+    c.setFillColor(GOLD)
+    c.setFont(FONT_MEDIUM, 6.0)
+    c.drawString(M + ew + 8, y, f"·  {chinese}")
+
+
+def page_responsibility(c: canvas.Canvas) -> None:
+    """P07 · 首届董事会的责任与权利 — responsibility part (frozen preview)."""
+    y = begin_page(c, 7, "RESPONSIBILITY & RIGHTS", "责任与权利", "首届董事会的责任与权利", title_size=22)
+    y = paragraph(
+        c,
+        "首届董事会不是荣誉席位，也不是未来政治身份的提前授予。",
+        M, y, CONTENT_W,
+        font=FONT_MEDIUM, size=10.5, leading=18, color=NAVY,
+    )
+    y = paragraph(
+        c,
+        "它首先是一份真实的治理责任，同时也是参与者积累政治能力、公共履历与社会信誉的起点。",
+        M, y, CONTENT_W,
+        size=9.5, leading=17, color=MUTED,
+    )
+    y -= 12
+    part_header(c, "RESPONSIBILITY", "董事会承担的责任", y)
+    y -= 28
     y = numbered_rows(
         c,
         [
-            ("01", "治理", "持续审议重大组织事项。"),
-            ("02", "授权", "维护并调整组织代表与执行权限。"),
-            ("03", "监督", "持续监督决策执行与资源使用。"),
-            ("04", "风险与合规", "持续识别并处理法律、财务和治理风险。"),
-            ("05", "组织连续性", "持续维护人员变化时的规则、授权和记录。"),
+            ("01", "建立组织", "参与完成法人设立、董事会建立和基本治理规则形成，使公民秩序主义成为责任主体明确、能够长期运行的正式组织。"),
+            ("02", "承担治理", "持续审议重大事项，参与组织决策，并对自己的判断、表决和治理行为承担责任。"),
+            ("03", "维护规则", "维护组织的身份、职责和授权边界，持续关注法律、财务、人员与组织运行风险，保证重要事务按照明确程序处理。"),
+            ("04", "保持连续", "保证人员变化不会破坏组织运行，使已经形成的规则、授权、记录和责任关系能够长期延续。"),
+            ("05", "培养人才", "参与识别、训练和检验早期组织人才，在真实治理中逐步形成能够承担更大公共责任的政治与组织能力。"),
         ],
-        M,
-        y,
-        CONTENT_W,
-        row_height=70,
+        M, y, CONTENT_W,
+        row_height=68,
     )
-    draw_core_statement(c, "董事会首先是一套责任机制，而不是政治头衔。", M, y - 27, CONTENT_W, size=14.2)
+    y -= 12
+    draw_core_statement(
+        c,
+        "董事会首先是一套责任机制。成为董事，意味着开始为组织的决定、规则和未来承担真实责任。",
+        M, y, CONTENT_W,
+        size=13.5,
+    )
+    c.showPage()
+
+
+def page_rights(c: canvas.Canvas) -> None:
+    """P08 · 董事能够获得的权利 — rights part (frozen preview)."""
+    y = begin_page(c, 8, "RESPONSIBILITY & RIGHTS", "责任与权利", "董事能够获得的权利", title_size=22)
+    y = paragraph(
+        c,
+        "公民秩序主义不认为长期政治参与只能依靠奉献和牺牲。",
+        M, y, CONTENT_W,
+        font=FONT_MEDIUM, size=10.5, leading=18, color=NAVY,
+    )
+    y = paragraph(
+        c,
+        "真正承担责任的人，也应当通过长期实践获得与其贡献相匹配的能力、履历、信誉与声望。",
+        M, y, CONTENT_W,
+        size=9.5, leading=17, color=MUTED,
+    )
+    y -= 12
+    part_header(c, "PUBLIC RECORD", "能力、履历、信誉与声望", y)
+    y -= 28
+    y = numbered_rows(
+        c,
+        [
+            ("01", "政治实践", "直接参与组织治理、决策、授权和公共事务，在真实环境中学习如何承担政治责任。"),
+            ("02", "能力积累", "通过长期处理实际问题，形成议事、决策、协作、组织治理和公共沟通能力。"),
+            ("03", "公共履历", "个人承担过什么责任、参与过什么治理、作出过什么判断，应当形成长期、真实、可以验证的公共记录。"),
+            ("04", "信誉与声望", "长期贡献应当被记录。能力、责任和实际表现，也应当逐步转化为能够经受社会检验的公共信誉与政治声望。"),
+            ("05", "面向未来民选政治的基础", "公民秩序主义推动的，是一种依靠履历、能力、责任和信誉赢得选民信任的政治秩序。首届董事会提供了从今天开始建立这些基础的真实机会。"),
+        ],
+        M, y, CONTENT_W,
+        row_height=68,
+    )
+    y -= 10
+    c.setFillColor(NAVY)
+    c.setFont(FONT_MEDIUM, 9.6)
+    c.drawString(M, y, "公民秩序主义不预先承诺任何未来职位，也不因为首届董事身份赋予任何人未来的政治位置。")
+    y -= 30
+    draw_core_statement(
+        c,
+        "未来的政治位置不能提前分配，未来政治人物的履历必须从今天开始建立。",
+        M, y, CONTENT_W,
+        size=13.5,
+    )
     c.showPage()
 
 def page_08(c: canvas.Canvas) -> None:
-    y = begin_page(c, 8, "05 · FOUNDING BOARD PARTICIPANTS", "参与者", "什么样的人适合成为首届董事", title_size=22)
+    y = begin_page(c, 9, "05 · FOUNDING BOARD PARTICIPANTS", "参与者", "什么样的人适合成为首届董事", title_size=22)
     y = paragraph(
         c,
         "公民秩序主义对首届董事的判断，首先不是从职业、学历、资源或者社会身份开始。",
@@ -944,7 +1017,7 @@ def page_08(c: canvas.Canvas) -> None:
 
 
 def page_09(c: canvas.Canvas) -> None:
-    y = begin_page(c, 9, "FOUNDING BOARD STANDARD", "首届董事标准", "信念、品格与责任")
+    y = begin_page(c, 10, "FOUNDING BOARD STANDARD", "首届董事标准", "信念、品格与责任")
     y = paragraph(
         c,
         "组织本身就应该具有培养人的能力。今天尚不成熟的人，可以在长期共同工作中成长为可靠的组织者、管理者和政治人才。",
@@ -1008,7 +1081,7 @@ def page_09(c: canvas.Canvas) -> None:
     c.showPage()
 
 def page_10(c: canvas.Canvas) -> None:
-    y = begin_page(c, 10, "PARTICIPATION BOUNDARIES", "参与边界", "参与边界")
+    y = begin_page(c, 11, "PARTICIPATION BOUNDARIES", "参与边界", "参与边界")
     y = draw_core_statement(c, "先明确身份，再参与事务；先明确授权，再承担职责。", M, y, CONTENT_W, size=14.5)
     y -= 34
     y = numbered_columns(
@@ -1077,7 +1150,7 @@ def page_10(c: canvas.Canvas) -> None:
 
 
 def page_11(c: canvas.Canvas) -> None:
-    y = begin_page(c, 11, "06 · FOUNDING STAGE", "当前阶段", "当前处于什么阶段？")
+    y = begin_page(c, 12, "06 · FOUNDING STAGE", "当前阶段", "当前处于什么阶段？")
     y = paragraph(c, "本文件是正式公开的筹备文件；组织仍处于筹备阶段。", M, y, CONTENT_W, font=FONT_MEDIUM, size=12.5, leading=20, color=NAVY)
     y -= 40
     gap = 36
@@ -1116,7 +1189,7 @@ def page_11(c: canvas.Canvas) -> None:
 
 
 def page_13(c: canvas.Canvas) -> None:
-    y = begin_page(c, 13, "C · FOUNDING BOARD PARTICIPATION", "行动入口", "参与首届董事会筹备", title_size=22)
+    y = begin_page(c, 14, "C · FOUNDING BOARD PARTICIPATION", "行动入口", "参与首届董事会筹备", title_size=22)
     y = paragraph(c, "当前阶段的正式参与方向，仅限首届董事会筹备。", M, y, CONTENT_W, font=FONT_MEDIUM, size=11.5, leading=19, color=NAVY)
     y -= 22
 
@@ -1186,7 +1259,8 @@ def build() -> Path:
         page_04,
         page_05,
         page_06,
-        page_07,
+        page_responsibility,
+        page_rights,
         page_08,
         page_09,
         page_10,
