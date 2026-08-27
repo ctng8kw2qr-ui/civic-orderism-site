@@ -305,58 +305,149 @@ def draw_module(
 
 
 def draw_cover(c: canvas.Canvas) -> None:
-    c.setFillColor(NAVY)
+    # Concept C3 · Forward. Coordinates are mapped from the approved 2480 ×
+    # 3508 px design preview so the production PDF remains fully vector-based.
+    design_w, design_h = 2480.0, 3508.0
+    sx, sy = PAGE_W / design_w, PAGE_H / design_h
+    warm = HexColor("#FFFDF8")
+    cover_navy = HexColor("#172033")
+    cover_gold = HexColor("#D9A514")
+    cover_gold_hi = HexColor("#F0C84B")
+    cover_gold_pale = HexColor("#F6E9BD")
+    cover_muted = HexColor("#747B87")
+    cover_meta = HexColor("#C6D0DC")
+
+    def px(value: float) -> float:
+        return value * sx
+
+    def py(value: float) -> float:
+        return PAGE_H - value * sy
+
+    def polygon(points: list[tuple[float, float]], color: Color) -> None:
+        path = c.beginPath()
+        first_x, first_y = points[0]
+        path.moveTo(px(first_x), py(first_y))
+        for point_x, point_y in points[1:]:
+            path.lineTo(px(point_x), py(point_y))
+        path.close()
+        c.setFillColor(color)
+        c.drawPath(path, fill=1, stroke=0)
+
+    def tracked_text(
+        text: str,
+        x: float,
+        y: float,
+        *,
+        font: str,
+        size: float,
+        color: Color,
+        char_space: float,
+    ) -> None:
+        text_object = c.beginText()
+        text_object.setTextOrigin(x, y)
+        text_object.setFont(font, size)
+        text_object.setFillColor(color)
+        text_object.setCharSpace(char_space)
+        text_object.textOut(text)
+        c.drawText(text_object)
+
+    c.setFillColor(warm)
     c.rect(0, 0, PAGE_W, PAGE_H, fill=1, stroke=0)
-    c.setStrokeColor(Color(1, 1, 1, alpha=0.07))
-    c.setLineWidth(0.6)
-    for radius in (66, 88, 112, 138):
-        c.circle(PAGE_W - 18, PAGE_H - 48, radius, fill=0, stroke=1)
+
+    # One quiet arc balances the three straight lines without competing.
+    center_x, center_y = 2320.0, 240.0
+    radius_x = radius_y = 740.0
+    arc = c.beginPath()
+    for index, angle in enumerate(range(78, 177, 2)):
+        radians = math.radians(angle)
+        point_x = center_x + radius_x * math.cos(radians)
+        point_y = center_y + radius_y * math.sin(radians)
+        if index == 0:
+            arc.moveTo(px(point_x), py(point_y))
+        else:
+            arc.lineTo(px(point_x), py(point_y))
+    c.setStrokeColor(HexColor("#E7CD75"))
+    c.setLineWidth(px(5))
+    c.drawPath(arc, fill=0, stroke=1)
+
+    # Three straight, parallel gold planes preserve Concept C's single visual
+    # language and explicit upward-forward movement.
+    polygon([(1220, 2570), (1400, 2635), (2480, 610), (2480, 280)], cover_gold_pale)
+    polygon([(1420, 2440), (1525, 2480), (2480, 590), (2480, 395)], cover_gold_hi)
+    polygon([(1600, 2310), (1655, 2332), (2480, 810), (2480, 700)], cover_gold)
+
+    # The navy base averages roughly 16% of the page and remains subordinate.
+    polygon([(0, 3045), (2480, 2830), (2480, 3508), (0, 3508)], cover_navy)
+
+    # Brand.
+    c.setFillColor(cover_navy)
+    c.setFont(FONT_MEDIUM, 14)
+    c.drawString(px(220), py(262), "公民秩序主义")
+    tracked_text(
+        "CIVIC ORDERISM",
+        px(220),
+        py(324),
+        font=FONT_EN_BOLD,
+        size=6,
+        color=cover_muted,
+        char_space=0.95,
+    )
+
+    # Publication hierarchy.
+    tracked_text(
+        "FOUNDING BOARD PREPARATION · 2026",
+        px(220),
+        py(758),
+        font=FONT_EN_BOLD,
+        size=7,
+        color=cover_gold,
+        char_space=0.48,
+    )
+    c.setFillColor(cover_navy)
+    c.setFont(FONT_MEDIUM, 35.5)
+    c.drawString(px(220), py(970), "北美非营利组织及")
+    c.drawString(px(220), py(1170), "首届董事会筹备文件")
+
+    # Mission statement.
+    c.setFillColor(cover_gold)
+    c.rect(px(220), py(1482), px(14), px(122), fill=1, stroke=0)
+    c.setFillColor(cover_navy)
+    c.setFont(FONT_MEDIUM, 11.5)
+    c.drawString(px(262), py(1421), "为和平政治转轨建立信任、能力与人才。")
+
+    tracked_text(
+        "FORWARD · FORMATION · RESPONSIBILITY",
+        px(220),
+        py(2402),
+        font=FONT_EN_BOLD,
+        size=6,
+        color=cover_navy,
+        char_space=0.72,
+    )
+
+    # Quiet metadata block inside the navy foundation.
+    c.setStrokeColor(HexColor("#536176"))
+    c.setLineWidth(px(3))
+    c.line(px(220), py(3090), px(2260), py(3090))
+    tracked_text(
+        "CIVIC ORDERISM · OFFICIAL DOCUMENT SERIES",
+        px(220),
+        py(3168),
+        font=FONT_EN_BOLD,
+        size=5.5,
+        color=cover_gold_hi,
+        char_space=0.48,
+    )
+    c.setFillColor(cover_meta)
+    c.setFont(FONT_EN, 6.5)
+    c.drawString(px(220), py(3243), "Version 1.4 · 2026")
+    c.drawString(px(220), py(3295), "Document ID · CO-2026-002")
     c.setFillColor(WHITE)
-    c.setFont(FONT_EN_BOLD, 7.4)
-    c.drawString(38, PAGE_H - 34, "CIVIC ORDERISM")
-    c.setFillColor(GOLD_LIGHT)
-    c.drawRightString(PAGE_W - 38, PAGE_H - 34, "OFFICIAL EDITION")
-    if LOGO.exists():
-        c.drawImage(str(LOGO), 60, PAGE_H - 190, width=44, height=44, preserveAspectRatio=True, mask="auto")
-    c.setFillColor(WHITE)
-    c.setFont(FONT_MEDIUM, 9)
-    c.drawString(118, PAGE_H - 158, "公民秩序主义")
-    c.setFillColor(HexColor("#BBC8D3"))
-    c.setFont(FONT_EN, 7)
-    c.drawString(118, PAGE_H - 173, "Civic Orderism")
-    c.setFillColor(GOLD_LIGHT)
-    c.setFont(FONT_EN_BOLD, 8)
-    c.drawString(60, PAGE_H - 262, "FOUNDING BOARD PREPARATION · 2026")
-    c.setFillColor(WHITE)
-    c.setFont(FONT_MEDIUM, 12)
-    c.drawString(60, PAGE_H - 304, "公民秩序主义")
-    y = PAGE_H - 343
-    for line in ("北美非营利组织及", "首届董事会筹备文件"):
-        c.setFont(FONT_MEDIUM, 23)
-        c.drawString(60, y, line)
-        y -= 38
-    c.setFillColor(HexColor("#BFCBD5"))
-    c.setFont(FONT_EN, 8.3)
-    c.drawString(60, y - 2, "North American Nonprofit & Founding Board Preparation Brief")
-    c.setFillColor(WHITE)
-    c.setFont(FONT_MEDIUM, 10.5)
-    c.drawString(60, y - 41, "为和平政治转轨建立信任、能力与人才。")
-    c.setFillColor(GOLD)
-    c.rect(60, y - 67, 3, 25, fill=1, stroke=0)
-    draw_rule(c, 194, 60, PAGE_W - 60, Color(1, 1, 1, alpha=0.18), 0.5)
-    c.setFillColor(GOLD_LIGHT)
-    c.setFont(FONT_EN_BOLD, 7)
-    c.drawString(60, 166, "OFFICIAL EDITION")
-    c.setFillColor(HexColor("#BFCBD5"))
-    c.setFont(FONT_EN, 7.2)
-    c.drawString(60, 145, "Version 1.4 · 2026")
-    c.drawString(60, 129, "Document ID · CO-2026-002")
-    c.drawRightString(PAGE_W - 60, 145, "Founding Stage")
-    c.drawRightString(PAGE_W - 60, 129, "civicorderism.com")
-    c.setFillColor(HexColor("#8192A1"))
-    c.setFont(FONT_EN, 6.2)
-    c.drawString(38, 18, "Civic Orderism · civicorderism.com")
-    c.drawRightString(PAGE_W - 38, 18, "1 / 13")
+    c.setFont(FONT_EN_BOLD, 6)
+    c.drawRightString(px(2260), py(3243), "FOUNDING STAGE")
+    c.setFillColor(cover_meta)
+    c.setFont(FONT_EN, 6.5)
+    c.drawRightString(px(2260), py(3295), "civicorderism.com")
     c.showPage()
 
 
