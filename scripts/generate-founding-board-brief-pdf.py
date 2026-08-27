@@ -1137,40 +1137,57 @@ def page_10(c: canvas.Canvas) -> None:
 
 
 def page_11(c: canvas.Canvas) -> None:
-    y = begin_page(c, 12, "06 · FOUNDING STAGE", "当前阶段", "当前处于什么阶段？")
-    y = paragraph(c, "本文件是正式公开的筹备文件；组织仍处于筹备阶段。", M, y, CONTENT_W, font=FONT_MEDIUM, size=12.5, leading=20, color=NAVY)
-    y -= 40
-    gap = 36
-    col_w = (CONTENT_W - gap) / 2
-    columns = [
-        ("CURRENT WORK", "正在推进", ["北美非营利法人筹备", "首届董事会筹备", "基础治理文件准备", "注册法域与合规路径研究"]),
-        ("NOT YET COMPLETED", "尚未完成", ["法人依法完成注册", "注册法域最终确定", "首届董事会依法产生", "相关税务或慈善资格程序完成"]),
-    ]
-    for index, (english, title, rows) in enumerate(columns):
-        x = M + index * (col_w + gap)
-        tracked_text(c, english, x, y, font=FONT_EN_BOLD, size=6.2, color=MUTED, char_space=0.55)
-        c.setFillColor(NAVY)
-        c.setFont(FONT_MEDIUM, 14)
-        c.drawString(x, y - 34, title)
-        yy = y - 60
-        for row_index, row in enumerate(rows, 1):
-            c.setStrokeColor(RULE)
-            c.setLineWidth(0.55)
-            c.line(x, yy, x + col_w, yy)
-            c.setFillColor(GOLD)
-            c.setFont(FONT_EN_BOLD, 9)
-            c.drawString(x, yy - 27, f"0{row_index}")
-            c.setFillColor(NAVY)
-            c.setFont(FONT_LIGHT, 9.2)
-            c.drawString(x + 38, yy - 27, row)
-            yy -= 57
-    draw_core_statement(
+    """P12 · 当前阶段 — 阶段定位 / YOU ARE HERE（frozen revision）。"""
+    y = begin_page(c, 12, "06 · CURRENT STAGE", "当前阶段", "当前阶段", title_size=22)
+    y = paragraph(
         c,
-        "公民秩序主义目前处于组织筹备阶段，尚未完成法人注册及首届董事会设立，也不以政党身份运行。",
-        M,
-        y - 315,
-        CONTENT_W,
-        size=12.5,
+        "公民秩序主义已经完成从政治观点表达向组织建设的转向。",
+        M, y, CONTENT_W,
+        font=FONT_MEDIUM, size=11.5, leading=20, color=NAVY,
+    )
+    y -= 34
+
+    # 当前位置 — “正式组织建立阶段”（无卡片、无箭头）
+    c.setFillColor(GOLD)
+    c.setFont(FONT_MEDIUM, 6.0)
+    c.drawString(M, y, "当前位置")
+    y -= 32
+    c.setFillColor(NAVY)
+    c.setFont(FONT_MEDIUM, 15)
+    c.drawString(M, y, "正式组织建立阶段")
+    y -= 30
+    y = paragraph(
+        c,
+        "以北美非营利法人和首届董事会为起点，建立明确的治理、责任、授权和长期运行基础。",
+        M, y, CONTENT_W,
+        size=9.5, leading=17, color=MUTED,
+    )
+    y -= 26
+
+    y = paragraph(
+        c,
+        "这一阶段的重点不是扩大人员规模，而是先把组织本身建立起来。",
+        M, y, CONTENT_W,
+        size=9.5, leading=17, color=MUTED,
+    )
+    y -= 24
+    y = paragraph(
+        c,
+        "完成这一阶段之后，公民秩序主义才具备进一步发展组织能力、培养政治人才和建立长期公共信誉的正式基础。",
+        M, y, CONTENT_W,
+        size=9.5, leading=17, color=MUTED,
+    )
+    y -= 30
+
+    # 唯一 Core Statement
+    c.setStrokeColor(GOLD)
+    c.setLineWidth(2.1)
+    c.line(M, y, M + 62, y)
+    y = paragraph(
+        c,
+        "先建立能够承担责任的组织，再扩大组织能够承担的责任。",
+        M, y - 27, CONTENT_W,
+        font=FONT_MEDIUM, size=13.5, leading=20, color=NAVY,
     )
     c.showPage()
 
