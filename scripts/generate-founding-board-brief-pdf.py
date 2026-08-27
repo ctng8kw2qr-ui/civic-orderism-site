@@ -456,20 +456,19 @@ def draw_path_page(c: canvas.Canvas) -> None:
     c.showPage()
 
 
-def draw_public(c: canvas.Canvas, label: str, value: str, url: str, x: float, y: float, *, last: bool = False) -> float:
-    """Public dissemination channel: muted label + linked handle on one line."""
-    c.setFillColor(MUTED)
-    c.setFont(FONT_MEDIUM, 6.4)
-    c.drawString(x, y, label)
-    x += width(label, FONT_MEDIUM, 6.4) + 6
-    draw_link(c, value, url, x, y, size=6.4)
-    x += width(value, FONT_EN, 6.4)
-    if not last:
-        c.setFillColor(MUTED)
-        c.setFont(FONT_EN, 6.4)
-        c.drawString(x + 5, y, "·")
-        return x + 16
-    return x
+def group_header(c: canvas.Canvas, chinese: str, y: float) -> None:
+    """Contact-group header (gold micro-label)."""
+    c.setFillColor(GOLD)
+    c.setFont(FONT_MEDIUM, 6.5)
+    c.drawString(M, y, chinese)
+
+
+def channel(c: canvas.Canvas, label: str, value: str, url: str, y: float, *, value_size: float, label_size: float = 7.5, value_color=NAVY, label_color=MUTED) -> None:
+    """One contact channel: label + linked value on a single line."""
+    c.setFillColor(label_color)
+    c.setFont(FONT_MEDIUM, label_size)
+    c.drawString(M, y, label)
+    draw_link(c, value, url, M + 92, y, size=value_size)
 
 
 def page_15(c: canvas.Canvas) -> None:
@@ -503,39 +502,32 @@ def page_15(c: canvas.Canvas) -> None:
         leading=22,
         color=NAVY,
     )
+    y -= 34
+
+    # 正式联系渠道（主邮箱 / 官网 / 筹备页面 / 备用邮箱）
+    group_header(c, "正式联系渠道", y)
+    y -= 32
+    channel(c, "主邮箱", "civicorderism@gmail.com", "mailto:civicorderism@gmail.com", y,
+            value_size=8.5, label_size=8.0, value_color=NAVY, label_color=NAVY)
+    y -= 26
+    channel(c, "官网", "civicorderism.com", "https://civicorderism.com/", y, value_size=8.0, label_size=7.5)
+    y -= 24
+    channel(c, "筹备页面", "civicorderism.com/preparation", "https://civicorderism.com/preparation", y, value_size=8.0, label_size=7.5)
+    y -= 24
+    channel(c, "备用邮箱", "citizenorder@proton.me", "mailto:citizenorder@proton.me", y,
+            value_size=7.5, label_size=7.0, value_color=MUTED)
+
+    # 公共发布渠道（X / YouTube）
+    y -= 40
+    group_header(c, "公共发布渠道", y)
     y -= 30
+    channel(c, "X", "@CivicOrderism", "https://x.com/CivicOrderism", y, value_size=7.0, label_size=7.0, value_color=MUTED, label_color=MUTED)
+    y -= 24
+    channel(c, "YouTube", "Civic Orderism", "https://www.youtube.com/@CivicOrderism", y, value_size=7.0, label_size=7.0, value_color=MUTED, label_color=MUTED)
 
-    # 正式联系渠道 — 主联系邮箱为第一入口
-    official = [
-        ("主联系邮箱", "civicorderism@gmail.com", "mailto:civicorderism@gmail.com"),
-        ("官方网站", "civicorderism.com", "https://civicorderism.com/"),
-        ("董事会筹备页面", "civicorderism.com/preparation", "https://civicorderism.com/preparation"),
-        ("备用联系邮箱", "citizenorder@proton.me", "mailto:citizenorder@proton.me"),
-    ]
-    cy = y
-    for i, (label, value, url) in enumerate(official):
-        if i == 0:
-            c.setFillColor(NAVY)
-            c.setFont(FONT_MEDIUM, 7.0)
-        else:
-            c.setFillColor(MUTED)
-            c.setFont(FONT_LIGHT, 6.6)
-        c.drawString(M, cy, label)
-        draw_link(c, value, url, M + 104, cy, size=7.0 if i == 0 else 6.6)
-        cy -= 17
-
-    # 公共传播渠道 — 明显轻于正式联系渠道
-    c.setFillColor(MUTED)
-    c.setFont(FONT_LIGHT, 6.4)
-    c.drawString(M, cy, "公共发布渠道")
-    x = M + 104
-    x = draw_public(c, "X 官方账号", "@CivicOrderism", "https://x.com/CivicOrderism", x, cy)
-    draw_public(c, "YouTube 官方频道", "Civic Orderism", "https://www.youtube.com/@CivicOrderism", x, cy, last=True)
-
-    # QR（筹备页）+ label + metadata — 紧贴内容块下方
+    # QR（筹备页）+ label + metadata — 独立底部区域
     qr = QrCodeWidget("https://civicorderism.com/preparation")
     bounds = qr.getBounds()
-    qr_anchor = y
     qr_size = 56
     drawing = Drawing(
         qr_size,
@@ -543,12 +535,12 @@ def page_15(c: canvas.Canvas) -> None:
         transform=[qr_size / (bounds[2] - bounds[0]), 0, 0, qr_size / (bounds[3] - bounds[1]), 0, 0],
     )
     drawing.add(qr)
-    renderPDF.draw(drawing, c, PAGE_W - M - qr_size, qr_anchor - 70)
+    renderPDF.draw(drawing, c, PAGE_W - M - qr_size, 150)
     c.setFillColor(MUTED)
-    c.setFont(FONT_EN, 5.4)
-    c.drawRightString(PAGE_W - M, qr_anchor - 84, "civicorderism.com/preparation")
-    c.drawString(M, qr_anchor - 84, "Version 1.4 · 2026")
-    c.drawString(M + 100, qr_anchor - 84, "Document ID · CO-2026-002 · FOUNDING STAGE")
+    c.setFont(FONT_EN, 5.6)
+    c.drawRightString(PAGE_W - M, 136, "civicorderism.com/preparation")
+    c.drawString(M, 136, "Version 1.4 · 2026")
+    c.drawString(M + 100, 136, "Document ID · CO-2026-002 · FOUNDING STAGE")
     c.showPage()
 
 # --------------------------------------------------------------------------- #
