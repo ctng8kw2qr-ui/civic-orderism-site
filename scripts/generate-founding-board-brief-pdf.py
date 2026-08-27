@@ -189,7 +189,7 @@ def draw_footer(c: canvas.Canvas, page_no: int) -> None:
     c.setFillColor(MUTED)
     c.setFont(FONT_EN, 6.2)
     c.drawString(M, 23, "Civic Orderism · civicorderism.com")
-    c.drawRightString(PAGE_W - M, 23, f"{page_no} / 14")
+    c.drawRightString(PAGE_W - M, 23, f"{page_no} / 15")
 
 
 def begin_page(c: canvas.Canvas, page_no: int, english: str, chinese: str, title: str, *, title_size: float = 23) -> float:
@@ -367,6 +367,8 @@ def two_column_rows(
     y: float,
     *,
     row_height: float = 78,
+    body_size: float = 7.6,
+    body_leading: float = 11.4,
 ) -> float:
     """Two open-grid columns of ruled rows (ACTION / boundary pages)."""
     gap = 28
@@ -395,8 +397,8 @@ def two_column_rows(
                 body_x=x + 42,
                 body_y=yy - 45,
                 body_width=col_w - 42,
-                body_size=7.6,
-                body_leading=11.4,
+                body_size=body_size,
+                body_leading=body_leading,
                 body_max_lines=3,
             )
             yy -= row_height
@@ -457,34 +459,23 @@ def draw_path_page(c: canvas.Canvas) -> None:
 def draw_public(c: canvas.Canvas, label: str, value: str, url: str, x: float, y: float, *, last: bool = False) -> float:
     """Public dissemination channel: muted label + linked handle on one line."""
     c.setFillColor(MUTED)
-    c.setFont(FONT_MEDIUM, 6.2)
+    c.setFont(FONT_MEDIUM, 6.4)
     c.drawString(x, y, label)
-    x += width(label, FONT_MEDIUM, 6.2) + 6
-    draw_link(c, value, url, x, y, size=6.2)
-    x += width(value, FONT_EN, 6.2)
+    x += width(label, FONT_MEDIUM, 6.4) + 6
+    draw_link(c, value, url, x, y, size=6.4)
+    x += width(value, FONT_EN, 6.4)
     if not last:
         c.setFillColor(MUTED)
-        c.setFont(FONT_EN, 6.2)
+        c.setFont(FONT_EN, 6.4)
         c.drawString(x + 5, y, "·")
         return x + 16
     return x
 
 
-def draw_official_contact_block(c: canvas.Canvas, y: float) -> None:
-    """ACTION page contact component (P13, frozen): official contact channels,
-    stage-boundary statement, closing Core Statement, QR and metadata."""
-    c.setStrokeColor(RULE)
-    c.setLineWidth(0.55)
-    c.line(M, y, PAGE_W - M, y)
-    y -= 13
-    tracked_text(c, "OFFICIAL CONTACT", M, y, font=FONT_EN_BOLD, size=5.6, color=MUTED, char_space=0.5)
-    en_width = width("OFFICIAL CONTACT", FONT_EN_BOLD, 5.6) + max(0, len("OFFICIAL CONTACT") - 1) * 0.5
-    c.setFillColor(MUTED)
-    c.setFont(FONT_MEDIUM, 5.8)
-    c.drawString(M + en_width + 8, y, "·  正式联系方式")
-    y -= 10
+def page_15(c: canvas.Canvas) -> None:
+    """P15 · OFFICIAL CONTACT — 正式联系方式与现阶段边界（收尾页，frozen preview）。"""
+    y = begin_page(c, 15, "OFFICIAL CONTACT", "正式联系方式", "正式联系方式与现阶段边界", title_size=22)
 
-    # 正式联系与现阶段边界说明（已确认文案，逐字保留）
     boundary = [
         "公民秩序主义当前以官方网站和官方邮箱作为正式联系渠道。",
         "涉及首届董事会筹备、法人设立、组织治理、机构联系及其他需要持续跟进的正式事务，优先通过主联系邮箱联系。",
@@ -494,10 +485,10 @@ def draw_official_contact_block(c: canvas.Canvas, y: float) -> None:
         "任何涉及组织身份、代表权限、正式合作或持续参与的事项，均以官方网站、正式邮箱及后续明确的书面授权为准。",
     ]
     for line in boundary:
-        y = paragraph(c, line, M, y, 430, size=7.5, leading=10.5, color=MUTED)
-    y -= 5
+        y = paragraph(c, line, M, y, 468, size=9, leading=18, color=MUTED)
+    y -= 18
 
-    # 收口判断 — Core Statement 组件（短金线 + 深蓝判断句）
+    # 收口 Core Statement（短金线 + 深蓝判断句）
     c.setStrokeColor(GOLD)
     c.setLineWidth(2.1)
     c.line(M, y, M + 62, y)
@@ -505,14 +496,14 @@ def draw_official_contact_block(c: canvas.Canvas, y: float) -> None:
         c,
         "现阶段，公民秩序主义只接受身份、职责和授权明确的正式参与，不通过群组、募款或非正式协作扩大组织活动。",
         M,
-        y - 25,
+        y - 27,
         CONTENT_W,
         font=FONT_MEDIUM,
-        size=11.5,
-        leading=16,
+        size=13,
+        leading=22,
         color=NAVY,
     )
-    y -= 6
+    y -= 30
 
     # 正式联系渠道 — 主联系邮箱为第一入口
     official = [
@@ -525,44 +516,40 @@ def draw_official_contact_block(c: canvas.Canvas, y: float) -> None:
     for i, (label, value, url) in enumerate(official):
         if i == 0:
             c.setFillColor(NAVY)
-            c.setFont(FONT_MEDIUM, 6.6)
+            c.setFont(FONT_MEDIUM, 7.0)
         else:
             c.setFillColor(MUTED)
-            c.setFont(FONT_LIGHT, 6.4)
+            c.setFont(FONT_LIGHT, 6.6)
         c.drawString(M, cy, label)
-        draw_link(c, value, url, M + 104, cy, size=6.6 if i == 0 else 6.5)
-        cy -= 10.5
+        draw_link(c, value, url, M + 104, cy, size=7.0 if i == 0 else 6.6)
+        cy -= 17
 
     # 公共传播渠道 — 明显轻于正式联系渠道
     c.setFillColor(MUTED)
-    c.setFont(FONT_LIGHT, 6.2)
+    c.setFont(FONT_LIGHT, 6.4)
     c.drawString(M, cy, "公共发布渠道")
     x = M + 104
     x = draw_public(c, "X 官方账号", "@CivicOrderism", "https://x.com/CivicOrderism", x, cy)
     draw_public(c, "YouTube 官方频道", "Civic Orderism", "https://www.youtube.com/@CivicOrderism", x, cy, last=True)
 
-    # QR（筹备页）+ label + metadata
+    # QR（筹备页）+ label + metadata — 紧贴内容块下方
     qr = QrCodeWidget("https://civicorderism.com/preparation")
     bounds = qr.getBounds()
-    qr_size = 52
+    qr_anchor = y
+    qr_size = 56
     drawing = Drawing(
         qr_size,
         qr_size,
         transform=[qr_size / (bounds[2] - bounds[0]), 0, 0, qr_size / (bounds[3] - bounds[1]), 0, 0],
     )
     drawing.add(qr)
-    renderPDF.draw(drawing, c, PAGE_W - M - qr_size, 62)
-    c.setFillColor(MUTED)
-    c.setFont(FONT_EN, 5.2)
-    c.drawRightString(PAGE_W - M, 54, "civicorderism.com/preparation")
-
+    renderPDF.draw(drawing, c, PAGE_W - M - qr_size, qr_anchor - 70)
     c.setFillColor(MUTED)
     c.setFont(FONT_EN, 5.4)
-    c.drawString(M, 52, "Version 1.4 · 2026")
-    c.drawString(M + 100, 52, "Document ID · CO-2026-002 · FOUNDING STAGE")
-
-
-draw_contact_block = draw_official_contact_block  # backward-compatible alias
+    c.drawRightString(PAGE_W - M, qr_anchor - 84, "civicorderism.com/preparation")
+    c.drawString(M, qr_anchor - 84, "Version 1.4 · 2026")
+    c.drawString(M + 100, qr_anchor - 84, "Document ID · CO-2026-002 · FOUNDING STAGE")
+    c.showPage()
 
 # --------------------------------------------------------------------------- #
 # C3 cover (unchanged approved implementation)
@@ -1188,28 +1175,16 @@ def page_11(c: canvas.Canvas) -> None:
     c.showPage()
 
 
-def page_13(c: canvas.Canvas) -> None:
+def page_14(c: canvas.Canvas) -> None:
+    """P14 · ACTION — 参与首届董事会筹备（单一职责：先回答为什么来 + 01–05）。"""
     y = begin_page(c, 14, "C · FOUNDING BOARD PARTICIPATION", "行动入口", "参与首届董事会筹备", title_size=22)
-    y = paragraph(c, "当前阶段的正式参与方向，仅限首届董事会筹备。", M, y, CONTENT_W, font=FONT_MEDIUM, size=11.5, leading=19, color=NAVY)
-    y -= 22
-
-    c.setFillColor(GOLD)
-    c.rect(M, y - 76, 3.1, 76, fill=1, stroke=0)
-    c.setFillColor(GOLD)
-    c.setFont(FONT_MEDIUM, 6.6)
-    c.drawString(M + 15, y - 5, "首届董事会筹备")
-    c.setFillColor(NAVY)
-    c.setFont(FONT_MEDIUM, 15)
-    c.drawString(M + 15, y - 34, "首届董事会筹备")
-    paragraph(c, "面向愿意参与法人设立与组织治理，并承担首届董事责任的人。", M + 15, y - 61, 420, size=8.4, leading=14, color=MUTED)
-    y -= 95
 
     draw_section_eyebrow(c, "INITIAL CONTACT", "初次联系可说明", M, y)
-    y -= 24
+    y -= 40
     c.setFillColor(NAVY)
     c.setFont(FONT_MEDIUM, 11.8)
     c.drawString(M, y, "先回答为什么来，再回答会什么。")
-    y -= 30
+    y -= 50
 
     initial = [
         ("01", "为什么愿意参与首届董事会筹备", "简要说明为什么希望参与，以及如何理解这项工作的意义。"),
@@ -1227,19 +1202,18 @@ def page_13(c: canvas.Canvas) -> None:
     c.setFillColor(NAVY)
     c.setFont(FONT_MEDIUM, 10.6)
     c.drawString(M + 52, y - 27, initial[0][1])
-    paragraph(c, initial[0][2], M + 52, y - 47, 360, size=7.5, leading=11.5, color=MUTED)
-    y -= 72
+    paragraph(c, initial[0][2], M + 52, y - 47, 360, size=8.3, leading=13, color=MUTED)
+    y -= 95
 
     y = two_column_rows(
         c,
         [initial[1], initial[3]],
         [initial[2], initial[4]],
         y,
-        row_height=66,
+        row_height=88,
+        body_size=8.3,
+        body_leading=13,
     )
-    y -= 4
-
-    draw_official_contact_block(c, y)
     c.showPage()
 
 
@@ -1266,7 +1240,8 @@ def build() -> Path:
         page_10,
         page_11,
         draw_path_page,
-        page_13,
+        page_14,
+        page_15,
     ]
     for page in pages:
         page(c)
