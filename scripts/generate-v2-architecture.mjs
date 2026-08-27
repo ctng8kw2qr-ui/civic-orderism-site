@@ -2527,7 +2527,7 @@ writeInstitutionalContent(
     <p class="inst4-eyebrow">PREPARING THE FUTURE</p>
     <h1 class="inst4l-title">中国未来</h1>
     <p class="inst4l-lead">政治变化之后，中国如何继续运行？这里讨论的不是新闻预测，而是政治变化发生时，国家能否保持连续运行、公共服务能否不中断、社会秩序能否不失控。</p>
-    <p class="inst4l-status">${chinaFutureArticles.length} 篇研究 · 8 个研究框架 · 更新至 ${chinaFutureLatest || "2026-08-23"}</p>
+    <p class="inst4l-status">${chinaFutureArticles.length} 篇正式研究 · 8 个研究框架</p>
   </section>
 
   ${inst4lSection(
