@@ -156,7 +156,8 @@ def draw_section_eyebrow(c: canvas.Canvas, english: str, chinese: str, x: float,
     c.drawString(x + en_width + 8, y, f"·  {chinese}")
 
 
-def begin_page(c: canvas.Canvas, page_no: int, english: str, chinese: str, title: str, *, title_size: float = 23) -> float:
+def draw_page_header(c: canvas.Canvas, english: str, chinese: str, title: str, *, title_size: float = 23) -> None:
+    """Page header component: warm background, brand line, eyebrow and title."""
     c.setFillColor(WARM)
     c.rect(0, 0, PAGE_W, PAGE_H, fill=1, stroke=0)
 
@@ -179,6 +180,9 @@ def begin_page(c: canvas.Canvas, page_no: int, english: str, chinese: str, title
     c.setFont(FONT_MEDIUM, title_size)
     c.drawString(M, PAGE_H - 132, title)
 
+
+def draw_footer(c: canvas.Canvas, page_no: int) -> None:
+    """Footer component: rule, site line and page number (low visual weight)."""
     c.setStrokeColor(RULE)
     c.setLineWidth(0.55)
     c.line(M, 38, PAGE_W - M, 38)
@@ -186,6 +190,11 @@ def begin_page(c: canvas.Canvas, page_no: int, english: str, chinese: str, title
     c.setFont(FONT_EN, 6.2)
     c.drawString(M, 23, "Civic Orderism · civicorderism.com")
     c.drawRightString(PAGE_W - M, 23, f"{page_no} / 13")
+
+
+def begin_page(c: canvas.Canvas, page_no: int, english: str, chinese: str, title: str, *, title_size: float = 23) -> float:
+    draw_page_header(c, english, chinese, title, title_size=title_size)
+    draw_footer(c, page_no)
     return PAGE_H - 182
 
 # --------------------------------------------------------------------------- #
@@ -393,8 +402,8 @@ def two_column_rows(
             yy -= row_height
     return y - max_rows * row_height
 
-def draw_three_line_motif(c: canvas.Canvas, x: float, y: float) -> None:
-    """Short three-line motif (secondary). Reduced ~20% from the approved P08."""
+def draw_short_three_line_motif(c: canvas.Canvas, x: float, y: float) -> None:
+    """Short three-line motif (secondary, P08). Reduced ~20% from the approved P08."""
     lines = [
         (GOLD_PALE, 1.4, 0),
         (GOLD_HI, 0.9, 6),
@@ -406,13 +415,21 @@ def draw_three_line_motif(c: canvas.Canvas, x: float, y: float) -> None:
         c.line(x + offset, y, x + 22 + offset, y + 40)
 
 
-def draw_path_page(c: canvas.Canvas) -> None:
-    """PATH page component (P12): three parallel gold lines + forward stages."""
-    begin_page(c, 12, "DEVELOPMENT PATH", "发展路径", "发展路径")
+draw_three_line_motif = draw_short_three_line_motif  # backward-compatible alias
+
+
+def draw_full_three_line_motif(c: canvas.Canvas) -> None:
+    """Full three-line motif (PATH, P12): three parallel gold lines upward-forward."""
     for color, line_width, offset in ((GOLD_PALE, 3.8, 0), (GOLD_HI, 2.4, 11), (GOLD, 1.45, 21)):
         c.setStrokeColor(color)
         c.setLineWidth(line_width)
         c.line(110 + offset, 247, 451 + offset, 710)
+
+
+def draw_path_page(c: canvas.Canvas) -> None:
+    """PATH page component (P12): full three-line motif + forward stages."""
+    begin_page(c, 12, "DEVELOPMENT PATH", "发展路径", "发展路径")
+    draw_full_three_line_motif(c)
 
     stages = [
         ("01", "公共表达", 104, 278),
@@ -437,96 +454,115 @@ def draw_path_page(c: canvas.Canvas) -> None:
     c.showPage()
 
 
-def draw_contact_block(c: canvas.Canvas, y: float) -> None:
-    """ACTION page contact component (P13): official-first channels + QR + metadata."""
+def draw_public(c: canvas.Canvas, label: str, value: str, url: str, x: float, y: float, *, last: bool = False) -> float:
+    """Public dissemination channel: muted label + linked handle on one line."""
+    c.setFillColor(MUTED)
+    c.setFont(FONT_MEDIUM, 6.2)
+    c.drawString(x, y, label)
+    x += width(label, FONT_MEDIUM, 6.2) + 6
+    draw_link(c, value, url, x, y, size=6.2)
+    x += width(value, FONT_EN, 6.2)
+    if not last:
+        c.setFillColor(MUTED)
+        c.setFont(FONT_EN, 6.2)
+        c.drawString(x + 5, y, "·")
+        return x + 16
+    return x
+
+
+def draw_official_contact_block(c: canvas.Canvas, y: float) -> None:
+    """ACTION page contact component (P13, frozen): official contact channels,
+    stage-boundary statement, closing Core Statement, QR and metadata."""
     c.setStrokeColor(RULE)
     c.setLineWidth(0.55)
     c.line(M, y, PAGE_W - M, y)
-    y -= 17
-    tracked_text(c, "OFFICIAL CONTACT", M, y, font=FONT_EN_BOLD, size=5.8, color=MUTED, char_space=0.5)
-    en_width = width("OFFICIAL CONTACT", FONT_EN_BOLD, 5.8) + max(0, len("OFFICIAL CONTACT") - 1) * 0.5
-    c.setFillColor(MUTED)
-    c.setFont(FONT_MEDIUM, 6.0)
-    c.drawString(M + en_width + 8, y, "·  正式联系方式")
     y -= 13
-    y = paragraph(
-        c,
-        "公民秩序主义当前以官方网站和官方邮箱作为正式联系渠道。",
-        M,
-        y,
-        425,
-        size=7.4,
-        leading=11.5,
-        color=MUTED,
-    )
-    y = paragraph(
-        c,
-        "涉及首届董事会筹备、法人设立、组织治理、机构联系及其他需要持续跟进的正式事务，优先通过主联系邮箱联系。",
-        M,
-        y,
-        425,
-        size=7.4,
-        leading=11.5,
-        color=MUTED,
-    )
-    y = paragraph(
-        c,
-        "X 与 YouTube 主要用于公共发布与信息传播，不作为正式组织授权或治理事务的唯一依据。",
-        M,
-        y,
-        425,
-        size=7.4,
-        leading=11.5,
-        color=MUTED,
-    )
-    y -= 9
+    tracked_text(c, "OFFICIAL CONTACT", M, y, font=FONT_EN_BOLD, size=5.6, color=MUTED, char_space=0.5)
+    en_width = width("OFFICIAL CONTACT", FONT_EN_BOLD, 5.6) + max(0, len("OFFICIAL CONTACT") - 1) * 0.5
+    c.setFillColor(MUTED)
+    c.setFont(FONT_MEDIUM, 5.8)
+    c.drawString(M + en_width + 8, y, "·  正式联系方式")
+    y -= 10
 
+    # 正式联系与现阶段边界说明（已确认文案，逐字保留）
+    boundary = [
+        "公民秩序主义当前以官方网站和官方邮箱作为正式联系渠道。",
+        "涉及首届董事会筹备、法人设立、组织治理、机构联系及其他需要持续跟进的正式事务，优先通过主联系邮箱联系。",
+        "公民秩序主义现阶段不建立公开群组、聊天群或非正式社群，也不通过群聊组织事务。",
+        "现阶段不开展募款、捐款征集、会员费收取或其他资金募集活动。",
+        "X 与 YouTube 主要用于公共发布与信息传播，不作为正式组织授权、治理或人员身份确认的依据。",
+        "任何涉及组织身份、代表权限、正式合作或持续参与的事项，均以官方网站、正式邮箱及后续明确的书面授权为准。",
+    ]
+    for line in boundary:
+        y = paragraph(c, line, M, y, 430, size=7.5, leading=10.5, color=MUTED)
+    y -= 5
+
+    # 收口判断 — Core Statement 组件（短金线 + 深蓝判断句）
+    c.setStrokeColor(GOLD)
+    c.setLineWidth(2.1)
+    c.line(M, y, M + 62, y)
+    y = paragraph(
+        c,
+        "现阶段，公民秩序主义只接受身份、职责和授权明确的正式参与，不通过群组、募款或非正式协作扩大组织活动。",
+        M,
+        y - 25,
+        CONTENT_W,
+        font=FONT_MEDIUM,
+        size=11.5,
+        leading=16,
+        color=NAVY,
+    )
+    y -= 6
+
+    # 正式联系渠道 — 主联系邮箱为第一入口
     official = [
         ("主联系邮箱", "civicorderism@gmail.com", "mailto:civicorderism@gmail.com"),
-        ("备用联系邮箱", "citizenorder@proton.me", "mailto:citizenorder@proton.me"),
         ("官方网站", "civicorderism.com", "https://civicorderism.com/"),
         ("董事会筹备页面", "civicorderism.com/preparation", "https://civicorderism.com/preparation"),
+        ("备用联系邮箱", "citizenorder@proton.me", "mailto:citizenorder@proton.me"),
     ]
     cy = y
-    for label, value, url in official:
-        c.setFillColor(MUTED)
-        c.setFont(FONT_LIGHT, 6.4)
+    for i, (label, value, url) in enumerate(official):
+        if i == 0:
+            c.setFillColor(NAVY)
+            c.setFont(FONT_MEDIUM, 6.6)
+        else:
+            c.setFillColor(MUTED)
+            c.setFont(FONT_LIGHT, 6.4)
         c.drawString(M, cy, label)
-        draw_link(c, value, url, M + 104, cy, size=6.5)
-        cy -= 13
+        draw_link(c, value, url, M + 104, cy, size=6.6 if i == 0 else 6.5)
+        cy -= 10.5
 
+    # 公共传播渠道 — 明显轻于正式联系渠道
     c.setFillColor(MUTED)
-    c.setFont(FONT_LIGHT, 6.4)
+    c.setFont(FONT_LIGHT, 6.2)
     c.drawString(M, cy, "公共发布渠道")
-    draw_link(c, "X @CivicOrderism", "https://x.com/CivicOrderism", M + 104, cy, size=6.5)
-    x_gap = 18
-    draw_link(
-        c,
-        "YouTube Civic Orderism",
-        "https://www.youtube.com/@CivicOrderism",
-        M + 104 + width("X @CivicOrderism", FONT_EN, 6.5) + x_gap,
-        cy,
-        size=6.5,
-    )
+    x = M + 104
+    x = draw_public(c, "X 官方账号", "@CivicOrderism", "https://x.com/CivicOrderism", x, cy)
+    draw_public(c, "YouTube 官方频道", "Civic Orderism", "https://www.youtube.com/@CivicOrderism", x, cy, last=True)
 
+    # QR（筹备页）+ label + metadata
     qr = QrCodeWidget("https://civicorderism.com/preparation")
     bounds = qr.getBounds()
-    qr_size = 54
+    qr_size = 52
     drawing = Drawing(
         qr_size,
         qr_size,
         transform=[qr_size / (bounds[2] - bounds[0]), 0, 0, qr_size / (bounds[3] - bounds[1]), 0, 0],
     )
     drawing.add(qr)
-    renderPDF.draw(drawing, c, PAGE_W - M - qr_size, y - 61)
+    renderPDF.draw(drawing, c, PAGE_W - M - qr_size, 62)
     c.setFillColor(MUTED)
     c.setFont(FONT_EN, 5.2)
-    c.drawRightString(PAGE_W - M, y - 70, "civicorderism.com/preparation")
+    c.drawRightString(PAGE_W - M, 54, "civicorderism.com/preparation")
 
     c.setFillColor(MUTED)
-    c.setFont(FONT_EN, 5.6)
-    c.drawString(M, 55, "Version 1.4 · 2026")
-    c.drawString(M + 105, 55, "Document ID · CO-2026-002 · FOUNDING STAGE")
+    c.setFont(FONT_EN, 5.4)
+    c.drawString(M, 52, "Version 1.4 · 2026")
+    c.drawString(M + 100, 52, "Document ID · CO-2026-002 · FOUNDING STAGE")
+
+
+draw_contact_block = draw_official_contact_block  # backward-compatible alias
 
 # --------------------------------------------------------------------------- #
 # C3 cover (unchanged approved implementation)
@@ -1082,7 +1118,7 @@ def page_11(c: canvas.Canvas) -> None:
 def page_13(c: canvas.Canvas) -> None:
     y = begin_page(c, 13, "C · FOUNDING BOARD PARTICIPATION", "行动入口", "参与首届董事会筹备", title_size=22)
     y = paragraph(c, "当前阶段的正式参与方向，仅限首届董事会筹备。", M, y, CONTENT_W, font=FONT_MEDIUM, size=11.5, leading=19, color=NAVY)
-    y -= 27
+    y -= 22
 
     c.setFillColor(GOLD)
     c.rect(M, y - 76, 3.1, 76, fill=1, stroke=0)
@@ -1093,14 +1129,14 @@ def page_13(c: canvas.Canvas) -> None:
     c.setFont(FONT_MEDIUM, 15)
     c.drawString(M + 15, y - 34, "首届董事会筹备")
     paragraph(c, "面向愿意参与法人设立与组织治理，并承担首届董事责任的人。", M + 15, y - 61, 420, size=8.4, leading=14, color=MUTED)
-    y -= 103
+    y -= 95
 
     draw_section_eyebrow(c, "INITIAL CONTACT", "初次联系可说明", M, y)
-    y -= 27
+    y -= 24
     c.setFillColor(NAVY)
     c.setFont(FONT_MEDIUM, 11.8)
     c.drawString(M, y, "先回答为什么来，再回答会什么。")
-    y -= 34
+    y -= 30
 
     initial = [
         ("01", "为什么愿意参与首届董事会筹备", "简要说明为什么希望参与，以及如何理解这项工作的意义。"),
@@ -1119,18 +1155,18 @@ def page_13(c: canvas.Canvas) -> None:
     c.setFont(FONT_MEDIUM, 10.6)
     c.drawString(M + 52, y - 27, initial[0][1])
     paragraph(c, initial[0][2], M + 52, y - 47, 360, size=7.5, leading=11.5, color=MUTED)
-    y -= 85
+    y -= 72
 
     y = two_column_rows(
         c,
         [initial[1], initial[3]],
         [initial[2], initial[4]],
         y,
-        row_height=74,
+        row_height=66,
     )
-    y -= 5
+    y -= 4
 
-    draw_contact_block(c, y)
+    draw_official_contact_block(c, y)
     c.showPage()
 
 
