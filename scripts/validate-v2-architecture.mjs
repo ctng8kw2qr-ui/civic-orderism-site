@@ -966,14 +966,14 @@ assert(
   workHtml.includes("CURRENT WORK") &&
     visiblePageText(workHtml).includes("建立一个能够承接政治信任的组织") &&
     visiblePageText(workHtml).includes(
-      "旧政治秩序需要一个可信的新组织",
+      "政治信任",
     ) &&
     visiblePageText(workHtml).includes(
-      "只有具备政治信誉、责任能力和承接能力，新的政治力量才能与旧政治秩序建立真正的沟通与信任。",
+      "新的政治力量必须具备能够被识别、被验证、被追责的政治信誉与承接能力。",
     ) &&
-    visiblePageText(workHtml).includes("政治转型不能只依靠观点") &&
+    visiblePageText(workHtml).includes("组织责任") &&
     visiblePageText(workHtml).includes(
-      "组织必须能够承担法律、财务、人员与长期政治责任，才能成为稳定的政治沟通主体。",
+      "法律、财务、人员与长期政治责任必须由正式组织承担。",
     ) &&
     workHtml.includes("inst4-work__number\">01") &&
     workHtml.includes("inst4-work__number\">02") &&
