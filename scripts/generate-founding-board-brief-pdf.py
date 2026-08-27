@@ -459,7 +459,7 @@ def draw_path_page(c: canvas.Canvas) -> None:
 def group_header(c: canvas.Canvas, chinese: str, y: float) -> None:
     """Contact-group header (gold micro-label)."""
     c.setFillColor(GOLD)
-    c.setFont(FONT_MEDIUM, 6.5)
+    c.setFont(FONT_MEDIUM, 7.0)
     c.drawString(M, y, chinese)
 
 
@@ -468,7 +468,7 @@ def channel(c: canvas.Canvas, label: str, value: str, url: str, y: float, *, val
     c.setFillColor(label_color)
     c.setFont(FONT_MEDIUM, label_size)
     c.drawString(M, y, label)
-    draw_link(c, value, url, M + 92, y, size=value_size)
+    draw_link(c, value, url, M + 96, y, size=value_size)
 
 
 def page_15(c: canvas.Canvas) -> None:
@@ -506,41 +506,41 @@ def page_15(c: canvas.Canvas) -> None:
 
     # 正式联系渠道（主邮箱 / 官网 / 筹备页面 / 备用邮箱）
     group_header(c, "正式联系渠道", y)
-    y -= 32
+    y -= 34
     channel(c, "主邮箱", "civicorderism@gmail.com", "mailto:civicorderism@gmail.com", y,
-            value_size=8.5, label_size=8.0, value_color=NAVY, label_color=NAVY)
-    y -= 26
-    channel(c, "官网", "civicorderism.com", "https://civicorderism.com/", y, value_size=8.0, label_size=7.5)
-    y -= 24
-    channel(c, "筹备页面", "civicorderism.com/preparation", "https://civicorderism.com/preparation", y, value_size=8.0, label_size=7.5)
-    y -= 24
+            value_size=10.5, label_size=8.0, value_color=NAVY, label_color=NAVY)
+    y -= 31
+    channel(c, "官网", "civicorderism.com", "https://civicorderism.com/", y, value_size=9.5, label_size=7.5, value_color=NAVY, label_color=MUTED)
+    y -= 29
+    channel(c, "筹备页面", "civicorderism.com/preparation", "https://civicorderism.com/preparation", y, value_size=9.5, label_size=7.5, value_color=NAVY, label_color=MUTED)
+    y -= 29
     channel(c, "备用邮箱", "citizenorder@proton.me", "mailto:citizenorder@proton.me", y,
-            value_size=7.5, label_size=7.0, value_color=MUTED)
+            value_size=9.0, label_size=7.5, value_color=MUTED, label_color=MUTED)
 
     # 公共发布渠道（X / YouTube）
-    y -= 40
-    group_header(c, "公共发布渠道", y)
     y -= 30
-    channel(c, "X", "@CivicOrderism", "https://x.com/CivicOrderism", y, value_size=7.0, label_size=7.0, value_color=MUTED, label_color=MUTED)
-    y -= 24
-    channel(c, "YouTube", "Civic Orderism", "https://www.youtube.com/@CivicOrderism", y, value_size=7.0, label_size=7.0, value_color=MUTED, label_color=MUTED)
+    group_header(c, "公共发布渠道", y)
+    y -= 32
+    channel(c, "X", "@CivicOrderism", "https://x.com/CivicOrderism", y, value_size=8.5, label_size=7.5, value_color=MUTED, label_color=MUTED)
+    y -= 26
+    channel(c, "YouTube", "Civic Orderism", "https://www.youtube.com/@CivicOrderism", y, value_size=8.5, label_size=7.5, value_color=MUTED, label_color=MUTED)
 
     # QR（筹备页）+ label + metadata — 独立底部区域
     qr = QrCodeWidget("https://civicorderism.com/preparation")
     bounds = qr.getBounds()
-    qr_size = 56
+    qr_size = 58
     drawing = Drawing(
         qr_size,
         qr_size,
         transform=[qr_size / (bounds[2] - bounds[0]), 0, 0, qr_size / (bounds[3] - bounds[1]), 0, 0],
     )
     drawing.add(qr)
-    renderPDF.draw(drawing, c, PAGE_W - M - qr_size, 150)
+    renderPDF.draw(drawing, c, PAGE_W - M - qr_size, 138)
     c.setFillColor(MUTED)
     c.setFont(FONT_EN, 5.6)
-    c.drawRightString(PAGE_W - M, 136, "civicorderism.com/preparation")
-    c.drawString(M, 136, "Version 1.4 · 2026")
-    c.drawString(M + 100, 136, "Document ID · CO-2026-002 · FOUNDING STAGE")
+    c.drawRightString(PAGE_W - M, 122, "civicorderism.com/preparation")
+    c.drawString(M, 122, "Version 1.4 · 2026")
+    c.drawString(M + 100, 122, "Document ID · CO-2026-002 · FOUNDING STAGE")
     c.showPage()
 
 # --------------------------------------------------------------------------- #
