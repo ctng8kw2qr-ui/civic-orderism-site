@@ -287,13 +287,13 @@ noindex: false
   <span class="inst4l-row__desc">从普通人的问题出发，说明问题如何进入制度，并经过整理、判断、执行、留痕和纠偏形成完整国家运行链条。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
+</div>
+<details class="china-analysis-more"><summary>查看这一主题的全部研究（15）</summary><div class="inst4l-list">
 <a class="inst4l-row" href="/civic-orderism/why-dual-track-committee-administration">
-  <span class="inst4l-row__cell"><span class="inst4l-row__meta">代表文章</span><span class="inst4l-row__title">为什么公民秩序主义必须采取委员会—行政双轨制，但最终仍由民选政治官员统合国家</span></span>
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">延伸阅读</span><span class="inst4l-row__title">为什么公民秩序主义必须采取委员会—行政双轨制，但最终仍由民选政治官员统合国家</span></span>
   <span class="inst4l-row__desc">说明委员会与行政为何必须分轨运行，以及民选政治官员为何仍需承担国家统合和最终责任。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
-</div>
-<details class="china-analysis-more"><summary>查看这一主题的全部研究（14）</summary><div class="inst4l-list">
 <a class="inst4l-row" href="/civic-orderism/what-is-committee-system">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">延伸阅读</span><span class="inst4l-row__title">什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构</span></span>
   <span class="inst4l-row__desc">系统说明委员会的职责边界、工作流程，以及它与行政、秘书处和社会问题入口之间的关系。</span>

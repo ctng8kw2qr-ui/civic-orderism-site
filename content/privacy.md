@@ -1,7 +1,7 @@
 ---
 title: "隐私与数据处理"
-date: 2026-07-19
-updated: 2026-07-20
+date: 2026-08-27
+updated: 2026-08-27
 description: "本页说明公民秩序主义网站当前的数据处理原则：收集什么、为什么收集、如何访问与更正。"
 contentType: "页面"
 status: published
@@ -15,6 +15,7 @@ noindex: false
     <p class="inst4-eyebrow">PRIVACY &amp; DATA HANDLING</p>
     <h1 class="inst4l-title">隐私与数据处理</h1>
     <p class="inst4l-lead">本页面说明公民秩序主义网站当前的数据处理原则。随着法人设立和正式治理体系建立，相关政策将根据适用法律和专业意见进一步完善。</p>
+    <p class="inst4l-status">CURRENT POLICY · 当前政策 · 最后更新 2026-08-27</p>
   </section>
 
   <section class="inst4l-section">

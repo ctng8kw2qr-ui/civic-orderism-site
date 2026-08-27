@@ -181,10 +181,10 @@
       "desc": "从权力边界、责任与监督出发，进一步理解公民秩序主义关于国家运行、权力结构、公共判断与制度纠错的基本构想。",
       "representative": [
         "civic-orderism/top-level-power-structure-under-civic-orderism",
-        "civic-orderism/state-operation-process-under-civic-orderism",
-        "civic-orderism/why-dual-track-committee-administration"
+        "civic-orderism/state-operation-process-under-civic-orderism"
       ],
       "extended": [
+        "civic-orderism/why-dual-track-committee-administration",
         "civic-orderism/what-is-committee-system",
         "civic-orderism/committee-administration-opposite-incentives",
         "civic-orderism/why-committees-cannot-directly-take-cases",

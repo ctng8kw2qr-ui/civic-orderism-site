@@ -38,6 +38,7 @@ const institutionalPageSlugs = new Set([
   "preparation/board",
   "participate",
   "about",
+  "privacy",
 ]);
 
 const shouldShowContentMeta = (page: QuartzComponentProps) => {
