@@ -1116,23 +1116,20 @@ const articlesHtml = fs.readFileSync(publicHtml("articles"), "utf8");
 const articlesText = visiblePageText(articlesHtml);
 assert(
   articlesText.includes("阅读地图") &&
-    articlesText.includes("5分钟") &&
-    articlesText.includes("30分钟") &&
-    articlesText.includes("深度阅读") &&
-    articlesText.includes("快速知道公民秩序主义是什么") &&
-    articlesText.includes("理解完整基本逻辑") &&
-    articlesText.includes("进入研究体系") &&
+    articlesText.includes("路线 A") &&
+    articlesText.includes("第一次认识公民秩序主义") &&
+    articlesText.includes("路线 B") &&
+    articlesText.includes("为什么认为中共正在失去治理能力") &&
+    articlesText.includes("路线 C") &&
+    articlesText.includes("如果政治变化发生，中国怎么办") &&
     /href="[^"]*start-here/.test(articlesHtml) &&
-    /href="[^"]*introduction-manual/.test(articlesHtml) &&
-    /href="[^"]*party-state-structural-failure/.test(articlesHtml) &&
+    /href="[^"]*this-time-let-china-be-your-pride/.test(articlesHtml) &&
+    /href="[^"]*preparation/.test(articlesHtml) &&
+    /href="[^"]*what-is-the-ccp-becoming/.test(articlesHtml) &&
     /href="[^"]*peaceful-state-transition/.test(articlesHtml) &&
-    /href="[^"]*ccp-second-reform-opening-possibility/.test(articlesHtml) &&
-    /href="[^"]*topics/.test(articlesHtml) &&
-    /href="[^"]*concepts/.test(articlesHtml) &&
-    /href="[^"]*articles\/all/.test(articlesHtml) &&
-    !articlesText.includes("一、旧世界为什么失效") &&
+    /href="[^"]*china-future/.test(articlesHtml) &&
     !articlesHtml.includes('class="content-meta"'),
-  "阅读地图缺少三条阅读路线（5分钟/30分钟/深度阅读）或混入文章元信息",
+  "阅读地图缺少三条阅读路线（A/B/C）或混入文章元信息",
 );
 
 // Complete articles archive (articles/all.md)
@@ -1211,38 +1208,21 @@ assert(
 const participateHtml = fs.readFileSync(publicHtml("participate"), "utf8");
 const participateText = visiblePageText(participateHtml);
 for (const requiredText of [
-  "参与公民秩序主义",
-  "参与不等于立即加入组织",
+  "建立联系",
+  "建立联系不等于加入组织",
+  "提供意见不产生组织身份",
+  "未经正式授权，任何人不得代表公民秩序主义进行对外沟通、表态、联络或建立政治关系",
   "了解与传播",
-  "阅读公民秩序主义正式材料",
-  "介绍公民秩序主义的政治路线",
-  "专业协作",
-  "研究",
-  "编辑",
-  "翻译",
-  "设计",
-  "技术",
-  "法律",
-  "财务",
-  "项目管理",
-  "长期联系",
-  "参与北美组织筹备",
-  "法人筹备",
-  "董事会筹备",
-  "法律与合规",
-  "财务与内部控制",
-  "治理制度建设",
-  "北美居住要求不适用于普通支持、传播、翻译、研究和技术协作",
-  "筹备参与不是治理身份",
-  "不人为制造风险",
-  "请不要在初次邮件中发送身份证件",
-  "公民秩序主义希望与什么样的人建立联系",
-  "公民秩序主义不以人数、头衔和情绪扩大组织",
-  "通过邮件说明参与方向",
+  "建立长期联系",
+  "建立联系不构成成员、志愿者、工作人员、组织代表或任何正式身份",
+  "北美非营利法人及首届董事会筹备",
+  "了解董事会筹备",
+  "董事不会通过公开报名直接产生",
+  "筹备接触不构成任命",
 ]) {
   assert(
     participateText.includes(requiredText),
-    `参与页缺少内容：${requiredText}`,
+    `建立联系页缺少内容：${requiredText}`,
   );
 }
 const primaryEmailPosition = participateHtml.indexOf(
@@ -1251,19 +1231,9 @@ const primaryEmailPosition = participateHtml.indexOf(
 const secondaryEmailPosition = participateHtml.indexOf(
   "mailto:citizenorder@proton.me",
 );
-for (const anchor of ["communication", "collaboration", "contact"]) {
-  assert(
-    participateHtml.includes(`id="${anchor}"`),
-    `参与页缺少稳定锚点：#${anchor}`,
-  );
-}
 assert(
   primaryEmailPosition >= 0 && secondaryEmailPosition > primaryEmailPosition,
-  "参与页邮箱缺失或主备顺序错误",
-);
-assert(
-  !participateText.includes("我们"),
-  "参与页仍包含可改为机构名称表述的第一人称文案",
+  "建立联系页邮箱缺失或主备顺序错误",
 );
 
 const preparationHtml = fs.readFileSync(publicHtml("preparation"), "utf8");

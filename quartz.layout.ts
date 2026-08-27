@@ -113,6 +113,7 @@ export const sharedPageComponents: SharedLayout = {
       youtubeLabel: "Civic Orderism",
     },
     copyright: "© 2026 Civic Orderism",
+    secondaryNavLinks: [{ label: "隐私与数据处理", href: "/privacy" }],
   }),
 };
 

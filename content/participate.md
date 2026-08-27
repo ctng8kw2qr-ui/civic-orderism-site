@@ -1,66 +1,55 @@
 ---
-title: "参与公民秩序主义"
+title: "建立联系"
 date: 2026-07-19
 updated: 2026-07-20
-description: "了解如何通过正式阅读、公共传播、专业协作与长期联系支持公民秩序主义，以及北美组织筹备的适用边界。"
-contentType: "参与"
+description: "建立联系不等于加入组织。了解公民秩序主义、通过正式方式建立长期联系，以及了解当前北美非营利法人及首届董事会筹备。"
+contentType: "页面"
 status: published
 listed: true
 folderListed: true
 noindex: false
 ---
 
-<div class="participate-page">
-<header class="participate-hero">
-  <p class="resource-label">了解、协作与长期联系</p>
-  <h1>参与公民秩序主义</h1>
-  <p>参与不等于立即加入组织。无论身处何地，都可以先从了解政治路线、传播正式材料、提供专业协作或建立长期联系开始。</p>
-</header>
+<div class="inst4 inst4l inst4l-participate">
+  <section class="inst4l-hero">
+    <p class="inst4-eyebrow">ESTABLISHING CONTACT</p>
+    <h1 class="inst4l-title">建立联系</h1>
+    <p class="inst4l-lead">建立联系不等于加入组织。提供意见不产生组织身份，提供专业建议不产生授权关系。未经正式授权，任何人不得代表公民秩序主义进行对外沟通、表态、联络或建立政治关系。</p>
+  </section>
 
-<section class="participate-section" id="communication" aria-labelledby="participation-communication">
-  <div class="home-section-intro"><p class="resource-label">不限地区</p><h2 id="participation-communication">了解与传播</h2><p>阅读正式材料，理解和平转轨、国家连续和责任区分，并向愿意理性讨论中国未来的人介绍公民秩序主义。</p></div>
-  <div class="participate-support-grid"><span>阅读公民秩序主义正式材料</span><span>介绍公民秩序主义的政治路线</span><span>分享网站、手册与正式文章</span><span>参与克制、基于事实的公共讨论</span></div>
-  <p class="participate-support-note">了解与传播不限制居住地，不要求公开身份，也不构成组织加入或治理身份。</p>
-</section>
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">01 · 了解与传播</p>
+      <h2 class="inst4l-section__title">了解与传播</h2>
+      <p class="inst4l-section__desc">欢迎阅读、分享与关注公开研究。了解与传播不产生组织身份。</p>
+    </div>
+    <ul class="inst4-route__list">
+      <li>阅读公民秩序主义正式材料与公开研究。</li>
+      <li>分享网站、手册与正式文章。</li>
+      <li>关注公开研究进展。</li>
+    </ul>
+  </section>
 
-<section class="participate-section" id="collaboration" aria-labelledby="participation-collaboration">
-  <div class="home-section-intro"><p class="resource-label">按专业能力参与</p><h2 id="participation-collaboration">专业协作</h2><p>公民秩序主义需要能够承担具体工作的人，以专业成果而不是口号和声势推进长期建设。</p></div>
-  <div class="participate-support-grid"><span>研究</span><span>编辑</span><span>翻译</span><span>设计</span><span>技术</span><span>法律</span><span>财务</span><span>项目管理</span></div>
-  <p class="participate-support-note">专业协作可从小规模、明确边界的任务开始，不要求立即承担组织治理责任。</p>
-</section>
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">02 · 建立长期联系</p>
+      <h2 class="inst4l-section__title">建立长期联系</h2>
+      <p class="inst4l-section__desc">通过正式联系方式建立联系。建立联系不构成成员、志愿者、工作人员、组织代表或任何正式身份。</p>
+    </div>
+    <div class="inst4l-contact">
+      <p class="inst4l-contact__entry"><span>主联系邮箱</span><a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com</a></p>
+      <p class="inst4l-contact__entry"><span>备用邮箱</span><a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a></p>
+    </div>
+    <p class="inst4-route__intro">初次联系不需要发送身份证件、详细住址或其他不必要的敏感个人信息。可以先使用化名并说明希望采用的联系方式。</p>
+  </section>
 
-<section class="participate-section" id="long-term-contact" aria-labelledby="participation-long-term-contact">
-  <div class="home-section-intro"><p class="resource-label">低风险参与</p><h2 id="participation-long-term-contact">长期联系</h2><p>对于暂时不方便公开参与的人，可以通过电子邮件建立长期联系，在保护身份和现实安全的前提下持续了解项目进展。</p></div>
-  <p class="participate-support-note">可以使用化名或只提供必要的联系方式；初次联系不需要发送身份证件、详细住址或单位内部资料。</p>
-</section>
-
-<section class="participate-section" id="north-america" aria-labelledby="participation-north-america">
-  <div class="home-section-intro"><p class="resource-label">第二部分 · 加拿大及北美</p><h2 id="participation-north-america">参与北美组织筹备</h2><p>面向长期居住于加拿大或北美、愿意承担当地法律责任和长期治理工作的人。当前工作以小规模、具体任务和长期合作观察为主。</p></div>
-  <div class="participate-path-grid"><article><span>01</span><h3>法人筹备</h3><p>注册法域、法人宗旨、业务范围、章程与组织附例研究。</p></article><article><span>02</span><h3>董事会筹备</h3><p>董事责任、候选人识别、利益冲突与依法产生程序。</p></article><article><span>03</span><h3>法律与合规</h3><p>当地非营利法律、政策文件、档案和公共活动边界。</p></article><article><span>04</span><h3>财务与内部控制</h3><p>预算、记账、审批、审计准备和组织资产管理制度。</p></article><article><span>05</span><h3>治理制度建设</h3><p>授权、监督、责任、隐私、信息安全与决策记录。</p></article><article><span>06</span><h3>长期组织运营</h3><p>任务协调、人才联系、出版支持和稳定的组织基础维护。</p></article></div>
-  <p class="participate-region-boundary"><strong>适用范围：</strong>北美居住要求不适用于普通支持、传播、翻译、研究和技术协作，只适用于当地法人、董事会候选人识别以及需要承担当地法律责任的治理工作。</p>
-</section>
-
-<section class="participate-section participate-fit" aria-labelledby="participation-fit">
-  <div class="home-section-intro"><p class="resource-label">责任与稳定性优先</p><h2 id="participation-fit">公民秩序主义希望与什么样的人建立联系</h2></div>
-  <ul class="participate-checklist"><li>理解和平转轨与行政承接；</li><li>认同不革命、不清算、不以报复为目的；</li><li>能够长期、稳定地参与公共事务；</li><li>尊重程序、授权、组织纪律与事实；</li><li>能够保护组织信息和成员隐私；</li><li>愿意承担真实工作和明确责任；</li><li>具备独立思考和处理分歧的能力；</li><li>拥有法律、财务、管理、技术、传播、设计、研究或运营能力之一。</li></ul>
-</section>
-
-<section class="participate-section participate-boundaries" aria-labelledby="participation-boundaries">
-  <div><p class="resource-label">组织扩展原则</p><h2 id="participation-boundaries">公民秩序主义不以人数、头衔和情绪扩大组织</h2><p>公民秩序主义不建立个人崇拜，不依靠口号、互相攻击和敌我动员维持活跃度，不建立失控的大规模公开群组，也不允许任何人未经授权代表组织。</p><p>公民秩序主义不以公开暴露身份、激进言论或不必要的冒险作为忠诚证明，不以内部热闹代替真实建设。</p></div>
-</section>
-
-<section class="participate-section participate-security" aria-labelledby="participation-security">
-  <div class="home-section-intro"><p class="resource-label">参与者保护</p><h2 id="participation-security">不人为制造风险</h2><p>未来将逐步建立信息最小化、化名参与、身份保护、分级授权、最小权限、内部资料访问控制和敏感工作独立风险评估机制。</p></div>
-  <p>公民秩序主义无法承诺政治参与完全没有风险，但不会鼓励无意义的牺牲，也不会要求任何人以个人或家庭安全换取组织认可。</p>
-</section>
-
-<section class="participate-section preparation-legal-note" aria-labelledby="participation-status-boundary">
-  <p class="resource-label">身份边界</p><h2 id="participation-status-boundary">筹备参与不是治理身份</h2>
-  <p>提交邮件、参加沟通、提供建议或完成任务，均不当然产生董事资格、法定成员资格、共同创始人身份、官方代表资格、项目治理权或项目资产所有权。</p>
-</section>
-
-<section class="participate-section participate-contact" id="contact" aria-labelledby="participation-contact">
-  <div class="home-section-intro"><p class="resource-label">建立联系</p><h2 id="participation-contact">通过邮件说明参与方向</h2><p>普通支持者可以直接提出建议或提供专业意见；希望参与具体协作的人，可以在邮件中说明可承担的工作方向。涉及北美法人或董事会筹备时，请说明所在国家、州或省。</p></div>
-  <div class="participate-contact-grid"><div><h3>邮件可以包括</h3><ul><li>你对公民秩序主义基本路线的理解；</li><li>希望支持或参与的方式；</li><li>专业背景和可以提供的意见；</li><li>能够投入的大致时间；</li><li>如涉及法人或董事会筹备，说明所在国家、州或省；</li><li>希望采用的称呼和联系方式。</li></ul></div><div class="participate-contact-card"><p class="resource-label">主联系邮箱</p><a href="mailto:civicorderism@gmail.com?subject=%E6%94%AF%E6%8C%81%E4%B8%8E%E5%8F%82%E4%B8%8E%E5%85%AC%E6%B0%91%E7%A7%A9%E5%BA%8F%E4%B8%BB%E4%B9%89">civicorderism@gmail.com</a><p class="resource-label">备用邮箱</p><a href="mailto:citizenorder@proton.me?subject=%E6%94%AF%E6%8C%81%E4%B8%8E%E5%8F%82%E4%B8%8E%E5%85%AC%E6%B0%91%E7%A7%A9%E5%BA%8F%E4%B8%BB%E4%B9%89">citizenorder@proton.me</a><small>请不要在初次邮件中发送身份证件、详细住址、护照号码、单位内部资料或其他不必要的敏感个人信息。可以先使用化名并说明希望采用的联系方式。</small></div></div>
-</section>
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">03 · 当前正式组织工作</p>
+      <h2 class="inst4l-section__title">北美非营利法人及首届董事会筹备</h2>
+      <p class="inst4l-section__desc">这是公民秩序主义当前最重要、最明确的组织工作。</p>
+    </div>
+    <p class="inst4l-link"><a href="/preparation">了解董事会筹备 <span aria-hidden="true">→</span></a></p>
+    <p class="inst4-route__intro">董事不会通过公开报名直接产生。筹备接触不构成任命。</p>
+  </section>
 </div>

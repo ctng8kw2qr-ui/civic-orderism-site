@@ -74,6 +74,16 @@ noindex: false
 </div>
   </section>
 
+  <section class="inst4l-section inst4-route__core-statement">
+<div class="inst4l-section__head">
+<p class="inst4-eyebrow">核心政治总论</p>
+<h2 class="inst4l-section__title">这一次，让中国成为你的骄傲</h2>
+<p class="inst4l-section__desc">公民秩序主义为什么存在，最终希望把中国带向哪里。</p>
+</div>
+<p class="inst4-route__statement">一个国家真正的荣耀，不只出现在新闻报道里，更应该写在每一个普通人的生活里。</p>
+<p class="inst4l-link"><a href="/civic-orderism/this-time-let-china-be-your-pride">阅读核心政治总论 <span aria-hidden="true">→</span></a></p>
+  </section>
+
   <section class="inst4l-section">
 <div class="inst4l-section__head">
 <p class="inst4-eyebrow">TRANSITION LOGIC</p>
@@ -356,6 +366,15 @@ noindex: false
 </a>
 </div></details>
 </div>
+  </section>
+
+  <section class="inst4l-section">
+<div class="inst4l-section__head">
+<p class="inst4-eyebrow">全部研究</p>
+<h2 class="inst4l-section__title">浏览全部公民秩序主义研究</h2>
+<p class="inst4l-section__desc">进入完整文章索引，按专题与概念继续筛选阅读。</p>
+</div>
+<p class="inst4l-link"><a href="/articles/all">浏览全部公民秩序主义研究 <span aria-hidden="true">→</span></a></p>
   </section>
 
   <section class="inst4l-section inst4-route__final">

@@ -1251,7 +1251,7 @@ writeContent(
 <div class="start-page start-here-page">
   <header class="start-page__header"><p class="resource-label">新读者入口</p><h1>5分钟了解公民秩序主义</h1><p>用五个问题建立基础认识：这是什么、为什么提出、坚持什么、现在正在做什么，以及接下来从哪里继续了解。</p></header>
   <div class="start-page__sections">
-    <section><span>01</span><div><h2>公民秩序主义是什么？</h2><p>公民秩序主义不是普通政治评论项目，也不是只提供文章和观点的内容平台。它是一条面向中国未来政治转型的组织与政治路线，目标是在降低冲突和社会代价的前提下，为国家秩序、公共服务和政治制度的和平转换建立现实承接能力。</p></div></section>
+    <section><span>01</span><div><h2>公民秩序主义是什么？</h2><p>公民秩序主义不是普通政治评论项目，也不是只提供文章和观点的内容平台。它是一条面向中国未来政治转型的政治路线。理论研究为路线提供判断基础，组织建设为路线建立现实承接能力，目标是在降低冲突和社会代价的前提下，为国家秩序、公共服务和政治制度的和平转换建立现实承接能力。</p></div></section>
     <section><span>02</span><div><h2>为什么提出这条路线？</h2><p>工业时代形成的政治制度、政党组织和官僚治理方式，正在面对信息化社会带来的结构性失配。信息传播、社会协作和公共问题已经高度复杂化，旧有政治通道却越来越难以形成稳定反馈、明确责任和长期判断。中国需要的不是另一轮情绪动员，而是一种适应新时代的政治组织方式。</p><p class="start-roadmap__line">信息化时代 → 工业时代制度失配 → 需要新的政治组织方式</p></div></section>
     <section><span>03</span><div><h2>核心政治路线是什么？</h2><p>公民秩序主义主张不以社会崩溃换取政治变化，不按政治身份实施普遍追责，也不把国家行政系统整体推向对立面。</p><ul><li><strong>不革命：</strong>不以暴力和社会失控作为转型方法。</li><li><strong>不清算：</strong>责任依据具体行为、证据和法律认定。</li><li><strong>和平承接：</strong>为不同社会群体提供可理解、可预期的制度出口。</li><li><strong>国家连续：</strong>保持行政体系、公共服务与基本社会秩序。</li><li><strong>依法治理：</strong>以程序、授权、监督和责任边界约束权力。</li><li><strong>长期建设：</strong>通过持续的理论、组织和制度准备形成现实能力。</li></ul></div></section>
     <section><span>04</span><div><h2>现在正在做什么？</h2><p>公民秩序主义已经从理论建设进入组织建设阶段。当前工作集中在北美非营利法人筹备、首届董事会筹备、理论体系整理和长期组织基础建设。现阶段不追求快速扩大人数，而是先建立规则、责任、治理边界和稳定协作关系。</p></div></section>
@@ -1609,61 +1609,50 @@ writeContent(
 
 writeContent(
   "participate.md",
-  `${yamlFrontmatter({ title: "参与公民秩序主义", description: "了解如何通过正式阅读、公共传播、专业协作与长期联系支持公民秩序主义，以及北美组织筹备的适用边界。", contentType: "参与" })}
+  `${yamlFrontmatter({ title: "建立联系", description: "建立联系不等于加入组织。了解公民秩序主义、通过正式方式建立长期联系，以及了解当前北美非营利法人及首届董事会筹备。", contentType: "页面" })}
 
-<div class="participate-page">
-<header class="participate-hero">
-  <p class="resource-label">了解、协作与长期联系</p>
-  <h1>参与公民秩序主义</h1>
-  <p>参与不等于立即加入组织。无论身处何地，都可以先从了解政治路线、传播正式材料、提供专业协作或建立长期联系开始。</p>
-</header>
+<div class="inst4 inst4l inst4l-participate">
+  <section class="inst4l-hero">
+    <p class="inst4-eyebrow">ESTABLISHING CONTACT</p>
+    <h1 class="inst4l-title">建立联系</h1>
+    <p class="inst4l-lead">建立联系不等于加入组织。提供意见不产生组织身份，提供专业建议不产生授权关系。未经正式授权，任何人不得代表公民秩序主义进行对外沟通、表态、联络或建立政治关系。</p>
+  </section>
 
-<section class="participate-section" id="communication" aria-labelledby="participation-communication">
-  <div class="home-section-intro"><p class="resource-label">不限地区</p><h2 id="participation-communication">了解与传播</h2><p>阅读正式材料，理解和平转轨、国家连续和责任区分，并向愿意理性讨论中国未来的人介绍公民秩序主义。</p></div>
-  <div class="participate-support-grid"><span>阅读公民秩序主义正式材料</span><span>介绍公民秩序主义的政治路线</span><span>分享网站、手册与正式文章</span><span>参与克制、基于事实的公共讨论</span></div>
-  <p class="participate-support-note">了解与传播不限制居住地，不要求公开身份，也不构成组织加入或治理身份。</p>
-</section>
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">01 · 了解与传播</p>
+      <h2 class="inst4l-section__title">了解与传播</h2>
+      <p class="inst4l-section__desc">欢迎阅读、分享与关注公开研究。了解与传播不产生组织身份。</p>
+    </div>
+    <ul class="inst4-route__list">
+      <li>阅读公民秩序主义正式材料与公开研究。</li>
+      <li>分享网站、手册与正式文章。</li>
+      <li>关注公开研究进展。</li>
+    </ul>
+  </section>
 
-<section class="participate-section" id="collaboration" aria-labelledby="participation-collaboration">
-  <div class="home-section-intro"><p class="resource-label">按专业能力参与</p><h2 id="participation-collaboration">专业协作</h2><p>公民秩序主义需要能够承担具体工作的人，以专业成果而不是口号和声势推进长期建设。</p></div>
-  <div class="participate-support-grid"><span>研究</span><span>编辑</span><span>翻译</span><span>设计</span><span>技术</span><span>法律</span><span>财务</span><span>项目管理</span></div>
-  <p class="participate-support-note">专业协作可从小规模、明确边界的任务开始，不要求立即承担组织治理责任。</p>
-</section>
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">02 · 建立长期联系</p>
+      <h2 class="inst4l-section__title">建立长期联系</h2>
+      <p class="inst4l-section__desc">通过正式联系方式建立联系。建立联系不构成成员、志愿者、工作人员、组织代表或任何正式身份。</p>
+    </div>
+    <div class="inst4l-contact">
+      <p class="inst4l-contact__entry"><span>主联系邮箱</span><a href="mailto:${organization.primaryEmail}">${organization.primaryEmail}</a></p>
+      <p class="inst4l-contact__entry"><span>备用邮箱</span><a href="mailto:${organization.secondaryEmail}">${organization.secondaryEmail}</a></p>
+    </div>
+    <p class="inst4-route__intro">初次联系不需要发送身份证件、详细住址或其他不必要的敏感个人信息。可以先使用化名并说明希望采用的联系方式。</p>
+  </section>
 
-<section class="participate-section" id="long-term-contact" aria-labelledby="participation-long-term-contact">
-  <div class="home-section-intro"><p class="resource-label">低风险参与</p><h2 id="participation-long-term-contact">长期联系</h2><p>对于暂时不方便公开参与的人，可以通过电子邮件建立长期联系，在保护身份和现实安全的前提下持续了解项目进展。</p></div>
-  <p class="participate-support-note">可以使用化名或只提供必要的联系方式；初次联系不需要发送身份证件、详细住址或单位内部资料。</p>
-</section>
-
-<section class="participate-section" id="north-america" aria-labelledby="participation-north-america">
-  <div class="home-section-intro"><p class="resource-label">第二部分 · 加拿大及北美</p><h2 id="participation-north-america">参与北美组织筹备</h2><p>面向长期居住于加拿大或北美、愿意承担当地法律责任和长期治理工作的人。当前工作以小规模、具体任务和长期合作观察为主。</p></div>
-  <div class="participate-path-grid"><article><span>01</span><h3>法人筹备</h3><p>注册法域、法人宗旨、业务范围、章程与组织附例研究。</p></article><article><span>02</span><h3>董事会筹备</h3><p>董事责任、候选人识别、利益冲突与依法产生程序。</p></article><article><span>03</span><h3>法律与合规</h3><p>当地非营利法律、政策文件、档案和公共活动边界。</p></article><article><span>04</span><h3>财务与内部控制</h3><p>预算、记账、审批、审计准备和组织资产管理制度。</p></article><article><span>05</span><h3>治理制度建设</h3><p>授权、监督、责任、隐私、信息安全与决策记录。</p></article><article><span>06</span><h3>长期组织运营</h3><p>任务协调、人才联系、出版支持和稳定的组织基础维护。</p></article></div>
-  <p class="participate-region-boundary"><strong>适用范围：</strong>北美居住要求不适用于普通支持、传播、翻译、研究和技术协作，只适用于当地法人、董事会候选人识别以及需要承担当地法律责任的治理工作。</p>
-</section>
-
-<section class="participate-section participate-fit" aria-labelledby="participation-fit">
-  <div class="home-section-intro"><p class="resource-label">责任与稳定性优先</p><h2 id="participation-fit">公民秩序主义希望与什么样的人建立联系</h2></div>
-  <ul class="participate-checklist"><li>理解和平转轨与行政承接；</li><li>认同不革命、不清算、不以报复为目的；</li><li>能够长期、稳定地参与公共事务；</li><li>尊重程序、授权、组织纪律与事实；</li><li>能够保护组织信息和成员隐私；</li><li>愿意承担真实工作和明确责任；</li><li>具备独立思考和处理分歧的能力；</li><li>拥有法律、财务、管理、技术、传播、设计、研究或运营能力之一。</li></ul>
-</section>
-
-<section class="participate-section participate-boundaries" aria-labelledby="participation-boundaries">
-  <div><p class="resource-label">组织扩展原则</p><h2 id="participation-boundaries">公民秩序主义不以人数、头衔和情绪扩大组织</h2><p>公民秩序主义不建立个人崇拜，不依靠口号、互相攻击和敌我动员维持活跃度，不建立失控的大规模公开群组，也不允许任何人未经授权代表组织。</p><p>公民秩序主义不以公开暴露身份、激进言论或不必要的冒险作为忠诚证明，不以内部热闹代替真实建设。</p></div>
-</section>
-
-<section class="participate-section participate-security" aria-labelledby="participation-security">
-  <div class="home-section-intro"><p class="resource-label">参与者保护</p><h2 id="participation-security">不人为制造风险</h2><p>未来将逐步建立信息最小化、化名参与、身份保护、分级授权、最小权限、内部资料访问控制和敏感工作独立风险评估机制。</p></div>
-  <p>公民秩序主义无法承诺政治参与完全没有风险，但不会鼓励无意义的牺牲，也不会要求任何人以个人或家庭安全换取组织认可。</p>
-</section>
-
-<section class="participate-section preparation-legal-note" aria-labelledby="participation-status-boundary">
-  <p class="resource-label">身份边界</p><h2 id="participation-status-boundary">筹备参与不是治理身份</h2>
-  <p>提交邮件、参加沟通、提供建议或完成任务，均不当然产生董事资格、法定成员资格、共同创始人身份、官方代表资格、项目治理权或项目资产所有权。</p>
-</section>
-
-<section class="participate-section participate-contact" id="contact" aria-labelledby="participation-contact">
-  <div class="home-section-intro"><p class="resource-label">建立联系</p><h2 id="participation-contact">通过邮件说明参与方向</h2><p>普通支持者可以直接提出建议或提供专业意见；希望参与具体协作的人，可以在邮件中说明可承担的工作方向。涉及北美法人或董事会筹备时，请说明所在国家、州或省。</p></div>
-  <div class="participate-contact-grid"><div><h3>邮件可以包括</h3><ul><li>你对公民秩序主义基本路线的理解；</li><li>希望支持或参与的方式；</li><li>专业背景和可以提供的意见；</li><li>能够投入的大致时间；</li><li>如涉及法人或董事会筹备，说明所在国家、州或省；</li><li>希望采用的称呼和联系方式。</li></ul></div><div class="participate-contact-card"><p class="resource-label">主联系邮箱</p><a href="mailto:${organization.primaryEmail}?subject=${encodeURIComponent("支持与参与公民秩序主义")}">${organization.primaryEmail}</a><p class="resource-label">备用邮箱</p><a href="mailto:${organization.secondaryEmail}?subject=${encodeURIComponent("支持与参与公民秩序主义")}">${organization.secondaryEmail}</a><small>请不要在初次邮件中发送身份证件、详细住址、护照号码、单位内部资料或其他不必要的敏感个人信息。可以先使用化名并说明希望采用的联系方式。</small></div></div>
-</section>
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">03 · 当前正式组织工作</p>
+      <h2 class="inst4l-section__title">北美非营利法人及首届董事会筹备</h2>
+      <p class="inst4l-section__desc">这是公民秩序主义当前最重要、最明确的组织工作。</p>
+    </div>
+    <p class="inst4l-link"><a href="/preparation">了解董事会筹备 <span aria-hidden="true">→</span></a></p>
+    <p class="inst4-route__intro">董事不会通过公开报名直接产生。筹备接触不构成任命。</p>
+  </section>
 </div>`,
 );
 
@@ -2130,6 +2119,16 @@ writeInstitutionalContent(
     </div>
   </section>
 
+  <section class="inst4l-section inst4-route__core-statement">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">核心政治总论</p>
+      <h2 class="inst4l-section__title">${site.corePoliticalStatement.title}</h2>
+      <p class="inst4l-section__desc">公民秩序主义为什么存在，最终希望把中国带向哪里。</p>
+    </div>
+    <p class="inst4-route__statement">${site.corePoliticalStatement.judgment}</p>
+    <p class="inst4l-link"><a href="/${site.corePoliticalStatement.slug}">阅读核心政治总论 <span aria-hidden="true">→</span></a></p>
+  </section>
+
   <section class="inst4l-section">
     <div class="inst4l-section__head">
       <p class="inst4-eyebrow">TRANSITION LOGIC</p>
@@ -2221,6 +2220,15 @@ writeInstitutionalContent(
     </div>`,
       )
       .join("\n")}
+  </section>
+
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">全部研究</p>
+      <h2 class="inst4l-section__title">浏览全部公民秩序主义研究</h2>
+      <p class="inst4l-section__desc">进入完整文章索引，按专题与概念继续筛选阅读。</p>
+    </div>
+    <p class="inst4l-link"><a href="/articles/all">浏览全部公民秩序主义研究 <span aria-hidden="true">→</span></a></p>
   </section>
 
   <section class="inst4l-section inst4-route__final">
@@ -2538,6 +2546,24 @@ writeInstitutionalContent(
 
   <section class="inst4l-section">
     <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">未来研究框架</p>
+      <h2 class="inst4l-section__title">政治变化之后，国家如何继续运行</h2>
+      <p class="inst4l-section__desc">以下研究方向构成公民秩序主义关于政治变化之后国家连续性的公开研究框架。多数方向仍在建立中，标记为「持续研究 / Research in Progress」。</p>
+    </div>
+    <div class="inst4-route__state-grid">
+      <div class="inst4-route__state-item"><h3>国家连续</h3><p>政治变化不等于国家停摆。</p><small>持续研究 · Research in Progress</small></div>
+      <div class="inst4-route__state-item"><h3>行政连续</h3><p>公共行政体系必须继续运行。</p><small>持续研究 · Research in Progress</small></div>
+      <div class="inst4-route__state-item"><h3>公共服务连续</h3><p>医院、学校、交通、财政、社保等不能因为政治变化中断。</p><small>持续研究 · Research in Progress</small></div>
+      <div class="inst4-route__state-item"><h3>法律连续性</h3><p>政治制度改变不等于法律秩序瞬间归零。</p><small>持续研究 · Research in Progress</small></div>
+      <div class="inst4-route__state-item"><h3>地方治理</h3><p>地方政府必须保持基本治理能力。</p><small>持续研究 · Research in Progress</small></div>
+      <div class="inst4-route__state-item"><h3>财政与社会保障</h3><p>政治转型必须考虑现实财政责任。</p><small>持续研究 · Research in Progress</small></div>
+      <div class="inst4-route__state-item"><h3>社会秩序</h3><p>避免权力真空和社会撕裂。</p><small>持续研究 · Research in Progress</small></div>
+      <div class="inst4-route__state-item"><h3>政治责任</h3><p>区分政治责任、历史责任与明确的刑事责任。</p><small>持续研究 · Research in Progress</small></div>
+    </div>
+  </section>
+
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
       <p class="inst4-eyebrow">全部研究</p>
       <h2 class="inst4l-section__title">浏览全部中国未来研究</h2>
       <p class="inst4l-section__desc">进入独立文章索引，继续浏览转型窗口与国家治理研究。</p>
@@ -2839,68 +2865,55 @@ writeInstitutionalContent(
 </div>`,
 );
 /* Phase 2B — Reading Map (articles.md): three routes */
-const readingMapFiveRows = [
+const readingMapRouteA = [
   { href: "/start-here/", meta: "入口", title: "5分钟了解公民秩序主义", desc: "用五个问题建立基础认识。" },
-  { href: "/introduction-manual", meta: "入门文本", title: "公民秩序主义介绍手册（在线版）", desc: "系统了解整体框架的简短文本。" },
-  { href: "/civic-orderism/peaceful-state-transition", meta: "核心文章", title: "国家如何平稳转轨", desc: "公民秩序主义最核心的一篇路线说明。" },
+  { href: "/civic-orderism/this-time-let-china-be-your-pride", meta: "核心政治总论", title: "这一次，让中国成为你的骄傲", desc: "公民秩序主义为什么存在，最终希望把中国带向哪里。" },
+  { href: "/civic-orderism/", meta: "政治路线", title: "公民秩序主义政治路线", desc: "保留国家，改变政治：完整的政治路线总入口。" },
+  { href: "/preparation", meta: "当前组织工作", title: "北美非营利法人及首届董事会筹备", desc: "当前最重要、最明确的组织工作。" },
 ];
-const readingMapThirtyRows = [
-  {
-    meta: "理解现在",
-    title: "解析中共",
-    desc: "理解旧政治秩序为什么正在失去持续提供利益、预期与共识的能力。",
-    href: "/theory/party-state-structural-failure",
-  },
-  {
-    meta: "准备转轨",
-    title: "政治路线",
-    desc: "理解为什么和平转轨可能发生，以及如何保持国家连续性。",
-    href: "/civic-orderism/peaceful-state-transition",
-  },
-  {
-    meta: "准备未来",
-    title: "中国未来",
-    desc: "理解政治变化之后国家如何继续运行。",
-    href: "/china-stage/ccp-second-reform-opening-possibility",
-  },
+const readingMapRouteB = [
+  { href: "/china/what-is-the-ccp-becoming", meta: "总论", title: "中共正在变成什么？", desc: "解析中共总论：旧政治秩序为什么正在失去制造共同未来的能力。" },
+  { href: "/china/", meta: "研究框架", title: "解析中共研究程序", desc: "进入核心分析框架、结构判断与代表研究。" },
+  { href: "/concepts/", meta: "核心概念", title: "核心概念", desc: "用于理解中共具体政治现象的分析工具。" },
+  { href: "/china/", meta: "代表研究", title: "解析中共代表研究", desc: "从四阶段进入代表研究。" },
 ];
-const readingMapDeepRows = [
-  { href: "/china/", meta: "研究框架", title: "核心模型与研究框架", desc: "进入解析中共的研究程序。" },
-  { href: "/topics/", meta: "研究专题", title: "研究专题", desc: "围绕持续性政治问题组织的研究线索。" },
-  { href: "/concepts/", meta: "核心概念", title: "核心概念", desc: "公民秩序主义使用的解释概念。" },
-  { href: "/articles/all", meta: "完整研究", title: "全部研究", desc: "按栏目浏览全部已发布文章。" },
+const readingMapRouteC = [
+  { href: "/civic-orderism/", meta: "政治路线", title: "公民秩序主义政治路线", desc: "准备做什么：政治路线的完整入口。" },
+  { href: "/civic-orderism/peaceful-state-transition", meta: "和平政治转轨", title: "国家如何平稳转轨", desc: "理解和平转轨如何可能发生。" },
+  { href: "/civic-orderism/state-must-rely-on-systems-not-drivers", meta: "国家连续性", title: "国家不能只靠驾驶员", desc: "理解国家系统如何保持连续运行。" },
+  { href: "/china-future/", meta: "中国未来", title: "中国未来", desc: "政治变化之后国家如何继续运行。" },
 ];
 
 writeInstitutionalContent(
   "articles.md",
-  `${yamlFrontmatter({ title: "阅读地图", description: "第一次来到这里，应该怎么读？三条阅读路线：5分钟、30分钟、深度阅读。", contentType: "索引" })}
+  `${yamlFrontmatter({ title: "阅读地图", description: "根据你现在最想理解的问题，选择一条阅读路径：认识公民秩序主义、理解今天的中共、或政治变化之后怎么办。", contentType: "索引" })}
 
 <div class="inst4 inst4l inst4l-reading-map">
   <section class="inst4l-hero">
     <p class="inst4-eyebrow">READING MAP</p>
     <h1 class="inst4l-title">阅读地图</h1>
-    <p class="inst4l-lead">这里不是完整文章目录，而是为第一次来到本站的读者准备的阅读入口。选择一条适合你的路线。</p>
+    <p class="inst4l-lead">根据你现在最想理解的问题，选择一条阅读路径。这里不是完整文章目录，而是为不同问题准备的入口。</p>
   </section>
 
   ${inst4lSection(
-    "01 · 5分钟",
-    "快速知道公民秩序主义是什么",
-    inst4lRows(readingMapFiveRows),
-    "只提供最少必要入口。",
+    "路线 A · 认识公民秩序主义",
+    "第一次认识公民秩序主义",
+    inst4lRows(readingMapRouteA),
+    "回答：公民秩序主义到底是什么？",
   )}
 
   ${inst4lSection(
-    "02 · 30分钟",
-    "理解完整基本逻辑",
-    inst4lRows(readingMapThirtyRows),
-    "理解现在 → 准备转轨 → 准备未来。每一步只推荐极少数代表内容。",
+    "路线 B · 理解今天的中共",
+    "为什么认为中共正在失去治理能力",
+    inst4lRows(readingMapRouteB),
+    "回答：公民秩序主义如何理解今天的中共？",
   )}
 
   ${inst4lSection(
-    "03 · 深度阅读",
-    "进入研究体系",
-    inst4lRows(readingMapDeepRows),
-    "已经建立基础认识后，按研究框架继续深入。",
+    "路线 C · 政治变化之后",
+    "如果政治变化发生，中国怎么办",
+    inst4lRows(readingMapRouteC),
+    "回答：改变之后怎么办？",
   )}
 </div>`,
 );
@@ -2953,6 +2966,77 @@ writeInstitutionalContent(
 </div>`,
 );
 
-console.log(
-  `Generated V2 architecture for ${articles.length} articles, ${topics.length} topics, and ${concepts.length} concepts.`,
+/* Phase 2B — Privacy & Data Handling */
+writeContent(
+  "privacy.md",
+  `${yamlFrontmatter({ title: "隐私与数据处理", description: "本页说明公民秩序主义网站当前的数据处理原则：收集什么、为什么收集、如何访问与更正。", contentType: "页面" })}
+
+<div class="inst4 inst4l inst4l-privacy">
+  <section class="inst4l-hero">
+    <p class="inst4-eyebrow">PRIVACY &amp; DATA HANDLING</p>
+    <h1 class="inst4l-title">隐私与数据处理</h1>
+    <p class="inst4l-lead">本页面说明公民秩序主义网站当前的数据处理原则。随着法人设立和正式治理体系建立，相关政策将根据适用法律和专业意见进一步完善。</p>
+  </section>
+
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">01</p>
+      <h2 class="inst4l-section__title">收集什么</h2>
+    </div>
+    <ul class="inst4-route__list">
+      <li>用户主动发送的电子邮件。</li>
+      <li>主动提供的姓名或称呼。</li>
+      <li>主动提供的专业背景。</li>
+      <li>主动提供的大致国家 / 地区。</li>
+      <li>网站基础技术日志（由托管基础设施产生）。</li>
+    </ul>
+  </section>
+
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">02</p>
+      <h2 class="inst4l-section__title">为什么收集</h2>
+    </div>
+    <ul class="inst4-route__list">
+      <li>回复联系与沟通。</li>
+      <li>组织筹备沟通。</li>
+      <li>判断是否需要继续建立联系。</li>
+      <li>网站安全与基本运维。</li>
+    </ul>
+  </section>
+
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">03</p>
+      <h2 class="inst4l-section__title">不主动要求什么</h2>
+    </div>
+    <p class="inst4-route__statement">原则上不主动要求身份证件、护照、精确家庭地址、银行账户或其他不必要的敏感个人信息。除非未来存在明确法律、合规或正式治理需要，并建立相应制度。</p>
+    <p class="inst4-route__intro">数据最小化：只收集完成当前沟通目的所必要的信息。</p>
+  </section>
+
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">04</p>
+      <h2 class="inst4l-section__title">数据访问、删除与更正</h2>
+    </div>
+    <p class="inst4-route__statement">数据访问遵循最小必要原则。</p>
+    <p class="inst4-route__intro">如需更正或删除主动提交的信息，请通过主联系邮箱联系：civicorderism@gmail.com。</p>
+  </section>
+
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">05</p>
+      <h2 class="inst4l-section__title">第三方基础设施</h2>
+    </div>
+    <p class="inst4-route__intro">本站使用以下第三方基础设施：Cloudflare（CDN 与 Workers）、GitHub Pages / GitHub Actions（网站托管与部署）。这些服务可能产生基础技术日志。邮件联系使用通用邮件服务。</p>
+  </section>
+
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">06</p>
+      <h2 class="inst4l-section__title">政策更新</h2>
+    </div>
+    <p class="inst4-route__statement">本页面说明当前的数据处理原则。随着法人设立和正式治理体系建立，相关政策将根据适用法律和专业意见进一步完善。</p>
+  </section>
+</div>`,
 );
