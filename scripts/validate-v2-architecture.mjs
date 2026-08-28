@@ -100,6 +100,8 @@ const visiblePageText = (html) =>
   html
     .replace(/<script\b[\s\S]*?<\/script>/gi, " ")
     .replace(/<style\b[\s\S]*?<\/style>/gi, " ")
+    // <wbr> is a zero-width line-break opportunity: no visible text
+    .replace(/<wbr\b[^>]*>/gi, "")
     .replace(/<[^>]+>/g, " ")
     .replace(/\s+/g, " ");
 

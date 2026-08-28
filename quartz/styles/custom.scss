@@ -9044,37 +9044,76 @@ body[data-slug="index"] article {
   }
 }
 
-@media (max-width: 600px) {
+/* Mobile density pass (<= 768px): continuous reading layout.
+   Desktop (>= 1024px) intentionally untouched. */
+@media (max-width: 768px) {
   .inst4 {
-    padding: 0 1.25rem;
+    padding: 0 1.375rem; /* 22px page gutter */
     font-size: 16px;
   }
 
+  /* Hero — content-driven height, no viewport forcing. */
   .inst4-hero {
     min-height: 0;
-    padding: clamp(3.5rem, 14vh, 4.75rem) 0 clamp(2.75rem, 8vh, 3.5rem);
+    align-items: stretch;
+    padding: 3rem 0 0; /* 48px below header; the phase band carries the rest */
+  }
+
+  .inst4-hero__brand {
+    font-size: 0.875rem; /* 14px eyebrow */
+    letter-spacing: 0.12em;
   }
 
   .inst4-hero__title {
-    font-size: clamp(2.3rem, 10.8vw, 2.9rem);
-    line-height: 1.14;
+    margin-top: 1.1rem;
+    font-size: clamp(2.625rem, 11vw, 3.25rem); /* 42px -> 52px */
+    line-height: 1.1;
+    letter-spacing: -0.02em;
   }
 
   .inst4-hero__statement {
-    font-size: 1.02rem;
-    line-height: 1.75;
+    margin-top: 1.25rem;
+    font-size: 1.2rem; /* 19.2px */
+    line-height: 1.7;
   }
 
+  .inst4-hero__en {
+    margin-top: 0.6rem;
+    font-size: 1rem; /* 16px */
+    line-height: 1.6;
+  }
+
+  /* Current Phase — compact institutional information band. */
   .inst4-hero__status {
     grid-column: 1 / span 12;
+    margin-top: 1.75rem;
+    padding: 2rem 0; /* 32px band padding */
+    border-bottom: 1px solid var(--inst4-line);
+  }
+
+  .inst4-hero__status-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+  }
+
+  .inst4-hero__status-body {
+    margin-top: 0.6rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .inst4-hero__status-year {
+    margin-top: 0.55rem;
+    font-size: 1rem;
   }
 
   .inst4-work {
-    padding: clamp(3.75rem, 14vw, 5rem) 0 clamp(4.5rem, 18vw, 5.5rem);
+    padding: 2.5rem 0; /* 40px section rhythm */
   }
 
   .inst4-core-statement {
-    padding: 3.75rem 0 4.5rem;
+    padding: 3.75rem 0 2.5rem; /* 60px below the phase band rule */
+    border-top: 0; /* the phase band's lower rule is the divider */
   }
 
   .inst4-core-statement__identity,
@@ -9083,17 +9122,17 @@ body[data-slug="index"] article {
   }
 
   .inst4-core-statement__body {
-    margin-top: 2.2rem;
+    margin-top: 2.75rem; /* 44px eyebrow -> title */
   }
 
   .inst4-core-statement__title {
     max-width: 11em;
-    font-size: clamp(2rem, 9.5vw, 2.65rem);
-    line-height: 1.24;
+    font-size: clamp(2.625rem, 11vw, 3.125rem); /* 42px -> 50px */
+    line-height: 1.16;
   }
 
   .inst4-core-statement__question {
-    margin-top: 1.8rem;
+    margin-top: 1.6rem;
   }
 
   .inst4-core-statement__question p {
@@ -9102,13 +9141,13 @@ body[data-slug="index"] article {
   }
 
   .inst4-core-statement__judgment {
-    margin-top: 1.35rem;
+    margin-top: 1.15rem;
     font-size: 0.94rem;
     line-height: 1.78;
   }
 
   .inst4-research {
-    padding: clamp(3.25rem, 12vw, 4.25rem) 0 clamp(3.75rem, 14vw, 5rem);
+    padding: 2.5rem 0 3rem;
   }
 
   .inst4-work__title,

@@ -1148,7 +1148,10 @@ writeContent(
       <p class="inst4-core-statement__label">${site.corePoliticalStatement.label}</p>
     </div>
     <div class="inst4-core-statement__body">
-      <h2 class="inst4-core-statement__title" id="core-political-statement-title">${site.corePoliticalStatement.title}</h2>
+      <h2 class="inst4-core-statement__title" id="core-political-statement-title">${site.corePoliticalStatement.title.replace(
+        "中国",
+        "中国<wbr>",
+      )}</h2>
       <blockquote class="inst4-core-statement__question"><p>${site.corePoliticalStatement.question}</p></blockquote>
       <p class="inst4-core-statement__judgment">${site.corePoliticalStatement.judgment}</p>
       <p class="inst4-core-statement__cta"><a href="/${site.corePoliticalStatement.slug}">阅读核心政治总论 <span aria-hidden="true">→</span></a></p>

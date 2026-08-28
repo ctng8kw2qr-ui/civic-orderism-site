@@ -105,7 +105,7 @@
 @media all and ($mobile) {
   .inst4-nav {
     flex-wrap: wrap;
-    padding: 0.9rem 1.1rem;
+    padding: 0.9rem 1.3rem; /* 14.4px / 20.8px on mobile */
   }
 
   .inst4-nav__toggle {
