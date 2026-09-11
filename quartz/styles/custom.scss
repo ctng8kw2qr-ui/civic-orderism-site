@@ -1782,15 +1782,6 @@ article .articles-reading-note {
   color: var(--darkgray);
 }
 
-body:is([data-slug="articles"], [data-slug="articles/index"]) article h2 {
-  margin-top: 3rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--border-subtle);
-  color: var(--ink);
-  font-size: 1.26rem;
-  font-weight: 600;
-}
-
 body:is([data-slug="articles"], [data-slug="articles/index"])
   article
   h2
@@ -6405,6 +6396,10 @@ body[data-slug="start"] article {
 }
 
 article .start-page__header {
+  /* The base sheet makes every <header> a row flex container, which squeezes
+     the CJK headline into a min-content column (~2 characters per line on
+     mobile). The Start Here header is a vertical stack. */
+  display: block;
   padding: 1.5rem 0 2rem;
   border-bottom: 1px solid var(--border-subtle);
 }
@@ -6415,6 +6410,8 @@ article .start-page__header h1 {
   font-size: clamp(2rem, 4.5vw, 3rem);
   font-weight: 600;
   line-height: 1.25;
+  /* Avoid a single-character last line at 375px. */
+  text-wrap: balance;
 }
 
 article .start-page__header > p:last-child {
@@ -9467,6 +9464,8 @@ body[data-slug="preparation"] {
   font-weight: 520;
   letter-spacing: -0.015em;
   line-height: 1.3;
+  /* Keep two-line CJK headings from ending on a single character at 375px. */
+  text-wrap: balance;
 }
 
 .inst4l-section__title a[role="anchor"] {
@@ -10665,6 +10664,8 @@ body[data-slug="preparation"] {
   font-size: 1.3rem;
   font-weight: 520;
   line-height: 1.4;
+  /* Keep two-line CJK headings from ending on a single character at 375px. */
+  text-wrap: balance;
 }
 
 .inst4-route__readstage-desc {

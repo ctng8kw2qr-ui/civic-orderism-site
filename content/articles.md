@@ -111,13 +111,13 @@ noindex: false
   <div class="inst4l-section__head">
 <p class="inst4-eyebrow">路线 D · 和平转轨路线</p>
 <h2 class="inst4l-section__title">中国怎样和平完成政治转轨</h2>
-<p class="inst4l-section__desc">回答：中国怎样从旧秩序走到新的政治秩序？共六个阶段，只列每阶段代表文章；完整论证与延伸研究在和平转轨路线中展开。</p>
+<p class="inst4l-section__desc">回答：中国怎样从旧秩序走到新的政治秩序？共六个阶段，这里只列每阶段代表文章；完整论证与延伸研究在和平转轨路线中展开。</p>
   </div>
   <div class="inst4-route__readstage">
 <div class="inst4-route__readstage-head">
 <p class="inst4-eyebrow">01</p>
 <h3 class="inst4-route__readstage-title">为什么旧秩序走不下去</h3>
-<p class="inst4-route__readstage-desc">现有政治、经济、官僚与社会运行机制为什么越来越难以持续。</p>
+        
 </div>
       
 <div class="inst4l-list">
@@ -133,7 +133,7 @@ noindex: false
 <div class="inst4-route__readstage-head">
 <p class="inst4-eyebrow">02</p>
 <h3 class="inst4-route__readstage-title">为什么内部改革无法完成破局</h3>
-<p class="inst4-route__readstage-desc">问题不是中共看不到问题，而是改革的风险由推动者立即承担，不改革的风险却可以继续向后转移。局内人因此存在拖延与自保的结构性动力。</p>
+        
 </div>
       
 <div class="inst4l-list">
@@ -154,7 +154,7 @@ noindex: false
 <div class="inst4-route__readstage-head">
 <p class="inst4-eyebrow">03</p>
 <h3 class="inst4-route__readstage-title">为什么需要外部政治承接</h3>
-<p class="inst4-route__readstage-desc">当所有局内人都被原有权力、责任与利益关系锁住，结束旧游戏的方案只能由旧体系之外提前形成。</p>
+        
 </div>
       
 <div class="inst4l-list">
@@ -175,7 +175,7 @@ noindex: false
 <div class="inst4-route__readstage-head">
 <p class="inst4-eyebrow">04</p>
 <h3 class="inst4-route__readstage-title">为什么和平转轨能够发生</h3>
-<p class="inst4-route__readstage-desc">和平转轨不要求整个官僚系统倒戈，也不要求所有人接受同一种政治理想。真正需要降低的是继续阻止政治变化的收益，提高接受和平承接的安全感与可预期性。</p>
+        
 </div>
       
 <div class="inst4l-list">
@@ -196,7 +196,7 @@ noindex: false
 <div class="inst4-route__readstage-head">
 <p class="inst4-eyebrow">05</p>
 <h3 class="inst4-route__readstage-title">政治变化发生后，怎样保持国家运行</h3>
-<p class="inst4-route__readstage-desc">保留国家，改变政治。国家行政体系不是革命对象，政治转轨不等于国家停摆。没有完成调整的制度继续运行，调整一样，修改一样。</p>
+        
 </div>
       
 <div class="inst4l-list">
@@ -212,10 +212,10 @@ noindex: false
 <div class="inst4-route__readstage-head">
 <p class="inst4-eyebrow">06</p>
 <h3 class="inst4-route__readstage-title">怎样逐步进入新的政治秩序</h3>
-<p class="inst4-route__readstage-desc">过渡期、地方试点、制度测试、全国推广、政治人才形成与选举准备，构成进入新政治秩序的现实步骤。</p>
+        
 </div>
 <p class="inst4-route__statement">过渡制度研究进行中</p>
-<p class="inst4-route__actor-line">这一阶段研究的不是未来制度的具体形态，而是中国怎样一步步走到那里。相关具体方案尚未公开发表，暂不作为正式组织纲领。</p>
+      
 <ul class="inst4-route__chips">
 <li>过渡期安排</li>
 <li>地方试点</li>

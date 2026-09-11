@@ -115,5 +115,6 @@ aliases:
   <p class="inst4l-contact__entry"><span>主联系邮箱</span><a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com</a></p>
   <p class="inst4l-contact__entry"><span>备用邮箱</span><a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a></p>
 </div>
+<div class="preparation-actions"><a class="v2-button v2-button--primary" href="/preparation/board">了解首届董事会筹备</a><a class="v2-button v2-button--secondary" href="/civic-orderism/">了解这条路线要承载什么</a><a class="v2-button v2-button--secondary" href="/participate">了解参与方式</a></div>
 </section>
 </div>

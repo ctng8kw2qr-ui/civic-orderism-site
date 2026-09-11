@@ -23,7 +23,7 @@ const researchMenuLinks = [
 
 const resourceMenuLinks = [
   { label: "5分钟了解", href: "/start-here/" },
-  { label: "阅读地图", href: "/articles/" },
+  { label: "阅读地图", href: "/articles" },
 ];
 
 const PrimaryNavigation: QuartzComponent = ({

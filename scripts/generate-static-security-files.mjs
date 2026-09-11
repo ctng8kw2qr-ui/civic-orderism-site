@@ -39,4 +39,25 @@ if (fs.existsSync(articlesHtml)) {
   fs.copyFileSync(articlesHtml, path.join(articlesDir, "index.html"));
 }
 
+/* Two pages are published both as /page and /page/index.html:
+   - articles: the copy made above (the flat page is generated at the root);
+   - preparation: Quartz uses preparation.md as the folder index for the
+     preparation/ directory, and stamps the folder-index slug on it.
+   Both artifacts are served one level deeper, so their relative "./" asset and
+   link references must be re-rooted to "../" or stylesheets, scripts and body
+   links resolve one directory too deep. */
+const depthCorrectedPages = [
+  path.join(outputDir, "articles", "index.html"),
+  path.join(outputDir, "preparation", "index.html"),
+];
+for (const pagePath of depthCorrectedPages) {
+  if (!fs.existsSync(pagePath)) continue;
+  const html = fs.readFileSync(pagePath, "utf8");
+  const corrected = html.replace(
+    /(\b(?:href|src)=")\.\//g,
+    "$1../",
+  ).replace(/(fetch\(")\.\//g, "$1../");
+  fs.writeFileSync(pagePath, corrected, "utf8");
+}
+
 console.log("Generated static security files.");

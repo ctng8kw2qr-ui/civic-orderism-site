@@ -2027,12 +2027,23 @@ const civicInstitutionArchiveItems = [
 /* One renderer for the peaceful transition route, shared by /civic-orderism/ and
    the reading map on /articles/, so both always read the same route data.
    Extended reading is optional; stage 06 always shows the research status. */
-function peacefulRouteStagesHtml(stages, { includeExtended = true } = {}) {
+function peacefulRouteStagesHtml(
+  stages,
+  {
+    includeExtended = true,
+    includeDescription = true,
+    includeResearchNote = true,
+  } = {},
+) {
   return stages
     .map((stage) => {
       const researchBlock = stage.transitionResearch
         ? `<p class="inst4-route__statement">${civicTransitionResearch.statusLabel ?? ""}</p>
-      <p class="inst4-route__actor-line">${civicTransitionResearch.judgment ?? ""}</p>
+      ${
+        includeResearchNote
+          ? `<p class="inst4-route__actor-line">${civicTransitionResearch.judgment ?? ""}</p>`
+          : ""
+      }
       <ul class="inst4-route__chips">
         ${(civicTransitionResearch.directions ?? []).map((direction) => `<li>${direction}</li>`).join("\n        ")}
       </ul>`
@@ -2062,7 +2073,11 @@ function peacefulRouteStagesHtml(stages, { includeExtended = true } = {}) {
       <div class="inst4-route__readstage-head">
         <p class="inst4-eyebrow">${stage.num}</p>
         <h3 class="inst4-route__readstage-title">${stage.name}</h3>
-        <p class="inst4-route__readstage-desc">${stage.desc}</p>
+        ${
+          includeDescription
+            ? `<p class="inst4-route__readstage-desc">${stage.desc}</p>`
+            : ""
+        }
       </div>
       ${researchBlock}
       ${repBlock}
@@ -2325,7 +2340,8 @@ writeInstitutionalContent(
     "建立联系",
     "进一步了解或建立联系",
     `<p>如果希望了解法人筹备、首届董事会责任或专业协作边界，请通过电子邮件联系。现阶段不设置即时社群入口。</p>
-${inst4lContactBlock()}`,
+${inst4lContactBlock()}
+<div class="preparation-actions"><a class="v2-button v2-button--primary" href="${organization.routes.boardPreparation}">了解首届董事会筹备</a><a class="v2-button v2-button--secondary" href="/civic-orderism/">了解这条路线要承载什么</a><a class="v2-button v2-button--secondary" href="${organization.routes.participate}">了解参与方式</a></div>`,
     "当前正在识别潜在首届董事候选人，并建立专业协作联系。",
   )}
 </div>`,
@@ -2950,9 +2966,13 @@ writeInstitutionalContent(
   ${inst4lSection(
     "路线 D · 和平转轨路线",
     "中国怎样和平完成政治转轨",
-    `${peacefulRouteStagesHtml(civicReadingStages, { includeExtended: false })}
+    `${peacefulRouteStagesHtml(civicReadingStages, {
+      includeExtended: false,
+      includeDescription: false,
+      includeResearchNote: false,
+    })}
 <p class="inst4l-link"><a href="/civic-orderism/">进入完整和平转轨路线 <span aria-hidden="true">→</span></a></p>`,
-    "回答：中国怎样从旧秩序走到新的政治秩序？共六个阶段，只列每阶段代表文章；完整论证与延伸研究在和平转轨路线中展开。",
+    "回答：中国怎样从旧秩序走到新的政治秩序？共六个阶段，这里只列每阶段代表文章；完整论证与延伸研究在和平转轨路线中展开。",
   )}
 </div>`,
 );

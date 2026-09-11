@@ -1159,7 +1159,9 @@ assert(
     !instNavHtml.includes("About") &&
     !instNavHtml.includes("Founding Board") &&
     !instNavHtml.includes('class="inst4-nav__lang"') &&
-    !instNavHtml.includes(">EN<"),
+    !instNavHtml.includes(">EN<") &&
+    instNavHtml.includes('href="/articles"') &&
+    !instNavHtml.includes('href="/articles/"'),
   "机构 Header（inst4-nav）一级导航未统一为中文或仍残留语言切换",
 );
 const footerHtml = homepageHtml.match(/<footer[\s\S]*?<\/footer>/)?.[0] ?? "";
@@ -1247,6 +1249,11 @@ for (const stage of civicOrderismConfig.readingStages) {
     visiblePageText(routeDHtml).includes(stage.name),
     `阅读地图“和平转轨路线”缺少阶段：${stage.num} ${stage.name}`,
   );
+  // Navigation only: the stage arguments stay on /civic-orderism/.
+  assert(
+    !visiblePageText(routeDHtml).includes(stage.desc),
+    `阅读地图“和平转轨路线”不应复制阶段论证：${stage.num} ${stage.name}`,
+  );
   for (const slug of stage.representative) {
     assert(
       (routeDHtml.match(new RegExp(`data-slug="${slug}"`, "g")) ?? [])
@@ -1267,6 +1274,12 @@ for (const slug of routeDInstitutionSlugs) {
     `阅读地图“和平转轨路线”不应填入制度设计文章：${slug}`,
   );
 }
+assert(
+  !visiblePageText(routeDHtml).includes(
+    civicOrderismConfig.transitionResearch.judgment,
+  ),
+  "阅读地图“和平转轨路线”不应复制过渡制度研究说明",
+);
 
 // Complete articles archive (articles/all.md)
 const completeArticlesHtml = fs.readFileSync(
@@ -1485,6 +1498,13 @@ for (const misleading of [
     `法人筹备页文案可能造成误解：${misleading}`,
   );
 }
+// Not a dead end: the page must offer a next step and a way back to the route.
+assert(
+  preparationText.includes("了解首届董事会筹备") &&
+    preparationText.includes("了解这条路线要承载什么") &&
+    /href="[^"]*preparation\/board/.test(preparationHtml),
+  "法人筹备页缺少下一步入口或返回路线的路径",
+);
 // /civic-orderism/ — six-stage peaceful transition route, five settled
 // principles and the deferred institutional research archive.
 const routeHtml = fs.readFileSync(publicHtml("civic-orderism/index"), "utf8");
@@ -1789,6 +1809,28 @@ assert(
   "/start 没有兼容重定向至 /start-here",
 );
 
+// Pages published both as /page and /page/index.html must be depth-correct:
+// the folder artifacts are served one level deeper, so "./" references have to
+// be re-rooted to "../" (stylesheets, scripts and body links).
+for (const [label, folderPath, canonical] of [
+  ["/articles/", path.join(publicDir, "articles", "index.html"), "/articles"],
+  [
+    "/preparation/",
+    path.join(publicDir, "preparation", "index.html"),
+    "/preparation",
+  ],
+]) {
+  if (!fs.existsSync(folderPath)) continue;
+  const html = fs.readFileSync(folderPath, "utf8");
+  assert(
+    html.includes('href="../index.css"') &&
+      html.includes('src="../postscript.js"') &&
+      !/(?:href|src)="\.\//.test(html) &&
+      html.includes(`rel="canonical" href="https://civicorderism.com${canonical}"`),
+    `${label} 目录副本的相对路径未按层级修正`,
+  );
+}
+
 for (const route of [
   "start-here",
   "preparation",
@@ -1802,6 +1844,22 @@ for (const route of [
     `组织基础页面仍显示文章元信息：/${route}`,
   );
 }
+
+// The reading map must use the shared institutional heading scale: the legacy
+// article-scoped h2 override (1.26rem) made its section titles smaller than the
+// stage headings inside them.
+const builtCss = fs.readFileSync(path.join(publicDir, "index.css"), "utf8");
+assert(
+  !/data-slug=articles[^{}]*article h2\{/.test(builtCss),
+  "阅读地图仍被旧阅读地图标题规则覆盖（h2 层级低于 h3）",
+);
+// The base sheet makes every <header> a row flex container; the Start Here
+// header must stay a vertical stack or its CJK headline collapses to a
+// min-content column.
+assert(
+  /article \.start-page__header\{[^}]*display:block/.test(builtCss),
+  "/start-here 标题仍被基础 header 规则压缩为窄列",
+);
 
 const aboutHtml = fs.readFileSync(publicHtml("about"), "utf8");
 const aboutText = visiblePageText(aboutHtml);
