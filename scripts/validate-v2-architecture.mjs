@@ -16,6 +16,7 @@ const coreModelsConfig = readJson("data/core-models.config.json");
 const organization = readJson("data/organization.config.json");
 const navigation = readJson("data/navigation.config.json");
 const site = readJson("data/site.config.json");
+const civicOrderismConfig = readJson("data/civic-orderism.config.json");
 const topicSlugs = new Set(topics.map((item) => item.slug));
 const conceptSlugs = new Set(concepts.map((item) => item.slug));
 const coreModelSlugs = new Set(
@@ -897,8 +898,10 @@ const homepageMainHtml =
 const homepageMainText = visiblePageText(homepageMainHtml);
 const homepageSectionIds = [
   'id="identity"',
-  'id="core-political-statement"',
+  'id="transition"',
+  'id="readiness"',
   'id="current-work"',
+  'id="future"',
   'id="research"',
 ];
 let previousHomepageSectionPosition = -1;
@@ -915,10 +918,10 @@ assert(
   !homepageMainHtml.includes('id="approach"') &&
     !homepageMainHtml.includes('id="organization"') &&
     !homepageMainHtml.includes('id="contact"') &&
-    (homepageMainHtml.match(/<section class="inst4-/g) ?? []).length === 4 &&
+    (homepageMainHtml.match(/<section class="inst4-/g) ?? []).length === 6 &&
     !homepageMainHtml.includes("home-institution-") &&
     (homepageMainHtml.match(/<img/g) ?? []).length === 0,
-  "首页未保持为连续机构 landing page（四区域、无编号章节、无图片）",
+  "首页未保持为连续机构 landing page（六区域、无编号章节、无图片）",
 );
 // SECTION 1 / IDENTITY
 const heroHtml =
@@ -932,13 +935,90 @@ assert(
     visiblePageText(heroHtml).includes(
       "不革命、不清算，在保持国家连续运行的前提下，为中国未来建立一条低阻力、低风险的政治转轨路径。",
     ) &&
-    heroHtml.includes("CURRENT PHASE") &&
-    heroHtml.includes("North American Nonprofit") &&
-    heroHtml.includes("Founding Board Preparation") &&
-    visiblePageText(heroHtml).includes("2026"),
+    visiblePageText(heroHtml).includes(site.hero.judgment) &&
+    heroHtml.includes(site.currentPhase.label) &&
+    visiblePageText(heroHtml).includes(site.currentPhase.labelZh) &&
+    visiblePageText(heroHtml).includes(site.currentPhase.title) &&
+    heroHtml.includes("Political Transition Framework") &&
+    heroHtml.includes("Organizational Preparation") &&
+    !heroHtml.includes("North American Nonprofit") &&
+    !heroHtml.includes("Founding Board Preparation") &&
+    visiblePageText(heroHtml).includes(site.currentPhase.year),
   "首页首屏机构定位（IDENTITY）或当前阶段状态块缺失",
 );
-// Permanent Core Political Statement — fixed between identity and current work.
+// SECTION 2 / TRANSITION PATH — the homepage carries the route model only.
+const transitionHtml =
+  homepageMainHtml.match(
+    /<section class="inst4-transition"[\s\S]*?<\/section>/,
+  )?.[0] ?? "";
+assert(
+  transitionHtml.includes(civicOrderismConfig.homeTransition.englishLabel) &&
+    visiblePageText(transitionHtml).includes(
+      civicOrderismConfig.homeTransition.title,
+    ) &&
+    (transitionHtml.match(/<li><span>\d{2}<\/span>/g) ?? []).length ===
+      civicOrderismConfig.homeTransition.steps.length &&
+    transitionHtml.includes(
+      'class="inst4-route__chain inst4-transition__flow"',
+    ) &&
+    visiblePageText(transitionHtml).includes(
+      civicOrderismConfig.homeTransition.summary,
+    ) &&
+    transitionHtml.includes('data-slug="civic-orderism/index"') &&
+    /href="[^"]*civic-orderism\/?"/.test(transitionHtml) &&
+    visiblePageText(transitionHtml).includes(
+      civicOrderismConfig.homeTransition.entryLabel,
+    ),
+  "首页政治转轨路线模块（五步链条、简短说明或完整路线入口）不符合要求",
+);
+for (const step of civicOrderismConfig.homeTransition.steps) {
+  assert(
+    visiblePageText(transitionHtml).includes(step),
+    `首页路线模块缺少步骤：${step}`,
+  );
+}
+// The four "why" arguments belong to /civic-orderism/, not the homepage.
+for (const forbidden of [
+  "为什么不能等待内部改革",
+  "为什么需要外部政治承接",
+  "为什么和平转轨存在现实基础",
+  "政治变化以后怎么办",
+]) {
+  assert(
+    !homepageMainText.includes(forbidden),
+    `首页不应展开完整转轨论证：${forbidden}`,
+  );
+}
+// SECTION 3 / READINESS — what Civic Orderism is building.
+const readinessHtml =
+  homepageMainHtml.match(
+    /<section class="inst4-readiness"[\s\S]*?<\/section>/,
+  )?.[0] ?? "";
+assert(
+  readinessHtml.includes(civicOrderismConfig.readiness.englishLabel) &&
+    visiblePageText(readinessHtml).includes(
+      civicOrderismConfig.readiness.title,
+    ) &&
+    (readinessHtml.match(/<article class="inst4-readiness__point">/g) ?? [])
+      .length === civicOrderismConfig.readiness.items.length &&
+    visiblePageText(readinessHtml).includes(
+      civicOrderismConfig.readiness.note,
+    ) &&
+    !readinessHtml.includes("<img"),
+  "首页建设方向模块（READINESS）未按要求组织",
+);
+for (const [index, item] of civicOrderismConfig.readiness.items.entries()) {
+  assert(
+    readinessHtml.includes(
+      `class="inst4-readiness__number">${String(index + 1).padStart(2, "0")}<`,
+    ) &&
+      visiblePageText(readinessHtml).includes(item.name) &&
+      visiblePageText(readinessHtml).includes(item.desc),
+    `首页建设方向缺少条目：${item.name}`,
+  );
+}
+// SECTION 5 / VALUE GOAL — the core political statement now sits after the
+// current organizational work, as the long-term goal rather than the lead.
 const coreStatementHomepageHtml =
   homepageMainHtml.match(
     /<section class="inst4-core-statement"[\s\S]*?<\/section>/,
@@ -948,7 +1028,10 @@ assert(
     site.corePoliticalStatement.englishLabel,
   ) &&
     visiblePageText(coreStatementHomepageHtml).includes(
-      site.corePoliticalStatement.label,
+      site.corePoliticalStatement.roleLabel,
+    ) &&
+    visiblePageText(coreStatementHomepageHtml).includes(
+      site.corePoliticalStatement.roleQuestion,
     ) &&
     visiblePageText(coreStatementHomepageHtml).includes(
       site.corePoliticalStatement.title,
@@ -963,9 +1046,16 @@ assert(
       `data-slug="${site.corePoliticalStatement.slug}"`,
     ) &&
     visiblePageText(coreStatementHomepageHtml).includes("阅读核心政治总论"),
-  "首页缺少固定核心政治总论入口或其正式文案",
+  "首页缺少价值目标区（核心政治总论入口）或其正式文案",
 );
-// SECTION 2 / CURRENT WORK + official document
+assert(
+  homepageMainHtml.indexOf('id="future"') >
+    homepageMainHtml.indexOf('id="current-work"') &&
+    homepageMainHtml.indexOf('id="future"') <
+      homepageMainHtml.indexOf('id="research"'),
+  "价值目标区未下沉到当前组织建设之后",
+);
+// SECTION 4 / CURRENT WORK + official document
 const workHtml =
   homepageMainHtml.match(
     /<section class="inst4-work"[\s\S]*?<\/section>/,
@@ -973,20 +1063,14 @@ const workHtml =
 assert(
   workHtml.includes("CURRENT WORK") &&
     visiblePageText(workHtml).includes("建立一个能够承接政治信任的组织") &&
-    visiblePageText(workHtml).includes(
-      "政治信任",
-    ) &&
-    visiblePageText(workHtml).includes(
-      "新的政治力量必须具备能够被识别、被验证、被追责的政治信誉与承接能力。",
-    ) &&
-    visiblePageText(workHtml).includes("组织责任") &&
-    visiblePageText(workHtml).includes(
-      "法律、财务、人员与长期政治责任必须由正式组织承担。",
-    ) &&
-    workHtml.includes("inst4-work__number\">01") &&
-    workHtml.includes("inst4-work__number\">02") &&
+    visiblePageText(workHtml).includes(site.currentPhase.note) &&
     workHtml.includes("CURRENT INITIATIVE") &&
-    visiblePageText(workHtml).includes("北美非营利法人及首届董事会筹备") &&
+    visiblePageText(workHtml).includes(
+      `${civicOrderismConfig.organizationPositioning.initiativeLabel}：北美非营利法人及首届董事会筹备`,
+    ) &&
+    visiblePageText(workHtml).includes(
+      civicOrderismConfig.organizationPositioning.statement,
+    ) &&
     !visiblePageText(workHtml).includes(
       "公民秩序主义当前正在推进北美非营利法人及首届董事会筹备。",
     ) &&
@@ -1002,7 +1086,7 @@ assert(
     !workHtml.includes("<img"),
   "首页当前工作（CURRENT WORK）或正式文件焦点不符合要求",
 );
-// SECTION 3 / RESEARCH
+// SECTION 6 / RESEARCH
 const researchHtml =
   homepageMainHtml.match(
     /<section class="inst4-research"[\s\S]*?<\/section>/,
@@ -1055,9 +1139,7 @@ for (const removedHomepageText of [
   );
 }
 assert(
-  homepageHtml.includes(
-    'name="description" content="公民秩序主义正在为中国和平政治转轨建设政治承接能力，推进北美非营利法人及首届董事会筹备。"',
-  ),
+  homepageHtml.includes(`name="description" content="${site.description}"`),
   "首页 metadata description 未同步当前组织阶段",
 );
 const instNavHtml =

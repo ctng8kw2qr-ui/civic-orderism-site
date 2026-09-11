@@ -1130,60 +1130,65 @@ writeContent(
       <p class="inst4-hero__brand">CIVIC ORDERISM <span aria-hidden="true">·</span> 公民秩序主义</p>
       <h1 class="inst4-hero__title">中国政治转轨的<span>和平方案</span></h1>
       <p class="inst4-hero__statement">不革命、不清算，在保持国家连续运行的前提下，为中国未来建立一条低阻力、低风险的政治转轨路径。</p>
+      <p class="inst4-hero__judgment">${site.hero.judgment}</p>
       <p class="inst4-hero__en" lang="en">A peaceful political transition framework for China's future.</p>
     </div>
-    <div class="inst4-hero__status" aria-label="当前阶段">
-      <p class="inst4-hero__status-label">CURRENT PHASE</p>
-      <p class="inst4-hero__status-body">North American Nonprofit<br>&amp; Founding Board Preparation</p>
-      <p class="inst4-hero__status-year">2026</p>
+    <div class="inst4-hero__status" aria-label="${site.currentPhase.labelZh}">
+      <p class="inst4-hero__status-label">${site.currentPhase.label}<span aria-hidden="true"> · </span>${site.currentPhase.labelZh}</p>
+      <p class="inst4-hero__status-body">${site.currentPhase.title}</p>
+      <p class="inst4-hero__status-body" lang="en">${site.currentPhase.english}</p>
+      <p class="inst4-hero__status-year">${site.currentPhase.year}</p>
     </div>
   </div>
 </section>
 
-<!-- CORE POLITICAL STATEMENT / PERMANENT -->
-<section class="inst4-core-statement" id="core-political-statement" aria-labelledby="core-political-statement-title">
-  <div class="inst4-core-statement__grid">
-    <div class="inst4-core-statement__identity">
-      <p class="inst4-eyebrow">${site.corePoliticalStatement.englishLabel}</p>
-      <p class="inst4-core-statement__label">${site.corePoliticalStatement.label}</p>
-    </div>
-    <div class="inst4-core-statement__body">
-      <h2 class="inst4-core-statement__title" id="core-political-statement-title">${site.corePoliticalStatement.title.replace(
-        "中国",
-        "中国<wbr>",
-      )}</h2>
-      <blockquote class="inst4-core-statement__question"><p>${site.corePoliticalStatement.question}</p></blockquote>
-      <p class="inst4-core-statement__judgment">${site.corePoliticalStatement.judgment}</p>
-      <p class="inst4-core-statement__cta"><a href="/${site.corePoliticalStatement.slug}">阅读核心政治总论 <span aria-hidden="true">→</span></a></p>
-    </div>
-  </div>
+<!-- SECTION 2 / TRANSITION PATH (the route model, not the full proof) -->
+<section class="inst4-transition" id="transition">
+  <p class="inst4-eyebrow">${civicOrderismConfig.homeTransition.englishLabel}</p>
+  <h2 class="inst4-transition__title">${civicOrderismConfig.homeTransition.title}</h2>
+  <ol class="inst4-route__chain inst4-transition__flow">
+${civicOrderismConfig.homeTransition.steps
+  .map(
+    (step, index) =>
+      `    <li><span>${String(index + 1).padStart(2, "0")}</span><p>${step}</p></li>`,
+  )
+  .join("\n")}
+  </ol>
+  <p class="inst4-transition__note">${civicOrderismConfig.homeTransition.summary}</p>
+  <p class="inst4l-link"><a href="${civicOrderismConfig.homeTransition.entryHref}">${civicOrderismConfig.homeTransition.entryLabel} <span aria-hidden="true">→</span></a></p>
 </section>
 
-<!-- SECTION 2 / CURRENT WORK -->
+<!-- SECTION 3 / READINESS -->
+<section class="inst4-readiness" id="readiness">
+  <p class="inst4-eyebrow">${civicOrderismConfig.readiness.englishLabel}</p>
+  <h2 class="inst4-readiness__title">${civicOrderismConfig.readiness.title}</h2>
+  <div class="inst4-readiness__points">
+${civicOrderismConfig.readiness.items
+  .map(
+    (item, index) => `    <article class="inst4-readiness__point">
+      <p class="inst4-readiness__number">${String(index + 1).padStart(2, "0")}</p>
+      <div class="inst4-readiness__point-body">
+        <h3 class="inst4-readiness__point-title">${item.name}</h3>
+        <p class="inst4-readiness__point-text">${item.desc}</p>
+      </div>
+    </article>`,
+  )
+  .join("\n")}
+  </div>
+  <p class="inst4-readiness__note">${civicOrderismConfig.readiness.note}</p>
+</section>
+
+<!-- SECTION 4 / CURRENT WORK -->
 <section class="inst4-work" id="current-work">
   <div class="inst4-work__grid">
     <div class="inst4-work__intro">
       <p class="inst4-eyebrow">CURRENT WORK</p>
       <h2 class="inst4-work__title">建立一个能够承接政治信任的组织</h2>
-      <div class="inst4-work__points">
-        <article class="inst4-work__point">
-          <p class="inst4-work__number">01</p>
-          <div class="inst4-work__point-body">
-            <h3 class="inst4-work__point-title">政治信任</h3>
-            <p class="inst4-work__point-text">新的政治力量必须具备能够被识别、被验证、被追责的政治信誉与承接能力。</p>
-          </div>
-        </article>
-        <article class="inst4-work__point">
-          <p class="inst4-work__number">02</p>
-          <div class="inst4-work__point-body">
-            <h3 class="inst4-work__point-title">组织责任</h3>
-            <p class="inst4-work__point-text">法律、财务、人员与长期政治责任必须由正式组织承担。</p>
-          </div>
-        </article>
-      </div>
+      <p class="inst4-work__lead">${site.currentPhase.note}</p>
       <div class="inst4-work__initiative">
         <p class="inst4-work__initiative-label">CURRENT INITIATIVE</p>
-        <h3 class="inst4-work__initiative-title">北美非营利法人及首届董事会筹备</h3>
+        <h3 class="inst4-work__initiative-title">${civicOrderismConfig.organizationPositioning.initiativeLabel}：北美非营利法人及首届董事会筹备</h3>
+        <p class="inst4-work__initiative-note">${civicOrderismConfig.organizationPositioning.statement}</p>
       </div>
     </div>
     <div class="inst4-document">
@@ -1205,7 +1210,26 @@ writeContent(
   </div>
 </section>
 
-<!-- SECTION 3 / RESEARCH -->
+<!-- SECTION 5 / VALUE GOAL -->
+<section class="inst4-core-statement" id="future" aria-labelledby="core-political-statement-title">
+  <div class="inst4-core-statement__grid">
+    <div class="inst4-core-statement__identity">
+      <p class="inst4-eyebrow">${site.corePoliticalStatement.englishLabel}<span aria-hidden="true"> · </span>${site.corePoliticalStatement.roleLabel}</p>
+      <p class="inst4-core-statement__label">${site.corePoliticalStatement.roleQuestion}</p>
+    </div>
+    <div class="inst4-core-statement__body">
+      <h2 class="inst4-core-statement__title" id="core-political-statement-title">${site.corePoliticalStatement.title.replace(
+        "中国",
+        "中国<wbr>",
+      )}</h2>
+      <blockquote class="inst4-core-statement__question"><p>${site.corePoliticalStatement.question}</p></blockquote>
+      <p class="inst4-core-statement__judgment">${site.corePoliticalStatement.judgment}</p>
+      <p class="inst4-core-statement__cta"><a href="/${site.corePoliticalStatement.slug}">阅读核心政治总论 <span aria-hidden="true">→</span></a></p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6 / RESEARCH -->
 <section class="inst4-research" id="research">
   <div class="inst4-research__head">
     <p class="inst4-eyebrow">RESEARCH &amp; POLITICAL WORK</p>
