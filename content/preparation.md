@@ -22,6 +22,17 @@ aliases:
 
   <section class="inst4l-section">
   <div class="inst4l-section__head">
+<p class="inst4-eyebrow">组织定位</p>
+<h2 class="inst4l-section__title">北美非营利法人不是政治目标</h2>
+    
+  </div>
+  <p>北美非营利法人不是公民秩序主义的政治目标，而是当前阶段承载政治路线、政治信誉与长期组织责任的法律与组织基础设施。</p>
+<p>公民秩序主义正在形成能够长期承担政治责任的组织雏形。</p>
+<p>这一步不等于政治代表权已经形成：在法人依法成立、董事会依法产生之前，公民秩序主义不声称拥有法人身份、治理机构或对外代表权。任何对外代表行为，都必须建立在明确的组织授权基础上。</p>
+</section>
+
+  <section class="inst4l-section">
+  <div class="inst4l-section__head">
 <p class="inst4-eyebrow">为什么现在</p>
 <h2 class="inst4l-section__title">为什么现在进入组织建设</h2>
     
@@ -76,6 +87,7 @@ aliases:
   </div>
   <p>截至目前，北美非营利法人尚未依法成立，具体注册法域尚未确定，首届董事会尚未依法产生。本站所称“法人筹备”和“董事会筹备”仅描述正在进行的准备工作，不表示已经取得任何法人、慈善或免税资格。</p>
 <p><strong>参与筹备不自动产生董事身份或治理权限。</strong>董事、法定成员、官方代表及其他正式治理职务，均须在制度准备完成后，依照适用法律、章程与正式程序产生。</p>
+<p><strong>任何对外代表行为都必须建立在明确授权基础上。</strong>未经正式授权，任何人不得代表公民秩序主义或筹备中的组织进行对外沟通、表态、联络或建立政治关系。</p>
 </section>
 
   <section class="inst4l-section">

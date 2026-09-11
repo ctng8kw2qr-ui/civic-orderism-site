@@ -1221,6 +1221,52 @@ assert(
     !articlesHtml.includes('class="content-meta"'),
   "阅读地图缺少三条阅读路线（A/B/C）或混入文章元信息",
 );
+// Route D reuses the six-stage route data instead of a second reading order.
+const routeDFrom = articlesHtml.indexOf("路线 D · 和平转轨路线");
+const routeDHtml = routeDFrom >= 0 ? articlesHtml.slice(routeDFrom) : "";
+const routeDInstitutionSlugs = institutionSections.flatMap(
+  (section) => section.articles,
+);
+assert(
+  routeDFrom > 0 &&
+    visiblePageText(routeDHtml).includes("中国怎样和平完成政治转轨") &&
+    (routeDHtml.match(/<div class="inst4-route__readstage">/g) ?? []).length ===
+      civicOrderismConfig.readingStages.length &&
+    !routeDHtml.includes('<details class="china-analysis-more">') &&
+    visiblePageText(routeDHtml).includes(
+      civicOrderismConfig.transitionResearch.statusLabel,
+    ) &&
+    civicOrderismConfig.transitionResearch.directions.every((direction) =>
+      visiblePageText(routeDHtml).includes(direction),
+    ) &&
+    /href="[^"]*civic-orderism\/?"/.test(routeDHtml),
+  "阅读地图“和平转轨路线”未按六个阶段摘要组织，或复制了延伸阅读",
+);
+for (const stage of civicOrderismConfig.readingStages) {
+  assert(
+    visiblePageText(routeDHtml).includes(stage.name),
+    `阅读地图“和平转轨路线”缺少阶段：${stage.num} ${stage.name}`,
+  );
+  for (const slug of stage.representative) {
+    assert(
+      (routeDHtml.match(new RegExp(`data-slug="${slug}"`, "g")) ?? [])
+        .length === 1,
+      `阅读地图“和平转轨路线”缺少或重复代表文章：${slug}`,
+    );
+  }
+  for (const slug of stage.extended) {
+    assert(
+      !routeDHtml.includes(`data-slug="${slug}"`),
+      `阅读地图“和平转轨路线”不应复制延伸阅读：${slug}`,
+    );
+  }
+}
+for (const slug of routeDInstitutionSlugs) {
+  assert(
+    !routeDHtml.includes(`data-slug="${slug}"`),
+    `阅读地图“和平转轨路线”不应填入制度设计文章：${slug}`,
+  );
+}
 
 // Complete articles archive (articles/all.md)
 const completeArticlesHtml = fs.readFileSync(
@@ -1380,6 +1426,12 @@ for (const requiredText of [
   "2026 · PDF · 22 PAGES",
   "阅读正式文件",
   "进一步了解或建立联系",
+  "组织定位",
+  "北美非营利法人不是政治目标",
+  "北美非营利法人不是公民秩序主义的政治目标，而是当前阶段承载政治路线、政治信誉与长期组织责任的法律与组织基础设施",
+  "公民秩序主义正在形成能够长期承担政治责任的组织雏形",
+  "不声称拥有法人身份、治理机构或对外代表权",
+  "任何对外代表行为都必须建立在明确授权基础上",
   "civicorderism@gmail.com",
   "citizenorder@proton.me",
 ]) {
@@ -1410,6 +1462,29 @@ assert(
     contactPosition > docPosition,
   "法人筹备页未按核心信息、当前工作、组织边界、正式文件、建立联系分层",
 );
+// Organizational positioning: route infrastructure, not a political goal, and
+// still strictly inside the legal-status boundary.
+const positioningPosition = preparationHtml.indexOf(
+  "北美非营利法人不是政治目标",
+);
+assert(
+  positioningPosition > 0 &&
+    positioningPosition < whyNowPosition &&
+    preparationHtml.lastIndexOf("任何对外代表行为都必须建立在明确授权基础上") >
+      boundaryPosition,
+  "法人筹备页未按“组织定位 → 为什么现在 → … → 组织边界”排列定位与法律状态说明",
+);
+for (const misleading of [
+  "已经取得政治代表权",
+  "已经获得政治代表权",
+  "执政组织已经成立",
+  "法人已经取得",
+]) {
+  assert(
+    !preparationText.includes(misleading),
+    `法人筹备页文案可能造成误解：${misleading}`,
+  );
+}
 // /civic-orderism/ — six-stage peaceful transition route, five settled
 // principles and the deferred institutional research archive.
 const routeHtml = fs.readFileSync(publicHtml("civic-orderism/index"), "utf8");
@@ -1663,8 +1738,17 @@ for (const requiredText of [
   "公民秩序主义是什么？",
   "为什么提出这条路线？",
   "核心政治路线是什么？",
-  "现在正在做什么？",
+  "它与普通反对运动有什么不同？",
+  "它准备怎样处理政治转轨？",
+  "它现在正在做什么？",
   "下一步从哪里开始？",
+  "不以街头动员作为政治路径",
+  "不以推翻和清算作为政治目标",
+  "不等待政治变化发生以后再临时寻找方案",
+  "提前建设政治路线、政治信誉、组织能力与国家承接准备",
+  "旧体系无法自行改革 → 外部政治承接力量提前形成 → 降低转轨阻力 → 保持国家连续运行 → 逐步进入新的政治秩序",
+  "公民秩序主义已经从理论解释进入政治路线与组织承接建设阶段",
+  "为这条路线建立长期、稳定、合法、可追责的组织基础",
   "不革命",
   "不清算",
   "和平承接",
@@ -1677,8 +1761,20 @@ for (const requiredText of [
     `/start-here 缺少内容：${requiredText}`,
   );
 }
+// Start Here stays shorter than the route page: no full transition argument.
+assert(
+  (startHtml.match(/<span>0\d<\/span>/g) ?? []).length === 7,
+  "/start-here 章节数量应保持为七个问题",
+);
+for (const item of civicOrderismConfig.transitionQuestions) {
+  assert(
+    !startText.includes(item.judgment),
+    `/start-here 不应展开完整转轨论证：${item.question}`,
+  );
+}
 assert(
   startHtml.includes("civic-orderism/peaceful-state-transition") &&
+    /href="[^"]*civic-orderism\/?"/.test(startHtml) &&
     /href="[^"]*articles/.test(startHtml) &&
     /href="[^"]*preparation/.test(startHtml) &&
     !startText.includes("旧入口") &&
