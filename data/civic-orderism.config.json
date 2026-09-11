@@ -76,28 +76,108 @@
       }
     ]
   },
-  "principles": [
+  "peacefulRoute": {
+    "englishLabel": "PEACEFUL TRANSITION ROUTE",
+    "title": "和平转轨路线：六个阶段",
+    "desc": "六个阶段首先说明中国政治转轨为什么能够展开，其次才是文章入口。每一阶段只列一到两篇代表文章，其余研究进入延伸阅读。"
+  },
+  "transitionQuestions": [
     {
-      "num": "01",
-      "name": "保留国家",
-      "desc": "政治制度可以改变，国家不能停摆。行政、财政、教育、医疗、交通、司法、社保和基本公共服务保持连续。"
+      "question": "为什么不能等待内部改革？",
+      "judgment": "问题不是体制内看不到问题，而是谁推动根本改革，谁就首先承担政治风险；不改革，风险反而可以继续向后转移。"
     },
     {
-      "num": "02",
-      "name": "改变政治",
-      "desc": "保留国家不意味着保留旧的权力运行方式。权力必须重新进入规则、责任、监督和制度边界。"
+      "question": "为什么需要外部政治承接？",
+      "judgment": "当所有局内人都被原有权力、责任和利益关系锁住，结束旧游戏的方案只能由旧体系之外提前形成。"
     },
     {
-      "num": "03",
-      "name": "不革命、不清算",
-      "desc": "政治转型不能建立在无限扩大社会敌人和身份清算的基础上。明确犯罪进入公开司法程序，普通旧体系成员不因身份本身受到政治追究。"
+      "question": "为什么和平转轨存在现实基础？",
+      "judgment": "和平转轨不要求整个官僚系统倒戈，也不要求所有人接受同一种政治理想。真正需要降低的是继续阻止政治变化的收益，提高接受和平承接的安全感和可预期性。"
     },
     {
-      "num": "04",
-      "name": "和平承接",
-      "desc": "旧秩序衰退不会自动产生新秩序。必须提前形成能够承担政治责任、建立信任并承接国家运行的新政治力量。"
+      "question": "政治变化以后怎么办？",
+      "judgment": "第一原则不是立即重建一切，而是国家继续运行：公务员、地方政府、医院、学校、财政、交通、社会保障、公共安全等国家体系继续工作。没有完成调整的制度继续运行。调整一样，修改一样。"
     }
   ],
+  "establishedPrinciples": {
+    "englishLabel": "ESTABLISHED PRINCIPLES",
+    "title": "已确定的政治原则",
+    "desc": "以下五条属于公民秩序主义已经确定的政治路线。其他相关判断作为解释文字归入这五条之下。",
+    "note": "过渡期安排、地方试点、制度测试、全国推广、政治人才形成与选举准备，属于正在研究的过渡方案，不属于已确定原则，见第 06 阶段。",
+    "items": [
+      {
+        "num": "01",
+        "name": "不革命",
+        "desc": "不以社会失控和大规模政治动员作为政治转轨手段。",
+        "notes": [
+          "反对以社会失控推动政治变化。",
+          "政治转轨的代价不应由普通人的生活、安全和社会秩序承担。"
+        ]
+      },
+      {
+        "num": "02",
+        "name": "不清算",
+        "desc": "不以群体性政治报复作为新政治秩序的起点。",
+        "notes": [
+          "反对大规模政治清算；责任依据具体行为、证据和法律认定。",
+          "普通旧体系成员不因身份本身受到政治追究；明确犯罪进入公开司法程序。"
+        ]
+      },
+      {
+        "num": "03",
+        "name": "保留国家",
+        "desc": "政治制度可以改变，国家行政体系不能停摆。",
+        "notes": [
+          "政治制度改变不能以国家停摆为代价。",
+          "行政、财政、教育、医疗、交通、司法、社保与基本公共服务保持连续。",
+          "反对把整个国家机器作为革命对象。"
+        ]
+      },
+      {
+        "num": "04",
+        "name": "和平承接",
+        "desc": "通过政治沟通、利益协调与制度过渡降低政治转轨阻力。",
+        "notes": [
+          "不要求整个官僚系统倒戈，而是降低继续阻止政治变化的收益。",
+          "提高接受和平承接的安全感与可预期性，建立新旧政治力量之间最低限度的信任。"
+        ]
+      },
+      {
+        "num": "05",
+        "name": "提前准备",
+        "desc": "新的政治路线、政治信誉与组织承接能力必须在政治变化以前形成。",
+        "notes": [
+          "政治信誉必须能够被识别、被验证、被追责。",
+          "组织能力与国家承接准备必须由正式组织承担，不能在政治变化发生时临时形成。"
+        ]
+      }
+    ]
+  },
+  "institutionArchive": {
+    "englishLabel": "FUTURE INSTITUTIONAL RESEARCH",
+    "title": "未来制度研究",
+    "desc": "委员会、行政、议会、选举、司法、透明与责任等具体制度机制的方案研究。这些内容属于制度研究和方案储备，不代表当前已经形成最终正式组织纲领。",
+    "note": "制度设计回答的是政治变化之后国家如何运行；路线研究回答的是中国怎样走到那一步。当前优先保证后者。",
+    "entryHref": "/institution-design/",
+    "entryLabel": "进入完整的制度研究档案",
+    "extraItems": [
+      "civic-orderism/why-weaken-party-politics",
+      "civic-orderism/why-emphasize-reciprocity-and-equality",
+      "civic-orderism/why-focus-on-invisible-power-nodes"
+    ]
+  },
+  "transitionResearch": {
+    "statusLabel": "过渡制度研究进行中",
+    "judgment": "这一阶段研究的不是未来制度的具体形态，而是中国怎样一步步走到那里。相关具体方案尚未公开发表，暂不作为正式组织纲领。",
+    "directions": [
+      "过渡期安排",
+      "地方试点",
+      "制度测试",
+      "全国推广",
+      "政治人才形成",
+      "选举准备"
+    ]
+  },
   "transition": {
     "title": "政治转型如何成为可能？",
     "chain": [
@@ -170,77 +250,75 @@
   "readingStages": [
     {
       "num": "01",
-      "name": "总论",
-      "desc": "理解整个理论体系、政治路线和基本原则的第一篇文章。",
-      "representative": ["civic-orderism/civic-orderism-overview"],
-      "extended": []
+      "name": "为什么旧秩序走不下去",
+      "desc": "现有政治、经济、官僚与社会运行机制为什么越来越难以持续。",
+      "representative": ["china/what-is-the-ccp-becoming"],
+      "extended": [
+        "civic-orderism/civic-orderism-overview",
+        "theory/party-state-structural-failure",
+        "china/ccp-bureaucracy-double-deadlock",
+        "china/security-led-governance-model",
+        "civic-orderism/information-age-and-political-transition"
+      ]
     },
     {
       "num": "02",
-      "name": "为什么中国需要新的政治路线",
-      "desc": "旧政治秩序为什么失去未来能力、为什么内部改革难以发生、为什么政治转型必须提前准备。",
+      "name": "为什么内部改革无法完成破局",
+      "desc": "问题不是中共看不到问题，而是改革的风险由推动者立即承担，不改革的风险却可以继续向后转移。局内人因此存在拖延与自保的结构性动力。",
       "representative": [
-        "civic-orderism/why-civic-orderism",
-        "civic-orderism/information-age-and-political-transition"
+        "china/ccp-reform-political-balance-deadlock",
+        "china-stage/ccp-second-reform-opening-possibility"
       ],
       "extended": [
-        "civic-orderism/civic-orderism-manual",
-        "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
-        "civic-orderism/what-civic-orderism-ultimately-solves",
-        "civic-orderism/why-not-left-right-democracy-autocracy"
+        "china/why-ccp-cannot-reduce-grassroots-burden",
+        "china/why-ccp-will-not-relax-party-pressure",
+        "theory/high-rigidity-system-ccp"
       ]
     },
     {
       "num": "03",
-      "name": "和平转型如何发生",
-      "desc": "为什么旧体系成员会接受改变、如何形成新旧政治信任、如何降低政治阻力、如何进入沟通与和平转型。",
+      "name": "为什么需要外部政治承接",
+      "desc": "当所有局内人都被原有权力、责任与利益关系锁住，结束旧游戏的方案只能由旧体系之外提前形成。",
+      "representative": [
+        "theory/internal-change-external-change",
+        "civic-orderism/why-civic-orderism-is-easier-to-succeed"
+      ],
+      "extended": [
+        "civic-orderism/why-civic-orderism",
+        "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+        "civic-orderism/civic-orderism-manual"
+      ]
+    },
+    {
+      "num": "04",
+      "name": "为什么和平转轨能够发生",
+      "desc": "和平转轨不要求整个官僚系统倒戈，也不要求所有人接受同一种政治理想。真正需要降低的是继续阻止政治变化的收益，提高接受和平承接的安全感与可预期性。",
       "representative": [
         "civic-orderism/peaceful-state-transition",
         "civic-orderism/possibility-of-peaceful-political-transition-in-china"
       ],
       "extended": [
-        "civic-orderism/why-civic-orderism-is-easier-to-succeed",
-        "civic-orderism/why-against-moral-narrative"
-      ]
-    },
-    {
-      "num": "04",
-      "name": "如何承接国家",
-      "desc": "转型发生后哪些国家系统必须继续运行、如何保留行政连续性、如何区分国家与政权、如何处理责任边界、如何避免政治真空与国家失序。",
-      "representative": [
-        "civic-orderism/state-must-rely-on-systems-not-drivers"
-      ],
-      "extended": [
-        "civic-orderism/backend-system-under-civic-orderism",
-        "civic-orderism/public-politics-without-party-dominance",
-        "civic-orderism/why-civic-orderism-emphasizes-experience-and-records"
+        "civic-orderism/why-against-moral-narrative",
+        "civic-orderism/why-not-left-right-democracy-autocracy"
       ]
     },
     {
       "num": "05",
-      "name": "新秩序如何运行",
-      "desc": "从权力边界、责任与监督出发，进一步理解公民秩序主义关于国家运行、权力结构、公共判断与制度纠错的基本构想。",
-      "representative": [
-        "civic-orderism/top-level-power-structure-under-civic-orderism",
-        "civic-orderism/state-operation-process-under-civic-orderism"
-      ],
+      "name": "政治变化发生后，怎样保持国家运行",
+      "desc": "保留国家，改变政治。国家行政体系不是革命对象，政治转轨不等于国家停摆。没有完成调整的制度继续运行，调整一样，修改一样。",
+      "representative": ["civic-orderism/state-must-rely-on-systems-not-drivers"],
       "extended": [
-        "civic-orderism/why-dual-track-committee-administration",
-        "civic-orderism/what-is-committee-system",
-        "civic-orderism/committee-administration-opposite-incentives",
-        "civic-orderism/why-committees-cannot-directly-take-cases",
-        "civic-orderism/election-logic-under-civic-orderism",
-        "civic-orderism/why-elections-reject-political-donations",
-        "civic-orderism/why-part-time-representatives",
-        "civic-orderism/why-proposals-from-social-organizations",
-        "civic-orderism/why-weaken-party-politics",
-        "civic-orderism/why-no-bicameral-parliament",
-        "civic-orderism/why-not-simple-separation-of-powers",
-        "civic-orderism/why-information-transparency",
-        "civic-orderism/why-justice-serves-reality",
-        "civic-orderism/why-emphasize-reciprocity-and-equality",
-        "civic-orderism/why-focus-on-invisible-power-nodes"
+        "civic-orderism/public-politics-without-party-dominance",
+        "civic-orderism/what-civic-orderism-ultimately-solves"
       ]
+    },
+    {
+      "num": "06",
+      "name": "怎样逐步进入新的政治秩序",
+      "desc": "过渡期、地方试点、制度测试、全国推广、政治人才形成与选举准备，构成进入新政治秩序的现实步骤。",
+      "representative": [],
+      "extended": [],
+      "transitionResearch": true
     }
   ],
   "final": {

@@ -2083,6 +2083,18 @@ const civicReadingStages = (civicOrderismConfig.readingStages ?? []).map(
     return { ...stage, repItems, extItems };
   },
 );
+const civicEstablishedPrinciples =
+  civicOrderismConfig.establishedPrinciples ?? {};
+const civicTransitionResearch = civicOrderismConfig.transitionResearch ?? {};
+const civicInstitutionArchive = civicOrderismConfig.institutionArchive ?? {};
+/* Institutional design articles live in one archive block on the route page.
+   They are deliberately kept out of the six-stage route path. */
+const civicInstitutionArchiveItems = [
+  ...institutionSections.flatMap((section) => section.articles),
+  ...(civicInstitutionArchive.extraItems ?? []),
+]
+  .map((slug) => articleBySlug.get(slug))
+  .filter((article) => article?.status === "published");
 
 writeInstitutionalContent(
   "civic-orderism/index.md",
@@ -2098,7 +2110,7 @@ writeInstitutionalContent(
     <p class="inst4-route__intro">${civicOrderismConfig.hero?.intro ?? ""}</p>
     <div class="inst4-route__cta">
       <a href="${civicOverviewArticle ? `/${civicOverviewArticle.slug}` : "/civic-orderism/civic-orderism-overview"}">阅读《公民秩序主义总论》 <span aria-hidden="true">→</span></a>
-      <a href="#route">了解政治转型路线 <span aria-hidden="true">→</span></a>
+      <a href="#peaceful-transition">进入和平转轨路线 <span aria-hidden="true">→</span></a>
     </div>
   </section>
 
@@ -2132,49 +2144,76 @@ writeInstitutionalContent(
     </div>
   </section>
 
-  <section class="inst4l-section">
+  <section class="inst4l-section" id="peaceful-transition">
     <div class="inst4l-section__head">
-      <p class="inst4-eyebrow">FOUR PRINCIPLES</p>
-      <h2 class="inst4l-section__title">四个基本原则</h2>
+      <p class="inst4-eyebrow">${civicOrderismConfig.peacefulRoute?.englishLabel ?? ""}</p>
+      <h2 class="inst4l-section__title">${civicOrderismConfig.peacefulRoute?.title ?? ""}</h2>
+      <p class="inst4l-section__desc">${civicOrderismConfig.peacefulRoute?.desc ?? ""}</p>
     </div>
-    <div class="inst4-route__principles">
-      ${(civicOrderismConfig.principles ?? [])
-        .map(
-          (principle) => `<div class="inst4-route__principle"><span class="inst4-route__principle-num">${principle.num}</span><h3>${principle.name}</h3><p>${principle.desc}</p></div>`,
-        )
-        .join("\n")}
-    </div>
+    ${civicReadingStages
+      .map((stage) => {
+        const researchBlock = stage.transitionResearch
+          ? `<p class="inst4-route__statement">${civicTransitionResearch.statusLabel ?? ""}</p>
+      <p class="inst4-route__actor-line">${civicTransitionResearch.judgment ?? ""}</p>
+      <ul class="inst4-route__chips">
+        ${(civicTransitionResearch.directions ?? []).map((direction) => `<li>${direction}</li>`).join("\n        ")}
+      </ul>`
+          : "";
+        const repBlock = stage.repItems.length
+          ? inst4lRows(
+              stage.repItems.map((article) => ({
+                href: `/${article.slug}`,
+                meta: "代表文章",
+                title: article.title,
+                desc: article.summary || "",
+              })),
+            )
+          : "";
+        const extBlock = stage.extItems.length
+          ? `<details class="china-analysis-more"><summary>查看这一阶段的延伸研究（${stage.extItems.length}）</summary>${inst4lRows(
+              stage.extItems.map((article) => ({
+                href: `/${article.slug}`,
+                meta: "延伸阅读",
+                title: article.title,
+                desc: article.summary || "",
+              })),
+            )}</details>`
+          : "";
+        return `<div class="inst4-route__readstage">
+      <div class="inst4-route__readstage-head">
+        <p class="inst4-eyebrow">${stage.num}</p>
+        <h3 class="inst4-route__readstage-title">${stage.name}</h3>
+        <p class="inst4-route__readstage-desc">${stage.desc}</p>
+      </div>
+      ${researchBlock}
+      ${repBlock}
+      ${extBlock}
+    </div>`;
+      })
+      .join("\n    ")}
   </section>
 
-  <section class="inst4l-section inst4-route__core-statement">
+  <section class="inst4l-section" id="why-the-route-can-happen">
     <div class="inst4l-section__head">
-      <p class="inst4-eyebrow">核心政治总论</p>
-      <h2 class="inst4l-section__title">${site.corePoliticalStatement.title}</h2>
-      <p class="inst4l-section__desc">公民秩序主义为什么存在，最终希望把中国带向哪里。</p>
+      <p class="inst4-eyebrow">WHY THE ROUTE CAN HAPPEN</p>
+      <h2 class="inst4l-section__title">为什么和平转轨能够发生</h2>
     </div>
-    <p class="inst4-route__statement">${site.corePoliticalStatement.judgment}</p>
-    <p class="inst4l-link"><a href="/${site.corePoliticalStatement.slug}">阅读核心政治总论 <span aria-hidden="true">→</span></a></p>
-  </section>
-
-  <section class="inst4l-section">
-    <div class="inst4l-section__head">
-      <p class="inst4-eyebrow">TRANSITION LOGIC</p>
-      <h2 class="inst4l-section__title">${civicOrderismConfig.transition?.title ?? ""}</h2>
-    </div>
+    <h3 class="inst4-route__readstage-title">${civicOrderismConfig.transition?.title ?? ""}</h3>
     <ol class="inst4-route__chain">
       ${(civicOrderismConfig.transition?.chain ?? [])
         .map(
           (node, index) => `<li><span>${index + 1}</span><p>${node}</p></li>`,
         )
-        .join("\n")}
+        .join("\n      ")}
     </ol>
-  </section>
-
-  <section class="inst4l-section">
-    <div class="inst4l-section__head">
-      <p class="inst4-eyebrow">WHY LOW RESISTANCE</p>
-      <h2 class="inst4l-section__title">${civicOrderismConfig.lowResistance?.title ?? ""}</h2>
+    <div class="inst4-route__principles">
+      ${(civicOrderismConfig.transitionQuestions ?? [])
+        .map(
+          (item) => `<div class="inst4-route__principle"><h3>${item.question}</h3><p>${item.judgment}</p></div>`,
+        )
+        .join("\n      ")}
     </div>
+    <h3 class="inst4-route__readstage-title">${civicOrderismConfig.lowResistance?.title ?? ""}</h3>
     <p class="inst4-route__statement">${civicOrderismConfig.lowResistance?.judgment ?? ""}</p>
     <p class="inst4-route__actor-line">官僚、企业、地方政府、军警系统、普通家庭、既有利益群体 —— 他们都会判断：改变以后，我会失去什么？</p>
     <ul class="inst4-route__chips">
@@ -2195,6 +2234,42 @@ writeInstitutionalContent(
     <p class="inst4l-link"><a href="${civicOrderismConfig.organization?.entryHref ?? ""}">${civicOrderismConfig.organization?.entryLabel ?? "了解当前组织工作"} <span aria-hidden="true">→</span></a></p>
   </section>
 
+  <section class="inst4l-section" id="established-principles">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">${civicEstablishedPrinciples.englishLabel ?? ""}</p>
+      <h2 class="inst4l-section__title">${civicEstablishedPrinciples.title ?? ""}</h2>
+      <p class="inst4l-section__desc">${civicEstablishedPrinciples.desc ?? ""}</p>
+    </div>
+    <div class="inst4-route__principles">
+      ${(civicEstablishedPrinciples.items ?? [])
+        .map(
+          (principle) => `<div class="inst4-route__principle"><span class="inst4-route__principle-num">${principle.num}</span><h3>${principle.name}</h3><p>${principle.desc}</p>${(principle.notes ?? [])
+            .map((note) => `<p>${note}</p>`)
+            .join("")}</div>`,
+        )
+        .join("\n      ")}
+    </div>
+    <p class="inst4-route__actor-line">${civicEstablishedPrinciples.note ?? ""}</p>
+  </section>
+
+  <section class="inst4l-section" id="future-institutional-research">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">${civicInstitutionArchive.englishLabel ?? ""}</p>
+      <h2 class="inst4l-section__title">${civicInstitutionArchive.title ?? ""}</h2>
+      <p class="inst4l-section__desc">${civicInstitutionArchive.desc ?? ""}</p>
+    </div>
+    <details class="china-analysis-more"><summary>制度研究档案（${civicInstitutionArchiveItems.length}）</summary>${inst4lRows(
+      civicInstitutionArchiveItems.map((article) => ({
+        href: `/${article.slug}`,
+        meta: "制度研究",
+        title: article.title,
+        desc: article.summary || "",
+      })),
+    )}</details>
+    <p class="inst4-route__actor-line">${civicInstitutionArchive.note ?? ""}</p>
+    <p class="inst4l-link"><a href="${civicInstitutionArchive.entryHref ?? ""}">${civicInstitutionArchive.entryLabel ?? ""} <span aria-hidden="true">→</span></a></p>
+  </section>
+
   <section class="inst4l-section">
     <div class="inst4l-section__head">
       <p class="inst4-eyebrow">WHAT KIND OF STATE</p>
@@ -2210,43 +2285,14 @@ writeInstitutionalContent(
     <p class="inst4-route__closing">${civicOrderismConfig.state?.closing ?? ""}</p>
   </section>
 
-  <section class="inst4l-section">
+  <section class="inst4l-section inst4-route__core-statement">
     <div class="inst4l-section__head">
-      <p class="inst4-eyebrow">READING MAP</p>
-      <h2 class="inst4l-section__title">从哪里开始理解公民秩序主义？</h2>
-      <p class="inst4l-section__desc">围绕总论，按五个阅读阶段组织全部正式文章。每一阶段只展示代表文章，其余进入“查看这一主题的全部研究”。</p>
+      <p class="inst4-eyebrow">${site.corePoliticalStatement.englishLabel} · ${site.corePoliticalStatement.roleLabel}</p>
+      <p class="inst4-route__statement">${site.corePoliticalStatement.roleQuestion}</p>
+      <h2 class="inst4l-section__title">${site.corePoliticalStatement.title}</h2>
+      <p class="inst4l-section__desc">${site.corePoliticalStatement.judgment}</p>
     </div>
-    ${civicReadingStages
-      .map(
-        (stage) => `<div class="inst4-route__readstage">
-      <div class="inst4-route__readstage-head">
-        <p class="inst4-eyebrow">${stage.num}</p>
-        <h3 class="inst4-route__readstage-title">${stage.name}</h3>
-        <p class="inst4-route__readstage-desc">${stage.desc}</p>
-      </div>
-      ${inst4lRows(
-        stage.repItems.map((article) => ({
-          href: `/${article.slug}`,
-          meta: "代表文章",
-          title: article.title,
-          desc: article.summary || "",
-        })),
-      )}
-      ${
-        stage.extItems.length
-          ? `<details class="china-analysis-more"><summary>查看这一主题的全部研究（${stage.extItems.length}）</summary>${inst4lRows(
-              stage.extItems.map((article) => ({
-                href: `/${article.slug}`,
-                meta: "延伸阅读",
-                title: article.title,
-                desc: article.summary || "",
-              })),
-            )}</details>`
-          : ""
-      }
-    </div>`,
-      )
-      .join("\n")}
+    <p class="inst4l-link"><a href="/${site.corePoliticalStatement.slug}">阅读核心政治总论 <span aria-hidden="true">→</span></a></p>
   </section>
 
   <section class="inst4l-section">

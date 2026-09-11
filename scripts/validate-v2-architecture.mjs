@@ -1410,6 +1410,145 @@ assert(
     contactPosition > docPosition,
   "法人筹备页未按核心信息、当前工作、组织边界、正式文件、建立联系分层",
 );
+// /civic-orderism/ — six-stage peaceful transition route, five settled
+// principles and the deferred institutional research archive.
+const routeHtml = fs.readFileSync(publicHtml("civic-orderism/index"), "utf8");
+const transitionRouteHtml =
+  routeHtml.match(
+    /<section class="inst4l-section" id="peaceful-transition">[\s\S]*?<\/section>/,
+  )?.[0] ?? "";
+assert(
+  transitionRouteHtml.includes("PEACEFUL TRANSITION ROUTE") &&
+    visiblePageText(transitionRouteHtml).includes(
+      civicOrderismConfig.peacefulRoute.title,
+    ) &&
+    (transitionRouteHtml.match(/<div class="inst4-route__readstage">/g) ?? [])
+      .length === civicOrderismConfig.readingStages.length &&
+    (transitionRouteHtml.match(/inst4-route__readstage-title/g) ?? [])
+      .length === civicOrderismConfig.readingStages.length,
+  "/civic-orderism/ 和平转轨路线未按六个阶段组织",
+);
+for (const stage of civicOrderismConfig.readingStages) {
+  assert(
+    visiblePageText(transitionRouteHtml).includes(stage.name) &&
+      visiblePageText(transitionRouteHtml).includes(stage.desc),
+    `/civic-orderism/ 缺少阶段：${stage.num} ${stage.name}`,
+  );
+  assert(
+    stage.representative.length <= 2,
+    `/civic-orderism/ 阶段代表文章超过两篇：${stage.num}`,
+  );
+}
+// Stage 06 must show the transition-research status, not old institution articles.
+const lastStageHtml = transitionRouteHtml.slice(
+  transitionRouteHtml.lastIndexOf('<div class="inst4-route__readstage">'),
+);
+assert(
+  visiblePageText(lastStageHtml).includes(
+    civicOrderismConfig.transitionResearch.statusLabel,
+  ) &&
+    civicOrderismConfig.transitionResearch.directions.every((direction) =>
+      visiblePageText(lastStageHtml).includes(direction),
+    ) &&
+    !lastStageHtml.includes("inst4l-row"),
+  "第 06 阶段必须只呈现过渡制度研究状态与研究方向，不得填充旧制度设计文章",
+);
+const institutionSlugs = institutionSections.flatMap(
+  (section) => section.articles,
+);
+for (const slug of institutionSlugs) {
+  assert(
+    !transitionRouteHtml.includes(`data-slug="${slug}"`),
+    `制度设计文章仍出现在六阶段路线中：${slug}`,
+  );
+  assert(
+    (routeHtml.match(new RegExp(`data-slug="${slug}"`, "g")) ?? []).length === 1,
+    `制度设计文章未且仅未出现一次于 /civic-orderism/：${slug}`,
+  );
+}
+for (const slug of civicOrderismConfig.institutionArchive.extraItems) {
+  assert(
+    (routeHtml.match(new RegExp(`data-slug="${slug}"`, "g")) ?? []).length === 1,
+    `制度研究延伸文章在 /civic-orderism/ 出现次数不为 1：${slug}`,
+  );
+}
+// Why the route can happen — chain plus the four judgments.
+const whyRouteHtml =
+  routeHtml.match(
+    /<section class="inst4l-section" id="why-the-route-can-happen">[\s\S]*?<\/section>/,
+  )?.[0] ?? "";
+assert(
+  visiblePageText(whyRouteHtml).includes("为什么和平转轨能够发生") &&
+    (whyRouteHtml.match(/<li><span>\d<\/span>/g) ?? []).length ===
+      civicOrderismConfig.transition.chain.length &&
+    whyRouteHtml.includes(civicOrderismConfig.lowResistance.title),
+  "/civic-orderism/ 缺少“为什么和平转轨能够发生”论证区",
+);
+for (const item of civicOrderismConfig.transitionQuestions) {
+  assert(
+    visiblePageText(whyRouteHtml).includes(item.question) &&
+      visiblePageText(whyRouteHtml).includes(item.judgment),
+    `/civic-orderism/ 缺少转轨判断：${item.question}`,
+  );
+}
+// Five settled principles, with the extra judgments folded in as explanation.
+const principlesHtml =
+  routeHtml.match(
+    /<section class="inst4l-section" id="established-principles">[\s\S]*?<\/section>/,
+  )?.[0] ?? "";
+assert(
+  principlesHtml.includes(
+    civicOrderismConfig.establishedPrinciples.englishLabel,
+  ) &&
+    (principlesHtml.match(/inst4-route__principle-num/g) ?? []).length === 5 &&
+    civicOrderismConfig.establishedPrinciples.items.length === 5 &&
+    !principlesHtml.includes('inst4-route__principle-num">06') &&
+    visiblePageText(principlesHtml).includes(
+      civicOrderismConfig.establishedPrinciples.note,
+    ),
+  "已确定的政治原则必须严格为五条，并说明与过渡方案的分层",
+);
+for (const principle of civicOrderismConfig.establishedPrinciples.items) {
+  assert(
+    visiblePageText(principlesHtml).includes(principle.name) &&
+      visiblePageText(principlesHtml).includes(principle.desc) &&
+      principle.notes.every((note) =>
+        visiblePageText(principlesHtml).includes(note),
+      ),
+    `已确定原则缺少文案或解释文字：${principle.name}`,
+  );
+}
+// Future institutional research archive (folded), kept out of the route path.
+const archiveHtml =
+  routeHtml.match(
+    /<section class="inst4l-section" id="future-institutional-research">[\s\S]*?<\/section>/,
+  )?.[0] ?? "";
+assert(
+  archiveHtml.includes(civicOrderismConfig.institutionArchive.englishLabel) &&
+    visiblePageText(archiveHtml).includes(
+      civicOrderismConfig.institutionArchive.desc,
+    ) &&
+    visiblePageText(archiveHtml).includes(
+      civicOrderismConfig.institutionArchive.note,
+    ) &&
+    /href="[^"]*institution-design\/?"/.test(archiveHtml) &&
+    (archiveHtml.match(/<a class="inst4l-row\b/g) ?? []).length ===
+      institutionSlugs.length +
+        civicOrderismConfig.institutionArchive.extraItems.length &&
+    /<details class="china-analysis-more">/.test(archiveHtml),
+  "未来制度研究档案未按要求折叠组织",
+);
+// Layer order: route -> principles -> institution research -> value goal.
+assert(
+  routeHtml.indexOf('id="peaceful-transition"') <
+    routeHtml.indexOf('id="established-principles"') &&
+    routeHtml.indexOf('id="established-principles"') <
+      routeHtml.indexOf('id="future-institutional-research"') &&
+    routeHtml.indexOf('id="future-institutional-research"') <
+      routeHtml.indexOf("inst4-route__core-statement"),
+  "/civic-orderism/ 层级顺序不正确（六阶段 → 已确定原则 → 制度研究 → 价值目标）",
+);
+
 // Phase 2A — institutional landing pages share the V4 shell
 for (const [label, pageFile, expectTitle, expectLabel] of [
   ["about", "about", "关于公民秩序主义", "CURRENT PHASE"],
