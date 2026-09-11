@@ -8397,12 +8397,15 @@ p.inst4-hero__judgment {
   line-height: 1.6;
 }
 
-/* Current phase as a quiet editorial annotation on the right. */
+/* Current phase as a quiet project-status annotation on the right.
+   It states project status, not the political position: smaller type, a
+   lighter year line and tighter band padding keep it below the hero
+   statement and the route model in visual priority. */
 .inst4-hero__status {
   grid-column: 10 / span 3;
   align-self: end;
   min-width: 0;
-  padding-top: 1.1rem;
+  padding-top: 0.85rem;
   border-top: 1px solid var(--inst4-line);
 }
 
@@ -8418,16 +8421,22 @@ p.inst4-hero__judgment {
 .inst4-hero__status-body {
   margin-top: 0.9rem;
   color: var(--inst4-gray);
-  font-size: 0.9rem;
+  font-size: 0.86rem;
   font-weight: 440;
-  line-height: 1.65;
+  line-height: 1.55;
+}
+
+/* The English phase line is supporting information for the Chinese title. */
+.inst4-hero__status-body[lang="en"] {
+  font-size: 0.76rem;
+  line-height: 1.45;
 }
 
 .inst4-hero__status-year {
   margin-top: 0.9rem;
-  color: var(--inst4-ink-2);
-  font-size: 1.05rem;
-  font-weight: 520;
+  color: var(--inst4-gray);
+  font-size: 0.85rem;
+  font-weight: 480;
   letter-spacing: 0.04em;
   line-height: 1.2;
 }
@@ -9049,8 +9058,8 @@ p.inst4-work__initiative-note {
 
   .inst4-hero__status {
     grid-column: 1 / span 8;
-    margin-top: 3rem;
-    padding: 1.2rem 0 0;
+    margin-top: 2.25rem;
+    padding: 0.9rem 0 0;
     border-left: 0;
     border-top: 1px solid var(--inst4-line);
   }
@@ -9127,8 +9136,8 @@ p.inst4-work__initiative-note {
   /* Current Phase — compact institutional information band. */
   .inst4-hero__status {
     grid-column: 1 / span 12;
-    margin-top: 1.75rem;
-    padding: 2rem 0; /* 32px band padding */
+    margin-top: 1.4rem;
+    padding: 1.5rem 0; /* 24px band padding */
     border-bottom: 1px solid var(--inst4-line);
   }
 
@@ -9139,13 +9148,18 @@ p.inst4-work__initiative-note {
 
   .inst4-hero__status-body {
     margin-top: 0.6rem;
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .inst4-hero__status-body[lang="en"] {
+    font-size: 0.82rem;
+    line-height: 1.45;
   }
 
   .inst4-hero__status-year {
     margin-top: 0.55rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .inst4-work {
@@ -9541,6 +9555,16 @@ body[data-slug="preparation"] {
   font-weight: 440;
   line-height: 1.75;
   transition: color 180ms ease;
+}
+
+/* On the route page, representative articles are supporting material inside
+   the six-stage path, so their summaries are clamped to two lines. Other
+   lists (article pages, reading map, institution archive) keep full text. */
+#peaceful-transition .inst4l-row__desc {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 .inst4l-row__arrow {
