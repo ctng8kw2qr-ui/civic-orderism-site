@@ -8603,15 +8603,13 @@ p.inst4-hero__judgment {
   line-height: 1.25;
 }
 
-.inst4-work__points,
-.inst4-readiness__points {
+.inst4-work__points {
   max-width: 720px;
   margin-top: clamp(2.5rem, 5vw, 4rem);
   border-top: 1px solid var(--inst4-line);
 }
 
-.inst4-work__point,
-.inst4-readiness__point {
+.inst4-work__point {
   display: grid;
   grid-template-columns: minmax(0, 3rem) minmax(0, 1fr);
   gap: clamp(1.25rem, 2.5vw, 2rem);
@@ -8620,12 +8618,67 @@ p.inst4-hero__judgment {
   border-top: 1px solid var(--inst4-line-soft);
 }
 
-.inst4-work__point:first-child,
+.inst4-work__point:first-child {
+  border-top: 0;
+}
+
+.inst4-work__number {
+  margin: 0;
+  color: var(--inst4-accent);
+  font-size: 0.72rem;
+  font-weight: 560;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+  font-variant-numeric: tabular-nums;
+}
+
+.inst4-work__point-body {
+  min-width: 0;
+}
+
+.inst4-work__point-title {
+  margin: 0;
+  color: var(--inst4-ink);
+  font-size: clamp(1.28rem, 2vw, 1.55rem);
+  font-weight: 540;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+}
+
+.inst4-work__point-text,
+.inst4-work__lead,
+.inst4-work__initiative-note {
+  max-width: 620px;
+  margin-top: 1rem;
+  color: var(--inst4-ink-2);
+  font-size: 1rem;
+  font-weight: 440;
+  line-height: 1.8;
+}
+
+/* ---- Homepage readiness: four capability entries ----
+   Each entry reads in two lines — number + title, then the explanation — so
+   the four titles carry the rhythm and unequal explanation lengths no longer
+   turn the list into a table. */
+.inst4-readiness__points {
+  max-width: 860px;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  border-top: 1px solid var(--inst4-line);
+}
+
+.inst4-readiness__point {
+  display: grid;
+  grid-template-columns: minmax(0, 2.4rem) minmax(0, 1fr);
+  column-gap: 0.85rem;
+  row-gap: 0.5rem; /* ~8px from the title line to its explanation */
+  align-items: baseline;
+  border-top: 1px solid var(--inst4-line-soft);
+}
+
 .inst4-readiness__point:first-child {
   border-top: 0;
 }
 
-.inst4-work__number,
 .inst4-readiness__number {
   margin: 0;
   color: var(--inst4-accent);
@@ -8636,29 +8689,53 @@ p.inst4-hero__judgment {
   font-variant-numeric: tabular-nums;
 }
 
-.inst4-work__point-body,
+/* The wrapper dissolves so the title sits beside the number and the
+   explanation starts on the next line, aligned with the title. */
 .inst4-readiness__point-body {
-  min-width: 0;
+  display: contents;
 }
 
-.inst4-work__point-title,
 .inst4-readiness__point-title {
+  grid-column: 2;
   margin: 0;
   color: var(--inst4-ink);
-  font-size: clamp(1.28rem, 2vw, 1.55rem);
+  font-size: clamp(1.3rem, 1.9vw, 1.5rem); /* identical for all four titles */
   font-weight: 540;
   letter-spacing: -0.01em;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
-.inst4-work__point-text,
-.inst4-readiness__point-text,
-.inst4-work__lead,
-.inst4-work__initiative-note {
-  max-width: 620px;
-  margin-top: 1rem;
+.inst4-readiness__point-text {
+  grid-column: 2;
+  max-width: 720px;
+  margin: 0;
   color: var(--inst4-ink-2);
   font-size: 1rem;
+  font-weight: 440;
+  line-height: 1.8;
+}
+
+/* Entries are <article> elements, and the homepage resets article padding
+   (!important), so the vertical rhythm is carried by the entry's own title and
+   explanation: 0.9rem above each title + 0.9rem below each explanation ≈ 29px
+   between two entries, with the faint divider centred in the gap. */
+h3.inst4-readiness__point-title {
+  margin: 0.9rem 0 0;
+}
+
+p.inst4-readiness__point-text {
+  margin: 0 0 0.9rem;
+}
+
+/* Closing judgment over all four entries: separated from entry 04, narrower
+   than the list, slightly larger than the explanations. */
+p.inst4-readiness__note {
+  max-width: 700px;
+  margin: clamp(1.6rem, 3.2vw, 2.5rem) 0 0; /* + 0.9rem below entry 04 */
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--inst4-line);
+  color: var(--inst4-ink-2);
+  font-size: 1.04rem;
   font-weight: 440;
   line-height: 1.8;
 }
@@ -9216,26 +9293,56 @@ p.inst4-work__initiative-note {
     font-size: clamp(1.9rem, 8vw, 2.3rem);
   }
 
-  .inst4-work__points,
-  .inst4-readiness__points {
+  .inst4-work__points {
     margin-top: 2.5rem;
   }
 
-  .inst4-work__point,
-  .inst4-readiness__point {
+  .inst4-work__point {
     display: block;
     padding: 1.65rem 0 1.8rem;
   }
 
-  .inst4-work__point-title,
-  .inst4-readiness__point-title {
+  .inst4-work__point-title {
     margin-top: 0.7rem;
     font-size: 1.3rem;
     line-height: 1.5;
   }
 
+  /* Homepage readiness keeps the two-line entry rhythm on small screens:
+     number + title on one line, explanation underneath at full width. */
+  .inst4-readiness__points {
+    margin-top: 2.5rem;
+  }
+
+  .inst4-readiness__point {
+    grid-template-columns: minmax(0, 2.1rem) minmax(0, 1fr);
+    column-gap: 0.6rem;
+  }
+
+  h3.inst4-readiness__point-title {
+    margin-top: 0.85rem;
+  }
+
+  p.inst4-readiness__point-text {
+    margin-bottom: 0.85rem;
+  }
+
+  .inst4-readiness__point-title {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .inst4-readiness__point-text {
+    font-size: 0.96rem;
+    line-height: 1.78;
+  }
+
+  p.inst4-readiness__note {
+    margin-top: 1.75rem;
+    font-size: 1rem;
+  }
+
   .inst4-work__point-text,
-  .inst4-readiness__point-text,
   .inst4-work__lead,
   .inst4-work__initiative-note {
     margin-top: 0.75rem;
@@ -10600,8 +10707,7 @@ body[data-slug="preparation"] {
 
 /* 低阻力主体 */
 .inst4-route__actor-line,
-.inst4-transition__note,
-.inst4-readiness__note {
+.inst4-transition__note {
   max-width: 680px;
   margin: 1.2rem 0 0;
   color: var(--inst4-ink-2);
