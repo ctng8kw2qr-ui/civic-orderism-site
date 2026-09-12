@@ -456,7 +456,7 @@ noindex: false
 <h2 class="inst4l-section__title">这一次，让中国成为你的骄傲</h2>
 <p class="inst4l-section__desc">一个国家真正的荣耀，不只出现在新闻报道里，更应该写在每一个普通人的生活里。</p>
 </div>
-<p class="inst4l-link"><a href="/civic-orderism/this-time-let-china-be-your-pride">阅读核心政治总论 <span aria-hidden="true">→</span></a></p>
+<p class="inst4l-link"><a href="/civic-orderism/this-time-let-china-be-your-pride">阅读价值目标全文 <span aria-hidden="true">→</span></a></p>
   </section>
 
   <section class="inst4l-section">

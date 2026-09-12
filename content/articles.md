@@ -30,7 +30,7 @@ noindex: false
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
 <a class="inst4l-row" href="/civic-orderism/this-time-let-china-be-your-pride">
-  <span class="inst4l-row__cell"><span class="inst4l-row__meta">核心政治总论</span><span class="inst4l-row__title">这一次，让中国成为你的骄傲</span></span>
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">价值目标</span><span class="inst4l-row__title">这一次，让中国成为你的骄傲</span></span>
   <span class="inst4l-row__desc">公民秩序主义为什么存在，最终希望把中国带向哪里。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>

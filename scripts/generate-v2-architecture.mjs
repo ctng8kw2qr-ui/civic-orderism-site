@@ -1225,7 +1225,7 @@ ${civicOrderismConfig.readiness.items
       )}</h2>
       <blockquote class="inst4-core-statement__question"><p>${site.corePoliticalStatement.question}</p></blockquote>
       <p class="inst4-core-statement__judgment">${site.corePoliticalStatement.judgment}</p>
-      <p class="inst4-core-statement__cta"><a href="/${site.corePoliticalStatement.slug}">阅读核心政治总论 <span aria-hidden="true">→</span></a></p>
+      <p class="inst4-core-statement__cta"><a href="/${site.corePoliticalStatement.slug}">阅读${site.corePoliticalStatement.roleLabel}全文 <span aria-hidden="true">→</span></a></p>
     </div>
   </div>
 </section>
@@ -1272,6 +1272,19 @@ ${civicOrderismConfig.readiness.items
 </div>`,
 );
 
+/* Q03 of /start-here/ renders the formal principles straight from the
+   /civic-orderism/ data source, so the newcomer page can never fork a second
+   version of the core political principles. */
+function formalPrinciplesList() {
+  const items = civicOrderismConfig.establishedPrinciples?.items ?? [];
+  return `<ul>${items
+    .map(
+      (principle) =>
+        `<li><strong>${principle.name}：</strong>${principle.desc}</li>`,
+    )
+    .join("")}</ul>`;
+}
+
 writeContent(
   "start-here/index.md",
   `${yamlFrontmatter({ title: "5分钟了解公民秩序主义", description: "用五分钟了解公民秩序主义是什么、与普通反对运动有什么不同、准备怎样处理政治转轨，以及当前组织建设阶段。", contentType: "新读者入口", aliases: ["start"] })}
@@ -1281,7 +1294,7 @@ writeContent(
   <div class="start-page__sections">
     <section><span>01</span><div><h2>公民秩序主义是什么？</h2><p>公民秩序主义不是普通政治评论项目，也不是只提供文章和观点的内容平台。它是一条面向中国未来政治转型的政治路线。理论研究为路线提供判断基础，组织建设为路线建立现实承接能力，目标是在降低冲突和社会代价的前提下，为国家秩序、公共服务和政治制度的和平转换做好准备。</p></div></section>
     <section><span>02</span><div><h2>为什么提出这条路线？</h2><p>工业时代形成的政治制度、政党组织和官僚治理方式，正在面对信息化社会带来的结构性失配。信息传播、社会协作和公共问题已经高度复杂化，旧有政治通道却越来越难以形成稳定反馈、明确责任和长期判断。中国需要的不是另一轮情绪动员，而是一种适应新时代的政治组织方式。</p><p class="start-roadmap__line">信息化时代 → 工业时代制度失配 → 需要新的政治组织方式</p></div></section>
-    <section><span>03</span><div><h2>核心政治路线是什么？</h2><p>公民秩序主义主张不以社会崩溃换取政治变化，不按政治身份实施普遍追责，也不把国家行政系统整体推向对立面。</p><ul><li><strong>不革命：</strong>不以暴力和社会失控作为转型方法。</li><li><strong>不清算：</strong>责任依据具体行为、证据和法律认定。</li><li><strong>和平承接：</strong>为不同社会群体提供可理解、可预期的制度出口。</li><li><strong>国家连续：</strong>保持行政体系、公共服务与基本社会秩序。</li><li><strong>依法治理：</strong>以程序、授权、监督和责任边界约束权力。</li><li><strong>长期建设：</strong>通过持续的理论、组织和制度准备形成现实能力。</li></ul></div></section>
+    <section><span>03</span><div><h2>核心政治路线是什么？</h2><p>公民秩序主义主张不以社会崩溃换取政治变化，不按政治身份实施普遍追责，也不把国家行政系统整体推向对立面。</p>${formalPrinciplesList()}</div></section>
     <section><span>04</span><div><h2>它与普通反对运动有什么不同？</h2><p>区别在于方法边界。</p><ul><li>不以街头动员作为政治路径；</li><li>不以推翻和清算作为政治目标；</li><li>不等待政治变化发生以后再临时寻找方案；</li><li>提前建设政治路线、政治信誉、组织能力与国家承接准备。</li></ul><p>这决定了公民秩序主义的工作重点不是扩大声量，而是把路线、信誉、组织和国家承接准备真正做出来。</p></div></section>
     <section><span>05</span><div><h2>它准备怎样处理政治转轨？</h2><p class="start-roadmap__line">旧体系无法自行改革 → 外部政治承接力量提前形成 → 降低转轨阻力 → 保持国家连续运行 → 逐步进入新的政治秩序</p><p>这里只给出主线。为什么内部改革无法完成破局、为什么需要外部政治承接、为什么和平转轨存在现实基础，以及政治变化以后怎样保持国家运行，在完整的和平转轨路线中展开。</p><div class="start-page__actions"><a class="v2-button v2-button--primary" href="/civic-orderism/">进入完整和平转轨路线</a></div></div></section>
     <section><span>06</span><div><h2>它现在正在做什么？</h2><p>公民秩序主义已经从理论解释进入政治路线与组织承接建设阶段。当前工作的重点，是把中国和平政治转轨的基本路线讲清楚：为什么旧体系无法自行完成改革，为什么新的政治承接力量必须提前形成，怎样降低政治转轨的阻力，以及政治变化发生以后怎样保持国家连续运行。</p><p>与此同时，公民秩序主义正在推进北美非营利法人及首届董事会筹备，为这条路线建立长期、稳定、合法、可追责的组织基础。</p></div></section>
@@ -1800,7 +1813,7 @@ writeInstitutionalContent(
   <section class="inst4l-hero">
     <p class="inst4-eyebrow">ABOUT</p>
     <h1 class="inst4l-title">关于公民秩序主义</h1>
-    <p class="inst4l-lead">公民秩序主义是一条面向中国未来政治转型的政治路线：通过和平转轨、行政承接、责任区分与制度重组，降低政治变化的社会成本，保持国家与公共服务连续，并建立能够限制权力、明确责任与持续纠错的新秩序。</p>
+    <p class="inst4l-lead">一条面向中国未来、以和平承接与保留国家为核心的政治转型路线。</p>
   </section>
 
   <div class="inst4l-body">
@@ -2191,7 +2204,7 @@ writeInstitutionalContent(
       <h2 class="inst4l-section__title">${site.corePoliticalStatement.title}</h2>
       <p class="inst4l-section__desc">${site.corePoliticalStatement.judgment}</p>
     </div>
-    <p class="inst4l-link"><a href="/${site.corePoliticalStatement.slug}">阅读核心政治总论 <span aria-hidden="true">→</span></a></p>
+    <p class="inst4l-link"><a href="/${site.corePoliticalStatement.slug}">阅读${site.corePoliticalStatement.roleLabel}全文 <span aria-hidden="true">→</span></a></p>
   </section>
 
   <section class="inst4l-section">
@@ -2862,7 +2875,7 @@ writeInstitutionalContent(
 /* Phase 2B — Reading Map (articles.md): three routes */
 const readingMapRouteA = [
   { href: "/start-here/", meta: "入口", title: "5分钟了解公民秩序主义", desc: "快速建立对公民秩序主义的基础认识。" },
-  { href: "/civic-orderism/this-time-let-china-be-your-pride", meta: "核心政治总论", title: "这一次，让中国成为你的骄傲", desc: "公民秩序主义为什么存在，最终希望把中国带向哪里。" },
+  { href: "/civic-orderism/this-time-let-china-be-your-pride", meta: site.corePoliticalStatement.roleLabel, title: "这一次，让中国成为你的骄傲", desc: "公民秩序主义为什么存在，最终希望把中国带向哪里。" },
   { href: "/civic-orderism/", meta: "政治路线", title: "公民秩序主义政治路线", desc: "保留国家，改变政治：完整的政治路线总入口。" },
   { href: "/preparation", meta: "当前组织工作", title: "北美非营利法人及首届董事会筹备", desc: "当前最重要、最明确的组织工作。" },
 ];

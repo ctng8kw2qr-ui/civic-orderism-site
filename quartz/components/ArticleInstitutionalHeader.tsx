@@ -7,6 +7,7 @@ import { resolveRelative, FullSlug } from "../util/path";
 import { Element, Root } from "hast";
 import { toString } from "hast-util-to-string";
 import migrationMap from "../../content-migration-map.json";
+import siteConfig from "../../data/site.config.json";
 import topicsConfig from "../../data/topics.config.json";
 
 // @ts-ignore
@@ -121,8 +122,12 @@ const ArticleInstitutionalHeader: QuartzComponent = ({
   // with the frontmatter category as fallback. The third breadcrumb level
   // uses the frontmatter section, falling back to the primary topic name.
   const knowledge = migrationBySlug.get(fileData.slug ?? "");
+  // The value-goal article is classified by its role (价值目标), never as a
+  // second “political framework”. The label comes from the site config, so no
+  // extra hardcoded copy exists.
+  const coreStatementLabel = siteConfig.corePoliticalStatement.roleLabel;
   const programName = isCorePoliticalStatement
-    ? "核心政治总论"
+    ? coreStatementLabel
     : (knowledge?.section && SECTION_HREF[knowledge.section]
         ? knowledge.section
         : SECTION_HREF[category]
@@ -157,7 +162,7 @@ const ArticleInstitutionalHeader: QuartzComponent = ({
           /
         </span>
         {isCorePoliticalStatement ? (
-          <span class="article-inst__context-current">核心政治总论</span>
+          <span class="article-inst__context-current">{coreStatementLabel}</span>
         ) : programHref ? (
           <a
             class="article-inst__context-link"

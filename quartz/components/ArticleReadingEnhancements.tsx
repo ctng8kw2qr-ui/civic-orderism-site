@@ -7,6 +7,7 @@ import {
 } from "./types";
 import style from "./styles/articleReadingEnhancements.scss";
 import migrationMap from "../../content-migration-map.json";
+import siteConfig from "../../data/site.config.json";
 import topicsConfig from "../../data/topics.config.json";
 import conceptsConfig from "../../data/concepts.config.json";
 import sectionsConfig from "../../data/sections.config.json";
@@ -368,6 +369,10 @@ export const KnowledgeContext: QuartzComponent = ({
   const knowledge = knowledgeFor(fileData);
   if (!knowledge) return null;
 
+  // The value-goal article is labelled by its role (价值目标) instead of the
+  // legacy classification string, without migrating historical metadata.
+  const corePoliticalStatement =
+    fileData.frontmatter?.corePoliticalStatement === true;
   const section = sectionByName.get(knowledge.section);
   const primaryTopic = knowledge.primaryTopic
     ? topicBySlug.get(knowledge.primaryTopic)
@@ -394,7 +399,11 @@ export const KnowledgeContext: QuartzComponent = ({
           {section ? (
             <a href={`/${section.slug}`}>{section.name}</a>
           ) : (
-            <span>{knowledge.section}</span>
+            <span>
+              {corePoliticalStatement
+                ? siteConfig.corePoliticalStatement.roleLabel
+                : knowledge.section}
+            </span>
           )}
           {primaryTopic ? (
             <a href={`/topics/${primaryTopic.slug}`}>
@@ -784,7 +793,7 @@ export const ContinueReading: QuartzComponent = ({
     return (
       <section
         class="article-continuation article-continuation--core-statement"
-        aria-label="核心政治总论阅读路径"
+        aria-label={`${siteConfig.corePoliticalStatement.roleLabel}阅读路径`}
         data-article-continuation="core-political-statement"
       >
         <h2 class="article-continuation__heading">从愿景继续阅读</h2>

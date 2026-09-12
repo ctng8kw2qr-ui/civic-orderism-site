@@ -14,7 +14,7 @@ noindex: false
   <section class="inst4l-hero">
 <p class="inst4-eyebrow">ABOUT</p>
 <h1 class="inst4l-title">关于公民秩序主义</h1>
-<p class="inst4l-lead">公民秩序主义是一条面向中国未来政治转型的政治路线：通过和平转轨、行政承接、责任区分与制度重组，降低政治变化的社会成本，保持国家与公共服务连续，并建立能够限制权力、明确责任与持续纠错的新秩序。</p>
+<p class="inst4l-lead">一条面向中国未来、以和平承接与保留国家为核心的政治转型路线。</p>
   </section>
 
   <div class="inst4l-body">

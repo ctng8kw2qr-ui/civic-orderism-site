@@ -324,7 +324,9 @@ for (const article of migration) {
   assert(
     (articleHtml.includes('aria-label="继续阅读"') ||
       (isCorePoliticalStatement &&
-        articleHtml.includes('aria-label="核心政治总论阅读路径"')) ||
+        articleHtml.includes(
+          `aria-label="${site.corePoliticalStatement.roleLabel}阅读路径"`,
+        )) ||
       (isInstitutionalPrototype && articleHtml.includes("继续研究"))) &&
       (articleHtml.includes("相关文章") ||
         isInstitutionalPrototype ||
@@ -346,7 +348,9 @@ for (const article of migration) {
   assert(
     (articleHtml.includes('aria-label="继续阅读"') ||
       (isCorePoliticalStatement &&
-        articleHtml.includes('aria-label="核心政治总论阅读路径"'))) &&
+        articleHtml.includes(
+          `aria-label="${site.corePoliticalStatement.roleLabel}阅读路径"`,
+        ))) &&
       articleHtml.includes('class="article-knowledge"'),
     `文章尾部未同时生成继续阅读与知识关联：${article.slug}`,
   );
@@ -1052,8 +1056,11 @@ assert(
     coreStatementHomepageHtml.includes(
       `data-slug="${site.corePoliticalStatement.slug}"`,
     ) &&
-    visiblePageText(coreStatementHomepageHtml).includes("阅读核心政治总论"),
-  "首页缺少价值目标区（核心政治总论入口）或其正式文案",
+    visiblePageText(coreStatementHomepageHtml).includes(
+      `阅读${site.corePoliticalStatement.roleLabel}全文`,
+    ) &&
+    !visiblePageText(coreStatementHomepageHtml).includes("阅读核心政治总论"),
+  "首页缺少价值目标区或其正式文案（价值目标入口不得再写作“核心政治总论”）",
 );
 assert(
   homepageMainHtml.indexOf('id="future"') >
@@ -1248,6 +1255,23 @@ assert(
     articlesText.includes("快速建立对公民秩序主义的基础认识"),
   "阅读地图的 Start Here 入口描述未同步为稳定文案",
 );
+// Route A labels the value-goal article by its role (价值目标), not as a second
+// "political framework" (政治总论) text.
+const routeAFrom = articlesHtml.indexOf("路线 A · 认识公民秩序主义");
+const routeBFrom = articlesHtml.indexOf("路线 B · 理解今天的中共");
+const routeAHtml =
+  routeAFrom >= 0 && routeBFrom > routeAFrom
+    ? articlesHtml.slice(routeAFrom, routeBFrom)
+    : "";
+assert(
+  routeAFrom > 0 &&
+    routeAHtml.includes(
+      `<span class="inst4l-row__meta">${site.corePoliticalStatement.roleLabel}</span>` +
+        `<span class="inst4l-row__title">${site.corePoliticalStatement.title}</span>`,
+    ) &&
+    !routeAHtml.includes("核心政治总论"),
+  "阅读地图路线 A 未把价值目标文章标注为“价值目标”",
+);
 // Route D reuses the six-stage route data instead of a second reading order.
 const routeDFrom = articlesHtml.indexOf("路线 D · 和平转轨路线");
 const routeDHtml = routeDFrom >= 0 ? articlesHtml.slice(routeDFrom) : "";
@@ -1340,10 +1364,25 @@ const coreStatementHtml = fs.readFileSync(
   "utf8",
 );
 const coreStatementText = visiblePageText(coreStatementHtml);
+// The generated institutional header must classify the value-goal article by
+// its role. The historical classification string stays in the article's own
+// metadata and is mapped at the display layer.
+const coreStatementHeaderHtml =
+  coreStatementHtml.match(
+    /<header class="article-inst article-inst--core-statement"[\s\S]*?<\/header>/,
+  )?.[0] ?? "";
+assert(
+  coreStatementHeaderHtml.length > 0 &&
+    visiblePageText(coreStatementHeaderHtml).includes(
+      site.corePoliticalStatement.roleLabel,
+    ) &&
+    !visiblePageText(coreStatementHeaderHtml).includes("核心政治总论"),
+  "价值目标文章的 institutional header 仍在显示“核心政治总论”",
+);
 assert(
   coreStatementHtml.includes('data-core-political-statement="true"') &&
     coreStatementHtml.includes("CORE POLITICAL STATEMENT") &&
-    coreStatementText.includes("核心政治总论") &&
+    coreStatementText.includes(site.corePoliticalStatement.roleLabel) &&
     coreStatementText.includes(site.corePoliticalStatement.title) &&
     coreStatementText.includes(site.corePoliticalStatement.question) &&
     coreStatementText.includes(
@@ -1668,6 +1707,20 @@ assert(
       routeHtml.indexOf("inst4-route__core-statement"),
   "/civic-orderism/ 层级顺序不正确（六阶段 → 已确定原则 → 制度研究 → 价值目标）",
 );
+// The value-goal block introduces the value-goal article by its role, not as a
+// second “political framework” (政治总论).
+const routeCoreStatementHtml =
+  routeHtml.match(
+    /<section class="inst4l-section inst4-route__core-statement">[\s\S]*?<\/section>/,
+  )?.[0] ?? "";
+assert(
+  routeCoreStatementHtml.length > 0 &&
+    visiblePageText(routeCoreStatementHtml).includes(
+      `阅读${site.corePoliticalStatement.roleLabel}全文`,
+    ) &&
+    !visiblePageText(routeCoreStatementHtml).includes("阅读核心政治总论"),
+  "/civic-orderism/ 的价值目标区仍在把它称作“核心政治总论”",
+);
 
 // Phase 2A — institutional landing pages share the V4 shell
 // /theory/ is the research hub: three directions plus three auxiliary
@@ -1724,6 +1777,17 @@ for (const [label, pageFile, expectTitle, expectLabel] of [
     `一级页面 ${label} 仍显示 Quartz breadcrumbs`,
   );
 }
+// About hero is a single positioning line; the full formal definition stays in
+// the next section ("公民秩序主义是什么").
+const aboutHeroHtml =
+  fs
+    .readFileSync(publicHtml("about"), "utf8")
+    .match(/<section class="inst4l-hero">[\s\S]*?<\/section>/)?.[0] ?? "";
+assert(
+  visiblePageText(aboutHeroHtml).includes("以和平承接与保留国家为核心") &&
+    !visiblePageText(aboutHeroHtml).includes("降低政治变化的社会成本"),
+  "/about/ Hero 未压缩为一句定位，仍与“公民秩序主义是什么”重复",
+);
 for (const requiredText of [
   "治理责任，不是荣誉头衔",
   "现阶段正在识别并接触潜在首届董事候选人，但不会通过公开报名直接产生董事资格",
@@ -1821,16 +1885,36 @@ for (const requiredText of [
   "旧体系无法自行改革 → 外部政治承接力量提前形成 → 降低转轨阻力 → 保持国家连续运行 → 逐步进入新的政治秩序",
   "公民秩序主义已经从理论解释进入政治路线与组织承接建设阶段",
   "为这条路线建立长期、稳定、合法、可追责的组织基础",
-  "不革命",
-  "不清算",
-  "和平承接",
-  "国家连续",
-  "依法治理",
-  "长期建设",
 ]) {
   assert(
     startText.includes(requiredText),
     `/start-here 缺少内容：${requiredText}`,
+  );
+}
+// Q03 must reuse the formal five principles verbatim. The assertions are scoped
+// to the Q03 section, so 依法治理 / 长期建设 / 国家连续 stay legitimate as
+// descriptive prose elsewhere on the page, but can never join the principles
+// block as extra first-level principles.
+const startPrinciplesHtml =
+  startHtml.match(/<section><span>03<\/span>[\s\S]*?<\/section>/)?.[0] ?? "";
+const startPrinciplesText = visiblePageText(startPrinciplesHtml);
+const formalPrinciples = civicOrderismConfig.establishedPrinciples.items;
+assert(
+  startPrinciplesHtml.length > 0 &&
+    formalPrinciples.length === 5 &&
+    (startPrinciplesHtml.match(/<li>/g) ?? []).length ===
+      formalPrinciples.length &&
+    formalPrinciples.every(
+      (principle) =>
+        startPrinciplesText.includes(principle.name) &&
+        startPrinciplesText.includes(principle.desc),
+    ),
+  "/start-here 第 03 问必须逐条复用正式五原则（不革命 / 不清算 / 保留国家 / 和平承接 / 提前准备）",
+);
+for (const driftedPrinciple of ["国家连续", "依法治理", "长期建设"]) {
+  assert(
+    !startPrinciplesText.includes(driftedPrinciple),
+    `/start-here 第 03 问把“${driftedPrinciple}”与正式五原则并列成了新的原则`,
   );
 }
 // Start Here stays shorter than the route page: no full transition argument.
