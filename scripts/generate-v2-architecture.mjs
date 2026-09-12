@@ -1899,10 +1899,28 @@ writeInstitutionalContent(
   <section class="inst4l-hero">
     <p class="inst4-eyebrow">RESEARCH &amp; POLITICAL WORK</p>
     <h1 class="inst4l-title">研究</h1>
-    <p class="inst4l-lead">公民秩序主义研究中国政治为什么正在变化、变化可以如何发生，以及变化之后国家如何继续运行。研究不是为评论而评论，而是为一条可执行的政治路线与制度建设建立认识基础。</p>
+    <p class="inst4l-lead">研究中国政治为什么正在变化、变化可以如何发生，以及变化之后国家如何继续运行。</p>
   </section>
 
-  ${inst4lSection("研究框架", "从理解旧秩序，到准备新的政治秩序", inst4lAxesBlock(), "三个方向构成研究的核心阅读逻辑：理解现在，准备转轨，准备未来。")}
+  ${inst4lSection(
+    "RESEARCH DIRECTIONS · 三个研究方向",
+    "公民秩序主义在研究什么？",
+    inst4lAxesBlock(),
+    "研究围绕三个方向展开：理解现在，准备转轨，准备未来。",
+  )}
+
+  <section class="inst4l-section">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">辅助入口</p>
+      <h2 class="inst4l-section__title">按不同方式继续深入</h2>
+      <p class="inst4l-section__desc">三个主方向之外，可以按具体问题、按概念，或按阅读目的继续。</p>
+    </div>
+    <nav class="inst4l-quicklinks" aria-label="辅助入口">
+      <a href="/topics/">专题 · 按具体政治问题继续深入 <span aria-hidden="true">→</span></a>
+      <a href="/concepts/">核心概念 · 按分析模型与概念继续深入 <span aria-hidden="true">→</span></a>
+      <a href="/articles">阅读地图 · 按阅读目的选择文章路径 <span aria-hidden="true">→</span></a>
+    </nav>
+  </section>
 
   ${inst4lSection(
     "精选研究",
@@ -1918,80 +1936,9 @@ writeInstitutionalContent(
     "当前正在推进的重点研究。",
   )}
 
-  ${inst4lSection(
-    "专题",
-    "研究专题",
-    inst4lRows(
-      researchLandingTopicSlugs
-        .map((slug) => topicBySlug.get(slug))
-        .filter((topic) => topic?.status === "published")
-        .map((topic) => {
-          const count = getPrimaryTopicArticles(articles, topic.slug).length;
-          return {
-            href: `/topics/${topic.slug}`,
-            meta: `专题 · ${count} 篇研究`,
-            title: topic.name,
-            desc: topic.description || "",
-          };
-        }),
-    ),
-    "围绕持续性政治问题组织长期研究，而不是按照新闻事件分类。",
-  )}
-
   <div class="inst4l-index-links">
-    <p class="inst4l-link"><a href="/topics/">浏览全部研究专题 <span aria-hidden="true">→</span></a></p>
+    <p class="inst4l-link"><a href="/articles/all">浏览全部研究 <span aria-hidden="true">→</span></a></p>
   </div>
-
-  ${inst4lSection(
-    "核心概念",
-    "核心概念",
-    inst4lRows(
-      researchLandingConceptSlugs
-        .map((slug) => conceptBySlug.get(slug))
-        .filter(
-          (concept) =>
-            concept &&
-            (conceptPublicationStatus(concept) === "published" ||
-              conceptPublicationStatus(concept) === "reviewing"),
-        )
-        .map((concept) => ({
-          href: `/concepts/${concept.slug}`,
-          meta: "",
-          title: concept.name,
-          desc: concept.definition || "",
-        })),
-    ),
-    "公民秩序主义使用这些概念理解中国政治变化与国家秩序。",
-  )}
-
-  <div class="inst4l-index-links">
-    <p class="inst4l-link"><a href="/concepts/">浏览全部核心概念 <span aria-hidden="true">→</span></a></p>
-  </div>
-
-  ${inst4lSection(
-    "阅读",
-    "继续阅读",
-    inst4lRows([
-      {
-        href: "/articles/",
-        meta: "阅读路线",
-        title: "阅读地图",
-        desc: "第一次来到这里，选择一条适合自己的阅读路线。",
-      },
-      {
-        href: "/articles/all",
-        meta: "索引",
-        title: "全部文章",
-        desc: "按栏目浏览全部已发布研究。",
-      },
-      {
-        href: "/china-future/",
-        meta: "研究",
-        title: "中国未来",
-        desc: "政治转型之后，国家如何继续运行，以及新的政治秩序如何建立。",
-      },
-    ]),
-  )}
 </div>`,
 );
 const civicOrderismSection = sectionByName.get("公民秩序主义");

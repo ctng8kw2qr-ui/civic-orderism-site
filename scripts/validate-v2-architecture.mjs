@@ -1670,6 +1670,33 @@ assert(
 );
 
 // Phase 2A — institutional landing pages share the V4 shell
+// /theory/ is the research hub: three directions plus three auxiliary
+// entrances, asserted inside the page body (not inherited from the navigation).
+const theoryHubHtml = fs.readFileSync(publicRouteHtml("theory"), "utf8");
+const theoryHubBody =
+  theoryHubHtml.match(/<article[^>]*>([\s\S]*?)<\/article>/)?.[1] ?? "";
+const theoryHubText = visiblePageText(theoryHubBody);
+assert(
+  theoryHubText.includes("理解现在") &&
+    theoryHubText.includes("准备转轨") &&
+    theoryHubText.includes("准备未来") &&
+    /href="[^"]*china\/?"/.test(theoryHubBody) &&
+    /href="[^"]*civic-orderism\/?"/.test(theoryHubBody) &&
+    /href="[^"]*china-future\/?"/.test(theoryHubBody),
+  "研究页缺少三个研究方向或方向入口链接",
+);
+for (const [label, pattern] of [
+  ["专题", /href="[^"]*topics\/?"/],
+  ["核心概念", /href="[^"]*concepts\/?"/],
+  ["阅读地图", /href="[^"]*articles?"/],
+]) {
+  assert(
+    theoryHubText.includes(label) && pattern.test(theoryHubBody),
+    `研究页缺少辅助入口：${label}`,
+  );
+}
+
+// Phase 2A — institutional landing pages share the V4 shell
 for (const [label, pageFile, expectTitle, expectLabel] of [
   ["about", "about", "关于公民秩序主义", "CURRENT PHASE"],
   ["research", "theory/index", "研究", "RESEARCH &amp; POLITICAL WORK"],
