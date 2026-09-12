@@ -26,7 +26,7 @@ noindex: false
   <div class="inst4l-list">
 <a class="inst4l-row" href="/start-here/">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">入口</span><span class="inst4l-row__title">5分钟了解公民秩序主义</span></span>
-  <span class="inst4l-row__desc">用五个问题建立基础认识。</span>
+  <span class="inst4l-row__desc">快速建立对公民秩序主义的基础认识。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
 <a class="inst4l-row" href="/civic-orderism/this-time-let-china-be-your-pride">

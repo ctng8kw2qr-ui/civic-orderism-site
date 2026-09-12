@@ -946,6 +946,13 @@ assert(
     visiblePageText(heroHtml).includes(site.currentPhase.year),
   "首页首屏机构定位（IDENTITY）或当前阶段状态块缺失",
 );
+// Newcomer entry in the hero: a quiet text link, not a primary CTA.
+assert(
+  /<a[^>]+href="[^"]*start-here\/?"[^>]*>\s*第一次来？5分钟了解公民秩序主义/.test(
+    heroHtml,
+  ),
+  "首页首屏缺少新读者入口（第一次来？5分钟了解公民秩序主义）",
+);
 // SECTION 2 / TRANSITION PATH — the homepage carries the route model only.
 const transitionHtml =
   homepageMainHtml.match(
@@ -1150,8 +1157,10 @@ assert(
     instNavHtml.includes('href="/theory"') &&
     instNavHtml.includes('href="/civic-orderism"') &&
     instNavHtml.includes('href="/preparation"') &&
+    instNavHtml.includes('href="/start-here/"') &&
     instNavHtml.includes('class="inst4-nav__toggle"') &&
     instNavHtml.includes('id="inst4-nav-links"') &&
+    visiblePageText(instNavHtml).includes("5分钟了解") &&
     visiblePageText(instNavHtml).includes("关于") &&
     visiblePageText(instNavHtml).includes("研究") &&
     visiblePageText(instNavHtml).includes("政治路线") &&
@@ -1163,6 +1172,16 @@ assert(
     instNavHtml.includes('href="/articles"') &&
     !instNavHtml.includes('href="/articles/"'),
   "机构 Header（inst4-nav）一级导航未统一为中文或仍残留语言切换",
+);
+// Newcomer-first navigation order: 5分钟了解 → 政治路线 → 研究 → …
+const navStartHereIndex = instNavHtml.indexOf('href="/start-here/"');
+const navRouteIndex = instNavHtml.indexOf('href="/civic-orderism"');
+const navResearchIndex = instNavHtml.indexOf('href="/theory"');
+assert(
+  navStartHereIndex > 0 &&
+    navStartHereIndex < navRouteIndex &&
+    navRouteIndex < navResearchIndex,
+  "主导航未把 /start-here/ 放在政治路线与研究入口之前",
 );
 const footerHtml = homepageHtml.match(/<footer[\s\S]*?<\/footer>/)?.[0] ?? "";
 assert(
@@ -1222,6 +1241,12 @@ assert(
     /href="[^"]*china-future/.test(articlesHtml) &&
     !articlesHtml.includes('class="content-meta"'),
   "阅读地图缺少三条阅读路线（A/B/C）或混入文章元信息",
+);
+// The Start Here entry description must not depend on the section count.
+assert(
+  !articlesText.includes("用五个问题建立基础认识") &&
+    articlesText.includes("快速建立对公民秩序主义的基础认识"),
+  "阅读地图的 Start Here 入口描述未同步为稳定文案",
 );
 // Route D reuses the six-stage route data instead of a second reading order.
 const routeDFrom = articlesHtml.indexOf("路线 D · 和平转轨路线");

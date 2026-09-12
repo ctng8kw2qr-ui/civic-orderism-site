@@ -1132,6 +1132,7 @@ writeContent(
       <p class="inst4-hero__statement">不革命、不清算，在保持国家连续运行的前提下，为中国未来建立一条低阻力、低风险的政治转轨路径。</p>
       <p class="inst4-hero__judgment">${site.hero.judgment}</p>
       <p class="inst4-hero__en" lang="en">A peaceful political transition framework for China's future.</p>
+      <p class="inst4l-link inst4-hero__start"><a href="/start-here/">第一次来？5分钟了解公民秩序主义 <span aria-hidden="true">→</span></a></p>
     </div>
     <div class="inst4-hero__status" aria-label="${site.currentPhase.labelZh}">
       <p class="inst4-hero__status-label">${site.currentPhase.label}<span aria-hidden="true"> · </span>${site.currentPhase.labelZh}</p>
@@ -2913,7 +2914,7 @@ writeInstitutionalContent(
 );
 /* Phase 2B — Reading Map (articles.md): three routes */
 const readingMapRouteA = [
-  { href: "/start-here/", meta: "入口", title: "5分钟了解公民秩序主义", desc: "用五个问题建立基础认识。" },
+  { href: "/start-here/", meta: "入口", title: "5分钟了解公民秩序主义", desc: "快速建立对公民秩序主义的基础认识。" },
   { href: "/civic-orderism/this-time-let-china-be-your-pride", meta: "核心政治总论", title: "这一次，让中国成为你的骄傲", desc: "公民秩序主义为什么存在，最终希望把中国带向哪里。" },
   { href: "/civic-orderism/", meta: "政治路线", title: "公民秩序主义政治路线", desc: "保留国家，改变政治：完整的政治路线总入口。" },
   { href: "/preparation", meta: "当前组织工作", title: "北美非营利法人及首届董事会筹备", desc: "当前最重要、最明确的组织工作。" },

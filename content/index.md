@@ -24,6 +24,7 @@ aliases:
       <p class="inst4-hero__statement">不革命、不清算，在保持国家连续运行的前提下，为中国未来建立一条低阻力、低风险的政治转轨路径。</p>
       <p class="inst4-hero__judgment">保留国家，改变政治。</p>
       <p class="inst4-hero__en" lang="en">A peaceful political transition framework for China's future.</p>
+      <p class="inst4l-link inst4-hero__start"><a href="/start-here/">第一次来？5分钟了解公民秩序主义 <span aria-hidden="true">→</span></a></p>
     </div>
     <div class="inst4-hero__status" aria-label="当前阶段">
       <p class="inst4-hero__status-label">CURRENT PHASE<span aria-hidden="true"> · </span>当前阶段</p>

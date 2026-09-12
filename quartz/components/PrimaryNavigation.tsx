@@ -8,10 +8,11 @@ import style from "./styles/primaryNavigation.scss";
 import script from "./scripts/primaryNavigation.inline";
 
 const navItems = [
-  { label: "关于", href: "/about" },
-  { label: "研究", href: "/theory" },
+  { label: "5分钟了解", href: "/start-here/" },
   { label: "政治路线", href: "/civic-orderism" },
+  { label: "研究", href: "/theory" },
   { label: "董事会筹备", href: "/preparation" },
+  { label: "关于", href: "/about" },
 ];
 
 const researchMenuLinks = [
@@ -21,17 +22,16 @@ const researchMenuLinks = [
   { label: "核心概念", href: "/concepts/" },
 ];
 
-const resourceMenuLinks = [
-  { label: "5分钟了解", href: "/start-here/" },
-  { label: "阅读地图", href: "/articles" },
-];
+// The newcomer entry now lives in the primary navigation, so the RESOURCES
+// group keeps only the reading map.
+const resourceMenuLinks = [{ label: "阅读地图", href: "/articles" }];
 
 const PrimaryNavigation: QuartzComponent = ({
   fileData,
 }: QuartzComponentProps) => {
   const slug = fileData.slug ?? "";
   const isActive = (href: string) => {
-    const target = href.replace(/^\//, "");
+    const target = href.replace(/^\//, "").replace(/\/$/, "");
     if (href === "/") return slug === "index";
     if (target === "about") return slug === "about";
     if (target === "theory") {
