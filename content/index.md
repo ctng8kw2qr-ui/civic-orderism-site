@@ -1,7 +1,7 @@
 ---
 title: "公民秩序主义"
 date: 2026-07-19
-updated: 2026-07-20
+updated: 2026-09-23
 description: "公民秩序主义正在建设中国和平政治转轨的政治路线与组织承接能力，推进北美非营利法人及首届董事会筹备。"
 contentType: "首页"
 status: published
@@ -35,7 +35,25 @@ aliases:
   </div>
 </section>
 
-<!-- SECTION 2 / TRANSITION PATH (the route model, not the full proof) -->
+<!-- SECTION 2 / WHY NOW — why the question is back today -->
+<section class="inst4-whynow" id="why-now">
+  <p class="inst4-eyebrow">WHY NOW</p>
+  <h2 class="inst4-whynow__title">为什么是现在</h2>
+  <div class="inst4-whynow__body">
+    <p>过去几十年，中国社会其实一直有一个非常明确的答案：</p>
+    <p class="inst4-whynow__emphasis">明天会比今天更好。</p>
+    <p>普通人相信收入会增加，企业相信生意还能扩大，年轻人相信机会还会更多，官员也相信只要沿着这套体系继续走，自己的生活和未来就有稳定预期。不同群体得到的东西不同，但都能从继续向前中找到自己的理由。</p>
+    <p>今天真正发生变化的，是越来越多阶层、行业和群体开始重新计算自己的未来。中共也越来越难回答整个社会都在追问的那个问题：</p>
+    <p class="inst4-whynow__emphasis">明天到底会怎样？</p>
+    <p>政治转轨并不是从某一天宣布政治制度改变才突然开始。当旧秩序越来越难继续创造新的受益者，而越来越多社会群体开始承受损失，寻找新的政治答案就已经成为现实需要。</p>
+    <div class="inst4-whynow__closing">
+      <p>政治转轨不是未来某一天才需要面对的问题。</p>
+      <p>它已经成为今天必须开始准备的问题。</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 / TRANSITION PATH (the route model, not the full proof) -->
 <section class="inst4-transition" id="transition">
   <p class="inst4-eyebrow">THE TRANSITION PATH</p>
   <h2 class="inst4-transition__title">政治转轨怎么展开？</h2>
@@ -50,9 +68,25 @@ aliases:
   <p class="inst4l-link"><a href="/civic-orderism/">查看完整和平转轨路线 <span aria-hidden="true">→</span></a></p>
 </section>
 
-<!-- SECTION 3 / READINESS -->
+<!-- SECTION 4 / FUTURE (VALUE GOAL) — what the transition is finally for -->
+<section class="inst4-core-statement" id="future" aria-labelledby="core-political-statement-title">
+  <div class="inst4-core-statement__grid">
+    <div class="inst4-core-statement__identity">
+      <p class="inst4-eyebrow">CORE POLITICAL STATEMENT<span aria-hidden="true"> · </span>价值目标</p>
+      <p class="inst4-core-statement__label">公民秩序主义希望建立一个什么样的中国？</p>
+    </div>
+    <div class="inst4-core-statement__body">
+      <h2 class="inst4-core-statement__title" id="core-political-statement-title">这一次，让中国<wbr>成为你的骄傲</h2>
+      <blockquote class="inst4-core-statement__question"><p>中国，什么时候能让生活在这里的人，因为自己的生活而感到骄傲？</p></blockquote>
+      <p class="inst4-core-statement__judgment">一个国家真正的荣耀，不只出现在新闻报道里，更应该写在每一个普通人的生活里。</p>
+      <p class="inst4-core-statement__cta"><a href="/civic-orderism/this-time-let-china-be-your-pride">阅读价值目标全文 <span aria-hidden="true">→</span></a></p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5 / WHAT WE ARE BUILDING -->
 <section class="inst4-readiness" id="readiness">
-  <p class="inst4-eyebrow">READINESS</p>
+  <p class="inst4-eyebrow">WHAT WE ARE BUILDING</p>
   <h2 class="inst4-readiness__title">公民秩序主义正在建设什么？</h2>
   <div class="inst4-readiness__points">
     <article class="inst4-readiness__point">
@@ -87,55 +121,20 @@ aliases:
   <p class="inst4-readiness__note">新的政治力量必须具备能够被识别、被验证、被追责的政治信誉与承接能力。法律、财务、人员与长期政治责任必须由正式组织承担。</p>
 </section>
 
-<!-- SECTION 4 / CURRENT WORK -->
+<!-- SECTION 6 / CURRENT WORK — what the project is doing right now -->
 <section class="inst4-work" id="current-work">
-  <div class="inst4-work__grid">
-    <div class="inst4-work__intro">
-      <p class="inst4-eyebrow">CURRENT WORK</p>
-      <h2 class="inst4-work__title">建立一个能够承接政治信任的组织</h2>
-      <p class="inst4-work__lead">当前重点，是把中国政治转轨如何展开、如何承接、如何保持国家连续运行讲清楚；与此同时，推进北美非营利法人及首届董事会筹备，为这条政治路线建立长期、稳定、合法、可追责的组织基础。</p>
-      <div class="inst4-work__initiative">
-        <p class="inst4-work__initiative-label">CURRENT INITIATIVE</p>
-        <h3 class="inst4-work__initiative-title">当前组织建设项目：北美非营利法人及首届董事会筹备</h3>
-        <p class="inst4-work__initiative-note">北美非营利法人不是公民秩序主义的政治目标，而是当前阶段承载政治路线、政治信誉与长期组织责任的法律与组织基础设施。</p>
-      </div>
-    </div>
-    <div class="inst4-document">
-      <div class="inst4-document__head">
-        <p class="inst4-document__label">OFFICIAL DOCUMENT</p>
-        <p class="inst4-document__id">CO—2026—002</p>
-      </div>
-      <div class="inst4-document__cover">
-        <p class="inst4-document__org">公民秩序主义</p>
-        <h3 class="inst4-document__title"><a href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">北美非营利法人及<br>首届董事会筹备说明</a></h3>
-        <p class="inst4-document__summary">当前组织建设的正式筹备文件</p>
-      </div>
-      <div class="inst4-document__foot">
-        <p class="inst4-document__meta">2026 · PDF · 22 PAGES</p>
-        <hr class="inst4-document__divider" aria-hidden="true">
-        <p class="inst4-document__cta"><a href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">阅读正式文件 <span aria-hidden="true">→</span></a></p>
-      </div>
-    </div>
+  <p class="inst4-eyebrow">CURRENT WORK</p>
+  <h2 class="inst4-work__title">当前组织建设</h2>
+  <div class="inst4-work__item">
+    <h3 class="inst4-work__item-title">北美非营利法人及首届董事会筹备</h3>
+    <p class="inst4-work__item-status">当前状态：法人筹备中，首届董事会尚未产生。</p>
+    <p class="inst4-work__item-summary">为政治路线、政治信誉和长期责任建立正式、合法、可持续的组织载体。</p>
+    <p class="inst4-work__links"><a href="/preparation">查看筹备工作 <span aria-hidden="true">→</span></a></p>
   </div>
+  <p class="inst4-work__document"><a href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">阅读正式筹备说明（PDF） <span aria-hidden="true">→</span></a></p>
 </section>
 
-<!-- SECTION 5 / VALUE GOAL -->
-<section class="inst4-core-statement" id="future" aria-labelledby="core-political-statement-title">
-  <div class="inst4-core-statement__grid">
-    <div class="inst4-core-statement__identity">
-      <p class="inst4-eyebrow">CORE POLITICAL STATEMENT<span aria-hidden="true"> · </span>价值目标</p>
-      <p class="inst4-core-statement__label">公民秩序主义希望建立一个什么样的中国？</p>
-    </div>
-    <div class="inst4-core-statement__body">
-      <h2 class="inst4-core-statement__title" id="core-political-statement-title">这一次，让中国<wbr>成为你的骄傲</h2>
-      <blockquote class="inst4-core-statement__question"><p>中国，什么时候能让生活在这里的人，因为自己的生活而感到骄傲？</p></blockquote>
-      <p class="inst4-core-statement__judgment">一个国家真正的荣耀，不只出现在新闻报道里，更应该写在每一个普通人的生活里。</p>
-      <p class="inst4-core-statement__cta"><a href="/civic-orderism/this-time-let-china-be-your-pride">阅读价值目标全文 <span aria-hidden="true">→</span></a></p>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 6 / RESEARCH -->
+<!-- SECTION 7 / RESEARCH -->
 <section class="inst4-research" id="research">
   <div class="inst4-research__head">
     <p class="inst4-eyebrow">RESEARCH &amp; POLITICAL WORK</p>

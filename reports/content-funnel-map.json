@@ -1,0 +1,1702 @@
+{
+  "version": "content-website-funnel-v1",
+  "generatedFrom": [
+    "content-migration-map.json",
+    "data/topics.config.json",
+    "reports/content-funnel-curation.json"
+  ],
+  "model": {
+    "L1": "现实入口：现象、经济与生活感受、具体事件判断（承接 X 现实判断）",
+    "L2": "结构判断：这些现象背后的共同机制",
+    "L3": "政治答案：既然如此怎么办（路线）",
+    "L4": "完整体系：制度设计、国家未来、研究与组织建设",
+    "L2->L3": "桥接：从结构判断直接进入政治答案的文章"
+  },
+  "counts": {
+    "articles": 103,
+    "byLevel": {
+      "L3": 13,
+      "L1": 26,
+      "L2": 38,
+      "L4": 24,
+      "L2->L3": 2
+    },
+    "byFunnel": {
+      "Q10": 6,
+      "Q3": 39,
+      "Q6": 15,
+      "Q9": 6,
+      "Q1": 13,
+      "Q2": 19,
+      "Q4": 2,
+      "Q5": 12,
+      "Q8": 12,
+      "Q7": 11
+    }
+  },
+  "entryQuestions": [
+    {
+      "id": "Q1",
+      "question": "为什么越来越多人觉得「明天不会比今天更好」？",
+      "why": "最贴近普通人的生活感受，也是 X 上现实入口最有效的一类内容；读者不需要政治知识就能确认自己在经历什么。",
+      "levels": ["L1", "L2", "L3"]
+    },
+    {
+      "id": "Q2",
+      "question": "为什么经济问题最后一定会变成政治问题？",
+      "why": "把财政、地方债、制造业、社保这些可讨论的经济议题，自然引向「谁来决定、谁来负责」的政治问题。",
+      "levels": ["L1", "L2"]
+    },
+    {
+      "id": "Q3",
+      "question": "中共为什么改不动？为什么还能修补政策，却已经无法完成路线改革？",
+      "why": "网站存量最强的一类内容（中共机制与官僚困局），也是 X 上流量最大的主题；它天然以「那怎么办」收尾。",
+      "levels": ["L1", "L2"]
+    },
+    {
+      "id": "Q4",
+      "question": "如果中共突然出问题，中国第二天怎么办？",
+      "why": "绝大多数读者都想过但没有答案的问题，直接对应「国家连续性」这条路线主张。",
+      "levels": ["L1", "L2", "L3"]
+    },
+    {
+      "id": "Q5",
+      "question": "为什么体制内的人也是政治转轨必须考虑的一部分？",
+      "why": "X 数据里互动最强的桥梁主题（官僚不必倒戈）；它同时回答了「转轨会不会清算到我」。",
+      "levels": ["L1", "L2", "L3"]
+    },
+    {
+      "id": "Q6",
+      "question": "为什么不能等它自己崩，也不能靠革命解决？",
+      "why": "读者最容易把「反对现状」自动等同于革命或等待；这里是公民秩序主义与一般反对叙事的分界点。",
+      "levels": ["L2", "L3"]
+    },
+    {
+      "id": "Q7",
+      "question": "为什么「不清算」不是心软，而是路线的一部分？",
+      "why": "最容易被误读的政治立场；澄清它，读者才会理解路线为什么强调降低阻力而不是报复。",
+      "levels": ["L3", "L4"]
+    },
+    {
+      "id": "Q8",
+      "question": "一个新的政治力量凭什么值得信任？政治信誉怎么证明？",
+      "why": "X 数据显示「为什么需要信誉」互动率高、而直接招募互动率低；这是把认同转成长期关系的关键问题。",
+      "levels": ["L3", "L4"]
+    },
+    {
+      "id": "Q9",
+      "question": "政治变化之后，普通人的生活、工资、养老金、医院、秩序会怎么样？",
+      "why": "读者对「变化」最具体的恐惧；也是「保留国家」这条主张最需要被兑现的部分。",
+      "levels": ["L3", "L4"]
+    },
+    {
+      "id": "Q10",
+      "question": "这跟我有什么关系？我为什么要关心一条还没发生的政治转轨？",
+      "why": "从理解转向参与的最后一道门；决定读者是「读过」还是「留下来」。",
+      "levels": ["L3", "L4"]
+    }
+  ],
+  "paths": [
+    {
+      "id": "Q1",
+      "steps": [
+        {
+          "level": "L1",
+          "target": "china-stage/three-cleans-era-political-economic-cultural-contraction",
+          "role": "确认现实：清人、清账、清声"
+        },
+        {
+          "level": "L2",
+          "target": "theory/ccp-high-fragility-dysfunction",
+          "role": "解释机制：它还在，但越来越靠不住"
+        },
+        {
+          "level": "L3",
+          "target": "/start-here",
+          "role": "政治答案入口：为什么是现在"
+        },
+        {
+          "level": "L3",
+          "target": "/civic-orderism/peaceful-state-transition",
+          "role": "路线：和平转轨要解决什么"
+        }
+      ]
+    },
+    {
+      "id": "Q2",
+      "steps": [
+        {
+          "level": "L1",
+          "target": "china-stage/china-manufacturing-cannot-stop",
+          "role": "具体现象：越能造越难停"
+        },
+        {
+          "level": "L1",
+          "target": "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+          "role": "现实压力：社保、医保、金融"
+        },
+        {
+          "level": "L2",
+          "target": "china/supply-side-reform-state-can-scale-not-discover-future",
+          "role": "结构判断：只能放大产能，不能发现方向"
+        },
+        {
+          "level": "L2->L3",
+          "target": "civic-orderism/information-age-and-political-transition",
+          "role": "桥接：制度与时代失配"
+        },
+        {
+          "level": "L3",
+          "target": "/start-here",
+          "role": "政治答案入口"
+        }
+      ]
+    },
+    {
+      "id": "Q3",
+      "steps": [
+        {
+          "level": "L2",
+          "target": "theory/party-state-structural-failure",
+          "role": "组织诊断总纲"
+        },
+        {
+          "level": "L1",
+          "target": "china/ccp-reform-political-balance-deadlock",
+          "role": "现实机制：改革先破平衡"
+        },
+        {
+          "level": "L2",
+          "target": "china-stage/ccp-second-reform-opening-possibility",
+          "role": "反证：二次改开为什么难"
+        },
+        {
+          "level": "L3",
+          "target": "/start-here",
+          "role": "政治答案入口"
+        }
+      ]
+    },
+    {
+      "id": "Q4",
+      "steps": [
+        {
+          "level": "L1",
+          "target": "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+          "role": "现实风险"
+        },
+        {
+          "level": "L2",
+          "target": "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
+          "role": "结构判断：组织坍塌从制度信任开始"
+        },
+        {
+          "level": "L3",
+          "target": "/civic-orderism/peaceful-state-transition",
+          "role": "答案：国家如何在转轨中不断"
+        },
+        {
+          "level": "L3",
+          "target": "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+          "role": "收束：这条路想解决什么"
+        }
+      ]
+    },
+    {
+      "id": "Q5",
+      "steps": [
+        {
+          "level": "L1",
+          "target": "china/bureaucratic-system-under-purges",
+          "role": "现实：清洗下的官僚系统"
+        },
+        {
+          "level": "L2",
+          "target": "china/ccp-bureaucracy-double-deadlock",
+          "role": "结构判断：抓也失真、不抓也躺平"
+        },
+        {
+          "level": "L2",
+          "target": "china/organization-credit-retired-officials",
+          "role": "机制：终身承诺失效"
+        },
+        {
+          "level": "L3",
+          "target": "/civic-orderism/peaceful-state-transition",
+          "role": "答案：为什么不是官僚的敌人"
+        }
+      ]
+    },
+    {
+      "id": "Q6",
+      "steps": [
+        {
+          "level": "L2",
+          "target": "theory/social-change-dynamics-when-system-no-longer-worth-it",
+          "role": "变化动力学"
+        },
+        {
+          "level": "L2",
+          "target": "theory/overseas-political-movements-fail",
+          "role": "反面案例：为什么另一条路走不通"
+        },
+        {
+          "level": "L2->L3",
+          "target": "theory/internal-change-external-change",
+          "role": "桥接：外部力量为何必要"
+        },
+        {
+          "level": "L3",
+          "target": "civic-orderism/why-civic-orderism-is-easier-to-succeed",
+          "role": "答案：为什么接替难度最小"
+        },
+        {
+          "level": "L3",
+          "target": "/start-here",
+          "role": "回到完整入门"
+        }
+      ]
+    },
+    {
+      "id": "Q7",
+      "steps": [
+        {
+          "level": "L3",
+          "target": "/start-here",
+          "role": "先把五条原则读清楚"
+        },
+        {
+          "level": "L3",
+          "target": "civic-orderism/why-against-moral-narrative",
+          "role": "为什么反对道德叙事与道德审判"
+        },
+        {
+          "level": "L3",
+          "target": "/civic-orderism/peaceful-state-transition",
+          "role": "不清算与和平转轨的关系"
+        },
+        {
+          "level": "L4",
+          "target": "civic-orderism/why-justice-serves-reality",
+          "role": "司法如何服务现实"
+        }
+      ]
+    },
+    {
+      "id": "Q8",
+      "steps": [
+        {
+          "level": "L4",
+          "target": "civic-orderism/why-information-transparency",
+          "role": "公开标准：信息透明"
+        },
+        {
+          "level": "L4",
+          "target": "civic-orderism/why-civic-orderism-emphasizes-experience-and-records",
+          "role": "可核验：履历、经验与记录"
+        },
+        {
+          "level": "L4",
+          "target": "civic-orderism/backend-system-under-civic-orderism",
+          "role": "能力底座：秘书处与留痕系统"
+        },
+        {
+          "level": "L4",
+          "target": "/preparation",
+          "role": "当前正在做的组织载体"
+        }
+      ]
+    },
+    {
+      "id": "Q9",
+      "steps": [
+        {
+          "level": "L3",
+          "target": "/civic-orderism/peaceful-state-transition",
+          "role": "变化发生时国家如何继续运行"
+        },
+        {
+          "level": "L3",
+          "target": "civic-orderism/state-must-rely-on-systems-not-drivers",
+          "role": "为什么依赖系统而不是人"
+        },
+        {
+          "level": "L3",
+          "target": "civic-orderism/why-emphasize-reciprocity-and-equality",
+          "role": "普通人的位置：对等而不是照顾"
+        },
+        {
+          "level": "L4",
+          "target": "/china-future/",
+          "role": "长期方向：中国未来"
+        }
+      ]
+    },
+    {
+      "id": "Q10",
+      "steps": [
+        {
+          "level": "L3",
+          "target": "civic-orderism/this-time-let-china-be-your-pride",
+          "role": "为什么要做这件事"
+        },
+        {
+          "level": "L3",
+          "target": "/start-here",
+          "role": "5 分钟看懂整条路线"
+        },
+        {
+          "level": "L3",
+          "target": "civic-orderism/what-civic-orderism-ultimately-solves",
+          "role": "它最终要解决什么"
+        },
+        {
+          "level": "L4",
+          "target": "/preparation",
+          "role": "现在做到哪一步"
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "article": "civic-orderism/this-time-let-china-be-your-pride",
+      "title": "这一次，让中国成为你的骄傲",
+      "date": "2026-08-26",
+      "section": "核心政治总论",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L3",
+      "question": "我们最终想要一个什么样的中国？",
+      "previous": "/start-here",
+      "next": "/civic-orderism/",
+      "funnel": ["Q10"]
+    },
+    {
+      "article": "china/chengguan-power-logic",
+      "title": "城管背后的权力逻辑：中共如何制度化统治，又如何灵活化治理",
+      "date": "2026-08-25",
+      "section": "解析中共",
+      "topic": "中共统治术",
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "执法的日常为什么让人无力？",
+      "previous": "X 现实入口",
+      "next": "china/what-is-the-ccp-becoming",
+      "funnel": ["Q3"]
+    },
+    {
+      "article": "civic-orderism/civic-orderism-overview",
+      "title": "公民秩序主义总论：保留国家，改变政治",
+      "date": "2026-08-25",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L3",
+      "question": "公民秩序主义到底是什么？",
+      "previous": "/start-here",
+      "next": "/civic-orderism/peaceful-state-transition",
+      "funnel": ["Q6", "Q9"]
+    },
+    {
+      "article": "china/what-is-the-ccp-becoming",
+      "title": "中共正在变成什么？",
+      "date": "2026-08-25",
+      "section": "解析中共",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L2",
+      "question": "中共正在变成一个什么样的组织？",
+      "previous": "L1 现实入口",
+      "next": "/start-here",
+      "funnel": ["Q1", "Q3"]
+    },
+    {
+      "article": "china/party-state-stress-neither-party-nor-state",
+      "title": "既不党，也不国：党国体制最终会变成什么？",
+      "date": "2026-08-22",
+      "section": "解析中共",
+      "topic": "中共统治术",
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "为什么中共既不像党，也不像国家？",
+      "previous": "china/what-is-the-ccp-becoming",
+      "next": "/start-here",
+      "funnel": ["Q3"]
+    },
+    {
+      "article": "china/security-led-governance-model",
+      "title": "安全化、再集中与治理边界",
+      "date": "2026-08-12",
+      "section": "解析中共",
+      "topic": "中共统治术",
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "为什么安全成了治理的第一原则？",
+      "previous": "china/what-happens-when-security-becomes-the-top-priority",
+      "next": "/start-here",
+      "funnel": ["Q3"]
+    },
+    {
+      "article": "china/an-era-change-beginning-in-the-united-states",
+      "title": "一场起始于美国的时代变革",
+      "date": "2026-08-11",
+      "section": "解析中共",
+      "topic": "二次改开",
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "外部世界正在发生什么同类变化？",
+      "previous": "X 现实入口",
+      "next": "theory/us-industrial-system-cannot-carry-information-age",
+      "funnel": ["Q2"]
+    },
+    {
+      "article": "china/security-is-redefining-china",
+      "title": "安全，正在重新定义中国",
+      "date": "2026-08-10",
+      "section": "解析中共",
+      "topic": "中共统治术",
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "安全化如何重新定义中国社会？",
+      "previous": "L1 现实入口",
+      "next": "china/security-led-governance-model",
+      "funnel": ["Q3"]
+    },
+    {
+      "article": "china/why-ccp-feels-less-secure-when-everyone-claims-loyalty",
+      "title": "当所有人都说忠诚：中共为什么反而越来越没有安全感",
+      "date": "2026-08-10",
+      "section": "解析中共",
+      "topic": null,
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "为什么表态越多、它越不安全？",
+      "previous": "X 现实入口",
+      "next": "china/security-is-redefining-china",
+      "funnel": ["Q3"]
+    },
+    {
+      "article": "china/what-happens-when-security-becomes-the-top-priority",
+      "title": "中共全面进入安全叙事后，中国会怎么样？",
+      "date": "2026-08-10",
+      "section": "解析中共",
+      "topic": "中共统治术",
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "当安全排第一，现实里会发生什么？",
+      "previous": "X 现实入口",
+      "next": "china/security-led-governance-model",
+      "funnel": ["Q3"]
+    },
+    {
+      "article": "civic-orderism/north-america-nonprofit-board-preparation-manifesto",
+      "title": "公民秩序主义北美非营利法人及董事会筹备宣言",
+      "date": "2026-08-05",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L4",
+      "question": "为什么要先建立组织载体？",
+      "previous": "/civic-orderism/",
+      "next": "/preparation",
+      "funnel": ["Q9"]
+    },
+    {
+      "article": "civic-orderism/possibility-of-peaceful-political-transition-in-china",
+      "title": "中国和平政治转型的可能性",
+      "date": "2026-08-05",
+      "section": "公民秩序主义",
+      "topic": "中国政治转型",
+      "readingLevel": "基础",
+      "level": "L3",
+      "question": "和平转轨为什么是可能的？",
+      "previous": "/start-here",
+      "next": "/civic-orderism/peaceful-state-transition",
+      "funnel": ["Q6"]
+    },
+    {
+      "article": "china/route-transition-why-ccp-keeps-purging-officials",
+      "title": "路线转换：中共为什么必须不断清洗自己的官员",
+      "date": "2026-07-31",
+      "section": "解析中共",
+      "topic": "三清时代",
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "为什么反腐最后变成持续清洗？",
+      "previous": "X 现实入口",
+      "next": "china/why-expulsion-from-party-becomes-standard-ending",
+      "funnel": ["Q3"]
+    },
+    {
+      "article": "china/supply-side-reform-state-can-scale-not-discover-future",
+      "title": "供给侧改革之后：国家能放大产业，却未必能发现未来",
+      "date": "2026-07-28",
+      "section": "解析中共",
+      "topic": "中共统治术",
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "为什么政策只能放大产能，不能发现方向？",
+      "previous": "china/chicken-and-cage",
+      "next": "/start-here",
+      "funnel": ["Q2"]
+    },
+    {
+      "article": "civic-orderism/information-age-and-political-transition",
+      "title": "信息化时代与政治转型",
+      "date": "2026-07-24",
+      "section": "公民秩序主义",
+      "topic": "中国政治转型",
+      "readingLevel": "基础",
+      "level": "L2->L3",
+      "question": "旧制度为什么和今天的社会结构不再匹配？",
+      "previous": "/start-here",
+      "next": "/civic-orderism/",
+      "funnel": ["Q2"]
+    },
+    {
+      "article": "china/xi-successor-and-bureaucratic-accountability",
+      "title": "习近平到底有没有接班人？",
+      "date": "2026-07-21",
+      "section": "解析中共",
+      "topic": "习近平时代",
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "接班人问题为什么又被讨论？",
+      "previous": "X 现实入口",
+      "next": "china/xi-succession-crisis-gray-rhino",
+      "funnel": ["Q3"]
+    },
+    {
+      "article": "civic-orderism/peaceful-state-transition",
+      "title": "国家如何平稳转轨：公民秩序主义不是中共官僚的敌人",
+      "date": "2026-07-19",
+      "section": "公民秩序主义",
+      "topic": "中国政治转型",
+      "readingLevel": "基础",
+      "level": "L3",
+      "question": "国家怎样在转轨过程中不断？",
+      "previous": "/start-here",
+      "next": "/civic-orderism/",
+      "funnel": ["Q4", "Q5", "Q8"]
+    },
+    {
+      "article": "china-stage/three-cleans-era-political-economic-cultural-contraction",
+      "title": "时代何至如此：政治清人，经济清账，文化清声",
+      "date": "2026-07-19",
+      "section": "中国未来",
+      "topic": "三清时代",
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "清人、清账、清声是一种什么状态？",
+      "previous": "X 现实入口",
+      "next": "china/route-transition-why-ccp-keeps-purging-officials",
+      "funnel": ["Q1"]
+    },
+    {
+      "article": "china-stage/ccp-second-reform-opening-possibility",
+      "title": "中共还有没有二次改开的可能？",
+      "date": "2026-07-19",
+      "section": "中国未来",
+      "topic": "二次改开",
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "还会有第二次改革开放吗？",
+      "previous": "china/ccp-2018-new-reform-opening",
+      "next": "/start-here",
+      "funnel": ["Q3"]
+    },
+    {
+      "article": "china/why-expulsion-from-party-becomes-standard-ending",
+      "title": "为什么“开除党籍”正在成为中共处理高级干部的标准结局？",
+      "date": "2026-07-14",
+      "section": "解析中共",
+      "topic": "三清时代",
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "为什么开除党籍成了标准结局？",
+      "previous": "X 现实入口",
+      "next": "china/ccp-bureaucracy-historical-bill",
+      "funnel": ["Q3"]
+    },
+    {
+      "article": "china/why-ccp-cannot-reduce-grassroots-burden",
+      "title": "中共为什么永远无法真正为基层减负？",
+      "date": "2026-07-12",
+      "section": "解析中共",
+      "topic": "官僚系统",
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "为什么基层负担越减越重？",
+      "previous": "X 现实入口",
+      "next": "china/ccp-bureaucracy-double-deadlock",
+      "funnel": ["Q2"]
+    },
+    {
+      "article": "china/mao-death-release-xi-death-weightlessness",
+      "title": "如果习近平去世会发生什么？",
+      "date": "2026-07-11",
+      "section": "解析中共",
+      "topic": "习近平时代",
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "毛之后的松动会在习之后重演吗？",
+      "previous": "X 现实入口",
+      "next": "china/xi-succession-crisis-gray-rhino",
+      "funnel": ["Q3"]
+    },
+    {
+      "article": "china/ccp-2018-xi-era-local-growth-space",
+      "title": "中共2018：习近平元年",
+      "date": "2026-07-10",
+      "section": "解析中共",
+      "topic": "习近平时代",
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "2018 年之后地方还剩多少空间？",
+      "previous": "X 现实入口",
+      "next": "china/supply-side-reform-state-can-scale-not-discover-future",
+      "funnel": ["Q2"]
+    },
+    {
+      "article": "china/why-ccp-will-not-relax-party-pressure",
+      "title": "中共为什么不会真正放松党内高压？",
+      "date": "2026-07-09",
+      "section": "解析中共",
+      "topic": "中共统治术",
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "它为什么会持续加压而不是松绑？",
+      "previous": "china/ccp-2018-xi-era-local-growth-space",
+      "next": "/start-here",
+      "funnel": ["Q3"]
+    },
+    {
+      "article": "civic-orderism/why-civic-orderism",
+      "title": "为什么是公民秩序主义？",
+      "date": "2026-07-08",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L3",
+      "question": "为什么需要一条政治路线，而不只是价值？",
+      "previous": "/start-here",
+      "next": "/civic-orderism/civic-orderism-overview",
+      "funnel": ["Q6", "Q10"]
+    },
+    {
+      "article": "china/ccp-no-real-base",
+      "title": "中共最大的秘密：它根本没有基本盘",
+      "date": "2026-07-01",
+      "section": "解析中共",
+      "topic": null,
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "它为什么越来越没有稳定的社会基础？",
+      "previous": "china/emotional-link-breakdown-and-regime-collapse",
+      "next": "/start-here",
+      "funnel": ["Q1", "Q3"]
+    },
+    {
+      "article": "china-stage/china-manufacturing-cannot-stop",
+      "title": "中国制造业不是造不出来，而是停不下来",
+      "date": "2026-06-16",
+      "section": "中国未来",
+      "topic": "地方财政",
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "制造业为什么停不下来也赚不到钱？",
+      "previous": "X 现实入口",
+      "next": "china/supply-side-reform-state-can-scale-not-discover-future",
+      "funnel": ["Q2"]
+    },
+    {
+      "article": "theory/democracy-still-exists-but-cannot-penetrate-reality",
+      "title": "民主还在，但越来越难穿透现实",
+      "date": "2026-06-13",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L2",
+      "question": "民主为什么还在，却越来越穿透不了现实？",
+      "previous": "L1 现实入口",
+      "next": "theory/end-of-party-politics-in-information-age",
+      "funnel": ["Q2"]
+    },
+    {
+      "article": "civic-orderism/state-must-rely-on-systems-not-drivers",
+      "title": "国家不能只靠驾驶员：为什么现代治理必须依赖系统",
+      "date": "2026-06-08",
+      "section": "公民秩序主义",
+      "topic": "中国政治转型",
+      "readingLevel": "基础",
+      "level": "L3",
+      "question": "为什么国家不能只靠「驾驶员」？",
+      "previous": "/start-here",
+      "next": "/civic-orderism/peaceful-state-transition",
+      "funnel": ["Q4", "Q8"]
+    },
+    {
+      "article": "theory/end-of-party-politics-in-information-age",
+      "title": "政党的历史终结：信息化时代为什么不再需要政党垄断政治入口",
+      "date": "2026-06-08",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L2",
+      "question": "政党政治为什么正在失去入口垄断？",
+      "previous": "theory/democracy-still-exists-but-cannot-penetrate-reality",
+      "next": "/start-here",
+      "funnel": ["Q2", "Q6"]
+    },
+    {
+      "article": "china/political-machine-rewards-and-limits",
+      "title": "机器的奖赏与机器的尽头",
+      "date": "2026-05-30",
+      "section": "解析中共",
+      "topic": "中共统治术",
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "这台政治机器奖励什么、又卡在哪里？",
+      "previous": "china/ccp-power-network-not-line",
+      "next": "/start-here",
+      "funnel": ["Q3"]
+    },
+    {
+      "article": "china/emotional-link-breakdown-and-regime-collapse",
+      "title": "情感链接的断裂与体制坍塌机制",
+      "date": "2026-05-30",
+      "section": "解析中共",
+      "topic": "秩序蒸发",
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "社会与体制之间的情感联结为什么会断裂？",
+      "previous": "L1 现实入口",
+      "next": "china/ccp-no-real-base",
+      "funnel": ["Q1", "Q3"]
+    },
+    {
+      "article": "theory/social-change-dynamics-when-system-no-longer-worth-it",
+      "title": "社会变革动力学：当所有人都觉得“不值了”",
+      "date": "2026-05-30",
+      "section": "公民秩序主义",
+      "topic": "秩序蒸发",
+      "readingLevel": "基础",
+      "level": "L2",
+      "question": "当所有人都觉得「不值了」，变化会怎样发生？",
+      "previous": "L1 现实入口",
+      "next": "/start-here",
+      "funnel": ["Q1", "Q6"]
+    },
+    {
+      "article": "china/party-power-logic-and-ccp-goal-vacuum",
+      "title": "政党存在的权力逻辑与中共的目标困境",
+      "date": "2026-05-30",
+      "section": "解析中共",
+      "topic": "中共统治术",
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "权力逻辑与目标真空同时存在意味着什么？",
+      "previous": "china/political-machine-rewards-and-limits",
+      "next": "/start-here",
+      "funnel": ["Q3"]
+    },
+    {
+      "article": "theory/ccp-completed-historical-task-refuses-exit",
+      "title": "中共完成了历史任务，但拒绝被历史淘汰",
+      "date": "2026-05-30",
+      "section": "解析中共",
+      "topic": null,
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "它完成了历史任务，为什么仍不肯退场？",
+      "previous": "theory/party-state-structural-failure",
+      "next": "/start-here",
+      "funnel": ["Q3", "Q6"]
+    },
+    {
+      "article": "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
+      "title": "组织的坍塌，始于制度信任的瓦解",
+      "date": "2026-05-30",
+      "section": "公民秩序主义",
+      "topic": "秩序蒸发",
+      "readingLevel": "基础",
+      "level": "L2",
+      "question": "组织坍塌为什么从制度信任瓦解开始？",
+      "previous": "china/organization-credit-retired-officials",
+      "next": "/start-here",
+      "funnel": ["Q3", "Q9"]
+    },
+    {
+      "article": "china/industrial-system-failure-in-information-age",
+      "title": "中共基于工业化的社会制度，在信息化时代的必然失效",
+      "date": "2026-05-28",
+      "section": "解析中共",
+      "topic": null,
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "工业型体系为什么在信息时代失灵？",
+      "previous": "china/information-age-impact-on-ccp-mechanisms",
+      "next": "/start-here",
+      "funnel": ["Q2"]
+    },
+    {
+      "article": "china/taiwan-war-controllable-escalation-illusion",
+      "title": "台海战争的真正危险：可控升级的幻觉",
+      "date": "2026-05-19",
+      "section": "解析中共",
+      "topic": null,
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "台海为什么不是「可控升级」？",
+      "previous": "X 现实入口",
+      "next": "china/taiwan-war-risk",
+      "funnel": ["Q1"]
+    },
+    {
+      "article": "china/information-age-impact-on-ccp-mechanisms",
+      "title": "信息化时代冲击中共的机制",
+      "date": "2026-05-19",
+      "section": "解析中共",
+      "topic": null,
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "信息化怎样冲击它的运行机制？",
+      "previous": "L1 现实入口",
+      "next": "china/industrial-system-failure-in-information-age",
+      "funnel": ["Q2", "Q3"]
+    },
+    {
+      "article": "china/bureaucratic-system-under-purges",
+      "title": "高位清洗如何改变中共官僚系统",
+      "date": "2026-05-17",
+      "section": "解析中共",
+      "topic": "官僚系统",
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "官僚系统在持续清洗里变成了什么样？",
+      "previous": "X 现实入口",
+      "next": "china/ccp-bureaucracy-double-deadlock",
+      "funnel": ["Q3", "Q5"]
+    },
+    {
+      "article": "civic-orderism/why-committees-cannot-directly-take-cases",
+      "title": "为什么委员会不能直接接案：公民秩序主义中“入口权”与“判断权”必须分开",
+      "date": "2026-05-17",
+      "section": "制度设计",
+      "topic": null,
+      "readingLevel": "制度",
+      "level": "L4",
+      "question": "为什么入口权与判断权必须分开？",
+      "previous": "/civic-orderism/",
+      "next": "civic-orderism/what-is-committee-system",
+      "funnel": ["Q7"]
+    },
+    {
+      "article": "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+      "title": "如果你只读一篇：公民秩序主义到底想解决什么",
+      "date": "2026-05-14",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L3",
+      "question": "如果只读一篇，公民秩序主义想解决什么？",
+      "previous": "/start-here",
+      "next": "/civic-orderism/",
+      "funnel": ["Q6", "Q10"]
+    },
+    {
+      "article": "theory/why-party-politics-is-becoming-a-low-dimensional-function",
+      "title": "为什么政党政治越来越像低维函数",
+      "date": "2026-05-14",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L2",
+      "question": "政党政治为什么越来越像低维函数？",
+      "previous": "theory/end-of-party-politics-in-information-age",
+      "next": "/start-here",
+      "funnel": ["Q2", "Q6"]
+    },
+    {
+      "article": "china/ccp-from-faith-community-to-black-box-post",
+      "title": "从“信仰共同体”到“黑箱岗位”：中共内部成员心态的三次断裂",
+      "date": "2026-05-13",
+      "section": "解析中共",
+      "topic": null,
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "党内成员心态经历了哪三次断裂？",
+      "previous": "X 现实入口",
+      "next": "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
+      "funnel": ["Q5"]
+    },
+    {
+      "article": "china/Macro-Narratives,-Opportunity-Incentives,-and-High-Fragility",
+      "title": "宏观叙事、机会激励与高脆弱态：中共为何更可能“失灵”而非“倒台”",
+      "date": "2026-05-13",
+      "section": "解析中共",
+      "topic": "秩序蒸发",
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "为什么它更可能失灵，而不是倒台？",
+      "previous": "china/ccp-no-real-base",
+      "next": "/start-here",
+      "funnel": ["Q3", "Q6"]
+    },
+    {
+      "article": "china/ccp-power-network-not-line",
+      "title": "中共的权力布局不是一条线，而是一张网",
+      "date": "2026-05-13",
+      "section": "解析中共",
+      "topic": "官僚系统",
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "权力为什么是一张网，而不是一条线？",
+      "previous": "L1 现实入口",
+      "next": "china/political-machine-rewards-and-limits",
+      "funnel": ["Q5"]
+    },
+    {
+      "article": "theory/us-industrial-system-cannot-carry-information-age",
+      "title": "美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代",
+      "date": "2026-05-12",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L2",
+      "question": "连美国也承载不了信息时代吗？",
+      "previous": "china/an-era-change-beginning-in-the-united-states",
+      "next": "/start-here",
+      "funnel": ["Q2"]
+    },
+    {
+      "article": "theory/us-separation-of-powers-integrative-capacity-crisis",
+      "title": "美国三权分立的真正危机，不是分权，而是失去统合能力",
+      "date": "2026-05-12",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L4",
+      "question": "三权分立为什么会失去统合能力？",
+      "previous": "theory/us-industrial-system-cannot-carry-information-age",
+      "next": "theory/information-age-erodes-us-integrative-capacity",
+      "funnel": ["Q2"]
+    },
+    {
+      "article": "theory/information-age-erodes-us-integrative-capacity",
+      "title": "为什么信息化时代正在系统性瓦解美国的统合能力",
+      "date": "2026-05-12",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L4",
+      "question": "信息化怎样系统性瓦解统合能力？",
+      "previous": "theory/us-separation-of-powers-integrative-capacity-crisis",
+      "next": "/civic-orderism/",
+      "funnel": ["Q2"]
+    },
+    {
+      "article": "theory/us-supreme-court-partisan-final-battleground",
+      "title": "美国最高法院为何滑向党争终局战场",
+      "date": "2026-05-11",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L4",
+      "question": "最高法院为什么滑向党争终局战场？",
+      "previous": "theory/us-separation-of-powers-integrative-capacity-crisis",
+      "next": "/civic-orderism/",
+      "funnel": ["Q2"]
+    },
+    {
+      "article": "theory/costly-industrial-governance-information-age",
+      "title": "一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价",
+      "date": "2026-05-11",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L2",
+      "question": "工业时代的治理方式为什么越来越贵？",
+      "previous": "china/an-era-change-beginning-in-the-united-states",
+      "next": "theory/us-industrial-system-cannot-carry-information-age",
+      "funnel": ["Q2"]
+    },
+    {
+      "article": "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+      "title": "中共崩解的三大导火索：社保、医保与金融系统",
+      "date": "2026-05-11",
+      "section": "解析中共",
+      "topic": "地方财政",
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "社保、医保、金融为什么会成为导火索？",
+      "previous": "X 现实入口",
+      "next": "china/ccp-no-real-base",
+      "funnel": ["Q1", "Q2"]
+    },
+    {
+      "article": "china/ccp-2018-new-reform-opening",
+      "title": "2018新“改革开放”：从开放社会到封闭风险",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": "二次改开",
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "2018 年那次「新改革开放」为什么转向封闭？",
+      "previous": "X 现实入口",
+      "next": "china-stage/ccp-second-reform-opening-possibility",
+      "funnel": ["Q2", "Q3"]
+    },
+    {
+      "article": "china/propaganda-system-hollowing-out",
+      "title": "不是不会宣传，而是不敢承担：中宣系统“翻车常态化”背后的空心化逻辑",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": "中共统治术",
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "宣传系统为什么开始常态化翻车？",
+      "previous": "X 现实入口",
+      "next": "china/ccp-no-real-base",
+      "funnel": ["Q1", "Q3"]
+    },
+    {
+      "article": "china/ccp-bureaucracy-double-deadlock",
+      "title": "不抓人就躺平，一抓人就失真：中共官僚体系为何陷入双重死结",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": "官僚系统",
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "官僚系统为什么陷入「抓也失真、不抓也躺平」的双重死结？",
+      "previous": "china/bureaucratic-system-under-purges",
+      "next": "/start-here",
+      "funnel": ["Q3", "Q5"]
+    },
+    {
+      "article": "china/when-high-ranking-officials-are-no-longer-safe",
+      "title": "当高位者也不再安全：这不是普通反腐，而是权力的深度焦虑",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": "三清时代",
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "为什么高位者也不再安全？",
+      "previous": "X 现实入口",
+      "next": "china/route-transition-why-ccp-keeps-purging-officials",
+      "funnel": ["Q3", "Q5"]
+    },
+    {
+      "article": "china/ccp-bureaucracy-historical-bill",
+      "title": "当历史总账开始结算：高刚性官僚体系如何把系统性责任层层压向中基层",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": "三清时代",
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "历史总账为什么会层层压向中基层？",
+      "previous": "X 现实入口",
+      "next": "china/ccp-bureaucracy-double-deadlock",
+      "funnel": ["Q3", "Q5"]
+    },
+    {
+      "article": "theory/party-state-structural-failure",
+      "title": "党国系统的结构性失效：一个组织诊断",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": null,
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "党国系统为什么是结构性失效？",
+      "previous": "china/what-is-the-ccp-becoming",
+      "next": "/start-here",
+      "funnel": ["Q3", "Q5"]
+    },
+    {
+      "article": "civic-orderism/backend-system-under-civic-orderism",
+      "title": "公民秩序主义对后台系统的重视：为什么培训、秘书处、专业事务与留痕系统，是现代国家真正的底座",
+      "date": "2026-05-10",
+      "section": "制度设计",
+      "topic": null,
+      "readingLevel": "制度",
+      "level": "L4",
+      "question": "为什么培训、秘书处与留痕系统才是现代国家的底座？",
+      "previous": "/civic-orderism/",
+      "next": "civic-orderism/state-operation-process-under-civic-orderism",
+      "funnel": ["Q8"]
+    },
+    {
+      "article": "civic-orderism/civic-orderism-manual",
+      "title": "公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案",
+      "date": "2026-05-10",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L3",
+      "question": "整套方案的长版本是什么样的？",
+      "previous": "/start-here",
+      "next": "/civic-orderism/civic-orderism-overview",
+      "funnel": ["Q10"]
+    },
+    {
+      "article": "civic-orderism/why-focus-on-invisible-power-nodes",
+      "title": "公民秩序主义为什么更加注意现代社会的隐形权力节点（社会组织、平台企业）",
+      "date": "2026-05-10",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L4",
+      "question": "为什么要关注平台与社会组织这类隐形权力节点？",
+      "previous": "/civic-orderism/",
+      "next": "civic-orderism/public-politics-without-party-dominance",
+      "funnel": ["Q8"]
+    },
+    {
+      "article": "civic-orderism/why-weaken-party-politics",
+      "title": "公民秩序主义为什么刻意弱化政党政治",
+      "date": "2026-05-10",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L4",
+      "question": "为什么刻意弱化政党政治？",
+      "previous": "/civic-orderism/",
+      "next": "civic-orderism/public-politics-without-party-dominance",
+      "funnel": ["Q6"]
+    },
+    {
+      "article": "civic-orderism/election-logic-under-civic-orderism",
+      "title": "公民秩序主义下的选举逻辑：它与传统选举的区别，以及制度优势",
+      "date": "2026-05-10",
+      "section": "制度设计",
+      "topic": null,
+      "readingLevel": "制度",
+      "level": "L4",
+      "question": "这里的选举逻辑和传统选举有什么不同？",
+      "previous": "/civic-orderism/",
+      "next": "civic-orderism/why-elections-reject-political-donations",
+      "funnel": ["Q8"]
+    },
+    {
+      "article": "civic-orderism/top-level-power-structure-under-civic-orderism",
+      "title": "公民秩序主义下顶层权力结构的布局：为什么国家最高层不能只有一个权力中心，也不能碎片化成互相消耗的多头政治",
+      "date": "2026-05-10",
+      "section": "制度设计",
+      "topic": null,
+      "readingLevel": "制度",
+      "level": "L4",
+      "question": "顶层权力为什么不能只有一个中心，也不能多头消耗？",
+      "previous": "/civic-orderism/",
+      "next": "civic-orderism/why-dual-track-committee-administration",
+      "funnel": ["Q8"]
+    },
+    {
+      "article": "civic-orderism/state-operation-process-under-civic-orderism",
+      "title": "公民秩序主义下国家运行的大概流程：从普通人的问题，到国家的判断、执行与纠偏",
+      "date": "2026-05-10",
+      "section": "制度设计",
+      "topic": null,
+      "readingLevel": "制度",
+      "level": "L4",
+      "question": "国家运行的大致流程是什么？",
+      "previous": "/civic-orderism/",
+      "next": "civic-orderism/backend-system-under-civic-orderism",
+      "funnel": ["Q8"]
+    },
+    {
+      "article": "civic-orderism/what-civic-orderism-ultimately-solves",
+      "title": "公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系",
+      "date": "2026-05-10",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L3",
+      "question": "它最终要解决的到底是什么？",
+      "previous": "/start-here",
+      "next": "/civic-orderism/",
+      "funnel": ["Q10"]
+    },
+    {
+      "article": "theory/overseas-political-movements-fail",
+      "title": "海外政治运动为什么一事无成？",
+      "date": "2026-05-10",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L2",
+      "question": "海外政治运动为什么一事无成？",
+      "previous": "L1 现实入口",
+      "next": "/start-here",
+      "funnel": ["Q6", "Q10"]
+    },
+    {
+      "article": "theory/high-rigidity-system-ccp",
+      "title": "解析高刚性体制：中共无以为继的结构性根因",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": null,
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "高刚性体制为什么无以为继？",
+      "previous": "china/why-ccp-will-not-relax-party-pressure",
+      "next": "/start-here",
+      "funnel": ["Q3"]
+    },
+    {
+      "article": "theory/internal-change-external-change",
+      "title": "内变引外变：现代政治为何走到十字路口",
+      "date": "2026-05-10",
+      "section": "公民秩序主义",
+      "topic": "中国政治转型",
+      "readingLevel": "基础",
+      "level": "L2->L3",
+      "question": "为什么真正的变化只能由外部力量引发？",
+      "previous": "theory/party-state-structural-failure",
+      "next": "/start-here",
+      "funnel": ["Q6"]
+    },
+    {
+      "article": "civic-orderism/public-politics-without-party-dominance",
+      "title": "弱化政党政治之后，公共政治如何继续存在",
+      "date": "2026-05-10",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L4",
+      "question": "弱化政党政治之后，公共政治靠什么存在？",
+      "previous": "/civic-orderism/",
+      "next": "civic-orderism/why-proposals-from-social-organizations",
+      "funnel": ["Q8"]
+    },
+    {
+      "article": "china/elite-sandification-ming-bureaucrats-ccp",
+      "title": "沙化的忠诚：中共精英原子化与明代士大夫的历史镜像",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": null,
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "精英为什么会沙化？明代士大夫的镜像说明了什么？",
+      "previous": "china/ccp-power-network-not-line",
+      "next": "/start-here",
+      "funnel": ["Q5"]
+    },
+    {
+      "article": "civic-orderism/what-is-committee-system",
+      "title": "什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构",
+      "date": "2026-05-10",
+      "section": "制度设计",
+      "topic": null,
+      "readingLevel": "制度",
+      "level": "L4",
+      "question": "委员会体系是什么、怎么运行？",
+      "previous": "/civic-orderism/",
+      "next": "civic-orderism/committee-administration-opposite-incentives",
+      "funnel": ["Q7"]
+    },
+    {
+      "article": "theory/ccp-high-fragility-dysfunction",
+      "title": "它还在，但越来越靠不住：为什么中共更可能“失灵”而非“倒台”",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": "秩序蒸发",
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "为什么它还在，却越来越靠不住？",
+      "previous": "china/Macro-Narratives,-Opportunity-Incentives,-and-High-Fragility",
+      "next": "/start-here",
+      "funnel": ["Q1", "Q3"]
+    },
+    {
+      "article": "china/taiwan-war-risk",
+      "title": "台海是否会走向战争：基于战争四驱动的组织决策风险评估",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": null,
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "台海走向战争的风险怎么评估？",
+      "previous": "X 现实入口",
+      "next": "china/taiwan-war-controllable-escalation-illusion",
+      "funnel": ["Q1"]
+    },
+    {
+      "article": "china/diplomacy-root",
+      "title": "外交的根源：从中共内政逻辑看其外交激进化",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": null,
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "外交激进化为什么能从内政逻辑解释？",
+      "previous": "X 现实入口",
+      "next": "china/why-ccp-will-not-relax-party-pressure",
+      "funnel": ["Q1"]
+    },
+    {
+      "article": "china/pla-political-subject-myth",
+      "title": "外界对解放军的迷思：把“军”当成政治主体，是第一层误判",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": null,
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "为什么把军队当成政治主体是第一层误判？",
+      "previous": "X 现实入口",
+      "next": "china/ccp-power-network-not-line",
+      "funnel": ["Q3"]
+    },
+    {
+      "article": "civic-orderism/committee-administration-opposite-incentives",
+      "title": "委员会与行政机关激励结构相反的意义：为什么公民秩序主义必须把“做事的人”和“看事的人”分开",
+      "date": "2026-05-10",
+      "section": "制度设计",
+      "topic": null,
+      "readingLevel": "制度",
+      "level": "L4",
+      "question": "为什么必须把「做事的人」和「看事的人」分开？",
+      "previous": "/civic-orderism/",
+      "next": "civic-orderism/why-dual-track-committee-administration",
+      "funnel": ["Q7"]
+    },
+    {
+      "article": "theory/no-accountability-lie-flat-mentality",
+      "title": "为什么“无人担责的躺平心态”会从根本上摧毁一个超大型执政组织",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": null,
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "「无人担责的躺平心态」为什么会摧毁超大型组织？",
+      "previous": "china/ccp-bureaucracy-double-deadlock",
+      "next": "/start-here",
+      "funnel": ["Q3", "Q5"]
+    },
+    {
+      "article": "theory/procedural-accountability-organized-power",
+      "title": "为什么程序性问责，常常敌不过组织化权力",
+      "date": "2026-05-10",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L2",
+      "question": "为什么程序性问责敌不过组织化权力？",
+      "previous": "china/ccp-power-network-not-line",
+      "next": "/start-here",
+      "funnel": ["Q3", "Q7"]
+    },
+    {
+      "article": "civic-orderism/why-dual-track-committee-administration",
+      "title": "为什么公民秩序主义必须采取委员会—行政双轨制，但最终仍由民选政治官员统合国家",
+      "date": "2026-05-10",
+      "section": "制度设计",
+      "topic": null,
+      "readingLevel": "制度",
+      "level": "L4",
+      "question": "为什么采用委员会—行政双轨，并由民选政治官员统合？",
+      "previous": "/civic-orderism/",
+      "next": "civic-orderism/top-level-power-structure-under-civic-orderism",
+      "funnel": ["Q7"]
+    },
+    {
+      "article": "civic-orderism/why-not-simple-separation-of-powers",
+      "title": "为什么公民秩序主义不采取简单的三权分立",
+      "date": "2026-05-10",
+      "section": "制度设计",
+      "topic": null,
+      "readingLevel": "制度",
+      "level": "L4",
+      "question": "为什么不采取简单的三权分立？",
+      "previous": "/civic-orderism/",
+      "next": "civic-orderism/why-weaken-party-politics",
+      "funnel": ["Q7"]
+    },
+    {
+      "article": "civic-orderism/why-not-left-right-democracy-autocracy",
+      "title": "为什么公民秩序主义不纠结于左右、民主专制之争",
+      "date": "2026-05-10",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L3",
+      "question": "为什么不再纠结左右与民主专制之争？",
+      "previous": "/start-here",
+      "next": "/civic-orderism/",
+      "funnel": ["Q6"]
+    },
+    {
+      "article": "civic-orderism/why-against-moral-narrative",
+      "title": "为什么公民秩序主义反对道德叙事，也反对对公职人员的道德审判",
+      "date": "2026-05-10",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L3",
+      "question": "为什么反对道德叙事与道德审判？",
+      "previous": "/start-here",
+      "next": "/civic-orderism/peaceful-state-transition",
+      "funnel": ["Q7"]
+    },
+    {
+      "article": "civic-orderism/why-emphasize-reciprocity-and-equality",
+      "title": "为什么公民秩序主义强调的是对等、平等，而非照顾、怜悯",
+      "date": "2026-05-10",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L3",
+      "question": "为什么强调对等、平等，而不是照顾与怜悯？",
+      "previous": "/start-here",
+      "next": "/civic-orderism/",
+      "funnel": ["Q9"]
+    },
+    {
+      "article": "civic-orderism/why-civic-orderism-emphasizes-experience-and-records",
+      "title": "为什么公民秩序主义强调履历、经验：因为现代国家不能把高位判断交给空降、表演和单一激情",
+      "date": "2026-05-10",
+      "section": "制度设计",
+      "topic": null,
+      "readingLevel": "制度",
+      "level": "L4",
+      "question": "为什么强调履历、经验与记录？",
+      "previous": "/civic-orderism/",
+      "next": "civic-orderism/why-information-transparency",
+      "funnel": ["Q8"]
+    },
+    {
+      "article": "civic-orderism/why-justice-serves-reality",
+      "title": "为什么公民秩序主义强调司法是为现实服务的",
+      "date": "2026-05-10",
+      "section": "制度设计",
+      "topic": null,
+      "readingLevel": "制度",
+      "level": "L4",
+      "question": "为什么说司法是为现实服务的？",
+      "previous": "/civic-orderism/",
+      "next": "civic-orderism/why-against-moral-narrative",
+      "funnel": ["Q7"]
+    },
+    {
+      "article": "civic-orderism/why-information-transparency",
+      "title": "为什么公民秩序主义强调信息透明及信息发布",
+      "date": "2026-05-10",
+      "section": "制度设计",
+      "topic": null,
+      "readingLevel": "制度",
+      "level": "L4",
+      "question": "为什么强调信息透明与信息发布？",
+      "previous": "/civic-orderism/",
+      "next": "civic-orderism/why-civic-orderism-emphasizes-experience-and-records",
+      "funnel": ["Q8"]
+    },
+    {
+      "article": "civic-orderism/why-elections-reject-political-donations",
+      "title": "为什么公民秩序主义下的选举会天然排斥政治献金",
+      "date": "2026-05-10",
+      "section": "制度设计",
+      "topic": null,
+      "readingLevel": "制度",
+      "level": "L4",
+      "question": "为什么这里的选举天然排斥政治献金？",
+      "previous": "/civic-orderism/",
+      "next": "civic-orderism/election-logic-under-civic-orderism",
+      "funnel": ["Q8"]
+    },
+    {
+      "article": "civic-orderism/why-no-bicameral-parliament",
+      "title": "为什么公民秩序主义议会不采取上下两院制",
+      "date": "2026-05-10",
+      "section": "制度设计",
+      "topic": null,
+      "readingLevel": "制度",
+      "level": "L4",
+      "question": "为什么议会不采取上下两院制？",
+      "previous": "/civic-orderism/",
+      "next": "civic-orderism/election-logic-under-civic-orderism",
+      "funnel": ["Q7"]
+    },
+    {
+      "article": "civic-orderism/why-civic-orderism-is-easier-to-succeed",
+      "title": "为什么公民秩序主义在未来接替难度最小：它不是推倒国家，而是接管、校正和重组国家运行系统",
+      "date": "2026-05-10",
+      "section": "公民秩序主义",
+      "topic": "中国政治转型",
+      "readingLevel": "基础",
+      "level": "L3",
+      "question": "为什么它接替的难度最小？",
+      "previous": "/start-here",
+      "next": "/civic-orderism/peaceful-state-transition",
+      "funnel": ["Q6"]
+    },
+    {
+      "article": "civic-orderism/why-proposals-from-social-organizations",
+      "title": "为什么议案应主要来自社会组织，而不是某个议员、某个人",
+      "date": "2026-05-10",
+      "section": "制度设计",
+      "topic": null,
+      "readingLevel": "制度",
+      "level": "L4",
+      "question": "为什么议案主要来自社会组织？",
+      "previous": "/civic-orderism/",
+      "next": "civic-orderism/public-politics-without-party-dominance",
+      "funnel": ["Q8"]
+    },
+    {
+      "article": "civic-orderism/why-part-time-representatives",
+      "title": "为什么议员主要应采取兼职制，而非全职制",
+      "date": "2026-05-10",
+      "section": "制度设计",
+      "topic": null,
+      "readingLevel": "制度",
+      "level": "L4",
+      "question": "为什么议员主要应采取兼职制？",
+      "previous": "/civic-orderism/",
+      "next": "civic-orderism/election-logic-under-civic-orderism",
+      "funnel": ["Q7"]
+    },
+    {
+      "article": "theory/trapped-by-process",
+      "title": "我们不是被贫穷困住，而是被流程困住",
+      "date": "2026-05-10",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L2",
+      "question": "困住普通人的是流程，还是贫穷？",
+      "previous": "L1 现实入口",
+      "next": "/start-here",
+      "funnel": ["Q1", "Q9"]
+    },
+    {
+      "article": "china/xi-solved-organization-not-reality",
+      "title": "习近平解决了组织的问题，却解决不了组织面临的问题",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": "习近平时代",
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "他解决了组织问题，为什么解决不了现实问题？",
+      "previous": "china/xi-power-centralization",
+      "next": "/start-here",
+      "funnel": ["Q3"]
+    },
+    {
+      "article": "china/xi-power-centralization",
+      "title": "习近平权力集中背后的系统逻辑",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": "习近平时代",
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "权力集中背后的系统逻辑是什么？",
+      "previous": "L1 现实入口",
+      "next": "china/xi-solved-organization-not-reality",
+      "funnel": ["Q3"]
+    },
+    {
+      "article": "theory/modern-social-syndrome",
+      "title": "现代社会候群症",
+      "date": "2026-05-10",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L2",
+      "question": "「现代社会候群症」是一种什么困境？",
+      "previous": "L1 现实入口",
+      "next": "/start-here",
+      "funnel": ["Q1"]
+    },
+    {
+      "article": "china/chicken-and-cage",
+      "title": "养鸡与换笼：民营经济被整肃的结构逻辑",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": "地方财政",
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "民营经济为什么会被反复整肃？",
+      "previous": "X 现实入口",
+      "next": "china/supply-side-reform-state-can-scale-not-discover-future",
+      "funnel": ["Q2"]
+    },
+    {
+      "article": "china/maginot-line-of-stability-maintenance",
+      "title": "一个难以言说的防线：从“液压维稳”到当代的马其诺防线",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": "中共统治术",
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "维稳体系为什么修成了一条马其诺防线？",
+      "previous": "X 现实入口",
+      "next": "china/security-led-governance-model",
+      "funnel": ["Q3"]
+    },
+    {
+      "article": "china/ccp-reform-political-balance-deadlock",
+      "title": "中共的真正死局：改革未必救经济，却一定先打破政治平衡",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": "二次改开",
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "改革为什么一定先打破政治平衡？",
+      "previous": "china-stage/ccp-second-reform-opening-possibility",
+      "next": "/start-here",
+      "funnel": ["Q3", "Q6"]
+    },
+    {
+      "article": "china/xi-succession-crisis-gray-rhino",
+      "title": "中共高层政治的灰犀牛：习近平交权困境与继承危机",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": "习近平时代",
+      "readingLevel": "进阶",
+      "level": "L2",
+      "question": "继承危机为什么会变成灰犀牛？",
+      "previous": "china/mao-death-release-xi-death-weightlessness",
+      "next": "/start-here",
+      "funnel": ["Q3", "Q5"]
+    },
+    {
+      "article": "institution/despotism-cancer-ming-1566",
+      "title": "专制之癌：从《大明王朝1566》到结构性腐败的宿命",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": "官僚系统",
+      "readingLevel": "进阶",
+      "level": "L4",
+      "question": "结构性腐败为什么是「专制之癌」？",
+      "previous": "/civic-orderism/",
+      "next": "/civic-orderism/",
+      "funnel": ["Q7"]
+    },
+    {
+      "article": "china/organization-credit-retired-officials",
+      "title": "组织信用的最后一关：退休官员、终身承诺与中共的功能性衰竭",
+      "date": "2026-05-10",
+      "section": "解析中共",
+      "topic": "秩序蒸发",
+      "readingLevel": "进阶",
+      "level": "L1",
+      "question": "退休官员的终身承诺为什么会失效？",
+      "previous": "X 现实入口",
+      "next": "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
+      "funnel": ["Q5", "Q9"]
+    },
+    {
+      "article": "theory/ai-monitoring-organizational-friction",
+      "title": "AI监控并不降低组织摩擦：一份冷静推演",
+      "date": "2026-05-10",
+      "section": "公民秩序主义",
+      "topic": null,
+      "readingLevel": "基础",
+      "level": "L2",
+      "question": "AI 监控为什么不能降低组织摩擦？",
+      "previous": "L1 现实入口",
+      "next": "china/security-led-governance-model",
+      "funnel": ["Q3"]
+    }
+  ]
+}

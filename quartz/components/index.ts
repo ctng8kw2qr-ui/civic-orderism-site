@@ -6,6 +6,7 @@ import ArticleTitle from "./ArticleTitle";
 import ArticleHeader from "./ArticleHeader";
 import ArticleInstitutionalHeader from "./ArticleInstitutionalHeader";
 import ArticleInstitutionalCoreJudgment from "./ArticleInstitutionalCoreJudgment";
+import ArticleFrameworkNotice from "./ArticleFrameworkNotice";
 import Darkmode from "./Darkmode";
 import ReaderMode from "./ReaderMode";
 import Head from "./Head";
@@ -45,6 +46,7 @@ export {
   ArticleHeader,
   ArticleInstitutionalHeader,
   ArticleInstitutionalCoreJudgment,
+  ArticleFrameworkNotice,
   Content,
   TagContent,
   FolderContent,

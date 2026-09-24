@@ -8441,6 +8441,55 @@ p.inst4-hero__judgment {
   line-height: 1.2;
 }
 
+/* ---- SECTION 2 / WHY NOW ---- */
+/* The social reason the question is back today. Prose-first, wide leading,
+   no cards: two emphasised lines and one closing pair carry the emphasis,
+   both in the restrained steel accent — never a warning colour. */
+.inst4-whynow__body {
+  max-width: 720px;
+  margin-top: clamp(1.5rem, 2.8vw, 2rem);
+}
+
+.inst4-whynow__body > p {
+  color: var(--inst4-ink-2);
+  font-size: 1.02rem;
+  font-weight: 440;
+  line-height: 1.86;
+}
+
+.inst4-whynow__body > p + p {
+  margin-top: 0.95rem;
+}
+
+/* Visual focus 1 + 2: the old promise and the unanswered question. */
+.inst4-whynow__body > p.inst4-whynow__emphasis {
+  margin-top: 1.15rem;
+  padding-left: clamp(0.95rem, 2vw, 1.3rem);
+  border-left: 2px solid var(--inst4-accent);
+  color: var(--inst4-ink);
+  font-size: clamp(1.15rem, 1.9vw, 1.4rem);
+  font-weight: 470;
+  line-height: 1.7;
+}
+
+/* Visual focus 3: the closing pair — it has already become today's question. */
+.inst4-whynow__closing {
+  margin-top: clamp(1.2rem, 2.4vw, 1.6rem);
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--inst4-line);
+}
+
+.inst4-whynow__closing p {
+  color: var(--inst4-ink);
+  font-size: clamp(1.05rem, 1.7vw, 1.2rem);
+  font-weight: 520;
+  line-height: 1.72;
+}
+
+.inst4-whynow__closing p + p {
+  margin-top: 0.35rem;
+}
+
 /* ---- PERMANENT CORE POLITICAL STATEMENT ---- */
 .inst4-core-statement {
   padding: clamp(4.75rem, 9vw, 7rem) 0 clamp(5rem, 10vw, 7.5rem);
@@ -8560,22 +8609,136 @@ p.inst4-hero__judgment {
   transform: translateX(4px);
 }
 
-/* ---- SECTION 2 / TRANSITION PATH ---- */
+/* ---- SECTION 3 / TRANSITION PATH ---- */
 /* The homepage carries the route model only: the five-step chain plus one short
    explanation. The four "why" arguments live on /civic-orderism/. */
+.inst4-whynow,
 .inst4-transition,
 .inst4-readiness {
   padding: clamp(4rem, 7vw, 5.5rem) 0;
   border-top: 1px solid var(--inst4-line);
 }
 
-/* ---- SECTION 3 / READINESS ---- */
-/* Readiness items reuse the numbered point list defined for CURRENT WORK. */
+/* ---- SECTION 5 / WHAT WE ARE BUILDING ---- */
+/* Building items reuse the numbered point list defined for CURRENT WORK. */
 
-/* ---- SECTION 4 / CURRENT WORK ---- */
+/* ---- SECTION 6 / CURRENT WORK ---- */
+/* Compressed to a single statement plus two quiet entries: the homepage only
+   says what the project is doing now. Rules, page counts and preparation
+   details live on /preparation/. */
 .inst4-work {
-  padding: clamp(6rem, 11vw, 9rem) 0 clamp(6rem, 9vw, 7.5rem);
+  padding: clamp(3.5rem, 6vw, 4.75rem) 0;
   border-top: 1px solid var(--inst4-line);
+}
+
+.inst4-work__item {
+  max-width: 720px;
+  margin-top: clamp(1.7rem, 3.2vw, 2.4rem);
+}
+
+.inst4-work__item-title {
+  margin: 0;
+  color: var(--inst4-ink);
+  font-size: clamp(1.3rem, 2vw, 1.55rem);
+  font-weight: 520;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+}
+
+/* Immediate current-status annotation: it resolves the ambiguity of the
+   project name above it (legal entity still being prepared, no board yet)
+   without becoming a second paragraph, a card or a warning block. */
+.inst4-work__item-status {
+  margin-top: 0.5rem;
+  color: var(--inst4-muted);
+  font-size: 0.84rem;
+  font-weight: 460;
+  line-height: 1.6;
+}
+
+.inst4-work__item-summary {
+  margin-top: 0.85rem;
+  color: var(--inst4-ink-2);
+  font-size: 1rem;
+  font-weight: 440;
+  line-height: 1.82;
+}
+
+.inst4-work__links {
+  margin-top: 1.5rem;
+}
+
+.inst4-work__links a {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  min-height: 44px;
+  padding: 0.62rem 0;
+  border-bottom: 1px solid var(--inst4-line);
+  color: var(--inst4-ink);
+  font-size: 0.94rem;
+  font-weight: 620;
+  line-height: 1.5;
+  text-decoration: none;
+  background-image: none;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.inst4-work__links a span {
+  transition: transform 180ms ease;
+}
+
+.inst4-work__links a:hover,
+.inst4-work__links a:focus-visible {
+  border-color: var(--inst4-accent);
+  color: var(--inst4-accent);
+  outline: none;
+}
+
+.inst4-work__links a:hover span,
+.inst4-work__links a:focus-visible span {
+  transform: translateX(4px);
+}
+
+/* The official filing stays reachable from the homepage, but only as a
+   secondary line — it no longer frames the section. */
+.inst4-work__document {
+  margin-top: 1.1rem;
+}
+
+.inst4-work__document a {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: baseline;
+  color: var(--inst4-muted);
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+  background-image: none;
+  border-bottom: 1px solid var(--inst4-line);
+  padding-bottom: 0.15rem;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.inst4-work__document a span {
+  transition: transform 180ms ease;
+}
+
+.inst4-work__document a:hover,
+.inst4-work__document a:focus-visible {
+  border-bottom-color: var(--inst4-accent);
+  color: var(--inst4-accent);
+  outline: none;
+}
+
+.inst4-work__document a:hover span,
+.inst4-work__document a:focus-visible span {
+  transform: translateX(3px);
 }
 
 .inst4-work__grid {
@@ -8594,7 +8757,8 @@ p.inst4-hero__judgment {
 .inst4-work__title,
 .inst4-research__title,
 .inst4-transition__title,
-.inst4-readiness__title {
+.inst4-readiness__title,
+.inst4-whynow__title {
   margin-top: 1.2rem;
   color: var(--inst4-ink);
   font-size: clamp(2.4rem, 4vw, 3.2rem);
@@ -9097,6 +9261,8 @@ p.inst4-work__initiative-note {
 }
 
 /* ---- Motion: restrained reveal ---- */
+/* Note: WHY NOW, TRANSITION and BUILDING intentionally stay static, matching
+   their neighbours between the hero and the value goal. */
 .inst4-hero,
 .inst4-core-statement,
 .inst4-work,
@@ -9248,8 +9414,41 @@ p.inst4-work__initiative-note {
   }
 
   .inst4-transition,
-  .inst4-readiness {
+  .inst4-readiness,
+  .inst4-whynow {
     padding: 3.5rem 0;
+  }
+
+  /* WHY NOW on mobile: continuous reading, no extra emphasis blocks.
+     The two focus lines keep the accent rule but not the larger type. */
+  .inst4-whynow__body {
+    margin-top: 1.3rem;
+  }
+
+  .inst4-whynow__body > p {
+    font-size: 0.98rem;
+    line-height: 1.82;
+  }
+
+  .inst4-whynow__body > p + p {
+    margin-top: 0.85rem;
+  }
+
+  .inst4-whynow__body > p.inst4-whynow__emphasis {
+    margin-top: 1rem;
+    padding-left: 0.9rem;
+    font-size: 1.12rem;
+    line-height: 1.7;
+  }
+
+  .inst4-whynow__closing {
+    margin-top: 1.15rem;
+    padding-top: 0.8rem;
+  }
+
+  .inst4-whynow__closing p {
+    font-size: 1.06rem;
+    line-height: 1.72;
   }
 
   .inst4-core-statement__identity,
@@ -9289,8 +9488,39 @@ p.inst4-work__initiative-note {
   .inst4-work__title,
   .inst4-research__title,
   .inst4-transition__title,
-  .inst4-readiness__title {
+  .inst4-readiness__title,
+  .inst4-whynow__title {
     font-size: clamp(1.9rem, 8vw, 2.3rem);
+  }
+
+  /* Compressed CURRENT WORK on mobile. */
+  .inst4-work__item {
+    margin-top: 1.6rem;
+  }
+
+  .inst4-work__item-title {
+    font-size: 1.28rem;
+    line-height: 1.5;
+  }
+
+  .inst4-work__item-status {
+    margin-top: 0.45rem;
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+
+  .inst4-work__item-summary {
+    margin-top: 0.7rem;
+    font-size: 0.98rem;
+    line-height: 1.78;
+  }
+
+  .inst4-work__links {
+    margin-top: 1.2rem;
+  }
+
+  .inst4-work__document {
+    margin-top: 0.9rem;
   }
 
   .inst4-work__points {

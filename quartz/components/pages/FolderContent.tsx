@@ -158,6 +158,11 @@ export default ((opts?: Partial<FolderContentOptions>) => {
       showTags: false,
     };
 
+    // An empty collection must not render a collection section: a heading such
+    // as “本栏目全部文章” without any entry is an empty UI state. Pages whose
+    // folder has no listed children simply end after their own content.
+    const hasListedPages = listedPages.length > 0;
+
     const content = (
       (tree as Root).children.length === 0
         ? fileData.description
@@ -167,7 +172,7 @@ export default ((opts?: Partial<FolderContentOptions>) => {
     return (
       <div class="popover-hint">
         <article class={classes}>{content}</article>
-        {isConceptIndex ? null : isPrimarySection ? (
+        {isConceptIndex || !hasListedPages ? null : isPrimarySection ? (
           <details class="page-listing section-archive" data-section-archive>
             <summary>
               {listPageSlug === "china"

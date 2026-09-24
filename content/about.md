@@ -31,6 +31,18 @@ noindex: false
 
 <section class="inst4l-section">
   <div class="inst4l-section__head">
+<p class="inst4-eyebrow">CURRENT STATUS</p>
+<h2 class="inst4l-section__title">当前状态</h2>
+    
+  </div>
+  <p>公民秩序主义目前处于政治路线建设与组织筹备阶段。它还不是一个已经正式成立的政治组织，也不声称拥有法人身份、治理机构或对外代表权。</p>
+<p>当前主要工作包括：</p>
+<ul class="inst4-route__list"><li>政治路线研究；</li><li>公开政治表达；</li><li>政治信誉建设；</li><li>组织能力准备；</li><li>北美合法组织载体筹备。</li></ul>
+<p>北美非营利法人尚未依法成立，具体注册法域尚未确定，首届董事会尚未依法产生。本站所称“法人筹备”和“董事会筹备”仅描述正在进行的准备工作，不表示已经取得任何法人、慈善或免税资格。</p>
+</section>
+
+<section class="inst4l-section">
+  <div class="inst4l-section__head">
 <p class="inst4-eyebrow">为什么存在</p>
 <h2 class="inst4l-section__title">为什么存在</h2>
     

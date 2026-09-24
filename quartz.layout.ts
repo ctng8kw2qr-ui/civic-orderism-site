@@ -129,6 +129,13 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.ArticleInstitutionalCoreJudgment(),
       condition: isInstitutionalArticle,
     }),
+    // Early theory-phase articles keep their original text, but carry a quiet
+    // version notice. The rule lives inside the component (see
+    // ArticleFrameworkNotice.tsx); nothing is hardcoded per article.
+    Component.ConditionalRender({
+      component: Component.ArticleFrameworkNotice(),
+      condition: isInstitutionalArticle,
+    }),
     Component.ConditionalRender({
       component: Component.Breadcrumbs({ rootName: "首页", spacerSymbol: "/" }),
       condition: (page) =>

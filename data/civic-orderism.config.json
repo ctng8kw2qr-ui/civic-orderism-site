@@ -8,6 +8,24 @@
     "description": "一条面向中国未来的低阻力、低风险和平政治转型路线。",
     "intro": "公民秩序主义关注的，不只是旧政治秩序如何结束，而是中国如何在保持国家连续性的前提下，建立下一套能够长期运行的政治秩序。"
   },
+  "homeWhyNow": {
+    "englishLabel": "WHY NOW",
+    "title": "为什么是现在",
+    "answer": {
+      "open": "过去几十年，中国社会其实一直有一个非常明确的答案：",
+      "emphasis": "明天会比今天更好。",
+      "detail": "普通人相信收入会增加，企业相信生意还能扩大，年轻人相信机会还会更多，官员也相信只要沿着这套体系继续走，自己的生活和未来就有稳定预期。不同群体得到的东西不同，但都能从继续向前中找到自己的理由。"
+    },
+    "change": {
+      "open": "今天真正发生变化的，是越来越多阶层、行业和群体开始重新计算自己的未来。中共也越来越难回答整个社会都在追问的那个问题：",
+      "emphasis": "明天到底会怎样？"
+    },
+    "judgment": "政治转轨并不是从某一天宣布政治制度改变才突然开始。当旧秩序越来越难继续创造新的受益者，而越来越多社会群体开始承受损失，寻找新的政治答案就已经成为现实需要。",
+    "closing": [
+      "政治转轨不是未来某一天才需要面对的问题。",
+      "它已经成为今天必须开始准备的问题。"
+    ]
+  },
   "homeTransition": {
     "title": "政治转轨怎么展开？",
     "englishLabel": "THE TRANSITION PATH",
@@ -24,7 +42,7 @@
   },
   "readiness": {
     "title": "公民秩序主义正在建设什么？",
-    "englishLabel": "READINESS",
+    "englishLabel": "WHAT WE ARE BUILDING",
     "items": [
       {
         "name": "政治路线",
@@ -47,7 +65,14 @@
   },
   "organizationPositioning": {
     "initiativeLabel": "当前组织建设项目",
-    "statement": "北美非营利法人不是公民秩序主义的政治目标，而是当前阶段承载政治路线、政治信誉与长期组织责任的法律与组织基础设施。"
+    "statement": "北美非营利法人不是公民秩序主义的政治目标，而是当前阶段承载政治路线、政治信誉与长期组织责任的法律与组织基础设施。",
+    "homeLabel": "当前组织建设",
+    "homeItemTitle": "北美非营利法人及首届董事会筹备",
+    "homeStatus": "当前状态：法人筹备中，首届董事会尚未产生。",
+    "homeEntryLabel": "查看筹备工作",
+    "homeEntryHref": "/preparation",
+    "homeDocumentLabel": "阅读正式筹备说明（PDF）",
+    "homeDocumentHref": "/files/civic-orderism-founding-board-brief-2026.pdf"
   },
   "question": {
     "title": "中国真正面对的问题是什么？",

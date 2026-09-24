@@ -33,7 +33,7 @@ aliases:
 
   <section class="inst4l-section">
   <div class="inst4l-section__head">
-<p class="inst4-eyebrow">为什么现在</p>
+<p class="inst4-eyebrow">WHY ORGANIZE NOW</p>
 <h2 class="inst4l-section__title">为什么现在进入组织建设</h2>
     
   </div>

@@ -1,0 +1,68 @@
+/* ================================================================
+   EARLY FRAMEWORK notice — a quiet historical-status note above the
+   article body. It marks early theory-phase texts without rewriting
+   them: no warning colours, no icons, no cards.
+   ================================================================ */
+.article-framework-note {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  margin-top: 1.75rem;
+  padding: 0.85rem 0 0.85rem 1.05rem;
+  border-left: 2px solid
+    color-mix(in srgb, var(--inst-accent) 48%, var(--inst-rule));
+  background: color-mix(in srgb, var(--inst-bg-deep) 38%, transparent);
+}
+
+.article-framework-note__label {
+  margin: 0;
+  color: var(--inst-muted);
+  font-size: 0.72rem;
+  font-weight: 620;
+  letter-spacing: 0.16em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.article-framework-note__body {
+  margin: 0.5rem 0 0;
+  max-width: 42em;
+  color: var(--inst-ink-2);
+  font-size: 0.9rem;
+  font-weight: 440;
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+
+.article-framework-note__body a {
+  color: inherit;
+  border-bottom: 1px solid var(--inst-rule);
+  text-decoration: none;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease;
+}
+
+.article-framework-note__body a:hover,
+.article-framework-note__body a:focus-visible {
+  border-bottom-color: var(--inst-accent);
+  color: var(--inst-accent);
+  outline: none;
+}
+
+@media all and (max-width: 760px) {
+  .article-framework-note {
+    margin-top: 1.4rem;
+    padding: 0.75rem 0 0.75rem 0.85rem;
+  }
+
+  .article-framework-note__label {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+  }
+
+  .article-framework-note__body {
+    font-size: 0.86rem;
+    line-height: 1.72;
+  }
+}

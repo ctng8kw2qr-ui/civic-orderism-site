@@ -7,11 +7,14 @@ import style from "./styles/primaryNavigation.scss";
 // @ts-ignore
 import script from "./scripts/primaryNavigation.inline";
 
+// The primary navigation keeps the long-term entries only. Board preparation
+// is the current project inside 建立联系 (/participate) and stays reachable
+// from that page, the footer and the homepage CURRENT WORK section.
 const navItems = [
   { label: "5分钟了解", href: "/start-here/" },
   { label: "政治路线", href: "/civic-orderism" },
   { label: "研究", href: "/theory" },
-  { label: "董事会筹备", href: "/preparation" },
+  { label: "建立联系", href: "/participate" },
   { label: "关于", href: "/about" },
 ];
 

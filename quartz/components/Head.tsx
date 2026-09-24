@@ -126,6 +126,10 @@ export default (() => {
             description,
             inLanguage: "zh-CN",
             url: canonicalUrl,
+            // Machine-readable dates for non-article pages (e.g. the homepage):
+            // publication date plus the editorial update date when declared.
+            datePublished: published,
+            dateModified: modified,
           };
 
     return (

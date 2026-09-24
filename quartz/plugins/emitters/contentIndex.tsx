@@ -27,6 +27,14 @@ export type ContentDetails = {
   content: string;
   richContent?: string;
   date?: Date;
+  /**
+   * Machine-readable last modification timestamp for the sitemap `<lastmod>`.
+   * It reuses Quartz's own date model (`dates.modified`), which resolves to the
+   * frontmatter update date first (`updated` / `modified` / `last-modified`)
+   * and falls back to the publication date (`date` / `created`). `date` keeps
+   * meaning the publication date for the feed and client-side sorting.
+   */
+  lastModified?: Date;
   description?: string;
   contentType?: string;
 };
@@ -74,9 +82,12 @@ function generateSiteMap(
     content: ContentDetails,
   ): string => {
     const sitemapSlug = slug === "tags" ? ("tags/" as SimpleSlug) : slug;
+    // Generic rule: an editorial update date wins over the publication date.
+    const lastmod =
+      (content.lastModified ?? content.date)?.toISOString() ?? defaultLastMod;
     return `  <url>
     <loc>${escapeHTML(`https://${joinSegments(base, encodeURI(sitemapSlug))}`)}</loc>
-    <lastmod>${content.date?.toISOString() ?? defaultLastMod}</lastmod>
+    <lastmod>${lastmod}</lastmod>
   </url>`;
   };
   const urls = Array.from(idx)
@@ -157,6 +168,9 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
           continue;
         }
         const date = getDate(ctx.cfg.configuration, file.data) ?? new Date();
+        // `updated ?? date`: the sitemap follows the editorial update date when
+        // one is declared, and otherwise the date the page was published.
+        const lastModified = file.data.dates?.modified ?? date;
         const knowledge = migrationBySlug.get(slug);
         const knowledgeText = knowledge
           ? [
@@ -187,6 +201,7 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
               ? escapeHTML(toHtml(tree as Root, { allowDangerousHtml: true }))
               : undefined,
             date: date,
+            lastModified: lastModified,
             description: file.data.description ?? "",
             contentType: String(
               file.data.frontmatter?.contentType ??

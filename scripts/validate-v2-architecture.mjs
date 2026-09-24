@@ -900,12 +900,16 @@ const homepageMainHtml =
     /<article class="popover-hint">([\s\S]*?)<\/article><hr/,
   )?.[1] ?? homepageHtml;
 const homepageMainText = visiblePageText(homepageMainHtml);
+// V5.1 newcomer reading order:
+//   01 HERO (we are) → 02 WHY NOW → 03 THE TRANSITION PATH → 04 FUTURE
+//   → 05 WHAT WE ARE BUILDING → 06 CURRENT WORK → 07 RESEARCH
 const homepageSectionIds = [
   'id="identity"',
+  'id="why-now"',
   'id="transition"',
+  'id="future"',
   'id="readiness"',
   'id="current-work"',
-  'id="future"',
   'id="research"',
 ];
 let previousHomepageSectionPosition = -1;
@@ -922,10 +926,10 @@ assert(
   !homepageMainHtml.includes('id="approach"') &&
     !homepageMainHtml.includes('id="organization"') &&
     !homepageMainHtml.includes('id="contact"') &&
-    (homepageMainHtml.match(/<section class="inst4-/g) ?? []).length === 6 &&
+    (homepageMainHtml.match(/<section class="inst4-/g) ?? []).length === 7 &&
     !homepageMainHtml.includes("home-institution-") &&
     (homepageMainHtml.match(/<img/g) ?? []).length === 0,
-  "首页未保持为连续机构 landing page（六区域、无编号章节、无图片）",
+  "首页未保持为连续机构 landing page（七个区域、无编号章节、无图片）",
 );
 // SECTION 1 / IDENTITY
 const heroHtml =
@@ -957,7 +961,51 @@ assert(
   ),
   "首页首屏缺少新读者入口（第一次来？5分钟了解公民秩序主义）",
 );
-// SECTION 2 / TRANSITION PATH — the homepage carries the route model only.
+// SECTION 2 / WHY NOW — why Chinese society needs a political answer today.
+// It must stay a short social argument: no state-continuity service lists
+// (police / hospitals / banks) and no full transition argument.
+const whyNowHtml =
+  homepageMainHtml.match(/<section class="inst4-whynow"[\s\S]*?<\/section>/)?.[0] ??
+  "";
+const whyNowText = visiblePageText(whyNowHtml);
+assert(
+  whyNowHtml.length > 0 &&
+    whyNowHtml.includes(civicOrderismConfig.homeWhyNow.englishLabel) &&
+    whyNowText.includes(civicOrderismConfig.homeWhyNow.title) &&
+    whyNowHtml.includes('class="inst4-whynow__body"') &&
+    (whyNowHtml.match(/inst4-whynow__emphasis/g) ?? []).length === 2 &&
+    whyNowText.includes(civicOrderismConfig.homeWhyNow.answer.emphasis) &&
+    whyNowText.includes(civicOrderismConfig.homeWhyNow.change.emphasis) &&
+    whyNowText.includes(civicOrderismConfig.homeWhyNow.judgment) &&
+    civicOrderismConfig.homeWhyNow.closing.every((line) =>
+      whyNowText.includes(line),
+    ) &&
+    !whyNowHtml.includes("<img") &&
+    !whyNowHtml.includes("<ul"),
+  "首页 WHY NOW（为什么是现在）未按要求组织",
+);
+assert(
+  homepageMainHtml.indexOf('id="identity"') <
+    homepageMainHtml.indexOf('id="why-now"') &&
+    homepageMainHtml.indexOf('id="why-now"') <
+      homepageMainHtml.indexOf('id="transition"'),
+  "WHY NOW 未放在首屏之后、政治转轨路径之前",
+);
+for (const forbidden of [
+  "警察",
+  "医院",
+  "银行",
+  "公务员",
+  "财政",
+  "社会保障",
+]) {
+  assert(
+    !whyNowText.includes(forbidden),
+    `WHY NOW 不应讨论国家承接细节：${forbidden}`,
+  );
+}
+
+// SECTION 3 / TRANSITION PATH — the homepage carries the route model only.
 const transitionHtml =
   homepageMainHtml.match(
     /<section class="inst4-transition"[\s\S]*?<\/section>/,
@@ -1028,8 +1076,9 @@ for (const [index, item] of civicOrderismConfig.readiness.items.entries()) {
     `首页建设方向缺少条目：${item.name}`,
   );
 }
-// SECTION 5 / VALUE GOAL — the core political statement now sits after the
-// current organizational work, as the long-term goal rather than the lead.
+// SECTION 4 / FUTURE (VALUE GOAL) — after the transition path the reader must
+// immediately see what the transition is finally for; organizational work
+// (CURRENT WORK) no longer interrupts that narrative.
 const coreStatementHomepageHtml =
   homepageMainHtml.match(
     /<section class="inst4-core-statement"[\s\S]*?<\/section>/,
@@ -1064,41 +1113,52 @@ assert(
 );
 assert(
   homepageMainHtml.indexOf('id="future"') >
-    homepageMainHtml.indexOf('id="current-work"') &&
+    homepageMainHtml.indexOf('id="transition"') &&
     homepageMainHtml.indexOf('id="future"') <
-      homepageMainHtml.indexOf('id="research"'),
-  "价值目标区未下沉到当前组织建设之后",
+      homepageMainHtml.indexOf('id="readiness"'),
+  "价值目标区未提前到政治转轨路径之后",
 );
-// SECTION 4 / CURRENT WORK + official document
+// SECTION 6 / CURRENT WORK — compressed: one statement, one project, two quiet
+// entries. Documents, rules and page counts live on /preparation/.
 const workHtml =
   homepageMainHtml.match(
     /<section class="inst4-work"[\s\S]*?<\/section>/,
   )?.[0] ?? "";
 assert(
   workHtml.includes("CURRENT WORK") &&
-    visiblePageText(workHtml).includes("建立一个能够承接政治信任的组织") &&
+    visiblePageText(workHtml).includes(
+      civicOrderismConfig.organizationPositioning.homeLabel,
+    ) &&
+    visiblePageText(workHtml).includes(
+      civicOrderismConfig.organizationPositioning.homeItemTitle,
+    ) &&
     visiblePageText(workHtml).includes(site.currentPhase.note) &&
-    workHtml.includes("CURRENT INITIATIVE") &&
+    workHtml.includes('class="inst4-work__item"') &&
+    // V5.1 freeze: the immediate status line must resolve the ambiguity of
+    // "北美非营利法人及首届董事会筹备" (entity still being prepared).
+    workHtml.includes('class="inst4-work__item-status"') &&
     visiblePageText(workHtml).includes(
-      `${civicOrderismConfig.organizationPositioning.initiativeLabel}：北美非营利法人及首届董事会筹备`,
+      civicOrderismConfig.organizationPositioning.homeStatus,
+    ) &&
+    /href="[^"]*\/preparation\/?"/.test(workHtml) &&
+    visiblePageText(workHtml).includes(
+      civicOrderismConfig.organizationPositioning.homeEntryLabel,
+    ) &&
+    workHtml.includes(
+      civicOrderismConfig.organizationPositioning.homeDocumentHref,
     ) &&
     visiblePageText(workHtml).includes(
-      civicOrderismConfig.organizationPositioning.statement,
+      civicOrderismConfig.organizationPositioning.homeDocumentLabel,
     ) &&
-    !visiblePageText(workHtml).includes(
-      "公民秩序主义当前正在推进北美非营利法人及首届董事会筹备。",
-    ) &&
-    workHtml.includes("OFFICIAL DOCUMENT") &&
-    workHtml.includes("CO—2026—002") &&
-    workHtml.includes("2026 · PDF · 22 PAGES") &&
-    visiblePageText(workHtml).includes(
-      "公民秩序主义 北美非营利法人及 首届董事会筹备说明",
-    ) &&
-    workHtml.includes("阅读正式文件") &&
-    visiblePageText(workHtml).includes("当前组织建设的正式筹备文件") &&
-    workHtml.includes("civic-orderism-founding-board-brief-2026.pdf") &&
-    !workHtml.includes("<img"),
-  "首页当前工作（CURRENT WORK）或正式文件焦点不符合要求",
+    !workHtml.includes("OFFICIAL DOCUMENT") &&
+    !workHtml.includes("CURRENT INITIATIVE") &&
+    !workHtml.includes("22 PAGES") &&
+    !workHtml.includes("CO—2026—002") &&
+    !workHtml.includes("建立能够承接") &&
+    !workHtml.includes("<img") &&
+    (workHtml.match(/inst4-work__(initiative|points|point\b|number|lead)/g) ??
+      []).length === 0,
+  "首页当前工作（CURRENT WORK）未压缩为简短的组织建设说明",
 );
 // SECTION 6 / RESEARCH
 const researchHtml =
@@ -1156,6 +1216,9 @@ assert(
   homepageHtml.includes(`name="description" content="${site.description}"`),
   "首页 metadata description 未同步当前组织阶段",
 );
+// V5.1: the primary nav keeps long-term entries; board preparation is now the
+// current project inside 建立联系 (/participate) and stays reachable from there,
+// the footer and the homepage CURRENT WORK section.
 const instNavHtml =
   homepageHtml.match(/<nav class="inst4-nav"[\s\S]*?<\/nav>/)?.[0] ?? "";
 assert(
@@ -1163,22 +1226,23 @@ assert(
     instNavHtml.includes('href="/about"') &&
     instNavHtml.includes('href="/theory"') &&
     instNavHtml.includes('href="/civic-orderism"') &&
-    instNavHtml.includes('href="/preparation"') &&
-    instNavHtml.includes('href="/start-here/"') &&
+    instNavHtml.includes('href="/participate"') &&
+    instNavHtml.includes('href="/start-here/') &&
     instNavHtml.includes('class="inst4-nav__toggle"') &&
     instNavHtml.includes('id="inst4-nav-links"') &&
     visiblePageText(instNavHtml).includes("5分钟了解") &&
     visiblePageText(instNavHtml).includes("关于") &&
     visiblePageText(instNavHtml).includes("研究") &&
     visiblePageText(instNavHtml).includes("政治路线") &&
-    visiblePageText(instNavHtml).includes("董事会筹备") &&
+    visiblePageText(instNavHtml).includes("建立联系") &&
+    !visiblePageText(instNavHtml).includes("董事会筹备") &&
     !instNavHtml.includes("About") &&
     !instNavHtml.includes("Founding Board") &&
     !instNavHtml.includes('class="inst4-nav__lang"') &&
     !instNavHtml.includes(">EN<") &&
     instNavHtml.includes('href="/articles"') &&
     !instNavHtml.includes('href="/articles/"'),
-  "机构 Header（inst4-nav）一级导航未统一为中文或仍残留语言切换",
+  "机构 Header（inst4-nav）一级导航未保持长期入口（5分钟了解 / 政治路线 / 研究 / 建立联系 / 关于）",
 );
 // Newcomer-first navigation order: 5分钟了解 → 政治路线 → 研究 → …
 const navStartHereIndex = instNavHtml.indexOf('href="/start-here/"');
@@ -1870,33 +1934,41 @@ const startHtml = fs.readFileSync(publicRouteHtml("start-here"), "utf8");
 const startText = visiblePageText(startHtml);
 assert(startText.includes("新读者入口"), "/start-here 缺少新读者入口标签");
 assert(!startText.includes("分钟阅读"), "/start-here 仍包含文章阅读时长");
+// V5.1: five questions, in newcomer order — what it is, why now, what a
+// transition means, how it is prepared, and what it finally builds.
 for (const requiredText of [
   "公民秩序主义是什么？",
-  "为什么提出这条路线？",
-  "核心政治路线是什么？",
-  "它与普通反对运动有什么不同？",
-  "它准备怎样处理政治转轨？",
-  "它现在正在做什么？",
-  "下一步从哪里开始？",
-  "不以街头动员作为政治路径",
-  "不以推翻和清算作为政治目标",
-  "不等待政治变化发生以后再临时寻找方案",
-  "提前建设政治路线、政治信誉、组织能力与国家承接准备",
+  "为什么是现在？",
+  "政治转轨意味着什么？",
+  "公民秩序主义准备怎么做？",
+  "最终想建立什么？",
+  "明天会比今天更好",
+  "明天到底会怎样",
+  "政治转轨不是简单的政权崩溃，也不是街头革命",
+  "政治权力发生变化的同时，国家和社会继续运行",
   "旧体系无法自行改革 → 外部政治承接力量提前形成 → 降低转轨阻力 → 保持国家连续运行 → 逐步进入新的政治秩序",
-  "公民秩序主义已经从理论解释进入政治路线与组织承接建设阶段",
-  "为这条路线建立长期、稳定、合法、可追责的组织基础",
+  "有边界的权力 → 有责任的政治 → 有连续性的国家 → 有尊严的公民 → 有纠错能力的制度",
+  "政治制度可以改变，国家行政体系不能停摆",
 ]) {
   assert(
     startText.includes(requiredText),
     `/start-here 缺少内容：${requiredText}`,
   );
 }
-// Q03 must reuse the formal five principles verbatim. The assertions are scoped
-// to the Q03 section, so 依法治理 / 长期建设 / 国家连续 stay legitimate as
-// descriptive prose elsewhere on the page, but can never join the principles
-// block as extra first-level principles.
+// The industrial-age / information-age framing is now a deeper-reading pointer,
+// not the main entrance into Civic Orderism.
+assert(
+  startText.includes("信息化时代与政治转型") &&
+    !startText.includes("信息化时代 → 工业时代制度失配 → 需要新的政治组织方式"),
+  "/start-here 仍把信息化时代制度失配当作第一入口",
+);
+// Q04 must reuse the formal five principles verbatim, rendered from the same
+// data source as /civic-orderism/. The check is scoped to that principle list,
+// so route prose such as 保持国家连续运行 stays legitimate in the same section.
 const startPrinciplesHtml =
-  startHtml.match(/<section><span>03<\/span>[\s\S]*?<\/section>/)?.[0] ?? "";
+  startHtml.match(
+    /<ul><li><strong>不革命：<\/strong>[\s\S]*?<\/ul>/,
+  )?.[0] ?? "";
 const startPrinciplesText = visiblePageText(startPrinciplesHtml);
 const formalPrinciples = civicOrderismConfig.establishedPrinciples.items;
 assert(
@@ -1909,18 +1981,18 @@ assert(
         startPrinciplesText.includes(principle.name) &&
         startPrinciplesText.includes(principle.desc),
     ),
-  "/start-here 第 03 问必须逐条复用正式五原则（不革命 / 不清算 / 保留国家 / 和平承接 / 提前准备）",
+  "/start-here 第 04 问必须逐条复用正式五原则（不革命 / 不清算 / 保留国家 / 和平承接 / 提前准备）",
 );
 for (const driftedPrinciple of ["国家连续", "依法治理", "长期建设"]) {
   assert(
     !startPrinciplesText.includes(driftedPrinciple),
-    `/start-here 第 03 问把“${driftedPrinciple}”与正式五原则并列成了新的原则`,
+    `/start-here 第 04 问把“${driftedPrinciple}”与正式五原则并列成了新的原则`,
   );
 }
 // Start Here stays shorter than the route page: no full transition argument.
 assert(
-  (startHtml.match(/<span>0\d<\/span>/g) ?? []).length === 7,
-  "/start-here 章节数量应保持为七个问题",
+  (startHtml.match(/<span>0\d<\/span>/g) ?? []).length === 5,
+  "/start-here 章节数量应保持为五个问题",
 );
 for (const item of civicOrderismConfig.transitionQuestions) {
   assert(
@@ -1981,6 +2053,23 @@ for (const route of [
   );
 }
 
+// V5.1 freeze: an empty collection must never render a collection section.
+// No built page may contain a folder/section archive module without entries.
+for (const htmlPath of walkHtmlFiles(publicDir)) {
+  const html = fs.readFileSync(htmlPath, "utf8");
+  const modules = [
+    ...html.matchAll(
+      /<(?:section|details) class="page-listing[^"]*"[\s\S]*?<\/(?:section|details)>/g,
+    ),
+  ];
+  for (const module of modules) {
+    assert(
+      (module[0].match(/<li\b/g) ?? []).length > 0,
+      `栏目列表模块为空仍被渲染：${path.relative(publicDir, htmlPath)}`,
+    );
+  }
+}
+
 // The reading map must use the shared institutional heading scale: the legacy
 // article-scoped h2 override (1.26rem) made its section titles smaller than the
 // stage headings inside them.
@@ -2002,6 +2091,17 @@ const aboutText = visiblePageText(aboutHtml);
 for (const requiredText of [
   "关于公民秩序主义",
   "公民秩序主义是什么",
+  // V5.1 — the current status must be stated plainly, so the formal visual
+  // language cannot be mistaken for an already-established organization.
+  "CURRENT STATUS",
+  "当前状态",
+  "公民秩序主义目前处于政治路线建设与组织筹备阶段",
+  "政治路线研究",
+  "公开政治表达",
+  "政治信誉建设",
+  "组织能力准备",
+  "北美合法组织载体筹备",
+  "北美非营利法人尚未依法成立，具体注册法域尚未确定，首届董事会尚未依法产生",
   "为什么存在",
   "政治路线",
   "研究体系",
@@ -2034,6 +2134,39 @@ assert(
   !visiblePageText(homepageHtml).includes("约 5 分钟"),
   "首页仍包含人工时长文案",
 );
+
+// V5.1 — EARLY FRAMEWORK notice. Early theory-phase articles keep their
+// original bodies but carry one unified version notice, rendered by
+// ArticleFrameworkNotice from a rule (civic-orderism/ + category 公民秩序主义
+// + 2026-05..2026-07 + no formal route section), so nothing is hardcoded.
+const earlyFrameworkArticleHtml = fs.readFileSync(
+  publicHtml("civic-orderism/why-weaken-party-politics"),
+  "utf8",
+);
+const earlyFrameworkArticleText = visiblePageText(earlyFrameworkArticleHtml);
+assert(
+  earlyFrameworkArticleHtml.includes('class="article-framework-note"') &&
+    earlyFrameworkArticleText.includes("EARLY FRAMEWORK") &&
+    earlyFrameworkArticleText.includes("早期理论阶段") &&
+    earlyFrameworkArticleText.includes("保留作为理论发展记录") &&
+    earlyFrameworkArticleText.includes("《公民秩序主义总论》") &&
+    earlyFrameworkArticleText.includes("及最新政治路线文件为准"),
+  "早期理论文章缺少统一版本提示",
+);
+for (const routeArticle of [
+  "civic-orderism/civic-orderism-overview",
+  "civic-orderism/peaceful-state-transition",
+  "civic-orderism/information-age-and-political-transition",
+  "civic-orderism/why-civic-orderism",
+  "civic-orderism/this-time-let-china-be-your-pride",
+]) {
+  assert(
+    !fs
+      .readFileSync(publicHtml(routeArticle), "utf8")
+      .includes('class="article-framework-note"'),
+    `现行政治路线文章不应显示早期理论阶段提示：/${routeArticle}`,
+  );
+}
 
 const institutionHtml = fs.readFileSync(
   path.join(publicDir, "institution-design", "index.html"),

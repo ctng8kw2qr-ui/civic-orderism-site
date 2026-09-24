@@ -1119,7 +1119,7 @@ const startReadingItems = (startReadingSequence?.items ?? [])
 
 writeContent(
   "index.md",
-  `${yamlFrontmatter({ title: site.name, description: site.description, contentType: "首页", aliases: ["article_priority_index", "article_summaries"] })}
+  `${yamlFrontmatter({ title: site.name, description: site.description, contentType: "首页", aliases: ["article_priority_index", "article_summaries"], date: site.homepageMeta.published, updated: site.homepageMeta.updated })}
 
 <div class="inst4">
 
@@ -1143,7 +1143,24 @@ writeContent(
   </div>
 </section>
 
-<!-- SECTION 2 / TRANSITION PATH (the route model, not the full proof) -->
+<!-- SECTION 2 / WHY NOW — why the question is back today -->
+<section class="inst4-whynow" id="why-now">
+  <p class="inst4-eyebrow">${civicOrderismConfig.homeWhyNow.englishLabel}</p>
+  <h2 class="inst4-whynow__title">${civicOrderismConfig.homeWhyNow.title}</h2>
+  <div class="inst4-whynow__body">
+    <p>${civicOrderismConfig.homeWhyNow.answer.open}</p>
+    <p class="inst4-whynow__emphasis">${civicOrderismConfig.homeWhyNow.answer.emphasis}</p>
+    <p>${civicOrderismConfig.homeWhyNow.answer.detail}</p>
+    <p>${civicOrderismConfig.homeWhyNow.change.open}</p>
+    <p class="inst4-whynow__emphasis">${civicOrderismConfig.homeWhyNow.change.emphasis}</p>
+    <p>${civicOrderismConfig.homeWhyNow.judgment}</p>
+    <div class="inst4-whynow__closing">
+${civicOrderismConfig.homeWhyNow.closing.map((line) => `      <p>${line}</p>`).join("\n")}
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 / TRANSITION PATH (the route model, not the full proof) -->
 <section class="inst4-transition" id="transition">
   <p class="inst4-eyebrow">${civicOrderismConfig.homeTransition.englishLabel}</p>
   <h2 class="inst4-transition__title">${civicOrderismConfig.homeTransition.title}</h2>
@@ -1159,7 +1176,26 @@ ${civicOrderismConfig.homeTransition.steps
   <p class="inst4l-link"><a href="${civicOrderismConfig.homeTransition.entryHref}">${civicOrderismConfig.homeTransition.entryLabel} <span aria-hidden="true">→</span></a></p>
 </section>
 
-<!-- SECTION 3 / READINESS -->
+<!-- SECTION 4 / FUTURE (VALUE GOAL) — what the transition is finally for -->
+<section class="inst4-core-statement" id="future" aria-labelledby="core-political-statement-title">
+  <div class="inst4-core-statement__grid">
+    <div class="inst4-core-statement__identity">
+      <p class="inst4-eyebrow">${site.corePoliticalStatement.englishLabel}<span aria-hidden="true"> · </span>${site.corePoliticalStatement.roleLabel}</p>
+      <p class="inst4-core-statement__label">${site.corePoliticalStatement.roleQuestion}</p>
+    </div>
+    <div class="inst4-core-statement__body">
+      <h2 class="inst4-core-statement__title" id="core-political-statement-title">${site.corePoliticalStatement.title.replace(
+        "中国",
+        "中国<wbr>",
+      )}</h2>
+      <blockquote class="inst4-core-statement__question"><p>${site.corePoliticalStatement.question}</p></blockquote>
+      <p class="inst4-core-statement__judgment">${site.corePoliticalStatement.judgment}</p>
+      <p class="inst4-core-statement__cta"><a href="/${site.corePoliticalStatement.slug}">阅读${site.corePoliticalStatement.roleLabel}全文 <span aria-hidden="true">→</span></a></p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5 / WHAT WE ARE BUILDING -->
 <section class="inst4-readiness" id="readiness">
   <p class="inst4-eyebrow">${civicOrderismConfig.readiness.englishLabel}</p>
   <h2 class="inst4-readiness__title">${civicOrderismConfig.readiness.title}</h2>
@@ -1179,58 +1215,20 @@ ${civicOrderismConfig.readiness.items
   <p class="inst4-readiness__note">${civicOrderismConfig.readiness.note}</p>
 </section>
 
-<!-- SECTION 4 / CURRENT WORK -->
+<!-- SECTION 6 / CURRENT WORK — what the project is doing right now -->
 <section class="inst4-work" id="current-work">
-  <div class="inst4-work__grid">
-    <div class="inst4-work__intro">
-      <p class="inst4-eyebrow">CURRENT WORK</p>
-      <h2 class="inst4-work__title">建立一个能够承接政治信任的组织</h2>
-      <p class="inst4-work__lead">${site.currentPhase.note}</p>
-      <div class="inst4-work__initiative">
-        <p class="inst4-work__initiative-label">CURRENT INITIATIVE</p>
-        <h3 class="inst4-work__initiative-title">${civicOrderismConfig.organizationPositioning.initiativeLabel}：北美非营利法人及首届董事会筹备</h3>
-        <p class="inst4-work__initiative-note">${civicOrderismConfig.organizationPositioning.statement}</p>
-      </div>
-    </div>
-    <div class="inst4-document">
-      <div class="inst4-document__head">
-        <p class="inst4-document__label">OFFICIAL DOCUMENT</p>
-        <p class="inst4-document__id">CO—2026—002</p>
-      </div>
-      <div class="inst4-document__cover">
-        <p class="inst4-document__org">公民秩序主义</p>
-        <h3 class="inst4-document__title"><a href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">北美非营利法人及<br>首届董事会筹备说明</a></h3>
-        <p class="inst4-document__summary">当前组织建设的正式筹备文件</p>
-      </div>
-      <div class="inst4-document__foot">
-        <p class="inst4-document__meta">2026 · PDF · 22 PAGES</p>
-        <hr class="inst4-document__divider" aria-hidden="true">
-        <p class="inst4-document__cta"><a href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">阅读正式文件 <span aria-hidden="true">→</span></a></p>
-      </div>
-    </div>
+  <p class="inst4-eyebrow">CURRENT WORK</p>
+  <h2 class="inst4-work__title">${civicOrderismConfig.organizationPositioning.homeLabel}</h2>
+  <div class="inst4-work__item">
+    <h3 class="inst4-work__item-title">${civicOrderismConfig.organizationPositioning.homeItemTitle}</h3>
+    <p class="inst4-work__item-status">${civicOrderismConfig.organizationPositioning.homeStatus}</p>
+    <p class="inst4-work__item-summary">${site.currentPhase.note}</p>
+    <p class="inst4-work__links"><a href="${civicOrderismConfig.organizationPositioning.homeEntryHref}">${civicOrderismConfig.organizationPositioning.homeEntryLabel} <span aria-hidden="true">→</span></a></p>
   </div>
+  <p class="inst4-work__document"><a href="${civicOrderismConfig.organizationPositioning.homeDocumentHref}" target="_blank" rel="noopener">${civicOrderismConfig.organizationPositioning.homeDocumentLabel} <span aria-hidden="true">→</span></a></p>
 </section>
 
-<!-- SECTION 5 / VALUE GOAL -->
-<section class="inst4-core-statement" id="future" aria-labelledby="core-political-statement-title">
-  <div class="inst4-core-statement__grid">
-    <div class="inst4-core-statement__identity">
-      <p class="inst4-eyebrow">${site.corePoliticalStatement.englishLabel}<span aria-hidden="true"> · </span>${site.corePoliticalStatement.roleLabel}</p>
-      <p class="inst4-core-statement__label">${site.corePoliticalStatement.roleQuestion}</p>
-    </div>
-    <div class="inst4-core-statement__body">
-      <h2 class="inst4-core-statement__title" id="core-political-statement-title">${site.corePoliticalStatement.title.replace(
-        "中国",
-        "中国<wbr>",
-      )}</h2>
-      <blockquote class="inst4-core-statement__question"><p>${site.corePoliticalStatement.question}</p></blockquote>
-      <p class="inst4-core-statement__judgment">${site.corePoliticalStatement.judgment}</p>
-      <p class="inst4-core-statement__cta"><a href="/${site.corePoliticalStatement.slug}">阅读${site.corePoliticalStatement.roleLabel}全文 <span aria-hidden="true">→</span></a></p>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 6 / RESEARCH -->
+<!-- SECTION 7 / RESEARCH -->
 <section class="inst4-research" id="research">
   <div class="inst4-research__head">
     <p class="inst4-eyebrow">RESEARCH &amp; POLITICAL WORK</p>
@@ -1287,18 +1285,16 @@ function formalPrinciplesList() {
 
 writeContent(
   "start-here/index.md",
-  `${yamlFrontmatter({ title: "5分钟了解公民秩序主义", description: "用五分钟了解公民秩序主义是什么、与普通反对运动有什么不同、准备怎样处理政治转轨，以及当前组织建设阶段。", contentType: "新读者入口", aliases: ["start"] })}
+  `${yamlFrontmatter({ title: "5分钟了解公民秩序主义", description: "用五分钟了解公民秩序主义是什么、为什么是现在、政治转轨意味着什么、准备怎么做，以及最终想建立什么。", contentType: "新读者入口", aliases: ["start"] })}
 
 <div class="start-page start-here-page">
-  <header class="start-page__header"><p class="resource-label">新读者入口</p><h1>5分钟了解公民秩序主义</h1><p>用七个问题建立基础认识：这是什么、为什么提出、坚持什么、与普通反对运动有什么不同、准备怎样处理政治转轨、现在正在做什么，以及接下来从哪里继续了解。</p></header>
+  <header class="start-page__header"><p class="resource-label">新读者入口</p><h1>5分钟了解公民秩序主义</h1><p>用五个问题建立基础认识：它是什么、为什么是现在、政治转轨意味着什么、准备怎么做，以及最终想建立什么。</p></header>
   <div class="start-page__sections">
-    <section><span>01</span><div><h2>公民秩序主义是什么？</h2><p>公民秩序主义不是普通政治评论项目，也不是只提供文章和观点的内容平台。它是一条面向中国未来政治转型的政治路线。理论研究为路线提供判断基础，组织建设为路线建立现实承接能力，目标是在降低冲突和社会代价的前提下，为国家秩序、公共服务和政治制度的和平转换做好准备。</p></div></section>
-    <section><span>02</span><div><h2>为什么提出这条路线？</h2><p>工业时代形成的政治制度、政党组织和官僚治理方式，正在面对信息化社会带来的结构性失配。信息传播、社会协作和公共问题已经高度复杂化，旧有政治通道却越来越难以形成稳定反馈、明确责任和长期判断。中国需要的不是另一轮情绪动员，而是一种适应新时代的政治组织方式。</p><p class="start-roadmap__line">信息化时代 → 工业时代制度失配 → 需要新的政治组织方式</p></div></section>
-    <section><span>03</span><div><h2>核心政治路线是什么？</h2><p>公民秩序主义主张不以社会崩溃换取政治变化，不按政治身份实施普遍追责，也不把国家行政系统整体推向对立面。</p>${formalPrinciplesList()}</div></section>
-    <section><span>04</span><div><h2>它与普通反对运动有什么不同？</h2><p>区别在于方法边界。</p><ul><li>不以街头动员作为政治路径；</li><li>不以推翻和清算作为政治目标；</li><li>不等待政治变化发生以后再临时寻找方案；</li><li>提前建设政治路线、政治信誉、组织能力与国家承接准备。</li></ul><p>这决定了公民秩序主义的工作重点不是扩大声量，而是把路线、信誉、组织和国家承接准备真正做出来。</p></div></section>
-    <section><span>05</span><div><h2>它准备怎样处理政治转轨？</h2><p class="start-roadmap__line">旧体系无法自行改革 → 外部政治承接力量提前形成 → 降低转轨阻力 → 保持国家连续运行 → 逐步进入新的政治秩序</p><p>这里只给出主线。为什么内部改革无法完成破局、为什么需要外部政治承接、为什么和平转轨存在现实基础，以及政治变化以后怎样保持国家运行，在完整的和平转轨路线中展开。</p><div class="start-page__actions"><a class="v2-button v2-button--primary" href="/civic-orderism/">进入完整和平转轨路线</a></div></div></section>
-    <section><span>06</span><div><h2>它现在正在做什么？</h2><p>公民秩序主义已经从理论解释进入政治路线与组织承接建设阶段。当前工作的重点，是把中国和平政治转轨的基本路线讲清楚：为什么旧体系无法自行完成改革，为什么新的政治承接力量必须提前形成，怎样降低政治转轨的阻力，以及政治变化发生以后怎样保持国家连续运行。</p><p>与此同时，公民秩序主义正在推进北美非营利法人及首届董事会筹备，为这条路线建立长期、稳定、合法、可追责的组织基础。</p></div></section>
-    <section><span>07</span><div><h2>下一步从哪里开始？</h2><p>已经建立基础认识后，可以依次理解核心政治路线、按问题进入阅读地图，再了解当前董事会筹备工作。</p><div class="start-page__actions"><a class="v2-button v2-button--primary" href="/civic-orderism/peaceful-state-transition">阅读核心政治路线</a><a class="v2-button v2-button--secondary" href="/articles">阅读地图</a><a class="v2-button v2-button--secondary" href="/preparation">董事会筹备</a></div></div></section>
+    <section><span>01</span><div><h2>公民秩序主义是什么？</h2><p>公民秩序主义不是普通政治评论项目，也不是只提供文章和观点的内容平台。它是一条面向中国未来政治转轨的政治路线：理论研究为路线提供判断基础，组织建设为路线建立现实承接能力。</p><p>它要回答的不是哪一种制度听起来最理想，而是在降低冲突与社会代价的前提下，中国怎样完成下一次政治转型。</p><p class="start-roadmap__line">政治路线 → 组织承接能力 → 和平政治转轨</p></div></section>
+    <section><span>02</span><div><h2>为什么是现在？</h2><p>过去几十年，中国社会普遍相信明天会比今天更好：普通人相信收入会增加，企业相信生意还能扩大，年轻人相信机会还会更多。</p><p>今天，越来越多阶层、行业和群体开始重新计算自己的未来，中共也越来越难回答整个社会都在追问的那个问题：明天到底会怎样？</p><p>当旧秩序越来越难继续创造新的受益者，而越来越多社会群体开始承受损失，寻找新的政治答案就已经成为现实需要。政治转轨不是未来某一天才需要面对的问题，它已经成为今天必须开始准备的问题。</p><p class="start-roadmap__line">明天会比今天更好 → 明天到底会怎样？ → 提前准备政治答案</p><p>更深入的理论解释，例如工业时代形成的治理方式与信息化社会之间的结构性失配，属于后续的研究内容：<a href="/civic-orderism/information-age-and-political-transition">信息化时代与政治转型</a>。</p></div></section>
+    <section><span>03</span><div><h2>政治转轨意味着什么？</h2><p>政治转轨不是简单的政权崩溃，也不是街头革命。它不是等旧秩序倒下的那一刻才开始，也不是把国家本身当作革命对象。</p><p>公民秩序主义关心的重点是：政治权力发生变化的同时，国家和社会继续运行——公共服务不停摆，社会秩序不失控，普通人的生活不必为政治变化支付无法承受的代价。</p><p class="start-roadmap__line">政治权力改变 → 国家继续运行 → 社会保持稳定</p></div></section>
+    <section><span>04</span><div><h2>公民秩序主义准备怎么做？</h2><p class="start-roadmap__line">旧体系无法自行改革 → 外部政治承接力量提前形成 → 降低转轨阻力 → 保持国家连续运行 → 逐步进入新的政治秩序</p><p>这是和平转轨路线的主线。它的方法边界，可以先用五条已经确定的政治原则说明。</p>${formalPrinciplesList()}<p>为什么内部改革无法完成破局、为什么需要外部政治承接、为什么和平转轨存在现实基础，以及政治变化以后怎样保持国家运行，在完整的和平转轨路线中展开。</p><div class="start-page__actions"><a class="v2-button v2-button--primary" href="/civic-orderism/">进入完整和平转轨路线</a></div></div></section>
+    <section><span>05</span><div><h2>最终想建立什么？</h2><p>政治转轨的目的，不是结束某一个政权本身。它最终要回答的是：旧政治秩序之后，中国能不能建立一个值得生活、也值得期待未来的国家。</p><p class="start-roadmap__line">有边界的权力 → 有责任的政治 → 有连续性的国家 → 有尊严的公民 → 有纠错能力的制度</p><p>这就是「保留国家，改变政治」：政治制度可以改变，国家行政体系不能停摆。政治变化应当扩大、而不是取消普通人对未来的预期。</p><p>更完整的未来中国与长期制度方向，在「中国未来」与价值目标中展开；当前的组织建设进展另行说明。</p><div class="start-page__actions"><a class="v2-button v2-button--primary" href="/civic-orderism/peaceful-state-transition">阅读核心政治路线</a><a class="v2-button v2-button--secondary" href="/china-future/">中国未来</a><a class="v2-button v2-button--secondary" href="/articles">阅读地图</a><a class="v2-button v2-button--secondary" href="/preparation">当前组织建设</a></div></div></section>
   </div>
 </div>`,
 );
@@ -1826,6 +1822,15 @@ writeInstitutionalContent(
       )}
 
       ${inst4lSection(
+        "CURRENT STATUS",
+        "当前状态",
+        `<p>公民秩序主义目前处于政治路线建设与组织筹备阶段。它还不是一个已经正式成立的政治组织，也不声称拥有法人身份、治理机构或对外代表权。</p>
+<p>当前主要工作包括：</p>
+<ul class="inst4-route__list"><li>政治路线研究；</li><li>公开政治表达；</li><li>政治信誉建设；</li><li>组织能力准备；</li><li>北美合法组织载体筹备。</li></ul>
+<p>北美非营利法人尚未依法成立，具体注册法域尚未确定，首届董事会尚未依法产生。本站所称“法人筹备”和“董事会筹备”仅描述正在进行的准备工作，不表示已经取得任何法人、慈善或免税资格。</p>`,
+      )}
+
+      ${inst4lSection(
         "为什么存在",
         "为什么存在",
         `<p>中国正在进入政治、财政与社会结构变化的长期过程。公民秩序主义认为，政治变化不应当以摧毁国家和集体报复为代价，而应当通过接管、纠偏、重组与再解释，在保持国家连续性的同时建立新秩序。</p>
@@ -2250,7 +2255,10 @@ writeInstitutionalContent(
   )}
 
   ${inst4lSection(
-    "为什么现在",
+    // Naming disambiguation: the homepage WHY NOW answers why Chinese society
+    // needs a political answer today; this section answers why organization
+    // building starts now. Same concept name must not be reused.
+    "WHY ORGANIZE NOW",
     "为什么现在进入组织建设",
     `<p>政治转型不仅需要观点，也需要能够承担法律、财务、人员与长期政治责任的组织。公民秩序主义当前正在推进北美非营利法人及首届董事会筹备，从理论表达进入组织基础建设阶段。</p>
 <p>现阶段重点是理论建设、公共传播以及北美非营利法人和首届董事会筹备，而不是追求短期声势或迅速扩大参与规模。</p>`,

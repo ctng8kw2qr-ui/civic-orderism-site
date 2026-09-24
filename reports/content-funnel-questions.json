@@ -1,0 +1,326 @@
+{
+  "entryQuestions": [
+    {
+      "id": "Q1",
+      "question": "为什么越来越多人觉得「明天不会比今天更好」？",
+      "why": "最贴近普通人的生活感受，也是 X 上现实入口最有效的一类内容；读者不需要政治知识就能确认自己在经历什么。",
+      "levels": ["L1", "L2", "L3"]
+    },
+    {
+      "id": "Q2",
+      "question": "为什么经济问题最后一定会变成政治问题？",
+      "why": "把财政、地方债、制造业、社保这些可讨论的经济议题，自然引向「谁来决定、谁来负责」的政治问题。",
+      "levels": ["L1", "L2"]
+    },
+    {
+      "id": "Q3",
+      "question": "中共为什么改不动？为什么还能修补政策，却已经无法完成路线改革？",
+      "why": "网站存量最强的一类内容（中共机制与官僚困局），也是 X 上流量最大的主题；它天然以「那怎么办」收尾。",
+      "levels": ["L1", "L2"]
+    },
+    {
+      "id": "Q4",
+      "question": "如果中共突然出问题，中国第二天怎么办？",
+      "why": "绝大多数读者都想过但没有答案的问题，直接对应「国家连续性」这条路线主张。",
+      "levels": ["L1", "L2", "L3"]
+    },
+    {
+      "id": "Q5",
+      "question": "为什么体制内的人也是政治转轨必须考虑的一部分？",
+      "why": "X 数据里互动最强的桥梁主题（官僚不必倒戈）；它同时回答了「转轨会不会清算到我」。",
+      "levels": ["L1", "L2", "L3"]
+    },
+    {
+      "id": "Q6",
+      "question": "为什么不能等它自己崩，也不能靠革命解决？",
+      "why": "读者最容易把「反对现状」自动等同于革命或等待；这里是公民秩序主义与一般反对叙事的分界点。",
+      "levels": ["L2", "L3"]
+    },
+    {
+      "id": "Q7",
+      "question": "为什么「不清算」不是心软，而是路线的一部分？",
+      "why": "最容易被误读的政治立场；澄清它，读者才会理解路线为什么强调降低阻力而不是报复。",
+      "levels": ["L3", "L4"]
+    },
+    {
+      "id": "Q8",
+      "question": "一个新的政治力量凭什么值得信任？政治信誉怎么证明？",
+      "why": "X 数据显示「为什么需要信誉」互动率高、而直接招募互动率低；这是把认同转成长期关系的关键问题。",
+      "levels": ["L3", "L4"]
+    },
+    {
+      "id": "Q9",
+      "question": "政治变化之后，普通人的生活、工资、养老金、医院、秩序会怎么样？",
+      "why": "读者对「变化」最具体的恐惧；也是「保留国家」这条主张最需要被兑现的部分。",
+      "levels": ["L3", "L4"]
+    },
+    {
+      "id": "Q10",
+      "question": "这跟我有什么关系？我为什么要关心一条还没发生的政治转轨？",
+      "why": "从理解转向参与的最后一道门；决定读者是「读过」还是「留下来」。",
+      "levels": ["L3", "L4"]
+    }
+  ],
+  "paths": [
+    {
+      "id": "Q1",
+      "steps": [
+        {
+          "level": "L1",
+          "target": "china-stage/three-cleans-era-political-economic-cultural-contraction",
+          "role": "确认现实：清人、清账、清声"
+        },
+        {
+          "level": "L2",
+          "target": "theory/ccp-high-fragility-dysfunction",
+          "role": "解释机制：它还在，但越来越靠不住"
+        },
+        {
+          "level": "L3",
+          "target": "/start-here",
+          "role": "政治答案入口：为什么是现在"
+        },
+        {
+          "level": "L3",
+          "target": "/civic-orderism/peaceful-state-transition",
+          "role": "路线：和平转轨要解决什么"
+        }
+      ]
+    },
+    {
+      "id": "Q2",
+      "steps": [
+        {
+          "level": "L1",
+          "target": "china-stage/china-manufacturing-cannot-stop",
+          "role": "具体现象：越能造越难停"
+        },
+        {
+          "level": "L1",
+          "target": "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+          "role": "现实压力：社保、医保、金融"
+        },
+        {
+          "level": "L2",
+          "target": "china/supply-side-reform-state-can-scale-not-discover-future",
+          "role": "结构判断：只能放大产能，不能发现方向"
+        },
+        {
+          "level": "L2->L3",
+          "target": "civic-orderism/information-age-and-political-transition",
+          "role": "桥接：制度与时代失配"
+        },
+        {
+          "level": "L3",
+          "target": "/start-here",
+          "role": "政治答案入口"
+        }
+      ]
+    },
+    {
+      "id": "Q3",
+      "steps": [
+        {
+          "level": "L2",
+          "target": "theory/party-state-structural-failure",
+          "role": "组织诊断总纲"
+        },
+        {
+          "level": "L1",
+          "target": "china/ccp-reform-political-balance-deadlock",
+          "role": "现实机制：改革先破平衡"
+        },
+        {
+          "level": "L2",
+          "target": "china-stage/ccp-second-reform-opening-possibility",
+          "role": "反证：二次改开为什么难"
+        },
+        {
+          "level": "L3",
+          "target": "/start-here",
+          "role": "政治答案入口"
+        }
+      ]
+    },
+    {
+      "id": "Q4",
+      "steps": [
+        {
+          "level": "L1",
+          "target": "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+          "role": "现实风险"
+        },
+        {
+          "level": "L2",
+          "target": "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
+          "role": "结构判断：组织坍塌从制度信任开始"
+        },
+        {
+          "level": "L3",
+          "target": "/civic-orderism/peaceful-state-transition",
+          "role": "答案：国家如何在转轨中不断"
+        },
+        {
+          "level": "L3",
+          "target": "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+          "role": "收束：这条路想解决什么"
+        }
+      ]
+    },
+    {
+      "id": "Q5",
+      "steps": [
+        {
+          "level": "L1",
+          "target": "china/bureaucratic-system-under-purges",
+          "role": "现实：清洗下的官僚系统"
+        },
+        {
+          "level": "L2",
+          "target": "china/ccp-bureaucracy-double-deadlock",
+          "role": "结构判断：抓也失真、不抓也躺平"
+        },
+        {
+          "level": "L2",
+          "target": "china/organization-credit-retired-officials",
+          "role": "机制：终身承诺失效"
+        },
+        {
+          "level": "L3",
+          "target": "/civic-orderism/peaceful-state-transition",
+          "role": "答案：为什么不是官僚的敌人"
+        }
+      ]
+    },
+    {
+      "id": "Q6",
+      "steps": [
+        {
+          "level": "L2",
+          "target": "theory/social-change-dynamics-when-system-no-longer-worth-it",
+          "role": "变化动力学"
+        },
+        {
+          "level": "L2",
+          "target": "theory/overseas-political-movements-fail",
+          "role": "反面案例：为什么另一条路走不通"
+        },
+        {
+          "level": "L2->L3",
+          "target": "theory/internal-change-external-change",
+          "role": "桥接：外部力量为何必要"
+        },
+        {
+          "level": "L3",
+          "target": "civic-orderism/why-civic-orderism-is-easier-to-succeed",
+          "role": "答案：为什么接替难度最小"
+        },
+        {
+          "level": "L3",
+          "target": "/start-here",
+          "role": "回到完整入门"
+        }
+      ]
+    },
+    {
+      "id": "Q7",
+      "steps": [
+        {
+          "level": "L3",
+          "target": "/start-here",
+          "role": "先把五条原则读清楚"
+        },
+        {
+          "level": "L3",
+          "target": "civic-orderism/why-against-moral-narrative",
+          "role": "为什么反对道德叙事与道德审判"
+        },
+        {
+          "level": "L3",
+          "target": "/civic-orderism/peaceful-state-transition",
+          "role": "不清算与和平转轨的关系"
+        },
+        {
+          "level": "L4",
+          "target": "civic-orderism/why-justice-serves-reality",
+          "role": "司法如何服务现实"
+        }
+      ]
+    },
+    {
+      "id": "Q8",
+      "steps": [
+        {
+          "level": "L4",
+          "target": "civic-orderism/why-information-transparency",
+          "role": "公开标准：信息透明"
+        },
+        {
+          "level": "L4",
+          "target": "civic-orderism/why-civic-orderism-emphasizes-experience-and-records",
+          "role": "可核验：履历、经验与记录"
+        },
+        {
+          "level": "L4",
+          "target": "civic-orderism/backend-system-under-civic-orderism",
+          "role": "能力底座：秘书处与留痕系统"
+        },
+        {
+          "level": "L4",
+          "target": "/preparation",
+          "role": "当前正在做的组织载体"
+        }
+      ]
+    },
+    {
+      "id": "Q9",
+      "steps": [
+        {
+          "level": "L3",
+          "target": "/civic-orderism/peaceful-state-transition",
+          "role": "变化发生时国家如何继续运行"
+        },
+        {
+          "level": "L3",
+          "target": "civic-orderism/state-must-rely-on-systems-not-drivers",
+          "role": "为什么依赖系统而不是人"
+        },
+        {
+          "level": "L3",
+          "target": "civic-orderism/why-emphasize-reciprocity-and-equality",
+          "role": "普通人的位置：对等而不是照顾"
+        },
+        {
+          "level": "L4",
+          "target": "/china-future/",
+          "role": "长期方向：中国未来"
+        }
+      ]
+    },
+    {
+      "id": "Q10",
+      "steps": [
+        {
+          "level": "L3",
+          "target": "civic-orderism/this-time-let-china-be-your-pride",
+          "role": "为什么要做这件事"
+        },
+        {
+          "level": "L3",
+          "target": "/start-here",
+          "role": "5 分钟看懂整条路线"
+        },
+        {
+          "level": "L3",
+          "target": "civic-orderism/what-civic-orderism-ultimately-solves",
+          "role": "它最终要解决什么"
+        },
+        {
+          "level": "L4",
+          "target": "/preparation",
+          "role": "现在做到哪一步"
+        }
+      ]
+    }
+  ]
+}

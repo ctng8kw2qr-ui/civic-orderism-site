@@ -3,6 +3,10 @@
   "englishName": "Civic Orderism",
   "tagline": "建设一条低阻力、低风险、能够和平承接中国未来的政治道路。",
   "description": "公民秩序主义正在建设中国和平政治转轨的政治路线与组织承接能力，推进北美非营利法人及首届董事会筹备。",
+  "homepageMeta": {
+    "published": "2026-07-19",
+    "updated": "2026-09-23"
+  },
   "primaryEmail": "civicorderism@gmail.com",
   "secondaryEmail": "citizenorder@proton.me",
   "hero": {
@@ -14,7 +18,7 @@
     "title": "和平政治转轨路线建设与组织筹备",
     "english": "Political Transition Framework<br>&amp; Organizational Preparation",
     "year": "2026",
-    "note": "当前重点，是把中国政治转轨如何展开、如何承接、如何保持国家连续运行讲清楚；与此同时，推进北美非营利法人及首届董事会筹备，为这条政治路线建立长期、稳定、合法、可追责的组织基础。"
+    "note": "为政治路线、政治信誉和长期责任建立正式、合法、可持续的组织载体。"
   },
   "corePoliticalStatement": {
     "slug": "civic-orderism/this-time-let-china-be-your-pride",
