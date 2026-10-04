@@ -245,20 +245,29 @@ article a.v2-button--secondary {
   font-size: 0.72rem;
 }
 
+/* Editorial metadata, not a status control.
+   This was a 999px-radius outlined capsule — pill language borrowed from
+   dashboards, which reads as a UI state chip rather than a knowledge label.
+   A concept's knowledge status is editorial metadata: it says what kind of
+   document this is. It is now set as a letter-spaced eyebrow with no fill,
+   no border and no radius, matching the eyebrow language already used on the
+   homepage and the research pages. The parenthetical nuance between a formal
+   and a working concept is carried by weight and colour, not by a dashed
+   outline. Nothing here is interactive or filterable, so control language
+   would be wrong even if it looked calmer. */
 article .concept-status {
-  display: inline-flex;
-  margin: 0.2rem 0 0.8rem;
-  padding: 0.26rem 0.55rem;
-  border: 1px solid var(--border-subtle);
-  border-radius: 999px;
-  color: var(--darkgray);
-  font-size: 0.76rem;
-  line-height: 1.3;
+  display: block;
+  margin: 0.2rem 0 1rem;
+  color: var(--v6-text-muted);
+  font-size: 0.72rem;
+  font-weight: 560;
+  letter-spacing: 0.14em;
+  line-height: 1.4;
 }
 
 article .concept-status--reviewing {
-  border-style: dashed;
-  color: var(--gray);
+  color: var(--v6-text-muted);
+  font-weight: 500;
 }
 
 .home-topic-card {
@@ -287,15 +296,23 @@ article a.topic-entry-card:focus-visible {
   margin: 1rem 0;
 }
 
+/* Article entries, not boxes.
+   This was a 7px-radius outlined, tinted panel — the same card language the
+   research index deliberately does not use. On the research and concept pages
+   an entry is now an editorial row: a hairline above, then date, title and a
+   short summary. No fill, no border around the whole entry and no radius, so
+   it reads as part of the page rather than as a tile sitting on it.
+   The grid still groups the entries; the grouping is carried by the shared
+   baseline and the shared rule, not by a container. */
 .knowledge-card {
   display: flex;
   min-width: 0;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 1.15rem;
-  border: 1px solid var(--lightgray);
-  border-radius: 7px;
-  background: color-mix(in srgb, var(--light) 88%, var(--surface-primary));
+  padding: 1.3rem 0 1.5rem;
+  border-top: 1px solid var(--v6-border);
+  background: none;
+  border-radius: 0;
 }
 
 .knowledge-card[hidden] {
@@ -548,7 +565,7 @@ body:is([data-slug="china"], [data-slug="china/index"])
 
 .knowledge-card__summary {
   display: -webkit-box;
-  margin: 0 0 0.8rem;
+  margin: 0 0 0.2rem;
   overflow: hidden;
   color: var(--darkgray);
   font-size: 0.86rem;
@@ -577,10 +594,13 @@ body:is(
   margin-top: auto;
 }
 
+/* Taxonomy chips were outlined capsules. They are metadata, not controls and
+   not filters, so they are set as plain inline text separated by the middot
+   already used by .knowledge-card__meta above them. */
 .knowledge-card__chips span {
-  padding: 0.22rem 0.42rem;
-  border: 1px solid var(--lightgray);
-  border-radius: 3px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
 }
 
 .knowledge-filters {
@@ -5473,6 +5493,63 @@ article .start-sequence a {
   color: var(--ink);
   text-decoration: none;
   background-image: none;
+}
+
+/* ── Metadata blocks ───────────────────────────────────────────────
+   Concept pages open with a two-row key/value block (更新时间 / 知识状态).
+   It is authored as markdown, so it arrives as a real <table> with a
+   "字段 | 内容" header row, and inherited the default table treatment: a
+   7px-weight header, a double rule under it, and 1rem of margin around the
+   whole thing. That reads as a database grid dropped into an editorial page.
+
+   The semantics are correct and worth keeping — this IS tabular data, and a
+   table gives assistive technology the key/value relationship for free. So
+   the HTML stays exactly as authored and only the CSS changes: the header
+   row becomes a quiet letter-spaced eyebrow, the keys are muted and the
+   values are primary, rows are separated by a single hairline, and the block
+   sits flush in the text column instead of floating in its own margin.
+
+   Scoped to .table-container inside article content so it cannot affect any
+   other table that may be added later. */
+article .table-container {
+  margin: 1.4rem 0 1.8rem;
+}
+
+article .table-container > table {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+article .table-container > table th {
+  padding: 0 2.5rem 0.35rem 0;
+  border-bottom: 1px solid var(--v6-border);
+  color: var(--v6-text-muted);
+  font-size: 0.7rem;
+  font-weight: 560;
+  letter-spacing: 0.14em;
+  line-height: 1.6;
+  text-align: left;
+}
+
+article .table-container > table td {
+  padding: 0.5rem 2.5rem 0.5rem 0;
+  border-bottom: 1px solid var(--v6-border);
+  color: var(--v6-text-secondary);
+  font-size: 0.84rem;
+  font-weight: 440;
+  line-height: 1.7;
+}
+
+/* The value column carries the actual content, so it reads as primary. */
+article .table-container > table td + td {
+  color: var(--v6-text-primary);
+  font-weight: 500;
+}
+
+article .table-container > table tr:last-child td {
+  border-bottom: 0;
 }
 
 /* ── Start Here · editorial links ─────────────────────────────────

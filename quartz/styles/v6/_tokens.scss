@@ -170,6 +170,112 @@
 
 /* Dark mode keeps the same semantic names; only the values change.
    深酒红在深色底上提亮，以保证 ≥ 4.5:1。 */
+/* ══════════════════════════════════════════════════════════════════════
+   Legacy palette remap — one visual language for the whole site.
+
+   The site carries TWO layers of pre-V6 colour that were never retuned when
+   V6 was introduced, and both are consumed on pages that do not sit inside a
+   .v6 wrapper (concept pages, topics, institutional pages, article pages):
+
+     1. quartz.config.ts  — --light #f7f8fa, --darkgray #465260,
+                            --secondary #0a1d38, --tertiary #9b7c3e  (~480 uses)
+     2. tokens.scss       — --ink #0a1d38, --border-subtle #d8dee6,
+                            --accent #9b7c3e, --surface-* #fff/#fbfcfd (~440 uses)
+
+   Neither is a V6 token, so the site ended up with two visual languages: a
+   warm-white, near-black, burgundy one on the homepage, and a cold blue-gray
+   one with a gold accent everywhere else. That is the "old knowledge base"
+   impression on deep pages, and it is a token problem, not a page problem.
+
+   This block makes both legacy layers resolve to the canonical V6 palette, so
+   the cool surface, the blue-gray body text, the navy headings and the gold
+   accent cannot reappear on any page. Fixing the ~920 call sites is not the
+   job; fixing the tokens they read is.
+
+   Selector note: these are `html:root` / `html:root[saved-theme="dark"]`, not
+   `:root`. The config-injected palette is emitted at the very END of the
+   bundle, after every @use, so an equally specific block here would lose on
+   source order wherever it is written. `html:root` (0,1,1) outranks the
+   injected `:root` (0,1,0) while still matching every page, and avoids
+   !important. Every value points at a --v6-* token defined in this same file,
+   so light and dark switch together and this block needs no dark variant of
+   its own for correctness — the two blocks below exist only to outrank the
+   matching legacy theme blocks. */
+html:root {
+  /* ── Layer 1: quartz.config.ts ── */
+  --light: var(--v6-background);
+  --lightgray: var(--v6-border);
+  --gray: var(--v6-text-muted);
+  --darkgray: var(--v6-text-secondary);
+  --dark: var(--v6-text-primary);
+  --secondary: var(--v6-brand-text);
+  --tertiary: var(--v6-brand-text);
+  --highlight: var(--v6-brand-subtle);
+  --textHighlight: var(--v6-brand-line);
+
+  /* ── Layer 2: tokens.scss ── */
+  --bg-page: var(--v6-background);
+  --bg-sidebar: var(--v6-background);
+  --bg-header: var(--v6-background);
+  --surface-primary: var(--v6-surface);
+  --surface-secondary: var(--v6-surface);
+  --surface-elevated: var(--v6-surface-sunken);
+  --text-primary: var(--v6-text-primary);
+  --text-secondary: var(--v6-text-secondary);
+  --text-tertiary: var(--v6-text-muted);
+  --ink: var(--v6-text-primary);
+  --ink-soft: var(--v6-text-secondary);
+  --accent-line: var(--v6-border-strong);
+  --border-subtle: var(--v6-border);
+  --border-subtle-soft: var(--v6-border-strong);
+  --accent: var(--v6-brand-text);
+  --accent-muted: var(--v6-brand-text);
+  --accent-deep: var(--v6-brand);
+  --btn-primary-bg: var(--v6-brand);
+  --btn-hover-bg: var(--v6-brand-hover);
+  --btn-hover-border: var(--v6-brand);
+  --ink-on-accent: var(--v6-text-on-brand);
+  /* V6 builds hierarchy from lightness and rules, not drop shadows. */
+  --shadow-card: none;
+}
+
+html:root[saved-theme="dark"] {
+  /* Same mapping. The values are --v6-* tokens, which already resolve to the
+     dark palette under this theme, so repeating them keeps the two legacy
+     layers aligned in dark mode instead of letting their navy variants win. */
+  --light: var(--v6-background);
+  --lightgray: var(--v6-border);
+  --gray: var(--v6-text-muted);
+  --darkgray: var(--v6-text-secondary);
+  --dark: var(--v6-text-primary);
+  --secondary: var(--v6-brand-text);
+  --tertiary: var(--v6-brand-text);
+  --highlight: var(--v6-brand-subtle);
+  --textHighlight: var(--v6-brand-line);
+  --bg-page: var(--v6-background);
+  --bg-sidebar: var(--v6-background);
+  --bg-header: var(--v6-background);
+  --surface-primary: var(--v6-surface);
+  --surface-secondary: var(--v6-surface);
+  --surface-elevated: var(--v6-surface-sunken);
+  --text-primary: var(--v6-text-primary);
+  --text-secondary: var(--v6-text-secondary);
+  --text-tertiary: var(--v6-text-muted);
+  --ink: var(--v6-text-primary);
+  --ink-soft: var(--v6-text-secondary);
+  --accent-line: var(--v6-border-strong);
+  --border-subtle: var(--v6-border);
+  --border-subtle-soft: var(--v6-border-strong);
+  --accent: var(--v6-brand-text);
+  --accent-muted: var(--v6-brand-text);
+  --accent-deep: var(--v6-brand);
+  --btn-primary-bg: var(--v6-brand);
+  --btn-hover-bg: var(--v6-brand-hover);
+  --btn-hover-border: var(--v6-brand);
+  --ink-on-accent: var(--v6-text-on-brand);
+  --shadow-card: none;
+}
+
 :root[saved-theme="dark"] {
   --v6-background: #141518;
   --v6-surface: #1b1d21;
