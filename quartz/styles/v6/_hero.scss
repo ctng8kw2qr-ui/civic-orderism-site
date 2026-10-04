@@ -7,7 +7,7 @@
  * 不设任何独立图形。
  *
  * 三层：主叙事 → 行动层 → 状态层，三层不混。
- * 层级：文字 > 留白 > 品牌纹理 > 几何装饰。
+ * 层级：文字 > 留白；Hero 以 metadata 收尾。
  *
  * ── VERTICAL RHYTHM（不是目测定位）─────────────────────────────────
  * 全部自全站 spacing scale 派生，系数取自 --v6-space-lg：
@@ -36,10 +36,6 @@
   --e3-r5: calc(var(--v6-space-lg) * 1.6);
   --e3-r6: calc(var(--v6-space-lg) * 0.6);
   --e3-r7: calc(var(--v6-space-lg) * 1.1);
-  /* 品牌纹理：字号与裁切比例。裁切 = 容器高度 / 字号 = 27%，
-     与已批准 E3 一致，且在每个断点比例相同。 */
-  --e3-mark-size: clamp(2rem, 4.55vw, 4.1rem);
-  --e3-mark-crop: 0.27;
   /* Start Here → secondary navigation group 的目标间距。 */
   --e3-gap-nav: var(--v6-space-lg);
 
@@ -48,8 +44,8 @@
   flex-direction: column;
   box-sizing: border-box;
   width: 100%;
-  /* 已批准高度。内容更长时由内容决定，不硬撑。 */
-  min-height: min(620px, 72vh);
+  /* 移除 artwork 后由内容决定高度，避免保留装饰占位。 */
+  min-height: 0;
   padding: 0 0 var(--v6-space-lg);
   overflow: hidden;
   background: linear-gradient(
@@ -260,36 +256,6 @@
   margin-left: auto;
 }
 
-/* ── 品牌纹理：底部被裁切的巨大 CIVIC ORDERISM ─────────────────────
-   纯视觉，aria-hidden。位于 metadata 之下，与 metadata 不竞争。
-   裁切用容器 overflow 实现，比例 = 高度 / 字号 = 27%。 */
-.v6 .v6-hero--e3 .v6-hero__mark {
-  position: relative;
-  z-index: 0;
-  display: block;
-  flex: 0 0 auto;
-  width: 100%;
-  height: calc(var(--e3-mark-size) * var(--e3-mark-crop));
-  margin-top: var(--v6-space-lg);
-  overflow: hidden;
-  pointer-events: none;
-  user-select: none;
-}
-
-.v6 .v6-hero--e3 .v6-hero__mark-text {
-  display: block;
-  max-width: var(--v6-container);
-  margin: 0 auto;
-  padding: 0 var(--v6-gutter);
-  color: var(--v6-text-muted);
-  font-size: var(--e3-mark-size);
-  font-weight: var(--v6-weight-display);
-  letter-spacing: 0.24em;
-  line-height: 1;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
 /* ── Focus：必须清楚，且遵循 E3 语言（2px 品牌色 outline + 偏移）。
       极简设计不得删除键盘焦点指示。 ───────────────────────────── */
 .v6 .v6-hero--e3 .v6-hero__start-link:focus-visible,
@@ -331,10 +297,6 @@
    ══════════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
   .v6 .v6-hero--e3 {
-    /* 620px 是桌面首屏高度；移动端内容更矮，硬撑只会在
-       CTA 与 metadata 之间留下空场。改为内容驱动。 */
-    min-height: 0;
-
     /* 移动端纵向收紧：只压缩「块与块之间」的节奏，
        不动画布上留白（--v6-space-xl）、不动标题/正文内部阅读空间、
        不动 Start Here 的触控高度。全部自 --v6-space-* 派生。 */
@@ -346,8 +308,7 @@
   /* gutter 收窄。56px 是桌面值：375px 下两侧共占 112px，
      只剩 263px 给 10 个汉字 —— 任何可读字号都放不下，
      这是孤字断行的真正成因。 */
-  .v6 .v6-hero--e3 .v6-hero__canvas,
-  .v6 .v6-hero--e3 .v6-hero__mark-text {
+  .v6 .v6-hero--e3 .v6-hero__canvas {
     padding-right: 24px;
     padding-left: 24px;
   }
@@ -435,12 +396,6 @@
   .v6 .v6-hero--e3 .v6-hero__meta-col--right .v6-hero__meta-secondary {
     max-width: none;
     margin-left: 0;
-  }
-
-  /* 品牌纹理在移动端会产生字母碎片，无法形成「字母顶部」读法。
-     与已批准 E3 一致：直接隐藏。 */
-  .v6 .v6-hero--e3 .v6-hero__mark {
-    display: none;
   }
 }
 
