@@ -1,208 +1,219 @@
 # Technical Debt
 
-Verified inventory of pre-existing issues. Compiled during V6 Phase 2
-(July 2026) so they are recorded rather than silently carried. **Nothing in
-this file was introduced by V6, and nothing here is fixed by V6** — Phase 2
-deliberately stayed inside its scope.
+Engineering state of the repository, classified. Operating rules live in
+[`PROJECT_RULES.md`](PROJECT_RULES.md).
 
-Each item lists how it was verified, so a future pass does not have to
+Each item records how it was verified, so a future pass does not have to
 re-discover it.
 
----
+## Definitions
 
-## 1. Prettier violations across the repo
+These definitions exist to stop this file growing without limit. Apply them
+before adding anything.
 
-**Status:** present on `main`, unchanged by V6.
+| Term                  | Meaning                                                                        |
+| --------------------- | ------------------------------------------------------------------------------ |
+| **Technical debt**    | An existing engineering state with a **defined future repayment action**.      |
+| **Known constraint**  | Understood and **deliberately accepted**; no repayment currently required.     |
+| **Future capability** | Not yet built, and there is **no current business need** — therefore not debt. |
 
-`npm run check` runs `tsc --noEmit && prettier . --check`. The Prettier half
-fails. The count is around **189 files** on `main` and around **188** after
-Phase 2 (the relocation of the hero SVG changed one file's status; Phase 2
-adds no new offenders — verified with `npx prettier . --check`).
-
-The V6 work is Prettier-clean: every file it adds or edits passes
-`prettier --check`. Phase 1 and Phase 2 both recorded "0 new offenders".
-
-**Why not fixed:** a repo-wide `prettier --write` would create a very large
-diff touching unrelated files and obscure review. It should be done as its
-own isolated, no-behaviour-change commit once no feature branches are open.
+Nothing in this file was introduced by the V6 phases, and nothing here is fixed
+by them.
 
 ---
 
-## 2. Article column width is `!important`-locked
+# A. Active Technical Debt
 
-**Status:** present on `main`. Deliberately worked _around_, not changed.
+Existing state, with a defined repayment action, that does not currently block
+production.
 
-`quartz/styles/custom.scss:11121`
+## A1. Legacy `logo.png` and its PDF tooling consumers
 
-```scss
-body[data-page-kind="article"] .page > #quartz-body .center {
-  flex: 0 1 780px !important;
-  min-width: 0 !important;
-  max-width: 780px !important;
-}
-```
+**Status:** carried deliberately. Do not delete.
 
-The article reading column cannot be widened with normal cascade rules.
-Phase 2 initially attempted to give the article header a wider editorial band
-and discovered this is a no-op: a child cannot exceed its parent.
+`quartz/static/logo.png` is **782.2 KB** (1254 × 1254). It predates V6, uses the
+old navy palette (`#102549`), and is **not** part of the V6 brand identity — the
+site's identity is the Threshold Mark plus a typographic wordmark.
 
-Because overriding it requires more `!important` and a real layout
-restructure (and a decision about the 232px left rail — which is **empty** on
-article pages — and the 272px right TOC rail), Phase 2 respected the existing
-width and achieved cohesion through the token system instead.
+**It still has real consumers** (verified — this is why it was not removed):
 
-**Follow-up:** if a wider article composition is ever wanted, do it as a
-layout-shell task: decide the rails, then change this rule once, cleanly.
+| Consumer                                          | Detail                                                                                        |
+| ------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `scripts/generate-introduction-manual-pdf.cjs:11` | Registered npm script `generate:introduction-manual-pdf`; embeds the logo into the manual PDF |
+| `scripts/generate-founding-board-brief-pdf.py:33` | Build tooling (not registered in `package.json`)                                              |
+| `scripts/validate-v2-architecture.mjs:796`        | Asserts `public/static/logo.png` exists as a build artifact                                   |
+
+Note: `quartz/components/PageTitle.tsx` also references it, but that component
+is **never mounted** in `quartz.layout.ts` — it is genuinely dead. Do not mount
+it merely to justify keeping the file.
+
+**Repayment action** — a dedicated migration task, not a side effect:
+
+1. Author the Full Lockup as **SVG**.
+2. Migrate the introduction manual generator.
+3. Migrate the founding board brief generator.
+4. Update the validator assertion.
+5. Verify the generated PDFs.
+6. Retire the legacy 782 KB raster.
+
+**Do not start this migration on its own account.** It should be triggered by a
+real need to update the Introduction Manual, the Founding Board Brief, or
+another formal PDF.
 
 ---
 
-## 3. `temp_images/` is a tracked empty directory
+## A2. Workspace file-sync hazards
+
+**Status:** environmental, not a repo defect — but it has silently produced
+misleading results repeatedly.
+
+The workspace lives under a synced folder. Observed symptoms:
+
+- Duplicate files with `" 2"` / `" 3"` suffixes, including inside `public/` and
+  in `reports/`. Ten such files were committed accidentally during Phase 4B and
+  had to be removed in a follow-up commit.
+- `public/` losing article files entirely, with sibling directories such as
+  `china 3/` appearing. A request for an article returned "Error response",
+  which initially looked like a code regression.
+
+**Repayment action:** none available — it is a property of the environment.
+Mitigation is procedural and is enforced in
+[`PROJECT_RULES.md` §12](PROJECT_RULES.md): run the duplicate scan before every
+merge, and on unexplained build breakage run `rm -rf public && npm run build`
+before suspecting code.
+
+---
+
+## A3. Prettier formatting debt
 
 **Status:** present on `main`.
 
-`git ls-files temp_images/` → `temp_images/.keep`. An abandoned image-prep
-workflow; the directory holds nothing else.
+`npm run check` runs `tsc --noEmit && prettier . --check`. The Prettier half
+fails: **187 offending files**, measured on the current baseline.
 
-**Note:** removing it is a one-line commit. It is referenced by no script,
-config, or workflow (verified).
+Historical readings: ~189 on `main` before V6; ~188 after Phase 2; 187 on the
+current baseline. The V6 work itself was Prettier-clean — every phase recorded
+"0 new offenders".
 
----
+**Current policy: do not fix opportunistically.** A repo-wide
+`prettier --write` would produce a very large diff touching unrelated files and
+obscure review. It should be its own isolated, no-behaviour-change commit, and
+only when no other work is in flight — or incrementally, as files are touched
+for other reasons.
 
-## 4. Stale build residue in `public/` (not a source problem)
-
-**Status:** self-resolving; recorded for accuracy.
-
-An earlier audit during Phase 1 found 28 files with a ` 2` suffix in
-`public/` (e.g. `about 2.html`, `icon-192 2.png`). A subsequent `npm run build`
-removed them: `public/` is wiped and regenerated each build
-("Cleaned output directory"), and `git ls-files | grep ' 2\.'` is empty —
-none of them are tracked.
-
-**Conclusion:** this was residue from some older build/sync, not a source
-tree problem. No action needed; it will not recur from a clean build.
+**Repayment action:** a dedicated `maintenance/` formatting task, or incidental
+cleanup of files already being edited.
 
 ---
 
-## 5. Two legacy CSS/token systems still coexist
+## A4. Legacy landing-page CSS / token layer
 
 **Status:** partially addressed by Phase 2; deliberately not fully removed.
 
-Before Phase 2 the site had three token layers:
+Three token layers used to coexist: `--v6-*` (the V6 system), `--inst-*` (a
+separate institutional palette in `custom.scss`), and legacy Quartz theme tokens
+(`--dark`, `--gray`, `--secondary`, …) set from `quartz.config.ts`.
 
-1. `--v6-*` — the V6 semantic design system (`quartz/styles/v6/_tokens.scss`).
-2. `--inst-*` — a separate institutional palette defined in `custom.scss`.
-3. Legacy Quartz theme tokens (`--dark`, `--gray`, `--lightgray`,
-   `--secondary`, …) set from `quartz.config.ts`.
-
-Phase 2 resolved the _article_ side of this by aliasing both legacy families
-onto V6 tokens, scoped to `body[data-page-kind="article"]`
-(`quartz/styles/v6/_article.scss`). The article system itself was not
+Phase 2 resolved the **article** side by aliasing both legacy families onto V6
+tokens, scoped to `body[data-page-kind="article"]`. The article system was not
 rewritten.
 
-**Still outstanding:** the remaining `inst4-*` / `inst4l-*` landing-page CSS
-in `custom.scss` (~11k lines) and the `--inst-*` definitions that now have no
-consumer inside article scope. `custom.scss` also still targets
-`article { max-width: 780px }` at line 1360, which is dead for article pages
-(`.article-page` overrides it) but applies to non-article `<article>` elements.
+**Still outstanding:** the `inst4-*` / `inst4l-*` landing-page CSS in
+`custom.scss` (~11k lines) and the `--inst-*` definitions that now have no
+consumer inside article scope.
 
-**Follow-up:** retire the legacy landing-page layer page by page, the way the
-homepage was done, rather than in one sweep.
-
----
-
-## 6. Hero artwork is hand-authored and not yet from a design system
-
-**Status:** resolved for Phase 4B; revisited when a design system exists.
-
-`quartz/static/assets/v6/hero/hero-threshold.svg` is the Phase 4B Hero
-artwork: a structural boundary with one passage opened through it and a datum
-running unbroken across the full width. It is hand-authored SVG, not generated
-and not stock.
-
-Phase 4B also **retired the CSS-mask rendering model** (see `assets/v6/SPEC.md`
-§2). A mask collapses any drawing into a single-colour alpha stencil, so it
-could not carry a multi-weight artwork. The Hero is now a direct-rendered
-`<img>` of the SVG, which themes itself through `prefers-color-scheme` — V6
-keeps that in sync with `saved-theme`, so one asset serves both themes with no
-filter, no invert and no second file.
-
-Swapping the Hero remains a one-file change.
-
-**Follow-up:** when a fuller visual system exists, the Hero artwork should be
-redrawn from it. Do not fill the slot with stock or AI-generated imagery.
+**Repayment action:** retire the legacy landing-page layer **section by
+section**, the way the homepage was migrated — not in one sweep. A full
+replacement of `custom.scss` with V6 tokens is a real maintenance task, not a
+side effect.
 
 ---
 
-## 7. `satori` / `sharp` / OG-image emitter are available but unused
+# B. Known Constraints / Deliberate Decisions
 
-**Status:** present, deliberately left disabled.
+Understood, accepted, and **not requiring repayment**. These are not debt.
 
-`quartz/plugins/emitters/ogImage.tsx` exists (Satori + sharp, 1200×630
-programmatic social images) but is **not registered** in `quartz.config.ts`.
-`sharp` is a dependency already used by the favicon emitter.
+## B1. Article column width is `!important`-locked
 
-This means the project could generate branded OG images and editorial covers
-programmatically from each article's title/description, with no manual
-artwork. V6 Phase 2 was explicitly scoped **not** to enable it.
+`quartz/styles/custom.scss` locks the article reading column at 780px with
+`!important`. It cannot be widened through normal cascade rules.
 
-**Phase 3 finding — programmatic OG is NOT viable in this project as configured.**
-Investigated and deliberately left disabled. Evidence:
+Phase 2 respected the existing width and achieved cohesion through the token
+system instead. Widening would require deciding what to do with the empty 232px
+left rail and the 272px right TOC rail — a layout-shell task.
 
-1. `quartz.config.ts` sets `fontOrigin: "local"` and `typography.header/body`
-   to `"system-ui"`.
-2. `getSatoriFonts()` fetches TTFs from Google Fonts by font name. A request
-   for `family=system-ui` returns **HTTP 400** (measured).
-3. Failed font fetches are dropped by `.filter(font => font !== null)`, so
-   satori would receive an **empty font array**.
-4. Even with fonts resolved, there is **no CJK font** in the pipeline at all,
-   so Chinese article titles would render as tofu boxes.
-5. Making it work would require shipping multi-MB CJK subsets, changing
-   `fontOrigin`, and adding build time for 103 pages — contrary to the
-   project's minimal-change, local-font principles.
+**Accepted.** Revisit only if a wider article composition is ever actually
+wanted, and then as a deliberate layout task.
 
-**Resolution:** `og:image` now has real precedence (Phase 3) —
-article `cover` (absolute URL) with a single branded `og-image.png` fallback.
-No programmatic generation.
+## B2. `satori` / `sharp` / OG-image emitter available but not enabled
 
-**Future precondition:** if programmatic OG is ever wanted, it must FIRST
-solve a reliable offline CJK font pipeline (self-hosted subset, no network
-fetch at build time). Do not enable `CustomOgImages` before that exists.
+`quartz/plugins/emitters/ogImage.tsx` exists (Satori + sharp, 1200 × 630) but is
+**not registered**. Investigated in Phase 3 and found **not viable as
+configured**:
 
-**Also note:** articles now have distinct social previews _when they define a
-cover_, so the practical gap is closed without code generation.
+1. `quartz.config.ts` sets `fontOrigin: "local"` and typography to `system-ui`.
+2. Fetching a Google font named `system-ui` returns **HTTP 400** (measured).
+3. Failed fetches are filtered out, leaving satori an **empty font array**.
+4. There is **no CJK font** in the pipeline, so Chinese titles would render as
+   tofu.
+5. Making it work needs multi-MB CJK subsets, a `fontOrigin` change and added
+   build time for 103 pages.
+
+**Accepted.** `og:image` already has real precedence: article `cover` (absolute
+URL) with a branded fallback. Articles with a cover get a distinct social
+preview without code generation.
+
+**Precondition if ever revisited:** solve a reliable offline CJK font pipeline
+first (self-hosted subset, no network fetch at build time).
+
+## B3. Known cosmetic repetition in the article system
+
+`ArticleReadingEnhancements.tsx` renders several distinct recommendation regions
+(继续阅读, 知识关联, 系列导航, CTA, Reading Footer). Phase 2 aligned their styling
+but deliberately merged and deleted nothing.
+
+**Accepted as an editorial question, not a styling one.** Revisit only after
+article screenshots have been reviewed editorially, to decide whether any region
+is redundant for a reader arriving from social.
+
+## B4. Hero artwork is hand-authored, not generated from a design system
+
+`quartz/static/assets/v6/hero/hero-threshold.svg` is the Phase 4B Hero artwork
+and is **frozen production artwork** — see `PROJECT_RULES.md` §1–2. It is
+hand-authored SVG, not generated and not stock.
+
+Phase 4B also retired the CSS-mask rendering model: a mask collapses any drawing
+into a single-colour alpha stencil, so it could not carry a multi-weight artwork.
+The Hero is now a direct-rendered `<img>` whose SVG themes itself via
+`prefers-color-scheme`, so one asset serves both themes with no filter, no
+invert and no second file. Swapping the Hero remains a one-file change.
+
+**Accepted.** There is no current need for a broader design system. Do not fill
+the slot with stock or AI-generated imagery.
+
+## B5. `temp_images/` — minor repository residue
+
+`git ls-files temp_images/` → `temp_images/.keep`, a **0-byte placeholder**. The
+directory holds nothing else and is referenced by no script, config or workflow
+(verified). It is not in `.gitignore`.
+
+**Accepted as residue, not debt.** Removing it is a one-line commit, but there is
+no reason to spend a task on it. Leave it unless a dedicated cleanup task decides
+otherwise.
 
 ---
 
-## 9. Build output directory is vulnerable to file-sync corruption
+# C. Future Capabilities — NOT Technical Debt
 
-**Status:** environmental, not a repo defect — but it silently produced
-misleading test results twice.
+Not yet built, with **no current business need**. They must not be described as
+debt, and must not be built in advance of a real requirement.
 
-The workspace lives under `~/Documents`, which is being synced. During Phase 1
-this surfaced as 28 ` 2`-suffixed files in `public/`. During Phase 3 it was
-worse: after one build, `public/china/` was **missing every article file** and
-sibling directories like `public/china 3/` appeared. A dev-server request for
-`/china/ccp-2018-xi-era-local-growth-space.html` returned "Error response",
-which initially looked like a regression in the Phase 3 work.
+| Capability                         | Trigger                                                                                    |
+| ---------------------------------- | ------------------------------------------------------------------------------------------ |
+| **Tier 2 series covers**           | A column reaching real content scale                                                       |
+| **Independent social composition** | Social distribution becoming a real operational need that the editorial cover cannot serve |
+| **Further Tier 1 artwork**         | Individual articles becoming important enough to warrant it                                |
+| **A formal publication system**    | A real publishing requirement emerging                                                     |
 
-A clean `rm -rf public && npm run build` produced a correct 533-file output
-with zero ` 2`/` 3` artifacts, and every validator passed.
-
-**Follow-up:** if unexplained missing/duplicated build output recurs, rebuild
-clean and/or move the checkout outside a synced folder before investigating
-code. Do not attribute it to the most recent commit.
-
----
-
-## 8. Known cosmetic duplication in the article system
-
-**Status:** present; not changed (Phase 2 was restricted to visual alignment).
-
-`ArticleReadingEnhancements.tsx` (984 lines) renders several distinct
-recommendation regions — 继续阅读, 知识关联, 系列导航, CTA, Reading Footer.
-Phase 2 aligned their styling but **did not** delete or merge any module, by
-explicit instruction.
-
-**Follow-up:** once article screenshots have been reviewed editorially, decide
-whether any of these regions are redundant for a reader arriving from social.
-That is an editorial decision, not a styling one.
+See `PROJECT_RULES.md` §9 for the Tier 1 / 2 / 3 artwork rules. Tier 3 (no
+cover) is a **designed state**, not a gap.

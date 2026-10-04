@@ -170,7 +170,14 @@ homepage 375/390/430/768/1024/1440; article 390/768/1024/1440; no-cover samples
 390/1440; light and dark. Nav, footer, Core Judgment, TOC and Reading Footer all
 present; homepage section count unchanged at 7.
 
-Screenshots: `qa-*.png` (viewport-sized, light and dark).
+Screenshots:
+
+- `qa-*.png` — local build QA, viewport-sized, light and dark.
+- `prod/` — **post-deployment production verification screenshots**, captured
+  against `civicorderism.com` after the Phase 4B deploy. Named
+  `<page>-<width>-<theme>.png`. These are **audit evidence only**: not runtime
+  dependencies, not canonical design assets, and not part of the published site.
+  Kept so the deployment state at this point in time remains inspectable.
 
 ---
 
