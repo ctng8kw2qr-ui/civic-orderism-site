@@ -4,14 +4,21 @@ The homepage Hero visual slot. Exactly **one** primary hero visual.
 
 ## Belongs here
 
-`hero-threshold.svg` — the Phase 4B Hero artwork. A structural boundary with one
-passage opened through it, and a datum running unbroken across the full width:
-the structure continues, the path changes.
+`hero-threshold.svg` — the Hero artwork, **CONTINUITY**. Two structures with a
+passage between them, and one wine datum running the entire width that rises
+once across that passage and is never broken: the structure changes, the line
+does not. The left structure is dense and low — the order that stands; the right
+has fewer, wider-spaced members — the order being prepared.
 
-Geometry, rationale and the rendering-model note live in the file's own header
-comment. Related: `../brand/threshold-mark.svg` is the same threshold idea as a
-compact brand symbol; the Hero is that idea spatialised. They are deliberately
-different forms and the mark must not simply be enlarged into the Hero.
+Geometry, rationale, the ratio argument and the rendering-model note live in the
+file's own header comment.
+
+The filename still refers to the threshold idea the Hero and the brand mark
+share. `../brand/threshold-mark.svg` is that idea as a compact symbol; the Hero
+is the same idea spatialised. They are deliberately **different forms** — the
+mark must not be enlarged into the Hero, and the Hero must not shrink into a
+mark. **This artwork is not a logo** and does not replace the wordmark, the
+Threshold Mark, the favicon or the app icons.
 
 ## Not here
 
@@ -22,9 +29,17 @@ organisation documents (`../organization/`), brand marks (`../brand/`).
 
 |         | Value                                   |
 | ------- | --------------------------------------- |
-| viewBox | 1200 × 600 (2:1)                        |
+| viewBox | 1200 × 900 (4:3)                        |
 | Display | fills the Hero aside, max 460px desktop |
 | Mobile  | full width of the aside                 |
+
+**Why 4:3 and not 2:1.** At the Hero's 437px display width a 2:1 canvas scales by
+0.364, so a 3-unit line renders at **1.09px**. At that weight the drawing cannot
+carry itself, which forces texture — hatch and tick marks — to supply the mass,
+and that is exactly what made the earlier artwork read as a technical drawing
+rather than architectural abstraction. At 4:3 the scale is 0.546 and the same
+line renders at **1.64px**, so the line work holds on its own. Mobile scales to
+319 × 239 and still reads.
 
 ## Formats
 
