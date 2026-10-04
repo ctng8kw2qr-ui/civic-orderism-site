@@ -75,16 +75,20 @@ const V6HomeHero: QuartzComponent = ({
               role="img"
               aria-label="柱廊与山墙线稿，象征制度与公共秩序"
             />
-            <p class="v6-hero__phase-label">
-              CURRENT PHASE<span aria-hidden="true"> · </span>当前阶段
-            </p>
-            <p class="v6-hero__phase">和平政治转轨路线建设与组织筹备</p>
-            <p class="v6-hero__phase-en" lang="en">
-              Political Transition Framework
-              <br />
-              &amp; Organizational Preparation
-            </p>
-            <p class="v6-hero__year">2026</p>
+            {/* 当前阶段：presentation-only wrapper carrying the brand hairline.
+                Same content, same order, no added information. */}
+            <div class="v6-hero__phase-block">
+              <p class="v6-hero__phase-label">
+                CURRENT PHASE<span aria-hidden="true"> · </span>当前阶段
+              </p>
+              <p class="v6-hero__phase">和平政治转轨路线建设与组织筹备</p>
+              <p class="v6-hero__phase-en" lang="en">
+                Political Transition Framework
+                <br />
+                &amp; Organizational Preparation
+              </p>
+              <p class="v6-hero__year">2026</p>
+            </div>
           </div>
         </div>
       </section>

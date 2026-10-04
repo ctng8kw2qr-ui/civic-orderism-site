@@ -188,7 +188,7 @@
 
   .v6-nav[data-open="true"] .v6-nav__links {
     max-height: 70vh;
-    padding-block: 0.4rem 0.9rem;
+    padding-block: 0.3rem 0.7rem;
     overflow-y: auto;
     border-top-color: var(--v6-border);
     visibility: visible;
@@ -201,11 +201,14 @@
     flex-wrap: wrap;
   }
 
+  /* Visual polish: rows were ~68px, which let six items fill the first
+     screen. 2.6rem min-height keeps a comfortable 44px+ target while
+     letting the whole menu sit in the upper part of the viewport. */
   .v6-nav__link {
     display: flex;
-    min-height: 3rem;
+    min-height: 2.6rem;
     align-items: center;
-    padding: 0.6rem 0.15rem;
+    padding: 0.4rem 0.15rem;
     border-bottom: 1px solid var(--v6-border);
     font-size: 1rem;
     /* 避免移动端点击时出现蓝色高亮块 */
@@ -232,9 +235,9 @@
   }
 
   .v6-nav__search {
-    min-height: 3rem;
-    margin: 0.5rem 0 0;
-    padding: 0.6rem 0.15rem;
+    min-height: 2.6rem;
+    margin: 0.4rem 0 0;
+    padding: 0.4rem 0.15rem;
     border: 0;
     border-bottom: 1px solid var(--v6-border);
     border-radius: 0;

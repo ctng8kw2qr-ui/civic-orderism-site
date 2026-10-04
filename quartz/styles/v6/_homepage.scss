@@ -17,9 +17,12 @@
  * 不使用卡片、阴影、渐变或图标。
  */
 
-/* ══ 01 · HERO ════════════════════════════════════════════════ */
+/* ══ 01 · HERO ════════════════════════════════════════════════
+   Visual polish: the first screen read slightly small against its whitespace.
+   Weight is raised through type size, available width and a marginally
+   stronger phase block — no photography, gradient or added ornament. */
 .v6-hero {
-  padding-block: clamp(3rem, 8vw, 6.5rem) clamp(2.5rem, 6vw, 5rem);
+  padding-block: clamp(2.75rem, 7.2vw, 5.75rem) clamp(2.25rem, 5.4vw, 4.5rem);
   background: linear-gradient(
     to bottom,
     var(--v6-surface) 0%,
@@ -32,6 +35,11 @@
   grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 5rem);
   align-items: start;
+}
+
+/* Hero 主内容列略微放宽，让标题与说明获得更完整的行长。 */
+.v6-hero__grid {
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
 }
 
 /* 机构名称：中文为主、英文为辅，作为 Hero 的识别层。 */
@@ -57,13 +65,16 @@
   letter-spacing: var(--v6-tracking-label);
 }
 
-.v6-hero__title {
-  max-width: 22ch;
-  margin-top: var(--v6-space-lg);
+/* Scoped as `.v6 .v6-hero__title`: the base layer's `.v6 h1` rule is
+   specificity (0,1,1) and would otherwise win, silently dropping the hero
+   back to the generic h1 size instead of the display scale. */
+.v6 .v6-hero__title {
+  max-width: 24ch;
+  margin-top: var(--v6-space-md);
   font-size: var(--v6-text-display);
   font-weight: var(--v6-weight-display);
-  letter-spacing: 0.012em;
-  line-height: var(--v6-leading-display);
+  letter-spacing: 0.008em;
+  line-height: 1.14;
 }
 
 /* 主标题第二行：机构色只用于这一处，形成克制的强调。 */
@@ -74,16 +85,20 @@
 }
 
 .v6-hero__statement {
-  max-width: 44ch;
-  margin-top: var(--v6-space-md);
+  max-width: 46ch;
+  margin-top: var(--v6-space-sm);
   color: var(--v6-text-secondary);
   font-size: var(--v6-text-lead);
   font-weight: var(--v6-weight-lead);
   line-height: 1.72;
 }
 
-.v6-hero__institution {
-  max-width: 40ch;
+/* Note: the V6 typography reset is `.v6 p { border:0; margin:0; padding:0 }`,
+   which is specificity (0,1,1) and therefore beats a single-class rule
+   (0,1,0). Every paragraph-level rule that adds a rule line or padding must
+   be scoped as `.v6 .x` so the decoration actually renders. */
+.v6 .v6-hero__institution {
+  max-width: 42ch;
   margin-top: var(--v6-space-sm);
   padding-left: var(--v6-space-sm);
   border-left: 2px solid var(--v6-brand-line);
@@ -102,7 +117,14 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  padding-top: var(--v6-space-sm);
+  padding-top: var(--v6-space-xs);
+}
+
+/* 当前阶段：用一条极细的品牌线 + 略大的字号建立存在感，
+   仍然只是标注，不构成第二个视觉中心。 */
+.v6-hero__phase-block {
+  padding-top: var(--v6-space-md);
+  border-top: 1px solid var(--v6-brand-line);
 }
 
 .v6-hero__figure {
@@ -143,12 +165,12 @@
 }
 
 .v6-hero__phase {
-  max-width: 24ch;
-  margin-top: 0.55rem;
+  max-width: 26ch;
+  margin-top: 0.6rem;
   color: var(--v6-text-primary);
-  font-size: 0.98rem;
+  font-size: 1.08rem;
   font-weight: var(--v6-weight-strong);
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 .v6-hero__phase-en {
@@ -160,9 +182,9 @@
 }
 
 .v6-hero__year {
-  margin-top: var(--v6-space-sm);
+  margin-top: var(--v6-space-xs);
   color: var(--v6-brand-text);
-  font-size: 0.86rem;
+  font-size: 0.92rem;
   font-variant-numeric: tabular-nums;
   font-weight: var(--v6-weight-strong);
   letter-spacing: 0.08em;
@@ -341,7 +363,7 @@
 }
 
 /* 把「研究」与「组织建设」连接起来的一句过渡。 */
-.v6-why__bridge {
+.v6 .v6-why__bridge {
   margin-top: var(--v6-space-lg) !important;
   padding-left: var(--v6-space-md);
   border-left: 2px solid var(--v6-border-strong);
@@ -386,7 +408,7 @@
   line-height: 1.6;
 }
 
-.v6-transition__note {
+.v6 .v6-transition__note {
   max-width: var(--v6-measure);
   margin-top: var(--v6-space-lg);
   color: var(--v6-text-secondary);
@@ -394,7 +416,11 @@
   line-height: 1.8;
 }
 
-/* ══ 06 · ORGANIZATION BUILDING ══════════════════════════════ */
+/* ══ 06 · ORGANIZATION BUILDING ══════════════════════════════
+   After the hero this is the page's most important institutional-status
+   area, so it carries a heavier label rule, a status line raised above a
+   brand hairline, and an emphasised field/value panel. Structure and copy
+   are unchanged; only typography, rule and spacing hierarchy moved. */
 /* 组织建设是本阶段重点，视觉权重略高：用一层浅色 Surface 承载，
    但依然不使用卡片边框与阴影。 */
 .v6-org {
@@ -417,7 +443,7 @@
   max-width: 34ch;
   margin-top: var(--v6-space-sm);
   color: var(--v6-text-secondary);
-  font-size: 0.98rem;
+  font-size: 1.02rem;
   line-height: 1.8;
 }
 
@@ -432,19 +458,38 @@
   border-left: 2px solid var(--v6-brand);
 }
 
+/* 机构状态主标题：全页除 Hero 外最重的一级文字。 */
 .v6-org__item-title {
-  font-size: 1.24rem;
-  font-weight: 600;
-  line-height: 1.45;
+  max-width: 26ch;
+  font-size: clamp(1.34rem, 2.2vw, 1.62rem);
+  font-weight: var(--v6-weight-heading);
+  letter-spacing: var(--v6-tracking-heading);
+  line-height: 1.35;
 }
 
-.v6-org__item-status {
+/* 当前状态一行：置于品牌细线之上，读作正式的法律状态标注。 */
+.v6 .v6-org__item-status {
+  display: flex;
+  gap: 0.55rem;
+  align-items: baseline;
   max-width: none;
-  margin-top: 0.7rem;
+  margin-top: var(--v6-space-sm);
+  padding-top: var(--v6-space-sm);
+  border-top: 1px solid var(--v6-brand-line);
   color: var(--v6-text-primary);
-  font-size: 0.92rem;
+  font-size: 1rem;
   font-weight: var(--v6-weight-strong);
-  line-height: 1.7;
+  line-height: 1.65;
+}
+
+.v6-org__item-status::before {
+  flex: 0 0 auto;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: var(--v6-radius-pill);
+  background: var(--v6-brand);
+  content: "";
+  transform: translateY(-0.12em);
 }
 
 .v6-org__item-summary {
@@ -462,22 +507,27 @@
   margin: var(--v6-space-md) 0 0;
   padding: 0;
   list-style: none;
-  border-top: 1px solid var(--v6-border);
+  border-top: 1px solid var(--v6-border-strong);
 }
 
 .v6-org__facts li {
   display: grid;
-  grid-template-columns: minmax(5.5rem, 7rem) minmax(0, 1fr);
+  grid-template-columns: minmax(5.5rem, 7.5rem) minmax(0, 1fr);
   gap: var(--v6-space-sm);
-  padding: 0.6rem 0;
+  padding: 0.72rem 0;
   border-bottom: 1px solid var(--v6-border);
-  font-size: 0.88rem;
+  font-size: 0.94rem;
+  font-weight: 500;
   line-height: 1.7;
 }
 
+/* 字段名：小号、大字距的标签层级，与值形成明确对照。 */
 .v6-org__facts li span {
   color: var(--v6-text-muted);
-  font-size: 0.8rem;
+  font-size: var(--v6-text-label);
+  font-weight: var(--v6-weight-label);
+  letter-spacing: 0.1em;
+  line-height: 1.9;
 }
 
 .v6-org__links {
@@ -595,7 +645,7 @@
   line-height: 1.3;
 }
 
-.v6-who__statement-question {
+.v6 .v6-who__statement-question {
   max-width: var(--v6-measure);
   margin-top: var(--v6-space-md);
   padding-left: var(--v6-space-md);

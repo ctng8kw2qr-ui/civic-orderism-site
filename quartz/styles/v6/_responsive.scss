@@ -89,9 +89,12 @@
     gap: var(--v6-space-lg);
   }
 
-  .v6-hero__title {
+  .v6 .v6-hero__title {
     max-width: none;
     margin-top: var(--v6-space-md);
+    /* Visual polish 以桌面为主。移动端保持 2.1rem 下限（375-430px 与
+       改动前一致），并在 800px 之前平滑过渡，避免断点处出现跳变。 */
+    font-size: clamp(2.1rem, 4vw, 2.6rem);
     /* 关闭 text-wrap: balance，中文长标题在窄屏上交给浏览器正常折行 */
     text-wrap: normal;
   }
@@ -277,16 +280,17 @@
   }
 }
 
-/* ══ 大桌面（≥ 1440px）：不放大字号，只增加留白 ══════════════ */
+/* ══ 大桌面（≥ 1440px）：仍然以留白为主，但收掉中段过度的稀疏感
+   （Visual polish：此处原先 clamp 到 7.5rem，现收 ~13%）══════════ */
 @media (min-width: 1440px) {
   .v6-hero,
   .v6-section,
   .v6-org {
-    padding-block: clamp(4.5rem, 7vw, 7.5rem);
+    padding-block: clamp(4rem, 6.2vw, 6.5rem);
   }
 
   .v6-section__head {
-    margin-bottom: var(--v6-space-2xl);
+    margin-bottom: var(--v6-space-xl);
   }
 }
 

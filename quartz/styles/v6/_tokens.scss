@@ -64,9 +64,11 @@
   --v6-space-2xl: 5rem;
   --v6-space-3xl: 7rem;
 
-  /* Section rhythm — 页面纵向节奏，移动端在 responsive 层收窄。 */
-  --v6-section-space: clamp(3.5rem, 7vw, 7rem);
-  --v6-section-space-tight: clamp(2.5rem, 5vw, 4.5rem);
+  /* Section rhythm — 页面纵向节奏，移动端在 responsive 层收窄。
+     Visual polish: reduced ~13% so the mid-page reads less sparse
+     while keeping the whitespace-led feel. */
+  --v6-section-space: clamp(3.25rem, 6.1vw, 6.1rem);
+  --v6-section-space-tight: clamp(2.25rem, 4.4vw, 4rem);
 
   /* ---- Radius ------------------------------------------------- */
   /* 机构感：几乎直角。只有 2px / 3px 两级，避免圆角化。 */
@@ -78,8 +80,11 @@
   --v6-measure: 68ch; /* 正文最大行宽，避免铺满桌面 */
   --v6-measure-narrow: 52ch;
   /* One shared content column: navigation, page sections and footer all
-     align to the same left/right edge. */
-  --v6-container: 1240px;
+     align to the same left/right edge.
+     Visual polish: 1240 -> 1320px so the desktop hero and sections carry
+     more presence. Still inside the wider V4-era 1360px, and every consumer
+     (nav / sections / footer) moves together so edges stay aligned. */
+  --v6-container: 1320px;
   --v6-gutter: clamp(1.25rem, 4vw, 3.5rem);
   --v6-header-height: 4.25rem;
 
@@ -90,12 +95,17 @@
     "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC",
     "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif;
   --v6-font-serif:
-    "Songti SC", "SimSun", "Source Han Serif SC", "Noto Serif CJK SC",
-    Georgia, "Times New Roman", serif;
+    "Songti SC", "SimSun", "Source Han Serif SC", "Noto Serif CJK SC", Georgia,
+    "Times New Roman", serif;
   --v6-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   /* Display / H1 / H2 / H3 / Lead / Body / Caption / Meta / Label */
-  --v6-text-display: clamp(2.1rem, 5.2vw, 3.4rem);
+  /* Visual polish: hero display scale calibrated to the hero H1's previous
+     effective size (--v6-text-h1's 2.7rem max) plus ~11%, so the first
+     screen gains presence without becoming a poster. The <=800px layer
+     overrides this entirely, so phones keep their previous size.
+     Effective: ~48px at >=1024px. */
+  --v6-text-display: clamp(2.1rem, 4.7vw, 3rem);
   --v6-text-h1: clamp(1.85rem, 4.2vw, 2.7rem);
   --v6-text-h2: clamp(1.5rem, 3vw, 2rem);
   --v6-text-h3: clamp(1.1rem, 2vw, 1.32rem);
