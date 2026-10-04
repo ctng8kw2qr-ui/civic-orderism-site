@@ -1,0 +1,244 @@
+@use "../../styles/variables.scss" as *;
+
+/**
+ * V6 — Institutional Editorial · Navigation
+ * ================================================================
+ *
+ * 机构化顶栏。四条原则：
+ *   1. 品牌区两行（中文为主、英文为辅），避免长标题与 Logo 互相挤压。
+ *   2. 桌面只保留最核心入口，不拥挤、不做二级悬浮菜单。
+ *   3. 移动端是独立设计：汉堡按钮 + 全宽抽屉，触控目标 ≥ 44px。
+ *   4. 不使用大面积色块与阴影，只靠一条细边线与留白分层。
+ */
+
+.v6-nav {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  box-sizing: border-box;
+  width: 100%;
+  border-bottom: 1px solid var(--v6-border);
+  background: color-mix(in srgb, var(--v6-background) 92%, transparent);
+  -webkit-backdrop-filter: saturate(180%) blur(8px);
+  backdrop-filter: saturate(180%) blur(8px);
+}
+
+.v6-nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--v6-space-md);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--v6-container);
+  margin: 0 auto;
+  padding: 0.85rem var(--v6-gutter);
+}
+
+/* ── Brand: 两行，中文主 / 英文辅 ─────────────────────────────── */
+.v6-nav__brand {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 0.1rem;
+  color: var(--v6-text-primary);
+  text-decoration: none;
+  background-image: none;
+}
+
+.v6-nav__brand-zh {
+  font-size: 1.06rem;
+  font-weight: var(--v6-weight-strong);
+  letter-spacing: 0.06em;
+  line-height: 1.25;
+}
+
+.v6-nav__brand-en {
+  color: var(--v6-text-muted);
+  font-size: 0.66rem;
+  font-weight: var(--v6-weight-label);
+  letter-spacing: var(--v6-tracking-brand);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.v6-nav__brand:hover .v6-nav__brand-zh,
+.v6-nav__brand:focus-visible .v6-nav__brand-zh {
+  color: var(--v6-brand-text);
+}
+
+/* ── Desktop links ───────────────────────────────────────────── */
+.v6-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.v6-nav__link {
+  position: relative;
+  padding: 0.55rem 0.75rem;
+  color: var(--v6-text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.35;
+  white-space: nowrap;
+  text-decoration: none;
+  background-image: none;
+  transition: color var(--v6-duration) var(--v6-ease);
+}
+
+.v6-nav__link:hover,
+.v6-nav__link:focus-visible {
+  color: var(--v6-text-primary);
+}
+
+/* 当前页：一条 1px 品牌色细线，而不是整块背景色。 */
+.v6-nav__link[aria-current="page"] {
+  color: var(--v6-text-primary);
+  font-weight: var(--v6-weight-strong);
+}
+
+.v6-nav__link[aria-current="page"]::after {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.2rem;
+  left: 0.75rem;
+  height: 1px;
+  background: var(--v6-brand);
+  content: "";
+}
+
+/* ── Search trigger ──────────────────────────────────────────── */
+.v6-nav__search {
+  display: inline-flex;
+  min-height: 2.35rem;
+  align-items: center;
+  margin-left: var(--v6-space-2xs);
+  padding: 0.5rem 0.7rem 0.5rem 0.9rem;
+  border: 1px solid var(--v6-border);
+  border-radius: var(--v6-radius-sm);
+  background: transparent;
+  color: var(--v6-text-muted);
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1.3;
+  cursor: pointer;
+  transition:
+    color var(--v6-duration) var(--v6-ease),
+    border-color var(--v6-duration) var(--v6-ease);
+}
+
+.v6-nav__search:hover,
+.v6-nav__search:focus-visible {
+  border-color: var(--v6-border-strong);
+  color: var(--v6-text-primary);
+}
+
+/* ── Hamburger (mobile only) ─────────────────────────────────── */
+.v6-nav__toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid var(--v6-border);
+  border-radius: var(--v6-radius-sm);
+  background: transparent;
+  color: var(--v6-text-primary);
+  cursor: pointer;
+}
+
+.v6-nav__toggle-bars {
+  display: block;
+  width: 1.1rem;
+  height: 0.7rem;
+  border-top: 1.5px solid currentcolor;
+  border-bottom: 1.5px solid currentcolor;
+}
+
+@media all and ($mobile) {
+  .v6-nav__inner {
+    padding: 0.7rem var(--v6-gutter);
+  }
+
+  .v6-nav__toggle {
+    display: inline-flex;
+  }
+
+  /* 抽屉：默认不占位、不可聚焦，展开后成为纵向列表。 */
+  .v6-nav__links {
+    display: flex;
+    flex: 1 0 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    order: 3;
+    max-height: 0;
+    padding-block: 0;
+    overflow: hidden;
+    border-top: 1px solid transparent;
+    visibility: hidden;
+    transition:
+      max-height 220ms var(--v6-ease),
+      visibility 0s linear 220ms;
+  }
+
+  .v6-nav[data-open="true"] .v6-nav__links {
+    max-height: 70vh;
+    padding-block: 0.4rem 0.9rem;
+    overflow-y: auto;
+    border-top-color: var(--v6-border);
+    visibility: visible;
+    transition:
+      max-height 220ms var(--v6-ease),
+      visibility 0s linear 0s;
+  }
+
+  .v6-nav__inner {
+    flex-wrap: wrap;
+  }
+
+  .v6-nav__link {
+    display: flex;
+    min-height: 3rem;
+    align-items: center;
+    padding: 0.6rem 0.15rem;
+    border-bottom: 1px solid var(--v6-border);
+    font-size: 1rem;
+    /* 避免移动端点击时出现蓝色高亮块 */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .v6-nav__link:active {
+    color: var(--v6-brand-text);
+  }
+
+  /* 下划线指示器在移动端换成左侧色条，避免与分隔线重叠。 */
+  .v6-nav__link[aria-current="page"]::after {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    width: 2px;
+    height: 1.1rem;
+    transform: translateY(-50%);
+  }
+
+  .v6-nav__link[aria-current="page"] {
+    padding-left: 0.7rem;
+  }
+
+  .v6-nav__search {
+    min-height: 3rem;
+    margin: 0.5rem 0 0;
+    padding: 0.6rem 0.15rem;
+    border: 0;
+    border-bottom: 1px solid var(--v6-border);
+    border-radius: 0;
+    justify-content: flex-start;
+    font-size: 1rem;
+  }
+}
