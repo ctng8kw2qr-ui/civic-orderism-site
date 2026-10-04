@@ -23,6 +23,11 @@ const PDF_PATH = path.join(
   "files",
   "civic-orderism-introduction-manual.pdf",
 );
+// NOTE: this path is a build OUTPUT, not a source asset — the script writes it
+// via page.screenshot() below. It was previously committed to
+// quartz/static/files/ by mistake and published at /files/. Removed in V6
+// Phase 3; it is regenerated whenever this script runs, and is no longer
+// shipped. Do not re-commit the produced PNG.
 const ARCHITECTURE_IMAGE_PATH = path.join(
   ROOT,
   "quartz",

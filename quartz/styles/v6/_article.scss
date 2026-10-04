@@ -411,7 +411,11 @@ body[data-page-kind="article"] {
     box-sizing: border-box;
     width: 100%;
     height: auto;
-    aspect-ratio: 1.9 / 1;
+    /* Editorial Cover 的 canonical 比例（见 assets/v6/SPEC.md 与
+       --v6-cover）。首页 Lead 使用同一 token，因此一套视觉即可同时服务
+       文章页与首页 Lead。社交卡片为 1200x630（--v6-cover-social），
+       与 canonical 差 0.25%，两者刻意分开定义。 */
+    aspect-ratio: var(--v6-cover);
     object-fit: cover;
     border: 1px solid var(--v6-border);
     border-radius: var(--v6-radius-sm);

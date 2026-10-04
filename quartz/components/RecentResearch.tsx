@@ -6,6 +6,7 @@ import {
 import style from "./styles/recentResearch.scss";
 import { QuartzPluginData } from "../plugins/vfile";
 import { isArticleSlug } from "../util/articlePage";
+import { resolveCover } from "../util/cover";
 
 interface Options {
   /** 主文章之外显示的次级文章数量。 */
@@ -164,6 +165,7 @@ export default ((userOpts?: Options) => {
       .filter((page) => page.slug !== lead.slug && !isValueGoal(page))
       .slice(0, secondaryCount);
 
+    const leadCover = resolveCover(lead);
     const href = (slug: string) => `/${slug.replace(/\/index$/, "")}`;
 
     return (
@@ -173,6 +175,20 @@ export default ((userOpts?: Options) => {
           href={href(lead.slug!)}
           data-slug={lead.slug}
         >
+          {/* Editorial Cover — 与文章页共用同一个 cover / coverAlt。
+              无 cover 时不输出 <figure>、不输出 <img>、不预留高度。 */}
+          {leadCover.src ? (
+            <figure class="v6-latest__lead-cover">
+              <img
+                src={leadCover.src}
+                alt={leadCover.alt ?? ""}
+                width="1600"
+                height="840"
+                loading="eager"
+                decoding="async"
+              />
+            </figure>
+          ) : null}
           <span class="v6-latest__lead-meta">
             <span class="v6-latest__tag">{readSection(lead)}</span>
             {formatDate(lead.frontmatter?.date) ? (

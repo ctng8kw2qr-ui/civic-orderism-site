@@ -152,10 +152,7 @@ for (const [index, stage] of chinaAnalysisConfig.stages.entries()) {
   const sectionStart = chinaPageSource.indexOf(
     `inst4l-section__title">${stage.title}`,
   );
-  assert(
-    sectionStart !== -1,
-    `解析中共缺少四阶段区块：${stage.title}`,
-  );
+  assert(sectionStart !== -1, `解析中共缺少四阶段区块：${stage.title}`);
   const sectionEnd =
     chinaPageSource.indexOf('inst4l-section__title">', sectionStart + 1) === -1
       ? chinaPageSource.length
@@ -239,8 +236,7 @@ assert(
   "解析中共页面未保留全部文章入口",
 );
 assert(
-  chinaPageSource.includes("分析工具") &&
-    chinaPageSource.includes("专题研究"),
+  chinaPageSource.includes("分析工具") && chinaPageSource.includes("专题研究"),
   "解析中共未明确区分分析工具与专题研究",
 );
 
@@ -303,10 +299,11 @@ for (const article of migration) {
   const hasContinuationHeading = articleHtml.includes(
     'class="article-continuation__heading"',
   );
-  const relatedCardCount =
-    (articleHtml.match(/class="article-continuation-card"/g) ?? []).length;
+  const relatedCardCount = (
+    articleHtml.match(/class="article-continuation-card"/g) ?? []
+  ).length;
   assert(
-    hasContinuationHeading === (relatedCardCount > 0),
+    hasContinuationHeading === relatedCardCount > 0,
     `Related Research 标题与文章数量不一致（空 Section）：${article.slug}`,
   );
   assert(
@@ -788,7 +785,9 @@ for (const sequence of readingSequences) {
 
 for (const file of [
   "public/files/civic-orderism-founding-board-brief-2026.pdf",
-  "public/files/civic-orderism-founding-board-brief-2026-cover.png",
+  // civic-orderism-founding-board-brief-2026-cover.png had no consumer
+  // anywhere (content, HTML, CSS, TSX, JSON) and was never linked. Removed
+  // in V6 Phase 3, so it is no longer a build artifact to assert on.
   "public/files/civic-orderism-introduction-manual.pdf",
   "public/sitemap.xml",
   "public/index.xml",
@@ -806,7 +805,7 @@ const orgManualHtml = fs.existsSync(orgManualPath)
   : "";
 assert(
   orgManualHtml.includes('rel="canonical" href="/preparation"') &&
-    orgManualHtml.includes("http-equiv=\"refresh\"") &&
+    orgManualHtml.includes('http-equiv="refresh"') &&
     !orgManualHtml.includes("inst4l"),
   "organization-manual 未正确作为重定向 stub（应指向 /preparation，且不应包含内容页结构）",
 );
@@ -941,9 +940,7 @@ assert(
 );
 // SECTION 1 / IDENTITY
 const heroHtml =
-  homepageHtml.match(
-    /<section class="v6-hero"[\s\S]*?<\/section>/,
-  )?.[0] ?? "";
+  homepageHtml.match(/<section class="v6-hero"[\s\S]*?<\/section>/)?.[0] ?? "";
 const heroText = visiblePageText(heroHtml);
 assert(
   heroText.includes("CIVIC ORDERISM") &&
@@ -980,8 +977,9 @@ assert(
 // It must stay a short social argument: no state-continuity service lists
 // (police / hospitals / banks) and no full transition argument.
 const whyNowHtml =
-  homepageMainHtml.match(/<section class="v6-section" id="why-now"[\s\S]*?<\/section>/)?.[0] ??
-  "";
+  homepageMainHtml.match(
+    /<section class="v6-section" id="why-now"[\s\S]*?<\/section>/,
+  )?.[0] ?? "";
 const whyNowText = visiblePageText(whyNowHtml);
 assert(
   whyNowHtml.length > 0 &&
@@ -1084,8 +1082,7 @@ for (const [index, name] of [
   assert(
     areasHtml.includes(
       `class="v6-areas__num" aria-hidden="true">${String(index + 1).padStart(2, "0")}<`,
-    ) &&
-      areasText.includes(name),
+    ) && areasText.includes(name),
     `首页核心研究领域缺少方向：${name}`,
   );
 }
@@ -1185,8 +1182,10 @@ assert(
     !workHtml.includes("CO—2026—002") &&
     !workHtml.includes("建立能够承接") &&
     !workHtml.includes("<img") &&
-    (workHtml.match(/inst4-work__(initiative|points|point\b|number|lead)/g) ??
-      []).length === 0,
+    (
+      workHtml.match(/inst4-work__(initiative|points|point\b|number|lead)/g) ??
+      []
+    ).length === 0,
   "首页当前工作（CURRENT WORK）未压缩为简短的组织建设说明",
 );
 for (const removedHomepageText of [
@@ -1462,7 +1461,9 @@ assert(
     coreStatementText.includes("理解现实") &&
     coreStatementText.includes("理解路线") &&
     coreStatementHtml.includes('href="../china/what-is-the-ccp-becoming"') &&
-    coreStatementHtml.includes('href="../civic-orderism/civic-orderism-overview"'),
+    coreStatementHtml.includes(
+      'href="../civic-orderism/civic-orderism-overview"',
+    ),
   "核心政治总论文章身份、正文或分层阅读路径不完整",
 );
 assert(
@@ -1608,9 +1609,8 @@ assert(
 );
 // Organizational positioning: route infrastructure, not a political goal, and
 // still strictly inside the legal-status boundary.
-const positioningPosition = preparationHtml.indexOf(
-  "北美非营利法人不是政治目标",
-);
+const positioningPosition =
+  preparationHtml.indexOf("北美非营利法人不是政治目标");
 assert(
   positioningPosition > 0 &&
     positioningPosition < whyNowPosition &&
@@ -1688,13 +1688,15 @@ for (const slug of institutionSlugs) {
     `制度设计文章仍出现在六阶段路线中：${slug}`,
   );
   assert(
-    (routeHtml.match(new RegExp(`data-slug="${slug}"`, "g")) ?? []).length === 1,
+    (routeHtml.match(new RegExp(`data-slug="${slug}"`, "g")) ?? []).length ===
+      1,
     `制度设计文章未且仅未出现一次于 /civic-orderism/：${slug}`,
   );
 }
 for (const slug of civicOrderismConfig.institutionArchive.extraItems) {
   assert(
-    (routeHtml.match(new RegExp(`data-slug="${slug}"`, "g")) ?? []).length === 1,
+    (routeHtml.match(new RegExp(`data-slug="${slug}"`, "g")) ?? []).length ===
+      1,
     `制度研究延伸文章在 /civic-orderism/ 出现次数不为 1：${slug}`,
   );
 }
@@ -1969,9 +1971,8 @@ assert(
 // data source as /civic-orderism/. The check is scoped to that principle list,
 // so route prose such as 保持国家连续运行 stays legitimate in the same section.
 const startPrinciplesHtml =
-  startHtml.match(
-    /<ul><li><strong>不革命：<\/strong>[\s\S]*?<\/ul>/,
-  )?.[0] ?? "";
+  startHtml.match(/<ul><li><strong>不革命：<\/strong>[\s\S]*?<\/ul>/)?.[0] ??
+  "";
 const startPrinciplesText = visiblePageText(startPrinciplesHtml);
 const formalPrinciples = civicOrderismConfig.establishedPrinciples.items;
 assert(
@@ -2037,7 +2038,9 @@ for (const [label, folderPath, canonical] of [
     html.includes('href="../index.css"') &&
       html.includes('src="../postscript.js"') &&
       !/(?:href|src)="\.\//.test(html) &&
-      html.includes(`rel="canonical" href="https://civicorderism.com${canonical}"`),
+      html.includes(
+        `rel="canonical" href="https://civicorderism.com${canonical}"`,
+      ),
     `${label} 目录副本的相对路径未按层级修正`,
   );
 }
