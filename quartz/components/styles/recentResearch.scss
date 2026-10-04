@@ -1,11 +1,11 @@
 @use "../../styles/variables.scss" as *;
 
 /**
- * V6 — Institutional Editorial · 最新研究
+ * V6 — Institutional Editorial · 分析与判断
  * ================================================================
  *
  * 编辑出版式排布：一篇主文章（高视觉权重）+ 2–3 篇次级文章。
- * 不使用等权重圆角卡片网格，不使用图片，靠排版与细线建立层级。
+ * 左侧封面重点文章，右侧编号索引；靠排版与细线建立层级。
  */
 
 .v6-latest {
@@ -29,14 +29,24 @@
   flex-wrap: wrap;
   gap: 0.85rem;
   align-items: baseline;
+  justify-content: space-between;
 }
 
-.v6-latest__tag {
+.v6-latest__index,
+.v6-latest__featured-label {
   color: var(--v6-brand-text);
   font-size: var(--v6-text-label);
   font-weight: var(--v6-weight-label);
   letter-spacing: 0.08em;
   line-height: 1.5;
+}
+
+.v6-latest__index {
+  font-variant-numeric: tabular-nums;
+}
+
+.v6-latest__featured-label {
+  color: var(--v6-text-muted);
 }
 
 .v6-latest__date {
@@ -123,7 +133,11 @@
 }
 
 .v6-latest__item-desc {
-  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
   max-width: 40ch;
   margin-top: 0.45rem;
   color: var(--v6-text-muted);

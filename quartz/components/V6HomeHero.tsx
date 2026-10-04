@@ -140,15 +140,15 @@ const V6HomeHero: QuartzComponent = ({
         </div>
       </section>
 
-      {/* SECTION 02 / LATEST RESEARCH — 编辑出版式排布，主文章权重最高。 */}
+      {/* SECTION 02 / ANALYSIS & JUDGMENT — 重点文章 + 编辑索引。 */}
       <section class="v6-section v6-section--plain" id="latest">
         <div class="v6__container">
           <div class="v6-section__head">
             <p class="v6-eyebrow">
               <span class="v6-eyebrow__num">02</span>
-              LATEST RESEARCH<span aria-hidden="true"> · </span>最新研究
+              <span aria-hidden="true"> · </span>ANALYSIS &amp; JUDGMENT
             </p>
-            <h2 class="v6-section__title">最近发表的研究</h2>
+            <h2 class="v6-section__title">分析与判断</h2>
           </div>
           <Research {...rest} />
         </div>
