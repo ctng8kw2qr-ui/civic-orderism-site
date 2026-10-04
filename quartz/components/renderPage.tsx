@@ -34,7 +34,7 @@ export function pageResources(
   const contentIndexScript = `const fetchData = fetch("${contentIndexPath}").then(data => data.json())`
 
   /**
-   * 首页 reload 的 scroll restoration 收口（范围极窄）。
+   * 首页新文档导航的 scroll restoration 收口（范围极窄）。
    *
    * 背景：E3 Hero 把主叙事集中在画布顶部。浏览器 reload 时会恢复刷新前的滚动
    * 位置；若该位置落在 Hero 中部，中文标题与正文会被推到视口之上，看起来像
@@ -42,27 +42,32 @@ export function pageResources(
    *
    * 生效条件（三者同时满足，否则完全不介入）：
    *   1. 首页          —— 用 pathname 判定，并归一化首页的各种写法
-   *   2. 真实 reload   —— performance.getEntriesByType("navigation")[0].type
+   *   2. 新文档导航    —— navigation type 为 navigate 或 reload
    *   3. 浏览器支持 history.scrollRestoration
    *
-   * 因此 Back / Forward（type === "back_forward"）、站内 SPA 导航、以及所有
-   * 非首页的 reload 都保持浏览器原生行为，本脚本不做任何事。
+   * 因此 Back / Forward（包括 BFCache）、站内 SPA 导航、以及所有非首页
+   * 文档都保持浏览器原生行为，本脚本不做任何事。
    *
-   * 时序依据（已在 Chromium 实测，非推测）：浏览器在 head 脚本与
-   * DOMContentLoaded 之间执行恢复，所以必须在此之前就置为 "manual" 才能拦住；
-   * 而还原成 "auto" 不能在 load 里做 —— 实测会被原生 restoration 立刻覆盖回
-   * 原位置，放在 pageshow（load 之后）则稳定归零。本脚本不含任何 setTimeout。
+   * 时序依据：脚本先在 head 中置为 "manual"，阻止新文档沿用旧滚动位置。
+   * Safari 会在 pageshow 触发之后才完成最终恢复，因此先还原 "auto"，再在下一帧
+   * 将新文档置顶。脚本只执行一次，不含 setTimeout，也不介入之后的 BFCache 恢复。
    */
   const homeScrollRestorationScript = `(function () {
   var t = (performance.getEntriesByType && performance.getEntriesByType("navigation")[0] || {}).type;
-  if (t !== "reload" || !("scrollRestoration" in history)) return;
+  if ((t !== "navigate" && t !== "reload") || !("scrollRestoration" in history)) return;
   var p = location.pathname.replace(/index\\.html$/, "");
   if (p !== "/" && p !== "") return;
   history.scrollRestoration = "manual";
-  addEventListener("pageshow", function () {
-    scrollTo(0, 0);
+  addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+      history.scrollRestoration = "auto";
+      return;
+    }
     history.scrollRestoration = "auto";
-  });
+    requestAnimationFrame(function () {
+      scrollTo(0, 0);
+    });
+  }, { once: true });
 })()`
 
   const resources: StaticResources = {
