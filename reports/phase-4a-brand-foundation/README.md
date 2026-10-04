@@ -216,3 +216,204 @@ asset replaced · no merge, no deploy.
    characters.
 3. Wordmark case: normalise nav to `CIVIC ORDERISM`, or lockup to `Civic Orderism`?
 4. OG concept: approved as-is, or centre the composition to survive X's crop?
+
+---
+
+# FINALIZATION (adjudicated)
+
+Your decisions, applied. Production candidate assets are now in place on this
+branch — still **not merged, not deployed**.
+
+## Icon — Threshold Mark selected
+
+`quartz/static/assets/v6/brand/threshold-mark.svg` (+ `-reverse`).
+A and C are retained here as concept history only; they are **not** brand assets.
+
+### Geometry (normative, 3 elements exactly)
+
+|              |                                                      |
+| ------------ | ---------------------------------------------------- |
+| viewBox      | `0 0 100 100`                                        |
+| stroke-width | `4` → min stroke at 16px = 0.64px                    |
+| element 1    | `circle cx 50 cy 50 r 48`                            |
+| element 2    | `path M36 70 L36 48 A14 14 0 0 1 64 48 L64 70`       |
+| element 3    | `line 28 70 → 72 70`                                 |
+| clear space  | 12% of height, all sides                             |
+| minimum      | 16px favicon · 24px alone in UI · 48px with the seal |
+
+Optical note recorded in the SVG: the arch sits slightly above the circle's
+geometric centre, so the horizon is load-bearing, not decorative — without it
+the mark reads top-heavy.
+
+## Small-size tests
+
+`previews/favicon-final.png` — 16 / 32 / 48 at 4× nearest:
+**16px identifiable, 32px clear, 48px complete.**
+
+`previews/appicons.png` — 180 / 192 / 512.
+
+**One implementation detail worth knowing:** at 16px the 4-unit stroke
+rasterises to _partial_ alpha (measured max alpha **178**), so a transparent
+16px favicon reads faint. The favicon and app-icon sizes are therefore
+**flattened onto warm white** deliberately; `icon.png` / `icon-192` /
+`icon-512` keep alpha.
+
+## Primary / Reverse
+
+Primary `#7a2430` on `#faf8f5`; Reverse `#faf8f5` on charcoal `#1b1c1f` or
+wine. Two variants only.
+
+## Lockups
+
+Icon-only · Compact (mark + `公民秩序主义`) · Full (mark + `公民秩序主义` +
+`CIVIC ORDERISM`). `previews/nav-lockup.png` shows the Compact Lockup at three
+mark heights in the header, light and dark — **mark 30px reads best**.
+
+The site header currently renders the **typographic** brand only. Mounting the
+mark there is a markup change, so it was **not** done unilaterally — see
+"Outstanding" below.
+
+## English identifier — unified
+
+`CIVIC ORDERISM` is now the formal identifier in:
+`PrimaryNavigation.tsx`, `data/site.config.json` (`englishName`), and the footer
+(already correct). The `lang="en"` brand span keeps `text-transform` untouched;
+the string itself is uppercase.
+
+Prose was **not** rewritten — `content/**` still contains `Civic Orderism`
+in ordinary sentences, as instructed.
+
+**Consequence handled:** `validate-v2-architecture.mjs` asserted
+`instNavHtml.includes("Civic Orderism")`. That assertion was updated to the
+uppercase form with a comment — a brand-display assertion, not a validator
+rewrite. `validate:v2` passes.
+
+## Values strip — secondary institutional device
+
+Permitted: PDF footer, publication colophon, organisation and board material.
+Forbidden: primary logo, favicon, icon, navigation, small lockups. Wording
+unchanged.
+
+## Red Seal — secondary editorial device, ≥48px
+
+Retained, not redrawn, not simplified, not added to the primary identity.
+The four glyphs remain **unconfirmed**; no redraw until the original vector or
+confirmed characters are available.
+
+## Final OG fallback
+
+`quartz/static/assets/v6/social/og-fallback.svg` →
+**`quartz/static/og-image.png` replaced** (production candidate).
+
+- 1200×630, V6-native, direction B
+- brand block (mark + 公民秩序主义 + CIVIC ORDERISM) **horizontally centred**,
+  measured centre offset **+0.5px**
+- margins `L103 R103 T140 B159` — **≥100px satisfied**
+- **26.8 KB**, down from the 46 KB legacy asset
+- legacy asset contained **0** wine pixels and used `#f8f8f6`, the background
+  value Phase 3 corrected
+
+`previews/og-crops.png` shows the crop matrix. **Measured result:** all five
+delivery sizes (1200×630 / 600×315 / 506×265 / 400×210 / 300×158) share a
+~1.9:1 aspect, so side trim is **~0px for every one of them** — the brand name
+is never cropped. An earlier crop simulation of mine had used a wrong offset
+and wrongly suggested X trims the lockup; that was a measurement error, not a
+design fault. The block was centred anyway so it also survives any future
+wider-aspect centre crop.
+
+## `logo.png` — NOT deleted. My earlier audit was wrong.
+
+I need to correct the record. I reported `logo.png` as dead code with
+`PageTitle.tsx` as its only consumer. **That was wrong.** Real consumers:
+
+| Consumer                                          | Status                                                                                      |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `scripts/generate-introduction-manual-pdf.cjs:11` | **active npm script** `generate:introduction-manual-pdf`; embeds the logo in the manual PDF |
+| `scripts/generate-founding-board-brief-pdf.py:33` | build tooling (not registered in package.json)                                              |
+| `validate-v2-architecture.mjs:796`                | asserts `public/static/logo.png` exists                                                     |
+| `generate-content-indexes.mjs:436`                | a legacy homepage template — genuinely dead (0 matches in built output)                     |
+| `PageTitle.tsx`                                   | genuinely dead (never mounted)                                                              |
+
+Because a real consumer exists, your rule applies: **do not delete**. It is
+untouched. `PageTitle` was not mounted to justify it.
+
+**Recommendation for a later phase:** author the new Full Lockup as **SVG**,
+repoint the two PDF scripts to it, then retire the 782 KB raster. That removes
+the weight _and_ makes the PDFs use the current brand, rather than deleting a
+file two scripts still depend on.
+
+## Changed production candidate files
+
+```
+replaced  quartz/static/icon.png               512 RGBA   45.0 KB
+replaced  quartz/static/icon-512.png           512 RGBA   45.0 KB
+replaced  quartz/static/icon-192.png           192 RGBA   15.9 KB
+replaced  quartz/static/apple-touch-icon.png   180 RGB    12.9 KB
+replaced  quartz/static/favicon-32x32.png       32 RGB     1.5 KB
+replaced  quartz/static/favicon-16x16.png       16 RGB     0.7 KB
+replaced  quartz/static/favicon.ico          16/32/48     5.1 KB
+replaced  quartz/static/og-image.png        1200x630 RGB  26.8 KB
+added     quartz/static/assets/v6/brand/threshold-mark.svg
+added     quartz/static/assets/v6/brand/threshold-mark-reverse.svg
+added     quartz/static/assets/v6/social/og-fallback.svg
+edited    quartz/components/PrimaryNavigation.tsx   (brand case)
+edited    data/site.config.json                     (englishName)
+edited    quartz/static/assets/v6/SPEC.md           (brand architecture, OG rules)
+edited    scripts/validate-v2-architecture.mjs      (nav brand assertion)
+```
+
+`quartz/plugins/emitters/favicon.ts` is **unchanged** — it still reads
+`static/icon.png` and derives `favicon.ico` (verified: all three ICO sizes
+generated).
+
+## QA results
+
+| Check                                        | Result                                                                                   |
+| -------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| favicon 16 / 32 / 48                         | legible ✅                                                                               |
+| app icon 180 / 192 / 512                     | ✅                                                                                       |
+| homepage 375 / 390 / 430 / 768 / 1024 / 1440 | 0 overflow, 0 broken images; heights unchanged (8652 / 8504 / 8261 / 7258 / 6649 / 6149) |
+| nav brand                                    | `CIVIC ORDERISM` at every width, light + dark                                            |
+| OG margins                                   | `L103 R103 T140 B159` ≥ 100px ✅                                                         |
+| OG brand-block centring                      | `+0.5px`                                                                                 |
+| OG crop contexts                             | brand never cropped ✅                                                                   |
+
+## Validation
+
+| Command                               | Result                                                  |
+| ------------------------------------- | ------------------------------------------------------- |
+| `npm run build`                       | ✅ 532 files, 0 sync artifacts                          |
+| `npx tsc --noEmit`                    | ✅                                                      |
+| `npm run validate:v2`                 | ✅ 103 / 9 / 20 / 13 (after the brand assertion update) |
+| `npm run validate:content-safety`     | ✅                                                      |
+| `npm run validate:article-typography` | ✅                                                      |
+| `npm run check:links`                 | ✅ 21,035 links / 488 pages                             |
+| Prettier                              | **186 vs 189 on main — 0 new**                          |
+
+## Still untouched
+
+Homepage · article system · V6 palette · typography · CSS layout · `content/**` ·
+URLs · Hero (`hero-architecture.svg`, rendering model, JSX, CSS) ·
+Article Cover · 《中共正在变成什么？》 (C1 reserved for 4B). No satori, no new
+font, no CDN, no CMS, no batch imagery, no news photography, values wording
+unchanged.
+
+## Note on duplicates in this folder
+
+`concepts/threshold-mark.svg`, `concepts/threshold-mark-reverse.svg` and
+`concepts/og-fallback-final.svg` are **read-only snapshots** of the canonical
+assets now living in `quartz/static/assets/v6/brand/` and `.../social/`. They
+are copied here so this report is self-contained for review; the canonical
+files are the ones the build serves. Edit the canonical file, then re-copy.
+
+`concepts/og-fallback.svg` was the superseded first draft (brand block
+left-of-centre, margins 94px) and was replaced by `og-fallback-final.svg`.
+
+## Outstanding — one decision left
+
+**Mount the Threshold Mark into the site header?** Your Brand Architecture
+defines the Compact Lockup as _mark + wordmark_, and
+`previews/nav-lockup.png` shows it works at 26/30/34px in both themes.
+But mounting it means editing `PrimaryNavigation.tsx` beyond the brand-case
+change, so I left the header typographic-only. Say the word and it is a small
+change; I recommend **mark at 30px**.

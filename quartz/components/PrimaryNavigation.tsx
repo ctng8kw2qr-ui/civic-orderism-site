@@ -61,8 +61,11 @@ const PrimaryNavigation: QuartzComponent = ({
           aria-label="公民秩序主义首页"
         >
           <span class="v6-nav__brand-zh">公民秩序主义</span>
+          {/* Formal institutional English identifier. Always uppercase —
+              it matches the V6 uppercase micro-label / tracking language.
+              Prose uses of "Civic Orderism" in content are left untouched. */}
           <span class="v6-nav__brand-en" lang="en">
-            Civic Orderism
+            CIVIC ORDERISM
           </span>
         </a>
 

@@ -1216,7 +1216,11 @@ const instNavHtml =
   homepageHtml.match(/<nav class="v6-nav"[\s\S]*?<\/nav>/)?.[0] ?? "";
 const instNavText = visiblePageText(instNavHtml);
 assert(
-  instNavHtml.includes("Civic Orderism") &&
+  // Phase 4A: the formal institutional English identifier is uppercase
+  // ("CIVIC ORDERISM"), matching the V6 uppercase micro-label language.
+  // Prose occurrences of "Civic Orderism" in content are intentionally
+  // unchanged, so only this brand-display assertion is updated.
+  instNavHtml.includes("CIVIC ORDERISM") &&
     instNavHtml.includes("公民秩序主义") &&
     instNavHtml.includes('href="/"') &&
     instNavHtml.includes('href="/about"') &&

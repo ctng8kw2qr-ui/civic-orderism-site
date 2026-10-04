@@ -56,6 +56,86 @@ permanently identical.
 
 ---
 
+## 1b. Brand architecture
+
+Full rationale and concept history: `reports/phase-4a-brand-foundation/README.md`.
+
+### The mark
+
+**Threshold Mark** — `brand/threshold-mark.svg` (+ `-reverse`). Selected from
+three concepts; it was the only one identifiable at **8px**, because its
+silhouette is a single shape rather than parallel bars.
+
+Geometry is normative, not decorative:
+
+|              |                                                            |
+| ------------ | ---------------------------------------------------------- |
+| viewBox      | `0 0 100 100`                                              |
+| stroke-width | `4` (min stroke at 16px = 0.64px)                          |
+| element 1    | `circle cx 50 cy 50 r 48`                                  |
+| element 2    | `path M36 70 L36 48 A14 14 0 0 1 64 48 L64 70`             |
+| element 3    | `line 28 70 - 72 70`                                       |
+| clear space  | 12% of mark height on all sides                            |
+| minimum      | 16px (favicon floor); 24px alone in UI; 48px with the seal |
+
+**Exactly three elements.** Do not add columns, text, values, seal, `C/O`
+letterforms, extra rules, gradient or fill. The mark must stay abstract — its
+meaning is never drawn into it.
+
+### Variants — two only
+
+| Variant | Colour                                             | Use         |
+| ------- | -------------------------------------------------- | ----------- |
+| Primary | wine `#7a2430` on warm white `#faf8f5`             | default     |
+| Reverse | warm white `#faf8f5` on charcoal `#1b1c1f` or wine | dark fields |
+
+Do not create further colour versions.
+
+### Lockups
+
+| Form               | Composition                              | Use                                  |
+| ------------------ | ---------------------------------------- | ------------------------------------ |
+| **Icon only**      | the mark                                 | favicon, app icon, avatars, small UI |
+| **Compact lockup** | mark + `公民秩序主义`                    | site header / footer                 |
+| **Full lockup**    | mark + `公民秩序主义` + `CIVIC ORDERISM` | PDF, document headers, OG, print     |
+
+`CIVIC ORDERISM` is the **formal institutional English identifier** and is
+always uppercase. Title-case `Civic Orderism` is not a lockup form; it may
+still occur in ordinary prose, which is not to be rewritten.
+
+The primary logo contains **only** mark and wordmark. It never contains the
+values strip, the seal, a slogan, the domain, or a description of the
+political route.
+
+### Values strip — secondary device
+
+`平等 · 秩序 · 尊严 · 保障 · 自由`. Wording is fixed.
+
+Permitted: PDF footer, publication colophon, organisation documents, formal
+institutional and board material. Forbidden: primary logo, favicon, icon,
+navigation, small lockups.
+
+### Seal — secondary editorial device
+
+The legacy seal is a 2×2 four-character seal-script device. Permitted at
+**≥48px** for publication, PDF, formal document and editorial detail.
+
+Not for favicon, navigation, primary logo or small UI. **Do not redraw or
+simplify it until the original vector or confirmed glyphs are available** —
+a one-glyph simplification could misrepresent a four-value device.
+
+### Application icons
+
+Rendered from `brand/threshold-mark.svg`. The favicon and app-icon sizes are
+**flattened onto warm white** deliberately: at 16px the 4-unit stroke
+rasterises to partial alpha (measured max alpha 178) and reads faint. Larger
+icons (`icon.png`, `icon-192`, `icon-512`) keep alpha.
+
+`quartz/plugins/emitters/favicon.ts` is unchanged — it still reads
+`static/icon.png` and derives `favicon.ico`.
+
+---
+
 ## 2. Hero
 
 The Hero is an **institutional visual slot**, not a photo box.
@@ -84,6 +164,27 @@ A raster asset is **not** a drop-in equivalent to the mask variable.
 | ---------------- | ---------------------------- | ------------------------------------------ |
 | OG / X card      | 1200 × 630                   | 1.9048                                     |
 | Branded fallback | `quartz/static/og-image.png` | single image for all pages without a cover |
+| Source           | `social/og-fallback.svg`     | edit the SVG, re-render to PNG             |
+
+### Safe area and composition rules
+
+| Rule                      | Value                                                              |
+| ------------------------- | ------------------------------------------------------------------ |
+| minimum margin, all sides | **≥ 100px** on the 1200 × 630 master                               |
+| brand-critical block      | mark + `公民秩序主义` + `CIVIC ORDERISM`, **horizontally centred** |
+| supporting content        | statement, rules, colophon — may be trimmed in narrow previews     |
+| never trimmed             | the brand name, under any crop                                     |
+
+Verified sizes: `1200×630`, `600×315`, `506×265` (X large card), `400×210`,
+`300×158`. All five share a ~1.9:1 aspect, so measured side trim is ~0px for
+each; the brand block is additionally centred so it survives any
+centre-weighted crop of a wider aspect.
+
+The fallback is a **publication card**, not an advertisement: no article
+title, no photograph, no personnel, no Hero artwork, no call to action.
+
+Measured on the current asset: margins `L103 R103 T140 B159`; brand-block
+centre offset `+0.5px`.
 
 Precedence is implemented in `quartz/components/Head.tsx`:
 article `cover` (absolute URL) → branded fallback.
@@ -187,14 +288,14 @@ AI-generated imagery is governed by §11, not prohibited outright.
 
 Photography **is** permitted, under constraint.
 
-| Allowed | Forbidden |
-|---|---|
-| Documentary | Generic stock |
-| Architectural | Staged handshake |
-| Historical | Fake boardroom |
-| Institutional | Fake political scene |
-| Object / detail | Suit-portrait stock |
-| Real locations | Anything implying it is a real event when it is not |
+| Allowed         | Forbidden                                           |
+| --------------- | --------------------------------------------------- |
+| Documentary     | Generic stock                                       |
+| Architectural   | Staged handshake                                    |
+| Historical      | Fake boardroom                                      |
+| Institutional   | Fake political scene                                |
+| Object / detail | Suit-portrait stock                                 |
+| Real locations  | Anything implying it is a real event when it is not |
 
 ### Provenance is mandatory
 
@@ -206,15 +307,15 @@ asset:
 assets/v6/organization/PROVENANCE.md
 ```
 
-| Field | Required |
-|---|---|
-| File | filename |
-| Source | publication / archive / photographer |
-| URL | origin link |
-| Licence | e.g. CC BY 4.0, press licence, written permission |
-| Credit line | exact text to display |
-| Retrieved | date |
-| Notes | any restriction on reuse or crop |
+| Field       | Required                                          |
+| ----------- | ------------------------------------------------- |
+| File        | filename                                          |
+| Source      | publication / archive / photographer              |
+| URL         | origin link                                       |
+| Licence     | e.g. CC BY 4.0, press licence, written permission |
+| Credit line | exact text to display                             |
+| Retrieved   | date                                              |
+| Notes       | any restriction on reuse or crop                  |
 
 **Unattributed news imagery must not enter the brand library.** If provenance
 cannot be established, do not use the image — use Tier 3 (no cover) instead.
