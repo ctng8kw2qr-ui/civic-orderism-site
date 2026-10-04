@@ -1117,154 +1117,236 @@ const startReadingItems = (startReadingSequence?.items ?? [])
   )
   .join("\n");
 
+/* V6 Institutional Editorial — homepage copy that is not yet part of the
+   validated data/*.json contract. Kept here so Phase 1 does not change the
+   shape of files that validate-v2-architecture.mjs asserts against. */
+const v6ResearchAreas = [
+  {
+    name: "政治判断",
+    desc: "判断旧秩序正在失去什么、还剩下什么，以及政治变化的现实条件何时成熟。",
+  },
+  {
+    name: "制度分析",
+    desc: "研究制度为什么失效、如何重建，以及新的政治秩序怎样在日常运行中站得住。",
+  },
+  {
+    name: "历史观察",
+    desc: "从其他国家与历史阶段的政治转轨中，辨认哪些经验可以借鉴、哪些代价必须避免。",
+  },
+  {
+    name: "组织建设",
+    desc: "让政治责任由稳定、正式、可追责的组织承担，而不是依附个人。",
+  },
+];
+
+const v6ResearchRoutes = [
+  {
+    href: "/china",
+    phase: "理解现在",
+    title: "解析中共",
+    desc: "理解现有政治系统为什么正在逐渐失去持续提供利益、预期与共识的能力。",
+  },
+  {
+    href: "/civic-orderism",
+    phase: "准备转轨",
+    title: "政治路线",
+    desc: "研究如何降低政治变化的阻力、风险与社会成本，并建立新旧政治力量之间可信的沟通路径。",
+  },
+  {
+    href: "/china-future",
+    phase: "准备未来",
+    title: "中国未来",
+    desc: "讨论政治变化之后国家如何继续运行，以及新的政治秩序如何建立。",
+  },
+];
+
+const v6WhyNowBridge =
+  "一个长期的政治与制度项目无法临时启动：研究需要时间积累，组织需要时间成形，制度准备需要时间验证。这正是研究与组织建设必须同时开始，而不是等到变化发生的原因。";
+
+const v6OrganizationFacts = [
+  { label: "组织区域", value: "加拿大 / 北美地区" },
+  { label: "当前阶段", value: organization.statusLabels.nonprofit },
+  { label: "董事会", value: organization.statusLabels.board },
+  {
+    label: "注册状态",
+    value: `${organization.statusLabels.registration}，${organization.statusLabels.jurisdiction}`,
+  },
+];
+
+const v6ParticipateLinks = [
+  { href: "/preparation", label: "了解组织结构与筹备进度" },
+  { href: "/preparation/board", label: "了解董事会筹备" },
+  { href: "/participate", label: "参与董事会与组织筹备" },
+  { href: "/about", label: "联系我们" },
+];
+
 writeContent(
   "index.md",
   `${yamlFrontmatter({ title: site.name, description: site.description, contentType: "首页", aliases: ["article_priority_index", "article_summaries"], date: site.homepageMeta.published, updated: site.homepageMeta.updated })}
 
-<div class="inst4">
+<!-- V6 Institutional Editorial homepage.
+     01 Hero and 02 最新研究 are rendered from the layout
+     (quartz/components/V6HomeHero.tsx) because Quartz only substitutes
+     components declared in quartz.layout.ts. Sections 03-07 stay in
+     Markdown so editors keep maintaining copy here. -->
+<div class="v6">
 
-<!-- SECTION 1 / IDENTITY -->
-<section class="inst4-hero" id="identity">
-  <div class="inst4-hero__grid">
-    <div class="inst4-hero__left">
-      <p class="inst4-hero__brand">CIVIC ORDERISM <span aria-hidden="true">·</span> 公民秩序主义</p>
-      <h1 class="inst4-hero__title">中国政治转轨的<span>和平方案</span></h1>
-      <p class="inst4-hero__statement">不革命、不清算，在保持国家连续运行的前提下，为中国未来建立一条低阻力、低风险的政治转轨路径。</p>
-      <p class="inst4-hero__judgment">${site.hero.judgment}</p>
-      <p class="inst4-hero__en" lang="en">A peaceful political transition framework for China's future.</p>
-      <p class="inst4l-link inst4-hero__start"><a href="/start-here/">第一次来？5分钟了解公民秩序主义 <span aria-hidden="true">→</span></a></p>
+<!-- SECTION 03 / CORE RESEARCH AREAS -->
+<section class="v6-section" id="research-axes">
+  <div class="v6__container">
+    <div class="v6-section__head">
+      <p class="v6-eyebrow"><span class="v6-eyebrow__num">03</span>RESEARCH AREAS<span aria-hidden="true"> · </span>核心研究领域</p>
+      <h2 class="v6-section__title">我们长期研究的四个方向</h2>
+      <p class="v6-section__lead">研究提供判断基础，组织承接政治责任。四个方向共同回答同一个问题：政治变化如何被提前准备。</p>
     </div>
-    <div class="inst4-hero__status" aria-label="${site.currentPhase.labelZh}">
-      <p class="inst4-hero__status-label">${site.currentPhase.label}<span aria-hidden="true"> · </span>${site.currentPhase.labelZh}</p>
-      <p class="inst4-hero__status-body">${site.currentPhase.title}</p>
-      <p class="inst4-hero__status-body" lang="en">${site.currentPhase.english}</p>
-      <p class="inst4-hero__status-year">${site.currentPhase.year}</p>
+    <ol class="v6-areas">
+${v6ResearchAreas
+  .map(
+    (item, index) => `      <li class="v6-areas__item">
+        <p class="v6-areas__num" aria-hidden="true">${String(index + 1).padStart(2, "0")}</p>
+        <div class="v6-areas__body">
+          <h3 class="v6-areas__title">${item.name}</h3>
+          <p class="v6-areas__desc">${item.desc}</p>
+        </div>
+      </li>`,
+  )
+  .join("\n")}
+    </ol>
+    <div class="v6-areas__routes">
+      <p class="v6-areas__routes-label">RESEARCH PROGRAM<span aria-hidden="true"> · </span>研究栏目</p>
+${v6ResearchRoutes
+  .map(
+    (route, index) => `      <a class="v6-areas__route" href="${route.href}">
+        <span class="v6-areas__route-num" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span>
+        <span class="v6-areas__route-cell">
+          <span class="v6-areas__route-phase">${route.phase}</span>
+          <span class="v6-areas__route-title">${route.title}</span>
+        </span>
+        <span class="v6-areas__route-desc">${route.desc}</span>
+        <span class="v6-areas__route-arrow" aria-hidden="true">→</span>
+      </a>`,
+  )
+  .join("\n")}
+      <p class="v6-areas__routes-more"><a class="v6-link" href="/theory">浏览全部研究与出版 <span class="v6-link__arrow" aria-hidden="true">→</span></a></p>
     </div>
   </div>
 </section>
 
-<!-- SECTION 2 / WHY NOW — why the question is back today -->
-<section class="inst4-whynow" id="why-now">
-  <p class="inst4-eyebrow">${civicOrderismConfig.homeWhyNow.englishLabel}</p>
-  <h2 class="inst4-whynow__title">${civicOrderismConfig.homeWhyNow.title}</h2>
-  <div class="inst4-whynow__body">
-    <p>${civicOrderismConfig.homeWhyNow.answer.open}</p>
-    <p class="inst4-whynow__emphasis">${civicOrderismConfig.homeWhyNow.answer.emphasis}</p>
-    <p>${civicOrderismConfig.homeWhyNow.answer.detail}</p>
-    <p>${civicOrderismConfig.homeWhyNow.change.open}</p>
-    <p class="inst4-whynow__emphasis">${civicOrderismConfig.homeWhyNow.change.emphasis}</p>
-    <p>${civicOrderismConfig.homeWhyNow.judgment}</p>
-    <div class="inst4-whynow__closing">
-${civicOrderismConfig.homeWhyNow.closing.map((line) => `      <p>${line}</p>`).join("\n")}
+<!-- SECTION 04 / WHY NOW -->
+<section class="v6-section" id="why-now">
+  <div class="v6__container">
+    <div class="v6-section__head">
+      <p class="v6-eyebrow"><span class="v6-eyebrow__num">04</span>${civicOrderismConfig.homeWhyNow.englishLabel}<span aria-hidden="true"> · </span>为什么是现在</p>
+      <h2 class="v6-section__title">为什么现在开始准备</h2>
+    </div>
+    <div class="v6-why__body">
+      <p>${civicOrderismConfig.homeWhyNow.answer.open}</p>
+      <p class="v6-why__emphasis">${civicOrderismConfig.homeWhyNow.answer.emphasis}</p>
+      <p>${civicOrderismConfig.homeWhyNow.answer.detail}</p>
+      <p>${civicOrderismConfig.homeWhyNow.change.open}</p>
+      <p class="v6-why__emphasis">${civicOrderismConfig.homeWhyNow.change.emphasis}</p>
+      <p>${civicOrderismConfig.homeWhyNow.judgment}</p>
+      <div class="v6-why__closing">
+${civicOrderismConfig.homeWhyNow.closing.map((line) => `        <p>${line}</p>`).join("\n")}
+      </div>
+      <p class="v6-why__bridge">${v6WhyNowBridge}</p>
     </div>
   </div>
 </section>
 
-<!-- SECTION 3 / TRANSITION PATH (the route model, not the full proof) -->
-<section class="inst4-transition" id="transition">
-  <p class="inst4-eyebrow">${civicOrderismConfig.homeTransition.englishLabel}</p>
-  <h2 class="inst4-transition__title">${civicOrderismConfig.homeTransition.title}</h2>
-  <ol class="inst4-route__chain inst4-transition__flow">
+<!-- SECTION 05 / THE TRANSITION PATH -->
+<section class="v6-section" id="transition">
+  <div class="v6__container">
+    <div class="v6-section__head">
+      <p class="v6-eyebrow"><span class="v6-eyebrow__num">05</span>${civicOrderismConfig.homeTransition.englishLabel}<span aria-hidden="true"> · </span>和平转轨路线</p>
+      <h2 class="v6-section__title">${civicOrderismConfig.homeTransition.title}</h2>
+    </div>
+    <ol class="v6-route__chain v6-transition__flow">
 ${civicOrderismConfig.homeTransition.steps
   .map(
     (step, index) =>
-      `    <li><span>${String(index + 1).padStart(2, "0")}</span><p>${step}</p></li>`,
+      `      <li><span>${String(index + 1).padStart(2, "0")}</span><p>${step}</p></li>`,
   )
   .join("\n")}
-  </ol>
-  <p class="inst4-transition__note">${civicOrderismConfig.homeTransition.summary}</p>
-  <p class="inst4l-link"><a href="${civicOrderismConfig.homeTransition.entryHref}">${civicOrderismConfig.homeTransition.entryLabel} <span aria-hidden="true">→</span></a></p>
+    </ol>
+    <p class="v6-transition__note">${civicOrderismConfig.homeTransition.summary}</p>
+    <p class="v6-section__more"><a class="v6-link" href="${civicOrderismConfig.homeTransition.entryHref}">${civicOrderismConfig.homeTransition.entryLabel} <span class="v6-link__arrow" aria-hidden="true">→</span></a></p>
+  </div>
 </section>
 
-<!-- SECTION 4 / FUTURE (VALUE GOAL) — what the transition is finally for -->
-<section class="inst4-core-statement" id="future" aria-labelledby="core-political-statement-title">
-  <div class="inst4-core-statement__grid">
-    <div class="inst4-core-statement__identity">
-      <p class="inst4-eyebrow">${site.corePoliticalStatement.englishLabel}<span aria-hidden="true"> · </span>${site.corePoliticalStatement.roleLabel}</p>
-      <p class="inst4-core-statement__label">${site.corePoliticalStatement.roleQuestion}</p>
+<!-- SECTION 06 / ORGANIZATION BUILDING -->
+<section class="v6-section v6-org" id="current-work">
+  <div class="v6__container">
+    <div class="v6-org__grid">
+      <div class="v6-org__intro">
+        <p class="v6-eyebrow"><span class="v6-eyebrow__num">06</span>CURRENT WORK<span aria-hidden="true"> · </span>组织建设</p>
+        <h2 class="v6-org__title">${civicOrderismConfig.organizationPositioning.homeLabel}</h2>
+        <p class="v6-org__lead">公民秩序主义不只是一个发表观点的地方。政治责任需要由正式组织承担，因此组织建设是与研究同时进行的长期工作。</p>
+      </div>
+      <div class="v6-org__panel">
+        <div class="v6-org__item">
+          <h3 class="v6-org__item-title">${civicOrderismConfig.organizationPositioning.homeItemTitle}</h3>
+          <p class="v6-org__item-status">${civicOrderismConfig.organizationPositioning.homeStatus}</p>
+          <p class="v6-org__item-summary">${site.currentPhase.note}新的政治力量必须具备能够被识别、被验证、被追责的政治信誉与承接能力；法律、财务、人员与长期政治责任必须由正式组织承担。</p>
+          <ul class="v6-org__facts">
+${v6OrganizationFacts
+  .map(
+    (fact) =>
+      `            <li><span>${fact.label}</span>${fact.value}</li>`,
+  )
+  .join("\n")}
+          </ul>
+          <div class="v6-org__links">
+            <a class="v6-button v6-button--secondary" href="${civicOrderismConfig.organizationPositioning.homeEntryHref}">${civicOrderismConfig.organizationPositioning.homeEntryLabel}</a>
+            <a class="v6-org__doc" href="${civicOrderismConfig.organizationPositioning.homeDocumentHref}" target="_blank" rel="noopener">${civicOrderismConfig.organizationPositioning.homeDocumentLabel} <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="v6-org__ways">
+          <p class="v6-org__ways-label">参与长期建设</p>
+          <ul>
+${v6ParticipateLinks
+  .map(
+    (link) =>
+      `            <li><a href="${link.href}">${link.label} <span aria-hidden="true">→</span></a></li>`,
+  )
+  .join("\n")}
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="inst4-core-statement__body">
-      <h2 class="inst4-core-statement__title" id="core-political-statement-title">${site.corePoliticalStatement.title.replace(
+  </div>
+</section>
+
+<!-- SECTION 07 / WHO WE ARE -->
+<section class="v6-section" id="organization">
+  <div class="v6__container">
+    <div class="v6-who__grid">
+      <div class="v6-who__intro">
+        <p class="v6-eyebrow"><span class="v6-eyebrow__num">07</span>WHO WE ARE<span aria-hidden="true"> · </span>我们是谁</p>
+        <h2 class="v6-who__title">一个正在长期建设中的公共事务机构</h2>
+      </div>
+      <div class="v6-who__body">
+        <p>公民秩序主义是一个研究中国政治转轨、并同时建设组织承接能力的公共事务项目。我们研究旧秩序为什么正在失效，也研究政治变化之后国家如何继续运行。</p>
+        <p>我们正在建立的，是一条可以被公开检验的政治路线，以及一个能够承担长期政治责任的形式组织。我们希望解决的问题是：当政治变化真正到来时，是否已经存在一支有能力、有信誉、可被追责的承接力量。</p>
+      </div>
+    </div>
+    <div class="v6-who__statement">
+      <p class="v6-eyebrow">${site.corePoliticalStatement.englishLabel}<span aria-hidden="true"> · </span>${site.corePoliticalStatement.roleLabel}</p>
+      <p class="v6-who__statement-role">${site.corePoliticalStatement.roleQuestion}</p>
+      <h3 class="v6-who__statement-title">${site.corePoliticalStatement.title.replace(
         "中国",
         "中国<wbr>",
-      )}</h2>
-      <blockquote class="inst4-core-statement__question"><p>${site.corePoliticalStatement.question}</p></blockquote>
-      <p class="inst4-core-statement__judgment">${site.corePoliticalStatement.judgment}</p>
-      <p class="inst4-core-statement__cta"><a href="/${site.corePoliticalStatement.slug}">阅读${site.corePoliticalStatement.roleLabel}全文 <span aria-hidden="true">→</span></a></p>
+      )}</h3>
+      <blockquote class="v6-who__statement-question">
+        <p>${site.corePoliticalStatement.question}</p>
+      </blockquote>
+      <p class="v6-who__statement-judgment">${site.corePoliticalStatement.judgment}</p>
+      <p class="v6-who__links">
+        <a class="v6-link" href="/${site.corePoliticalStatement.slug}">阅读${site.corePoliticalStatement.roleLabel}全文 <span class="v6-link__arrow" aria-hidden="true">→</span></a>
+        <a class="v6-link" href="/about">了解更多 <span class="v6-link__arrow" aria-hidden="true">→</span></a>
+      </p>
     </div>
   </div>
-</section>
-
-<!-- SECTION 5 / WHAT WE ARE BUILDING -->
-<section class="inst4-readiness" id="readiness">
-  <p class="inst4-eyebrow">${civicOrderismConfig.readiness.englishLabel}</p>
-  <h2 class="inst4-readiness__title">${civicOrderismConfig.readiness.title}</h2>
-  <div class="inst4-readiness__points">
-${civicOrderismConfig.readiness.items
-  .map(
-    (item, index) => `    <article class="inst4-readiness__point">
-      <p class="inst4-readiness__number">${String(index + 1).padStart(2, "0")}</p>
-      <div class="inst4-readiness__point-body">
-        <h3 class="inst4-readiness__point-title">${item.name}</h3>
-        <p class="inst4-readiness__point-text">${item.desc}</p>
-      </div>
-    </article>`,
-  )
-  .join("\n")}
-  </div>
-  <p class="inst4-readiness__note">${civicOrderismConfig.readiness.note}</p>
-</section>
-
-<!-- SECTION 6 / CURRENT WORK — what the project is doing right now -->
-<section class="inst4-work" id="current-work">
-  <p class="inst4-eyebrow">CURRENT WORK</p>
-  <h2 class="inst4-work__title">${civicOrderismConfig.organizationPositioning.homeLabel}</h2>
-  <div class="inst4-work__item">
-    <h3 class="inst4-work__item-title">${civicOrderismConfig.organizationPositioning.homeItemTitle}</h3>
-    <p class="inst4-work__item-status">${civicOrderismConfig.organizationPositioning.homeStatus}</p>
-    <p class="inst4-work__item-summary">${site.currentPhase.note}</p>
-    <p class="inst4-work__links"><a href="${civicOrderismConfig.organizationPositioning.homeEntryHref}">${civicOrderismConfig.organizationPositioning.homeEntryLabel} <span aria-hidden="true">→</span></a></p>
-  </div>
-  <p class="inst4-work__document"><a href="${civicOrderismConfig.organizationPositioning.homeDocumentHref}" target="_blank" rel="noopener">${civicOrderismConfig.organizationPositioning.homeDocumentLabel} <span aria-hidden="true">→</span></a></p>
-</section>
-
-<!-- SECTION 7 / RESEARCH -->
-<section class="inst4-research" id="research">
-  <div class="inst4-research__head">
-    <p class="inst4-eyebrow">RESEARCH &amp; POLITICAL WORK</p>
-    <h2 class="inst4-research__title">从理解旧秩序，到准备新的政治秩序</h2>
-    <p class="inst4-research__bridge">组织承接政治责任，研究提供判断基础。</p>
-  </div>
-  <div class="inst4-research__list">
-    <a class="inst4-research__row" href="/china">
-      <span class="inst4-research__num" aria-hidden="true">01</span>
-      <span class="inst4-research__cell">
-        <span class="inst4-research__phase">理解现在</span>
-        <span class="inst4-research__col-title">解析中共</span>
-      </span>
-      <span class="inst4-research__desc">理解现有政治系统为什么正在逐渐失去持续提供利益、预期与共识的能力。</span>
-      <span class="inst4-research__arrow" aria-hidden="true">→</span>
-    </a>
-    <a class="inst4-research__row" href="/civic-orderism">
-      <span class="inst4-research__num" aria-hidden="true">02</span>
-      <span class="inst4-research__cell">
-        <span class="inst4-research__phase">准备转轨</span>
-        <span class="inst4-research__col-title">政治路线</span>
-      </span>
-      <span class="inst4-research__desc">研究如何降低政治变化的阻力、风险与社会成本，并建立新旧政治力量之间可信的沟通路径。</span>
-      <span class="inst4-research__arrow" aria-hidden="true">→</span>
-    </a>
-    <a class="inst4-research__row" href="/china-future">
-      <span class="inst4-research__num" aria-hidden="true">03</span>
-      <span class="inst4-research__cell">
-        <span class="inst4-research__phase">准备未来</span>
-        <span class="inst4-research__col-title">中国未来</span>
-      </span>
-      <span class="inst4-research__desc">讨论政治变化之后国家如何继续运行，以及新的政治秩序如何建立。</span>
-      <span class="inst4-research__arrow" aria-hidden="true">→</span>
-    </a>
-  </div>
-  <p class="inst4-research__all"><a href="/theory">浏览全部研究与出版 <span aria-hidden="true">→</span></a></p>
 </section>
 
 </div>`,

@@ -1,0 +1,627 @@
+@use "../variables.scss" as *;
+
+/**
+ * V6 — Institutional Editorial · Homepage
+ * ================================================================
+ *
+ * 首页信息架构（01 → 07）：
+ *   01 Hero            机构定位 + 当前阶段
+ *   02 最新研究        编辑出版式：主文章 + 次级文章
+ *   03 核心研究领域    四个编号方向 + 研究栏目索引
+ *   04 为什么是现在    简洁论证，连接研究与组织建设
+ *   05 和平转轨路线    五步链条 + 完整路线入口
+ *   06 组织建设        当前法定与董事会筹备状态
+ *   07 我们是谁        机构自我说明 + 价值目标入口
+ *
+ * 除 01 与 06 外，每个 Section 以一条细线开始，靠留白与字号建立层级。
+ * 不使用卡片、阴影、渐变或图标。
+ */
+
+/* ══ 01 · HERO ════════════════════════════════════════════════ */
+.v6-hero {
+  padding-block: clamp(3rem, 8vw, 6.5rem) clamp(2.5rem, 6vw, 5rem);
+  background: linear-gradient(
+    to bottom,
+    var(--v6-surface) 0%,
+    var(--v6-background) 100%
+  );
+}
+
+.v6-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+/* 机构名称：中文为主、英文为辅，作为 Hero 的识别层。 */
+.v6-hero__brand {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  align-items: baseline;
+  max-width: none;
+}
+
+.v6-hero__brand-zh {
+  color: var(--v6-text-primary);
+  font-size: 0.95rem;
+  font-weight: var(--v6-weight-label);
+  letter-spacing: 0.16em;
+}
+
+.v6-hero__brand-en {
+  color: var(--v6-text-muted);
+  font-size: var(--v6-text-label);
+  font-weight: var(--v6-weight-label);
+  letter-spacing: var(--v6-tracking-label);
+}
+
+.v6-hero__title {
+  max-width: 22ch;
+  margin-top: var(--v6-space-lg);
+  font-size: var(--v6-text-display);
+  font-weight: var(--v6-weight-display);
+  letter-spacing: 0.012em;
+  line-height: var(--v6-leading-display);
+}
+
+/* 主标题第二行：机构色只用于这一处，形成克制的强调。 */
+.v6-hero__title-em {
+  display: block;
+  margin-top: 0.15em;
+  color: var(--v6-brand-text);
+}
+
+.v6-hero__statement {
+  max-width: 44ch;
+  margin-top: var(--v6-space-md);
+  color: var(--v6-text-secondary);
+  font-size: var(--v6-text-lead);
+  font-weight: var(--v6-weight-lead);
+  line-height: 1.72;
+}
+
+.v6-hero__institution {
+  max-width: 40ch;
+  margin-top: var(--v6-space-sm);
+  padding-left: var(--v6-space-sm);
+  border-left: 2px solid var(--v6-brand-line);
+  color: var(--v6-text-primary);
+  font-size: 1.02rem;
+  font-weight: var(--v6-weight-strong);
+  line-height: 1.7;
+}
+
+.v6-hero__start {
+  margin-top: var(--v6-space-md);
+}
+
+/* Hero 右侧：辅助线稿 + 当前阶段。图片是辅助，不是主角。 */
+.v6-hero__aside {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding-top: var(--v6-space-sm);
+}
+
+.v6-hero__figure {
+  margin: 0 0 var(--v6-space-lg);
+}
+
+/* Decorative institutional line drawing.
+   A mask painted with currentColor keeps one asset working in both themes —
+   no hardcoded stroke colour and no invert() filter. */
+.v6-hero__art {
+  display: block;
+  width: min(100%, 380px);
+  aspect-ratio: 2 / 1;
+  background-color: var(--v6-text-primary);
+  opacity: 0.14;
+  -webkit-mask-image: url("/static/v6-hero-architecture.svg");
+  mask-image: url("/static/v6-hero-architecture.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center bottom;
+  mask-position: center bottom;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+:root[saved-theme="dark"] .v6-hero__art {
+  opacity: 0.3;
+}
+
+.v6-hero__phase-label {
+  max-width: none;
+  color: var(--v6-text-muted);
+  font-size: var(--v6-text-label);
+  font-weight: var(--v6-weight-label);
+  letter-spacing: var(--v6-tracking-label);
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.v6-hero__phase {
+  max-width: 24ch;
+  margin-top: 0.55rem;
+  color: var(--v6-text-primary);
+  font-size: 0.98rem;
+  font-weight: var(--v6-weight-strong);
+  line-height: 1.6;
+}
+
+.v6-hero__phase-en {
+  max-width: 30ch;
+  margin-top: 0.3rem;
+  color: var(--v6-text-muted);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.v6-hero__year {
+  margin-top: var(--v6-space-sm);
+  color: var(--v6-brand-text);
+  font-size: 0.86rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--v6-weight-strong);
+  letter-spacing: 0.08em;
+}
+
+/* ══ 02–07 · SECTION FRAME ═══════════════════════════════════ */
+.v6-section__more {
+  margin-top: var(--v6-space-lg);
+}
+
+/* ══ 03 · CORE RESEARCH AREAS ════════════════════════════════ */
+.v6-areas {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+/* 四个方向：编号 + 标题 + 一句说明。用细线分隔，不用卡片。 */
+.v6-areas__item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0 var(--v6-space-md);
+  padding: var(--v6-space-lg) 0;
+  border-top: 1px solid var(--v6-border);
+}
+
+.v6-areas__num {
+  max-width: none;
+  color: var(--v6-brand-text);
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--v6-weight-strong);
+  letter-spacing: 0.08em;
+  line-height: 1.9;
+}
+
+.v6-areas__title {
+  font-size: 1.16rem;
+  font-weight: 600;
+}
+
+.v6-areas__desc {
+  max-width: 40ch;
+  margin-top: 0.5rem;
+  color: var(--v6-text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+
+/* 研究栏目索引：三行，读作「理解现在 → 准备转轨 → 准备未来」。 */
+.v6-areas__routes {
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+  padding-top: var(--v6-space-lg);
+  border-top: 1px solid var(--v6-border-strong);
+}
+
+.v6-areas__routes-label {
+  max-width: none;
+  color: var(--v6-text-muted);
+  font-size: var(--v6-text-label);
+  font-weight: var(--v6-weight-label);
+  letter-spacing: var(--v6-tracking-label);
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.v6-areas__route {
+  display: grid;
+  grid-template-columns: auto minmax(9rem, 0.7fr) minmax(0, 1.6fr) auto;
+  gap: var(--v6-space-md);
+  align-items: baseline;
+  padding: var(--v6-space-md) 0;
+  border-bottom: 1px solid var(--v6-border);
+  color: inherit;
+  text-decoration: none;
+}
+
+.v6-areas__route:first-of-type {
+  margin-top: var(--v6-space-sm);
+}
+
+.v6-areas__route-num {
+  color: var(--v6-text-muted);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+}
+
+.v6-areas__route-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.v6-areas__route-phase {
+  color: var(--v6-text-muted);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.v6-areas__route-title {
+  color: var(--v6-text-primary);
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.45;
+  transition: color var(--v6-duration) var(--v6-ease);
+}
+
+.v6-areas__route-desc {
+  color: var(--v6-text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.v6-areas__route-arrow {
+  color: var(--v6-text-muted);
+  font-size: 0.95rem;
+  transition:
+    color var(--v6-duration) var(--v6-ease),
+    transform var(--v6-duration) var(--v6-ease);
+}
+
+.v6-areas__route:hover .v6-areas__route-title,
+.v6-areas__route:focus-visible .v6-areas__route-title {
+  color: var(--v6-brand-text);
+}
+
+.v6-areas__route:hover .v6-areas__route-arrow {
+  color: var(--v6-brand-text);
+  transform: translateX(2px);
+}
+
+.v6-areas__routes-more {
+  margin-top: var(--v6-space-lg);
+}
+
+/* ══ 04 · WHY NOW ════════════════════════════════════════════ */
+.v6-why__body {
+  max-width: var(--v6-measure);
+}
+
+.v6-why__body > p {
+  max-width: none;
+  color: var(--v6-text-secondary);
+  font-size: 1.04rem;
+  line-height: 1.85;
+}
+
+.v6-why__body > p + p {
+  margin-top: var(--v6-space-md);
+}
+
+/* 两处判断句：加粗并略微放大，作为这一段的视觉焦点。 */
+.v6-why__emphasis {
+  color: var(--v6-text-primary) !important;
+  font-size: 1.22rem !important;
+  font-weight: var(--v6-weight-strong);
+  letter-spacing: 0.01em;
+}
+
+.v6-why__closing {
+  margin-top: var(--v6-space-lg);
+  padding-top: var(--v6-space-md);
+  border-top: 1px solid var(--v6-brand-line);
+}
+
+.v6-why__closing p {
+  max-width: none;
+  color: var(--v6-text-primary);
+  font-size: 1.06rem;
+  font-weight: var(--v6-weight-strong);
+  line-height: 1.75;
+}
+
+/* 把「研究」与「组织建设」连接起来的一句过渡。 */
+.v6-why__bridge {
+  margin-top: var(--v6-space-lg) !important;
+  padding-left: var(--v6-space-md);
+  border-left: 2px solid var(--v6-border-strong);
+  color: var(--v6-text-muted) !important;
+  font-size: 0.94rem !important;
+  line-height: 1.8 !important;
+}
+
+/* ══ 05 · TRANSITION PATH ════════════════════════════════════ */
+.v6-route__chain {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--v6-border);
+  border-block: 1px solid var(--v6-border);
+}
+
+.v6-route__chain > li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: var(--v6-space-md) var(--v6-space-sm);
+  background: var(--v6-background);
+}
+
+.v6-route__chain > li > span {
+  color: var(--v6-brand-text);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--v6-weight-strong);
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+}
+
+.v6-route__chain > li > p {
+  max-width: 18ch;
+  color: var(--v6-text-primary);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.v6-transition__note {
+  max-width: var(--v6-measure);
+  margin-top: var(--v6-space-lg);
+  color: var(--v6-text-secondary);
+  font-size: 0.96rem;
+  line-height: 1.8;
+}
+
+/* ══ 06 · ORGANIZATION BUILDING ══════════════════════════════ */
+/* 组织建设是本阶段重点，视觉权重略高：用一层浅色 Surface 承载，
+   但依然不使用卡片边框与阴影。 */
+.v6-org {
+  background: var(--v6-surface);
+}
+
+.v6-org__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+.v6-org__title {
+  margin-top: var(--v6-space-sm);
+  font-size: var(--v6-text-h2);
+}
+
+.v6-org__lead {
+  max-width: 34ch;
+  margin-top: var(--v6-space-sm);
+  color: var(--v6-text-secondary);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.v6-org__panel {
+  display: grid;
+  gap: var(--v6-space-lg);
+  min-width: 0;
+}
+
+.v6-org__item {
+  padding-left: var(--v6-space-md);
+  border-left: 2px solid var(--v6-brand);
+}
+
+.v6-org__item-title {
+  font-size: 1.24rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.v6-org__item-status {
+  max-width: none;
+  margin-top: 0.7rem;
+  color: var(--v6-text-primary);
+  font-size: 0.92rem;
+  font-weight: var(--v6-weight-strong);
+  line-height: 1.7;
+}
+
+.v6-org__item-summary {
+  max-width: 52ch;
+  margin-top: var(--v6-space-sm);
+  color: var(--v6-text-secondary);
+  font-size: 0.94rem;
+  line-height: 1.8;
+}
+
+/* 状态细目：两列表格式栅格，明确区分「字段」与「事实」。 */
+.v6-org__facts {
+  display: grid;
+  gap: 0;
+  margin: var(--v6-space-md) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--v6-border);
+}
+
+.v6-org__facts li {
+  display: grid;
+  grid-template-columns: minmax(5.5rem, 7rem) minmax(0, 1fr);
+  gap: var(--v6-space-sm);
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--v6-border);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.v6-org__facts li span {
+  color: var(--v6-text-muted);
+  font-size: 0.8rem;
+}
+
+.v6-org__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--v6-space-sm) var(--v6-space-md);
+  align-items: center;
+  margin-top: var(--v6-space-md);
+}
+
+.v6-org__doc {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: baseline;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--v6-brand-line);
+  color: var(--v6-brand-text);
+  font-size: 0.88rem;
+  font-weight: var(--v6-weight-strong);
+  text-decoration: none;
+  transition: border-color var(--v6-duration) var(--v6-ease);
+}
+
+.v6-org__doc:hover,
+.v6-org__doc:focus-visible {
+  border-bottom-color: var(--v6-brand);
+}
+
+/* 参与方式：安静的链接列表，不做动员式按钮墙。 */
+.v6-org__ways {
+  padding-top: var(--v6-space-md);
+  border-top: 1px solid var(--v6-border);
+}
+
+.v6-org__ways-label {
+  max-width: none;
+  color: var(--v6-text-muted);
+  font-size: var(--v6-text-label);
+  font-weight: var(--v6-weight-label);
+  letter-spacing: var(--v6-tracking-label);
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.v6-org__ways ul {
+  display: grid;
+  gap: 0.15rem;
+  margin: var(--v6-space-sm) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.v6-org__ways a {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: baseline;
+  color: var(--v6-text-secondary);
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: color var(--v6-duration) var(--v6-ease);
+}
+
+.v6-org__ways a:hover,
+.v6-org__ways a:focus-visible {
+  color: var(--v6-brand-text);
+}
+
+/* ══ 07 · WHO WE ARE ═════════════════════════════════════════ */
+.v6-who__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+.v6-who__title {
+  max-width: 18ch;
+  margin-top: var(--v6-space-sm);
+  font-size: var(--v6-text-h2);
+}
+
+.v6-who__body > p {
+  max-width: var(--v6-measure);
+  color: var(--v6-text-secondary);
+  font-size: 0.98rem;
+  line-height: 1.85;
+}
+
+.v6-who__body > p + p {
+  margin-top: var(--v6-space-md);
+}
+
+/* Value goal (核心政治总论) carried inside 我们是谁 — the institution states
+   what it is working toward, rather than ending the page on an abstract note. */
+.v6-who__statement {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: var(--v6-space-lg);
+  border-top: 1px solid var(--v6-border);
+}
+
+.v6-who__statement-role {
+  max-width: 40ch;
+  margin-top: var(--v6-space-sm);
+  color: var(--v6-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.v6-who__statement-title {
+  max-width: 20ch;
+  margin-top: var(--v6-space-md);
+  font-size: clamp(1.5rem, 3vw, 2.05rem);
+  font-weight: var(--v6-weight-heading);
+  letter-spacing: var(--v6-tracking-heading);
+  line-height: 1.3;
+}
+
+.v6-who__statement-question {
+  max-width: var(--v6-measure);
+  margin-top: var(--v6-space-md);
+  padding-left: var(--v6-space-md);
+  border-left: 2px solid var(--v6-brand);
+}
+
+.v6-who__statement-question p {
+  max-width: none;
+  color: var(--v6-text-primary);
+  font-size: 1.06rem;
+  font-weight: var(--v6-weight-strong);
+  line-height: 1.75;
+}
+
+.v6-who__statement-judgment {
+  max-width: var(--v6-measure);
+  margin-top: var(--v6-space-md);
+  color: var(--v6-text-secondary);
+  font-size: 0.98rem;
+  line-height: 1.85;
+}
+
+.v6-who__links {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: var(--v6-space-sm) var(--v6-space-lg);
+  align-items: baseline;
+  margin-top: var(--v6-space-lg);
+}

@@ -1,0 +1,298 @@
+@use "../variables.scss" as *;
+
+/**
+ * V6 — Institutional Editorial · Responsive
+ * ================================================================
+ *
+ * 断点（与 Quartz variables.scss 保持一致）：
+ *   $mobile   ≤ 800px    375 / 390 / 430 为主要目标宽度
+ *   $tablet   801–1200px 768 / 1024
+ *   desktop   ≥ 1201px   1440
+ *
+ * 移动端不是桌面版缩小：Hero 改为单列、编号栅格改为纵向、
+ * 五步链条改为纵列、组织信息改为堆叠，并保证不出现横向滚动。
+ */
+
+/* ══ 极窄端保护：任何情况下都不出现横向滚动条 ═══════════════ */
+.v6 {
+  overflow-x: clip;
+}
+
+.v6 img,
+.v6 svg,
+.v6 figure {
+  max-width: 100%;
+}
+
+/* ══ 平板 / 小桌面（≤ 1100px）══════════════════════════════════ */
+@media (max-width: 1100px) {
+  /* Hero 收为单列：文字在上，阶段与辅助图形在下。 */
+  .v6-hero__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--v6-space-xl);
+  }
+
+  .v6-hero__aside {
+    padding-top: 0;
+    padding-top: var(--v6-space-lg);
+    border-top: 1px solid var(--v6-border);
+  }
+
+  .v6-hero__figure {
+    margin-bottom: var(--v6-space-md);
+  }
+
+  .v6-hero__art {
+    width: min(100%, 260px);
+    opacity: 0.12;
+  }
+
+  /* 研究栏目索引：说明文字换到第二行，避免四列过窄。 */
+  .v6-areas__route {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .v6-areas__route-desc {
+    grid-column: 2 / -1;
+    margin-top: 0.45rem;
+  }
+
+  .v6-org__grid,
+  .v6-who__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--v6-space-lg);
+  }
+
+  .v6-org__lead,
+  .v6-who__title,
+  .v6-section__title {
+    max-width: 38ch;
+  }
+}
+
+/* ══ 平板（≤ 1000px）══════════════════════════════════════════ */
+@media (max-width: 1000px) {
+  /* 五步链条：先变 2 列，再在移动端变纵列。 */
+  .v6-route__chain {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ══ 移动端（≤ 800px）══════════════════════════════════════════ */
+@media all and ($mobile) {
+  /* Hero：压缩留白，标题避免在 375px 出现孤字断行。 */
+  .v6-hero {
+    padding-block: var(--v6-space-xl) var(--v6-space-lg);
+  }
+
+  .v6-hero__grid {
+    gap: var(--v6-space-lg);
+  }
+
+  .v6-hero__title {
+    max-width: none;
+    margin-top: var(--v6-space-md);
+    /* 关闭 text-wrap: balance，中文长标题在窄屏上交给浏览器正常折行 */
+    text-wrap: normal;
+  }
+
+  .v6-hero__statement,
+  .v6-hero__institution,
+  .v6-hero__phase,
+  .v6-hero__phase-en {
+    max-width: none;
+  }
+
+  /* 主 CTA 在移动端整行铺满，便于拇指点击。 */
+  .v6-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--v6-space-xs);
+    margin-top: var(--v6-space-md);
+  }
+
+  .v6-actions .v6-button {
+    width: 100%;
+  }
+
+  /* 辅助线稿在手机上几乎不可见，直接保留极低透明度即可。 */
+  .v6-hero__art {
+    width: min(100%, 220px);
+    opacity: 0.1;
+  }
+
+  /* Section 节奏收紧，避免移动端过长。 */
+  .v6-section {
+    padding-block: var(--v6-section-space-tight);
+  }
+
+  .v6-section__head {
+    margin-bottom: var(--v6-space-lg);
+  }
+
+  .v6-section__title,
+  .v6-org__title,
+  .v6-who__title {
+    max-width: none;
+  }
+
+  /* 四个研究方向：单列纵向。 */
+  .v6-areas {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .v6-areas__item {
+    padding: var(--v6-space-md) 0;
+  }
+
+  .v6-areas__desc {
+    max-width: none;
+  }
+
+  /* 研究栏目索引：改为两列（编号 + 内容），箭头隐藏。 */
+  .v6-areas__route {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.2rem var(--v6-space-sm);
+    padding: var(--v6-space-md) 0;
+  }
+
+  .v6-areas__route-num {
+    grid-row: span 2;
+    padding-top: 0.15rem;
+  }
+
+  .v6-areas__route-desc {
+    grid-column: 2;
+    margin-top: 0.4rem;
+  }
+
+  .v6-areas__route-arrow {
+    display: none;
+  }
+
+  /* 五步链条：纵列，用左侧细线表达顺序。 */
+  .v6-route__chain {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    border-block: 0;
+    border-left: 1px solid var(--v6-border);
+    background: transparent;
+  }
+
+  .v6-route__chain > li {
+    flex-direction: row;
+    gap: var(--v6-space-sm);
+    align-items: baseline;
+    padding: 0.6rem 0 0.6rem var(--v6-space-md);
+    border-bottom: 1px solid var(--v6-border);
+    background: transparent;
+  }
+
+  .v6-route__chain > li > p {
+    max-width: none;
+  }
+
+  .v6-transition__note {
+    margin-top: var(--v6-space-md);
+  }
+
+  /* 组织建设：法律状态细目改为纵向字段。 */
+  .v6-org__item {
+    padding-left: var(--v6-space-sm);
+  }
+
+  .v6-org__item-title {
+    font-size: 1.14rem;
+  }
+
+  .v6-org__item-summary {
+    max-width: none;
+  }
+
+  .v6-org__facts li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.15rem;
+    padding: 0.7rem 0;
+  }
+
+  .v6-org__links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--v6-space-sm);
+  }
+
+  .v6-org__links .v6-button {
+    width: 100%;
+  }
+
+  /* 参与方式链接：触控目标 ≥ 44px。 */
+  .v6-org__ways ul {
+    gap: 0;
+  }
+
+  .v6-org__ways a {
+    display: flex;
+    min-height: 2.75rem;
+    align-items: center;
+  }
+
+  /* 我们是谁：判断句与链接收口。 */
+  .v6-who__body > p {
+    max-width: none;
+  }
+
+  .v6-who__judgment {
+    padding-left: var(--v6-space-sm);
+  }
+
+  .v6-who__links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--v6-space-xs);
+  }
+
+  .v6-who__links .v6-link {
+    min-height: 2.75rem;
+    align-items: center;
+  }
+}
+
+/* ══ 极窄端（≤ 400px）：375 / 390 设备 ═══════════════════════ */
+@media (max-width: 400px) {
+  :root {
+    --v6-gutter: 1.1rem;
+    --v6-text-display: 1.85rem;
+  }
+
+  .v6-hero__title {
+    letter-spacing: 0;
+  }
+
+  .v6-hero__brand {
+    gap: 0.3rem 0.7rem;
+  }
+
+  .v6-eyebrow {
+    letter-spacing: 0.1em;
+  }
+}
+
+/* ══ 大桌面（≥ 1440px）：不放大字号，只增加留白 ══════════════ */
+@media (min-width: 1440px) {
+  .v6-hero,
+  .v6-section,
+  .v6-org {
+    padding-block: clamp(4.5rem, 7vw, 7.5rem);
+  }
+
+  .v6-section__head {
+    margin-bottom: var(--v6-space-2xl);
+  }
+}
+
+/* ══ 降低动态效果偏好 ════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .v6-areas__route:hover .v6-areas__route-arrow {
+    transform: none;
+  }
+}
