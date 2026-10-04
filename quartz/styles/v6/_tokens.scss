@@ -23,6 +23,11 @@
   /* ---- Background & surfaces ---------------------------------- */
   /* 暖白 / 纸张色：机构出版物的底，不是纯白。 */
   --v6-background: #faf8f5;
+  /* 浏览器界面色（<meta name="theme-color"> / webmanifest）。
+     与页面底色保持同一事实源，避免出现第三个近似值。
+     这两个值同时被 quartz/components/Head.tsx 引用。 */
+  --v6-chrome-light: #faf8f5;
+  --v6-chrome-dark: #141518;
   --v6-surface: #fffefc;
   --v6-surface-sunken: #f3f0eb;
   --v6-surface-inverse: #1b1c1f;

@@ -1,5 +1,9 @@
 # V6 assets — editorial
 
+Editorial covers for research articles, series and flagship pieces.
+Referenced from article frontmatter via `cover:` / `coverAlt:`, and consumed
+in three places from that single source: article page, homepage Lead, og:image.
+
 Editorial covers for the homepage lead article and for article pages.
 
 ## Belongs here
@@ -25,3 +29,4 @@ articles will not have one.
 
 - Site-relative paths only (no external image hosts).
 - Always pair with intrinsic `width`/`height` to avoid layout shift.
+  Full specification: `../SPEC.md`.

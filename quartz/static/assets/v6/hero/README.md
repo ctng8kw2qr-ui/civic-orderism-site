@@ -1,5 +1,7 @@
 # V6 assets — hero
 
+The homepage Hero visual slot. Exactly one primary hero visual.
+
 The homepage Hero visual slot.
 
 ## Belongs here
@@ -22,3 +24,4 @@ Replace the referenced file in place (or update the one `mask-image` URL in
 - SVG preferred (scales, tiny, themeable). WebP/AVIF only if a raster is
   genuinely required.
 - Never add: political symbols, crowds, flags, fists, portraits.
+  Full specification: `../SPEC.md`.

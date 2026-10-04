@@ -1,5 +1,7 @@
 # V6 assets — brand
 
+Logo, wordmark, favicon sources and other long-lived identity assets.
+
 Establishes the V6 asset convention. Phase 2 creates slots and rendering
 rules; it does not create branded artwork.
 
@@ -16,3 +18,4 @@ rules; it does not create branded artwork.
 - No image CDN, no stock imagery, no AI-generated political imagery.
 - Do not commit placeholder art that could be mistaken for real brand assets.
 - Prefer SVG for marks; WebP/AVIF for photography.
+  Full specification: `../SPEC.md`.

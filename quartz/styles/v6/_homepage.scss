@@ -17,6 +17,25 @@
  * 不使用卡片、阴影、渐变或图标。
  */
 
+/* Hero 视觉槽（Phase 3）
+   ──────────────────────────────────────────────────────────────
+   替换 Hero 视觉 = 换掉下面这个文件，或在同一处改这一个变量。
+   不需要修改 JSX / layout / 文案 / CTA / 信息架构。
+
+   重要限制（不要误以为这是通用媒体组件）：
+   本槽位的渲染模型是 **CSS mask + currentColor**，因此天然适合 SVG
+   —— 单色、可随明暗主题自动着色、无位图缩放损失。
+
+   若未来改用 raster（WebP/AVIF），渲染模型并不相同：
+   raster 不走 mask/currentColor，而应当作为 <img>/背景图，
+   并显式提供 width/height 与 object-fit。也就是说 raster 不能
+   「直接等于」本变量 —— 届时需要为 Hero 明确选择另一种渲染模型，
+   而不是假装一个变量能覆盖两种格式。本变量解决的是「当前 SVG Hero
+   可替换」，不是提前构建万能媒体层。 */
+:root {
+  --v6-hero-mask: url("/static/assets/v6/hero/hero-architecture.svg");
+}
+
 /* ══ 01 · HERO ════════════════════════════════════════════════
    Visual polish: the first screen read slightly small against its whitespace.
    Weight is raised through type size, available width and a marginally
@@ -140,8 +159,8 @@
   aspect-ratio: 2 / 1;
   background-color: var(--v6-text-primary);
   opacity: 0.14;
-  -webkit-mask-image: url("/static/assets/v6/hero/hero-architecture.svg");
-  mask-image: url("/static/assets/v6/hero/hero-architecture.svg");
+  -webkit-mask-image: var(--v6-hero-mask);
+  mask-image: var(--v6-hero-mask);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-position: center bottom;
@@ -674,4 +693,24 @@
   gap: var(--v6-space-sm) var(--v6-space-lg);
   align-items: baseline;
   margin-top: var(--v6-space-lg);
+}
+
+/* ══ 首页 Lead Editorial Cover（Phase 3）═════════════════════════
+   与文章页、og:image 共用同一个 cover / coverAlt 与同一比例 40/21。
+   无 cover 时组件不输出 <figure>，因此这里不需要任何「空状态」样式，
+   也不会预留图片高度（避免 CLS 与空白图片区）。 */
+.v6-latest__lead-cover {
+  margin: 0 0 var(--v6-space-md);
+}
+
+.v6-latest__lead-cover img {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 40 / 21;
+  object-fit: cover;
+  border: 1px solid var(--v6-border);
+  border-radius: var(--v6-radius-sm);
+  background: var(--v6-surface-sunken);
 }

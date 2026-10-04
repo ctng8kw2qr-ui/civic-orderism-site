@@ -2,6 +2,8 @@
 
 Formal organisational material for homepage section 06 and `/preparation`.
 
+Formal organisational material for homepage section 06 and `/preparation`.
+
 ## Belongs here
 
 - Board formation document visuals.
@@ -19,3 +21,4 @@ presentation. This directory establishes the slot.
 - Never use stock office/meeting photography.
 - Only real organisational material, supplied by the organisation.
 - Pair every image with intrinsic dimensions and meaningful alt text.
+  Full specification: `../SPEC.md`.
