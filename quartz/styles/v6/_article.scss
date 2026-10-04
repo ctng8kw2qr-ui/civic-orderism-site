@@ -1,0 +1,102 @@
+/**
+ * V6 — Institutional Editorial · Article (Phase 2)
+ * ================================================================
+ *
+ * 目标：消除「首页 V6 token 体系」与「文章系统 --inst-* token 体系」并存的
+ * 代差，让文章页与首页属于同一个网站。
+ *
+ * 做法是 **token 映射**，不是重新设计文章：
+ *   历史上文章系统（institutionalArticle.scss / articleFrameworkNotice.scss）
+ *   只消费 --inst-* 家族，而 --inst-* 定义在 custom.scss 中，是一套与 V6
+ *   无关的独立配色（含一个对比度不足的 --inst-muted）。
+ *
+ *   本文件在**文章页作用域内**重定义 --inst-*，把它们指到 V6 语义 token。
+ *   这样：
+ *     - 文章系统一个字都不用改，即自动继承 V6 视觉系统
+ *     - 落地页（/about、/theory、/china*、/civic-orderism）继续使用
+ *       custom.scss 中的原 --inst-* 值，不受影响
+ *
+ * 作用域为什么是 body[data-page-kind="article"] 而不是 .article-page：
+ *   ArticleInstitutionalHeader / CoreJudgment / SeriesNavigation /
+ *   ReadingFooter 由 quartz.layout.ts 的 beforeBody 渲染，DOM 上位于
+ *   .article-page **之外**。只有 body 级作用域能同时覆盖头部与正文。
+ *   data-page-kind="article" 仅在正式文章页出现（renderPage.tsx），
+ *   因此不会泄漏到其它页面类型。
+ *
+ * 暗色模式：V6 token 自身已在 :root[saved-theme="dark"] 覆盖，别名无需重复。
+ */
+
+body[data-page-kind="article"] {
+  /* ---- 文本层级 ---- */
+  --inst-ink: var(--v6-text-primary);
+  /* --inst-ink-2 与 --inst-gray 在旧体系里是两级不同的正文灰；
+     V6 只保留「正文 / 次级正文」两级，这里都落到次级正文，
+     因此轻量灰 --inst-gray 会略微变深（更易读）。 */
+  --inst-ink-2: var(--v6-text-secondary);
+  --inst-gray: var(--v6-text-secondary);
+  /* --inst-muted 原为 #8d9199（白底对比度约 2.97:1，未达 WCAG AA）。
+     V6 的 text-muted 为 5.35:1，此映射同时修复一个既有可访问性问题。 */
+  --inst-muted: var(--v6-text-muted);
+
+  /* ---- 线 / 边框 ---- */
+  --inst-rule: var(--v6-border);
+  --inst-rule-soft: var(--v6-border);
+  --inst-line: var(--v6-border);
+
+  /* ---- 背景 ---- */
+  --inst-bg: var(--v6-background);
+  --inst-bg-deep: var(--v6-surface-sunken);
+
+  /* ---- 强调色：旧为土金 #8a6d2f，V6 统一为克制的深酒红。
+     注意：此 token 在文章系统里既用于文字（标签、编号）也用于色块，
+     两者对比度要求相反。文字用途由本别名承担（--v6-brand-text）；
+     以它作为**色块/描边底色**的少数几处已在 _article.scss 末尾
+     单独改为 --v6-brand。 */
+  --inst-accent: var(--v6-brand-text);
+
+  /* ---- 链接：旧为深蓝 #24364f，V6 统一为品牌色 ---- */
+  --inst-link: var(--v6-brand-text);
+}
+
+/* ── 色块 / 描边语境：--inst-accent 用于背景或实心线时必须用品牌底色，
+      否则会得到「浅酒红文字色」当背景，白字对比度不足、视觉也不对。 ── */
+body[data-page-kind="article"] {
+  /* TOC 当前条目指示条：实心色块，需要品牌底色而非浅色文字色。 */
+  .toc-desktop .toc-content a.in-view::before {
+    background: var(--v6-brand);
+  }
+}
+
+/* ── 第二层：旧 Quartz 主题 token ────────────────────────────────
+   审计发现文章系统并不只依赖 --inst-*，还大量直接使用 Quartz 的
+   旧主题 token（--gray ×31、--lightgray ×28、--secondary ×23、
+   --dark ×18、--darkgray ×9、--light ×9）。这正是「代差」的主因：
+   只重映射 --inst-* 无法覆盖正文颜色。
+
+   实测确认：正文段落原为 rgb(70,82,96)（即 --darkgray），
+   完全绕过了 --inst-* 一层。
+
+   同样在文章页作用域内把这些 token 指到 V6 语义 token。
+   注意作用域只覆盖文章正文与文章组件；nav / footer / 其它页面类型
+   不在 body[data-page-kind="article"] 之内，因此不受影响。 */
+body[data-page-kind="article"] {
+  /* 旧主题色在浅色模式下略显浑浊、偏冷。这里收敛到 V6 的炭黑 + 中性灰，
+     让文章正文与首页使用同一套文字层级：
+       --dark     -> 标题 / 强文本（旧 #14253a 深蓝 -> 炭黑）
+       --darkgray -> 正文（旧 #465260 蓝灰 -> V6 次级文本）
+       --gray     -> 次级说明 / 元信息（旧 #7d8794 -> V6 弱化文本）
+     视觉差异（偏蓝 -> 中性）明显，必须靠截图验收；撤掉本块即可回退。 */
+  --dark: var(--v6-text-primary);
+  --darkgray: var(--v6-text-secondary);
+  --gray: var(--v6-text-muted);
+
+  /* 线 / 表面：文章的分隔线统一为 V6 边框色。 */
+  --lightgray: var(--v6-border);
+  --light: var(--v6-background);
+
+  /* 链接与强调：旧为钢蓝 #b9c9de / 金 #c9a961，V6 统一为克制深酒红。
+     --secondary 在文章系统里承担「链接 + 强调线」两种角色
+     （链接色、引用左边线、卡片描边），因此整体映射到品牌色。 */
+  --secondary: var(--v6-brand-text);
+  --tertiary: var(--v6-brand-text);
+}
