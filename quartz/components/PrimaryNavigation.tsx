@@ -3,141 +3,98 @@ import {
   QuartzComponentConstructor,
   QuartzComponentProps,
 } from "./types";
-import style from "./styles/primaryNavigation.scss";
+import style from "./styles/v6Navigation.scss";
 // @ts-ignore
-import script from "./scripts/primaryNavigation.inline";
+import script from "./scripts/v6Navigation.inline";
 
-// The primary navigation keeps the long-term entries only. Board preparation
-// is the current project inside 建立联系 (/participate) and stays reachable
-// from that page, the footer and the homepage CURRENT WORK section.
+/**
+ * V6 — Institutional Editorial · Primary Navigation
+ *
+ * 只保留长期入口：首页 / 研究 / 政治路线 / 组织建设 / 关于。
+ * 组织建设保持指向既有 URL /preparation，不做 URL 迁移。
+ * 董事会筹备属于组织建设内部项目，从该页与页脚进入，不再占用一级入口。
+ */
 const navItems = [
-  { label: "5分钟了解", href: "/start-here/" },
-  { label: "政治路线", href: "/civic-orderism" },
+  { label: "首页", href: "/" },
   { label: "研究", href: "/theory" },
-  { label: "建立联系", href: "/participate" },
+  { label: "政治路线", href: "/civic-orderism" },
+  { label: "组织建设", href: "/preparation" },
   { label: "关于", href: "/about" },
 ];
 
-const researchMenuLinks = [
-  { label: "解析中共", href: "/china/" },
-  { label: "中国未来", href: "/china-future/" },
-  { label: "专题", href: "/topics/" },
-  { label: "核心概念", href: "/concepts/" },
+// 研究入口涵盖的全部栏目：用于在任意研究子页上保持高亮。
+const researchSlugs = [
+  "theory",
+  "china",
+  "china-future",
+  "china-stage",
+  "topics",
+  "concepts",
+  "articles",
+  "institution",
+  "institution-design",
 ];
-
-// The newcomer entry now lives in the primary navigation, so the RESOURCES
-// group keeps only the reading map.
-const resourceMenuLinks = [{ label: "阅读地图", href: "/articles" }];
 
 const PrimaryNavigation: QuartzComponent = ({
   fileData,
 }: QuartzComponentProps) => {
-  const slug = fileData.slug ?? "";
-  const isActive = (href: string) => {
+  const slug = (fileData.slug ?? "").replace(/\/index$/, "");
+
+  const isActive = (href: string): boolean => {
+    if (href === "/") return slug === "index" || slug === "";
     const target = href.replace(/^\//, "").replace(/\/$/, "");
-    if (href === "/") return slug === "index";
-    if (target === "about") return slug === "about";
     if (target === "theory") {
-      return (
-        slug === "theory" ||
-        slug.startsWith("theory/") ||
-        slug === "china" ||
-        slug.startsWith("china/") ||
-        slug === "china-future" ||
-        slug.startsWith("china-future/") ||
-        slug === "china-stage" ||
-        slug.startsWith("china-stage/") ||
-        slug === "topics" ||
-        slug.startsWith("topics/") ||
-        slug === "concepts" ||
-        slug.startsWith("concepts/") ||
-        slug === "articles" ||
-        slug.startsWith("articles/") ||
-        slug === "institution" ||
-        slug.startsWith("institution/") ||
-        slug === "institution-design" ||
-        slug.startsWith("institution-design/")
-      );
-    }
-    if (target === "civic-orderism") {
-      return (
-        slug === "civic-orderism" ||
-        slug === "civic-orderism/index" ||
-        slug.startsWith("civic-orderism/")
-      );
-    }
-    if (target === "preparation") {
-      return (
-        slug === "preparation" ||
-        slug === "preparation/index" ||
-        slug.startsWith("preparation/")
+      return researchSlugs.some(
+        (entry) => slug === entry || slug.startsWith(`${entry}/`),
       );
     }
     return slug === target || slug.startsWith(`${target}/`);
   };
 
   return (
-    <nav class="inst4-nav" aria-label="主要导航">
-      <a
-        class="inst4-nav__brand"
-        href="/"
-        data-router-ignore
-        aria-label="返回公民秩序主义首页"
-      >
-        Civic Orderism
-      </a>
-      <button
-        class="inst4-nav__toggle"
-        type="button"
-        aria-label="打开导航"
-        aria-expanded="false"
-        aria-controls="inst4-nav-links"
-      >
-        <span class="inst4-nav__toggle-icon" aria-hidden="true">
-          菜单
-        </span>
-      </button>
-      <div class="inst4-nav__links" id="inst4-nav-links">
-        {navItems.map((item) => (
-          <a
-            href={item.href}
-            aria-current={isActive(item.href) ? "page" : undefined}
-          >
-            {item.label}
-          </a>
-        ))}
-        <div class="inst4-nav__groups">
-          <div class="inst4-nav__group">
-            <span>RESEARCH</span>
-            {researchMenuLinks.map((link) => (
-              <a
-                href={link.href}
-                aria-current={isActive(link.href) ? "page" : undefined}
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-          <div class="inst4-nav__group">
-            <span>RESOURCES</span>
-            {resourceMenuLinks.map((link) => (
-              <a
-                href={link.href}
-                aria-current={isActive(link.href) ? "page" : undefined}
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-        </div>
-        <button
-          class="inst4-nav__search"
-          type="button"
-          data-inst4-search
-          aria-label="打开搜索"
+    <nav class="v6-nav" aria-label="主要导航">
+      <div class="v6-nav__inner">
+        <a
+          class="v6-nav__brand"
+          href="/"
+          data-router-ignore
+          aria-label="公民秩序主义首页"
         >
-          搜索
+          <span class="v6-nav__brand-zh">公民秩序主义</span>
+          <span class="v6-nav__brand-en" lang="en">
+            Civic Orderism
+          </span>
+        </a>
+
+        <button
+          class="v6-nav__toggle"
+          type="button"
+          aria-label="打开导航"
+          aria-expanded="false"
+          aria-controls="v6-nav-links"
+        >
+          <span class="v6-nav__toggle-bars" aria-hidden="true" />
         </button>
+
+        <div class="v6-nav__links" id="v6-nav-links">
+          {navItems.map((item) => (
+            <a
+              class="v6-nav__link"
+              href={item.href}
+              aria-current={isActive(item.href) ? "page" : undefined}
+            >
+              {item.label}
+            </a>
+          ))}
+          <button
+            class="v6-nav__search"
+            type="button"
+            data-inst4-search
+            aria-label="打开搜索"
+          >
+            搜索
+          </button>
+        </div>
       </div>
     </nav>
   );

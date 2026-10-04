@@ -23,6 +23,8 @@ import Footer from "./Footer";
 import DesktopOnly from "./DesktopOnly";
 import MobileOnly from "./MobileOnly";
 import RecentNotes from "./RecentNotes";
+import RecentResearch from "./RecentResearch";
+import V6HomeHero from "./V6HomeHero";
 import Breadcrumbs from "./Breadcrumbs";
 import Comments from "./Comments";
 import Flex from "./Flex";
@@ -66,6 +68,8 @@ export {
   DesktopOnly,
   MobileOnly,
   RecentNotes,
+  RecentResearch,
+  V6HomeHero,
   NotFound,
   Breadcrumbs,
   Comments,

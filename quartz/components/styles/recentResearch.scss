@@ -1,0 +1,165 @@
+@use "../../styles/variables.scss" as *;
+
+/**
+ * V6 — Institutional Editorial · 最新研究
+ * ================================================================
+ *
+ * 编辑出版式排布：一篇主文章（高视觉权重）+ 2–3 篇次级文章。
+ * 不使用等权重圆角卡片网格，不使用图片，靠排版与细线建立层级。
+ */
+
+.v6-latest {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+/* ── 主文章 ──────────────────────────────────────────────────── */
+.v6-latest__lead {
+  display: block;
+  padding-top: var(--v6-space-2xs);
+  color: inherit;
+  text-decoration: none;
+}
+
+.v6-latest__lead-meta,
+.v6-latest__item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  align-items: baseline;
+}
+
+.v6-latest__tag {
+  color: var(--v6-brand-text);
+  font-size: var(--v6-text-label);
+  font-weight: var(--v6-weight-label);
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+}
+
+.v6-latest__date {
+  color: var(--v6-text-muted);
+  font-size: var(--v6-text-meta);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.5;
+}
+
+.v6-latest__lead-title {
+  margin-top: var(--v6-space-sm);
+  font-size: clamp(1.4rem, 2.6vw, 1.95rem);
+  font-weight: var(--v6-weight-heading);
+  letter-spacing: var(--v6-tracking-heading);
+  line-height: 1.32;
+  text-wrap: balance;
+  transition: color var(--v6-duration) var(--v6-ease);
+}
+
+.v6-latest__lead-desc {
+  max-width: 46ch;
+  margin-top: var(--v6-space-sm);
+  color: var(--v6-text-secondary);
+  font-size: var(--v6-text-body);
+  line-height: 1.75;
+}
+
+.v6-latest__more {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: baseline;
+  margin-top: var(--v6-space-md);
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--v6-brand-line);
+  color: var(--v6-brand-text);
+  font-size: 0.88rem;
+  font-weight: var(--v6-weight-strong);
+}
+
+.v6-latest__lead:hover .v6-latest__lead-title,
+.v6-latest__lead:focus-visible .v6-latest__lead-title {
+  color: var(--v6-brand-text);
+}
+
+.v6-latest__lead:hover .v6-latest__more,
+.v6-latest__lead:focus-visible .v6-latest__more {
+  border-bottom-color: var(--v6-brand);
+}
+
+/* ── 次级文章：细线分隔的纵向列表，不做卡片 ──────────────────── */
+.v6-latest__list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.v6-latest__item + .v6-latest__item {
+  border-top: 1px solid var(--v6-border);
+}
+
+.v6-latest__item-link {
+  display: block;
+  padding: var(--v6-space-md) 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.v6-latest__item:first-child .v6-latest__item-link {
+  padding-top: var(--v6-space-2xs);
+}
+
+.v6-latest__item-title {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--v6-text-primary);
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: var(--v6-tracking-heading);
+  line-height: 1.5;
+  text-wrap: pretty;
+  transition: color var(--v6-duration) var(--v6-ease);
+}
+
+.v6-latest__item-desc {
+  display: block;
+  max-width: 40ch;
+  margin-top: 0.45rem;
+  color: var(--v6-text-muted);
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+
+.v6-latest__item-link:hover .v6-latest__item-title,
+.v6-latest__item-link:focus-visible .v6-latest__item-title {
+  color: var(--v6-brand-text);
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 1000px) {
+  .v6-latest {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--v6-space-lg);
+  }
+
+  .v6-latest__list {
+    border-top: 1px solid var(--v6-border);
+  }
+}
+
+@media all and ($mobile) {
+  .v6-latest__lead-desc,
+  .v6-latest__item-desc {
+    max-width: none;
+  }
+
+  /* 移动端整块可点，触控目标天然足够大。 */
+  .v6-latest__item-link {
+    padding: 1.05rem 0;
+  }
+
+  .v6-latest__more {
+    margin-top: var(--v6-space-sm);
+  }
+}

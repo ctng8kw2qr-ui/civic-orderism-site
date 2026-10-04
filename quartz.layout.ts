@@ -96,12 +96,20 @@ export const sharedPageComponents: SharedLayout = {
   footer: Component.Footer({
     brand: "CIVIC ORDERISM",
     nameZh: "公民秩序主义",
-    tagline: "北美非营利法人及首届董事会筹备中",
+    tagline: "建设一条低阻力、低风险、能够和平承接中国未来的政治道路。",
+    status: "北美非营利法人及首届董事会筹备中",
+    statusDetails: [
+      "北美非营利法人正在筹备",
+      "首届董事会尚未依法产生",
+      "法人尚未完成注册，具体法域尚未确定",
+    ],
     navLinks: [
       { label: "关于", href: "/about" },
       { label: "研究", href: "/theory" },
       { label: "政治路线", href: "/civic-orderism" },
-      { label: "董事会筹备", href: "/preparation" },
+      { label: "组织建设", href: "/preparation" },
+      { label: "董事会筹备", href: "/preparation/board" },
+      { label: "参与组织筹备", href: "/participate" },
     ],
     contact: {
       email: "civicorderism@gmail.com",
@@ -121,6 +129,14 @@ export const sharedPageComponents: SharedLayout = {
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
+    // V6 Institutional Editorial homepage opening (01 Hero + 02 最新研究).
+    // Quartz only renders components declared in the layout, so the hero and
+    // the build-time latest-research list live here; sections 03-07 stay in
+    // content/index.md so editors keep maintaining copy in Markdown.
+    Component.ConditionalRender({
+      component: Component.V6HomeHero(),
+      condition: (page) => page.fileData.slug === "index",
+    }),
     Component.ConditionalRender({
       component: Component.ArticleInstitutionalHeader(),
       condition: isInstitutionalArticle,

@@ -901,58 +901,73 @@ const homepageMainHtml =
   )?.[1] ?? homepageHtml;
 const homepageMainText = visiblePageText(homepageMainHtml);
 // V5.1 newcomer reading order:
-//   01 HERO (we are) → 02 WHY NOW → 03 THE TRANSITION PATH → 04 FUTURE
-//   → 05 WHAT WE ARE BUILDING → 06 CURRENT WORK → 07 RESEARCH
+// V6 Institutional Editorial reading order:
+//   01 HERO → 02 LATEST RESEARCH → 03 RESEARCH AREAS → 04 WHY NOW
+//   → 05 THE TRANSITION PATH → 06 ORGANIZATION BUILDING → 07 WHO WE ARE
+//
+// The hero and the latest-research block are emitted by the layout component
+// quartz/components/V6HomeHero.tsx; sections 03-07 come from content/index.md.
+// Both land in the same document, just not under the same parent, so the order
+// is asserted against the whole page rather than the article body.
 const homepageSectionIds = [
   'id="identity"',
+  'id="latest"',
+  'id="research-axes"',
   'id="why-now"',
   'id="transition"',
-  'id="future"',
-  'id="readiness"',
   'id="current-work"',
-  'id="research"',
+  'id="organization"',
 ];
 let previousHomepageSectionPosition = -1;
 for (const marker of homepageSectionIds) {
-  const position = homepageMainHtml.indexOf(marker);
+  const position = homepageHtml.indexOf(marker);
   assert(
     position > previousHomepageSectionPosition,
     `首页机构章节顺序错误或缺少：${marker}`,
   );
   previousHomepageSectionPosition = position;
 }
-// V4 home is a continuous institutional landing page, not a numbered report.
+// V6 home is a continuous institutional landing page: seven sections, no
+// numbered-report blocks, no image-led hero (the only image is the restrained
+// decorative colonnade line drawing, and it carries alt text).
 assert(
-  !homepageMainHtml.includes('id="approach"') &&
-    !homepageMainHtml.includes('id="organization"') &&
-    !homepageMainHtml.includes('id="contact"') &&
-    (homepageMainHtml.match(/<section class="inst4-/g) ?? []).length === 7 &&
-    !homepageMainHtml.includes("home-institution-") &&
-    (homepageMainHtml.match(/<img/g) ?? []).length === 0,
-  "首页未保持为连续机构 landing page（七个区域、无编号章节、无图片）",
+  !homepageHtml.includes('id="approach"') &&
+    !homepageHtml.includes('id="contact"') &&
+    (homepageHtml.match(/<section class="v6-/g) ?? []).length === 7 &&
+    !homepageHtml.includes("home-institution-") &&
+    !homepageHtml.includes("<img") &&
+    homepageHtml.includes('class="v6-hero__art"'),
+  "首页未保持为连续机构 landing page（七个区域、无编号章节、无图片，辅助图形为 CSS 遮罩）",
 );
 // SECTION 1 / IDENTITY
 const heroHtml =
-  homepageMainHtml.match(
-    /<section class="inst4-hero"[\s\S]*?<\/section>/,
+  homepageHtml.match(
+    /<section class="v6-hero"[\s\S]*?<\/section>/,
   )?.[0] ?? "";
+const heroText = visiblePageText(heroHtml);
 assert(
-  visiblePageText(heroHtml).includes("CIVIC ORDERISM") &&
-    visiblePageText(heroHtml).includes("公民秩序主义") &&
-    visiblePageText(heroHtml).includes("中国政治转轨的 和平方案") &&
-    visiblePageText(heroHtml).includes(
+  heroText.includes("CIVIC ORDERISM") &&
+    heroText.includes("公民秩序主义") &&
+    // V6 headline: 为中国和平政治转轨 / 准备承接力量
+    heroText.includes("为中国和平政治转轨") &&
+    heroText.includes("准备承接力量") &&
+    heroText.includes(
       "不革命、不清算，在保持国家连续运行的前提下，为中国未来建立一条低阻力、低风险的政治转轨路径。",
     ) &&
-    visiblePageText(heroHtml).includes(site.hero.judgment) &&
+    // The institutional self-description required by the V6 brief.
+    heroText.includes("我们研究未来，也为未来建立组织。") &&
+    // Primary and secondary calls to action.
+    // 了解 → 路线, 参与 → 行动. The secondary CTA points at /participate
+    // (the action page), not /preparation (the status page).
+    /<a[^>]+href="\/civic-orderism"[^>]*>\s*了解我们的路线/.test(heroHtml) &&
+    /<a[^>]+href="\/participate"[^>]*>\s*参与组织建设/.test(heroHtml) &&
     heroHtml.includes(site.currentPhase.label) &&
-    visiblePageText(heroHtml).includes(site.currentPhase.labelZh) &&
-    visiblePageText(heroHtml).includes(site.currentPhase.title) &&
-    heroHtml.includes("Political Transition Framework") &&
-    heroHtml.includes("Organizational Preparation") &&
-    !heroHtml.includes("North American Nonprofit") &&
-    !heroHtml.includes("Founding Board Preparation") &&
-    visiblePageText(heroHtml).includes(site.currentPhase.year),
-  "首页首屏机构定位（IDENTITY）或当前阶段状态块缺失",
+    heroText.includes(site.currentPhase.labelZh) &&
+    heroText.includes(site.currentPhase.title) &&
+    heroText.includes(site.currentPhase.year) &&
+    !heroText.includes("North American Nonprofit") &&
+    !heroText.includes("Founding Board Preparation"),
+  "首页首屏机构定位（IDENTITY）、双 CTA 或当前阶段状态块缺失",
 );
 // Newcomer entry in the hero: a quiet text link, not a primary CTA.
 assert(
@@ -965,15 +980,15 @@ assert(
 // It must stay a short social argument: no state-continuity service lists
 // (police / hospitals / banks) and no full transition argument.
 const whyNowHtml =
-  homepageMainHtml.match(/<section class="inst4-whynow"[\s\S]*?<\/section>/)?.[0] ??
+  homepageMainHtml.match(/<section class="v6-section" id="why-now"[\s\S]*?<\/section>/)?.[0] ??
   "";
 const whyNowText = visiblePageText(whyNowHtml);
 assert(
   whyNowHtml.length > 0 &&
     whyNowHtml.includes(civicOrderismConfig.homeWhyNow.englishLabel) &&
     whyNowText.includes(civicOrderismConfig.homeWhyNow.title) &&
-    whyNowHtml.includes('class="inst4-whynow__body"') &&
-    (whyNowHtml.match(/inst4-whynow__emphasis/g) ?? []).length === 2 &&
+    whyNowHtml.includes('class="v6-why__body"') &&
+    (whyNowHtml.match(/v6-why__emphasis/g) ?? []).length === 2 &&
     whyNowText.includes(civicOrderismConfig.homeWhyNow.answer.emphasis) &&
     whyNowText.includes(civicOrderismConfig.homeWhyNow.change.emphasis) &&
     whyNowText.includes(civicOrderismConfig.homeWhyNow.judgment) &&
@@ -1008,7 +1023,7 @@ for (const forbidden of [
 // SECTION 3 / TRANSITION PATH — the homepage carries the route model only.
 const transitionHtml =
   homepageMainHtml.match(
-    /<section class="inst4-transition"[\s\S]*?<\/section>/,
+    /<section class="v6-section" id="transition"[\s\S]*?<\/section>/,
   )?.[0] ?? "";
 assert(
   transitionHtml.includes(civicOrderismConfig.homeTransition.englishLabel) &&
@@ -1017,9 +1032,7 @@ assert(
     ) &&
     (transitionHtml.match(/<li><span>\d{2}<\/span>/g) ?? []).length ===
       civicOrderismConfig.homeTransition.steps.length &&
-    transitionHtml.includes(
-      'class="inst4-route__chain inst4-transition__flow"',
-    ) &&
+    transitionHtml.includes('class="v6-route__chain v6-transition__flow"') &&
     visiblePageText(transitionHtml).includes(
       civicOrderismConfig.homeTransition.summary,
     ) &&
@@ -1048,41 +1061,64 @@ for (const forbidden of [
     `首页不应展开完整转轨论证：${forbidden}`,
   );
 }
-// SECTION 3 / READINESS — what Civic Orderism is building.
-const readinessHtml =
+// SECTION 03 / CORE RESEARCH AREAS — the four long-term research directions
+// plus the three research programme rows (理解现在 → 准备转轨 → 准备未来).
+const areasHtml =
   homepageMainHtml.match(
-    /<section class="inst4-readiness"[\s\S]*?<\/section>/,
+    /<section class="v6-section" id="research-axes"[\s\S]*?<\/section>/,
   )?.[0] ?? "";
+const areasText = visiblePageText(areasHtml);
 assert(
-  readinessHtml.includes(civicOrderismConfig.readiness.englishLabel) &&
-    visiblePageText(readinessHtml).includes(
-      civicOrderismConfig.readiness.title,
-    ) &&
-    (readinessHtml.match(/<article class="inst4-readiness__point">/g) ?? [])
-      .length === civicOrderismConfig.readiness.items.length &&
-    visiblePageText(readinessHtml).includes(
-      civicOrderismConfig.readiness.note,
-    ) &&
-    !readinessHtml.includes("<img"),
-  "首页建设方向模块（READINESS）未按要求组织",
+  areasHtml.includes("RESEARCH AREAS") &&
+    areasText.includes("核心研究领域") &&
+    areasText.includes("我们长期研究的四个方向") &&
+    (areasHtml.match(/<li class="v6-areas__item">/g) ?? []).length === 4,
+  "首页核心研究领域模块未按要求组织",
 );
-for (const [index, item] of civicOrderismConfig.readiness.items.entries()) {
+for (const [index, name] of [
+  "政治判断",
+  "制度分析",
+  "历史观察",
+  "组织建设",
+].entries()) {
   assert(
-    readinessHtml.includes(
-      `class="inst4-readiness__number">${String(index + 1).padStart(2, "0")}<`,
+    areasHtml.includes(
+      `class="v6-areas__num" aria-hidden="true">${String(index + 1).padStart(2, "0")}<`,
     ) &&
-      visiblePageText(readinessHtml).includes(item.name) &&
-      visiblePageText(readinessHtml).includes(item.desc),
-    `首页建设方向缺少条目：${item.name}`,
+      areasText.includes(name),
+    `首页核心研究领域缺少方向：${name}`,
   );
 }
+assert(
+  (areasHtml.match(/class="v6-areas__route[ "]/g) ?? []).length === 3 &&
+    // CrawlLinks rewrites internal links relative to the page, so on the
+    // homepage an absolute /china link is emitted as ./china.
+    /href="(?:\.\/|\/)china"/.test(areasHtml) &&
+    /href="(?:\.\/|\/)civic-orderism"/.test(areasHtml) &&
+    /href="(?:\.\/|\/)china-future"/.test(areasHtml) &&
+    areasText.includes("理解现在") &&
+    areasText.includes("准备转轨") &&
+    areasText.includes("准备未来") &&
+    areasText.includes("解析中共") &&
+    areasText.includes("政治路线") &&
+    areasText.includes("中国未来") &&
+    areasText.includes(
+      "理解现有政治系统为什么正在逐渐失去持续提供利益、预期与共识的能力",
+    ) &&
+    areasText.includes("研究如何降低政治变化的阻力、风险与社会成本") &&
+    areasText.includes("讨论政治变化之后国家如何继续运行") &&
+    areasText.includes("浏览全部研究与出版") &&
+    /href="[^"]*\/theory\/?"/.test(areasHtml) &&
+    !areasHtml.includes("<img"),
+  "首页研究栏目索引（三行编辑索引）未按要求组织",
+);
 // SECTION 4 / FUTURE (VALUE GOAL) — after the transition path the reader must
 // immediately see what the transition is finally for; organizational work
 // (CURRENT WORK) no longer interrupts that narrative.
-const coreStatementHomepageHtml =
-  homepageMainHtml.match(
-    /<section class="inst4-core-statement"[\s\S]*?<\/section>/,
-  )?.[0] ?? "";
+// V6 merges the value-goal statement into SECTION 07 / WHO WE ARE, so the
+// copy is asserted against the whole rendered homepage rather than a
+// dedicated value-goal section.
+const coreStatementHomepageHtml = homepageMainHtml;
 assert(
   coreStatementHomepageHtml.includes(
     site.corePoliticalStatement.englishLabel,
@@ -1111,18 +1147,11 @@ assert(
     !visiblePageText(coreStatementHomepageHtml).includes("阅读核心政治总论"),
   "首页缺少价值目标区或其正式文案（价值目标入口不得再写作“核心政治总论”）",
 );
-assert(
-  homepageMainHtml.indexOf('id="future"') >
-    homepageMainHtml.indexOf('id="transition"') &&
-    homepageMainHtml.indexOf('id="future"') <
-      homepageMainHtml.indexOf('id="readiness"'),
-  "价值目标区未提前到政治转轨路径之后",
-);
 // SECTION 6 / CURRENT WORK — compressed: one statement, one project, two quiet
 // entries. Documents, rules and page counts live on /preparation/.
 const workHtml =
   homepageMainHtml.match(
-    /<section class="inst4-work"[\s\S]*?<\/section>/,
+    /<section class="v6-section v6-org" id="current-work"[\s\S]*?<\/section>/,
   )?.[0] ?? "";
 assert(
   workHtml.includes("CURRENT WORK") &&
@@ -1133,10 +1162,10 @@ assert(
       civicOrderismConfig.organizationPositioning.homeItemTitle,
     ) &&
     visiblePageText(workHtml).includes(site.currentPhase.note) &&
-    workHtml.includes('class="inst4-work__item"') &&
-    // V5.1 freeze: the immediate status line must resolve the ambiguity of
-    // "北美非营利法人及首届董事会筹备" (entity still being prepared).
-    workHtml.includes('class="inst4-work__item-status"') &&
+    workHtml.includes('class="v6-org__item"') &&
+    // V5.1 freeze kept in V6: the immediate status line must resolve the
+    // ambiguity of "北美非营利法人及首届董事会筹备" (entity still being prepared).
+    workHtml.includes('class="v6-org__item-status"') &&
     visiblePageText(workHtml).includes(
       civicOrderismConfig.organizationPositioning.homeStatus,
     ) &&
@@ -1160,44 +1189,6 @@ assert(
       []).length === 0,
   "首页当前工作（CURRENT WORK）未压缩为简短的组织建设说明",
 );
-// SECTION 6 / RESEARCH
-const researchHtml =
-  homepageMainHtml.match(
-    /<section class="inst4-research"[\s\S]*?<\/section>/,
-  )?.[0] ?? "";
-assert(
-  researchHtml.includes("RESEARCH &amp; POLITICAL WORK") &&
-    visiblePageText(researchHtml).includes(
-      "从理解旧秩序，到准备新的政治秩序",
-    ) &&
-    visiblePageText(researchHtml).includes(
-      "组织承接政治责任，研究提供判断基础。",
-    ) &&
-    (researchHtml.match(/inst4-research__row/g) ?? []).length === 3 &&
-    researchHtml.includes('class="inst4-research__row') &&
-    (researchHtml.match(/inst4-research__num/g) ?? []).length === 3 &&
-    visiblePageText(researchHtml).includes("理解现在") &&
-    visiblePageText(researchHtml).includes("准备转轨") &&
-    visiblePageText(researchHtml).includes("准备未来") &&
-    visiblePageText(researchHtml).includes("解析中共") &&
-    visiblePageText(researchHtml).includes("政治路线") &&
-    visiblePageText(researchHtml).includes("中国未来") &&
-    visiblePageText(researchHtml).includes(
-      "理解现有政治系统为什么正在逐渐失去持续提供利益、预期与共识的能力",
-    ) &&
-    visiblePageText(researchHtml).includes(
-      "研究如何降低政治变化的阻力、风险与社会成本",
-    ) &&
-    visiblePageText(researchHtml).includes(
-      "讨论政治变化之后国家如何继续运行",
-    ) &&
-    researchHtml.includes("浏览全部研究与出版") &&
-    !researchHtml.includes("进入解析中共") &&
-    !researchHtml.includes("了解政治路线") &&
-    !researchHtml.includes("进入中国未来") &&
-    !researchHtml.includes("<article"),
-  "首页研究与出版（RESEARCH 三行编辑索引）未按要求组织",
-);
 for (const removedHomepageText of [
   "信任 × 能力 × 人才",
   "街头动员组织",
@@ -1219,57 +1210,69 @@ assert(
 // V5.1: the primary nav keeps long-term entries; board preparation is now the
 // current project inside 建立联系 (/participate) and stays reachable from there,
 // the footer and the homepage CURRENT WORK section.
+// V6 primary navigation: 首页 / 研究 / 政治路线 / 组织建设 / 关于 + 搜索.
+// The long-term entries only; board preparation now lives inside 组织建设
+// (/preparation, /preparation/board) instead of occupying a top-level slot.
 const instNavHtml =
-  homepageHtml.match(/<nav class="inst4-nav"[\s\S]*?<\/nav>/)?.[0] ?? "";
+  homepageHtml.match(/<nav class="v6-nav"[\s\S]*?<\/nav>/)?.[0] ?? "";
+const instNavText = visiblePageText(instNavHtml);
 assert(
   instNavHtml.includes("Civic Orderism") &&
+    instNavHtml.includes("公民秩序主义") &&
+    instNavHtml.includes('href="/"') &&
     instNavHtml.includes('href="/about"') &&
     instNavHtml.includes('href="/theory"') &&
     instNavHtml.includes('href="/civic-orderism"') &&
-    instNavHtml.includes('href="/participate"') &&
-    instNavHtml.includes('href="/start-here/') &&
-    instNavHtml.includes('class="inst4-nav__toggle"') &&
-    instNavHtml.includes('id="inst4-nav-links"') &&
-    visiblePageText(instNavHtml).includes("5分钟了解") &&
-    visiblePageText(instNavHtml).includes("关于") &&
-    visiblePageText(instNavHtml).includes("研究") &&
-    visiblePageText(instNavHtml).includes("政治路线") &&
-    visiblePageText(instNavHtml).includes("建立联系") &&
-    !visiblePageText(instNavHtml).includes("董事会筹备") &&
+    instNavHtml.includes('href="/preparation"') &&
+    instNavHtml.includes('class="v6-nav__toggle"') &&
+    instNavHtml.includes('id="v6-nav-links"') &&
+    instNavText.includes("首页") &&
+    instNavText.includes("关于") &&
+    instNavText.includes("研究") &&
+    instNavText.includes("政治路线") &&
+    instNavText.includes("组织建设") &&
+    instNavText.includes("搜索") &&
     !instNavHtml.includes("About") &&
     !instNavHtml.includes("Founding Board") &&
-    !instNavHtml.includes('class="inst4-nav__lang"') &&
-    !instNavHtml.includes(">EN<") &&
-    instNavHtml.includes('href="/articles"') &&
-    !instNavHtml.includes('href="/articles/"'),
-  "机构 Header（inst4-nav）一级导航未保持长期入口（5分钟了解 / 政治路线 / 研究 / 建立联系 / 关于）",
+    !instNavHtml.includes(">EN<"),
+  "机构 Header（v6-nav）一级导航未保持长期入口（首页 / 研究 / 政治路线 / 组织建设 / 关于 + 搜索）",
 );
-// Newcomer-first navigation order: 5分钟了解 → 政治路线 → 研究 → …
-const navStartHereIndex = instNavHtml.indexOf('href="/start-here/"');
-const navRouteIndex = instNavHtml.indexOf('href="/civic-orderism"');
+// V6 navigation order: 首页 → 研究 → 政治路线 → 组织建设 → 关于
+const navHomeIndex = instNavHtml.indexOf('class="v6-nav__link" href="/"');
 const navResearchIndex = instNavHtml.indexOf('href="/theory"');
+const navRouteIndex = instNavHtml.indexOf('href="/civic-orderism"');
+const navOrgIndex = instNavHtml.indexOf('href="/preparation"');
+const navAboutIndex = instNavHtml.indexOf('href="/about"');
 assert(
-  navStartHereIndex > 0 &&
-    navStartHereIndex < navRouteIndex &&
-    navRouteIndex < navResearchIndex,
-  "主导航未把 /start-here/ 放在政治路线与研究入口之前",
+  navHomeIndex >= 0 &&
+    navHomeIndex < navResearchIndex &&
+    navResearchIndex < navRouteIndex &&
+    navRouteIndex < navOrgIndex &&
+    navOrgIndex < navAboutIndex,
+  "主导航顺序不是 首页 → 研究 → 政治路线 → 组织建设 → 关于",
 );
 const footerHtml = homepageHtml.match(/<footer[\s\S]*?<\/footer>/)?.[0] ?? "";
+const footerText = visiblePageText(footerHtml);
 assert(
-  footerHtml.includes("inst4-footer") &&
-    visiblePageText(footerHtml).includes("CIVIC ORDERISM") &&
-    visiblePageText(footerHtml).includes("公民秩序主义") &&
-    visiblePageText(footerHtml).includes("北美非营利法人及首届董事会筹备中") &&
-    visiblePageText(footerHtml).includes("CONTACT") &&
-    visiblePageText(footerHtml).includes("联系方式") &&
-    visiblePageText(footerHtml).includes("OFFICIAL CHANNELS") &&
-    visiblePageText(footerHtml).includes("官方平台") &&
-    visiblePageText(footerHtml).includes("主联系邮箱") &&
-    visiblePageText(footerHtml).includes("备用邮箱") &&
-    visiblePageText(footerHtml).includes("关于") &&
-    visiblePageText(footerHtml).includes("研究") &&
-    visiblePageText(footerHtml).includes("政治路线") &&
-    visiblePageText(footerHtml).includes("董事会筹备") &&
+  footerHtml.includes("v6-footer") &&
+    footerText.includes("CIVIC ORDERISM") &&
+    footerText.includes("公民秩序主义") &&
+    // Institutional status must stay explicit in the footer.
+    footerText.includes("北美非营利法人及首届董事会筹备中") &&
+    footerHtml.includes("v6-footer__status") &&
+    footerText.includes("北美非营利法人正在筹备") &&
+    footerText.includes("首届董事会尚未依法产生") &&
+    footerText.includes("CONTACT") &&
+    footerText.includes("联系方式") &&
+    footerText.includes("OFFICIAL CHANNELS") &&
+    footerText.includes("官方平台") &&
+    footerText.includes("主联系邮箱") &&
+    footerText.includes("备用邮箱") &&
+    footerText.includes("关于") &&
+    footerText.includes("研究") &&
+    footerText.includes("政治路线") &&
+    footerText.includes("组织建设") &&
+    footerText.includes("董事会筹备") &&
     footerHtml.includes("mailto:civicorderism@gmail.com") &&
     footerHtml.includes("mailto:citizenorder@proton.me") &&
     footerHtml.includes("https://x.com/CivicOrderism") &&
@@ -1277,8 +1280,8 @@ assert(
     !footerHtml.includes("Articles") &&
     !footerHtml.includes("English") &&
     !footerHtml.includes("Independent political research") &&
-    visiblePageText(footerHtml).includes("© 2026 Civic Orderism"),
-  "页脚机构化收尾（inst4-footer）不符合要求",
+    footerText.includes("© 2026 Civic Orderism"),
+  "页脚机构化收尾（v6-footer）不符合要求",
 );
 for (const forbidden of [
   "X 短贴",

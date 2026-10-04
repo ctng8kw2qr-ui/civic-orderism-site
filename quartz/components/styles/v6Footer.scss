@@ -1,0 +1,263 @@
+@use "../../styles/variables.scss" as *;
+
+/**
+ * V6 — Institutional Editorial · Footer
+ * ================================================================
+ *
+ * 机构式收束：四栏（身份 / 站点导航 / 联系方式 / 官方平台）。
+ * 用一条细边线与留白分层，不使用卡片、阴影、图标或色块。
+ * 移动端自然堆叠为单列。
+ */
+
+.v6-footer {
+  box-sizing: border-box;
+  width: 100%;
+  border-top: 1px solid var(--v6-border);
+  background: var(--v6-surface-sunken);
+  color: var(--v6-text-secondary);
+  font-family: var(--v6-font-sans);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.v6-footer__inner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--v6-container);
+  margin: 0 auto;
+  padding: clamp(3rem, 6vw, 4.5rem) var(--v6-gutter) clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.v6-footer__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr));
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+/* ── 栏目 01 · 机构身份 ───────────────────────────────────────── */
+.v6-footer__identity {
+  min-width: 0;
+}
+
+.v6-footer__brand {
+  color: var(--v6-text-muted);
+  font-size: 0.68rem;
+  font-weight: var(--v6-weight-label);
+  letter-spacing: var(--v6-tracking-label);
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.v6-footer__name {
+  margin-top: 0.5rem;
+  color: var(--v6-text-primary);
+  font-size: 1.45rem;
+  font-weight: var(--v6-weight-display);
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+.v6-footer__tagline {
+  max-width: 34ch;
+  margin-top: 0.85rem;
+  color: var(--v6-text-secondary);
+}
+
+/* 机构状态：本站最重要的可信度信号，用一条品牌色细线 + 小圆点标出。 */
+.v6-footer__status {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  max-width: 36ch;
+  margin-top: 1.1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--v6-brand-line);
+  color: var(--v6-text-primary);
+  font-size: 0.86rem;
+  font-weight: var(--v6-weight-strong);
+  line-height: 1.6;
+}
+
+.v6-footer__status-dot {
+  flex: 0 0 auto;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: var(--v6-radius-pill);
+  background: var(--v6-brand);
+  transform: translateY(-0.15em);
+}
+
+.v6-footer__status-list {
+  margin: 0.65rem 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--v6-text-muted);
+  font-size: 0.78rem;
+  line-height: 1.75;
+}
+
+.v6-footer__status-list li {
+  padding-left: 0.9rem;
+  text-indent: -0.9rem;
+}
+
+/* ── 栏目 02–04 · 导航 / 联系 / 平台 ─────────────────────────── */
+.v6-footer__col {
+  min-width: 0;
+}
+
+.v6-footer__col-head {
+  color: var(--v6-text-muted);
+  font-size: 0.68rem;
+  font-weight: var(--v6-weight-label);
+  letter-spacing: var(--v6-tracking-label);
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.v6-footer__col-head span {
+  margin-left: 0.45rem;
+  font-size: 0.76rem;
+  font-weight: var(--v6-weight-body);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.v6-footer__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.v6-footer__list li {
+  min-width: 0;
+}
+
+.v6-footer__label {
+  display: block;
+  color: var(--v6-text-muted);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.v6-footer__list a {
+  color: var(--v6-text-secondary);
+  font-weight: 500;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+  background-image: none;
+  transition: color var(--v6-duration) var(--v6-ease);
+}
+
+.v6-footer__list a:hover,
+.v6-footer__list a:focus-visible {
+  color: var(--v6-brand-text);
+}
+
+.v6-footer__handle {
+  color: var(--v6-text-muted);
+  font-weight: var(--v6-weight-body);
+}
+
+/* ── 机构声明 / 底部 ─────────────────────────────────────────── */
+.v6-footer__note {
+  max-width: var(--v6-measure);
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--v6-border);
+  color: var(--v6-text-muted);
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+.v6-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--v6-border);
+}
+
+.v6-footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.35rem;
+  align-items: center;
+}
+
+.v6-footer__legal a {
+  color: var(--v6-text-secondary);
+  font-size: 0.82rem;
+  text-decoration: none;
+  background-image: none;
+  transition: color var(--v6-duration) var(--v6-ease);
+}
+
+.v6-footer__legal a:hover,
+.v6-footer__legal a:focus-visible {
+  color: var(--v6-brand-text);
+}
+
+.v6-footer__copyright {
+  color: var(--v6-text-muted);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 1000px) {
+  .v6-footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .v6-footer__identity {
+    grid-column: 1 / -1;
+  }
+}
+
+@media all and ($mobile) {
+  .v6-footer {
+    font-size: 0.86rem;
+  }
+
+  .v6-footer__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.25rem;
+  }
+
+  .v6-footer__identity {
+    grid-column: auto;
+  }
+
+  .v6-footer__name {
+    font-size: 1.3rem;
+  }
+
+  /* 移动端触控目标 ≥ 44px */
+  .v6-footer__list {
+    gap: 0.15rem;
+  }
+
+  .v6-footer__list a,
+  .v6-footer__legal a {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+  }
+
+  .v6-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .v6-footer__legal {
+    gap: 0.15rem 1.2rem;
+  }
+}

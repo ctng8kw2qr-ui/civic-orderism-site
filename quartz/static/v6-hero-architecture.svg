@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  V6 — Institutional Editorial · Hero 辅助图形
+
+  克制的建筑 / 公共空间线稿：柱廊与山墙。它表达的是「制度、秩序、
+  长期存在」，不是政治动员。线条为辅助元素，不作为视觉主角。
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img"
+     aria-labelledby="v6-hero-art-title" preserveAspectRatio="xMidYMax meet">
+  <title id="v6-hero-art-title">柱廊与山墙线稿</title>
+  <g fill="none" stroke="#1b1c1f" stroke-width="1.25" stroke-linecap="square"
+     vector-effect="non-scaling-stroke">
+    <!-- 基座 -->
+    <line x1="60" y1="356" x2="740" y2="356"/>
+    <line x1="90" y1="332" x2="710" y2="332"/>
+    <!-- 柱列 -->
+    <line x1="150" y1="150" x2="150" y2="332"/>
+    <line x1="250" y1="150" x2="250" y2="332"/>
+    <line x1="350" y1="150" x2="350" y2="332"/>
+    <line x1="450" y1="150" x2="450" y2="332"/>
+    <line x1="550" y1="150" x2="550" y2="332"/>
+    <line x1="650" y1="150" x2="650" y2="332"/>
+    <!-- 柱头 -->
+    <line x1="136" y1="138" x2="164" y2="138"/>
+    <line x1="236" y1="138" x2="264" y2="138"/>
+    <line x1="336" y1="138" x2="364" y2="138"/>
+    <line x1="436" y1="138" x2="464" y2="138"/>
+    <line x1="536" y1="138" x2="564" y2="138"/>
+    <line x1="636" y1="138" x2="664" y2="138"/>
+    <!-- 额枋 -->
+    <line x1="100" y1="100" x2="700" y2="100"/>
+    <line x1="115" y1="120" x2="685" y2="120"/>
+    <!-- 山墙 -->
+    <line x1="100" y1="100" x2="400" y2="40"/>
+    <line x1="700" y1="100" x2="400" y2="40"/>
+    <line x1="118" y1="100" x2="400" y2="49"/>
+    <line x1="682" y1="100" x2="400" y2="49"/>
+    <!-- 两级台阶 -->
+    <line x1="40" y1="356" x2="760" y2="356"/>
+    <line x1="15" y1="378" x2="785" y2="378"/>
+  </g>
+</svg>

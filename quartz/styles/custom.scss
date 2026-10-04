@@ -3,6 +3,11 @@
 @use "./articleTypography.scss";
 @use "./institutionalArticle.scss";
 
+/* V6 — Institutional Editorial.
+   Imported last so the V6 layer wins over the accumulated legacy rules
+   below without needing !important or patch-on-patch overrides. */
+@use "./v6/entry.scss";
+
 body {
   letter-spacing: 0;
 }
