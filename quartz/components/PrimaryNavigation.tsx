@@ -60,12 +60,40 @@ const PrimaryNavigation: QuartzComponent = ({
           data-router-ignore
           aria-label="公民秩序主义首页"
         >
-          <span class="v6-nav__brand-zh">公民秩序主义</span>
-          {/* Formal institutional English identifier. Always uppercase —
-              it matches the V6 uppercase micro-label / tracking language.
-              Prose uses of "Civic Orderism" in content are left untouched. */}
-          <span class="v6-nav__brand-en" lang="en">
-            CIVIC ORDERISM
+          {/* Compact Lockup: Threshold Mark + the existing real-text wordmark,
+              both inside this one link so the whole lockup is a single home
+              click target. The mark is the identifier; the text is the
+              institutional name. It is decorative, so it is aria-hidden and
+              the accessible name comes from the text (plus the link's own
+              aria-label) — no duplicate announcement.
+
+              Geometry is inlined from the canonical master
+              quartz/static/assets/v6/brand/threshold-mark.svg (3 elements,
+              viewBox 0 0 100 100, stroke-width 4). Colour comes from
+              currentColor, so light/dark needs no filter, invert or
+              brightness hack. */}
+          <svg
+            class="v6-nav__brand-mark"
+            viewBox="0 0 100 100"
+            aria-hidden="true"
+            focusable="false"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="butt"
+          >
+            <circle cx="50" cy="50" r="48" />
+            <path d="M36 70 L36 48 A14 14 0 0 1 64 48 L64 70" />
+            <line x1="28" y1="70" x2="72" y2="70" />
+          </svg>
+          <span class="v6-nav__brand-text">
+            <span class="v6-nav__brand-zh">公民秩序主义</span>
+            {/* Formal institutional English identifier. Always uppercase —
+                it matches the V6 uppercase micro-label / tracking language.
+                Prose uses of "Civic Orderism" in content are left untouched. */}
+            <span class="v6-nav__brand-en" lang="en">
+              CIVIC ORDERISM
+            </span>
           </span>
         </a>
 

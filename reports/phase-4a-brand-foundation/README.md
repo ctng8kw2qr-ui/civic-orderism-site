@@ -417,3 +417,87 @@ defines the Compact Lockup as _mark + wordmark_, and
 But mounting it means editing `PrimaryNavigation.tsx` beyond the brand-case
 change, so I left the header typographic-only. Say the word and it is a small
 change; I recommend **mark at 30px**.
+
+---
+
+# HEADER — Compact Lockup mounted (adjudicated close-out)
+
+The Threshold Mark is now in the site header. Minimal change: the brand link
+already wrapped both text spans, so the mark was inserted **inside the existing
+`.v6-nav__brand` link** — no navigation redesign.
+
+## Implementation
+
+```
+quartz/components/PrimaryNavigation.tsx   inline <svg class="v6-nav__brand-mark">
+                                          + <span class="v6-nav__brand-text"> wrapper
+quartz/components/styles/v6Navigation.scss  brand row + mark sizing + dark colour
+```
+
+- **SVG master inlined**, not a PNG, and not the Full Lockup as an image.
+  Geometry is the canonical 3 elements from `brand/threshold-mark.svg`
+  (`viewBox 0 0 100 100`, `stroke-width 4`, circle r48 / arch r14 / horizon).
+- **Wordmark stays real HTML text.** Mark = identifier, text = institutional name.
+- Colour comes from `currentColor` — **no filter, invert or brightness hack**
+  (verified: computed `filter: none` in both themes).
+
+## Dimensions
+
+|                   | Value                                                                         |
+| ----------------- | ----------------------------------------------------------------------------- |
+| mark              | **30 × 30px** (`1.875rem`)                                                    |
+| gap to text       | `var(--v6-space-xs)` = **12px** — an existing token, not a new spacing system |
+| brand block width | 108px → **150px**                                                             |
+| nav height        | **unchanged** (see below)                                                     |
+
+No mobile downscale was needed: measured QA showed no crowding at 375/390/430,
+so no breakpoint was added.
+
+## Light / dark
+
+| Theme | Mark                   | Resolved                       |
+| ----- | ---------------------- | ------------------------------ |
+| light | `var(--v6-brand)`      | `rgb(122,36,48)` = `#7a2430`   |
+| dark  | `var(--v6-brand-text)` | `rgb(217,139,150)` = `#d98b96` |
+
+Uses the same `:root[saved-theme="dark"]` scoping as `.v6-hero__art`. The dark
+value is the V6 dark brand-text token — the same colour already used for dark
+nav hover and footer links, so the mark stays inside the established palette
+rather than introducing a new value.
+
+## Accessibility
+
+- `<svg aria-hidden="true" focusable="false">` — decorative, so the mark is
+  **never announced** and there is no duplicate "mark + name" reading.
+- Accessible name comes from the existing text and the link's `aria-label`
+  (`公民秩序主义首页`).
+- **No extra tab stop:** nav tab order measured as brand → toggle → 5 links →
+  search. The mark adds nothing.
+
+## Interaction
+
+- Mark and wordmark are **one click target inside one link**; a hit test at the
+  mark's centre resolves to the `svg` whose `closest('a')` is `.v6-nav__brand`.
+- Clicking the mark navigates `/theory/` → `/` (verified).
+- Keyboard focus draws a `solid 2px #7a2430`, `offset 2px` ring **around the
+  whole lockup**. No separate mark hover animation was added.
+
+## Header height — before / after (measured)
+
+| width                 | before | after    |
+| --------------------- | ------ | -------- |
+| 375 / 390 / 430 / 768 | 92px   | **92px** |
+| 1024 / 1440           | 66px   | **66px** |
+
+**Zero vertical growth.** The brand block was already taller than a 30px mark,
+so adding it did not change the header height. Measured by stashing the change,
+rebuilding, and re-measuring the same six widths.
+
+## QA screenshots
+
+`previews/header-{light,dark}-{375,390,430,768,1024,1440}.png` (retina 2×),
+`previews/lockup-retina.png` (4×), `previews/header-summary.png`.
+
+Verified: 0 horizontal overflow, 0 broken images, brand reads `CIVIC ORDERISM`
+at every width, menu trigger visible only below 768px as before, page heights
+unchanged (8652 / 8504 / 8261 / 7258 / 6649 / 6149).

@@ -36,14 +36,39 @@
 }
 
 /* ── Brand: 两行，中文主 / 英文辅 ─────────────────────────────── */
+/* Compact Lockup: mark + wordmark as ONE link. The horizontal row is the only
+   structural addition; the stacked wordmark, typography, hover and focus
+   behaviour are unchanged. */
 .v6-nav__brand {
   display: flex;
   flex: 0 0 auto;
-  flex-direction: column;
-  gap: 0.1rem;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--v6-space-xs); /* existing token — not a new spacing system */
   color: var(--v6-text-primary);
   text-decoration: none;
   background-image: none;
+}
+
+/* Threshold Mark. currentColor drives the stroke, so light/dark is handled by
+   the two token values below with no filter/invert/brightness hack.
+   flex: 0 0 auto keeps it from shrinking when the link row gets tight. */
+.v6-nav__brand-mark {
+  flex: 0 0 auto;
+  width: 1.875rem; /* 30px */
+  height: 1.875rem;
+  color: var(--v6-brand);
+}
+
+:root[saved-theme="dark"] .v6-nav__brand-mark {
+  color: var(--v6-brand-text);
+}
+
+/* The wordmark keeps its original stacked column layout. */
+.v6-nav__brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
 }
 
 .v6-nav__brand-zh {
