@@ -7207,9 +7207,14 @@ body[data-slug="index"] article {
    Padding is kept as inline-axis padding on the link itself but the block rows
    already set their own, and prose links sit inline so the compensation is
    horizontal. Never !important. */
-.v6 a.internal,
-.inst4l a.internal,
-.inst4 a.internal {
+/* Applied globally rather than scoped to .v6 / .inst4l / .inst4. Four pages —
+   /institution-design, /institution, /start-here, /china-stage — carry neither
+   wrapper, so the scoped version never reached them and they kept 62 / 17 / 9 / 5
+   grey pills respectively. Quartz intends this rule for inline prose links; every
+   element matching it here is a block-level row, index entry or card, where a
+   rounded backdrop is never right. Articles and prose were measured first: they
+   have zero such elements, so this cannot affect them. Never !important. */
+article a.internal {
   background: none;
   border-radius: 0;
   box-shadow: none;
@@ -7223,7 +7228,11 @@ body[data-slug="index"] article {
 .v6-org__doc,
 .inst4l-axis,
 .inst4l-link a,
-.inst4l-quicklinks a {
+.inst4l-quicklinks a,
+.institution-module__all,
+.institution-module__articles a,
+.institution-first-reading a,
+.knowledge-card a.internal {
   padding-inline: 0;
 }
 
