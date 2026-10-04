@@ -28,7 +28,7 @@ import researchStyle from "./styles/recentResearch.scss";
  *   B 行动层   新访客入口（主） + 路线入口 / 参与入口（次）
  *   C 状态层   编号 + CURRENT PHASE + 阶段 / 框架 / 年份
  *
- * 视觉层级：文字 > 留白 > 品牌纹理 > 几何装饰。
+ * 视觉层级：文字 > 留白；Hero 以 metadata 收尾。
  * 本轮只做既有 production 内容到 E3 的映射，不改文案、不改 URL。
  */
 const V6HomeHero: QuartzComponent = ({
@@ -137,17 +137,6 @@ const V6HomeHero: QuartzComponent = ({
               </p>
             </div>
           </div>
-        </div>
-
-        {/*
-          品牌纹理：底部被裁切的巨大 CIVIC ORDERISM。
-          纯视觉，不作第二标题、不承载信息 —— aria-hidden。
-          位于 metadata 之下，与 metadata 不产生竞争。
-        */}
-        <div class="v6-hero__mark" aria-hidden="true">
-          <span class="v6-hero__mark-text" lang="en">
-            CIVIC ORDERISM
-          </span>
         </div>
       </section>
 
