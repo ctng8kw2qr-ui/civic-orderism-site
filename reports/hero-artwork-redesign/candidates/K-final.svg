@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Civic Orderism — Homepage Hero · THRESHOLD, IN SECTION
+  ================================================================
+  A long, low structural mass seen in SECTION. It is not a facade and there is
+  no door, no arch and no blind wall: the mass simply stops, leaving an opening,
+  and resumes beyond it. A single datum runs the full width at the base and
+  continues through that opening. The structure is not removed — a crossing is
+  opened in it.
+
+  Structure continues. The path changes.
+
+  GEOMETRY (viewBox 0 0 1200 600)
+    mass        x 40..1160, y 150..420; darker core y 150..258
+    opening     x 500..700, full height of the mass — a gap, not a doorway
+    datum       y 420, x 0..1200 — wider than the mass, unbroken
+    registration measured marks only; no labels, no numerals
+
+  THEMING
+    prefers-color-scheme, so ONE asset serves both themes with no filter, no
+    invert and no second file. Every stray surface (the opening, the datum
+    ticks) is painted with a theme token — never a hardcoded paper colour,
+    which would be wrong in the other theme.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <pattern id="hx" width="11" height="11" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line class="hatch" x1="0" y1="0" x2="0" y2="11" stroke-width="1.3"/>
+    </pattern>
+    <style>
+      .mass  { fill: #e9e5de; }
+      .core  { fill: #dfdad1; }
+      .paper { fill: #faf8f5; }
+      .hatch { stroke: #d3cdc4; }
+      .key   { fill: none; stroke: #1b1c1f; stroke-width: 3.2; }
+      .str   { fill: none; stroke: #63676f; stroke-width: 2; }
+      .hair  { fill: none; stroke: #c9c3b9; stroke-width: 1.3; }
+      .wine  { fill: none; stroke: #7a2430; stroke-width: 5.5; }
+      .reg   { fill: none; stroke: #d9c4c7; stroke-width: 2; }
+      .mark  { fill: none; stroke: #b9b3a9; stroke-width: 1.3; }
+      @media (prefers-color-scheme: dark) {
+        .mass  { fill: #2a2c32; }
+        .core  { fill: #32353c; }
+        .paper { fill: #141518; }
+        .hatch { stroke: #3f434a; }
+        .key   { stroke: #eceae5; }
+        .str   { stroke: #9aa0aa; }
+        .hair  { stroke: #3a3d43; }
+        .wine  { stroke: #d98b96; }
+        .reg   { stroke: #5b4a4d; }
+        .mark  { stroke: #4a4d54; }
+      }
+    </style>
+  </defs>
+
+  <!-- the structural mass -->
+  <rect class="mass" x="40" y="150" width="1120" height="270"/>
+  <rect class="hatch" fill="url(#hx)" stroke="none" x="40" y="150" width="1120" height="270"/>
+  <!-- a denser upper core: the system has weight at the top -->
+  <rect class="core" x="40" y="150" width="1120" height="108"/>
+  <rect class="hatch" fill="url(#hx)" stroke="none" x="40" y="150" width="1120" height="108"/>
+
+  <!-- the opening: a registered gap through the full height of the mass -->
+  <rect class="paper" x="500" y="150" width="200" height="270"/>
+
+  <!-- mass profile -->
+  <path class="key" d="M40 150 L1160 150 M40 420 L1160 420 M40 150 L40 420 M1160 150 L1160 420"/>
+  <!-- the two structural edges of the opening -->
+  <path class="key" d="M500 150 L500 420 M700 150 L700 420"/>
+  <!-- strata read through the mass, interrupted by the opening -->
+  <path class="str" d="M40 258 L500 258 M700 258 L1160 258"/>
+  <path class="hair" d="M40 340 L500 340 M700 340 L1160 340"/>
+
+  <!-- the continuity datum: unbroken, wider than the mass -->
+  <line class="wine" x1="0" y1="420" x2="1200" y2="420"/>
+
+  <!-- the crossing continues beyond the mass -->
+  <path class="hair" d="M500 420 L500 470 M700 420 L700 470"/>
+  <path class="reg"  d="M560 420 L560 458 M640 420 L640 458"/>
+
+  <!-- measured registration above the mass: sparse, unlabelled -->
+  <path class="hair" d="M40 114 L1160 114"/>
+  <path class="mark" d="M500 90 L500 138 M600 90 L600 138 M700 90 L700 138"/>
+  <path class="mark" d="M260 90 L260 126 M940 90 L940 126"/>
+</svg>

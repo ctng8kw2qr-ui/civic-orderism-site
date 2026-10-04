@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Civic Orderism — Homepage Hero · THRESHOLD, IN SECTION
+  A long, low structural mass seen in section. It is not a facade and there is
+  no door: the mass simply STOPS, leaving an opening, and RESUMES beyond it.
+  A single datum runs the full width at the base and continues through the
+  opening. The structure is not removed — a crossing is opened.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <pattern id="hx" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#cfc9c0" stroke-width="1.5"/>
+    </pattern>
+    <style>
+      .band { fill: #e9e5de; }
+      .key  { fill: none; stroke: #1b1c1f; stroke-width: 3.4; }
+      .str  { fill: none; stroke: #63676f; stroke-width: 2.2; }
+      .hair { fill: none; stroke: #c9c3b9; stroke-width: 1.3; }
+      .wine { fill: none; stroke: #7a2430; stroke-width: 5.5; }
+      .reg  { fill: none; stroke: #d9c4c7; stroke-width: 2; }
+      .mark { fill: none; stroke: #b9b3a9; stroke-width: 1.3; }
+      .hatch{ stroke: #cfc9c0; }
+      @media (prefers-color-scheme: dark) {
+        .band { fill: #2a2c32; }
+        .key  { stroke: #eceae5; }
+        .str  { stroke: #9aa0aa; }
+        .hair { stroke: #3a3d43; }
+        .wine { stroke: #d98b96; }
+        .reg  { stroke: #5b4a4d; }
+        .mark { stroke: #4a4d54; }
+        .hatch{ stroke: #3f434a; }
+      }
+    </style>
+  </defs>
+
+  <!-- the structural mass, in section: base 300, top 120, wall thickness shown -->
+  <rect class="band" x="40" y="120" width="1120" height="240"/>
+  <rect class="hatch" fill="url(#hx)" stroke="none" x="40" y="120" width="1120" height="240"/>
+
+  <!-- the opening: the mass stops at x 470 and resumes at x 660 -->
+  <rect x="470" y="120" width="190" height="240" fill="#faf8f5"/>
+  <rect x="470" y="120" width="190" height="240" fill="none"/>
+
+  <!-- mass outline -->
+  <path class="key" d="M40 120 L1160 120 M40 360 L1160 360 M40 120 L40 360 M1160 120 L1160 360"/>
+  <!-- opening edges, structural -->
+  <path class="key" d="M470 120 L470 360 M660 120 L660 360"/>
+  <!-- strata within the mass -->
+  <path class="str" d="M40 200 L470 200 M660 200 L1160 200"/>
+  <path class="hair" d="M40 280 L470 280 M660 280 L1160 280"/>
+
+  <!-- ground datum: unbroken, continues through the opening -->
+  <line class="wine" x1="0" y1="360" x2="1200" y2="360"/>
+
+  <!-- the crossing: registered, and it continues beyond the mass -->
+  <path class="hair" d="M470 360 L470 430 M660 360 L660 430"/>
+  <path class="reg"  d="M470 400 L660 400"/>
+  <path class="mark" d="M565 430 L565 470"/>
+
+  <!-- measured registration above the mass -->
+  <path class="hair" d="M40 84 L1160 84"/>
+  <path class="mark" d="M300 60 L300 108 M565 60 L565 108 M900 60 L900 108"/>
+</svg>

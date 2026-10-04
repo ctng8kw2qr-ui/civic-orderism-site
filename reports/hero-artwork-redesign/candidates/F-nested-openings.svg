@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CANDIDATE F — NESTED OPENINGS (C refined, denser) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs><style>
+    .l1 { fill: none; stroke: #6f747c; stroke-width: 2; }
+    .l2 { fill: none; stroke: #5b6169; stroke-width: 2.4; }
+    .l3 { fill: none; stroke: #1b1c1f; stroke-width: 3.4; }
+    .hair{ fill: none; stroke: #c9c3b9; stroke-width: 1.3; }
+    .wine{ fill: none; stroke: #7a2430; stroke-width: 5.5; }
+    .reg { fill: none; stroke: #d9c4c7; stroke-width: 2; }
+    @media (prefers-color-scheme: dark) {
+      .l1 { stroke: #6f747c; } .l2 { stroke: #9aa0aa; } .l3 { stroke: #eceae5; }
+      .hair{ stroke: #3a3d43; } .wine{ stroke: #d98b96; } .reg { stroke: #5b4a4d; }
+    }
+  </style></defs>
+
+  <rect fill="#f3f0eb" x="40" y="90" width="1120" height="420"/>
+
+  <!-- layer 1: outermost, full frame -->
+  <path class="l1" d="M40 90 L1160 90 M40 90 L40 510 M40 510 L1160 510 M1160 90 L1160 510"/>
+  <!-- layer 1 openings -->
+  <path class="l1" d="M430 90 L430 510 M560 90 L560 510"/>
+  <path class="l1" d="M820 90 L820 510 M950 90 L950 510"/>
+
+  <!-- layer 2: inset, offset openings -->
+  <path class="l2" d="M120 150 L1160 150 M120 150 L120 450 M120 450 L1160 450"/>
+  <path class="l2" d="M500 150 L500 450 M630 150 L630 450"/>
+  <path class="l2" d="M760 150 L760 450 M890 150 L890 450"/>
+
+  <!-- layer 3: nearest, offset again -->
+  <path class="l3" d="M200 212 L1160 212 M200 212 L200 388 M200 388 L1160 388"/>
+  <path class="l3" d="M570 212 L570 388 M700 212 L700 388"/>
+
+  <!-- continuity datum -->
+  <line class="wine" x1="15" y1="300" x2="1185" y2="300"/>
+
+  <!-- registration: where the openings line up, a corridor exists -->
+  <g class="hair">
+    <line x1="570" y1="90" x2="570" y2="150"/>
+    <line x1="630" y1="90" x2="630" y2="150"/>
+    <line x1="700" y1="150" x2="700" y2="212"/>
+  </g>
+  <line class="reg" x1="15" y1="60" x2="1185" y2="60"/>
+  <line class="reg" x1="15" y1="540" x2="1185" y2="540"/>
+</svg>

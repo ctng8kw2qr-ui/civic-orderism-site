@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CANDIDATE A — SHIFTED PLANES -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs><style>
+    .plane { fill: #f3f0eb; }
+    .p1 { fill: none; stroke: #1b1c1f; stroke-width: 4; }
+    .p2 { fill: none; stroke: #63676f; stroke-width: 2.2; }
+    .hair { fill: none; stroke: #c9c3b9; stroke-width: 1.4; }
+    .wine { fill: none; stroke: #7a2430; stroke-width: 6; }
+    .reg { fill: none; stroke: #d9c4c7; stroke-width: 2; }
+    @media (prefers-color-scheme: dark) {
+      .plane { fill: #23252a; }
+      .p1 { stroke: #eceae5; } .p2 { stroke: #8b9099; }
+      .hair { stroke: #3a3d43; } .wine { stroke: #d98b96; } .reg { stroke: #5b4a4d; }
+    }
+  </style></defs>
+
+  <!-- planes of different lengths, stopping at different x -->
+  <rect class="plane" x="60"  y="120" width="700" height="46"/>
+  <path class="p1" d="M60 120 L760 120 M60 166 L760 166"/>
+  <path class="p1" d="M60 120 L60 166"/>
+
+  <rect class="plane" x="180" y="230" width="640" height="46"/>
+  <path class="p2" d="M180 230 L820 230 M180 276 L820 276"/>
+  <path class="p2" d="M180 230 L180 276 M820 230 L820 276"/>
+
+  <rect class="plane" x="60"  y="340" width="560" height="46"/>
+  <path class="p1" d="M60 340 L620 340 M60 386 L620 386"/>
+  <path class="p1" d="M60 340 L60 386"/>
+
+  <rect class="plane" x="300" y="450" width="620" height="46"/>
+  <path class="p2" d="M300 450 L920 450 M300 496 L920 496"/>
+  <path class="p2" d="M300 450 L300 496 M920 450 L920 496"/>
+
+  <!-- continuity datum: passes through everything, unbroken -->
+  <line class="wine" x1="40" y1="290" x2="1160" y2="290"/>
+
+  <!-- continuations: lines that resume after the passage -->
+  <path class="hair" d="M830 143 L1160 143 M960 253 L1160 253 M680 363 L1160 363 M940 473 L1160 473"/>
+  <!-- registration -->
+  <line class="reg" x1="40" y1="96" x2="1160" y2="96"/>
+  <line class="reg" x1="40" y1="520" x2="1160" y2="520"/>
+</svg>
