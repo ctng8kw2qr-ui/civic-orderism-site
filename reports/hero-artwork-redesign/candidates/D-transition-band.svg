@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CANDIDATE D — TRANSITION BAND -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs><style>
+    .ink  { fill: none; stroke: #4a4e56; stroke-width: 2.6; }
+    .ink2 { fill: none; stroke: #6f747c; stroke-width: 2; }
+    .hair { fill: none; stroke: #c9c3b9; stroke-width: 1.3; }
+    .wine { fill: none; stroke: #7a2430; stroke-width: 5.5; }
+    .reg  { fill: none; stroke: #d9c4c7; stroke-width: 2; }
+    @media (prefers-color-scheme: dark) {
+      .ink { stroke: #e4e2dd; } .ink2 { stroke: #9aa0aa; }
+      .hair { stroke: #3a3d43; } .wine { stroke: #d98b96; } .reg { stroke: #5b4a4d; }
+    }
+  </style></defs>
+
+  <rect fill="#f3f0eb" x="40" y="80" width="1120" height="440"/>
+  <path class="hair" d="M40 80 L1160 80 M40 520 L1160 520 M40 80 L40 520 M1160 80 L1160 520"/>
+
+  <!-- band 1: runs full width -->
+  <line class="ink" x1="40" y1="150" x2="1160" y2="150"/>
+  <line class="hair" x1="40" y1="186" x2="1160" y2="186"/>
+  <!-- band 2: interrupted, resumes shifted -->
+  <line class="ink2" x1="40" y1="240" x2="470" y2="240"/>
+  <line class="ink2" x1="640" y1="258" x2="1160" y2="258"/>
+  <!-- band 3: interrupted, resumes shifted the other way -->
+  <line class="ink2" x1="40" y1="330" x2="700" y2="330"/>
+  <line class="ink2" x1="860" y1="316" x2="1160" y2="316"/>
+  <!-- band 4: full width again -->
+  <line class="ink" x1="40" y1="420" x2="1160" y2="420"/>
+  <line class="hair" x1="40" y1="454" x2="1160" y2="454"/>
+
+  <!-- the gaps, registered -->
+  <path class="reg" d="M470 218 L470 262 M640 218 L640 262"/>
+  <path class="reg" d="M700 308 L700 352 M860 308 L860 352"/>
+
+  <!-- continuity datum, unbroken -->
+  <line class="wine" x1="20" y1="290" x2="1180" y2="290"/>
+</svg>

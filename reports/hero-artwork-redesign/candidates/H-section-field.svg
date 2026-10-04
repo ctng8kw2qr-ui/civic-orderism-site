@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Civic Orderism — Homepage Hero · INSTITUTIONAL TRANSITION FIELD
+  A sectional field: depth, not a facade. A ground datum runs the full width
+  and passes through one registered void in the structure. The structure is
+  built from strata; two of them stop at the void and resume beyond it.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <pattern id="hx" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="9" stroke="#c9c3b9" stroke-width="1.6"/>
+    </pattern>
+    <style>
+      .band  { fill: #eceae5; }
+      .band2 { fill: #e3dfd8; }
+      .str   { fill: none; stroke: #5b6169; stroke-width: 2.2; }
+      .key   { fill: none; stroke: #1b1c1f; stroke-width: 3.4; }
+      .hair  { fill: none; stroke: #c9c3b9; stroke-width: 1.3; }
+      .wine  { fill: none; stroke: #7a2430; stroke-width: 5.5; }
+      .reg   { fill: none; stroke: #d9c4c7; stroke-width: 2; }
+      .mark  { fill: none; stroke: #b9b3a9; stroke-width: 1.3; }
+      @media (prefers-color-scheme: dark) {
+        .band  { fill: #2a2c32; }
+        .band2 { fill: #23252a; }
+        .str   { stroke: #9aa0aa; }
+        .key   { stroke: #eceae5; }
+        .hair  { stroke: #3a3d43; }
+        .wine  { stroke: #d98b96; }
+        .reg   { stroke: #5b4a4d; }
+        .mark  { stroke: #4a4d54; }
+      }
+    </style>
+  </defs>
+
+  <!-- the strata: two continuous, two interrupted by the void -->
+  <rect class="band"  x="20" y="118" width="1160" height="54"/>
+  <path class="key"   d="M20 118 L1180 118 M20 172 L1180 172"/>
+  <path class="str"   d="M20 118 L20 172 M1180 118 L1180 172"/>
+
+  <!-- interrupted stratum: stops at the void -->
+  <rect class="band2" x="20" y="216" width="470" height="54"/>
+  <path class="str"   d="M20 216 L490 216 M20 270 L490 270 M20 216 L20 270"/>
+  <rect class="band2" x="700" y="216" width="480" height="54"/>
+  <path class="str"   d="M700 216 L1180 216 M700 270 L1180 270 M1180 216 L1180 270"/>
+  <!-- the void is registered, and its edges are structural -->
+  <path class="key"   d="M490 216 L490 270 M700 216 L700 270"/>
+
+  <!-- lower stratum, continuous -->
+  <rect class="band"  x="20" y="330" width="1160" height="70"/>
+  <path class="key"   d="M20 330 L1180 330 M20 400 L1180 400"/>
+  <path class="str"   d="M20 330 L20 400 M1180 330 L1180 400"/>
+
+  <!-- the base: ground datum, unbroken, wider than the plate -->
+  <line class="wine" x1="0" y1="470" x2="1200" y2="470"/>
+  <path class="hair" d="M20 470 L1180 470"/>
+
+  <!-- measured registration -->
+  <path class="mark" d="M300 34 L300 92 M700 34 L700 92 M1000 34 L1000 92"/>
+  <path class="hair" d="M20 92 L1180 92"/>
+  <path class="mark" d="M490 92 L490 216 M700 92 L700 216"/>
+  <path class="reg"  d="M20 500 L1180 500"/>
+</svg>

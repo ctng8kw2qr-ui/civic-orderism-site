@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CANDIDATE C — LAYERED THRESHOLD -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs><style>
+    .pl { fill: none; stroke: #63676f; stroke-width: 2.2; }
+    .pl2 { fill: none; stroke: #8b9099; stroke-width: 2; }
+    .pl3 { fill: none; stroke: #a9a49b; stroke-width: 1.8; }
+    .wine { fill: none; stroke: #7a2430; stroke-width: 6; }
+    .hair { fill: none; stroke: #c9c3b9; stroke-width: 1.4; }
+    .reg  { fill: none; stroke: #d9c4c7; stroke-width: 2; }
+    @media (prefers-color-scheme: dark) {
+      .pl { stroke: #8b9099; } .pl2 { stroke: #6f747c; } .pl3 { stroke: #5b6068; }
+      .wine { stroke: #d98b96; } .hair { stroke: #3a3d43; } .reg { stroke: #5b4a4d; }
+    }
+  </style></defs>
+
+  <!-- layer 1: farthest, opening at x 560..660 -->
+  <path class="pl3" d="M120 120 L1160 120 M120 120 L120 480 M120 480 L1160 480"/>
+  <path class="pl3" d="M560 120 L560 480 M660 120 L660 480"/>
+
+  <!-- layer 2: opening offset, x 620..740 -->
+  <path class="pl2" d="M200 176 L1160 176 M200 176 L200 424 M200 424 L1160 424"/>
+  <path class="pl2" d="M620 176 L620 424 M740 176 L740 424"/>
+
+  <!-- layer 3: nearest, opening offset again, x 700..800 -->
+  <path class="pl" d="M280 236 L1160 236 M280 236 L280 364 M280 364 L1160 364"/>
+  <path class="pl" d="M700 236 L700 364 M800 236 L800 364"/>
+
+  <!-- continuity datum passing through every opening -->
+  <line class="wine" x1="60" y1="300" x2="1160" y2="300"/>
+
+  <!-- the corridor implied where all three openings overlap -->
+  <g class="hair">
+    <line x1="700" y1="120" x2="700" y2="236"/>
+    <line x1="740" y1="176" x2="740" y2="236"/>
+  </g>
+  <line class="reg" x1="60" y1="80" x2="1160" y2="80"/>
+  <line class="reg" x1="60" y1="520" x2="1160" y2="520"/>
+</svg>

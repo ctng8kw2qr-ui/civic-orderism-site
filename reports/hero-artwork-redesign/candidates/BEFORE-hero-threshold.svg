@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Civic Orderism — Homepage Hero · THRESHOLD
+  ================================================================
+  A structural boundary rises from the datum with one passage opened
+  through it. The datum runs unbroken across the full width and
+  continues on both sides: the structure is not removed, the passage
+  is opened. Structure continues; the path changes.
+
+  Register: measured institutional drawing, not a silhouette.
+
+  GEOMETRY (viewBox 0 0 1200 600)
+    boundary    x 260..940, y 70..470
+    passage     x 500..700; arch head = semicircle, apex y 150
+    springing   y 250 (the arch springs from here)
+    datum       y 470, x 70..1130 — wider than the boundary, unbroken
+    references  y 70 hairline with end ticks; passage ticks at the datum
+
+  CONSTRUCTION — why it is a single evenodd path
+    The boundary and its opening are ONE path with fill-rule="evenodd": the
+    inner passage subpath is subtracted from the outer boundary automatically.
+    Earlier attempts used clipped circles and separate knock-out layers, which
+    failed in ways that were hard to see (an unstyled circle defaults to a
+    SOLID BLACK fill, so a "hole" silently became a black semicircle while the
+    jambs below still looked right). The evenodd form cannot half-fail.
+
+    The arc `A100 100 0 0 1` rises ABOVE the springing line. With the passage
+    traversed left to right that is sweep flag 1; flag 0 dips below and leaves
+    the head filled. Verify by scanning pixel values, never by eye.
+
+  THEMING
+    Light/dark is handled inside this file with prefers-color-scheme. V6 keeps
+    that in sync with saved-theme, so ONE asset serves both themes with no
+    filter, no invert, no second file and no CSS mask.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <style>
+      .mass  { fill: #e7e3dc; }
+      .line  { fill: none; stroke: #1b1c1f; stroke-width: 4; }
+      .edge  { fill: none; stroke: #8b9099; stroke-width: 2; }
+      .datum { fill: none; stroke: #7a2430; stroke-width: 6; }
+      .ref   { fill: none; stroke: #d9c4c7; stroke-width: 2; }
+      .tick  { fill: none; stroke: #c9c3b9; stroke-width: 2; }
+      @media (prefers-color-scheme: dark) {
+        .mass  { fill: #26282e; }
+        .line  { stroke: #eceae5; }
+        .edge  { stroke: #6f747c; }
+        .datum { stroke: #d98b96; }
+        .ref   { stroke: #4a4d54; }
+        .tick  { stroke: #3a3d43; }
+      }
+    </style>
+  </defs>
+
+  <!-- the boundary with the passage subtracted -->
+  <path class="mass" fill-rule="evenodd" d="M260 70 L940 70 L940 470 L260 470 Z M500 250 A100 100 0 0 1 700 250 L700 470 L500 470 Z"/>
+
+  <!-- the opening, stroked once -->
+  <path class="line" fill="none" d="M500 470 L500 250 A100 100 0 0 1 700 250 L700 470"/>
+
+  <!-- outer boundary, stroked -->
+  <path class="line" fill="none" d="M260 70 L940 70 L940 470 M260 70 L260 470"/>
+
+  <!-- passage reveals: the depth of the boundary -->
+  <line class="edge" fill="none" x1="500" y1="250" x2="500" y2="470"/>
+  <line class="edge" fill="none" x1="700" y1="250" x2="700" y2="470"/>
+
+  <!-- one datum, unbroken, continuing on both sides -->
+  <line class="datum" fill="none" x1="70" y1="470" x2="1130" y2="470"/>
+
+  <!-- measured references -->
+  <line class="ref" fill="none" x1="70" y1="70" x2="1130" y2="70"/>
+  <line class="ref" fill="none" x1="70" y1="54" x2="70" y2="86"/>
+  <line class="ref" fill="none" x1="1130" y1="54" x2="1130" y2="86"/>
+  <line class="tick" fill="none" x1="500" y1="470" x2="500" y2="500"/>
+  <line class="tick" fill="none" x1="700" y1="470" x2="700" y2="500"/>
+</svg>

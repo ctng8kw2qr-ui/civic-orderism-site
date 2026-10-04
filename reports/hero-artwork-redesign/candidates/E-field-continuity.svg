@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CANDIDATE E — FIELD OF CONTINUITY -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs><style>
+    .str { fill: none; stroke: #5b6169; stroke-width: 2.2; }
+    .key { fill: none; stroke: #1b1c1f; stroke-width: 3.6; }
+    .hair{ fill: none; stroke: #c9c3b9; stroke-width: 1.3; }
+    .wine{ fill: none; stroke: #7a2430; stroke-width: 5.5; }
+    .reg { fill: none; stroke: #d9c4c7; stroke-width: 2; }
+    @media (prefers-color-scheme: dark) {
+      .str { stroke: #9aa0aa; } .key { stroke: #eceae5; }
+      .hair{ stroke: #3a3d43; } .wine{ stroke: #d98b96; } .reg { stroke: #5b4a4d; }
+    }
+  </style></defs>
+
+  <rect fill="#f3f0eb" x="30" y="70" width="1140" height="460"/>
+  <path class="hair" d="M30 70 L1170 70 M30 530 L1170 530 M30 70 L30 530 M1170 70 L1170 530"/>
+
+  <!-- upper field: five strands, all continue -->
+  <line class="str" x1="30" y1="130" x2="1170" y2="130"/>
+  <line class="str" x1="30" y1="180" x2="1170" y2="180"/>
+  <line class="key" x1="30" y1="230" x2="1170" y2="230"/>
+  <line class="str" x1="30" y1="280" x2="1170" y2="280"/>
+
+  <!-- the threshold: two planes interrupt and re-form -->
+  <line class="key" x1="500" y1="330" x2="1170" y2="330"/>
+  <line class="str" x1="30" y1="380" x2="700" y2="380"/>
+  <line class="str" x1="30" y1="430" x2="1170" y2="430"/>
+  <line class="key" x1="30" y1="480" x2="1170" y2="480"/>
+
+  <!-- interruptions: registered, not decorative -->
+  <path class="reg" d="M470 306 L470 354 M470 380 L470 430"/>
+  <path class="reg" d="M500 306 L500 354 M700 356 L700 404"/>
+
+  <!-- continuity datum -->
+  <line class="wine" x1="15" y1="300" x2="1185" y2="300"/>
+
+  <!-- measured registration -->
+  <line class="reg" x1="15" y1="96" x2="1185" y2="96"/>
+  <line class="reg" x1="15" y1="504" x2="1185" y2="504"/>
+</svg>
