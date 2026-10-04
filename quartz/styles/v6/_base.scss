@@ -1,0 +1,309 @@
+@use "../variables.scss" as *;
+
+/**
+ * V6 — Institutional Editorial · Base layer
+ * ================================================================
+ *
+ * 这一层只负责三件事：
+ *   1. 机构首页的全幅外壳（无知识库侧栏、无卡片式文章容器）
+ *   2. 全局排版基线（中文优先的字体栈与标题层级）
+ *   3. 可访问性基线（可见 focus、reduced motion）
+ *
+ * 组件级样式放在 _navigation / _footer / _homepage。
+ * 文章系统（institutionalArticle.scss 等）在本轮完全不参与。
+ */
+
+/* ── 1. Full-width institutional shell ──────────────────────────
+   历史上的 V4/V5 首页依托 .inst4l 触发全幅外壳。V6 首页改为 .v6，
+   因此在这里显式声明同一套外壳规则，不依赖任何旧 class。
+   同时保留 body[data-slug="index"]，因为首页在任何情况下都必须是
+   机构落地页而不是知识库页面。 */
+body[data-slug="index"],
+body:has(.v6) {
+  .page {
+    max-width: none !important;
+  }
+
+  .page > #quartz-body {
+    display: block !important;
+  }
+
+  .page > #quartz-body .sidebar.left,
+  .page > #quartz-body .sidebar.right {
+    display: none !important;
+  }
+
+  .page > #quartz-body .page-header {
+    margin-top: 0 !important;
+  }
+
+  .page > #quartz-body .page-header header {
+    margin: 0 !important;
+  }
+
+  .center .page-header,
+  .center .page-header header {
+    display: contents;
+  }
+
+  .page > #quartz-body .center > article,
+  .center > article,
+  article {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+}
+
+/* The sticky institutional header needs a scroll container that is not
+   clipped on the x-axis (base.scss sets html { overflow-x: hidden }). */
+html {
+  overflow-x: visible !important;
+}
+
+/* ── 2. V6 page container ──────────────────────────────────────── */
+.v6 {
+  box-sizing: border-box;
+  width: 100%;
+  background: var(--v6-background);
+  color: var(--v6-text-primary);
+  font-family: var(--v6-font-sans);
+  font-size: var(--v6-text-body);
+  font-weight: var(--v6-weight-body);
+  line-height: var(--v6-leading-body);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.v6 *,
+.v6 *::before,
+.v6 *::after {
+  box-sizing: border-box;
+}
+
+.v6__container {
+  width: 100%;
+  max-width: var(--v6-container);
+  margin: 0 auto;
+  padding-inline: var(--v6-gutter);
+}
+
+.v6__container--wide {
+  max-width: var(--v6-container);
+}
+
+/* ── 3. Typography baseline ────────────────────────────────────── */
+.v6 h1,
+.v6 h2,
+.v6 h3,
+.v6 h4,
+.v6 p,
+.v6 figure,
+.v6 blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.v6 h1,
+.v6 h2,
+.v6 h3 {
+  color: var(--v6-text-primary);
+  font-weight: var(--v6-weight-heading);
+  letter-spacing: var(--v6-tracking-heading);
+  line-height: var(--v6-leading-heading);
+  text-wrap: balance;
+}
+
+.v6 h1 {
+  font-size: var(--v6-text-h1);
+}
+
+.v6 h2 {
+  font-size: var(--v6-text-h2);
+}
+
+.v6 h3 {
+  font-size: var(--v6-text-h3);
+}
+
+.v6 p {
+  max-width: var(--v6-measure);
+}
+
+.v6 a {
+  color: inherit;
+  text-decoration: none;
+  background-image: none;
+}
+
+/* ── 4. Shared section primitives ──────────────────────────────── */
+.v6-section {
+  padding-block: var(--v6-section-space);
+  border-top: 1px solid var(--v6-border);
+}
+
+.v6-section--plain {
+  border-top: 0;
+}
+
+/* Section head: 细编号 + 标签 + 标题。机构化的秩序感来自这条细线，
+   而不是卡片或色块。 */
+.v6-section__head {
+  display: grid;
+  gap: var(--v6-space-sm);
+  margin-bottom: var(--v6-space-xl);
+}
+
+.v6-eyebrow {
+  display: flex;
+  gap: var(--v6-space-xs);
+  align-items: baseline;
+  color: var(--v6-text-muted);
+  font-family: var(--v6-font-sans);
+  font-size: var(--v6-text-label);
+  font-weight: var(--v6-weight-label);
+  letter-spacing: var(--v6-tracking-label);
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.v6-eyebrow__num {
+  color: var(--v6-brand-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.v6-section__title {
+  max-width: 34ch;
+}
+
+.v6-section__lead {
+  max-width: var(--v6-measure);
+  margin-top: var(--v6-space-sm);
+  color: var(--v6-text-secondary);
+  font-size: var(--v6-text-lead);
+  font-weight: var(--v6-weight-lead);
+  line-height: var(--v6-leading-tight);
+}
+
+/* Text link with the restrained brand underline used across the homepage. */
+.v6 .v6-link {
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: baseline;
+  color: var(--v6-brand-text);
+  font-weight: var(--v6-weight-strong);
+  text-decoration: none;
+  border-bottom: 1px solid var(--v6-brand-line);
+  transition:
+    color var(--v6-duration) var(--v6-ease),
+    border-color var(--v6-duration) var(--v6-ease);
+}
+
+.v6 .v6-link:hover,
+.v6 .v6-link:focus-visible {
+  color: var(--v6-brand-hover);
+  border-bottom-color: var(--v6-brand-hover);
+}
+
+.v6-link__arrow {
+  font-size: 0.9em;
+  transition: transform var(--v6-duration) var(--v6-ease);
+}
+
+.v6 .v6-link:hover .v6-link__arrow {
+  transform: translateX(2px);
+}
+
+/* ── 5. Buttons ────────────────────────────────────────────────── */
+.v6-button {
+  display: inline-flex;
+  min-height: 2.85rem;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0.7rem 1.35rem;
+  border: 1px solid transparent;
+  border-radius: var(--v6-radius-sm);
+  font-family: inherit;
+  font-size: 0.94rem;
+  font-weight: var(--v6-weight-strong);
+  line-height: 1.3;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--v6-duration) var(--v6-ease),
+    border-color var(--v6-duration) var(--v6-ease),
+    color var(--v6-duration) var(--v6-ease);
+}
+
+.v6 .v6-button--primary {
+  border-color: var(--v6-brand-text);
+  background: var(--v6-brand);
+  color: var(--v6-text-on-brand);
+}
+
+.v6 .v6-button--primary:hover,
+.v6 .v6-button--primary:focus-visible {
+  border-color: var(--v6-brand-hover);
+  background: var(--v6-brand-hover);
+  color: var(--v6-text-on-brand);
+}
+
+.v6 .v6-button--secondary {
+  border-color: var(--v6-border-strong);
+  background: transparent;
+  color: var(--v6-text-primary);
+}
+
+.v6 .v6-button--secondary:hover,
+.v6 .v6-button--secondary:focus-visible {
+  border-color: var(--v6-text-primary);
+  background: var(--v6-surface);
+  color: var(--v6-text-primary);
+}
+
+.v6-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--v6-space-xs);
+  margin-top: var(--v6-space-lg);
+}
+
+/* ── 6. Accessibility ──────────────────────────────────────────── */
+.v6 :focus-visible,
+.v6-nav :focus-visible,
+.v6-footer :focus-visible {
+  outline: 2px solid var(--v6-focus);
+  outline-offset: 2px;
+  border-radius: var(--v6-radius-sm);
+}
+
+/* 移动端触控目标：不小于 44×44 的等效区域。 */
+@media all and ($mobile) {
+  .v6-button {
+    min-height: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v6 *,
+  .v6 *::before,
+  .v6 *::after,
+  .v6-nav *,
+  .v6-nav *::before,
+  .v6-nav *::after,
+  .v6-footer *,
+  .v6-footer *::before,
+  .v6-footer *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+
+  .v6 .v6-link:hover .v6-link__arrow {
+    transform: none;
+  }
+}

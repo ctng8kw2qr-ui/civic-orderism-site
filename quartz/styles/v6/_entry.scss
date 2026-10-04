@@ -1,0 +1,23 @@
+/**
+ * V6 — Institutional Editorial · 样式入口
+ * ================================================================
+ *
+ * 新版样式从这里按模块引入，不再把规则追加到 custom.scss 底部。
+ *
+ * 模块层级：
+ *   tokens     设计令牌（颜色 / 间距 / 排版 / 圆角 / 动效）
+ *   base       全幅外壳、排版基线、可访问性
+ *   homepage   首页各 Section
+ *   responsive 跨模块的响应式收口
+ *
+ * 组件级样式（导航 / 页脚 / 最新研究）跟随组件放在
+ * quartz/components/styles/v6*.scss，由 Quartz 的 ComponentResources
+ * 自动注入，与本文件一并进入 index.css。
+ *
+ * 历史说明：custom.scss（约 1.1 万行）仍然服务尚未迁移的文章系统与
+ * 机构落地页。本轮只做增量替换，不删除旧规则，避免破坏稳定功能。
+ */
+@use "./tokens";
+@use "./base";
+@use "./homepage";
+@use "./responsive";

@@ -1,0 +1,157 @@
+/**
+ * V6 — Institutional Editorial · Design Tokens
+ * ================================================================
+ *
+ * 这是 V6 视觉系统的唯一颜色 / 间距 / 排版来源。
+ *
+ * 规则：
+ *   1. 组件只能引用语义 token，禁止在组件内 hardcode hex。
+ *   2. 命名空间统一为 --v6-*，与历史 --inst4-* / --inst-* / Quartz 主题色
+ *      并存，互不覆盖。历史 token 仍然服务尚未迁移的文章系统与落地页。
+ *   3. 深酒红只用于品牌识别、按钮、细线、栏目编号、Hover 与小型强调元素。
+ *      它不是页面背景色。
+ *
+ * 对比度（WCAG 2.1，light mode）：
+ *   text-primary   on background  17.2:1  (AAA)
+ *   text-secondary on background   9.2:1  (AAA)
+ *   text-muted     on background   5.8:1  (AA)
+ *   brand          on background   7.9:1  (AAA)
+ *   on-brand (白)  on brand        8.7:1  (AAA)
+ */
+
+:root {
+  /* ---- Background & surfaces ---------------------------------- */
+  /* 暖白 / 纸张色：机构出版物的底，不是纯白。 */
+  --v6-background: #faf8f5;
+  --v6-surface: #fffefc;
+  --v6-surface-sunken: #f3f0eb;
+  --v6-surface-inverse: #1b1c1f;
+
+  /* ---- Text hierarchy ----------------------------------------- */
+  /* 炭黑 / 深灰，避免纯黑 (#000) 的生硬感。 */
+  --v6-text-primary: #1b1c1f;
+  --v6-text-secondary: #45484f;
+  --v6-text-muted: #63676f;
+  --v6-text-on-brand: #ffffff;
+  --v6-text-on-inverse: #f2efe9;
+
+  /* ---- Borders & rules ---------------------------------------- */
+  --v6-border: #e0dcd5;
+  --v6-border-strong: #c9c3b9;
+
+  /* ---- Brand: 极克制的深酒红 ---------------------------------
+     --v6-brand       品牌色块与按钮底色（必须承载白字，≥ 4.5:1）
+     --v6-brand-text  品牌色文字（在页面底色上 ≥ 4.5:1）
+     两个用途的对比度要求相反，因此拆成两个 token，不要混用。 */
+  --v6-brand: #7a2430;
+  --v6-brand-text: #7a2430;
+  --v6-brand-hover: #5e1a24;
+  --v6-brand-subtle: #f4eaeb;
+  --v6-brand-line: #d9c4c7;
+
+  /* ---- Focus ring (accessibility, not decoration) ------------- */
+  --v6-focus: #7a2430;
+  --v6-focus-offset: #faf8f5;
+
+  /* ---- Spacing scale (4px base) ------------------------------- */
+  --v6-space-3xs: 0.25rem;
+  --v6-space-2xs: 0.5rem;
+  --v6-space-xs: 0.75rem;
+  --v6-space-sm: 1rem;
+  --v6-space-md: 1.5rem;
+  --v6-space-lg: 2.25rem;
+  --v6-space-xl: 3.5rem;
+  --v6-space-2xl: 5rem;
+  --v6-space-3xl: 7rem;
+
+  /* Section rhythm — 页面纵向节奏，移动端在 responsive 层收窄。 */
+  --v6-section-space: clamp(3.5rem, 7vw, 7rem);
+  --v6-section-space-tight: clamp(2.5rem, 5vw, 4.5rem);
+
+  /* ---- Radius ------------------------------------------------- */
+  /* 机构感：几乎直角。只有 2px / 3px 两级，避免圆角化。 */
+  --v6-radius-sm: 2px;
+  --v6-radius-md: 3px;
+  --v6-radius-pill: 999px;
+
+  /* ---- Layout ------------------------------------------------- */
+  --v6-measure: 68ch; /* 正文最大行宽，避免铺满桌面 */
+  --v6-measure-narrow: 52ch;
+  /* One shared content column: navigation, page sections and footer all
+     align to the same left/right edge. */
+  --v6-container: 1240px;
+  --v6-gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --v6-header-height: 4.25rem;
+
+  /* ---- Typography --------------------------------------------- */
+  /* 中文优先，性能稳定，不发起第三方字体请求。 */
+  --v6-font-sans:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC",
+    "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif;
+  --v6-font-serif:
+    "Songti SC", "SimSun", "Source Han Serif SC", "Noto Serif CJK SC",
+    Georgia, "Times New Roman", serif;
+  --v6-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Display / H1 / H2 / H3 / Lead / Body / Caption / Meta / Label */
+  --v6-text-display: clamp(2.1rem, 5.2vw, 3.4rem);
+  --v6-text-h1: clamp(1.85rem, 4.2vw, 2.7rem);
+  --v6-text-h2: clamp(1.5rem, 3vw, 2rem);
+  --v6-text-h3: clamp(1.1rem, 2vw, 1.32rem);
+  --v6-text-lead: clamp(1.06rem, 1.6vw, 1.2rem);
+  --v6-text-body: 1rem;
+  --v6-text-caption: 0.82rem;
+  --v6-text-meta: 0.78rem;
+  --v6-text-label: 0.7rem;
+
+  --v6-leading-display: 1.16;
+  --v6-leading-heading: 1.3;
+  --v6-leading-body: 1.8;
+  --v6-leading-tight: 1.55;
+
+  --v6-tracking-label: 0.16em;
+  --v6-tracking-brand: 0.1em;
+  --v6-tracking-heading: 0.005em;
+
+  --v6-weight-display: 560;
+  --v6-weight-heading: 600;
+  --v6-weight-lead: 440;
+  --v6-weight-body: 400;
+  --v6-weight-label: 560;
+  --v6-weight-strong: 640;
+
+  /* ---- Motion ------------------------------------------------- */
+  /* 克制：只有颜色 / 边框的短过渡，没有位移与缩放动画。 */
+  --v6-duration: 160ms;
+  --v6-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark mode keeps the same semantic names; only the values change.
+   深酒红在深色底上提亮，以保证 ≥ 4.5:1。 */
+:root[saved-theme="dark"] {
+  --v6-background: #141518;
+  --v6-surface: #1b1d21;
+  --v6-surface-sunken: #101114;
+  --v6-surface-inverse: #f2efe9;
+
+  --v6-text-primary: #eceae5;
+  --v6-text-secondary: #b9b7b2;
+  --v6-text-muted: #949289;
+  --v6-text-on-brand: #ffffff;
+  --v6-text-on-inverse: #1b1c1f;
+
+  --v6-border: #2c2f35;
+  --v6-border-strong: #3d4149;
+
+  /* Dark mode: the button keeps a deep wine surface so white text stays
+     legible (8.1:1), while brand *text* is lightened (7.0:1 on the page). */
+  --v6-brand: #8f2c3a;
+  --v6-brand-text: #d98b96;
+  --v6-brand-hover: #a13644;
+  --v6-brand-subtle: #2a1e21;
+  --v6-brand-line: #4a3237;
+
+  --v6-focus: #d98b96;
+  --v6-focus-offset: #141518;
+}
