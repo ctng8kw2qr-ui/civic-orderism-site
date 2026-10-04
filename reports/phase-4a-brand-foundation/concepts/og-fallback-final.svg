@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Civic Orderism — V6 OG / social fallback (Phase 4A final)
+  ================================================================
+  1200x630. Direction B (Editorial Archive): warm paper, hairline rules,
+  folio colophon, one weak structural device. No article title, no
+  photograph, no personnel, no Hero artwork, no call to action.
+
+  COMPOSITION RULE — centred brand block
+  ----------------------------------------------------------------
+  The BRAND-CRITICAL unit (threshold mark + 公民秩序主义 + CIVIC ORDERISM)
+  is horizontally CENTRED: measured extent x 460..741, i.e. within +-60px of
+  the canvas centre. It therefore survives any centre-weighted crop,
+  including aspects WIDER than this asset, where side trimming is real.
+
+  Supporting content (statement, rules, colophon) is left-aligned to the
+  x 104..1096 frame and may be trimmed in narrow previews — acceptable,
+  since the brand name is what must never be lost.
+
+  Verified: all five delivery sizes 1200x630 / 600x315 / 506x265 / 400x210 /
+  300x158 share a ~1.9:1 aspect, so side trim is ~0px for each; the brand
+  block additionally survives a hypothetical wider crop because it is centred.
+
+  Measured text widths at authoring time:
+    公民秩序主义   174.0px @26px/600/3px tracking
+    CIVIC ORDERISM 157.9px @11.5px/560/4.4px tracking
+    研究中國政治轉軌與制度承接 397.8px @30px/560/0.6px tracking
+    RESEARCH PUBLICATION 197.4px @12px/2.6px tracking
+    civicorderism.com    147.6px @12px/2.6px tracking
+  Horizontal safe margin >= 100px: verified by pixel measurement.
+
+  Geometry mirrors quartz/static/assets/v6/brand/threshold-mark.svg
+  (circle r48 / arch r14 / horizon), scaled 60/100.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#faf8f5"/>
+
+  <!-- brand lockup, upper left of the frame -->
+  <g transform="translate(460,140)">
+    <g fill="none" stroke="#7a2430" stroke-width="2.4" stroke-linecap="butt" transform="scale(0.6)">
+      <circle cx="50" cy="50" r="48"/>
+      <path d="M36 70 L36 48 A14 14 0 0 1 64 48 L64 70"/>
+      <line x1="28" y1="70" x2="72" y2="70"/>
+    </g>
+    <text x="112" y="34" font-size="26" font-weight="600" letter-spacing="3" fill="#1b1c1f"
+          font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">公民秩序主义</text>
+    <text x="113" y="53" font-size="11.5" font-weight="560" letter-spacing="4.4" fill="#63676f"
+          font-family="-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif">CIVIC ORDERISM</text>
+  </g>
+
+  <!-- institutional statement -->
+  <text x="104" y="292" font-size="30" font-weight="560" letter-spacing="0.6" fill="#45484f"
+        font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">研究中国政治转轨与制度承接</text>
+
+  <!-- one weak C-device: a measured structural fragment, analysis not ornament -->
+  <g stroke="#d9c4c7" stroke-width="1" fill="none">
+    <line x1="104" y1="366" x2="1096" y2="366"/>
+    <line x1="104" y1="366" x2="104" y2="406"/>
+    <line x1="352" y1="366" x2="352" y2="398"/>
+    <line x1="600" y1="366" x2="600" y2="406"/>
+    <line x1="848" y1="366" x2="848" y2="398"/>
+    <line x1="1096" y1="366" x2="1096" y2="406"/>
+  </g>
+
+  <!-- hairline archive frame -->
+  <rect x="104" y="428" width="992" height="0.001" fill="none" stroke="#e0dcd5"/>
+
+  <!-- colophon -->
+  <text x="104" y="470" font-size="12" letter-spacing="2.6" fill="#63676f"
+        font-family="-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif">RESEARCH PUBLICATION</text>
+  <text x="1096" y="470" font-size="12" letter-spacing="2.6" fill="#63676f" text-anchor="end"
+        font-family="-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif">civicorderism.com</text>
+</svg>

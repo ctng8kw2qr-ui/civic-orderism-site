@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Civic Orderism — Threshold Mark — REVERSE (warm white, for charcoal or wine fields)
+  ================================================================
+  Phase 4A final. Selected from 3 concepts (A Simplified Colonnade,
+  B Threshold Mark, C Order/Structure). B was the only concept still
+  identifiable at 8px, because its silhouette is a single shape rather
+  than a group of parallel bars.
+
+  The mark is deliberately ABSTRACT and must stay abstract. Its meaning —
+  building a passage through an existing structure rather than destroying
+  it — is NOT encoded in the drawing and must never be written into it.
+
+  GEOMETRY (3 elements, exact)
+  ----------------------------------------------------------------
+  viewBox            0 0 100 100
+  stroke-width       4            (min stroke at 16px = 0.64px)
+  stroke-linecap     butt
+  element 1  circle  cx 50 cy 50 r 48
+  element 2  arch    M36 70 L36 48 A14 14 0 0 1 64 48 L64 70
+  element 3  horizon M28 70 L72 70
+  arch outer edge    = 64 - 36 = 28 wide, spans x 36..64, feet at y 70
+  horizon            spans x 28..72, 12 units wider than the arch, so the
+                     mark reads as a standing opening rather than a box
+
+  OPTICAL CENTRING
+  ----------------------------------------------------------------
+  The arch is a semicircle on vertical jambs, so its visual mass sits
+  slightly ABOVE the circle's geometric centre (y 48-50). The horizon at
+  y 70 balances it. Without the horizon the mark reads top-heavy; this is
+  why the third element is load-bearing, not decorative.
+
+  CLEAR SPACE
+  ----------------------------------------------------------------
+  Minimum clear space on all sides = 12% of the mark's height
+  (= 12 units here). No type, rule or edge may enter that area.
+
+  MINIMUM SIZE
+  ----------------------------------------------------------------
+  16px  favicon floor (verified legible)
+  8px   still identifiable under stress test (below minimum for production)
+  24px  minimum for the mark shown alone in UI
+  48px  minimum for any use alongside the seal device
+
+  DO NOT ADD
+  ----------------------------------------------------------------
+  columns · text · values strip · seal · C/O letterforms · extra rules ·
+  gradients · fills. Exactly 3 elements. Any addition breaks 16px.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"
+     fill="none" stroke="#faf8f5" stroke-width="4" stroke-linecap="butt">
+  <circle cx="50" cy="50" r="48"/>
+  <path d="M36 70 L36 48 A14 14 0 0 1 64 48 L64 70"/>
+  <line x1="28" y1="70" x2="72" y2="70"/>
+</svg>

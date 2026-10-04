@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CONCEPT A — Simplified Colonnade
+     Inherits: circular boundary + colonnade + base line (the core of the legacy mark).
+     Removed: 5 thin columns -> 3 heavy ones; pediment -> single lintel; all micro-detail.
+     ELEMENTS: 1 circle, 1 lintel, 3 columns, 1 base = 6 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="butt" vector-effect="non-scaling-stroke">
+    <circle cx="50" cy="50" r="44"/>
+    <line x1="26" y1="33" x2="74" y2="33"/>
+    <line x1="32" y1="33" x2="32" y2="71"/>
+    <line x1="50" y1="33" x2="50" y2="71"/>
+    <line x1="68" y1="33" x2="68" y2="71"/>
+    <line x1="24" y1="71" x2="76" y2="71"/>
+  </g>
+</svg>
