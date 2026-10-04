@@ -116,6 +116,13 @@ At 1440 the H1 remains the first hierarchy, the artwork second, Current Phase
 third. The artwork gains mass and finish without gaining contrast against the
 headline.
 
+`qa-prod/` holds **post-deployment production verification screenshots**, captured
+against `civicorderism.com` after the merge. Same convention as the Phase 4B
+evidence: audit only — not runtime dependencies, not canonical design assets, and
+not part of the published site. They exist so the deployed state at this point
+remains inspectable, and so the live result can be compared against the local
+build rather than taken on trust.
+
 ## 9. Mobile
 
 At 390 the artwork is 319×159 and still reads: the mass, the gap, the strata and
