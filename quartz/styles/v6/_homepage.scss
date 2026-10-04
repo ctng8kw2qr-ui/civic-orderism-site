@@ -157,7 +157,13 @@
   width: 100%;
   max-width: 460px;
   height: auto;
-  aspect-ratio: 2 / 1;
+  /* 4:3, matching hero-threshold.svg. Declared rather than left to the image's
+     intrinsic size so the space is reserved before the SVG loads and the Hero
+     does not reflow. A 2:1 canvas was tried and rejected: at the 437px display
+     width it scales by 0.364, which renders a 3-unit line at 1.09px — too thin
+     to carry the drawing, which is why the earlier artwork needed hatch and
+     tick marks to supply mass and ended up reading as a technical drawing. */
+  aspect-ratio: 4 / 3;
 }
 
 .v6-hero__phase-label {

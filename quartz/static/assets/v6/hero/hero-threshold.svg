@@ -1,91 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Civic Orderism — Homepage Hero · THRESHOLD, IN SECTION
+  Civic Orderism — Homepage Hero · CONTINUITY
   ================================================================
-  A long structural mass seen in SECTION. There is no facade, no arch and no
-  door: the mass simply stops, leaving a registered opening, and resumes beyond
-  it. A single datum runs the full width at the base and continues straight
-  through that opening. The structure is not removed — a crossing is opened.
+  Two structures and one line. The structure on the left is dense and low:
+  the order that already stands. The structure on the right is sparser and
+  has fewer, further-apart members: the order being prepared. Between them
+  is a passage, bounded on each side.
 
-  Structure continues. The path changes.
+  A single wine datum runs the entire width. It holds its level beneath the
+  first structure, rises once across the passage, and continues level beneath
+  the second. It is never broken.
 
-  GEOMETRY (viewBox 0 0 1200 600)
-    mass        x 40..1160, y 130..430
-    upper core  y 130..246 — the system carries its weight at the top
-    opening     x 505..695, full height of the mass: a gap, not a doorway
-    datum       y 430, x 0..1200 — wider than the mass, unbroken
-    crossing    continues past the mass, registered but unlabelled
+  The structure changes. The line does not.
+
+  GEOMETRY (viewBox 0 0 1200 900, 4:3)
+    left mass    x  80..530, y 250..590 — dense: six members
+    right mass   x 670..1120, y 250..590 — resolved: three members, wider bays
+    passage      x 530..670 — bounded by the two wine uprights
+    datum        y 590 → 470 across the passage, level either side, x 40..1160
+    beams        y 250 and y 590, within each mass, open across the passage
 
   DISCIPLINE
-    One idea, no symbolism. Line hierarchy is primary / secondary / hairline /
-    wine datum / registration, five distinct weights. Wine appears only as the
-    datum and the two edge registers — never as a fill. No labels, no numerals,
-    no Threshold Mark, no political imagery.
+  One idea, no symbolism. Two line weights (2 secondary, 3 primary) and three
+  stroke colours — key, secondary, wine — plus one pale tint for mass. Wine
+  appears only as the datum and the two passage uprights, never as a fill.
+  No hatch, no tick marks, no grid, no labels, no numerals, no Threshold Mark,
+  no political imagery. Every line carries meaning; nothing is decorative.
+
+  THE RATIO
+  4:3, not 2:1. At the Hero's 437px display width a 2:1 canvas scales by 0.364
+  and a 3-unit line renders at 1.09px, which forces texture — hatch and tick
+  marks — to carry weight, and that is what made the earlier artwork read as a
+  technical drawing. At 4:3 the same line renders at 1.64px, so the drawing
+  itself can carry the mass.
 
   THEMING
-    prefers-color-scheme, so ONE asset serves both themes with no filter, no
-    invert and no second file. Every surface that must match the page (the
-    opening, the tick gaps) is painted from a theme token, never a hardcoded
-    paper colour that would be wrong in the other theme.
+  prefers-color-scheme, so ONE asset serves both themes with no filter, no
+  invert and no second file. V6 keeps this in sync with saved-theme via
+  custom.scss.
 -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" preserveAspectRatio="xMidYMid meet">
-  <defs>
-    <pattern id="hx" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-      <line class="hatch" x1="0" y1="0" x2="0" y2="10" stroke-width="1.7"/>
-    </pattern>
-    <style>
-      .mass  { fill: #e6e1d9; }
-      .core  { fill: #d5cfc5; }
-      .paper { fill: #faf8f5; }
-      .hatch { stroke: #cbc5bb; }
-      .key   { fill: none; stroke: #1b1c1f; stroke-width: 3.2; }
-      .str   { fill: none; stroke: #5b6169; stroke-width: 2; }
-      .hair  { fill: none; stroke: #c9c3b9; stroke-width: 1.3; }
-      .wine  { fill: none; stroke: #7a2430; stroke-width: 5.5; }
-      .reg   { fill: none; stroke: #d9c4c7; stroke-width: 2; }
-      .mark  { fill: none; stroke: #b3ada3; stroke-width: 1.4; }
-      @media (prefers-color-scheme: dark) {
-        .mass  { fill: #272a30; }
-        .core  { fill: #33373f; }
-        .paper { fill: #141518; }
-        .hatch { stroke: #3f434a; }
-        .key   { stroke: #eceae5; }
-        .str   { stroke: #9aa0aa; }
-        .hair  { stroke: #3a3d43; }
-        .wine  { stroke: #d98b96; }
-        .reg   { stroke: #5b4a4d; }
-        .mark  { stroke: #4a4d54; }
-      }
-    </style>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" preserveAspectRatio="xMidYMid meet">
+  <style>
+    .key  { fill:none; stroke:#1b1c1f; stroke-width:3; }
+    .str  { fill:none; stroke:#5b6169; stroke-width:2; }
+    .wine { fill:none; stroke:#7a2430; stroke-width:3; }
+    .tint { fill:#e6e1d9; }
+    @media (prefers-color-scheme: dark) {
+      .key { stroke:#eceae5; } .str { stroke:#9aa0aa; } .wine { stroke:#d98b96; }
+      .tint { fill:#272a30; }
+    }
+  </style>
 
-  <!-- the structural mass, hatched as a cut surface -->
-  <rect class="mass" x="40" y="130" width="1120" height="300"/>
-  <rect class="hatch" fill="url(#hx)" stroke="none" x="40" y="130" width="1120" height="300"/>
-  <!-- upper core -->
-  <rect class="core" x="40" y="130" width="1120" height="116"/>
-  <rect class="hatch" fill="url(#hx)" stroke="none" x="40" y="130" width="1120" height="116"/>
+  <!-- the order that stands: dense, low -->
+  <rect class="tint" x="80" y="250" width="450" height="340"/>
+  <path class="str" d="M80 250 V590 M170 250 V590 M260 250 V590 M350 250 V590 M440 250 V590 M530 250 V590"/>
 
-  <!-- the opening: a registered gap through the full height of the mass -->
-  <rect class="paper" x="505" y="130" width="190" height="300"/>
+  <!-- the order being prepared: fewer members, wider bays -->
+  <rect class="tint" x="670" y="250" width="450" height="340"/>
+  <path class="str" d="M670 250 V590 M870 250 V590 M1070 250 V590"/>
 
-  <!-- mass profile -->
-  <path class="key" d="M40 130 L1160 130 M40 430 L1160 430 M40 130 L40 430 M1160 130 L1160 430"/>
-  <!-- the two structural edges of the opening -->
-  <path class="key" d="M505 130 L505 430 M695 130 L695 430"/>
-  <!-- strata, interrupted by the opening -->
-  <path class="str"  d="M40 246 L505 246 M695 246 L1160 246"/>
-  <path class="hair" d="M40 348 L505 348 M695 348 L1160 348"/>
+  <!-- beam and ground, within each structure; open across the passage -->
+  <path class="key" d="M80 250 H530 M670 250 H1120"/>
+  <path class="key" d="M80 590 H530 M670 590 H1120"/>
 
-  <!-- the continuity datum: unbroken, wider than the mass -->
-  <line class="wine" x1="0" y1="430" x2="1200" y2="430"/>
+  <!-- the passage: the datum passes through it, not around it -->
+  <path class="wine" d="M530 210 V640 M670 210 V640"/>
 
-  <!-- the crossing continues beyond the mass -->
-  <path class="hair" d="M505 430 L505 486 M695 430 L695 486"/>
-  <path class="wine" d="M568 430 L568 470 M632 430 L632 470"/>
-
-  <!-- measured registration above the mass: sparse, unlabelled -->
-  <path class="hair" d="M40 96 L1160 96"/>
-  <path class="mark" d="M505 74 L505 118 M600 74 L600 118 M695 74 L695 118"/>
-  <path class="mark" d="M250 74 L250 108 M950 74 L950 108"/>
+  <!-- THE DATUM: one line, full width, raised once beyond the crossing -->
+  <path class="wine" d="M40 590 H530 L670 470 H1160"/>
 </svg>

@@ -42,10 +42,17 @@
     margin-bottom: var(--v6-space-md);
   }
 
-  /* Hero art keeps its 2:1 proportion and fills the (now single-column)
-     aside. Previously capped at 260px, which left it at ~4% of the Hero
-     area — too weak to read as a visual language. */
-  .v6-hero__art {
+  /* Hero art fills the (now single-column) aside, up to 640px. Previously
+     capped at 260px, which left it at ~4% of the Hero area — too weak to read
+     as a visual language.
+
+     Doubled class (0,2,0) is required, not stylistic: the generic
+     `.v6 img { max-width: 100% }` is (0,1,1) and otherwise WINS over this
+     single-class rule, so the 640px cap silently never applied and the art
+     stretched to the full container. At the 4:3 ratio that put it at ~61% of
+     the first screen at 1024–1100px; with the cap actually taking effect it is
+     ~30%. Must stay above `.v6 img` in specificity — never use !important. */
+  .v6 .v6-hero__art {
     width: 100%;
     max-width: 640px;
   }
@@ -121,10 +128,14 @@
     width: 100%;
   }
 
-  /* 辅助线稿在手机上几乎不可见，直接保留极低透明度即可。 */
-  .v6-hero__art {
+  /* 辅助线稿：上限 460px，与桌面端 max-width 取齐 —— 这样两个断点的
+     视觉重量一致，也压过 `.v6 img { max-width: 100% }`（需 doubling
+     class，详见 1100px 断点处的说明）。在 800px 视口下，若不设上限，
+     4:3 的图会占掉首屏约一半，作为辅助图形过重；设限后约 30%。
+     真实手机列宽（319–354px）小于该上限，因此手机观感不受影响。 */
+  .v6 .v6-hero__art {
     width: 100%;
-    max-width: none;
+    max-width: 460px;
   }
 
   /* Section 节奏收紧，避免移动端过长。 */
