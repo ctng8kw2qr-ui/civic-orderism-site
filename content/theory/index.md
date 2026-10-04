@@ -17,6 +17,88 @@ noindex: false
 <p class="inst4l-lead">研究中国政治为什么正在变化、变化可以如何发生，以及变化之后国家如何继续运行。</p>
   </section>
 
+  <section class="inst4l-section" id="research-index">
+<div class="inst4l-section__head">
+<p class="inst4-eyebrow">RESEARCH SECTIONS · 研究栏目索引</p>
+<h2 class="inst4l-section__title">研究由哪些栏目组成</h2>
+<p class="inst4l-section__desc">每一栏回答不同的问题，彼此互补而非平行。</p>
+</div>
+<div class="inst4l-secindex">
+    <a class="inst4l-secindex__item" href="/theory/" aria-current="page">
+      <span class="inst4l-secindex__num" aria-hidden="true">01</span>
+      <span class="inst4l-secindex__body">
+        <span class="inst4l-secindex__title">研究总览</span>
+        <span class="inst4l-secindex__en" lang="en">RESEARCH OVERVIEW</span>
+        <span class="inst4l-secindex__desc">研究的整体框架与三个研究方向。</span>
+      </span>
+    </a>
+    <a class="inst4l-secindex__item" href="/china/">
+      <span class="inst4l-secindex__num" aria-hidden="true">02</span>
+      <span class="inst4l-secindex__body">
+        <span class="inst4l-secindex__title">解析中共</span>
+        <span class="inst4l-secindex__en" lang="en">UNDERSTANDING THE PRESENT</span>
+        <span class="inst4l-secindex__desc">中共如何运行、为何失灵，以及正在发生什么变化。</span>
+      </span>
+    </a>
+    <a class="inst4l-secindex__item" href="/china-future/">
+      <span class="inst4l-secindex__num" aria-hidden="true">03</span>
+      <span class="inst4l-secindex__body">
+        <span class="inst4l-secindex__title">中国未来</span>
+        <span class="inst4l-secindex__en" lang="en">PREPARING THE FUTURE</span>
+        <span class="inst4l-secindex__desc">政治变化之后，国家如何继续运行。</span>
+      </span>
+    </a>
+    <a class="inst4l-secindex__item" href="/china-stage/">
+      <span class="inst4l-secindex__num" aria-hidden="true">04</span>
+      <span class="inst4l-secindex__body">
+        <span class="inst4l-secindex__title">中国阶段判断</span>
+        <span class="inst4l-secindex__en" lang="en">CHINA STAGE ASSESSMENT</span>
+        <span class="inst4l-secindex__desc">从财政、社保、金融与基层治理判断当前阶段。</span>
+      </span>
+    </a>
+    <a class="inst4l-secindex__item" href="/topics/">
+      <span class="inst4l-secindex__num" aria-hidden="true">05</span>
+      <span class="inst4l-secindex__body">
+        <span class="inst4l-secindex__title">研究专题</span>
+        <span class="inst4l-secindex__en" lang="en">RESEARCH TOPICS</span>
+        <span class="inst4l-secindex__desc">按具体政治问题深入。</span>
+      </span>
+    </a>
+    <a class="inst4l-secindex__item" href="/concepts/">
+      <span class="inst4l-secindex__num" aria-hidden="true">06</span>
+      <span class="inst4l-secindex__body">
+        <span class="inst4l-secindex__title">核心概念</span>
+        <span class="inst4l-secindex__en" lang="en">CORE CONCEPTS</span>
+        <span class="inst4l-secindex__desc">分析模型与概念索引。</span>
+      </span>
+    </a>
+    <a class="inst4l-secindex__item" href="/articles/">
+      <span class="inst4l-secindex__num" aria-hidden="true">07</span>
+      <span class="inst4l-secindex__body">
+        <span class="inst4l-secindex__title">阅读地图</span>
+        <span class="inst4l-secindex__en" lang="en">READING MAP</span>
+        <span class="inst4l-secindex__desc">按阅读目的选择文章路径。</span>
+      </span>
+    </a>
+    <a class="inst4l-secindex__item" href="/institution/">
+      <span class="inst4l-secindex__num" aria-hidden="true">08</span>
+      <span class="inst4l-secindex__body">
+        <span class="inst4l-secindex__title">制度机制</span>
+        <span class="inst4l-secindex__en" lang="en">INSTITUTIONAL MECHANISMS</span>
+        <span class="inst4l-secindex__desc">委员会、入口权与判断权的分工。</span>
+      </span>
+    </a>
+    <a class="inst4l-secindex__item" href="/institution-design/">
+      <span class="inst4l-secindex__num" aria-hidden="true">09</span>
+      <span class="inst4l-secindex__body">
+        <span class="inst4l-secindex__title">制度设计</span>
+        <span class="inst4l-secindex__en" lang="en">INSTITUTIONAL DESIGN</span>
+        <span class="inst4l-secindex__desc">可讨论、可修正、可检验的制度机制。</span>
+      </span>
+    </a>
+</div>
+  </section>
+
   <section class="inst4l-section">
   <div class="inst4l-section__head">
 <p class="inst4-eyebrow">RESEARCH DIRECTIONS · 三个研究方向</p>

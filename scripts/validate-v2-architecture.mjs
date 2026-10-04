@@ -2009,11 +2009,22 @@ for (const driftedPrinciple of ["国家连续", "依法治理", "长期建设"])
     `/start-here 第 04 问把“${driftedPrinciple}”与正式五原则并列成了新的原则`,
   );
 }
-// Start Here stays shorter than the route page: no full transition argument.
+// Start Here is the newcomer path: five understanding questions, then the
+// current organisational status (06) and the exit index (07). The original
+// assertion pinned this at five, which silently treated the two navigation
+// steps as content drift; they are a different kind of block from the five
+// questions, so the first five are still asserted verbatim and the two
+// navigation steps are asserted by their own headings instead of by count.
 assert(
-  (startHtml.match(/<span>0\d<\/span>/g) ?? []).length === 5,
-  "/start-here 章节数量应保持为五个问题",
+  (startHtml.match(/<span>0\d<\/span>/g) ?? []).length === 7,
+  "/start-here 章节数量应为五个理解问题 + 当前进展 + 继续阅读",
 );
+for (const heading of ["我们现在做到哪里", "继续阅读"]) {
+  assert(
+    startText.includes(heading),
+    `/start-here 缺少新读者路径章节「${heading}」`,
+  );
+}
 for (const item of civicOrderismConfig.transitionQuestions) {
   assert(
     !startText.includes(item.judgment),

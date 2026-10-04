@@ -26,42 +26,10 @@ body[data-article-type="institutional"] {
     padding-top: 1.6rem;
   }
 
-  & .article-inst__context {
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 0.4rem 0.5rem;
-    color: var(--inst-muted);
-    font-size: 0.8rem;
-    line-height: 1.5;
-  }
-
-  & .article-inst__context-link {
-    color: var(--inst-muted);
-    font-weight: 500;
-    text-decoration: none;
-  }
-
-  & .article-inst__context-link:hover {
-    color: var(--inst-accent);
-    text-decoration: underline;
-    text-underline-offset: 0.22em;
-  }
-
-  & .article-inst__context-sep {
-    color: var(--inst-muted);
-    opacity: 0.55;
-  }
-
-  & .article-inst__context-static {
-    color: var(--inst-muted);
-    font-weight: 500;
-  }
-
-  & .article-inst__context-current {
-    color: var(--inst-gray);
-    font-weight: 550;
-  }
+  /* Breadcrumb styling lives in v6/_article.scss, which is the rule that
+     actually applies on article pages — this file's selector is overridden by
+     it. Keeping a second copy here meant two sources of truth for the same
+     element and the change looked applied when it was not. */
 
   /* ---- Program label ---- */
   & .article-inst__program {
@@ -362,7 +330,11 @@ body[data-article-type="institutional"] {
   }
 
   & .article-content blockquote.callout.key-point .callout-title .callout-icon,
-  & .article-content blockquote.callout.key-point .callout-title .fold-callout-icon {
+  &
+    .article-content
+    blockquote.callout.key-point
+    .callout-title
+    .fold-callout-icon {
     display: none;
   }
 
@@ -387,7 +359,11 @@ body[data-article-type="institutional"] {
     font-weight: 540;
   }
 
-  & .article-content blockquote.callout.key-point .callout-content > :last-child {
+  &
+    .article-content
+    blockquote.callout.key-point
+    .callout-content
+    > :last-child {
     margin-bottom: 0;
   }
 
@@ -401,19 +377,24 @@ body[data-article-type="institutional"] {
     margin: 2.2em 0;
     padding: 0.1em 0 0.1em 1.15em;
     border: 0;
-    border-left: 2px solid
-      color-mix(in srgb, var(--inst-rule) 70%, transparent);
+    border-left: 2px solid color-mix(in srgb, var(--inst-rule) 70%, transparent);
     background: none;
     color: var(--inst-gray);
     font-size: 0.97em;
     line-height: 1.82;
   }
 
-  & .article-content blockquote:not([data-callout]):not(.key-sentence) > :first-child {
+  &
+    .article-content
+    blockquote:not([data-callout]):not(.key-sentence)
+    > :first-child {
     margin-top: 0;
   }
 
-  & .article-content blockquote:not([data-callout]):not(.key-sentence) > :last-child {
+  &
+    .article-content
+    blockquote:not([data-callout]):not(.key-sentence)
+    > :last-child {
     margin-bottom: 0;
   }
 
@@ -463,7 +444,9 @@ body[data-article-type="institutional"] {
     border-top: 1px solid var(--inst-rule-soft);
   }
 
-  & .article-continuation__direction + .article-continuation__direction
+  &
+    .article-continuation__direction
+    + .article-continuation__direction
     .article-continuation-card:first-child {
     border-top: 1px solid var(--inst-rule-soft);
   }
@@ -488,7 +471,9 @@ body[data-article-type="institutional"] {
     flex-shrink: 0;
     color: var(--inst-muted);
     font-size: 0.95rem;
-    transition: transform 160ms ease, color 160ms ease;
+    transition:
+      transform 160ms ease,
+      color 160ms ease;
   }
 
   & .article-continuation-card:hover::after {

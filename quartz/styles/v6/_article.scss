@@ -123,18 +123,23 @@ body[data-page-kind="article"] {
   }
 
   /* 栏目路径：安静的一行，位于 PROGRAM 标签之上 */
+  /* Breadcrumb — "where am I". This is the rule that actually applies on
+     article pages; the institutional-section rule above is overridden here.
+     Supporting navigation, so still lightweight: no background, no border, no
+     icon, no container. Discoverability is lifted by secondary text and a
+     slightly larger meta size, not by promoting it to body weight. */
   .article-inst__context {
     display: flex;
     flex-wrap: wrap;
     gap: 0.45rem;
     align-items: baseline;
-    color: var(--v6-text-muted);
-    font-size: var(--v6-text-meta);
+    color: var(--v6-text-secondary);
+    font-size: 0.82rem;
     line-height: 1.6;
   }
 
   .article-inst__context-link {
-    color: var(--v6-text-muted);
+    color: var(--v6-text-secondary);
     text-decoration: none;
     transition: color var(--v6-duration) var(--v6-ease);
   }
@@ -142,14 +147,25 @@ body[data-page-kind="article"] {
   .article-inst__context-link:hover,
   .article-inst__context-link:focus-visible {
     color: var(--v6-brand-text);
+    text-decoration: underline;
+    text-underline-offset: 0.22em;
   }
 
+  /* The site focus token, not the browser default blue ring. */
+  .article-inst__context-link:focus-visible {
+    outline: 2px solid var(--v6-focus);
+    outline-offset: 2px;
+    border-radius: var(--v6-radius-sm);
+  }
+
+  /* Separator stays muted so the levels read as one line, not three items. */
   .article-inst__context-sep {
-    color: var(--v6-border-strong);
+    color: var(--v6-text-muted);
+    opacity: 0.7;
   }
 
   .article-inst__context-current {
-    color: var(--v6-text-secondary);
+    color: var(--v6-text-primary);
   }
 
   /* PROGRAM 标签：与首页 eyebrow 同一视觉语言 */
