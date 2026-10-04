@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CONCEPT B — Threshold Mark
+     Inherits: the arch/passage suggested by the legacy colonnade.
+     Abstraction: an opening in a wall, doorway with a true arc head, plus ground line.
+     ELEMENTS: 1 circle, 1 arch, 1 ground = 3 (maximum legibility at 16px) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="butt">
+    <circle cx="50" cy="50" r="44"/>
+    <!-- arch: vertical jambs + semicircular head, open at the bottom -->
+    <path d="M34 74 L34 47 A16 16 0 0 1 66 47 L66 74"/>
+    <line x1="26" y1="74" x2="74" y2="74"/>
+  </g>
+</svg>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PHASE 4A CONCEPT — V6-native OG fallback. Direction B (Editorial Archive).
+     1200x630. All content inside a 1000x430 safe zone => 100px margins.
+     No article title, no photograph, no Hero artwork, no personnel. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#faf8f5"/>
+
+  <!-- Editorial archive frame: hairline rules only, no fill, no radius -->
+  <g fill="none" stroke="#e0dcd5" stroke-width="1">
+    <rect x="104" y="104" width="992" height="422"/>
+  </g>
+
+  <!-- Brand block: threshold mark + stacked wordmark (Full Lockup, compact scale) -->
+  <g transform="translate(150,158)">
+    <g fill="none" stroke="#7a2430" stroke-width="3.4" transform="scale(0.62)">
+      <circle cx="50" cy="50" r="44"/>
+      <path d="M34 74 L34 47 A16 16 0 0 1 66 47 L66 74"/>
+      <line x1="26" y1="74" x2="74" y2="74"/>
+    </g>
+    <text x="76" y="30" font-size="26" font-weight="600" letter-spacing="3" fill="#1b1c1f"
+          font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">公民秩序主义</text>
+    <text x="77" y="52" font-size="11.5" font-weight="560" letter-spacing="4.4" fill="#63676f"
+          font-family="-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif">CIVIC ORDERISM</text>
+  </g>
+
+  <!-- Weak C-device: one measured structural fragment, low contrast, analysis not decoration -->
+  <g stroke="#d9c4c7" stroke-width="1" fill="none">
+    <line x1="150" y1="316" x2="1050" y2="316"/>
+    <line x1="150" y1="316" x2="150" y2="360"/>
+    <line x1="375" y1="316" x2="375" y2="352"/>
+    <line x1="600" y1="316" x2="600" y2="360"/>
+    <line x1="825" y1="316" x2="825" y2="352"/>
+    <line x1="1050" y1="316" x2="1050" y2="360"/>
+  </g>
+
+  <!-- Institutional statement -->
+  <text x="150" y="428" font-size="30" font-weight="560" letter-spacing="0.6" fill="#45484f"
+        font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">研究中国政治转轨与制度承接</text>
+
+  <!-- Colophon: rules + folio logic, the editorial-archive signature -->
+  <g stroke="#e0dcd5" stroke-width="1">
+    <line x1="150" y1="470" x2="1050" y2="470"/>
+  </g>
+  <text x="150" y="497" font-size="12" letter-spacing="2.6" fill="#63676f"
+        font-family="-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif">RESEARCH PUBLICATION</text>
+  <text x="1050" y="497" font-size="12" letter-spacing="2.6" fill="#63676f" text-anchor="end"
+        font-family="-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif">civicorderism.com</text>
+</svg>

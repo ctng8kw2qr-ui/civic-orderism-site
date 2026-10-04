@@ -179,12 +179,71 @@ charcoal, restrained wine accent. **Do not introduce a new palette.**
 | `organization/` | ✓ **real only**             | ✓ documents/diagrams | ✗            |
 | `social/`       | ✓ restrained                | ✓                    | ✗            |
 
-**AI-generated imagery is not permitted anywhere in this tree.** Not
-political scenes, not "concept" renders, not portraits, not stock substitutes.
+AI-generated imagery is governed by §11, not prohibited outright.
 
 ---
 
-## 10. Forbidden content
+## 10. Photography policy
+
+Photography **is** permitted, under constraint.
+
+| Allowed | Forbidden |
+|---|---|
+| Documentary | Generic stock |
+| Architectural | Staged handshake |
+| Historical | Fake boardroom |
+| Institutional | Fake political scene |
+| Object / detail | Suit-portrait stock |
+| Real locations | Anything implying it is a real event when it is not |
+
+### Provenance is mandatory
+
+Any photograph, and **especially** any news photograph, must carry recorded
+source, licence and credit **before** it enters this tree. Record it beside the
+asset:
+
+```
+assets/v6/organization/PROVENANCE.md
+```
+
+| Field | Required |
+|---|---|
+| File | filename |
+| Source | publication / archive / photographer |
+| URL | origin link |
+| Licence | e.g. CC BY 4.0, press licence, written permission |
+| Credit line | exact text to display |
+| Retrieved | date |
+| Notes | any restriction on reuse or crop |
+
+**Unattributed news imagery must not enter the brand library.** If provenance
+cannot be established, do not use the image — use Tier 3 (no cover) instead.
+
+---
+
+## 11. AI artwork policy
+
+**Permitted** — must be unmistakably editorial artwork:
+
+- abstract editorial artwork
+- architectural abstraction
+- structural composition
+- texture / material study
+
+**Forbidden** — anything that could be read as documentary evidence:
+
+- political leaders, Chinese or otherwise
+- officials, official meetings, government bodies
+- military, police, security forces
+- protests, crowds, conflict, unrest
+- any photorealistic depiction of a political event
+
+**The test:** if a viewer could mistake the image for a news photograph, it
+fails and must not be used. AI output is artwork, never evidence.
+
+---
+
+## 12. Forbidden content
 
 Never add:
 
