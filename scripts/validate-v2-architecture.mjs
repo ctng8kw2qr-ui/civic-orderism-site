@@ -1333,7 +1333,7 @@ assert(
 );
 // The Start Here entry description must not depend on the section count.
 assert(
-  !articlesText.includes("用五个问题建立基础认识") &&
+  !articlesText.includes("用七个步骤建立基础认识") &&
     articlesText.includes("快速建立对公民秩序主义的基础认识"),
   "阅读地图的 Start Here 入口描述未同步为稳定文案",
 );
@@ -1566,7 +1566,7 @@ for (const [label, html, text] of [
 for (const requiredText of [
   "北美非营利法人及首届董事会筹备",
   "为什么现在进入组织建设",
-  "政治转型不仅需要观点，也需要能够承担法律、财务、人员与长期政治责任的组织",
+  "政治转轨不仅需要观点，也需要能够承担法律、财务、人员与长期政治责任的组织",
   "为什么需要法人",
   "让公共事业不依赖个人",
   "为什么需要董事会",

@@ -1259,6 +1259,7 @@ ${civicOrderismConfig.homeWhyNow.closing.map((line) => `        <p>${line}</p>`)
     <div class="v6-section__head">
       <p class="v6-eyebrow"><span class="v6-eyebrow__num">05</span>${civicOrderismConfig.homeTransition.englishLabel}<span aria-hidden="true"> · </span>和平转轨路线</p>
       <h2 class="v6-section__title">${civicOrderismConfig.homeTransition.title}</h2>
+      <p class="v6-transition__scope">${civicOrderismConfig.homeTransition.scopeNote}</p>
     </div>
     <ol class="v6-route__chain v6-transition__flow">
 ${civicOrderismConfig.homeTransition.steps
@@ -1363,12 +1364,12 @@ function formalPrinciplesList() {
 
 writeContent(
   "start-here/index.md",
-  `${yamlFrontmatter({ title: "5分钟了解公民秩序主义", description: "用五分钟了解公民秩序主义是什么、为什么是现在、政治转轨意味着什么、准备怎么做，以及最终想建立什么。", contentType: "新读者入口", aliases: ["start"] })}
+  `${yamlFrontmatter({ title: "5分钟了解公民秩序主义", description: "用五分钟了解公民秩序主义是什么、为什么是现在、政治转轨意味着什么、准备怎么做、最终想建立什么、现在做到哪里，以及接下来读什么。", contentType: "新读者入口", aliases: ["start"] })}
 
 <div class="start-page start-here-page">
-  <header class="start-page__header"><p class="resource-label">新读者入口</p><h1>5分钟了解公民秩序主义</h1><p>用五个问题建立基础认识：它是什么、为什么是现在、政治转轨意味着什么、准备怎么做，以及最终想建立什么。</p></header>
+  <header class="start-page__header"><p class="resource-label">新读者入口</p><h1>5分钟了解公民秩序主义</h1><p>用七个步骤建立基础认识：它是什么、为什么是现在、政治转轨意味着什么、准备怎么做、最终想建立什么、现在做到哪里，以及接下来读什么。</p></header>
   <div class="start-page__sections">
-    <section><span>01</span><div><h2>公民秩序主义是什么？</h2><p>公民秩序主义不是普通政治评论项目，也不是只提供文章和观点的内容平台。它是一条面向中国未来政治转轨的政治路线：理论研究为路线提供判断基础，组织建设为路线建立现实承接能力。</p><p>它要回答的不是哪一种制度听起来最理想，而是在降低冲突与社会代价的前提下，中国怎样完成下一次政治转型。</p><p class="start-roadmap__line">政治路线 → 组织承接能力 → 和平政治转轨</p></div></section>
+    <section><span>01</span><div><h2>公民秩序主义是什么？</h2><p>公民秩序主义不是普通政治评论项目，也不是只提供文章和观点的内容平台。它是一条面向中国未来政治转轨的政治路线：理论研究为路线提供判断基础，组织建设为路线建立现实承接能力。</p><p>它要回答的不是哪一种制度听起来最理想，而是在降低冲突与社会代价的前提下，中国怎样完成下一次政治转轨。</p><p class="start-roadmap__line">政治路线 → 组织承接能力 → 和平政治转轨</p></div></section>
     <section><span>02</span><div><h2>为什么是现在？</h2><p>过去几十年，中国社会普遍相信明天会比今天更好：普通人相信收入会增加，企业相信生意还能扩大，年轻人相信机会还会更多。</p><p>今天，越来越多阶层、行业和群体开始重新计算自己的未来，中共也越来越难回答整个社会都在追问的那个问题：明天到底会怎样？</p><p>当旧秩序越来越难继续创造新的受益者，而越来越多社会群体开始承受损失，寻找新的政治答案就已经成为现实需要。政治转轨不是未来某一天才需要面对的问题，它已经成为今天必须开始准备的问题。</p><p class="start-roadmap__line">明天会比今天更好 → 明天到底会怎样？ → 提前准备政治答案</p><p>更深入的理论解释，例如工业时代形成的治理方式与信息化社会之间的结构性失配，属于后续的研究内容：<a href="/civic-orderism/information-age-and-political-transition">信息化时代与政治转型</a>。</p></div></section>
     <section><span>03</span><div><h2>政治转轨意味着什么？</h2><p>政治转轨不是简单的政权崩溃，也不是街头革命。它不是等旧秩序倒下的那一刻才开始，也不是把国家本身当作革命对象。</p><p>公民秩序主义关心的重点是：政治权力发生变化的同时，国家和社会继续运行——公共服务不停摆，社会秩序不失控，普通人的生活不必为政治变化支付无法承受的代价。</p><p class="start-roadmap__line">政治权力改变 → 国家继续运行 → 社会保持稳定</p></div></section>
     <section><span>04</span><div><h2>公民秩序主义准备怎么做？</h2><p class="start-roadmap__line">旧体系无法自行改革 → 外部政治承接力量提前形成 → 降低转轨阻力 → 保持国家连续运行 → 逐步进入新的政治秩序</p><p>这是和平转轨路线的主线。它的方法边界，可以先用五条已经确定的政治原则说明。</p>${formalPrinciplesList()}<p>为什么内部改革无法完成破局、为什么需要外部政治承接、为什么和平转轨存在现实基础，以及政治变化以后怎样保持国家运行，在完整的和平转轨路线中展开。</p><div class="start-page__actions start-page__actions--editorial">
@@ -1384,7 +1385,7 @@ writeContent(
 <a class="start-editorial-link" href="/preparation/"><span>了解组织建设</span><span class="start-editorial-link__arrow" aria-hidden="true">→</span></a>
 <a class="start-editorial-link" href="/preparation/board"><span>董事会筹备</span><span class="start-editorial-link__arrow" aria-hidden="true">→</span></a>
 </div></div></section>
-    <section><span>07</span><div><h2>继续阅读</h2><p>读到这里，你已经有了完整的框架。下面五个入口对应网站的主要部分。</p>
+    <section><span>07</span><div><h2>继续阅读</h2><p>读到这里，你已经有了完整的框架。下面六个入口，前五个对应网站的主要部分，最后一个是按阅读目的选择的阅读地图。</p>
       <div class="start-exits">
       <a class="start-exit" href="/theory/"><span class="start-exit__num" aria-hidden="true">01</span><span class="start-exit__body"><span class="start-exit__title">研究</span><span class="start-exit__desc">理解我们如何判断当前中国。</span></span></a>
       <a class="start-exit" href="/civic-orderism/"><span class="start-exit__num" aria-hidden="true">02</span><span class="start-exit__body"><span class="start-exit__title">政治路线</span><span class="start-exit__desc">了解和平政治转轨方案。</span></span></a>
@@ -1729,7 +1730,7 @@ writeInstitutionalContent(
 
 ## 公民秩序主义是什么
 
-公民秩序主义首先是一条面向中国未来政治转型的政治路线。它主张通过和平转轨、行政承接、责任区分和制度重组，降低政治变化的社会成本，保持国家与公共服务连续，并建立能够限制权力、明确责任和持续纠错的新秩序。
+公民秩序主义首先是一条面向中国未来政治转轨的政治路线。它主张通过和平转轨、行政承接、责任区分和制度重组，降低政治变化的社会成本，保持国家与公共服务连续，并建立能够限制权力、明确责任和持续纠错的新秩序。
 
 理论是这条路线的基础，用于解释国家失灵、公共秩序和制度能力；组织建设是长期承接结构，使路线能够被持续研究、传播、完善和实践。
 
@@ -1867,7 +1868,7 @@ const inst4lAxes = [
     num: "03",
     phase: "准备未来",
     title: "中国未来",
-    desc: "政治转型最终必须回答国家如何继续运行，以及新的政治秩序如何建立。",
+    desc: "政治转轨最终必须回答国家如何继续运行，以及新的政治秩序如何建立。",
     href: "/china-future/",
   },
 ];
@@ -1964,7 +1965,7 @@ function inst4lSectionIndexBlock() {
     <div class="inst4l-section__head">
       <p class="inst4-eyebrow">RESEARCH SECTIONS · 研究栏目索引</p>
       <h2 class="inst4l-section__title">研究由哪些栏目组成</h2>
-      <p class="inst4l-section__desc">每一栏回答不同的问题，彼此互补而非平行。</p>
+      <p class="inst4l-section__desc">公民秩序主义的研究围绕三个方向展开：理解现在、准备转轨、准备未来。以下九个栏目构成具体研究索引，每一栏回答不同的问题，彼此互补而非平行。</p>
     </div>
     <div class="inst4l-secindex">
 ${items}
@@ -2009,7 +2010,7 @@ writeInstitutionalContent(
   <section class="inst4l-hero">
     <p class="inst4-eyebrow">ABOUT</p>
     <h1 class="inst4l-title">关于公民秩序主义</h1>
-    <p class="inst4l-lead">一条面向中国未来、以和平承接与保留国家为核心的政治转型路线。</p>
+    <p class="inst4l-lead">一条面向中国未来、以和平承接与保留国家为核心的政治转轨路线。</p>
   </section>
 
   <div class="inst4l-body">
@@ -2017,7 +2018,7 @@ writeInstitutionalContent(
       ${inst4lSection(
         "定位",
         "公民秩序主义是什么",
-        `<p>公民秩序主义首先是一条面向中国未来政治转型的政治路线。它主张通过和平转轨、行政承接、责任区分和制度重组，降低政治变化的社会成本，保持国家与公共服务连续，并建立能够限制权力、明确责任和持续纠错的新秩序。</p>
+        `<p>公民秩序主义首先是一条面向中国未来政治转轨的政治路线。它主张通过和平转轨、行政承接、责任区分和制度重组，降低政治变化的社会成本，保持国家与公共服务连续，并建立能够限制权力、明确责任和持续纠错的新秩序。</p>
 <p>理论是这条路线的基础，用于解释国家失灵、公共秩序和制度能力；组织建设是长期承接结构，使路线能够被持续研究、传播、完善和实践。</p>`,
       )}
 
@@ -2040,11 +2041,23 @@ writeInstitutionalContent(
       ${inst4lSection(
         "路线",
         "政治路线",
-        `<p>政治转型的目标不是摧毁国家，而是改变政治。公民秩序主义主张一条不依赖革命、不以清算为目，并保持国家连续性的和平转轨路线。</p>
+        `<p>政治转轨的目标不是摧毁国家，而是改变政治。公民秩序主义主张一条不依赖革命、不以清算为目，并保持国家连续性的和平转轨路线。</p>
 <p class="inst4l-link"><a href="/civic-orderism/">阅读政治路线 <span aria-hidden="true">→</span></a></p>`,
       )}
 
-      ${inst4lSection("研究体系", "从理解旧秩序，到准备新的政治秩序", inst4lAxesBlock(), "研究围绕三个方向展开：理解现在、准备转轨、准备未来。")}
+      <!-- About answers "who are we", not "what does the research say". The
+           three direction cards used to be reproduced here word for word from
+           /theory/ (identical hrefs, phases, titles and descriptions), so a
+           reader arriving from Research learned nothing new. About now keeps
+           its own stance as a research programme and links down; the framework
+           itself and the nine-column index live on the research page. -->
+      ${inst4lSection(
+        "研究体系",
+        "从理解旧秩序，到准备新的政治秩序",
+        `<p>公民秩序主义不只是一个发表判断的地方。我们把研究当作政治路线的前置条件：没有对现有秩序为什么失效的完整判断，路线就只能停留在主张层面。</p>
+<p>研究围绕三个方向展开：理解现在，对应解析中共；准备转轨，对应政治路线；准备未来，对应中国未来。三个方向分别回答旧秩序为什么走不下去、和平转轨如何成为可能，以及政治变化之后国家如何继续运行。</p>
+<p class="inst4l-link"><a href="/theory">进入研究体系：三个方向与九个研究栏目 <span aria-hidden="true">→</span></a></p>`,
+      )}
 
       ${inst4lSection(
         "正式文件",
@@ -2257,7 +2270,7 @@ function peacefulRouteStagesHtml(
 
 writeInstitutionalContent(
   "civic-orderism/index.md",
-  `${yamlFrontmatter({ title: "公民秩序主义", description: "一条面向中国未来的低阻力、低风险和平政治转型路线：保留国家，改变政治；承接秩序，重建规则。", contentType: "栏目" })}
+  `${yamlFrontmatter({ title: "公民秩序主义", description: "一条面向中国未来的低阻力、低风险和平政治转轨路线：保留国家，改变政治；承接秩序，重建规则。", contentType: "栏目" })}
 
 <div class="inst4 inst4l inst4l-route">
   <section class="inst4l-hero">
@@ -2311,6 +2324,7 @@ writeInstitutionalContent(
       <p class="inst4-eyebrow">${civicOrderismConfig.peacefulRoute?.englishLabel ?? ""}</p>
       <h2 class="inst4l-section__title">${civicOrderismConfig.peacefulRoute?.title ?? ""}</h2>
       <p class="inst4l-section__desc">${civicOrderismConfig.peacefulRoute?.desc ?? ""}</p>
+      <p class="inst4l-section__scope">${civicOrderismConfig.peacefulRoute?.scopeNote ?? ""}</p>
     </div>
     ${peacefulRouteStagesHtml(civicReadingStages)}
   </section>
@@ -2470,7 +2484,7 @@ writeInstitutionalContent(
     // building starts now. Same concept name must not be reused.
     "WHY ORGANIZE NOW",
     "为什么现在进入组织建设",
-    `<p>政治转型不仅需要观点，也需要能够承担法律、财务、人员与长期政治责任的组织。公民秩序主义当前正在推进北美非营利法人及首届董事会筹备，从理论表达进入组织基础建设阶段。</p>
+    `<p>政治转轨不仅需要观点，也需要能够承担法律、财务、人员与长期政治责任的组织。公民秩序主义当前正在推进北美非营利法人及首届董事会筹备，从理论表达进入组织基础建设阶段。</p>
 <p>现阶段重点是理论建设、公共传播以及北美非营利法人和首届董事会筹备，而不是追求短期声势或迅速扩大参与规模。</p>`,
   )}
 
@@ -2768,7 +2782,7 @@ writeInstitutionalContent(
       <div class="inst4-route__state-item"><h3>公共服务连续</h3><p>医院、学校、交通、财政、社保等不能因为政治变化中断。</p><small>持续研究 · Research in Progress</small></div>
       <div class="inst4-route__state-item"><h3>法律连续性</h3><p>政治制度改变不等于法律秩序瞬间归零。</p><small>持续研究 · Research in Progress</small></div>
       <div class="inst4-route__state-item"><h3>地方治理</h3><p>地方政府必须保持基本治理能力。</p><small>持续研究 · Research in Progress</small></div>
-      <div class="inst4-route__state-item"><h3>财政与社会保障</h3><p>政治转型必须考虑现实财政责任。</p><small>持续研究 · Research in Progress</small></div>
+      <div class="inst4-route__state-item"><h3>财政与社会保障</h3><p>政治转轨必须考虑现实财政责任。</p><small>持续研究 · Research in Progress</small></div>
       <div class="inst4-route__state-item"><h3>社会秩序</h3><p>避免权力真空和社会撕裂。</p><small>持续研究 · Research in Progress</small></div>
       <div class="inst4-route__state-item"><h3>政治责任</h3><p>区分政治责任、历史责任与明确的刑事责任。</p><small>持续研究 · Research in Progress</small></div>
     </div>

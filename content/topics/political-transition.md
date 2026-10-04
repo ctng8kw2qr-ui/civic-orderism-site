@@ -66,6 +66,6 @@ noindex: false
 
 ## 相关核心概念
 
-- [[concepts/nonviolent-transition|非暴力转型]] — 以降低冲突、避免清算并维持国家基本能力为约束的政治转型路径。
+- [[concepts/nonviolent-transition|非暴力转型]] — 以降低冲突、避免清算并维持国家基本能力为约束的政治转轨路径。
 - [[concepts/state-system-upgrade|国家系统升级]] — 在保留国家连续性的同时重建入口、判断、执行、纠偏与问责系统。
 - [[concepts/political-route|政治路线]] — 把价值目标转化为进入现实、组织行动与制度过渡的可执行路径。

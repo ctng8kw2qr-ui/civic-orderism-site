@@ -21,7 +21,7 @@ noindex: false
 <div class="inst4l-section__head">
 <p class="inst4-eyebrow">RESEARCH SECTIONS · 研究栏目索引</p>
 <h2 class="inst4l-section__title">研究由哪些栏目组成</h2>
-<p class="inst4l-section__desc">每一栏回答不同的问题，彼此互补而非平行。</p>
+<p class="inst4l-section__desc">公民秩序主义的研究围绕三个方向展开：理解现在、准备转轨、准备未来。以下九个栏目构成具体研究索引，每一栏回答不同的问题，彼此互补而非平行。</p>
 </div>
 <div class="inst4l-secindex">
     <a class="inst4l-secindex__item" href="/theory/" aria-current="page">
@@ -121,7 +121,7 @@ noindex: false
 <a class="inst4l-axis" href="/china-future/">
   <span class="inst4l-axis__num" aria-hidden="true">03</span>
   <span class="inst4l-axis__cell"><span class="inst4l-axis__phase">准备未来</span><span class="inst4l-axis__title">中国未来</span></span>
-  <span class="inst4l-axis__desc">政治转型最终必须回答国家如何继续运行，以及新的政治秩序如何建立。</span>
+  <span class="inst4l-axis__desc">政治转轨最终必须回答国家如何继续运行，以及新的政治秩序如何建立。</span>
   <span class="inst4l-axis__arrow" aria-hidden="true">→</span>
 </a>
 </div>

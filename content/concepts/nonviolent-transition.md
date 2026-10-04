@@ -2,7 +2,7 @@
 title: "非暴力转型"
 date: 2026-07-19
 updated: 2026-07-20
-description: "以降低冲突、避免清算并维持国家基本能力为约束的政治转型路径。"
+description: "以降低冲突、避免清算并维持国家基本能力为约束的政治转轨路径。"
 contentType: "核心概念"
 status: published
 listed: false
@@ -15,7 +15,7 @@ publicationStatus: reviewing
 
 <p class="concept-status concept-status--reviewing">研究概念</p>
 
-<p class="concept-definition">以降低冲突、避免清算并维持国家基本能力为约束的政治转型路径。</p>
+<p class="concept-definition">以降低冲突、避免清算并维持国家基本能力为约束的政治转轨路径。</p>
 
 | 字段     | 内容       |
 | -------- | ---------- |

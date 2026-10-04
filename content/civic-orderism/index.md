@@ -2,7 +2,7 @@
 title: "公民秩序主义"
 date: 2026-07-19
 updated: 2026-07-20
-description: "一条面向中国未来的低阻力、低风险和平政治转型路线：保留国家，改变政治；承接秩序，重建规则。"
+description: "一条面向中国未来的低阻力、低风险和平政治转轨路线：保留国家，改变政治；承接秩序，重建规则。"
 contentType: "栏目"
 status: published
 listed: true
@@ -16,7 +16,7 @@ noindex: false
 <h1 class="inst4l-title">公民秩序主义</h1>
 <p class="inst4-route__en">Civic Orderism</p>
 <p class="inst4-route__judgment">保留国家，改变政治。</p>
-<p class="inst4l-lead">一条面向中国未来的低阻力、低风险和平政治转型路线。</p>
+<p class="inst4l-lead">一条面向中国未来的低阻力、低风险和平政治转轨路线。</p>
 <p class="inst4-route__intro">公民秩序主义关注的，不只是旧政治秩序如何结束，而是中国如何在保持国家连续性的前提下，建立下一套能够长期运行的政治秩序。</p>
 <div class="inst4-route__cta">
       <a href="/civic-orderism/civic-orderism-overview">阅读《公民秩序主义总论》 <span aria-hidden="true">→</span></a>
@@ -56,7 +56,7 @@ noindex: false
 </div>
 <div class="inst4-route__option inst4-route__option--chosen">
 <h3>公民秩序主义</h3>
-<p>保留国家，改变政治。通过降低转型阻力、建立新旧政治信任和制度承接能力，完成和平政治转型。</p>
+<p>保留国家，改变政治。通过降低转轨阻力、建立新旧政治信任和制度承接能力，完成和平政治转轨。</p>
 </div>
 </div>
   </section>
@@ -66,6 +66,7 @@ noindex: false
 <p class="inst4-eyebrow">PEACEFUL TRANSITION ROUTE</p>
 <h2 class="inst4l-section__title">和平转轨路线：六个阶段</h2>
 <p class="inst4l-section__desc">六个阶段首先说明中国政治转轨为什么能够展开，其次才是文章入口。每一阶段只列一到两篇代表文章，其余研究进入延伸阅读。</p>
+<p class="inst4l-section__scope">这是路线的完整阶段定义。首页与「5分钟了解」中的步骤是同一主线的摘要，与本页阶段不逐条对应。</p>
 </div>
 <div class="inst4-route__readstage">
 <div class="inst4-route__readstage-head">
@@ -268,14 +269,14 @@ noindex: false
 <p class="inst4-eyebrow">WHY THE ROUTE CAN HAPPEN</p>
 <h2 class="inst4l-section__title">为什么和平转轨能够发生</h2>
 </div>
-<h3 class="inst4-route__readstage-title">政治转型如何成为可能？</h3>
+<h3 class="inst4-route__readstage-title">和平转轨如何成为可能？</h3>
 <ol class="inst4-route__chain">
 <li><span>1</span><p>旧秩序失去持续制造利益与共同预期的能力</p></li>
 <li><span>2</span><p>体制内外利益与政治预期重新分化</p></li>
 <li><span>3</span><p>新的政治力量建立信誉与承接能力</p></li>
 <li><span>4</span><p>新旧政治力量形成沟通与信任</p></li>
 <li><span>5</span><p>政治谈判</p></li>
-<li><span>6</span><p>国家连续性下的政治转型</p></li>
+<li><span>6</span><p>国家连续性下的政治转轨</p></li>
 <li><span>7</span><p>新的制度秩序</p></li>
 </ol>
 <div class="inst4-route__principles">
@@ -285,12 +286,12 @@ noindex: false
 <div class="inst4-route__principle"><h3>政治变化以后怎么办？</h3><p>第一原则不是立即重建一切，而是国家继续运行：公务员、地方政府、医院、学校、财政、交通、社会保障、公共安全等国家体系继续工作。没有完成调整的制度继续运行。调整一样，修改一样。</p></div>
 </div>
 <h3 class="inst4-route__readstage-title">为什么强调低阻力？</h3>
-<p class="inst4-route__statement">政治转型首先是现实中的人做出的选择。</p>
+<p class="inst4-route__statement">政治转轨首先是现实中的人做出的选择。</p>
 <p class="inst4-route__actor-line">官僚、企业、地方政府、军警系统、普通家庭、既有利益群体 —— 他们都会判断：改变以后，我会失去什么？</p>
 <ul class="inst4-route__chips">
 <li>官僚</li><li>企业</li><li>地方政府</li><li>军警系统</li><li>普通家庭</li><li>既有利益群体</li>
 </ul>
-<p class="inst4-route__quote">成熟的政治转型，不是让所有人喜欢新制度，而是让越来越多人发现：接受改变，比阻止改变更加安全。</p>
+<p class="inst4-route__quote">成熟的政治转轨，不是让所有人喜欢新制度，而是让越来越多人发现：接受改变，比阻止改变更加安全。</p>
   </section>
 
   <section class="inst4l-section">
@@ -298,7 +299,7 @@ noindex: false
 <p class="inst4-eyebrow">ORGANIZATION</p>
 <h2 class="inst4l-section__title">为什么必须提前建立组织？</h2>
 </div>
-<p class="inst4-route__statement">政治转型发生之前，承接政治转型的能力就必须开始形成。</p>
+<p class="inst4-route__statement">政治转轨发生之前，承接政治转轨的能力就必须开始形成。</p>
 <ul class="inst4-route__list">
 <li>政治信誉</li>
 <li>组织能力</li>

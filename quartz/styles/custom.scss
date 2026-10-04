@@ -7419,6 +7419,18 @@ article a.internal {
   padding-inline: 0;
 }
 
+/* Reciprocal of the homepage transition scope note: declares that this page
+   carries the complete stage definition and that the shorter step lists
+   elsewhere are summaries of the same line, not a parallel stage count.
+   Auxiliary text only — no callout, no card, no icon. */
+.inst4l-section__scope {
+  max-width: 62ch;
+  margin: 0.6rem 0 0;
+  color: var(--v6-text-muted);
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+
 /* ── Research Section Index ────────────────────────────────────────
    Answers "what is here?" — the site structure. Distinct from the Reading
    Map, which answers "what should I read first?". Never merge the two.
