@@ -100,3 +100,321 @@ body[data-page-kind="article"] {
   --secondary: var(--v6-brand-text);
   --tertiary: var(--v6-brand-text);
 }
+
+/* ══════════════════════════════════════════════════════════════════
+   EDITORIAL LAYOUT — 让文章页与 V6 首页属于同一个网站
+   ══════════════════════════════════════════════════════════════════
+   现状：articleTypography.scss 把 .page-header / article / hr / .page-footer
+   全部夹在 --article-reading-width: 760px 内，于是「标题带」和「正文」
+   一样窄，读起来像 Markdown 文档而不是机构出版物。
+
+   处理原则（不推翻文章系统）：
+     - 正文阅读宽度保持 760px 不动。17px 字号下约 46 个汉字/行，
+       处于中文长文可读区间，无需为 V6 名义改动。
+     - 只把「标题带（header）」和「阅读尾部（page-footer）」放宽到
+       V6 内容列，形成 出版物式 的层级差；正文仍是舒适的长文栏。
+
+   这些 max-width 用的是作用域内变量，不影响其它页面类型。
+   ══════════════════════════════════════════════════════════════════ */
+body[data-page-kind="article"] {
+  /* ── 标题带 ───────────────────────────────────────────────── */
+  .article-inst {
+    display: block;
+  }
+
+  /* 栏目路径：安静的一行，位于 PROGRAM 标签之上 */
+  .article-inst__context {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    align-items: baseline;
+    color: var(--v6-text-muted);
+    font-size: var(--v6-text-meta);
+    line-height: 1.6;
+  }
+
+  .article-inst__context-link {
+    color: var(--v6-text-muted);
+    text-decoration: none;
+    transition: color var(--v6-duration) var(--v6-ease);
+  }
+
+  .article-inst__context-link:hover,
+  .article-inst__context-link:focus-visible {
+    color: var(--v6-brand-text);
+  }
+
+  .article-inst__context-sep {
+    color: var(--v6-border-strong);
+  }
+
+  .article-inst__context-current {
+    color: var(--v6-text-secondary);
+  }
+
+  /* PROGRAM 标签：与首页 eyebrow 同一视觉语言 */
+  .article-inst__program {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: baseline;
+    margin-top: var(--v6-space-md);
+    color: var(--v6-text-muted);
+    font-size: var(--v6-text-label);
+    font-weight: var(--v6-weight-label);
+    letter-spacing: var(--v6-tracking-label);
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  .article-inst__program-label {
+    color: var(--v6-brand-text);
+  }
+
+  .article-inst__program-sep {
+    color: var(--v6-border-strong);
+  }
+
+  .article-inst__program-zh {
+    letter-spacing: 0.02em;
+    text-transform: none;
+  }
+
+  /* 文章标题：出版物的重心。加宽可用行长，收紧字距，
+     但刻意不做成 Landing Page 级别的巨型标题。 */
+  .article-inst__title {
+    max-width: 26ch;
+    margin-top: var(--v6-space-sm);
+    color: var(--v6-text-primary);
+    font-size: clamp(1.95rem, 3.1vw, 2.6rem);
+    font-weight: var(--v6-weight-display);
+    letter-spacing: 0.004em;
+    line-height: 1.22;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+  }
+
+  /* Lead / deck：紧随标题的引导句 */
+  .article-inst__deck {
+    max-width: 46ch;
+    margin-top: var(--v6-space-md);
+    padding-left: var(--v6-space-sm);
+    border-left: 2px solid var(--v6-brand-line);
+    color: var(--v6-text-secondary);
+    font-size: var(--v6-text-lead);
+    font-weight: var(--v6-weight-lead);
+    line-height: 1.75;
+  }
+
+  /* 元信息：与标题带之间用一条细线分开，形成正式出版物页眉 */
+  .article-inst__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.5rem;
+    align-items: baseline;
+    margin-top: var(--v6-space-lg);
+    padding-top: var(--v6-space-sm);
+    border-top: 1px solid var(--v6-border);
+    color: var(--v6-text-muted);
+    font-size: var(--v6-text-meta);
+    line-height: 1.6;
+  }
+
+  .article-inst__meta time {
+    color: var(--v6-text-secondary);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* ══ 文章正文媒体规范（step 6）══════════════════════════════════ */
+body[data-page-kind="article"] {
+  .article-content :is(img, video) {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    /* CLS 保护：作者未提供尺寸时，按常见横图比例预留空间 */
+    aspect-ratio: attr(width) / attr(height);
+    border: 1px solid var(--v6-border);
+    border-radius: var(--v6-radius-sm);
+    background: var(--v6-surface-sunken);
+  }
+
+  /* 有明确宽高比时优先使用内联属性；退化为自动高度 */
+  .article-content img[width][height] {
+    aspect-ratio: auto;
+  }
+
+  .article-content figure {
+    margin: var(--v6-space-lg) 0;
+  }
+
+  .article-content figcaption {
+    max-width: 60ch;
+    margin-top: var(--v6-space-xs);
+    color: var(--v6-text-muted);
+    font-size: var(--v6-text-caption);
+    line-height: 1.7;
+  }
+
+  /* 图表 / 结构图：允许比正文略宽，但不越出编辑栏 */
+  .article-content figure :is(img, svg) {
+    margin-inline: auto;
+  }
+}
+
+/* ══ Core Judgment（step 5）═════════════════════════════════════
+   现有组件保留不动（ArticleInstitutionalCoreJudgment）。这里只做 V6 层级
+   校正：它读起来应该像 Executive Judgment / Core Assessment，
+   而不是广告卡或社媒引言卡。
+
+   做法：收窄到与正文同一阅读宽度、与正文之间拉开呼吸、细线降级为
+   中性边框色（不再是与正文争注意力的强调线），并让它与后续正文
+   有明确的间距。不使用背景块、不使用彩色边框。 */
+body[data-page-kind="article"] {
+  .article-inst-judgment {
+    max-width: var(--article-reading-width);
+    margin-inline: auto;
+    margin-top: var(--v6-space-2xl);
+  }
+
+  .article-inst-judgment__label {
+    font-size: var(--v6-text-label);
+    font-weight: var(--v6-weight-label);
+    letter-spacing: var(--v6-tracking-label);
+  }
+
+  /* 判断清单与紧随其后的正文之间必须留出呼吸，
+     否则最后一条判断会贴住正文段落。 */
+  .article-inst-judgment__statements {
+    margin-bottom: var(--v6-space-xl);
+  }
+
+  .article-inst-judgment__text {
+    font-size: 1.04rem;
+    font-weight: 520;
+    line-height: 1.78;
+  }
+
+  .article-inst-judgment__number {
+    color: var(--v6-text-muted);
+    font-variant-numeric: tabular-nums;
+    font-size: var(--v6-text-meta);
+    font-weight: var(--v6-weight-label);
+    letter-spacing: 0.08em;
+  }
+
+  /* 判断之间的分隔：用一条极宽间距而非线框，保持克制。 */
+  .article-inst-judgment__text + .article-inst-judgment__text {
+    margin-top: 0.85rem;
+  }
+}
+
+/* ══ Reading footer / series navigation（step 7）═════════════════
+   组件与内容模块**不删不改**（ArticleReadingFooter /
+   ArticleSeriesNavigation 保持原样）。这里只做 V6 视觉对齐。
+
+   两处需要处理：
+   1) 阅读尾部原本被夹在 780px（组件内 max-width），比新的标题带窄太多，
+      形成第三种栏宽。改为与标题带共用同一编辑栏，并按内容选择栏宽。
+   2) 继续阅读卡片是 8px 圆角 + 顶部彩色条 —— 属于 SaaS 卡片语言，
+      与 V6 的「细线 + 近直角」不一致。降级为：3px 圆角、去掉彩色顶条、
+      低对比 surface + 细边、hover 只做极克制变化。 */
+body[data-page-kind="article"] {
+  .key-points-card,
+  .article-series-nav,
+  .article-knowledge,
+  .article-continuation,
+  .article-cta {
+    max-width: none;
+    margin-inline: auto;
+  }
+
+  /* 段落级文字块仍受阅读宽度约束，避免长行 */
+  .article-continuation > h2,
+  .article-continuation__related > h3,
+  .article-continuation__direction > h3,
+  .article-series-nav p,
+  .article-knowledge p {
+    max-width: var(--article-reading-width);
+  }
+
+  /* 继续阅读：按可用宽度自适应列数，桌面最多 3 列 */
+  .article-continuation__grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+    gap: 1px;
+    align-items: stretch;
+    /* 用 1px 间隙 + 底色构成细网格，而不是各自漂在页面上的卡片堆 */
+    background: var(--v6-border);
+    border-block: 1px solid var(--v6-border);
+  }
+
+  .article-continuation__grid--route {
+    max-width: 46rem;
+  }
+
+  .article-continuation-card {
+    border: 0;
+    border-radius: 0;
+    background: var(--v6-background);
+    color: var(--v6-text-secondary);
+  }
+
+  /* 去掉顶部彩色装饰条（SaaS card 语言） */
+  .article-continuation-card::before {
+    content: none;
+  }
+
+  .article-continuation-card:hover,
+  .article-continuation-card:focus-visible {
+    border-color: transparent;
+    background: var(--v6-surface);
+    box-shadow: none;
+    color: var(--v6-text-primary);
+  }
+
+  .article-continuation-card__eyebrow {
+    color: var(--v6-brand-text);
+    font-size: var(--v6-text-label);
+    font-weight: var(--v6-weight-label);
+    letter-spacing: 0.08em;
+  }
+
+  .article-continuation-card__title {
+    color: var(--v6-text-primary);
+  }
+
+  .article-continuation-card__title a {
+    color: var(--v6-text-primary);
+  }
+
+  .article-continuation-card__title a:hover {
+    color: var(--v6-brand-text);
+  }
+}
+
+/* ══ Editorial Cover（step 9）═══════════════════════════════════
+   接口约定（见 quartz/static/assets/v6/editorial/README.md）：
+     cover:    /static/assets/v6/editorial/<name>.webp   （站内相对路径）
+     coverAlt: 可选；缺省回退到文章标题
+   无 cover 时不输出任何 <img>，标题带退回纯排版形态。
+
+   CLS 保护：图片以 1.9:1 比例预留空间，loaded 后按真实尺寸显示。
+   用 aspect-ratio 而非固定高度，因此在窄屏也不会拉出超大色块。 */
+body[data-page-kind="article"] {
+  .article-inst__cover {
+    margin: var(--v6-space-lg) 0 0;
+  }
+
+  .article-inst__cover img {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.9 / 1;
+    object-fit: cover;
+    border: 1px solid var(--v6-border);
+    border-radius: var(--v6-radius-sm);
+    background: var(--v6-surface-sunken);
+  }
+}
