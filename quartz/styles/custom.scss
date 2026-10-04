@@ -8250,28 +8250,29 @@ body[data-slug="index"] article {
    V4 Institutional Home — independent institutional landing page.
    Typography + Grid + Whitespace + a single document focus.
    ================================================================ */
-:root {
-  --inst4-bg: #f7f5f1;
-  --inst4-bg-soft: #efece6;
-  --inst4-ink: #17181c;
-  --inst4-ink-2: #3a3d44;
-  --inst4-gray: #5b6069;
-  --inst4-muted: #60646c;
-  --inst4-line: #ddd9d1;
-  --inst4-line-soft: #e6e2da;
-  --inst4-accent: #2e3d4f;
-}
+/* Round 1 — token wiring. The `.inst4l` pages were carrying their own palette
+   and their own accent (a blue), which is why the research and organisation
+   pages read as a different publication from the homepage. They are now
+   aliases: V6 stays the single source, and nothing here redefines a colour.
 
-:root[saved-theme="dark"] {
-  --inst4-bg: #12141a;
-  --inst4-bg-soft: #1a1d24;
-  --inst4-ink: #e7e9ee;
-  --inst4-ink-2: #b6bcc6;
-  --inst4-gray: #9aa1ab;
-  --inst4-muted: #858c96;
-  --inst4-line: #2a2e36;
-  --inst4-line-soft: #23272f;
-  --inst4-accent: #9fb2c8;
+   This block has no dark counterpart on purpose. --v6-* is already defined on
+   both :root and :root[saved-theme="dark"], and it resolves on these pages, so
+   dark mode follows automatically. A second hardcoded dark set would be
+   duplicated logic and the next place the two systems drift apart.
+
+   --inst4-accent maps to --v6-brand-text rather than --v6-brand: those two V6
+   tokens are split because the contrast requirement is inverted between them.
+   brand-text must pass on the page canvas, brand must carry white text. */
+:root {
+  --inst4-bg: var(--v6-surface);
+  --inst4-bg-soft: var(--v6-surface-sunken);
+  --inst4-ink: var(--v6-text-primary);
+  --inst4-ink-2: var(--v6-text-secondary);
+  --inst4-gray: var(--v6-text-muted);
+  --inst4-muted: var(--v6-text-muted);
+  --inst4-line: var(--v6-border);
+  --inst4-line-soft: var(--v6-border);
+  --inst4-accent: var(--v6-brand-text);
 }
 
 /* ---- V4 home container (full-width institutional page) ---- */
@@ -8962,7 +8963,7 @@ p.inst4-work__initiative-note {
   border: 0;
   border-top: 2px solid var(--inst4-accent);
   border-bottom: 1px solid var(--inst4-line);
-  background: color-mix(in srgb, var(--inst4-bg-soft) 42%, var(--inst4-bg));
+  background: var(--v6-surface-sunken);
   color: var(--inst4-ink);
 }
 
@@ -9712,7 +9713,7 @@ body[data-slug="preparation"] {
   max-width: 1360px;
   margin: 0 auto;
   padding: 0 clamp(1.25rem, 4vw, 3.5rem);
-  background: var(--inst4-bg);
+  background: var(--v6-surface);
   color: var(--inst4-ink);
   font-size: 17px;
   line-height: 1.8;
@@ -10632,9 +10633,14 @@ body[data-slug="preparation"] {
   transition: background 160ms ease;
 }
 
+/* A background swap would no longer read: after the token wiring --inst4-bg and
+   --inst4-bg-soft are #fffefc and #f3f0eb, a delta of 11 across a 313px tile.
+   Colour change is V6's own hover language everywhere else, so it is used here
+   too rather than inventing a second convention. */
 .inst4l-tool:hover,
 .inst4l-tool:focus-visible {
-  background: var(--inst4-bg-soft);
+  background: transparent;
+  color: var(--v6-brand-text);
   outline: none;
 }
 
