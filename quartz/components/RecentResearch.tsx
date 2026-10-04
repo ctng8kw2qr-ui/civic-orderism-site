@@ -14,7 +14,7 @@ interface Options {
 }
 
 /**
- * V6 — Institutional Editorial · 最新研究
+ * V6 — Institutional Editorial · 分析与判断
  *
  * 编辑出版式排布：一篇主文章 + 若干次级文章，而不是等权重卡片网格。
  *
@@ -42,16 +42,6 @@ interface Options {
  * `published`。因此这里直接读取 frontmatter.date，避免落到文件系统
  * mtime 这类不稳定的时间源。
  */
-
-const SECTION_LABELS: Record<string, string> = {
-  theory: "理论总纲",
-  china: "解析中共",
-  "china-stage": "阶段判断",
-  "china-future": "中国未来",
-  "civic-orderism": "政治路线",
-  institution: "制度设计",
-  "institution-design": "制度设计",
-};
 
 /** 已输出的构建期告警，避免同一问题在每页渲染时重复刷屏。 */
 const emittedWarnings = new Set<string>();
@@ -97,15 +87,6 @@ function hasHomepageLead(page: QuartzPluginData): boolean {
  */
 function isValueGoal(page: QuartzPluginData): boolean {
   return page.frontmatter?.category === "核心政治总论";
-}
-
-function readSection(page: QuartzPluginData): string {
-  const category = page.frontmatter?.category;
-  if (typeof category === "string" && category.trim().length > 0) {
-    return category.trim();
-  }
-  const prefix = (page.slug ?? "").split("/")[0];
-  return SECTION_LABELS[prefix] ?? "研究";
 }
 
 function formatDate(raw: unknown): string | null {
@@ -190,7 +171,7 @@ export default ((userOpts?: Options) => {
             </figure>
           ) : null}
           <span class="v6-latest__lead-meta">
-            <span class="v6-latest__tag">{readSection(lead)}</span>
+            <span class="v6-latest__featured-label">FEATURED</span>
             {formatDate(lead.frontmatter?.date) ? (
               <time
                 class="v6-latest__date"
@@ -211,7 +192,7 @@ export default ((userOpts?: Options) => {
 
         {secondary.length > 0 ? (
           <ul class="v6-latest__list">
-            {secondary.map((page) => (
+            {secondary.map((page, index) => (
               <li class="v6-latest__item">
                 <a
                   class="v6-latest__item-link"
@@ -219,7 +200,9 @@ export default ((userOpts?: Options) => {
                   data-slug={page.slug}
                 >
                   <span class="v6-latest__item-meta">
-                    <span class="v6-latest__tag">{readSection(page)}</span>
+                    <span class="v6-latest__index">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
                     {formatDate(page.frontmatter?.date) ? (
                       <time
                         class="v6-latest__date"
