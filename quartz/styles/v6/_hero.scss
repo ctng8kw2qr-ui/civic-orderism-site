@@ -1,0 +1,472 @@
+@use "../variables.scss" as *;
+
+/**
+ * V6 — Hero · E3「Radical Minimal」
+ * ================================================================
+ * 整张 viewport 是一张画布，不是「左栏文字 + 右栏图形」。右侧主动留白。
+ * 不设任何独立图形。
+ *
+ * 三层：主叙事 → 行动层 → 状态层，三层不混。
+ * 层级：文字 > 留白 > 品牌纹理 > 几何装饰。
+ *
+ * ── VERTICAL RHYTHM（不是目测定位）─────────────────────────────────
+ * 全部自全站 spacing scale 派生，系数取自 --v6-space-lg：
+ *
+ *   --e3-r1  0.5  × lg   编号/阶段 → 品牌行
+ *   --e3-r2  0.5  × lg   品牌行 → 主标题
+ *   --e3-r3  0.55 × lg   主标题 → 核心正文
+ *   --e3-r4  1    × lg   核心正文 → 辅助句
+ *   --e3-r5  1.6  × lg   辅助句 → 主 CTA
+ *   --e3-r6  0.6  × lg   主 CTA → secondary 导航（明显更小 = 层级）
+ *   --e3-r7  1.1  × lg   secondary 导航 → metadata
+ *
+ * ── 唯一允许的「·」────────────────────────────────────────────────
+ * metadata typography 自带的语义分隔（01 · CURRENT PHASE · 当前阶段；
+ * POLITICAL TRANSITION FRAMEWORK · 2026）。
+ * 不新增任何 separator / divider / border container / card / pill / icon。
+ *
+ * ── 本文件只服务 .v6-hero--e3，不触碰 Hero 之外的页面 ─────────────
+ */
+
+.v6 .v6-hero--e3 {
+  --e3-r1: calc(var(--v6-space-lg) * 0.5);
+  --e3-r2: calc(var(--v6-space-lg) * 0.5);
+  --e3-r3: calc(var(--v6-space-lg) * 0.55);
+  --e3-r4: var(--v6-space-lg);
+  --e3-r5: calc(var(--v6-space-lg) * 1.6);
+  --e3-r6: calc(var(--v6-space-lg) * 0.6);
+  --e3-r7: calc(var(--v6-space-lg) * 1.1);
+  /* 品牌纹理：字号与裁切比例。裁切 = 容器高度 / 字号 = 27%，
+     与已批准 E3 一致，且在每个断点比例相同。 */
+  --e3-mark-size: clamp(2rem, 4.55vw, 4.1rem);
+  --e3-mark-crop: 0.27;
+  /* Start Here → secondary navigation group 的目标间距。 */
+  --e3-gap-nav: var(--v6-space-lg);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  /* 已批准高度。内容更长时由内容决定，不硬撑。 */
+  min-height: min(620px, 72vh);
+  padding: 0 0 var(--v6-space-lg);
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    var(--v6-surface) 0%,
+    var(--v6-background) 100%
+  );
+}
+
+/* ── 画布上缘细线 + 左侧极短 accent（纯装饰）───────────────────── */
+.v6 .v6-hero--e3 .v6-hero__rule {
+  position: absolute;
+  top: var(--v6-space-lg);
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: var(--v6-border);
+}
+
+.v6 .v6-hero--e3 .v6-hero__rule::before {
+  position: absolute;
+  top: 0;
+  left: var(--v6-gutter);
+  width: 40px;
+  height: 1px;
+  background: var(--v6-brand);
+  content: "";
+}
+
+/* ── 画布 ─────────────────────────────────────────────────────── */
+.v6 .v6-hero--e3 .v6-hero__canvas {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--v6-container);
+  margin: 0 auto;
+  padding: var(--v6-space-xl) var(--v6-gutter) 0;
+}
+
+/* ══ A 主叙事层 ═══════════════════════════════════════════════════ */
+.v6 .v6-hero--e3 .v6-hero__eyebrow {
+  display: block;
+  margin: 0;
+  color: var(--v6-text-muted);
+  font-size: var(--v6-text-label);
+  font-weight: var(--v6-weight-label);
+  letter-spacing: var(--v6-tracking-label);
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.v6 .v6-hero--e3 .v6-hero__eyebrow-num {
+  color: var(--v6-brand-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.v6 .v6-hero--e3 .v6-hero__brand {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  align-items: baseline;
+  margin: var(--e3-r1) 0 0;
+}
+
+.v6 .v6-hero--e3 .v6-hero__brand-zh {
+  color: var(--v6-text-primary);
+  font-size: 0.95rem;
+  font-weight: var(--v6-weight-label);
+  letter-spacing: 0.16em;
+}
+
+.v6 .v6-hero--e3 .v6-hero__brand-en {
+  color: var(--v6-text-muted);
+  font-size: var(--v6-text-label);
+  font-weight: var(--v6-weight-label);
+  letter-spacing: var(--v6-tracking-label);
+}
+
+/* 主标题：已批准比例保持不变（--v6-text-display / weight-display / 1.14）。
+   每行各自成块，因此「准备承接力量」始终独立一行。 */
+.v6 .v6-hero--e3 .v6-hero__title {
+  max-width: none;
+  margin: var(--e3-r2) 0 0;
+  font-size: var(--v6-text-display);
+  font-weight: var(--v6-weight-display);
+  letter-spacing: 0.008em;
+  line-height: 1.14;
+}
+
+.v6 .v6-hero--e3 .v6-hero__title-line {
+  display: block;
+}
+
+/* 第二行沿用 E3 accent。 */
+.v6 .v6-hero--e3 .v6-hero__title-em {
+  margin-top: 0.15em;
+  color: var(--v6-brand-text);
+}
+
+.v6 .v6-hero--e3 .v6-hero__statement {
+  max-width: 46ch;
+  margin: var(--e3-r3) 0 0;
+  color: var(--v6-text-secondary);
+  font-size: var(--v6-text-lead);
+  font-weight: var(--v6-weight-lead);
+  line-height: 1.72;
+}
+
+/* 辅助句：保持 secondary supporting copy，不得抬到与核心正文同权。
+   注意：必须显式清掉 border / padding —— 旧 .v6-hero__institution 规则
+   带一条 2px 品牌色左边框 + 16px 左内距，会在此处泄漏成一条竖线，
+   而 E3 不设任何装饰性框线。 */
+.v6 .v6-hero--e3 .v6-hero__institution {
+  margin: var(--e3-r4) 0 0;
+  padding: 0;
+  border: 0;
+  color: var(--v6-text-muted);
+  font-size: 0.9rem;
+  font-weight: var(--v6-weight-body);
+  line-height: 1.72;
+}
+
+/* ══ B 行动层 ═════════════════════════════════════════════════════
+   Level 1 主 CTA：Hero 主内容区唯一的 accent text CTA。
+   Level 2/3 secondary navigation：冷静的「目录入口」，
+   字号更小、默认 secondary 色、无填充 / 无边框 / 无圆角。 */
+.v6 .v6-hero--e3 .v6-hero__actions {
+  margin: var(--e3-r5) 0 0;
+}
+
+.v6 .v6-hero--e3 .v6-hero__start {
+  margin: 0;
+}
+
+.v6 .v6-hero--e3 .v6-hero__start-link {
+  display: inline-block;
+  padding: 0.6rem 0 0.2rem;
+  margin-bottom: -0.6rem;
+  border-bottom: 1px solid var(--v6-brand-line);
+  color: var(--v6-brand-text);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--v6-duration) var(--v6-ease);
+}
+
+.v6 .v6-hero--e3 .v6-hero__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  margin: var(--e3-r6) 0 0;
+}
+
+.v6 .v6-hero--e3 .v6-hero__nav-link {
+  display: inline-block;
+  padding: 0.35rem 0;
+  color: var(--v6-text-secondary);
+  font-size: 0.86rem;
+  font-weight: 440;
+  text-decoration: none;
+  transition: color var(--v6-duration) var(--v6-ease);
+}
+
+/* ══ C 状态 / metadata 层 ═════════════════════════════════════════ */
+.v6 .v6-hero--e3 .v6-hero__meta {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 2rem 3rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: var(--e3-r7) 0 0;
+  padding: var(--v6-space-md) 0 0;
+}
+
+.v6 .v6-hero--e3 .v6-hero__meta-col {
+  min-width: 0;
+}
+
+.v6 .v6-hero--e3 .v6-hero__meta-col--right {
+  text-align: right;
+}
+
+.v6 .v6-hero--e3 .v6-hero__meta-primary {
+  margin: 0;
+  color: var(--v6-text-muted);
+  font-size: var(--v6-text-label);
+  font-weight: var(--v6-weight-label);
+  letter-spacing: var(--v6-tracking-label);
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+/* 第二行权重低于第一行，不得做成标题，不得使用 accent。 */
+.v6 .v6-hero--e3 .v6-hero__meta-secondary {
+  margin: 0.4rem 0 0;
+  color: var(--v6-text-muted);
+  font-size: 0.74rem;
+  font-weight: var(--v6-weight-body);
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
+/* 英文可以拥有更宽的 max-width。 */
+.v6 .v6-hero--e3 .v6-hero__meta-col--right .v6-hero__meta-secondary {
+  max-width: 34ch;
+  margin-left: auto;
+}
+
+/* ── 品牌纹理：底部被裁切的巨大 CIVIC ORDERISM ─────────────────────
+   纯视觉，aria-hidden。位于 metadata 之下，与 metadata 不竞争。
+   裁切用容器 overflow 实现，比例 = 高度 / 字号 = 27%。 */
+.v6 .v6-hero--e3 .v6-hero__mark {
+  position: relative;
+  z-index: 0;
+  display: block;
+  flex: 0 0 auto;
+  width: 100%;
+  height: calc(var(--e3-mark-size) * var(--e3-mark-crop));
+  margin-top: var(--v6-space-lg);
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.v6 .v6-hero--e3 .v6-hero__mark-text {
+  display: block;
+  max-width: var(--v6-container);
+  margin: 0 auto;
+  padding: 0 var(--v6-gutter);
+  color: var(--v6-text-muted);
+  font-size: var(--e3-mark-size);
+  font-weight: var(--v6-weight-display);
+  letter-spacing: 0.24em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ── Focus：必须清楚，且遵循 E3 语言（2px 品牌色 outline + 偏移）。
+      极简设计不得删除键盘焦点指示。 ───────────────────────────── */
+.v6 .v6-hero--e3 .v6-hero__start-link:focus-visible,
+.v6 .v6-hero--e3 .v6-hero__nav-link:focus-visible {
+  outline: 2px solid var(--v6-focus);
+  outline-offset: 3px;
+  border-radius: var(--v6-radius-sm);
+}
+
+/* ── Hover / 交互态 ───────────────────────────────────────────────
+   secondary navigation 默认 secondary 色，hover/focus 时才进入 accent。 */
+.v6 .v6-hero--e3 .v6-hero__start-link:hover {
+  color: var(--v6-text-primary);
+  border-bottom-color: var(--v6-text-primary);
+}
+
+.v6 .v6-hero--e3 .v6-hero__nav-link:hover,
+.v6 .v6-hero--e3 .v6-hero__nav-link:focus-visible {
+  color: var(--v6-brand-text);
+}
+
+/* reduced-motion：本 Hero 不依赖动画表达任何必要信息；
+   这里只是把过渡也一并去掉。 */
+@media (prefers-reduced-motion: reduce) {
+  .v6 .v6-hero--e3 .v6-hero__start-link,
+  .v6 .v6-hero--e3 .v6-hero__nav-link {
+    transition: none;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   Tablet 769–1023：继续左右双列 metadata。
+   英文自然换行，不压缩字号破坏排版比例。
+   （双列在本区间不会碰撞 —— 由十断点实测确认。）
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ══════════════════════════════════════════════════════════════════
+   Mobile ≤768
+   ══════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .v6 .v6-hero--e3 {
+    /* 620px 是桌面首屏高度；移动端内容更矮，硬撑只会在
+       CTA 与 metadata 之间留下空场。改为内容驱动。 */
+    min-height: 0;
+
+    /* 移动端纵向收紧：只压缩「块与块之间」的节奏，
+       不动画布上留白（--v6-space-xl）、不动标题/正文内部阅读空间、
+       不动 Start Here 的触控高度。全部自 --v6-space-* 派生。 */
+    --e3-r4: calc(var(--v6-space-lg) * 0.9);
+    --e3-r5: calc(var(--v6-space-xl) * 0.9);
+    --e3-gap-nav: var(--v6-space-lg);
+  }
+
+  /* gutter 收窄。56px 是桌面值：375px 下两侧共占 112px，
+     只剩 263px 给 10 个汉字 —— 任何可读字号都放不下，
+     这是孤字断行的真正成因。 */
+  .v6 .v6-hero--e3 .v6-hero__canvas,
+  .v6 .v6-hero--e3 .v6-hero__mark-text {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .v6 .v6-hero--e3 .v6-hero__rule::before {
+    left: 24px;
+  }
+
+  /* 主标题：字号随 vw 收缩，使 320–430px 全区间单行成立。
+     约束 6.0vw × 10 字 × 1.008 字距 ≤ 视口 − 48px gutter。
+     实测占用率 62–64%，余量充足，字体替换也不会重新断行。 */
+  .v6 .v6-hero--e3 .v6-hero__title {
+    max-width: none;
+  }
+
+  .v6 .v6-hero--e3 .v6-hero__title-line {
+    display: block;
+    font-size: 6vw;
+    letter-spacing: 0.008em;
+    line-height: 1.22;
+  }
+
+  .v6 .v6-hero--e3 .v6-hero__title-em {
+    margin-top: 0.06em;
+  }
+
+  /* 触控目标：文字行盒不足 44px，用不可见 padding 扩大可点区域，
+     并把下边框推回文字基线，视觉与桌面一致。 */
+  .v6 .v6-hero--e3 .v6-hero__start-link {
+    padding: 0.92rem 0 0.22rem;
+    margin-bottom: -0.92rem;
+  }
+
+  /* 触控目标靠水平方向与行距共同满足；纵向不要再加 padding，
+     否则会侵入 nav 与 metadata 之间的空场。 */
+  .v6 .v6-hero--e3 .v6-hero__nav-link {
+    padding: 0.35rem 0;
+  }
+
+  /* Mobile：不在同一行排两个 secondary CTA，改为纵向堆叠。
+     主 CTA 与 secondary 之间的间距（--e3-r5 的余量 + --e3-r6）
+     明显大于两个 secondary 彼此之间的间距，层级一眼可辨。 */
+  /* Mobile：secondary navigation 收成一个紧凑的 navigation group。
+     层级比例（= --e3-gap-nav）：
+       Start Here → secondary group   明显更大
+       secondary item → secondary item 约一半
+     两者都用 --v6-space-* 派生，不硬编码像素。 */
+  .v6 .v6-hero--e3 .v6-hero__nav {
+    flex-direction: column;
+    gap: calc(var(--v6-space-sm) * 0.75);
+    margin-top: calc(var(--e3-gap-nav) - var(--v6-space-sm) * 0.75);
+  }
+
+  /* Mobile：metadata 取消左右布局，改为单列。
+     两个明确的小组：GROUP A（框架 · 年份 + 阶段标题）、
+     GROUP B（品牌 + 英文框架名）。组内紧、组间略松，
+     因此读起来是「状态 metadata」，不是四个独立 section。 */
+  .v6 .v6-hero--e3 .v6-hero__meta {
+    flex-direction: column;
+    gap: 0;
+    margin-top: var(--v6-space-md);
+    padding-top: var(--v6-space-sm);
+  }
+
+  /* 组间：明显大于组内行距，但仍小于 nav→metadata 的空场。 */
+  .v6 .v6-hero--e3 .v6-hero__meta-col--right {
+    margin-top: 0.55rem;
+    text-align: left;
+  }
+
+  /* 移动端整体再降一级存在感，明确属于 document footer / status metadata。
+     颜色仍为 --v6-text-muted（light 5.35:1 / dark 5.85:1，均过 WCAG AA）。 */
+  .v6 .v6-hero--e3 .v6-hero__meta-primary {
+    font-size: 0.65rem;
+    letter-spacing: 0.13em;
+    line-height: 1.45;
+  }
+
+  .v6 .v6-hero--e3 .v6-hero__meta-secondary {
+    margin-top: 0.28rem;
+    font-size: 0.7rem;
+    line-height: 1.5;
+  }
+
+  .v6 .v6-hero--e3 .v6-hero__meta-col--right .v6-hero__meta-secondary {
+    max-width: none;
+    margin-left: 0;
+  }
+
+  /* 品牌纹理在移动端会产生字母碎片，无法形成「字母顶部」读法。
+     与已批准 E3 一致：直接隐藏。 */
+  .v6 .v6-hero--e3 .v6-hero__mark {
+    display: none;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   极窄屏 320–359：仅解决两个物理放不下的问题。
+   360px 及以上完全不进入本区块，已批准效果不受影响。
+   ══════════════════════════════════════════════════════════════════ */
+@media (max-width: 359px) {
+  /* ① 品牌行：320px 下中文与英文无法同排，会折成两行白占 36px 纵向空间。
+        隐藏英文只影响此处的 responsive presentation ——
+        底部 metadata 内 CIVIC ORDERISM 完整保留。 */
+  .v6 .v6-hero--e3 .v6-hero__brand-en {
+    display: none;
+  }
+
+  /* ② Start Here：13.44px 下实测墨宽约 240px，可在 272px 内单行成立，
+        不再出现「义→」孤字断行。属于有限字号响应，仍在可读范围。 */
+  .v6 .v6-hero--e3 .v6-hero__start-link {
+    font-size: 0.84rem;
+    letter-spacing: -0.01em;
+  }
+
+  /* ③ metadata 主行：320px 下 "POLITICAL TRANSITION FRAMEWORK · 2026"
+        会折成两行，末行只剩 "FRAMEWORK · 2026"。收一点字距使其单行成立，
+        字号不变，仍属 status metadata 层级。 */
+  .v6 .v6-hero--e3 .v6-hero__meta-primary {
+    letter-spacing: 0.08em;
+  }
+}
