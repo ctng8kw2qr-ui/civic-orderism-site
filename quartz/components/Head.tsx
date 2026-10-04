@@ -12,6 +12,13 @@ import {
 } from "./types";
 import { unescapeHTML } from "../util/escape";
 import { CustomOgImagesEmitterName } from "../plugins/emitters/ogImage";
+import {
+  absoluteCoverUrl,
+  resolveCover,
+  FALLBACK_OG_HEIGHT,
+  FALLBACK_OG_IMAGE,
+  FALLBACK_OG_WIDTH,
+} from "../util/cover";
 
 const siteDescription =
   "公民秩序主义关注工业时代旧秩序在信息化时代的失效，并尝试提出一种面向中国现实、可进入、可解释、可纠错、可追责的公共秩序方案。";
@@ -46,7 +53,22 @@ export default (() => {
     const usesCustomOgImage = ctx.cfg.plugins.emitters.some(
       (e) => e.name === CustomOgImagesEmitterName,
     );
-    const ogImageDefaultPath = `https://${cfg.baseUrl}/og-image.png`;
+    // ── Social image precedence (Phase 3) ────────────────────────────
+    //   1. article has `cover`  -> that cover, as an absolute URL
+    //   2. otherwise            -> the single branded fallback
+    // Reuses cfg.baseUrl (quartz.config.ts configuration.baseUrl), so the
+    // origin is configured in one place and never hardcoded per component.
+    const cover = resolveCover(fileData);
+    const coverOgUrl = absoluteCoverUrl(cfg, cover);
+    const ogImagePath =
+      coverOgUrl ??
+      `https://${(cfg.baseUrl ?? "").replace(/\/+$/, "")}${FALLBACK_OG_IMAGE}`;
+    const ogImageAlt = coverOgUrl && cover.alt ? cover.alt : description;
+    // Width/height are only known for the branded fallback (measured 1200x630).
+    // Cover dimensions are editor-supplied and not resolvable at build time, so
+    // we omit them there rather than assert values we cannot verify.
+    const ogImageWidth = coverOgUrl ? undefined : FALLBACK_OG_WIDTH;
+    const ogImageHeight = coverOgUrl ? undefined : FALLBACK_OG_HEIGHT;
     const slug = fileData.slug!;
     const shouldNoIndex =
       slug.startsWith("tags/") ||
@@ -164,17 +186,29 @@ export default (() => {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta property="og:description" content={description} />
-        <meta property="og:image:alt" content={description} />
+        <meta property="og:image:alt" content={ogImageAlt} />
 
         {!usesCustomOgImage && (
           <>
-            <meta property="og:image" content={ogImageDefaultPath} />
-            <meta property="og:image:url" content={ogImageDefaultPath} />
-            <meta name="twitter:image" content={ogImageDefaultPath} />
+            <meta property="og:image" content={ogImagePath} />
+            <meta property="og:image:url" content={ogImagePath} />
+            <meta name="twitter:image" content={ogImagePath} />
             <meta
               property="og:image:type"
-              content={`image/${(getFileExtension(ogImageDefaultPath) ?? "png").replace(/^\./, "")}`}
+              content={`image/${(getFileExtension(ogImagePath) ?? "png").replace(/^\./, "")}`}
             />
+            {ogImageWidth !== undefined && ogImageHeight !== undefined ? (
+              <>
+                <meta
+                  property="og:image:width"
+                  content={String(ogImageWidth)}
+                />
+                <meta
+                  property="og:image:height"
+                  content={String(ogImageHeight)}
+                />
+              </>
+            ) : null}
           </>
         )}
 
@@ -207,7 +241,19 @@ export default (() => {
         <link rel="manifest" href="/site.webmanifest?v=2" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content="公民秩序主义" />
-        <meta name="theme-color" content="#f8f8f6" />
+        {/* Browser chrome colour follows the page background token in both
+            schemes (previously a single hardcoded #f8f8f6 that matched
+            neither the light nor the dark page background). */}
+        <meta
+          name="theme-color"
+          content="#faf8f5"
+          media="(prefers-color-scheme: light)"
+        />
+        <meta
+          name="theme-color"
+          content="#141518"
+          media="(prefers-color-scheme: dark)"
+        />
 
         {fileData.slug !== "404" && (
           <link rel="canonical" href={canonicalUrl} />

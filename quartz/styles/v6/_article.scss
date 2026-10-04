@@ -411,7 +411,9 @@ body[data-page-kind="article"] {
     box-sizing: border-box;
     width: 100%;
     height: auto;
-    aspect-ratio: 1.9 / 1;
+    /* 与首页 Lead、社交 og:image 共用同一比例（40/21 = 1200x630 = 1600x840）。
+       一套 Editorial Cover 即可同时服务三处，无需为同一篇文章维护三张图。 */
+    aspect-ratio: 40 / 21;
     object-fit: cover;
     border: 1px solid var(--v6-border);
     border-radius: var(--v6-radius-sm);

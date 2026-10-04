@@ -139,11 +139,52 @@ This means the project could generate branded OG images and editorial covers
 programmatically from each article's title/description, with no manual
 artwork. V6 Phase 2 was explicitly scoped **not** to enable it.
 
-**Follow-up (Phase 3 candidate):** evaluate enabling `CustomOgImages` so every
-article gets a consistent, on-brand social card. Also relevant: `og:image` is
-currently hardcoded to a single site-wide `og-image.png` for every page
-(`quartz/components/Head.tsx`), so articles do not yet have distinct social
-previews. An article `cover:` (now supported) could feed `og:image`.
+**Phase 3 finding — programmatic OG is NOT viable in this project as configured.**
+Investigated and deliberately left disabled. Evidence:
+
+1. `quartz.config.ts` sets `fontOrigin: "local"` and `typography.header/body`
+   to `"system-ui"`.
+2. `getSatoriFonts()` fetches TTFs from Google Fonts by font name. A request
+   for `family=system-ui` returns **HTTP 400** (measured).
+3. Failed font fetches are dropped by `.filter(font => font !== null)`, so
+   satori would receive an **empty font array**.
+4. Even with fonts resolved, there is **no CJK font** in the pipeline at all,
+   so Chinese article titles would render as tofu boxes.
+5. Making it work would require shipping multi-MB CJK subsets, changing
+   `fontOrigin`, and adding build time for 103 pages — contrary to the
+   project's minimal-change, local-font principles.
+
+**Resolution:** `og:image` now has real precedence (Phase 3) —
+article `cover` (absolute URL) with a single branded `og-image.png` fallback.
+No programmatic generation.
+
+**Future precondition:** if programmatic OG is ever wanted, it must FIRST
+solve a reliable offline CJK font pipeline (self-hosted subset, no network
+fetch at build time). Do not enable `CustomOgImages` before that exists.
+
+**Also note:** articles now have distinct social previews _when they define a
+cover_, so the practical gap is closed without code generation.
+
+---
+
+## 9. Build output directory is vulnerable to file-sync corruption
+
+**Status:** environmental, not a repo defect — but it silently produced
+misleading test results twice.
+
+The workspace lives under `~/Documents`, which is being synced. During Phase 1
+this surfaced as 28 ` 2`-suffixed files in `public/`. During Phase 3 it was
+worse: after one build, `public/china/` was **missing every article file** and
+sibling directories like `public/china 3/` appeared. A dev-server request for
+`/china/ccp-2018-xi-era-local-growth-space.html` returned "Error response",
+which initially looked like a regression in the Phase 3 work.
+
+A clean `rm -rf public && npm run build` produced a correct 533-file output
+with zero ` 2`/` 3` artifacts, and every validator passed.
+
+**Follow-up:** if unexplained missing/duplicated build output recurs, rebuild
+clean and/or move the checkout outside a synced folder before investigating
+code. Do not attribute it to the most recent commit.
 
 ---
 

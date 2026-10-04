@@ -6,6 +6,7 @@ import {
 import { resolveRelative, FullSlug } from "../util/path";
 import { Element, Root } from "hast";
 import { toString } from "hast-util-to-string";
+import { resolveCover } from "../util/cover";
 import migrationMap from "../../content-migration-map.json";
 import siteConfig from "../../data/site.config.json";
 import topicsConfig from "../../data/topics.config.json";
@@ -114,13 +115,11 @@ const ArticleInstitutionalHeader: QuartzComponent = ({
     typeof fm.subtitle === "string" ? fm.subtitle.trim() : "";
   const deck = frontmatterSubtitle || articleSubtitle(tree) || "";
   const dateText = formattedDate(fm.date);
-  // Optional editorial cover. Site-relative paths only; when absent the
-  // header renders its typographic form and no <img> is emitted at all,
-  // so there is never a broken image or placeholder box.
-  const coverRaw = typeof fm.cover === "string" ? fm.cover.trim() : "";
-  const cover = coverRaw.startsWith("/") ? coverRaw : "";
-  const coverAlt =
-    (typeof fm.coverAlt === "string" && fm.coverAlt.trim()) || title;
+  // Editorial Cover comes from the shared single source (quartz/util/cover),
+  // the same resolution used by the homepage Lead and by og:image. When absent
+  // the header renders its typographic form: no <figure>, no <img>, no
+  // placeholder, no reserved height.
+  const cover = resolveCover(fileData);
   const minutes = estimatedReadingMinutes(fileData);
   const slug = (fileData.slug ?? "") as FullSlug;
   const isCorePoliticalStatement = fm.corePoliticalStatement === true;
@@ -203,9 +202,16 @@ const ArticleInstitutionalHeader: QuartzComponent = ({
         </span>
       </p>
 
-      {cover ? (
+      {cover.src ? (
         <figure class="article-inst__cover">
-          <img src={cover} alt={coverAlt} decoding="async" loading="eager" />
+          <img
+            src={cover.src}
+            alt={cover.alt ?? ""}
+            width="1600"
+            height="840"
+            decoding="async"
+            loading="eager"
+          />
         </figure>
       ) : null}
 
