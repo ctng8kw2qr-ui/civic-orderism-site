@@ -83,6 +83,11 @@ simply left as whitespace.
 Screenshots: `header-390-light.png`, `header-1440-light.png`,
 `header-1440-dark.png`.
 
+`prod/` holds **post-deployment production verification screenshots** captured
+against `civicorderism.com` after the merge — homepage and article, 390 and 1440.
+Same convention as the earlier phases: audit evidence only, not runtime
+dependencies, not canonical design assets, not part of the published site.
+
 ## 5. Accessibility
 
 - Accessible name unchanged: the link still carries
