@@ -2774,17 +2774,17 @@ writeInstitutionalContent(
     <div class="inst4l-section__head">
       <p class="inst4-eyebrow">研究框架</p>
       <h2 class="inst4l-section__title">政治变化之后，国家如何继续运行</h2>
-      <p class="inst4l-section__desc">以下八个方向构成公民秩序主义关于国家连续性的公开研究框架。多数方向仍在建立中，标记为「持续研究 / Research in Progress」。</p>
+      <p class="inst4l-section__desc">以下八个方向构成公民秩序主义关于国家连续性的公开研究框架。多数方向仍在建立中。</p>
     </div>
     <div class="inst4-route__state-grid">
-      <div class="inst4-route__state-item"><h3>国家连续</h3><p>政治变化不等于国家停摆。</p><small>持续研究 · Research in Progress</small></div>
-      <div class="inst4-route__state-item"><h3>行政连续</h3><p>公共行政体系必须继续运行。</p><small>持续研究 · Research in Progress</small></div>
-      <div class="inst4-route__state-item"><h3>公共服务连续</h3><p>医院、学校、交通、财政、社保等不能因为政治变化中断。</p><small>持续研究 · Research in Progress</small></div>
-      <div class="inst4-route__state-item"><h3>法律连续性</h3><p>政治制度改变不等于法律秩序瞬间归零。</p><small>持续研究 · Research in Progress</small></div>
-      <div class="inst4-route__state-item"><h3>地方治理</h3><p>地方政府必须保持基本治理能力。</p><small>持续研究 · Research in Progress</small></div>
-      <div class="inst4-route__state-item"><h3>财政与社会保障</h3><p>政治转轨必须考虑现实财政责任。</p><small>持续研究 · Research in Progress</small></div>
-      <div class="inst4-route__state-item"><h3>社会秩序</h3><p>避免权力真空和社会撕裂。</p><small>持续研究 · Research in Progress</small></div>
-      <div class="inst4-route__state-item"><h3>政治责任</h3><p>区分政治责任、历史责任与明确的刑事责任。</p><small>持续研究 · Research in Progress</small></div>
+      <div class="inst4-route__state-item"><h3>国家连续</h3><p>政治变化不等于国家停摆。</p></div>
+      <div class="inst4-route__state-item"><h3>行政连续</h3><p>公共行政体系必须继续运行。</p></div>
+      <div class="inst4-route__state-item"><h3>公共服务连续</h3><p>医院、学校、交通、财政、社保等不能因为政治变化中断。</p></div>
+      <div class="inst4-route__state-item"><h3>法律连续性</h3><p>政治制度改变不等于法律秩序瞬间归零。</p></div>
+      <div class="inst4-route__state-item"><h3>地方治理</h3><p>地方政府必须保持基本治理能力。</p></div>
+      <div class="inst4-route__state-item"><h3>财政与社会保障</h3><p>政治转轨必须考虑现实财政责任。</p></div>
+      <div class="inst4-route__state-item"><h3>社会秩序</h3><p>避免权力真空和社会撕裂。</p></div>
+      <div class="inst4-route__state-item"><h3>政治责任</h3><p>区分政治责任、历史责任与明确的刑事责任。</p></div>
     </div>
   </section>
 
