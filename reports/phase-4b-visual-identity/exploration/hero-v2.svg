@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <style>
+      .mass  { fill: #1b1c1f; }
+      .face  { fill: none; stroke: #63676f; stroke-width: 2; }
+      .datum { stroke: #7a2430; stroke-width: 7; }
+      .reg   { stroke: #d9c4c7; stroke-width: 2; }
+      .thin  { stroke: #c9c3b9; stroke-width: 2; }
+      @media (prefers-color-scheme: dark) {
+        .mass  { fill: #eceae5; }
+        .face  { stroke: #8b9099; }
+        .datum { stroke: #d98b96; }
+        .reg   { stroke: #5b4a4d; }
+        .thin  { stroke: #3a3d43; }
+      }
+    </style>
+  </defs>
+
+  <!-- structural wall, with a passage cut through it -->
+  <path class="mass" d="M400 70 L800 70 L800 530 L648 530 L648 262 A48 48 0 0 0 552 262 L552 530 L400 530 Z"/>
+
+  <!-- inner faces: the depth of the wall, seen through the opening -->
+  <path class="face" d="M552 262 A48 48 0 0 1 648 262"/>
+  <line class="face" x1="552" y1="262" x2="552" y2="530"/>
+  <line class="face" x1="648" y1="262" x2="648" y2="530"/>
+
+  <!-- wall faces -->
+  <line class="face" x1="400" y1="70" x2="400" y2="530"/>
+  <line class="face" x1="800" y1="70" x2="800" y2="530"/>
+  <line class="face" x1="400" y1="70" x2="800" y2="70"/>
+
+  <!-- the path continues through: one datum, unbroken -->
+  <line class="datum" x1="90" y1="530" x2="1110" y2="530"/>
+
+  <!-- measured references -->
+  <line class="thin" x1="90" y1="70" x2="1110" y2="70"/>
+  <line class="reg"  x1="90"  y1="50" x2="90"  y2="90"/>
+  <line class="reg"  x1="1110" y1="50" x2="1110" y2="90"/>
+</svg>

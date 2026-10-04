@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <pattern id="hx" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="14" stroke="#c9c3b9" stroke-width="2"/>
+    </pattern>
+    <style>
+      .wall  { fill: none; stroke: #1b1c1f; stroke-width: 5; }
+      .face  { stroke: #63676f; stroke-width: 3; }
+      .hatch { stroke: #c9c3b9; }
+      .datum { stroke: #7a2430; stroke-width: 7; }
+      .thin  { stroke: #d9c4c7; stroke-width: 3; }
+      .reg   { stroke: #c9c3b9; stroke-width: 3; }
+      @media (prefers-color-scheme: dark) {
+        .wall  { stroke: #eceae5; }
+        .face  { stroke: #8b9099; }
+        .hatch { stroke: #3a3d43; }
+        .datum { stroke: #d98b96; }
+        .thin  { stroke: #5b4a4d; }
+        .reg   { stroke: #3a3d43; }
+      }
+    </style>
+  </defs>
+
+  <!-- wall body, with the passage cut through it, hatched to read as solid -->
+  <path id="wallpath" class="wall" d="M400 70 L800 70 L800 530 L668 530 L668 250 A68 68 0 0 0 532 250 L532 530 L400 530 Z"/>
+  <path class="hatch" fill="url(#hx)" stroke="none"
+        d="M400 70 L800 70 L800 530 L668 530 L668 250 A68 68 0 0 0 532 250 L532 530 L400 530 Z"/>
+
+  <!-- outer faces -->
+  <line class="face" x1="400" y1="70" x2="400" y2="530"/>
+  <line class="face" x1="800" y1="70" x2="800" y2="530"/>
+  <!-- passage reveals -->
+  <path class="face" d="M532 250 A68 68 0 0 1 668 250"/>
+  <line class="face" x1="532" y1="250" x2="532" y2="530"/>
+  <line class="face" x1="668" y1="250" x2="668" y2="530"/>
+
+  <!-- the path continues: one unbroken datum -->
+  <line class="datum" x1="90" y1="530" x2="1110" y2="530"/>
+
+  <!-- measured references -->
+  <line class="thin" x1="90" y1="70" x2="1110" y2="70"/>
+  <line class="reg"  x1="90"   y1="50" x2="90"   y2="90"/>
+  <line class="reg"  x1="1110" y1="50" x2="1110" y2="90"/>
+</svg>

@@ -926,17 +926,29 @@ for (const marker of homepageSectionIds) {
   );
   previousHomepageSectionPosition = position;
 }
-// V6 home is a continuous institutional landing page: seven sections, no
-// numbered-report blocks, no image-led hero (the only image is the restrained
-// decorative colonnade line drawing, and it carries alt text).
+// V6 home is a continuous institutional landing page: seven sections and no
+// numbered-report blocks. Phase 4B replaced the CSS-mask hero placeholder with
+// a real direct-rendered Hero artwork and gave the flagship article a Tier 1
+// cover, so exactly two images are now expected — the decorative Hero artwork
+// and the "latest research" lead cover. Anything else on the homepage is a
+// regression. The Hero artwork must stay decorative so the Hero copy carries
+// the meaning and nothing is announced twice.
+const homeImgs = homepageHtml.match(/<img\b[^>]*>/g) ?? [];
+const heroImgs = homeImgs.filter((tag) => tag.includes("v6-hero__art"));
+const leadCoverFigures = (homepageHtml.match(/v6-latest__lead-cover/g) ?? [])
+  .length;
+const isDecorative = (tag) =>
+  tag.includes('aria-hidden="true"') && /\salt(=""|\s|>)/.test(tag);
 assert(
   !homepageHtml.includes('id="approach"') &&
     !homepageHtml.includes('id="contact"') &&
     (homepageHtml.match(/<section class="v6-/g) ?? []).length === 7 &&
     !homepageHtml.includes("home-institution-") &&
-    !homepageHtml.includes("<img") &&
-    homepageHtml.includes('class="v6-hero__art"'),
-  "首页未保持为连续机构 landing page（七个区域、无编号章节、无图片，辅助图形为 CSS 遮罩）",
+    homeImgs.length === 2 &&
+    heroImgs.length === 1 &&
+    heroImgs.every(isDecorative) &&
+    leadCoverFigures === 1,
+  "首页未保持为连续机构 landing page（七个区域、无编号章节；图片仅限 Hero artwork 与最新研究主文章封面，且 Hero artwork 必须为装饰性）",
 );
 // SECTION 1 / IDENTITY
 const heroHtml =

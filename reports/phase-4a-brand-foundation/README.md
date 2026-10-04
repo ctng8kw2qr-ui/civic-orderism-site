@@ -393,7 +393,7 @@ generated).
 ## Still untouched
 
 Homepage · article system · V6 palette · typography · CSS layout · `content/**` ·
-URLs · Hero (`hero-architecture.svg`, rendering model, JSX, CSS) ·
+URLs · Hero (the Phase 3 placeholder `hero-architecture.svg`, its rendering model, JSX and CSS — all still untouched **at the time of Phase 4A**; Phase 4B later replaced the hero artwork and retired the CSS-mask model, see `../phase-4b-visual-identity/`) ·
 Article Cover · 《中共正在变成什么？》 (C1 reserved for 4B). No satori, no new
 font, no CDN, no CMS, no batch imagery, no news photography, values wording
 unchanged.

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Civic Orderism — Homepage Hero · THRESHOLD
+     A thick institutional wall in section, with one passage cut through it.
+     A single datum runs unbroken across the full width: the structure
+     continues, the path changes. Measured-drawing register. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <style>
+      .mass  { fill: #e7e3dc; }
+      .wall  { fill: none; stroke: #1b1c1f; stroke-width: 4; }
+      .face  { stroke: #8b9099; stroke-width: 2.5; }
+      .datum { stroke: #7a2430; stroke-width: 6; }
+      .ref   { stroke: #d9c4c7; stroke-width: 2.5; }
+      @media (prefers-color-scheme: dark) {
+        .mass  { fill: #26282e; }
+        .wall  { stroke: #eceae5; }
+        .face  { stroke: #8b9099; }
+        .datum { stroke: #d98b96; }
+        .ref   { stroke: #4a4d54; }
+      }
+    </style>
+  </defs>
+
+  <!-- wall in section: 100 units thick, one passage cut through -->
+  <path class="mass" d="M120 170 L1080 170 L1080 270 L674 270 L674 400 A74 74 0 0 0 526 400 L526 270 L120 270 Z"/>
+  <path class="wall" d="M120 170 L1080 170 L1080 270 L674 270 L674 400 A74 74 0 0 0 526 400 L526 270 L120 270 Z"/>
+
+  <!-- section hatching lines across the wall faces -->
+  <line class="face" x1="120" y1="270" x2="526" y2="270"/>
+  <line class="face" x1="674" y1="270" x2="1080" y2="270"/>
+  <!-- reveal: the passage ceiling, seen in depth -->
+  <path class="face" d="M526 400 A74 74 0 0 0 674 400"/>
+  <line class="face" x1="526" y1="270" x2="526" y2="400"/>
+  <line class="face" x1="674" y1="270" x2="674" y2="400"/>
+
+  <!-- one unbroken datum: the path continues -->
+  <line class="datum" x1="70" y1="455" x2="1130" y2="455"/>
+
+  <!-- measured references -->
+  <line class="ref" x1="70"   y1="170" x2="1130" y2="170"/>
+  <line class="ref" x1="70"   y1="154" x2="70"   y2="186"/>
+  <line class="ref" x1="1130" y1="154" x2="1130" y2="186"/>
+</svg>
