@@ -110,20 +110,26 @@ homepage was done, rather than in one sweep.
 
 ---
 
-## 6. The hero visual is still an inline-authored drawing
+## 6. Hero artwork is hand-authored and not yet from a design system
 
-**Status:** by design for now.
+**Status:** resolved for Phase 4B; revisited when a design system exists.
 
-`quartz/static/assets/v6/hero/hero-architecture.svg` is a hand-authored
-colonnade line drawing, rendered as a CSS mask in `currentColor`. It is a
-placeholder _slot_, not finished brand artwork.
+`quartz/static/assets/v6/hero/hero-threshold.svg` is the Phase 4B Hero
+artwork: a structural boundary with one passage opened through it and a datum
+running unbroken across the full width. It is hand-authored SVG, not generated
+and not stock.
 
-The V6 asset convention (`quartz/static/assets/v6/{brand,hero,editorial,organization}/`)
-exists so real artwork can be dropped in without touching markup. Swapping the
-hero file changes the visual with no code change.
+Phase 4B also **retired the CSS-mask rendering model** (see `assets/v6/SPEC.md`
+§2). A mask collapses any drawing into a single-colour alpha stencil, so it
+could not carry a multi-weight artwork. The Hero is now a direct-rendered
+`<img>` of the SVG, which themes itself through `prefers-color-scheme` — V6
+keeps that in sync with `saved-theme`, so one asset serves both themes with no
+filter, no invert and no second file.
 
-**Follow-up:** supply real brand artwork (human-authored). Do not fill the
-slot with stock or AI-generated imagery.
+Swapping the Hero remains a one-file change.
+
+**Follow-up:** when a fuller visual system exists, the Hero artwork should be
+redrawn from it. Do not fill the slot with stock or AI-generated imagery.
 
 ---
 

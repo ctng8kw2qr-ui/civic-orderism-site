@@ -4,71 +4,54 @@ The homepage Hero visual slot. Exactly **one** primary hero visual.
 
 ## Belongs here
 
-`hero-architecture.svg` — the current restrained colonnade line drawing,
-rendered as a CSS mask in `currentColor`.
+`hero-threshold.svg` — the Phase 4B Hero artwork. A structural boundary with one
+passage opened through it, and a datum running unbroken across the full width:
+the structure continues, the path changes.
 
-Future: architectural line work, abstract structure diagrams, institutional /
-archival / cartographic visuals, restrained photography, brand graphics.
+Geometry, rationale and the rendering-model note live in the file's own header
+comment. Related: `../brand/threshold-mark.svg` is the same threshold idea as a
+compact brand symbol; the Hero is that idea spatialised. They are deliberately
+different forms and the mark must not simply be enlarged into the Hero.
 
 ## Not here
 
 Article or Lead covers (`../editorial/`), social cards (`../social/`),
-organisation documents (`../organization/`).
+organisation documents (`../organization/`), brand marks (`../brand/`).
 
 ## Ratio / size
 
-|           | Size                            |
-| --------- | ------------------------------- |
-| Ratio     | 2:1 (current viewBox 800 × 400) |
-| Master    | 2400 × 1200                     |
-| Displayed | ≤ 380px desktop, ≤ 220px mobile |
+|         | Value                                   |
+| ------- | --------------------------------------- |
+| viewBox | 1200 × 600 (2:1)                        |
+| Display | fills the Hero aside, max 460px desktop |
+| Mobile  | full width of the aside                 |
 
 ## Formats
 
-**SVG preferred** — monochrome and themeable. WebP / AVIF / PNG allowed.
+**SVG**, single file. Light and dark are handled inside the SVG with
+`prefers-color-scheme`, which V6 keeps in sync with `saved-theme`.
 
-**Rendering caveat:** the slot currently uses a **CSS mask**
-(`--v6-hero-mask`) with `currentColor`. A raster asset is _not_ a drop-in
-equivalent — it needs a different rendering model (`width`/`height`,
-`object-fit`, its own dark-mode treatment). Decide that explicitly rather than
-assuming the mask variable covers it.
+## Rendering model
+
+Direct-rendered `<img>`. The former CSS-mask model was **retired in Phase 4B**:
+a mask uses the SVG as an alpha stencil, so every stroke renders in one flat
+colour and multi-weight artwork collapses to a silhouette.
+
+A raster hero is therefore **not** a drop-in replacement — it is still an
+`<img>`, but it will not follow the theme by itself, so it needs explicit
+`width`/`height` and its own dark variant.
 
 ## Swapping the visual
 
-Replace the file, or change the single `--v6-hero-mask` token. No JSX, layout,
-copy, CTA or information-architecture change is required for an SVG swap.
+Replace `hero-threshold.svg`. No JSX, layout, copy, CTA or
+information-architecture change is required.
 
 ## Alt text
 
-Decorative. The element carries a role and a short localised description —
-never a filename.
+Decorative concept artwork — the Hero copy carries the meaning. The element is
+`aria-hidden` with an empty `alt`, so a screen reader never announces it.
 
 ## Light / dark
 
-Must read on both backgrounds. The mask + `currentColor` approach does this
-automatically; a raster must be checked by hand.
-
-## Naming
-
-`<domain>-<subject>-<variant>.<ext>` — lowercase, hyphenated, ASCII.
-No spaces, no dates, no `final` / `v2` / `new`.
-
-## Alt text
-
-Required wherever the asset carries meaning. Never `alt=""` on meaningful
-content; never let a screen reader announce a filename.
-
-## Light / dark
-
-Must work on both. Palette is fixed (warm white `#faf8f5`, charcoal, restrained
-wine). Use `currentColor` for SVG so it themes automatically.
-
-## Photos / illustration / AI
-
-| Photos                      | Illustration | AI-generated |
-| --------------------------- | ------------ | ------------ |
-| ✓ restrained, architectural | ✓            | ✗            |
-
-**AI-generated imagery is not permitted.**
-
-Full rules, size budgets and the forbidden-content list: `../SPEC.md`.
+Must read on both backgrounds. Using line work at the V6 palette values does
+this automatically; a raster must be checked by hand.
