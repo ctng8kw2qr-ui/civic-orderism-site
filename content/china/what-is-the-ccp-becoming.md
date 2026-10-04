@@ -12,6 +12,8 @@ recommended: true
 # V6 首页「最新研究」主文章。全站只允许 1 篇设置此项；
 # 若出现多篇，构建时会告警并取日期最新的一篇。
 homepageLead: true
+cover: /static/assets/v6/editorial/ccp-system-transformation.webp
+coverAlt: 抽象结构截面：原本开放分散的多路径负载逐渐向核心收束，两侧约束线向内合拢，外层负载被剪断并向外围重新分配，一条完整的中轴贯穿全幅。
 readingLevel: 基础
 readingOrder: 0
 tags:

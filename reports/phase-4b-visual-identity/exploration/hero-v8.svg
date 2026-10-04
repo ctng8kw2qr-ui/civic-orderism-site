@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Civic Orderism — Homepage Hero · THRESHOLD
+     One continuous datum crosses the frame. One boundary stands across it.
+     The boundary is interrupted at the datum: the structure is not removed,
+     a passage is opened through it. Abstract measured drawing. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <style>
+      .band  { fill: #e7e3dc; }
+      .line  { fill: none; stroke: #1b1c1f; stroke-width: 3.5; }
+      .edge  { stroke: #8b9099; stroke-width: 2; }
+      .datum { stroke: #7a2430; stroke-width: 6; }
+      .ref   { stroke: #d9c4c7; stroke-width: 2; }
+      .tick  { stroke: #c9c3b9; stroke-width: 2; }
+      @media (prefers-color-scheme: dark) {
+        .band  { fill: #26282e; }
+        .line  { stroke: #eceae5; }
+        .edge  { stroke: #6f747c; }
+        .datum { stroke: #d98b96; }
+        .ref   { stroke: #4a4d54; }
+        .tick  { stroke: #3a3d43; }
+      }
+    </style>
+  </defs>
+
+  <!-- the boundary: two wall faces, interrupted at the datum -->
+  <rect class="band" x="556" y="70" width="88" height="300"/>
+  <path class="line" d="M556 70 L644 70 L644 370 L556 370 Z"/>
+
+  <!-- the aperture: the wall faces turn inward at the opening -->
+  <line class="edge" x1="556" y1="370" x2="600" y2="396"/>
+  <line class="edge" x1="644" y1="370" x2="600" y2="396"/>
+
+  <!-- one datum, running the full width, passing through the aperture -->
+  <line class="datum" x1="80" y1="430" x2="1120" y2="430"/>
+
+  <!-- the passage continues past the boundary -->
+  <line class="edge" x1="600" y1="396" x2="600" y2="470"/>
+
+  <!-- measured references -->
+  <line class="ref" x1="80" y1="70" x2="1120" y2="70"/>
+  <line class="ref" x1="80" y1="54" x2="80" y2="86"/>
+  <line class="ref" x1="1120" y1="54" x2="1120" y2="86"/>
+  <line class="tick" x1="556" y1="430" x2="556" y2="462"/>
+  <line class="tick" x1="644" y1="430" x2="644" y2="462"/>
+</svg>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <style>
+      .struct { fill: none; stroke: #45484f; stroke-width: 3; }
+      .wall   { fill: none; stroke: #1b1c1f; stroke-width: 4; }
+      .inner  { fill: none; stroke: #63676f; stroke-width: 2; }
+      .datum  { fill: none; stroke: #7a2430; stroke-width: 6; }
+      .reg    { fill: none; stroke: #d9c4c7; stroke-width: 2; }
+      @media (prefers-color-scheme: dark) {
+        .struct { stroke: #9aa0aa; }
+        .wall   { stroke: #eceae5; }
+        .inner  { stroke: #8b9099; }
+        .datum  { stroke: #d98b96; }
+        .reg    { stroke: #5b4a4d; }
+      }
+    </style>
+  </defs>
+  <g>
+    <!-- wall mass: outline + inner faces -->
+    <rect class="wall"  x="490" y="80" width="220" height="440"/>
+    <line class="inner" x1="520" y1="80" x2="520" y2="520"/>
+    <line class="inner" x1="680" y1="80" x2="680" y2="520"/>
+    <!-- opening cut through the wall -->
+    <path class="struct" d="M560 520 L560 300 A40 40 0 0 1 640 300 L640 520"/>
+    <!-- ground / datum continuing through -->
+    <line class="datum" x1="100" y1="520" x2="1100" y2="520"/>
+    <!-- measured references -->
+    <line class="inner" x1="100" y1="80"  x2="1100" y2="80"/>
+    <line class="reg"   x1="100" y1="60"  x2="100"  y2="100"/>
+    <line class="reg"   x1="1100" y1="60" x2="1100" y2="100"/>
+  </g>
+</svg>

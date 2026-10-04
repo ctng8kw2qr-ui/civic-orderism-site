@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1263" width="2400" height="1263">
+  <defs><style>
+    .paper { fill: #faf8f5; }
+    .rule  { stroke: #e0dcd5; stroke-width: 2; }
+    .mark  { stroke: #d9c4c7; stroke-width: 2; }
+    .thin  { stroke: #c9c3b9; stroke-width: 2; }
+    .wine  { fill: none; stroke: #7a2430; stroke-width: 8; }
+    @media (prefers-color-scheme: dark) {
+      .paper { fill: #141518; }
+      .rule  { stroke: #2c2f35; }
+      .mark  { stroke: #5b4a4d; }
+      .thin  { stroke: #3a3d43; }
+      .wine  { stroke: #d98b96; }
+    }
+  </style></defs>
+  <rect class="paper" width="2400" height="1263"/>
+  <line class="thin" x1="140" y1="150" x2="2260" y2="150"/>
+  <line class="rule" x1="140" y1="1140" x2="2260" y2="1140"/>
+  <line class="mark" x1="900" y1="128" x2="900" y2="196"/>
+  <line class="mark" x1="1330" y1="128" x2="1330" y2="196"/>
+  <path d="M170 294.0 L900 294.0 L1330 422.0 L2230 550.0" fill="none" stroke="#7b8089" stroke-width="2.6"/>
+  <path d="M170 416.0 L900 416.0 L1330 510.5 L2230 605.0" fill="none" stroke="#4a4e56" stroke-width="3.4"/>
+  <path d="M170 538.0 L900 538.0 L1330 599.0 L2230 660.0" fill="none" stroke="#4a4e56" stroke-width="4.2"/>
+  <path d="M170 660.0 L900 660.0 L1330 687.5 L2230 715.0" fill="none" stroke="#4a4e56" stroke-width="5.0"/>
+  <path d="M170 782.0 L900 782.0 L1330 776.0 L2230 770.0" fill="none" stroke="#4a4e56" stroke-width="5.8"/>
+  <path d="M170 904.0 L900 904.0 L1330 837.0 L2230 770.0" fill="none" stroke="#4a4e56" stroke-width="6.6"/>
+  <path d="M170 1026.0 L900 1026.0 L1330 898.0 L2230 770.0" fill="none" stroke="#7b8089" stroke-width="7.4"/>
+  <line class="wine" x1="170" y1="660" x2="2230" y2="660"/>
+</svg>

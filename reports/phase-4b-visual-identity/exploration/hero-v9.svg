@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Civic Orderism — Homepage Hero · THRESHOLD
+     A structural boundary rises from the datum, with one passage opened
+     through it. The datum runs unbroken across the full width and continues
+     on both sides: the structure is not removed, the passage is opened.
+     Institutional mass rendered as a light structural tone, not a silhouette. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <style>
+      .mass  { fill: #e7e3dc; }
+      .line  { fill: none; stroke: #1b1c1f; stroke-width: 3.5; }
+      .edge  { stroke: #8b9099; stroke-width: 2; }
+      .datum { stroke: #7a2430; stroke-width: 6; }
+      .ref   { stroke: #d9c4c7; stroke-width: 2; }
+      .tick  { stroke: #c9c3b9; stroke-width: 2; }
+      @media (prefers-color-scheme: dark) {
+        .mass  { fill: #26282e; }
+        .line  { stroke: #eceae5; }
+        .edge  { stroke: #6f747c; }
+        .datum { stroke: #d98b96; }
+        .ref   { stroke: #4a4d54; }
+        .tick  { stroke: #3a3d43; }
+      }
+    </style>
+  </defs>
+
+  <!-- boundary with one passage: the wall rises from the datum -->
+  <path class="mass" d="M260 70 L940 70 L940 470 L700 470 L700 250 A100 100 0 0 0 500 250 L500 470 L260 470 Z"/>
+  <path class="line" d="M260 70 L940 70 L940 470 L700 470 L700 250 A100 100 0 0 0 500 250 L500 470 L260 470 Z"/>
+
+  <!-- passage reveals: the depth of the boundary -->
+  <path class="edge" d="M500 250 A100 100 0 0 1 700 250"/>
+  <line class="edge" x1="500" y1="250" x2="500" y2="470"/>
+  <line class="edge" x1="700" y1="250" x2="700" y2="470"/>
+
+  <!-- one datum, unbroken, continuing on both sides -->
+  <line class="datum" x1="70" y1="470" x2="1130" y2="470"/>
+
+  <!-- measured references -->
+  <line class="ref" x1="70" y1="70" x2="1130" y2="70"/>
+  <line class="ref" x1="70" y1="54" x2="70" y2="86"/>
+  <line class="ref" x1="1130" y1="54" x2="1130" y2="86"/>
+  <line class="tick" x1="500" y1="470" x2="500" y2="500"/>
+  <line class="tick" x1="700" y1="470" x2="700" y2="500"/>
+</svg>

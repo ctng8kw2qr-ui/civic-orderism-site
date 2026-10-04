@@ -42,9 +42,12 @@
     margin-bottom: var(--v6-space-md);
   }
 
+  /* Hero art keeps its 2:1 proportion and fills the (now single-column)
+     aside. Previously capped at 260px, which left it at ~4% of the Hero
+     area — too weak to read as a visual language. */
   .v6-hero__art {
-    width: min(100%, 260px);
-    opacity: 0.12;
+    width: 100%;
+    max-width: 640px;
   }
 
   /* 研究栏目索引：说明文字换到第二行，避免四列过窄。 */
@@ -120,8 +123,8 @@
 
   /* 辅助线稿在手机上几乎不可见，直接保留极低透明度即可。 */
   .v6-hero__art {
-    width: min(100%, 220px);
-    opacity: 0.1;
+    width: 100%;
+    max-width: none;
   }
 
   /* Section 节奏收紧，避免移动端过长。 */

@@ -239,7 +239,7 @@ Exceeding budget means re-encode, not raise the budget.
 Examples:
 
 ```
-hero/          hero-architecture.svg
+hero/          hero-threshold.svg
 editorial/     political-transition-overview-1600.webp
 organization/  board-formation-charter-cover.webp
 social/        og-fallback-1200x630.png

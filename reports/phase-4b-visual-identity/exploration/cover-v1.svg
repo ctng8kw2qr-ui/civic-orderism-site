@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1263" width="2400" height="1263">
+  <defs>
+    <style>
+      .paper { fill: #faf8f5; }
+      .str   { fill: none; stroke: #63676f; stroke-width: 3; }
+      .strD  { fill: none; stroke: #45484f; stroke-width: 4; }
+      .bnd   { fill: none; stroke: #1b1c1f; stroke-width: 6; }
+      .bndL  { fill: none; stroke: #8b9099; stroke-width: 3; }
+      .wine  { fill: none; stroke: #7a2430; stroke-width: 7; }
+      .rule  { stroke: #e0dcd5; stroke-width: 2; }
+      .ruleS { stroke: #d9c4c7; stroke-width: 2; }
+    </style>
+  </defs>
+  <rect class="paper" width="2400" height="1263"/>
+
+  <!-- plate rules -->
+  <line class="rule" x1="120" y1="120" x2="2280" y2="120"/>
+  <line class="rule" x1="120" y1="1143" x2="2280" y2="1143"/>
+
+  <!-- left: open, dispersed load -->
+  <g class="str">
+    <line x1="150"  y1="360" x2="700" y2="360"/>
+    <line x1="150"  y1="470" x2="700" y2="470"/>
+    <line x1="150"  y1="580" x2="700" y2="580"/>
+    <line x1="150"  y1="690" x2="700" y2="690"/>
+    <line x1="150"  y1="800" x2="700" y2="800"/>
+    <line x1="150"  y1="910" x2="700" y2="910"/>
+  </g>
+
+  <!-- right: constrained, concentrated -->
+  <g class="str">
+    <line x1="1180" y1="560" x2="2250" y2="560"/>
+    <line x1="1180" y1="605" x2="2250" y2="605"/>
+    <line x1="1180" y1="650" x2="2250" y2="650"/>
+    <line x1="1180" y1="695" x2="2250" y2="695"/>
+  </g>
+
+  <!-- the transition: strands converge -->
+  <g class="strD">
+    <line x1="700" y1="360" x2="1180" y2="560"/>
+    <line x1="700" y1="470" x2="1180" y2="605"/>
+    <line x1="700" y1="580" x2="1180" y2="650"/>
+    <line x1="700" y1="690" x2="1180" y2="695"/>
+  </g>
+
+  <!-- loss redistributed to the periphery -->
+  <g class="strD">
+    <line x1="700" y1="800" x2="1500" y2="980"/>
+    <line x1="700" y1="910" x2="1500" y2="1060"/>
+  </g>
+
+  <!-- the boundary that closes around the channel -->
+  <g class="bndL">
+    <line x1="1180" y1="470" x2="1180" y2="780"/>
+  </g>
+  <g class="bnd">
+    <line x1="2250" y1="470" x2="2250" y2="780"/>
+  </g>
+
+  <!-- the load path itself -->
+  <line class="wine" x1="150" y1="635" x2="2250" y2="635"/>
+
+  <!-- section marks -->
+  <g class="ruleS">
+    <line x1="700"  y1="120" x2="700"  y2="180"/>
+    <line x1="1180" y1="120" x2="1180" y2="180"/>
+  </g>
+</svg>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1263" width="2400" height="1263">
+  <defs><style>
+    .paper { fill: #faf8f5; }
+    .rule  { stroke: #e0dcd5; stroke-width: 2; }
+    .mark  { stroke: #d9c4c7; stroke-width: 2; }
+    .wine  { fill: none; stroke: #7a2430; stroke-width: 7; }
+    @media (prefers-color-scheme: dark) {
+      .paper { fill: #141518; }
+      .rule  { stroke: #2c2f35; }
+      .mark  { stroke: #5b4a4d; }
+      .wine  { stroke: #d98b96; }
+    }
+  </style></defs>
+  <rect class="paper" width="2400" height="1263"/>
+  <line class="rule" x1="180" y1="240" x2="2220" y2="240"/>
+  <line class="rule" x1="180" y1="1010" x2="2220" y2="1010"/>
+  <line class="mark" x1="880" y1="216" x2="880" y2="276"/>
+  <line class="mark" x1="1360" y1="216" x2="1360" y2="276"/>
+  <path d="M180 430.0 L880 430.0" fill="none" stroke="#5b6169" stroke-width="2.4"/>
+  <path d="M180 545.0 L880 545.0" fill="none" stroke="#5b6169" stroke-width="2.4"/>
+  <path d="M180 660.0 L880 660.0" fill="none" stroke="#5b6169" stroke-width="2.4"/>
+  <path d="M180 775.0 L880 775.0" fill="none" stroke="#5b6169" stroke-width="2.4"/>
+  <path d="M180 890.0 L880 890.0" fill="none" stroke="#5b6169" stroke-width="2.4"/>
+  <path d="M1360 430.0 L2220 430.0" fill="none" stroke="#3c4046" stroke-width="2.4"/>
+  <path d="M1360 476.0 L2220 476.0" fill="none" stroke="#3c4046" stroke-width="2.82"/>
+  <path d="M1360 522.0 L2220 522.0" fill="none" stroke="#3c4046" stroke-width="3.24"/>
+  <path d="M1360 568.0 L2220 568.0" fill="none" stroke="#3c4046" stroke-width="3.66"/>
+  <path d="M1360 614.0 L2220 614.0" fill="none" stroke="#3c4046" stroke-width="4.08"/>
+  <path d="M1360 660.0 L2220 660.0" fill="none" stroke="#3c4046" stroke-width="4.5"/>
+  <path d="M1360 706.0 L2220 706.0" fill="none" stroke="#3c4046" stroke-width="4.92"/>
+  <path d="M1360 752.0 L2220 752.0" fill="none" stroke="#3c4046" stroke-width="5.34"/>
+  <path d="M1360 798.0 L2220 798.0" fill="none" stroke="#3c4046" stroke-width="5.76"/>
+  <path d="M1360 844.0 L2220 844.0" fill="none" stroke="#3c4046" stroke-width="6.18"/>
+  <path d="M1360 890.0 L2220 890.0" fill="none" stroke="#3c4046" stroke-width="6.6"/>
+  <path d="M880 430.0 L1360 430.0" fill="none" stroke="#4a4e56" stroke-width="3.4"/>
+  <path d="M880 545.0 L1360 522.0" fill="none" stroke="#4a4e56" stroke-width="3.4"/>
+  <path d="M880 660.0 L1360 660.0" fill="none" stroke="#4a4e56" stroke-width="3.4"/>
+  <path d="M880 775.0 L1360 798.0" fill="none" stroke="#4a4e56" stroke-width="3.4"/>
+  <path d="M880 890.0 L1360 890.0" fill="none" stroke="#4a4e56" stroke-width="3.4"/>
+  <line class="wine" x1="180" y1="660" x2="2220" y2="660"/>
+</svg>

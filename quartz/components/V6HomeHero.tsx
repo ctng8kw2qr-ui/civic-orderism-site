@@ -67,13 +67,27 @@ const V6HomeHero: QuartzComponent = ({
 
           <div class="v6-hero__aside">
             {/*
-              Decorative institutional line drawing. Rendered as a CSS mask in
-              currentColor so it adapts to light/dark without an invert filter.
+              Hero artwork — THRESHOLD. A structural boundary with one passage
+              opened through it, and a datum running unbroken across the full
+              width: the structure continues, the path changes.
+
+              Rendered as a direct <img> of the SVG master. The old CSS-mask
+              model was retired here because a mask flattens all structure into
+              a single-colour alpha stencil and cannot carry a multi-weight
+              drawing. The SVG handles light/dark itself via
+              prefers-color-scheme, which V6 already keeps in sync with
+              saved-theme — so one asset serves both themes with no filter,
+              no invert and no second file.
+
+              Decorative concept artwork: the Hero copy carries the meaning, so
+              this is aria-hidden and must not be announced.
             */}
-            <div
+            <img
               class="v6-hero__art"
-              role="img"
-              aria-label="柱廊与山墙线稿，象征制度与公共秩序"
+              src="/static/assets/v6/hero/hero-threshold.svg"
+              alt=""
+              aria-hidden="true"
+              decoding="async"
             />
             {/* 当前阶段：presentation-only wrapper carrying the brand hairline.
                 Same content, same order, no added information. */}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1263" width="2400" height="1263">
+  <defs><style>
+    .paper { fill: #faf8f5; }
+    .rule  { stroke: #e0dcd5; stroke-width: 2; }
+    .mark  { stroke: #d9c4c7; stroke-width: 2; }
+    .reg   { stroke: #c9c3b9; stroke-width: 2; }
+    .bnd   { fill: none; stroke: #1b1c1f; stroke-width: 6; }
+    .wine  { fill: none; stroke: #7a2430; stroke-width: 6; }
+    @media (prefers-color-scheme: dark) {
+      .paper { fill: #141518; }
+      .rule  { stroke: #2c2f35; }
+      .mark  { stroke: #5b4a4d; }
+      .reg   { stroke: #3a3d43; }
+      .bnd   { stroke: #eceae5; }
+      .wine  { stroke: #d98b96; }
+    }
+  </style></defs>
+  <rect class="paper" width="2400" height="1263"/>
+  <line class="rule" x1="200" y1="250" x2="2200" y2="250"/>
+  <line class="rule" x1="200" y1="1000" x2="2200" y2="1000"/>
+  <line class="reg" x1="200" y1="230" x2="200" y2="270"/>
+  <line class="reg" x1="2200" y1="230" x2="2200" y2="270"/>
+  <line class="reg" x1="180" y1="250" x2="220" y2="250"/>
+  <line class="reg" x1="2180" y1="250" x2="2220" y2="250"/>
+  <line class="mark" x1="1200" y1="226" x2="1200" y2="286"/>
+  <line x1="200" y1="400.0" x2="1120" y2="400.0" stroke="#4a4e56" stroke-width="5.0"/>
+  <line x1="1120" y1="384.0" x2="1120" y2="416.0" stroke="#8b9099" stroke-width="3"/>
+  <line x1="200" y1="441.7" x2="1460" y2="441.7" stroke="#5b6169" stroke-width="2.6"/>
+  <line x1="1460" y1="425.7" x2="1460" y2="457.7" stroke="#8b9099" stroke-width="3"/>
+  <line x1="200" y1="483.3" x2="1760" y2="483.3" stroke="#5b6169" stroke-width="2.6"/>
+  <line x1="1760" y1="467.3" x2="1760" y2="499.3" stroke="#8b9099" stroke-width="3"/>
+  <line x1="200" y1="525.0" x2="2200" y2="525.0" stroke="#5b6169" stroke-width="2.6"/>
+  <line x1="200" y1="566.7" x2="2200" y2="566.7" stroke="#5b6169" stroke-width="2.6"/>
+  <line x1="200" y1="608.3" x2="2200" y2="608.3" stroke="#5b6169" stroke-width="2.6"/>
+  <line x1="200" y1="650.0" x2="2200" y2="650.0" stroke="#5b6169" stroke-width="2.6"/>
+  <line x1="200" y1="691.7" x2="2200" y2="691.7" stroke="#5b6169" stroke-width="2.6"/>
+  <line x1="200" y1="733.3" x2="2200" y2="733.3" stroke="#5b6169" stroke-width="2.6"/>
+  <line x1="200" y1="775.0" x2="2200" y2="775.0" stroke="#5b6169" stroke-width="2.6"/>
+  <line x1="200" y1="816.7" x2="1690" y2="816.7" stroke="#5b6169" stroke-width="2.6"/>
+  <line x1="1690" y1="800.7" x2="1690" y2="832.7" stroke="#8b9099" stroke-width="3"/>
+  <line x1="200" y1="858.3" x2="1330" y2="858.3" stroke="#5b6169" stroke-width="2.6"/>
+  <line x1="1330" y1="842.3" x2="1330" y2="874.3" stroke="#8b9099" stroke-width="3"/>
+  <line x1="200" y1="900.0" x2="1010" y2="900.0" stroke="#4a4e56" stroke-width="5.0"/>
+  <line x1="1010" y1="884.0" x2="1010" y2="916.0" stroke="#8b9099" stroke-width="3"/>
+  <line class="bnd" x1="2200" y1="360" x2="2200" y2="940"/>
+  <line class="wine" x1="200" y1="650" x2="2200" y2="650"/>
+</svg>
