@@ -927,32 +927,38 @@ for (const marker of homepageSectionIds) {
   previousHomepageSectionPosition = position;
 }
 // V6 home is a continuous institutional landing page: seven sections and no
-// numbered-report blocks. Phase 4B replaced the CSS-mask hero placeholder with
-// a real direct-rendered Hero artwork and gave the flagship article a Tier 1
-// cover, so exactly two images are now expected — the decorative Hero artwork
-// and the "latest research" lead cover. Anything else on the homepage is a
-// regression. The Hero artwork must stay decorative so the Hero copy carries
-// the meaning and nothing is announced twice.
+// numbered-report blocks.
+//
+// Images: the Hero artwork was REMOVED when the Hero moved to the E3
+// "Radical Minimal" composition, which deliberately carries no standalone
+// graphic — that page is built from the headline, brand typography, rules,
+// numerals, metadata and whitespace. Exactly ONE image therefore remains:
+// the "latest research" lead cover. The rule is inverted rather than dropped:
+// the Hero must NOT reintroduce an <img>, and any second image on the
+// homepage is a regression. (Replaces the Phase 4B rule that required a
+// decorative Hero artwork image.)
 const homeImgs = homepageHtml.match(/<img\b[^>]*>/g) ?? [];
 const heroImgs = homeImgs.filter((tag) => tag.includes("v6-hero__art"));
 const leadCoverFigures = (homepageHtml.match(/v6-latest__lead-cover/g) ?? [])
   .length;
-const isDecorative = (tag) =>
-  tag.includes('aria-hidden="true"') && /\salt(=""|\s|>)/.test(tag);
 assert(
   !homepageHtml.includes('id="approach"') &&
     !homepageHtml.includes('id="contact"') &&
     (homepageHtml.match(/<section class="v6-/g) ?? []).length === 7 &&
     !homepageHtml.includes("home-institution-") &&
-    homeImgs.length === 2 &&
-    heroImgs.length === 1 &&
-    heroImgs.every(isDecorative) &&
+    homeImgs.length === 1 &&
+    heroImgs.length === 0 &&
     leadCoverFigures === 1,
-  "首页未保持为连续机构 landing page（七个区域、无编号章节；图片仅限 Hero artwork 与最新研究主文章封面，且 Hero artwork 必须为装饰性）",
+  "首页未保持为连续机构 landing page（七个区域、无编号章节；图片仅限最新研究主文章封面，Hero 不得引入独立图形）",
 );
 // SECTION 1 / IDENTITY
+// 选择器匹配「class 以 v6-hero 开头」，而不是精确等于 class="v6-hero"：
+// Hero 现在带 E3 变体修饰符（<section class="v6-hero v6-hero--e3">），
+// 精确匹配会静默匹配不到，使下面全部 Hero 断言在空字符串上失败。
 const heroHtml =
-  homepageHtml.match(/<section class="v6-hero"[\s\S]*?<\/section>/)?.[0] ?? "";
+  homepageHtml.match(
+    /<section class="v6-hero\b[^"]*"[\s\S]*?<\/section>/,
+  )?.[0] ?? "";
 const heroText = visiblePageText(heroHtml);
 assert(
   heroText.includes("CIVIC ORDERISM") &&

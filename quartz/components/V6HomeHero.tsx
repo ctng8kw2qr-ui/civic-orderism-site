@@ -17,6 +17,19 @@ import researchStyle from "./styles/recentResearch.scss";
  * 03–07 仍然保留在 content/index.md 中，便于继续用 Markdown 维护文案。
  *
  * 两者都使用 .v6 命名空间，视觉上拼成同一个连续的机构落地页。
+ *
+ * ── HERO · E3「Radical Minimal」──────────────────────────────────────
+ * 整张 viewport 是一张画布，不是「左栏文字 + 右栏图形」。右侧主动留白。
+ * 不设任何独立图形：整页只由 中文主标题 / 品牌文字 / 细线 / 编号 /
+ * metadata / 留白 构成。
+ *
+ * 三层信息架构，三层不混：
+ *   A 主叙事   品牌 → 主标题 → 核心正文 → 辅助句
+ *   B 行动层   新访客入口（主） + 路线入口 / 参与入口（次）
+ *   C 状态层   编号 + CURRENT PHASE + 阶段 / 框架 / 年份
+ *
+ * 视觉层级：文字 > 留白 > 品牌纹理 > 几何装饰。
+ * 本轮只做既有 production 内容到 E3 的映射，不改文案、不改 URL。
  */
 const V6HomeHero: QuartzComponent = ({
   displayClass,
@@ -27,83 +40,114 @@ const V6HomeHero: QuartzComponent = ({
     <div class={`v6 ${displayClass ?? ""}`}>
       {/*
         SECTION 01 / HERO
-        品牌 → 主标题 → 机构说明 → 双 CTA → 新读者入口；
-        右侧为辅助线稿与当前阶段。留白优先，色块只出现在主标题第二行。
+        主叙事 → 行动层 → 状态层，全部落在一张画布内。
       */}
-      <section class="v6-hero" id="identity">
-        <div class="v6__container v6-hero__grid">
-          <div class="v6-hero__main">
+      <section class="v6-hero v6-hero--e3" id="identity">
+        {/*
+          画布上缘的横向细线 + 左侧极短 accent。
+          纯装饰，不承载信息，因此 aria-hidden。
+        */}
+        <div class="v6-hero__rule" aria-hidden="true" />
+
+        <div class="v6-hero__canvas">
+          {/* ══ A 主叙事层 ══ */}
+          <div class="v6-hero__narrative">
+            {/*
+              编号 + 当前阶段。01 属于全站章节式设计语言
+              （首页区块为 01–07），不是装饰。
+            */}
+            <p class="v6-hero__eyebrow">
+              <span class="v6-hero__eyebrow-num">01</span>
+              <span aria-hidden="true"> · </span>CURRENT PHASE
+              <span aria-hidden="true"> · </span>当前阶段
+            </p>
+
             <p class="v6-hero__brand">
               <span class="v6-hero__brand-zh">公民秩序主义</span>
               <span class="v6-hero__brand-en" lang="en">
                 CIVIC ORDERISM
               </span>
             </p>
+
             <h1 class="v6-hero__title">
-              为中国和平政治转轨
-              <span class="v6-hero__title-em">准备承接力量</span>
+              <span class="v6-hero__title-line">
+                为中国和平
+                <wbr />
+                政治转轨
+              </span>
+              <span class="v6-hero__title-em v6-hero__title-line">
+                准备承接力量
+              </span>
             </h1>
+
             <p class="v6-hero__statement">
               不革命、不清算，在保持国家连续运行的前提下，为中国未来建立一条低阻力、低风险的政治转轨路径。
             </p>
+
             <p class="v6-hero__institution">我们研究未来，也为未来建立组织。</p>
-            <div class="v6-actions">
-              <a class="v6-button v6-button--primary" href="/civic-orderism">
-                了解我们的路线 <span aria-hidden="true">→</span>
-              </a>
-              <a class="v6-button v6-button--secondary" href="/participate">
-                参与组织建设
-              </a>
-            </div>
+          </div>
+
+          {/*
+            ══ B 行动层 ══
+            Level 1 新访客入口：Hero 主内容区唯一的 accent text CTA。
+            Level 2/3 路线与参与入口：secondary textual navigation，
+            无填充 / 无边框 / 无圆角 / 无 box。三者严格不平级。
+          */}
+          <div class="v6-hero__actions">
             <p class="v6-hero__start">
-              <a class="v6-link" href="/start-here/">
+              <a class="v6-hero__start-link" href="/start-here/">
                 第一次来？5分钟了解公民秩序主义{" "}
-                <span class="v6-link__arrow" aria-hidden="true">
+                <span class="v6-hero__start-arrow" aria-hidden="true">
                   →
                 </span>
               </a>
             </p>
+            <p class="v6-hero__nav">
+              <a class="v6-hero__nav-link" href="/civic-orderism">
+                了解我们的路线 <span aria-hidden="true">→</span>
+              </a>
+              <a class="v6-hero__nav-link" href="/participate">
+                参与组织建设 <span aria-hidden="true">→</span>
+              </a>
+            </p>
           </div>
 
-          <div class="v6-hero__aside">
-            {/*
-              Hero artwork — THRESHOLD. A structural boundary with one passage
-              opened through it, and a datum running unbroken across the full
-              width: the structure continues, the path changes.
-
-              Rendered as a direct <img> of the SVG master. The old CSS-mask
-              model was retired here because a mask flattens all structure into
-              a single-colour alpha stencil and cannot carry a multi-weight
-              drawing. The SVG handles light/dark itself via
-              prefers-color-scheme, which V6 already keeps in sync with
-              saved-theme — so one asset serves both themes with no filter,
-              no invert and no second file.
-
-              Decorative concept artwork: the Hero copy carries the meaning, so
-              this is aria-hidden and must not be announced.
-            */}
-            <img
-              class="v6-hero__art"
-              src="/static/assets/v6/hero/hero-threshold.svg"
-              alt=""
-              aria-hidden="true"
-              decoding="async"
-            />
-            {/* 当前阶段：presentation-only wrapper carrying the brand hairline.
-                Same content, same order, no added information. */}
-            <div class="v6-hero__phase-block">
-              <p class="v6-hero__phase-label">
-                CURRENT PHASE<span aria-hidden="true"> · </span>当前阶段
+          {/*
+            ══ C 状态 / metadata 层 ══
+            desktop / tablet 左右双列，mobile 单列。
+            仅用 typography + whitespace 分组 ——
+            不新增 separator / card / box / border / pill / icon / divider。
+          */}
+          <div class="v6-hero__meta">
+            <div class="v6-hero__meta-col v6-hero__meta-col--left">
+              <p class="v6-hero__meta-primary">
+                POLITICAL TRANSITION FRAMEWORK
+                <span aria-hidden="true"> · </span>2026
               </p>
-              <p class="v6-hero__phase">和平政治转轨路线建设与组织筹备</p>
-              <p class="v6-hero__phase-en" lang="en">
-                Political Transition Framework
-                <br />
-                &amp; Organizational Preparation
+              <p class="v6-hero__meta-secondary">
+                和平政治转轨路线建设与组织筹备
               </p>
-              <p class="v6-hero__year">2026</p>
+            </div>
+            <div class="v6-hero__meta-col v6-hero__meta-col--right">
+              <p class="v6-hero__meta-primary" lang="en">
+                CIVIC ORDERISM
+              </p>
+              <p class="v6-hero__meta-secondary" lang="en">
+                Political Transition Framework &amp; Organizational Preparation
+              </p>
             </div>
           </div>
+        </div>
+
+        {/*
+          品牌纹理：底部被裁切的巨大 CIVIC ORDERISM。
+          纯视觉，不作第二标题、不承载信息 —— aria-hidden。
+          位于 metadata 之下，与 metadata 不产生竞争。
+        */}
+        <div class="v6-hero__mark" aria-hidden="true">
+          <span class="v6-hero__mark-text" lang="en">
+            CIVIC ORDERISM
+          </span>
         </div>
       </section>
 
