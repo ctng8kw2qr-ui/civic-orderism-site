@@ -51,7 +51,7 @@ const V6HomeHero: QuartzComponent = ({
               <a class="v6-button v6-button--primary" href="/civic-orderism">
                 了解我们的路线 <span aria-hidden="true">→</span>
               </a>
-              <a class="v6-button v6-button--secondary" href="/preparation">
+              <a class="v6-button v6-button--secondary" href="/participate">
                 参与组织建设
               </a>
             </div>

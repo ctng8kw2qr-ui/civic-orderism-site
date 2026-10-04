@@ -9,6 +9,9 @@ articleType: institutional
 contentType: 总论
 featured: true
 recommended: true
+# V6 首页「最新研究」主文章。全站只允许 1 篇设置此项；
+# 若出现多篇，构建时会告警并取日期最新的一篇。
+homepageLead: true
 readingLevel: 基础
 readingOrder: 0
 tags:

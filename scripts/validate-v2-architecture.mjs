@@ -957,8 +957,10 @@ assert(
     // The institutional self-description required by the V6 brief.
     heroText.includes("我们研究未来，也为未来建立组织。") &&
     // Primary and secondary calls to action.
+    // 了解 → 路线, 参与 → 行动. The secondary CTA points at /participate
+    // (the action page), not /preparation (the status page).
     /<a[^>]+href="\/civic-orderism"[^>]*>\s*了解我们的路线/.test(heroHtml) &&
-    /<a[^>]+href="\/preparation"[^>]*>\s*参与组织建设/.test(heroHtml) &&
+    /<a[^>]+href="\/participate"[^>]*>\s*参与组织建设/.test(heroHtml) &&
     heroHtml.includes(site.currentPhase.label) &&
     heroText.includes(site.currentPhase.labelZh) &&
     heroText.includes(site.currentPhase.title) &&
