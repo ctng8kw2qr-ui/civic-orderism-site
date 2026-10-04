@@ -18,13 +18,18 @@ const isNotInstitutionalArticle = (page: QuartzComponentProps) => {
   return !isInstitutionalArticle(page);
 };
 
-// Institutional template shows a TOC only when the article is long enough.
-// Rule: at least 8 H2 headings. Quartz's toc depth is normalized relative
-// depth (H2 → 0, H3 → 1), so the threshold counts depth-0 entries.
+// Institutional template shows a TOC only when the article has a real
+// section structure. Quartz's toc depth is normalized relative depth
+// (H2 → 0, H3 → 1), so the threshold counts depth-0 entries.
+//
+// Phase 2: lowered 8 -> 5. Measured against the content set, the old
+// threshold left 32 of 103 articles with no section navigation at all,
+// including flagship pieces with 6-7 sections. Long-form readers need the
+// section map; short pieces still get no TOC.
 const institutionalArticleToc = (page: QuartzComponentProps) => {
   if (!isInstitutionalArticle(page)) return false;
   const toc = page.fileData.toc ?? [];
-  return toc.filter((entry) => entry.depth === 0).length >= 8;
+  return toc.filter((entry) => entry.depth === 0).length >= 5;
 };
 
 const articleToc = (page: QuartzComponentProps) => {

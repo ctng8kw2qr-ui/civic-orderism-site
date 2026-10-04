@@ -1,0 +1,161 @@
+# Technical Debt
+
+Verified inventory of pre-existing issues. Compiled during V6 Phase 2
+(July 2026) so they are recorded rather than silently carried. **Nothing in
+this file was introduced by V6, and nothing here is fixed by V6** — Phase 2
+deliberately stayed inside its scope.
+
+Each item lists how it was verified, so a future pass does not have to
+re-discover it.
+
+---
+
+## 1. Prettier violations across the repo
+
+**Status:** present on `main`, unchanged by V6.
+
+`npm run check` runs `tsc --noEmit && prettier . --check`. The Prettier half
+fails. The count is around **189 files** on `main` and around **188** after
+Phase 2 (the relocation of the hero SVG changed one file's status; Phase 2
+adds no new offenders — verified with `npx prettier . --check`).
+
+The V6 work is Prettier-clean: every file it adds or edits passes
+`prettier --check`. Phase 1 and Phase 2 both recorded "0 new offenders".
+
+**Why not fixed:** a repo-wide `prettier --write` would create a very large
+diff touching unrelated files and obscure review. It should be done as its
+own isolated, no-behaviour-change commit once no feature branches are open.
+
+---
+
+## 2. Article column width is `!important`-locked
+
+**Status:** present on `main`. Deliberately worked _around_, not changed.
+
+`quartz/styles/custom.scss:11121`
+
+```scss
+body[data-page-kind="article"] .page > #quartz-body .center {
+  flex: 0 1 780px !important;
+  min-width: 0 !important;
+  max-width: 780px !important;
+}
+```
+
+The article reading column cannot be widened with normal cascade rules.
+Phase 2 initially attempted to give the article header a wider editorial band
+and discovered this is a no-op: a child cannot exceed its parent.
+
+Because overriding it requires more `!important` and a real layout
+restructure (and a decision about the 232px left rail — which is **empty** on
+article pages — and the 272px right TOC rail), Phase 2 respected the existing
+width and achieved cohesion through the token system instead.
+
+**Follow-up:** if a wider article composition is ever wanted, do it as a
+layout-shell task: decide the rails, then change this rule once, cleanly.
+
+---
+
+## 3. `temp_images/` is a tracked empty directory
+
+**Status:** present on `main`.
+
+`git ls-files temp_images/` → `temp_images/.keep`. An abandoned image-prep
+workflow; the directory holds nothing else.
+
+**Note:** removing it is a one-line commit. It is referenced by no script,
+config, or workflow (verified).
+
+---
+
+## 4. Stale build residue in `public/` (not a source problem)
+
+**Status:** self-resolving; recorded for accuracy.
+
+An earlier audit during Phase 1 found 28 files with a ` 2` suffix in
+`public/` (e.g. `about 2.html`, `icon-192 2.png`). A subsequent `npm run build`
+removed them: `public/` is wiped and regenerated each build
+("Cleaned output directory"), and `git ls-files | grep ' 2\.'` is empty —
+none of them are tracked.
+
+**Conclusion:** this was residue from some older build/sync, not a source
+tree problem. No action needed; it will not recur from a clean build.
+
+---
+
+## 5. Two legacy CSS/token systems still coexist
+
+**Status:** partially addressed by Phase 2; deliberately not fully removed.
+
+Before Phase 2 the site had three token layers:
+
+1. `--v6-*` — the V6 semantic design system (`quartz/styles/v6/_tokens.scss`).
+2. `--inst-*` — a separate institutional palette defined in `custom.scss`.
+3. Legacy Quartz theme tokens (`--dark`, `--gray`, `--lightgray`,
+   `--secondary`, …) set from `quartz.config.ts`.
+
+Phase 2 resolved the _article_ side of this by aliasing both legacy families
+onto V6 tokens, scoped to `body[data-page-kind="article"]`
+(`quartz/styles/v6/_article.scss`). The article system itself was not
+rewritten.
+
+**Still outstanding:** the remaining `inst4-*` / `inst4l-*` landing-page CSS
+in `custom.scss` (~11k lines) and the `--inst-*` definitions that now have no
+consumer inside article scope. `custom.scss` also still targets
+`article { max-width: 780px }` at line 1360, which is dead for article pages
+(`.article-page` overrides it) but applies to non-article `<article>` elements.
+
+**Follow-up:** retire the legacy landing-page layer page by page, the way the
+homepage was done, rather than in one sweep.
+
+---
+
+## 6. The hero visual is still an inline-authored drawing
+
+**Status:** by design for now.
+
+`quartz/static/assets/v6/hero/hero-architecture.svg` is a hand-authored
+colonnade line drawing, rendered as a CSS mask in `currentColor`. It is a
+placeholder _slot_, not finished brand artwork.
+
+The V6 asset convention (`quartz/static/assets/v6/{brand,hero,editorial,organization}/`)
+exists so real artwork can be dropped in without touching markup. Swapping the
+hero file changes the visual with no code change.
+
+**Follow-up:** supply real brand artwork (human-authored). Do not fill the
+slot with stock or AI-generated imagery.
+
+---
+
+## 7. `satori` / `sharp` / OG-image emitter are available but unused
+
+**Status:** present, deliberately left disabled.
+
+`quartz/plugins/emitters/ogImage.tsx` exists (Satori + sharp, 1200×630
+programmatic social images) but is **not registered** in `quartz.config.ts`.
+`sharp` is a dependency already used by the favicon emitter.
+
+This means the project could generate branded OG images and editorial covers
+programmatically from each article's title/description, with no manual
+artwork. V6 Phase 2 was explicitly scoped **not** to enable it.
+
+**Follow-up (Phase 3 candidate):** evaluate enabling `CustomOgImages` so every
+article gets a consistent, on-brand social card. Also relevant: `og:image` is
+currently hardcoded to a single site-wide `og-image.png` for every page
+(`quartz/components/Head.tsx`), so articles do not yet have distinct social
+previews. An article `cover:` (now supported) could feed `og:image`.
+
+---
+
+## 8. Known cosmetic duplication in the article system
+
+**Status:** present; not changed (Phase 2 was restricted to visual alignment).
+
+`ArticleReadingEnhancements.tsx` (984 lines) renders several distinct
+recommendation regions — 继续阅读, 知识关联, 系列导航, CTA, Reading Footer.
+Phase 2 aligned their styling but **did not** delete or merge any module, by
+explicit instruction.
+
+**Follow-up:** once article screenshots have been reviewed editorially, decide
+whether any of these regions are redundant for a reader arriving from social.
+That is an editorial decision, not a styling one.

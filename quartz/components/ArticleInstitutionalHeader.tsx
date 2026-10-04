@@ -114,6 +114,13 @@ const ArticleInstitutionalHeader: QuartzComponent = ({
     typeof fm.subtitle === "string" ? fm.subtitle.trim() : "";
   const deck = frontmatterSubtitle || articleSubtitle(tree) || "";
   const dateText = formattedDate(fm.date);
+  // Optional editorial cover. Site-relative paths only; when absent the
+  // header renders its typographic form and no <img> is emitted at all,
+  // so there is never a broken image or placeholder box.
+  const coverRaw = typeof fm.cover === "string" ? fm.cover.trim() : "";
+  const cover = coverRaw.startsWith("/") ? coverRaw : "";
+  const coverAlt =
+    (typeof fm.coverAlt === "string" && fm.coverAlt.trim()) || title;
   const minutes = estimatedReadingMinutes(fileData);
   const slug = (fileData.slug ?? "") as FullSlug;
   const isCorePoliticalStatement = fm.corePoliticalStatement === true;
@@ -162,7 +169,9 @@ const ArticleInstitutionalHeader: QuartzComponent = ({
           /
         </span>
         {isCorePoliticalStatement ? (
-          <span class="article-inst__context-current">{coreStatementLabel}</span>
+          <span class="article-inst__context-current">
+            {coreStatementLabel}
+          </span>
         ) : programHref ? (
           <a
             class="article-inst__context-link"
@@ -194,6 +203,12 @@ const ArticleInstitutionalHeader: QuartzComponent = ({
         </span>
       </p>
 
+      {cover ? (
+        <figure class="article-inst__cover">
+          <img src={cover} alt={coverAlt} decoding="async" loading="eager" />
+        </figure>
+      ) : null}
+
       <h1 class="article-inst__title">{title}</h1>
 
       {deck ? <p class="article-inst__deck">{deck}</p> : null}
@@ -213,4 +228,5 @@ const ArticleInstitutionalHeader: QuartzComponent = ({
 
 ArticleInstitutionalHeader.afterDOMLoaded = script;
 
-export default (() => ArticleInstitutionalHeader) satisfies QuartzComponentConstructor;
+export default (() =>
+  ArticleInstitutionalHeader) satisfies QuartzComponentConstructor;
