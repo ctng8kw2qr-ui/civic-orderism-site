@@ -5475,6 +5475,189 @@ article .start-sequence a {
   background-image: none;
 }
 
+/* ── Start Here · editorial links ─────────────────────────────────
+   These were bordered v2-buttons. The surrounding page already speaks in
+   Typography + Number + Rule + Arrow, so a bordered control read as a web
+   component dropped into an editorial column. Now a text link with an arrow
+   and a light rule, on the shared grid.
+
+   The first entry in each list keeps the brand colour and a full-strength
+   rule, so the CTA hierarchy survives without a filled or bordered button.
+   No background, no radius, no shadow, no icon, no pill. */
+article .start-page__actions--editorial {
+  display: grid;
+  gap: 0;
+  margin-top: 1.5rem;
+}
+
+article .start-page .start-editorial-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 44px;
+  padding: 0.55rem 0;
+  border-top: 1px solid var(--v6-border);
+  background: none;
+  border-radius: 0;
+  color: var(--v6-text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    color 160ms var(--v6-ease),
+    border-color 160ms var(--v6-ease);
+}
+
+article .start-page .start-editorial-link:last-child {
+  border-bottom: 1px solid var(--v6-border);
+}
+
+article .start-page .start-editorial-link__arrow {
+  flex: none;
+  color: var(--v6-text-muted);
+  font-size: 0.9em;
+  transition: color 160ms var(--v6-ease);
+}
+
+article .start-page .start-editorial-link:hover,
+article .start-page .start-editorial-link:focus-visible {
+  color: var(--v6-brand-text);
+  border-top-color: var(--v6-border-strong);
+}
+
+article .start-page .start-editorial-link:hover .start-editorial-link__arrow,
+article
+  .start-page
+  .start-editorial-link:focus-visible
+  .start-editorial-link__arrow {
+  color: var(--v6-brand-text);
+}
+
+article .start-page .start-editorial-link:focus-visible {
+  outline: 2px solid var(--v6-focus);
+  outline-offset: 2px;
+}
+
+/* The primary entry of each list: brand colour and a full-strength rule. */
+article .start-page .start-editorial-link:first-child {
+  color: var(--v6-brand-text);
+  font-weight: 600;
+  border-top-color: var(--v6-border-strong);
+}
+
+/* ── Start Here · newcomer exit index ─────────────────────────────
+   The five main sections plus the Reading Map, as an editorial index:
+   numeral + title + one line, separated by a rule. No background, no radius,
+   no icon, no card. Doubled class where the generic `a.internal` rule would
+   otherwise re-impose a rounded pill on these links. */
+article .start-exits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(1.5rem, 3vw, 2.75rem);
+  margin: 1.4rem 0 0;
+}
+
+article .start-page .start-exit {
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 1fr);
+  min-height: 44px;
+  padding: 0.9rem 0 1rem;
+  border-top: 1px solid var(--v6-border);
+  background: none;
+  border-radius: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+article .start-page .start-exit:nth-last-child(-n + 2) {
+  border-bottom: 1px solid var(--v6-border);
+}
+
+.start-exit__num {
+  color: var(--v6-text-muted);
+  font-size: 0.74rem;
+  font-weight: 640;
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.2rem;
+}
+
+.start-exit__body {
+  display: block;
+  min-width: 0;
+}
+
+.start-exit__title {
+  display: block;
+  color: var(--v6-text-primary);
+  font-size: 1.02rem;
+  font-weight: 640;
+  line-height: 1.45;
+  transition: color 160ms var(--v6-ease);
+}
+
+.start-exit__desc {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--v6-text-muted);
+  font-size: 0.86rem;
+  font-weight: 440;
+  line-height: 1.62;
+}
+
+article .start-page .start-exit:hover .start-exit__title,
+article .start-page .start-exit:focus-visible .start-exit__title {
+  color: var(--v6-brand-text);
+}
+
+article .start-page .start-exit:focus-visible {
+  outline: 2px solid var(--v6-focus);
+  outline-offset: 2px;
+}
+
+/* Secondary guidance only: the Reading Map is already an entry in the index
+   above, so this is deliberately smaller and lower-contrast than the index
+   rather than a second link of equal weight to the same destination. */
+.start-exits__hint {
+  margin: 1.1rem 0 0;
+  color: var(--v6-text-muted);
+  font-size: 0.82rem;
+}
+
+.start-exits__hint a {
+  color: var(--v6-text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--v6-border);
+}
+
+.start-exits__hint a:hover {
+  color: var(--v6-brand-text);
+  border-bottom-color: var(--v6-border-strong);
+}
+
+/* Keyboard focus used to fall through to the browser default ring here — the
+   one link in this section that did not use the site focus token. */
+.start-exits__hint a:focus-visible {
+  outline: 2px solid var(--v6-focus);
+  outline-offset: 2px;
+  border-radius: var(--v6-radius-sm);
+  color: var(--v6-brand-text);
+}
+
+@media (max-width: 800px) {
+  article .start-exits {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  article .start-page .start-exit:nth-last-child(-n + 2) {
+    border-bottom: none;
+  }
+
+  article .start-page .start-exit:last-child {
+    border-bottom: 1px solid var(--v6-border);
+  }
+}
+
 article .start-roadmap__line {
   margin: 1.25rem 0 0;
   padding: 1rem 1.1rem;
@@ -7234,6 +7417,152 @@ article a.internal {
 .institution-first-reading a,
 .knowledge-card a.internal {
   padding-inline: 0;
+}
+
+/* ── Research Section Index ────────────────────────────────────────
+   Answers "what is here?" — the site structure. Distinct from the Reading
+   Map, which answers "what should I read first?". Never merge the two.
+
+   An editorial index, not a menu and not a set of cards: no background, no
+   radius, no icon, no dropdown. Structure comes from the numerals, the rules
+   and the whitespace.
+
+   Every entry is a navigation target, so the WHOLE content area is clickable
+   rather than just the Chinese title — the hit box is the .item's own box.
+   Hover stays a colour change on the title and the top rule; there is no card
+   hover, no background and no radius on interaction either. */
+.inst4l-secindex {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: clamp(1.5rem, 3vw, 2.75rem);
+  margin-top: clamp(1.75rem, 3vw, 2.75rem);
+}
+
+.inst4l .inst4l-secindex__item {
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 1fr);
+  min-height: 44px;
+  padding: 1rem 0 1.15rem;
+  border-top: 1px solid var(--v6-border);
+  text-decoration: none;
+  color: inherit;
+  background: none;
+  border-radius: 0;
+}
+
+/* a closing rule bounds the index */
+.inst4l .inst4l-secindex__item:nth-last-child(-n + 3) {
+  border-bottom: 1px solid var(--v6-border);
+}
+
+.inst4l-secindex__num {
+  color: var(--v6-text-muted);
+  font-size: 0.74rem;
+  font-weight: 640;
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.22rem;
+}
+
+.inst4l-secindex__body {
+  display: block;
+  min-width: 0;
+}
+
+.inst4l-secindex__title {
+  display: block;
+  color: var(--v6-text-primary);
+  font-size: 1.04rem;
+  font-weight: 640;
+  line-height: 1.42;
+  transition: color 160ms var(--v6-ease);
+}
+
+.inst4l-secindex__en {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--v6-text-muted);
+  font-size: 0.68rem;
+  font-weight: 560;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.inst4l-secindex__desc {
+  display: block;
+  margin-top: 0.45rem;
+  color: var(--v6-text-muted);
+  font-size: 0.85rem;
+  font-weight: 440;
+  line-height: 1.62;
+}
+
+.inst4l-secindex__item:hover .inst4l-secindex__title,
+.inst4l-secindex__item:focus-visible .inst4l-secindex__title {
+  color: var(--v6-brand-text);
+}
+
+.inst4l-secindex__item:hover,
+.inst4l-secindex__item:focus-visible {
+  border-top-color: var(--v6-border-strong);
+}
+
+.inst4l-secindex__item:focus-visible {
+  outline: 2px solid var(--v6-focus);
+  outline-offset: 2px;
+}
+
+/* the current section, marked the same way the header marks the current page */
+.inst4l-secindex__item[aria-current="page"] .inst4l-secindex__title {
+  color: var(--v6-brand-text);
+}
+
+.inst4l-secindex__item[aria-current="page"] {
+  border-top-color: var(--v6-brand);
+}
+
+@media (max-width: 1000px) {
+  .inst4l-secindex {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .inst4l .inst4l-secindex__item:nth-last-child(-n + 3) {
+    border-bottom: none;
+  }
+
+  .inst4l .inst4l-secindex__item:nth-last-child(-n + 2) {
+    border-bottom: 1px solid var(--v6-border);
+  }
+}
+
+@media (max-width: 680px) {
+  .inst4l-secindex {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 1.5rem;
+  }
+
+  /* Mobile only: the nine entries ran long in one column. Tightened by
+     reducing the vertical padding and the internal gaps, NOT the title size,
+     so the type hierarchy and the Chinese line-breaking are unchanged and the
+     target stays well above 44px. Desktop is untouched. */
+  .inst4l .inst4l-secindex__item {
+    padding: 0.65rem 0 0.75rem;
+  }
+
+  .inst4l-secindex__en {
+    margin-top: 0.2rem;
+  }
+
+  .inst4l-secindex__desc {
+    margin-top: 0.28rem;
+  }
+
+  .inst4l .inst4l-secindex__item:nth-last-child(-n + 2) {
+    border-bottom: none;
+  }
+
+  .inst4l .inst4l-secindex__item:last-child {
+    border-bottom: 1px solid var(--v6-border);
+  }
 }
 
 /* ---- V4 home container (full-width institutional page) ---- */

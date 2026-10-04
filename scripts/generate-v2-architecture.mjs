@@ -400,8 +400,7 @@ const articles = walk(contentDir)
     article.primaryCoreModel = coreModelAssignment?.primaryCoreModel ?? null;
     article.associatedCoreModels =
       coreModelAssignment?.associatedCoreModels ?? [];
-    article.featured =
-      parsed.data.featured === true || allFeatured.has(slug);
+    article.featured = parsed.data.featured === true || allFeatured.has(slug);
     article.recommended =
       parsed.data.recommended === true || allRecommended.has(slug);
     article.readingLevel =
@@ -1290,10 +1289,7 @@ ${civicOrderismConfig.homeTransition.steps
           <p class="v6-org__item-summary">${site.currentPhase.note}新的政治力量必须具备能够被识别、被验证、被追责的政治信誉与承接能力；法律、财务、人员与长期政治责任必须由正式组织承担。</p>
           <ul class="v6-org__facts">
 ${v6OrganizationFacts
-  .map(
-    (fact) =>
-      `            <li><span>${fact.label}</span>${fact.value}</li>`,
-  )
+  .map((fact) => `            <li><span>${fact.label}</span>${fact.value}</li>`)
   .join("\n")}
           </ul>
           <div class="v6-org__links">
@@ -1375,8 +1371,30 @@ writeContent(
     <section><span>01</span><div><h2>公民秩序主义是什么？</h2><p>公民秩序主义不是普通政治评论项目，也不是只提供文章和观点的内容平台。它是一条面向中国未来政治转轨的政治路线：理论研究为路线提供判断基础，组织建设为路线建立现实承接能力。</p><p>它要回答的不是哪一种制度听起来最理想，而是在降低冲突与社会代价的前提下，中国怎样完成下一次政治转型。</p><p class="start-roadmap__line">政治路线 → 组织承接能力 → 和平政治转轨</p></div></section>
     <section><span>02</span><div><h2>为什么是现在？</h2><p>过去几十年，中国社会普遍相信明天会比今天更好：普通人相信收入会增加，企业相信生意还能扩大，年轻人相信机会还会更多。</p><p>今天，越来越多阶层、行业和群体开始重新计算自己的未来，中共也越来越难回答整个社会都在追问的那个问题：明天到底会怎样？</p><p>当旧秩序越来越难继续创造新的受益者，而越来越多社会群体开始承受损失，寻找新的政治答案就已经成为现实需要。政治转轨不是未来某一天才需要面对的问题，它已经成为今天必须开始准备的问题。</p><p class="start-roadmap__line">明天会比今天更好 → 明天到底会怎样？ → 提前准备政治答案</p><p>更深入的理论解释，例如工业时代形成的治理方式与信息化社会之间的结构性失配，属于后续的研究内容：<a href="/civic-orderism/information-age-and-political-transition">信息化时代与政治转型</a>。</p></div></section>
     <section><span>03</span><div><h2>政治转轨意味着什么？</h2><p>政治转轨不是简单的政权崩溃，也不是街头革命。它不是等旧秩序倒下的那一刻才开始，也不是把国家本身当作革命对象。</p><p>公民秩序主义关心的重点是：政治权力发生变化的同时，国家和社会继续运行——公共服务不停摆，社会秩序不失控，普通人的生活不必为政治变化支付无法承受的代价。</p><p class="start-roadmap__line">政治权力改变 → 国家继续运行 → 社会保持稳定</p></div></section>
-    <section><span>04</span><div><h2>公民秩序主义准备怎么做？</h2><p class="start-roadmap__line">旧体系无法自行改革 → 外部政治承接力量提前形成 → 降低转轨阻力 → 保持国家连续运行 → 逐步进入新的政治秩序</p><p>这是和平转轨路线的主线。它的方法边界，可以先用五条已经确定的政治原则说明。</p>${formalPrinciplesList()}<p>为什么内部改革无法完成破局、为什么需要外部政治承接、为什么和平转轨存在现实基础，以及政治变化以后怎样保持国家运行，在完整的和平转轨路线中展开。</p><div class="start-page__actions"><a class="v2-button v2-button--primary" href="/civic-orderism/">进入完整和平转轨路线</a></div></div></section>
-    <section><span>05</span><div><h2>最终想建立什么？</h2><p>政治转轨的目的，不是结束某一个政权本身。它最终要回答的是：旧政治秩序之后，中国能不能建立一个值得生活、也值得期待未来的国家。</p><p class="start-roadmap__line">有边界的权力 → 有责任的政治 → 有连续性的国家 → 有尊严的公民 → 有纠错能力的制度</p><p>这就是「保留国家，改变政治」：政治制度可以改变，国家行政体系不能停摆。政治变化应当扩大、而不是取消普通人对未来的预期。</p><p>更完整的未来中国与长期制度方向，在「中国未来」与价值目标中展开；当前的组织建设进展另行说明。</p><div class="start-page__actions"><a class="v2-button v2-button--primary" href="/civic-orderism/peaceful-state-transition">阅读核心政治路线</a><a class="v2-button v2-button--secondary" href="/china-future/">中国未来</a><a class="v2-button v2-button--secondary" href="/articles">阅读地图</a><a class="v2-button v2-button--secondary" href="/preparation">当前组织建设</a></div></div></section>
+    <section><span>04</span><div><h2>公民秩序主义准备怎么做？</h2><p class="start-roadmap__line">旧体系无法自行改革 → 外部政治承接力量提前形成 → 降低转轨阻力 → 保持国家连续运行 → 逐步进入新的政治秩序</p><p>这是和平转轨路线的主线。它的方法边界，可以先用五条已经确定的政治原则说明。</p>${formalPrinciplesList()}<p>为什么内部改革无法完成破局、为什么需要外部政治承接、为什么和平转轨存在现实基础，以及政治变化以后怎样保持国家运行，在完整的和平转轨路线中展开。</p><div class="start-page__actions start-page__actions--editorial">
+<a class="start-editorial-link" href="/civic-orderism/"><span>进入完整和平转轨路线</span><span class="start-editorial-link__arrow" aria-hidden="true">→</span></a>
+</div></div></section>
+    <section><span>05</span><div><h2>最终想建立什么？</h2><p>政治转轨的目的，不是结束某一个政权本身。它最终要回答的是：旧政治秩序之后，中国能不能建立一个值得生活、也值得期待未来的国家。</p><p class="start-roadmap__line">有边界的权力 → 有责任的政治 → 有连续性的国家 → 有尊严的公民 → 有纠错能力的制度</p><p>这就是「保留国家，改变政治」：政治制度可以改变，国家行政体系不能停摆。政治变化应当扩大、而不是取消普通人对未来的预期。</p><p>更完整的未来中国与长期制度方向，在「中国未来」与价值目标中展开；当前的组织建设进展另行说明。</p><div class="start-page__actions start-page__actions--editorial">
+<a class="start-editorial-link" href="/civic-orderism/peaceful-state-transition"><span>阅读核心政治路线</span><span class="start-editorial-link__arrow" aria-hidden="true">→</span></a>
+<a class="start-editorial-link" href="/china-future/"><span>中国未来</span><span class="start-editorial-link__arrow" aria-hidden="true">→</span></a>
+<a class="start-editorial-link" href="/articles"><span>阅读地图</span><span class="start-editorial-link__arrow" aria-hidden="true">→</span></a>
+<a class="start-editorial-link" href="/preparation"><span>当前组织建设</span><span class="start-editorial-link__arrow" aria-hidden="true">→</span></a>
+</div></div></section>
+    <section><span>06</span><div><h2>我们现在做到哪里</h2><p>北美非营利法人及首届董事会筹备中。首届董事会尚未依法产生，法人尚未完成注册，具体法域尚未确定。</p><div class="start-page__actions start-page__actions--editorial">
+<a class="start-editorial-link" href="/preparation/"><span>了解组织建设</span><span class="start-editorial-link__arrow" aria-hidden="true">→</span></a>
+<a class="start-editorial-link" href="/preparation/board"><span>董事会筹备</span><span class="start-editorial-link__arrow" aria-hidden="true">→</span></a>
+</div></div></section>
+    <section><span>07</span><div><h2>继续阅读</h2><p>读到这里，你已经有了完整的框架。下面五个入口对应网站的主要部分。</p>
+      <div class="start-exits">
+      <a class="start-exit" href="/theory/"><span class="start-exit__num" aria-hidden="true">01</span><span class="start-exit__body"><span class="start-exit__title">研究</span><span class="start-exit__desc">理解我们如何判断当前中国。</span></span></a>
+      <a class="start-exit" href="/civic-orderism/"><span class="start-exit__num" aria-hidden="true">02</span><span class="start-exit__body"><span class="start-exit__title">政治路线</span><span class="start-exit__desc">了解和平政治转轨方案。</span></span></a>
+      <a class="start-exit" href="/preparation/"><span class="start-exit__num" aria-hidden="true">03</span><span class="start-exit__body"><span class="start-exit__title">组织建设</span><span class="start-exit__desc">了解为什么现在开始准备承接力量。</span></span></a>
+      <a class="start-exit" href="/about/"><span class="start-exit__num" aria-hidden="true">04</span><span class="start-exit__body"><span class="start-exit__title">关于</span><span class="start-exit__desc">了解公民秩序主义是谁。</span></span></a>
+      <a class="start-exit" href="/participate/"><span class="start-exit__num" aria-hidden="true">05</span><span class="start-exit__body"><span class="start-exit__title">参与</span><span class="start-exit__desc">了解目前可以如何参与。</span></span></a>
+      <a class="start-exit" href="/articles/"><span class="start-exit__num" aria-hidden="true">—</span><span class="start-exit__body"><span class="start-exit__title">阅读地图</span><span class="start-exit__desc">按阅读目的选择文章路径。</span></span></a>
+      </div>
+      <p class="start-exits__hint">不知道从哪里继续？<a href="/articles/">查看阅读地图 →</a></p>
+    </div></section>
   </div>
 </div>`,
 );
@@ -1854,6 +1872,106 @@ const inst4lAxes = [
   },
 ];
 
+/* Research Section Index — answers "what is here?" (site structure).
+   The Reading Map answers "what should I read first?" (suggested order).
+   The two are different jobs and must not be merged.
+   Names and order come from researchSlugs and each section's own title; no
+   section was invented for this index. The English string is a NAVIGATION
+   label, not the page's own title, so it must not be pushed back into the
+   section pages. */
+const researchSectionIndex = [
+  {
+    num: "01",
+    zh: "研究总览",
+    en: "RESEARCH OVERVIEW",
+    desc: "研究的整体框架与三个研究方向。",
+    href: "/theory/",
+  },
+  {
+    num: "02",
+    zh: "解析中共",
+    en: "UNDERSTANDING THE PRESENT",
+    desc: "中共如何运行、为何失灵，以及正在发生什么变化。",
+    href: "/china/",
+  },
+  {
+    num: "03",
+    zh: "中国未来",
+    en: "PREPARING THE FUTURE",
+    desc: "政治变化之后，国家如何继续运行。",
+    href: "/china-future/",
+  },
+  {
+    num: "04",
+    zh: "中国阶段判断",
+    en: "CHINA STAGE ASSESSMENT",
+    desc: "从财政、社保、金融与基层治理判断当前阶段。",
+    href: "/china-stage/",
+  },
+  {
+    num: "05",
+    zh: "研究专题",
+    en: "RESEARCH TOPICS",
+    desc: "按具体政治问题深入。",
+    href: "/topics/",
+  },
+  {
+    num: "06",
+    zh: "核心概念",
+    en: "CORE CONCEPTS",
+    desc: "分析模型与概念索引。",
+    href: "/concepts/",
+  },
+  {
+    num: "07",
+    zh: "阅读地图",
+    en: "READING MAP",
+    desc: "按阅读目的选择文章路径。",
+    href: "/articles/",
+  },
+  {
+    num: "08",
+    zh: "制度机制",
+    en: "INSTITUTIONAL MECHANISMS",
+    desc: "委员会、入口权与判断权的分工。",
+    href: "/institution/",
+  },
+  {
+    num: "09",
+    zh: "制度设计",
+    en: "INSTITUTIONAL DESIGN",
+    desc: "可讨论、可修正、可检验的制度机制。",
+    href: "/institution-design/",
+  },
+];
+
+function inst4lSectionIndexBlock() {
+  const items = researchSectionIndex
+    .map(
+      (
+        it,
+      ) => `    <a class="inst4l-secindex__item" href="${it.href}"${it.href === "/theory/" ? ' aria-current="page"' : ""}>
+      <span class="inst4l-secindex__num" aria-hidden="true">${it.num}</span>
+      <span class="inst4l-secindex__body">
+        <span class="inst4l-secindex__title">${it.zh}</span>
+        <span class="inst4l-secindex__en" lang="en">${it.en}</span>
+        <span class="inst4l-secindex__desc">${it.desc}</span>
+      </span>
+    </a>`,
+    )
+    .join("\n");
+  return `<section class="inst4l-section" id="research-index">
+    <div class="inst4l-section__head">
+      <p class="inst4-eyebrow">RESEARCH SECTIONS · 研究栏目索引</p>
+      <h2 class="inst4l-section__title">研究由哪些栏目组成</h2>
+      <p class="inst4l-section__desc">每一栏回答不同的问题，彼此互补而非平行。</p>
+    </div>
+    <div class="inst4l-secindex">
+${items}
+    </div>
+  </section>`;
+}
+
 function inst4lAxesBlock() {
   return `<div class="inst4l-axes">\n${inst4lAxes
     .map(
@@ -2001,6 +2119,8 @@ writeInstitutionalContent(
     <h1 class="inst4l-title">研究</h1>
     <p class="inst4l-lead">研究中国政治为什么正在变化、变化可以如何发生，以及变化之后国家如何继续运行。</p>
   </section>
+
+  ${inst4lSectionIndexBlock()}
 
   ${inst4lSection(
     "RESEARCH DIRECTIONS · 三个研究方向",
@@ -2174,7 +2294,10 @@ writeInstitutionalContent(
     <div class="inst4-route__options">
       ${(civicOrderismConfig.route?.options ?? [])
         .map(
-          (option, index) => `<div class="inst4-route__option${index === 2 ? " inst4-route__option--chosen" : ""}">
+          (
+            option,
+            index,
+          ) => `<div class="inst4-route__option${index === 2 ? " inst4-route__option--chosen" : ""}">
         <h3>${option.name}</h3>
         <p>${option.desc}</p>
       </div>`,
@@ -2208,7 +2331,8 @@ writeInstitutionalContent(
     <div class="inst4-route__principles">
       ${(civicOrderismConfig.transitionQuestions ?? [])
         .map(
-          (item) => `<div class="inst4-route__principle"><h3>${item.question}</h3><p>${item.judgment}</p></div>`,
+          (item) =>
+            `<div class="inst4-route__principle"><h3>${item.question}</h3><p>${item.judgment}</p></div>`,
         )
         .join("\n      ")}
     </div>
@@ -2242,9 +2366,12 @@ writeInstitutionalContent(
     <div class="inst4-route__principles">
       ${(civicEstablishedPrinciples.items ?? [])
         .map(
-          (principle) => `<div class="inst4-route__principle"><span class="inst4-route__principle-num">${principle.num}</span><h3>${principle.name}</h3><p>${principle.desc}</p>${(principle.notes ?? [])
-            .map((note) => `<p>${note}</p>`)
-            .join("")}</div>`,
+          (principle) =>
+            `<div class="inst4-route__principle"><span class="inst4-route__principle-num">${principle.num}</span><h3>${principle.name}</h3><p>${principle.desc}</p>${(
+              principle.notes ?? []
+            )
+              .map((note) => `<p>${note}</p>`)
+              .join("")}</div>`,
         )
         .join("\n      ")}
     </div>
@@ -2277,7 +2404,8 @@ writeInstitutionalContent(
     <div class="inst4-route__state-grid">
       ${(civicOrderismConfig.state?.principles ?? [])
         .map(
-          (principle) => `<div class="inst4-route__state-item"><h3>${principle.name}</h3><p>${principle.desc}</p></div>`,
+          (principle) =>
+            `<div class="inst4-route__state-item"><h3>${principle.name}</h3><p>${principle.desc}</p></div>`,
         )
         .join("\n")}
     </div>
@@ -2513,7 +2641,9 @@ writeInstitutionalContent(
     <p class="inst4l-status">${chinaItems.length} 篇研究 · 更新至 ${chinaLatest || "2026-07-19"}</p>
   </section>
 
-  ${chinaOverviewRows.length ? `<section class="inst4l-section inst4l-pillar">
+  ${
+    chinaOverviewRows.length
+      ? `<section class="inst4l-section inst4l-pillar">
     <div class="inst4l-section__head">
       <p class="inst4-eyebrow">总论 / 核心阅读</p>
       <h2 class="inst4l-section__title"><a href="${chinaOverviewRows[0].href}">${chinaOverviewRows[0].title}</a></h2>
@@ -2521,7 +2651,9 @@ writeInstitutionalContent(
     </div>
     <p class="inst4l-pillar__summary">${chinaOverviewRows[0].desc}</p>
     <p class="inst4l-pillar__cta"><a href="${chinaOverviewRows[0].href}">阅读总论 <span aria-hidden="true">→</span></a></p>
-  </section>` : ""}
+  </section>`
+      : ""
+  }
 
   ${chinaStageBlocks.map(inst4lStageSection).join("\n")}
 
@@ -2548,7 +2680,8 @@ writeInstitutionalContent(
     <div class="inst4l-topic-grid">
       ${chinaTopicBlocks
         .map(
-          (topic) => `<a class="inst4l-topic" href="${topic.href}"><strong>${topic.name}</strong><span>${topic.desc}</span><small>${topic.count} 篇研究</small></a>`,
+          (topic) =>
+            `<a class="inst4l-topic" href="${topic.href}"><strong>${topic.name}</strong><span>${topic.desc}</span><small>${topic.count} 篇研究</small></a>`,
         )
         .join("\n")}
     </div>
@@ -2568,8 +2701,7 @@ writeInstitutionalContent(
 /* Phase 2B — 中国未来 landing */
 const chinaFutureSectionConfig = sectionByName.get("中国未来");
 const chinaFutureArticles = articles.filter(
-  (article) =>
-    article.section === "中国未来" && article.status === "published",
+  (article) => article.section === "中国未来" && article.status === "published",
 );
 const chinaFutureLatest = [...chinaFutureArticles].sort((a, b) =>
   b.updated.localeCompare(a.updated),
@@ -2578,7 +2710,9 @@ const chinaFutureIssues = [
   {
     name: "政治经济收缩",
     desc: "政治整肃与财政、经济、文化收缩相互推进，正在压缩中国继续扩张的空间。",
-    slugs: ["china-stage/three-cleans-era-political-economic-cultural-contraction"],
+    slugs: [
+      "china-stage/three-cleans-era-political-economic-cultural-contraction",
+    ],
   },
   {
     name: "改革窗口与二次改开",
@@ -2737,8 +2871,12 @@ writeInstitutionalContent(
 
   ${inst4lSection("CORE JUDGMENT", "专题核心判断", `<p class="inst4l-statement">${bureauTopicConfig?.coreJudgment ?? ""}</p>`)}
 
-  ${inst4lSection("为什么重要", "官僚系统是理解中共治理的核心切面", `<p>整肃、问责、避责与多头治理相互叠加，使官僚系统的行为持续偏离公共任务：责任被层层下压，授权却同步收缩，主动决策的个人成本高于等待、请示和留痕。</p>
-<p>当这种风险结构覆盖整个体系时，官僚系统会从执行转向自保，形成系统性休克。理解这一机制，是理解中共治理能力为何与组织规模脱节的关键。</p>`)}
+  ${inst4lSection(
+    "为什么重要",
+    "官僚系统是理解中共治理的核心切面",
+    `<p>整肃、问责、避责与多头治理相互叠加，使官僚系统的行为持续偏离公共任务：责任被层层下压，授权却同步收缩，主动决策的个人成本高于等待、请示和留痕。</p>
+<p>当这种风险结构覆盖整个体系时，官僚系统会从执行转向自保，形成系统性休克。理解这一机制，是理解中共治理能力为何与组织规模脱节的关键。</p>`,
+  )}
 
   ${inst4lSection(
     "关键研究",
@@ -2894,14 +3032,14 @@ const bureauShockArticles = (bureauShockConfig?.representativeArticles ?? [])
 const bureauShockRelated = (bureauShockConfig?.related ?? [])
   .map((slug) => conceptBySlug.get(slug))
   .filter((concept) => concept && publicConceptSlugs.has(concept.slug));
-const bureauShockManifestationRows = (bureauShockConfig?.manifestations ?? []).map(
-  (item, index) => ({
-    href: "/articles/all",
-    meta: "表现 " + String(index + 1).padStart(2, "0"),
-    title: item,
-    desc: "",
-  }),
-);
+const bureauShockManifestationRows = (
+  bureauShockConfig?.manifestations ?? []
+).map((item, index) => ({
+  href: "/articles/all",
+  meta: "表现 " + String(index + 1).padStart(2, "0"),
+  title: item,
+  desc: "",
+}));
 const bureauShockRelatedRows = bureauShockRelated.map((concept) => ({
   href: "/concepts/" + concept.slug,
   meta: "概念",
@@ -2926,11 +3064,19 @@ writeInstitutionalContent(
     <p class="inst4l-lead">${bureauShockConfig?.definition ?? ""}</p>
   </section>
 
-  ${inst4lSection("核心定义", "它是什么", `<p class="inst4l-statement">${bureauShockConfig?.definition ?? ""}</p>
-<p>官僚休克描述的不是个别干部懒惰，而是组织激励共同把行动导向最低风险：责任持续下压，必要授权却同步收缩，主动决策的个人成本高于等待、请示和留痕。结果是每个成员都可能作出理性自保选择，系统整体却失去处理现实问题的能力。</p>`)}
+  ${inst4lSection(
+    "核心定义",
+    "它是什么",
+    `<p class="inst4l-statement">${bureauShockConfig?.definition ?? ""}</p>
+<p>官僚休克描述的不是个别干部懒惰，而是组织激励共同把行动导向最低风险：责任持续下压，必要授权却同步收缩，主动决策的个人成本高于等待、请示和留痕。结果是每个成员都可能作出理性自保选择，系统整体却失去处理现实问题的能力。</p>`,
+  )}
 
-  ${inst4lSection("形成机制", "它为什么发生", `<p class="inst4l-statement">${bureauShockConfig?.mechanism ?? ""}</p>
-<p>${bureauShockConfig?.explanation ?? ""}</p>`)}
+  ${inst4lSection(
+    "形成机制",
+    "它为什么发生",
+    `<p class="inst4l-statement">${bureauShockConfig?.mechanism ?? ""}</p>
+<p>${bureauShockConfig?.explanation ?? ""}</p>`,
+  )}
 
   ${inst4lSection(
     "如何识别",
@@ -2965,22 +3111,82 @@ writeInstitutionalContent(
 );
 /* Phase 2B — Reading Map (articles.md): three routes */
 const readingMapRouteA = [
-  { href: "/start-here/", meta: "入口", title: "5分钟了解公民秩序主义", desc: "快速建立对公民秩序主义的基础认识。" },
-  { href: "/civic-orderism/this-time-let-china-be-your-pride", meta: site.corePoliticalStatement.roleLabel, title: "这一次，让中国成为你的骄傲", desc: "公民秩序主义为什么存在，最终希望把中国带向哪里。" },
-  { href: "/civic-orderism/", meta: "政治路线", title: "公民秩序主义政治路线", desc: "保留国家，改变政治：完整的政治路线总入口。" },
-  { href: "/preparation", meta: "当前组织工作", title: "北美非营利法人及首届董事会筹备", desc: "当前最重要、最明确的组织工作。" },
+  {
+    href: "/start-here/",
+    meta: "入口",
+    title: "5分钟了解公民秩序主义",
+    desc: "快速建立对公民秩序主义的基础认识。",
+  },
+  {
+    href: "/civic-orderism/this-time-let-china-be-your-pride",
+    meta: site.corePoliticalStatement.roleLabel,
+    title: "这一次，让中国成为你的骄傲",
+    desc: "公民秩序主义为什么存在，最终希望把中国带向哪里。",
+  },
+  {
+    href: "/civic-orderism/",
+    meta: "政治路线",
+    title: "公民秩序主义政治路线",
+    desc: "保留国家，改变政治：完整的政治路线总入口。",
+  },
+  {
+    href: "/preparation",
+    meta: "当前组织工作",
+    title: "北美非营利法人及首届董事会筹备",
+    desc: "当前最重要、最明确的组织工作。",
+  },
 ];
 const readingMapRouteB = [
-  { href: "/china/what-is-the-ccp-becoming", meta: "总论", title: "中共正在变成什么？", desc: "解析中共总论：旧政治秩序为什么正在失去制造共同未来的能力。" },
-  { href: "/china/", meta: "研究框架", title: "解析中共研究程序", desc: "进入核心分析框架、结构判断与代表研究。" },
-  { href: "/concepts/", meta: "核心概念", title: "核心概念", desc: "用于理解中共具体政治现象的分析工具。" },
-  { href: "/china/", meta: "代表研究", title: "解析中共代表研究", desc: "从四阶段进入代表研究。" },
+  {
+    href: "/china/what-is-the-ccp-becoming",
+    meta: "总论",
+    title: "中共正在变成什么？",
+    desc: "解析中共总论：旧政治秩序为什么正在失去制造共同未来的能力。",
+  },
+  {
+    href: "/china/",
+    meta: "研究框架",
+    title: "解析中共研究程序",
+    desc: "进入核心分析框架、结构判断与代表研究。",
+  },
+  {
+    href: "/concepts/",
+    meta: "核心概念",
+    title: "核心概念",
+    desc: "用于理解中共具体政治现象的分析工具。",
+  },
+  {
+    href: "/china/",
+    meta: "代表研究",
+    title: "解析中共代表研究",
+    desc: "从四阶段进入代表研究。",
+  },
 ];
 const readingMapRouteC = [
-  { href: "/civic-orderism/", meta: "政治路线", title: "公民秩序主义政治路线", desc: "准备做什么：政治路线的完整入口。" },
-  { href: "/civic-orderism/peaceful-state-transition", meta: "和平政治转轨", title: "国家如何平稳转轨", desc: "理解和平转轨如何可能发生。" },
-  { href: "/civic-orderism/state-must-rely-on-systems-not-drivers", meta: "国家连续性", title: "国家不能只靠驾驶员", desc: "理解国家系统如何保持连续运行。" },
-  { href: "/china-future/", meta: "中国未来", title: "中国未来", desc: "政治变化之后国家如何继续运行。" },
+  {
+    href: "/civic-orderism/",
+    meta: "政治路线",
+    title: "公民秩序主义政治路线",
+    desc: "准备做什么：政治路线的完整入口。",
+  },
+  {
+    href: "/civic-orderism/peaceful-state-transition",
+    meta: "和平政治转轨",
+    title: "国家如何平稳转轨",
+    desc: "理解和平转轨如何可能发生。",
+  },
+  {
+    href: "/civic-orderism/state-must-rely-on-systems-not-drivers",
+    meta: "国家连续性",
+    title: "国家不能只靠驾驶员",
+    desc: "理解国家系统如何保持连续运行。",
+  },
+  {
+    href: "/china-future/",
+    meta: "中国未来",
+    title: "中国未来",
+    desc: "政治变化之后国家如何继续运行。",
+  },
 ];
 
 writeInstitutionalContent(

@@ -146,6 +146,24 @@
 
   /* ---- Motion ------------------------------------------------- */
   /* 克制：只有颜色 / 边框的短过渡，没有位移与缩放动画。 */
+  /* ---- Navigation spacing --------------------------------------
+     Semantic navigation spacing, so adding a menu item later cannot silently
+     re-create a crowded header. The previous desktop gap was 2.4px, which left
+     neighbouring hit boxes touching and made the focus ring collide with the
+     item beside it. These are HIT-BOX measurements, not visual whitespace:
+     --v6-nav-hit-pad-x is the invisible clickable padding inside each item, so
+     the visible gap between two labels is 14 + 16 + 14 = 44px while the
+     header stays an editorial navigation row rather than a button bar. */
+  --v6-nav-hit-pad-x: 14px;
+  --v6-nav-item-gap: 16px;
+  --v6-nav-link-h: 40px;
+  /* Drawer rows. 52px keeps the existing comfortable rhythm; the target
+     minimum is 44px and the search row uses the same value so every row in the
+     drawer shares one rhythm. */
+  --v6-nav-mobile-row: 52px;
+  /* The ring sits 1px outside the hit box so two adjacent rings cannot meet. */
+  --v6-nav-focus-offset: 1px;
+
   --v6-duration: 160ms;
   --v6-ease: cubic-bezier(0.4, 0, 0.2, 1);
 }

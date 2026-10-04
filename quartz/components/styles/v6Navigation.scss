@@ -72,15 +72,22 @@
 }
 
 /* ── Desktop links ───────────────────────────────────────────── */
+/* Gap is the clear space between adjacent HIT BOXES, not between labels.
+   At 2.4px the boxes touched and the focus ring collided with the neighbour. */
 .v6-nav__links {
   display: flex;
   align-items: center;
-  gap: 0.15rem;
+  gap: var(--v6-nav-item-gap);
 }
 
 .v6-nav__link {
   position: relative;
-  padding: 0.55rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: var(--v6-nav-link-h);
+  padding-block: 0;
+  padding-inline: var(--v6-nav-hit-pad-x);
   color: var(--v6-text-secondary);
   font-size: 0.9rem;
   font-weight: 500;
@@ -104,9 +111,9 @@
 
 .v6-nav__link[aria-current="page"]::after {
   position: absolute;
-  right: 0.75rem;
-  bottom: 0.2rem;
-  left: 0.75rem;
+  right: var(--v6-nav-hit-pad-x);
+  bottom: 0.45rem;
+  left: var(--v6-nav-hit-pad-x);
   height: 1px;
   background: var(--v6-brand);
   content: "";
@@ -121,10 +128,11 @@
    compensate for the removed box. */
 .v6-nav__search {
   display: inline-flex;
-  min-height: 2.35rem;
+  box-sizing: border-box;
+  min-height: var(--v6-nav-link-h);
   align-items: center;
-  margin-left: var(--v6-space-sm);
-  padding: 0.5rem 0;
+  margin-left: var(--v6-nav-item-gap);
+  padding: 0 var(--v6-nav-hit-pad-x);
   border: 0;
   border-radius: 0;
   background: transparent;
@@ -140,6 +148,17 @@
 .v6-nav__search:hover,
 .v6-nav__search:focus-visible {
   color: var(--v6-text-primary);
+}
+
+/* Focus ring for every header control. Offset 1px so two adjacent rings can
+   never meet, and so the ring does not read as a button-shaped pill. */
+.v6-nav__link:focus-visible,
+.v6-nav__search:focus-visible,
+.v6-nav__brand:focus-visible,
+.v6-nav__toggle:focus-visible {
+  outline: 2px solid var(--v6-focus);
+  outline-offset: var(--v6-nav-focus-offset);
+  border-radius: var(--v6-radius-sm);
 }
 
 /* ── Hamburger / Close (mobile only) ─────────────────────────── */
@@ -258,12 +277,16 @@
     flex-wrap: wrap;
   }
 
-  /* Visual polish: rows were ~68px, which let six items fill the first
-     screen. 2.6rem min-height keeps a comfortable 44px+ target while
-     letting the whole menu sit in the upper part of the viewport. */
+  /* Drawer rows share one rhythm. The floor comes from --v6-nav-mobile-row
+     (52px, minimum target 44px); the rows themselves render taller than that
+     because of their padding and line-height, and that taller rhythm is
+     deliberately KEPT — it already gave comfortable spacing, and uniformity
+     should not cost spacing that was working. The search row uses the same
+     padding below so it matches the navigation rows instead of sitting 14px
+     shorter, which is what it did before. */
   .v6-nav__link {
     display: flex;
-    min-height: 2.6rem;
+    min-height: var(--v6-nav-mobile-row);
     align-items: center;
     padding: 0.4rem 0.15rem;
     border-bottom: 1px solid var(--v6-border);
@@ -291,8 +314,17 @@
     padding-left: 0.7rem;
   }
 
+  /* Drawer rows are full-width targets; the shared 1px focus offset keeps
+     two adjacent rings from meeting. */
+  .v6-nav__link:focus-visible,
+  .v6-nav__search:focus-visible,
+  .v6-nav__toggle:focus-visible {
+    outline: 2px solid var(--v6-focus);
+    outline-offset: var(--v6-nav-focus-offset);
+  }
+
   .v6-nav__search {
-    min-height: 2.6rem;
+    min-height: var(--v6-nav-mobile-row);
     margin: 0.4rem 0 0;
     padding: 0.4rem 0.15rem;
     border: 0;
