@@ -5,7 +5,7 @@
     "title": "公民秩序主义",
     "en": "Civic Orderism",
     "judgment": "保留国家，改变政治。",
-    "description": "一条面向中国未来的低阻力、低风险和平政治转型路线。",
+    "description": "一条面向中国未来的低阻力、低风险和平政治转轨路线。",
     "intro": "公民秩序主义关注的，不只是旧政治秩序如何结束，而是中国如何在保持国家连续性的前提下，建立下一套能够长期运行的政治秩序。"
   },
   "homeWhyNow": {
@@ -28,6 +28,7 @@
   },
   "homeTransition": {
     "title": "政治转轨怎么展开？",
+    "scopeNote": "以下五个步骤是路线主线的摘要；完整方案分为六个阶段，见政治路线。",
     "englishLabel": "THE TRANSITION PATH",
     "steps": [
       "旧体系无法自行改革",
@@ -97,14 +98,15 @@
       },
       {
         "name": "公民秩序主义",
-        "desc": "保留国家，改变政治。通过降低转型阻力、建立新旧政治信任和制度承接能力，完成和平政治转型。"
+        "desc": "保留国家，改变政治。通过降低转轨阻力、建立新旧政治信任和制度承接能力，完成和平政治转轨。"
       }
     ]
   },
   "peacefulRoute": {
     "englishLabel": "PEACEFUL TRANSITION ROUTE",
     "title": "和平转轨路线：六个阶段",
-    "desc": "六个阶段首先说明中国政治转轨为什么能够展开，其次才是文章入口。每一阶段只列一到两篇代表文章，其余研究进入延伸阅读。"
+    "desc": "六个阶段首先说明中国政治转轨为什么能够展开，其次才是文章入口。每一阶段只列一到两篇代表文章，其余研究进入延伸阅读。",
+    "scopeNote": "这是路线的完整阶段定义。首页与「5分钟了解」中的步骤是同一主线的摘要，与本页阶段不逐条对应。"
   },
   "transitionQuestions": [
     {
@@ -204,20 +206,20 @@
     ]
   },
   "transition": {
-    "title": "政治转型如何成为可能？",
+    "title": "和平转轨如何成为可能？",
     "chain": [
       "旧秩序失去持续制造利益与共同预期的能力",
       "体制内外利益与政治预期重新分化",
       "新的政治力量建立信誉与承接能力",
       "新旧政治力量形成沟通与信任",
       "政治谈判",
-      "国家连续性下的政治转型",
+      "国家连续性下的政治转轨",
       "新的制度秩序"
     ]
   },
   "lowResistance": {
     "title": "为什么强调低阻力？",
-    "judgment": "政治转型首先是现实中的人做出的选择。",
+    "judgment": "政治转轨首先是现实中的人做出的选择。",
     "actors": [
       "官僚",
       "企业",
@@ -226,11 +228,11 @@
       "普通家庭",
       "既有利益群体"
     ],
-    "conclusion": "成熟的政治转型，不是让所有人喜欢新制度，而是让越来越多人发现：接受改变，比阻止改变更加安全。"
+    "conclusion": "成熟的政治转轨，不是让所有人喜欢新制度，而是让越来越多人发现：接受改变，比阻止改变更加安全。"
   },
   "organization": {
     "title": "为什么必须提前建立组织？",
-    "judgment": "政治转型发生之前，承接政治转型的能力就必须开始形成。",
+    "judgment": "政治转轨发生之前，承接政治转轨的能力就必须开始形成。",
     "capabilities": [
       "政治信誉",
       "组织能力",
@@ -331,7 +333,9 @@
       "num": "05",
       "name": "政治变化发生后，怎样保持国家运行",
       "desc": "保留国家，改变政治。国家行政体系不是革命对象，政治转轨不等于国家停摆。没有完成调整的制度继续运行，调整一样，修改一样。",
-      "representative": ["civic-orderism/state-must-rely-on-systems-not-drivers"],
+      "representative": [
+        "civic-orderism/state-must-rely-on-systems-not-drivers"
+      ],
       "extended": [
         "civic-orderism/public-politics-without-party-dominance",
         "civic-orderism/what-civic-orderism-ultimately-solves"

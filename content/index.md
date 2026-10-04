@@ -121,6 +121,7 @@ aliases:
     <div class="v6-section__head">
       <p class="v6-eyebrow"><span class="v6-eyebrow__num">05</span>THE TRANSITION PATH<span aria-hidden="true"> · </span>和平转轨路线</p>
       <h2 class="v6-section__title">政治转轨怎么展开？</h2>
+      <p class="v6-transition__scope">以下五个步骤是路线主线的摘要；完整方案分为六个阶段，见政治路线。</p>
     </div>
     <ol class="v6-route__chain v6-transition__flow">
       <li><span>01</span><p>旧体系无法自行改革</p></li>

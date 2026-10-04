@@ -420,6 +420,20 @@
   line-height: 1.6;
 }
 
+/* Declares that the five numbered steps above are a summary, and that the full
+   model is six stages on the political route. Auxiliary text only — no callout,
+   no card, no icon, no new component. It sits in the section head between the
+   title and the list, which also breaks the visual adjacency between the block
+   number (05) and the list's own 01-05. Smaller and lighter than the title so
+   it cannot outrank it. */
+.v6 .v6-transition__scope {
+  max-width: var(--v6-measure);
+  margin-top: calc(-1 * var(--v6-space-xs));
+  color: var(--v6-text-muted);
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+
 .v6 .v6-transition__note {
   max-width: var(--v6-measure);
   margin-top: var(--v6-space-lg);

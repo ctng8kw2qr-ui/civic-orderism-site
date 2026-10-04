@@ -14,7 +14,7 @@ noindex: false
   <section class="inst4l-hero">
 <p class="inst4-eyebrow">ABOUT</p>
 <h1 class="inst4l-title">关于公民秩序主义</h1>
-<p class="inst4l-lead">一条面向中国未来、以和平承接与保留国家为核心的政治转型路线。</p>
+<p class="inst4l-lead">一条面向中国未来、以和平承接与保留国家为核心的政治转轨路线。</p>
   </section>
 
   <div class="inst4l-body">
@@ -25,7 +25,7 @@ noindex: false
 <h2 class="inst4l-section__title">公民秩序主义是什么</h2>
     
   </div>
-  <p>公民秩序主义首先是一条面向中国未来政治转型的政治路线。它主张通过和平转轨、行政承接、责任区分和制度重组，降低政治变化的社会成本，保持国家与公共服务连续，并建立能够限制权力、明确责任和持续纠错的新秩序。</p>
+  <p>公民秩序主义首先是一条面向中国未来政治转轨的政治路线。它主张通过和平转轨、行政承接、责任区分和制度重组，降低政治变化的社会成本，保持国家与公共服务连续，并建立能够限制权力、明确责任和持续纠错的新秩序。</p>
 <p>理论是这条路线的基础，用于解释国家失灵、公共秩序和制度能力；组织建设是长期承接结构，使路线能够被持续研究、传播、完善和实践。</p>
 </section>
 
@@ -57,36 +57,25 @@ noindex: false
 <h2 class="inst4l-section__title">政治路线</h2>
     
   </div>
-  <p>政治转型的目标不是摧毁国家，而是改变政治。公民秩序主义主张一条不依赖革命、不以清算为目，并保持国家连续性的和平转轨路线。</p>
+  <p>政治转轨的目标不是摧毁国家，而是改变政治。公民秩序主义主张一条不依赖革命、不以清算为目，并保持国家连续性的和平转轨路线。</p>
 <p class="inst4l-link"><a href="/civic-orderism/">阅读政治路线 <span aria-hidden="true">→</span></a></p>
 </section>
 
+      <!-- About answers "who are we", not "what does the research say". The
+           three direction cards used to be reproduced here word for word from
+           /theory/ (identical hrefs, phases, titles and descriptions), so a
+           reader arriving from Research learned nothing new. About now keeps
+           its own stance as a research programme and links down; the framework
+           itself and the nine-column index live on the research page. -->
 <section class="inst4l-section">
   <div class="inst4l-section__head">
 <p class="inst4-eyebrow">研究体系</p>
 <h2 class="inst4l-section__title">从理解旧秩序，到准备新的政治秩序</h2>
-<p class="inst4l-section__desc">研究围绕三个方向展开：理解现在、准备转轨、准备未来。</p>
+    
   </div>
-  <div class="inst4l-axes">
-<a class="inst4l-axis" href="/china/">
-  <span class="inst4l-axis__num" aria-hidden="true">01</span>
-  <span class="inst4l-axis__cell"><span class="inst4l-axis__phase">理解现在</span><span class="inst4l-axis__title">解析中共</span></span>
-  <span class="inst4l-axis__desc">解析中共如何运行、为何失灵，以及正在发生什么变化。完整研究程序见「解析中共」。</span>
-  <span class="inst4l-axis__arrow" aria-hidden="true">→</span>
-</a>
-<a class="inst4l-axis" href="/civic-orderism/">
-  <span class="inst4l-axis__num" aria-hidden="true">02</span>
-  <span class="inst4l-axis__cell"><span class="inst4l-axis__phase">准备转轨</span><span class="inst4l-axis__title">政治路线</span></span>
-  <span class="inst4l-axis__desc">理解旧秩序本身并不能产生新秩序。政治路线研究现实可执行、低阻力、保持国家连续性的和平转轨路径。</span>
-  <span class="inst4l-axis__arrow" aria-hidden="true">→</span>
-</a>
-<a class="inst4l-axis" href="/china-future/">
-  <span class="inst4l-axis__num" aria-hidden="true">03</span>
-  <span class="inst4l-axis__cell"><span class="inst4l-axis__phase">准备未来</span><span class="inst4l-axis__title">中国未来</span></span>
-  <span class="inst4l-axis__desc">政治转型最终必须回答国家如何继续运行，以及新的政治秩序如何建立。</span>
-  <span class="inst4l-axis__arrow" aria-hidden="true">→</span>
-</a>
-</div>
+  <p>公民秩序主义不只是一个发表判断的地方。我们把研究当作政治路线的前置条件：没有对现有秩序为什么失效的完整判断，路线就只能停留在主张层面。</p>
+<p>研究围绕三个方向展开：理解现在，对应解析中共；准备转轨，对应政治路线；准备未来，对应中国未来。三个方向分别回答旧秩序为什么走不下去、和平转轨如何成为可能，以及政治变化之后国家如何继续运行。</p>
+<p class="inst4l-link"><a href="/theory">进入研究体系：三个方向与九个研究栏目 <span aria-hidden="true">→</span></a></p>
 </section>
 
 <section class="inst4l-section">

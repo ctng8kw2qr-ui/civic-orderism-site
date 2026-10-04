@@ -129,7 +129,7 @@ noindex: false
 </a>
 <a class="inst4l-row" href="/concepts/nonviolent-transition">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">PRINCIPLE</span><span class="inst4l-row__title">非暴力转型</span></span>
-  <span class="inst4l-row__desc">以降低冲突、避免清算并维持国家基本能力为约束的政治转型路径。</span>
+  <span class="inst4l-row__desc">以降低冲突、避免清算并维持国家基本能力为约束的政治转轨路径。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
 <a class="inst4l-row" href="/concepts/ruling-techniques">

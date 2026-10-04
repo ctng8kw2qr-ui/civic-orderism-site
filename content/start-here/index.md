@@ -2,7 +2,7 @@
 title: "5分钟了解公民秩序主义"
 date: 2026-07-19
 updated: 2026-07-20
-description: "用五分钟了解公民秩序主义是什么、为什么是现在、政治转轨意味着什么、准备怎么做，以及最终想建立什么。"
+description: "用五分钟了解公民秩序主义是什么、为什么是现在、政治转轨意味着什么、准备怎么做、最终想建立什么、现在做到哪里，以及接下来读什么。"
 contentType: "新读者入口"
 status: published
 listed: true
@@ -13,9 +13,9 @@ aliases:
 ---
 
 <div class="start-page start-here-page">
-  <header class="start-page__header"><p class="resource-label">新读者入口</p><h1>5分钟了解公民秩序主义</h1><p>用五个问题建立基础认识：它是什么、为什么是现在、政治转轨意味着什么、准备怎么做，以及最终想建立什么。</p></header>
+  <header class="start-page__header"><p class="resource-label">新读者入口</p><h1>5分钟了解公民秩序主义</h1><p>用七个步骤建立基础认识：它是什么、为什么是现在、政治转轨意味着什么、准备怎么做、最终想建立什么、现在做到哪里，以及接下来读什么。</p></header>
   <div class="start-page__sections">
-    <section><span>01</span><div><h2>公民秩序主义是什么？</h2><p>公民秩序主义不是普通政治评论项目，也不是只提供文章和观点的内容平台。它是一条面向中国未来政治转轨的政治路线：理论研究为路线提供判断基础，组织建设为路线建立现实承接能力。</p><p>它要回答的不是哪一种制度听起来最理想，而是在降低冲突与社会代价的前提下，中国怎样完成下一次政治转型。</p><p class="start-roadmap__line">政治路线 → 组织承接能力 → 和平政治转轨</p></div></section>
+    <section><span>01</span><div><h2>公民秩序主义是什么？</h2><p>公民秩序主义不是普通政治评论项目，也不是只提供文章和观点的内容平台。它是一条面向中国未来政治转轨的政治路线：理论研究为路线提供判断基础，组织建设为路线建立现实承接能力。</p><p>它要回答的不是哪一种制度听起来最理想，而是在降低冲突与社会代价的前提下，中国怎样完成下一次政治转轨。</p><p class="start-roadmap__line">政治路线 → 组织承接能力 → 和平政治转轨</p></div></section>
     <section><span>02</span><div><h2>为什么是现在？</h2><p>过去几十年，中国社会普遍相信明天会比今天更好：普通人相信收入会增加，企业相信生意还能扩大，年轻人相信机会还会更多。</p><p>今天，越来越多阶层、行业和群体开始重新计算自己的未来，中共也越来越难回答整个社会都在追问的那个问题：明天到底会怎样？</p><p>当旧秩序越来越难继续创造新的受益者，而越来越多社会群体开始承受损失，寻找新的政治答案就已经成为现实需要。政治转轨不是未来某一天才需要面对的问题，它已经成为今天必须开始准备的问题。</p><p class="start-roadmap__line">明天会比今天更好 → 明天到底会怎样？ → 提前准备政治答案</p><p>更深入的理论解释，例如工业时代形成的治理方式与信息化社会之间的结构性失配，属于后续的研究内容：<a href="/civic-orderism/information-age-and-political-transition">信息化时代与政治转型</a>。</p></div></section>
     <section><span>03</span><div><h2>政治转轨意味着什么？</h2><p>政治转轨不是简单的政权崩溃，也不是街头革命。它不是等旧秩序倒下的那一刻才开始，也不是把国家本身当作革命对象。</p><p>公民秩序主义关心的重点是：政治权力发生变化的同时，国家和社会继续运行——公共服务不停摆，社会秩序不失控，普通人的生活不必为政治变化支付无法承受的代价。</p><p class="start-roadmap__line">政治权力改变 → 国家继续运行 → 社会保持稳定</p></div></section>
     <section><span>04</span><div><h2>公民秩序主义准备怎么做？</h2><p class="start-roadmap__line">旧体系无法自行改革 → 外部政治承接力量提前形成 → 降低转轨阻力 → 保持国家连续运行 → 逐步进入新的政治秩序</p><p>这是和平转轨路线的主线。它的方法边界，可以先用五条已经确定的政治原则说明。</p><ul><li><strong>不革命：</strong>不以社会失控和大规模政治动员作为政治转轨手段。</li><li><strong>不清算：</strong>不以群体性政治报复作为新政治秩序的起点。</li><li><strong>保留国家：</strong>政治制度可以改变，国家行政体系不能停摆。</li><li><strong>和平承接：</strong>通过政治沟通、利益协调与制度过渡降低政治转轨阻力。</li><li><strong>提前准备：</strong>新的政治路线、政治信誉与组织承接能力必须在政治变化以前形成。</li></ul><p>为什么内部改革无法完成破局、为什么需要外部政治承接、为什么和平转轨存在现实基础，以及政治变化以后怎样保持国家运行，在完整的和平转轨路线中展开。</p><div class="start-page__actions start-page__actions--editorial">
@@ -31,7 +31,7 @@ aliases:
 <a class="start-editorial-link" href="/preparation/"><span>了解组织建设</span><span class="start-editorial-link__arrow" aria-hidden="true">→</span></a>
 <a class="start-editorial-link" href="/preparation/board"><span>董事会筹备</span><span class="start-editorial-link__arrow" aria-hidden="true">→</span></a>
 </div></div></section>
-    <section><span>07</span><div><h2>继续阅读</h2><p>读到这里，你已经有了完整的框架。下面五个入口对应网站的主要部分。</p>
+    <section><span>07</span><div><h2>继续阅读</h2><p>读到这里，你已经有了完整的框架。下面六个入口，前五个对应网站的主要部分，最后一个是按阅读目的选择的阅读地图。</p>
       <div class="start-exits">
       <a class="start-exit" href="/theory/"><span class="start-exit__num" aria-hidden="true">01</span><span class="start-exit__body"><span class="start-exit__title">研究</span><span class="start-exit__desc">理解我们如何判断当前中国。</span></span></a>
       <a class="start-exit" href="/civic-orderism/"><span class="start-exit__num" aria-hidden="true">02</span><span class="start-exit__body"><span class="start-exit__title">政治路线</span><span class="start-exit__desc">了解和平政治转轨方案。</span></span></a>
