@@ -2,28 +2,72 @@
 
 OpenGraph / X / social-sharing artwork and templates.
 
-Full specification: `../SPEC.md`.
-
 ## Belongs here
 
-- `og-fallback-1200x630.png` — the single branded fallback used by every page
-  that has no `cover`. Currently served from `quartz/static/og-image.png`
-  (kept there because `Head.tsx` and the RootStatic emitter reference that
-  path); this directory is where future social artwork should live.
-- Per-article social cards, once real covers exist. A cover at the unified
-  40/21 ratio already serves OG directly, so most articles need nothing here.
-- Channel-specific templates if a platform ever demands a different crop.
+The branded fallback card, and any future per-platform social artwork or
+templates. `social/` may hold an independent composition if a platform demands
+one — the code must not assume the cover and the social card are permanently
+identical.
 
 ## Not here
 
-- Article covers — those live in `../editorial/`.
-- Programmatically generated cards. `CustomOgImages` / satori is **not**
-  enabled; see `TECHNICAL_DEBT.md` for why (no reliable CJK font pipeline).
+Article covers (those live in `../editorial/` and already serve OG directly).
 
-## Rules
+## Ratio / size
 
-- Absolute URLs are produced at render time from `cfg.baseUrl`
-  (`quartz/util/cover.ts` → `absoluteCoverUrl`). Never hardcode the domain
-  into an asset or a component.
-- Never emit a relative `og:image`; social scrapers require an absolute URL.
-- 1200 × 630, 40/21, ≤ 120 KB.
+|             | Size       | Ratio  |
+| ----------- | ---------- | ------ |
+| OG / X card | 1200 × 630 | 1.9048 |
+
+Budget ≤ 120 KB.
+
+## Formats
+
+PNG for the branded fallback (widest scraper support); WebP otherwise.
+
+## Current state
+
+The fallback is served from `quartz/static/og-image.png` (1200 × 630) because
+`quartz/components/Head.tsx` and the RootStatic emitter reference that path.
+This directory is where future social artwork should live.
+
+## Alt text
+
+Scrapers use `og:image:alt`, which is generated at render time: the cover's
+`coverAlt` when a cover exists, otherwise the page description.
+
+## Absolute URLs
+
+`og:image` is always emitted as an absolute URL, built from `cfg.baseUrl`
+(`quartz/util/cover.ts` → `absoluteCoverUrl`). Never hardcode the domain, and
+never emit a relative `og:image`.
+
+## Programmatic generation
+
+`CustomOgImages` / satori is **not** enabled — see `TECHNICAL_DEBT.md`. A
+reliable offline CJK font pipeline is a precondition.
+
+## Naming
+
+`<domain>-<subject>-<variant>.<ext>` — lowercase, hyphenated, ASCII.
+No spaces, no dates, no `final` / `v2` / `new`.
+
+## Alt text
+
+Required wherever the asset carries meaning. Never `alt=""` on meaningful
+content; never let a screen reader announce a filename.
+
+## Light / dark
+
+Must work on both. Palette is fixed (warm white `#faf8f5`, charcoal, restrained
+wine). Use `currentColor` for SVG so it themes automatically.
+
+## Photos / illustration / AI
+
+| Photos       | Illustration | AI-generated |
+| ------------ | ------------ | ------------ |
+| ✓ restrained | ✓            | ✗            |
+
+**AI-generated imagery is not permitted.**
+
+Full rules, size budgets and the forbidden-content list: `../SPEC.md`.

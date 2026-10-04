@@ -28,6 +28,14 @@
      这两个值同时被 quartz/components/Head.tsx 引用。 */
   --v6-chrome-light: #faf8f5;
   --v6-chrome-dark: #141518;
+  /* Editorial Cover ratios.
+     --v6-cover:        canonical Editorial Cover ratio (spec: 1.9:1).
+                        Master 2400x1263 / Web 1600x842.
+     --v6-cover-social: 1200x630 = 1.90476, the OG/X card ratio.
+     These differ by 0.25%. They are intentionally separate values rather than
+     one forced approximation, so neither consumer silently mis-crops. */
+  --v6-cover: 1.9;
+  --v6-cover-social: 1200 / 630;
   --v6-surface: #fffefc;
   --v6-surface-sunken: #f3f0eb;
   --v6-surface-inverse: #1b1c1f;

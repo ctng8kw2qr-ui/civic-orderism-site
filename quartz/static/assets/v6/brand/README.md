@@ -2,20 +2,60 @@
 
 Logo, wordmark, favicon sources and other long-lived identity assets.
 
-Establishes the V6 asset convention. Phase 2 creates slots and rendering
-rules; it does not create branded artwork.
-
 ## Belongs here
 
-- Logo lockups and marks.
-- Favicon / app-icon sources.
-- Social (OG) image sources.
-- Anything reused site-wide as an identity element.
+Primary wordmark, mark / monogram, favicon sources, app-icon masters.
 
-## Rules
+## Not here
 
-- Served at `/static/assets/v6/brand/...` by Quartz's Static emitter.
-- No image CDN, no stock imagery, no AI-generated political imagery.
-- Do not commit placeholder art that could be mistaken for real brand assets.
-- Prefer SVG for marks; WebP/AVIF for photography.
-  Full specification: `../SPEC.md`.
+Editorial covers, article imagery, organisation photos, social cards.
+
+## Ratio / size
+
+|                       | Size                            |
+| --------------------- | ------------------------------- |
+| Mark (square)         | 512 × 512                       |
+| Wordmark (horizontal) | 1600 × 400                      |
+| Favicon source        | 512 × 512 (downscaled at build) |
+
+No fixed ratio — but the square mark and 4:1 wordmark are the expected shapes.
+
+## Formats
+
+SVG preferred (scales, themes via `currentColor`). PNG only for favicon/app
+icons. Avoid JPEG.
+
+## Alt text
+
+Brand marks are usually decorative in chrome; if a logo is content, name the
+organisation, never the filename.
+
+## Light / dark
+
+The mark must be legible on `#faf8f5` and `#141518`. Prefer `currentColor`
+over a baked-in colour.
+
+## Naming
+
+`<domain>-<subject>-<variant>.<ext>` — lowercase, hyphenated, ASCII.
+No spaces, no dates, no `final` / `v2` / `new`.
+
+## Alt text
+
+Required wherever the asset carries meaning. Never `alt=""` on meaningful
+content; never let a screen reader announce a filename.
+
+## Light / dark
+
+Must work on both. Palette is fixed (warm white `#faf8f5`, charcoal, restrained
+wine). Use `currentColor` for SVG so it themes automatically.
+
+## Photos / illustration / AI
+
+| Photos | Illustration     | AI-generated |
+| ------ | ---------------- | ------------ |
+| ✗      | ✓ (as SVG marks) | ✗            |
+
+**AI-generated imagery is not permitted.**
+
+Full rules, size budgets and the forbidden-content list: `../SPEC.md`.

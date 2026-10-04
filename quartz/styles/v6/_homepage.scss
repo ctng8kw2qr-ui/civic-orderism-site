@@ -696,7 +696,7 @@
 }
 
 /* ══ 首页 Lead Editorial Cover（Phase 3）═════════════════════════
-   与文章页、og:image 共用同一个 cover / coverAlt 与同一比例 40/21。
+   与文章页共用同一个 cover / coverAlt 与同一 canonical 比例 (--v6-cover)。
    无 cover 时组件不输出 <figure>，因此这里不需要任何「空状态」样式，
    也不会预留图片高度（避免 CLS 与空白图片区）。 */
 .v6-latest__lead-cover {
@@ -708,7 +708,7 @@
   box-sizing: border-box;
   width: 100%;
   height: auto;
-  aspect-ratio: 40 / 21;
+  aspect-ratio: var(--v6-cover);
   object-fit: cover;
   border: 1px solid var(--v6-border);
   border-radius: var(--v6-radius-sm);

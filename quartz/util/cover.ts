@@ -81,19 +81,12 @@ export function absoluteCoverUrl(
   return `${origin}${path}`;
 }
 
-/**
- * Editorial Cover 的统一宽高比。
- *
- * 1200×630、1600×840、2400×1260 三者都精确等于 40/21 ≈ 1.9048，
- * 因此一套视觉可以同时服务 文章页 / 首页 Lead / 社交分享，
- * 不必为同一篇文章维护三张几乎相同的图片。
- *
- * 用精确比值而非小数近似，避免三处出现细微不一致。
+/*
+ * 比例不在这里定义。Editorial Cover 的 canonical ratio (1.9:1) 与社交卡片
+ * 比例 (1200x630) 都定义在 quartz/styles/v6/_tokens.scss
+ * (--v6-cover / --v6-cover-social)，并由 SPEC.md 记录。
+ * 刻意不在 TypeScript 里再放一份未使用的常量，避免与 CSS 产生漂移。
  */
-export const COVER_ASPECT_RATIO = "40 / 21";
-
-/** 统一比例的数值形式，供需要计算的场合使用。 */
-export const COVER_ASPECT_RATIO_VALUE = 40 / 21;
 
 /** 已知 branded fallback 的尺寸（quartz/static/og-image.png 实测 1200×630）。 */
 export const FALLBACK_OG_IMAGE = "/og-image.png";
