@@ -113,14 +113,20 @@
 }
 
 /* ── Search trigger ──────────────────────────────────────────── */
+/* Text, not a button-shaped box. The header reads as a typographic system
+   rather than a control panel, so the search trigger carries no border, no
+   radius and no background — it is a quiet text action sitting beside the
+   nav links. Discoverability is kept through the label itself, the muted
+   colour, and a colour-only hover. No magnifier icon is added on desktop to
+   compensate for the removed box. */
 .v6-nav__search {
   display: inline-flex;
   min-height: 2.35rem;
   align-items: center;
-  margin-left: var(--v6-space-2xs);
-  padding: 0.5rem 0.7rem 0.5rem 0.9rem;
-  border: 1px solid var(--v6-border);
-  border-radius: var(--v6-radius-sm);
+  margin-left: var(--v6-space-sm);
+  padding: 0.5rem 0;
+  border: 0;
+  border-radius: 0;
   background: transparent;
   color: var(--v6-text-muted);
   font: inherit;
@@ -128,18 +134,18 @@
   font-weight: 500;
   line-height: 1.3;
   cursor: pointer;
-  transition:
-    color var(--v6-duration) var(--v6-ease),
-    border-color var(--v6-duration) var(--v6-ease);
+  transition: color var(--v6-duration) var(--v6-ease);
 }
 
 .v6-nav__search:hover,
 .v6-nav__search:focus-visible {
-  border-color: var(--v6-border-strong);
   color: var(--v6-text-primary);
 }
 
-/* ── Hamburger (mobile only) ─────────────────────────────────── */
+/* ── Hamburger / Close (mobile only) ─────────────────────────── */
+/* 44x44 touch target retained; the visible glyph stays ~18px and the box
+   itself carries no border, radius or background — consistent with the
+   search trigger and with the rest of the icon system. */
 .v6-nav__toggle {
   display: none;
   align-items: center;
@@ -148,19 +154,66 @@
   width: 2.75rem;
   height: 2.75rem;
   padding: 0;
-  border: 1px solid var(--v6-border);
-  border-radius: var(--v6-radius-sm);
+  border: 0;
+  border-radius: 0;
   background: transparent;
   color: var(--v6-text-primary);
   cursor: pointer;
+  transition: color var(--v6-duration) var(--v6-ease);
 }
 
+/* The glyph: two 1.5px round-capped bars in an 18x18 box. Both pseudo
+   elements are absolutely centred on the same origin, so the closed (two
+   bars) and open (an X) states share one optical centre and the glyph never
+   shifts when it toggles. */
 .v6-nav__toggle-bars {
+  position: relative;
   display: block;
-  width: 1.1rem;
-  height: 0.7rem;
-  border-top: 1.5px solid currentcolor;
-  border-bottom: 1.5px solid currentcolor;
+  width: 1.125rem; /* 18px */
+  height: 1.125rem; /* 18px */
+}
+
+.v6-nav__toggle-bars::before,
+.v6-nav__toggle-bars::after {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  border-radius: 1px;
+  background: currentcolor;
+  content: "";
+  transition:
+    transform var(--v6-duration) var(--v6-ease),
+    opacity var(--v6-duration) var(--v6-ease);
+}
+
+/* closed: Menu — two bars, 8px apart */
+.v6-nav__toggle-bars::before {
+  transform: translateY(-4.75px);
+}
+
+.v6-nav__toggle-bars::after {
+  transform: translateY(3.25px);
+}
+
+/* open: Close — the same two bars become an X about the shared centre */
+.v6-nav[data-open="true"] .v6-nav__toggle-bars::before {
+  transform: rotate(45deg);
+}
+
+.v6-nav[data-open="true"] .v6-nav__toggle-bars::after {
+  transform: rotate(-45deg);
+}
+
+/* Reduced motion: the state change must not depend on an animation to be
+   legible. With the transition removed the two states still swap instantly
+   and unambiguously — Menu (two bars) or Close (an X). */
+@media (prefers-reduced-motion: reduce) {
+  .v6-nav__toggle-bars::before,
+  .v6-nav__toggle-bars::after {
+    transition: none;
+  }
 }
 
 @media all and ($mobile) {

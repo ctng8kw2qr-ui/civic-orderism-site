@@ -24,7 +24,7 @@
 
     & > p {
       display: inline;
-      color: var(--gray);
+      color: var(--v6-text-muted);
       text-wrap: unset;
     }
 
@@ -35,9 +35,12 @@
       margin: 0 0.5rem;
 
       .search-path {
-        stroke: var(--darkgray);
+        /* Unified icon system: V6 token instead of the legacy Quartz
+           --darkgray, and a steadier transition than 0.5s. Weight and
+           caps now come from the svg element itself (1.5, round). */
+        stroke: var(--v6-text-muted);
         stroke-width: 1.5px;
-        transition: stroke 0.5s ease;
+        transition: stroke var(--v6-duration, 180ms) ease;
       }
     }
   }

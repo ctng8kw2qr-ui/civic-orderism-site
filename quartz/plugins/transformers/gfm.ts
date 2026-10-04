@@ -1,25 +1,27 @@
-import remarkGfm from "remark-gfm"
-import smartypants from "remark-smartypants"
-import { QuartzTransformerPlugin } from "../types"
-import rehypeSlug from "rehype-slug"
-import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import remarkGfm from "remark-gfm";
+import smartypants from "remark-smartypants";
+import { QuartzTransformerPlugin } from "../types";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 export interface Options {
-  enableSmartyPants: boolean
-  linkHeadings: boolean
+  enableSmartyPants: boolean;
+  linkHeadings: boolean;
 }
 
 const defaultOptions: Options = {
   enableSmartyPants: true,
   linkHeadings: true,
-}
+};
 
-export const GitHubFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>> = (userOpts) => {
-  const opts = { ...defaultOptions, ...userOpts }
+export const GitHubFlavoredMarkdown: QuartzTransformerPlugin<
+  Partial<Options>
+> = (userOpts) => {
+  const opts = { ...defaultOptions, ...userOpts };
   return {
     name: "GitHubFlavoredMarkdown",
     markdownPlugins() {
-      return opts.enableSmartyPants ? [remarkGfm, smartypants] : [remarkGfm]
+      return opts.enableSmartyPants ? [remarkGfm, smartypants] : [remarkGfm];
     },
     htmlPlugins() {
       if (opts.linkHeadings) {
@@ -44,9 +46,16 @@ export const GitHubFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>> =
                   viewBox: "0 0 24 24",
                   fill: "none",
                   stroke: "currentColor",
-                  "stroke-width": "2",
+                  // Unified icon system: 1.5, matching every other icon on the
+                  // site. The previous 2 rendered visibly heavier than the
+                  // 1.5 set. Decorative and non-interactive: the anchor itself
+                  // already carries aria-hidden and tabindex -1, and the svg
+                  // repeats aria-hidden so it can never be announced on its own.
+                  "stroke-width": "1.5",
                   "stroke-linecap": "round",
                   "stroke-linejoin": "round",
+                  "aria-hidden": "true",
+                  focusable: "false",
                 },
                 children: [
                   {
@@ -69,10 +78,10 @@ export const GitHubFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>> =
               },
             },
           ],
-        ]
+        ];
       } else {
-        return []
+        return [];
       }
     },
-  }
-}
+  };
+};
