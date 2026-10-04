@@ -40,6 +40,8 @@
      与已批准 E3 一致，且在每个断点比例相同。 */
   --e3-mark-size: clamp(2rem, 4.55vw, 4.1rem);
   --e3-mark-crop: 0.27;
+  /* Start Here → secondary navigation group 的目标间距。 */
+  --e3-gap-nav: var(--v6-space-lg);
 
   position: relative;
   display: flex;
@@ -332,6 +334,13 @@
     /* 620px 是桌面首屏高度；移动端内容更矮，硬撑只会在
        CTA 与 metadata 之间留下空场。改为内容驱动。 */
     min-height: 0;
+
+    /* 移动端纵向收紧：只压缩「块与块之间」的节奏，
+       不动画布上留白（--v6-space-xl）、不动标题/正文内部阅读空间、
+       不动 Start Here 的触控高度。全部自 --v6-space-* 派生。 */
+    --e3-r4: calc(var(--v6-space-lg) * 0.9);
+    --e3-r5: calc(var(--v6-space-xl) * 0.9);
+    --e3-gap-nav: var(--v6-space-lg);
   }
 
   /* gutter 收窄。56px 是桌面值：375px 下两侧共占 112px，
@@ -372,32 +381,55 @@
     margin-bottom: -0.92rem;
   }
 
+  /* 触控目标靠水平方向与行距共同满足；纵向不要再加 padding，
+     否则会侵入 nav 与 metadata 之间的空场。 */
   .v6 .v6-hero--e3 .v6-hero__nav-link {
-    padding: 0.7rem 0;
-    margin: -0.35rem 0;
+    padding: 0.35rem 0;
   }
 
   /* Mobile：不在同一行排两个 secondary CTA，改为纵向堆叠。
      主 CTA 与 secondary 之间的间距（--e3-r5 的余量 + --e3-r6）
      明显大于两个 secondary 彼此之间的间距，层级一眼可辨。 */
+  /* Mobile：secondary navigation 收成一个紧凑的 navigation group。
+     层级比例（= --e3-gap-nav）：
+       Start Here → secondary group   明显更大
+       secondary item → secondary item 约一半
+     两者都用 --v6-space-* 派生，不硬编码像素。 */
   .v6 .v6-hero--e3 .v6-hero__nav {
     flex-direction: column;
-    gap: 0.15rem;
-    margin-top: calc(var(--v6-space-lg) * 0.45);
+    gap: calc(var(--v6-space-sm) * 0.75);
+    margin-top: calc(var(--e3-gap-nav) - var(--v6-space-sm) * 0.75);
   }
 
-  /* Mobile：metadata 取消左右布局，改为单列 metadata group。
-     四项全部保留，组内使用克制的小间距，不做成四个独立 section。 */
+  /* Mobile：metadata 取消左右布局，改为单列。
+     两个明确的小组：GROUP A（框架 · 年份 + 阶段标题）、
+     GROUP B（品牌 + 英文框架名）。组内紧、组间略松，
+     因此读起来是「状态 metadata」，不是四个独立 section。 */
   .v6 .v6-hero--e3 .v6-hero__meta {
     flex-direction: column;
     gap: 0;
-    margin-top: var(--v6-space-lg);
-    padding-top: var(--v6-space-md);
+    margin-top: var(--v6-space-md);
+    padding-top: var(--v6-space-sm);
   }
 
+  /* 组间：明显大于组内行距，但仍小于 nav→metadata 的空场。 */
   .v6 .v6-hero--e3 .v6-hero__meta-col--right {
-    margin-top: 1rem;
+    margin-top: 0.55rem;
     text-align: left;
+  }
+
+  /* 移动端整体再降一级存在感，明确属于 document footer / status metadata。
+     颜色仍为 --v6-text-muted（light 5.35:1 / dark 5.85:1，均过 WCAG AA）。 */
+  .v6 .v6-hero--e3 .v6-hero__meta-primary {
+    font-size: 0.65rem;
+    letter-spacing: 0.13em;
+    line-height: 1.45;
+  }
+
+  .v6 .v6-hero--e3 .v6-hero__meta-secondary {
+    margin-top: 0.28rem;
+    font-size: 0.7rem;
+    line-height: 1.5;
   }
 
   .v6 .v6-hero--e3 .v6-hero__meta-col--right .v6-hero__meta-secondary {
@@ -409,5 +441,32 @@
      与已批准 E3 一致：直接隐藏。 */
   .v6 .v6-hero--e3 .v6-hero__mark {
     display: none;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   极窄屏 320–359：仅解决两个物理放不下的问题。
+   360px 及以上完全不进入本区块，已批准效果不受影响。
+   ══════════════════════════════════════════════════════════════════ */
+@media (max-width: 359px) {
+  /* ① 品牌行：320px 下中文与英文无法同排，会折成两行白占 36px 纵向空间。
+        隐藏英文只影响此处的 responsive presentation ——
+        底部 metadata 内 CIVIC ORDERISM 完整保留。 */
+  .v6 .v6-hero--e3 .v6-hero__brand-en {
+    display: none;
+  }
+
+  /* ② Start Here：13.44px 下实测墨宽约 240px，可在 272px 内单行成立，
+        不再出现「义→」孤字断行。属于有限字号响应，仍在可读范围。 */
+  .v6 .v6-hero--e3 .v6-hero__start-link {
+    font-size: 0.84rem;
+    letter-spacing: -0.01em;
+  }
+
+  /* ③ metadata 主行：320px 下 "POLITICAL TRANSITION FRAMEWORK · 2026"
+        会折成两行，末行只剩 "FRAMEWORK · 2026"。收一点字距使其单行成立，
+        字号不变，仍属 status metadata 层级。 */
+  .v6 .v6-hero--e3 .v6-hero__meta-primary {
+    letter-spacing: 0.08em;
   }
 }
