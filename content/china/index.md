@@ -236,12 +236,12 @@ noindex: false
 <h2 class="inst4l-section__title">进一步理解的工具箱</h2>
 <p class="inst4l-section__desc">以下概念用于进一步理解中共具体政治现象。它们不是与总论平行的另一套理论，而是总论模型中的分析工具。</p>
 </div>
-<div class="inst4l-tools"><a class="inst4l-tool" href="/concepts/party-state-stress"><strong>党国应力</strong><span>党的政治控制逻辑与国家治理逻辑长期重叠后，不断积累的结构性张力。</span></a>
-<a class="inst4l-tool" href="/concepts/bureaucratic-shock"><strong>官僚系统休克</strong><span>官僚系统在高风险、强问责和低授权环境中出现的集体行动冻结。</span></a>
-<a class="inst4l-tool" href="/concepts/order-evaporation"><strong>秩序蒸发</strong><span>制度形式仍然存在，但可信承诺、协作能力和社会预期逐步流失。</span></a>
-<a class="inst4l-tool" href="/concepts/organizational-credit"><strong>组织信用</strong><span>组织能否持续兑现承诺、分配责任并让成员相信长期合作仍有意义的能力。</span></a>
-<a class="inst4l-tool" href="/concepts/security-purge-recentralization-cycle"><strong>安全化—清洗—再集中—再失灵模型</strong><span>安全化推动清洗和再集中，而再集中又削弱治理反馈并产生新一轮失灵。</span></a>
-<a class="inst4l-tool" href="/concepts/political-control-governance-divergence"><strong>政治控制—治理效能背离</strong><span>党的政治控制能力不断上升，但国家解决复杂治理问题的能力却可能同步下降。</span></a></div>
+<div class="inst4l-tools"><a class="inst4l-tool" href="/concepts/party-state-stress"><span class="inst4l-tool__num" aria-hidden="true">01</span><strong class="inst4l-tool__title">党国应力</strong><span class="inst4l-tool__desc">党的政治控制逻辑与国家治理逻辑长期重叠后，不断积累的结构性张力。</span></a>
+<a class="inst4l-tool" href="/concepts/bureaucratic-shock"><span class="inst4l-tool__num" aria-hidden="true">02</span><strong class="inst4l-tool__title">官僚系统休克</strong><span class="inst4l-tool__desc">官僚系统在高风险、强问责和低授权环境中出现的集体行动冻结。</span></a>
+<a class="inst4l-tool" href="/concepts/order-evaporation"><span class="inst4l-tool__num" aria-hidden="true">03</span><strong class="inst4l-tool__title">秩序蒸发</strong><span class="inst4l-tool__desc">制度形式仍然存在，但可信承诺、协作能力和社会预期逐步流失。</span></a>
+<a class="inst4l-tool" href="/concepts/organizational-credit"><span class="inst4l-tool__num" aria-hidden="true">04</span><strong class="inst4l-tool__title">组织信用</strong><span class="inst4l-tool__desc">组织能否持续兑现承诺、分配责任并让成员相信长期合作仍有意义的能力。</span></a>
+<a class="inst4l-tool" href="/concepts/security-purge-recentralization-cycle"><span class="inst4l-tool__num" aria-hidden="true">05</span><strong class="inst4l-tool__title">安全化—清洗—再集中—再失灵模型</strong><span class="inst4l-tool__desc">安全化推动清洗和再集中，而再集中又削弱治理反馈并产生新一轮失灵。</span></a>
+<a class="inst4l-tool" href="/concepts/political-control-governance-divergence"><span class="inst4l-tool__num" aria-hidden="true">06</span><strong class="inst4l-tool__title">政治控制—治理效能背离</strong><span class="inst4l-tool__desc">党的政治控制能力不断上升，但国家解决复杂治理问题的能力却可能同步下降。</span></a></div>
   </section>
 
   <section class="inst4l-section inst4l-research-topics">

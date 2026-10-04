@@ -2533,7 +2533,8 @@ writeInstitutionalContent(
     </div>
     <div class="inst4l-tools">${chinaModelRows
       .map(
-        (model) => `<a class="inst4l-tool" href="${model.href}"><strong>${model.title}</strong><span>${model.desc}</span></a>`,
+        (model, i) =>
+          `<a class="inst4l-tool" href="${model.href}"><span class="inst4l-tool__num" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span><strong class="inst4l-tool__title">${model.title}</strong><span class="inst4l-tool__desc">${model.desc}</span></a>`,
       )
       .join("\n")}</div>
   </section>
