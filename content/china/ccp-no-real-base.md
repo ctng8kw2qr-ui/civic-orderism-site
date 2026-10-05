@@ -33,6 +33,8 @@ coreJudgments:
   - 中共不是因为有强大基本盘才稳定，而是因为它不允许任何人拥有自己的基本盘，才显得稳定。
 slug: china/ccp-no-real-base
 status: published
+cover: /static/assets/v6/editorial/editorial-ccp-no-real-base.webp
+coverAlt: "大量浅色圆柱排列在水平石板下方，柱顶与石板之间留有空隙；深色支架从两侧托住完整石板。"
 ---
 
 # 中共最大的秘密：它根本没有基本盘

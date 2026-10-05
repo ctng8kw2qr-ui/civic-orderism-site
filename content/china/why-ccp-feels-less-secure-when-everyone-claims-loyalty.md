@@ -34,6 +34,8 @@ relatedArticles:
   - china/organization-credit-retired-officials
 slug: china/why-ccp-feels-less-secure-when-everyone-claims-loyalty
 status: published
+cover: /static/assets/v6/editorial/editorial-why-ccp-feels-less-secure-everyone-claims.webp
+coverAlt: "四个不同形状的实体各带同样的浅色圆面；前方比较叉接触其中两个，旁侧测试臂悬挂浅色重块。"
 ---
 
 # 当所有人都说忠诚：中共为什么反而越来越没有安全感

@@ -10,6 +10,8 @@ description: 现代社会的日常问题洪流、传染机制与三段式阈值�
 status: published
 aliases:
   - articles/no-accountability-lie-flat-mentality
+cover: /static/assets/v6/editorial/editorial-no-accountability-lie-flat-mentality.webp
+coverAlt: "浅色底座上排列弧形、阶梯形和直形通道，内部积有细砂与小石；三个蓝灰清理块悬停在各自罩下，旁侧留有备用垫块。"
 ---
 # 为什么“无人担责的躺平心态”会从根本上摧毁一个超大型执政组织
 

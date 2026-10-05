@@ -10,6 +10,8 @@ description: 本文从中央—地方关系、官商共生、财政金融通道�
 status: published
 aliases:
   - articles/chicken-and-cage
+cover: /static/assets/v6/editorial/editorial-chicken-and-cage.webp
+coverAlt: "一株带浅色果实的陶质植物，根系包裹多个土块，置于分段浅色容器中；旁侧是宽阔旧盆、交织根网和盛果的浅盘。"
 ---
 # 养鸡与换笼
 

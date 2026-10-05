@@ -12,6 +12,8 @@ tags:
   - 精英原子化
 description: 一个体制最危险的状态，不是它的敌人足够强大，而是它的支柱已经空心，却在外表上仍然完好无损。
 status: published
+cover: /static/assets/v6/editorial/editorial-elite-sandification-ming-bureaucrats-ccp.webp
+coverAlt: "直立的深色圆筒有完整拱形开口，内部与前方散布浅色及蓝灰圆粒，顶部可见中空。"
 ---
 # 沙化的忠诚：中共精英原子化与明代士大夫的历史镜像
 

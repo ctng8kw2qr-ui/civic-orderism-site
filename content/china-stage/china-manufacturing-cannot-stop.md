@@ -12,6 +12,8 @@ key_points:
   - 产能过剩背后是政策动员、地方竞争和责任锁死。
   - 制造业危机最终指向秩序纠错能力失效。
 status: published
+cover: /static/assets/v6/editorial/editorial-china-manufacturing-cannot-stop.webp
+coverAlt: "三个浅色滚轮共用深色轴，带材在前方盘成层叠卷；右侧蓝灰控制杆被支承横件固定，左侧小线轴以细线连接驱动。"
 ---
 
 # 中国制造业不是造不出来，而是停不下来
