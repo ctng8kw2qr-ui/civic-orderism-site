@@ -8,6 +8,8 @@ tags:
   - 马其诺防线
   - 躺平
   - 润学
+cover: /static/assets/v6/editorial/editorial-maginot-line-of-stability-maintenance.webp
+coverAlt: "细密排列的浅色陶瓷片固定在深色底座上，后方抵着楔形构件；连续蓝灰织带从结构后方绕过右端，延伸到前景，陶瓷结构保持完整。"
 ---
 
 # 一个难以言说的防线
