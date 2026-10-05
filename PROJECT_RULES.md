@@ -28,7 +28,7 @@ them without an architecture-level decision (see §7).
 | ------------------ | ----------------------------------------------------------------------------- |
 | Homepage IA        | 我是谁 · 为什么现在开始准备 · 我们主张什么 · 如何实现 · 正在做什么 · 如何参与 |
 | Article system     | Article Header · Core Judgment · Body · TOC · Reading Footer                  |
-| Brand identity     | Threshold Mark · Compact Lockup · `CIVIC ORDERISM`                            |
+| Brand identity     | Icon Mark · Compact Lockup · `CIVIC ORDERISM`                                 |
 | Palette            | V6 canonical tokens (`quartz/styles/v6/_tokens.scss`)                         |
 | Visual language    | Institutional Editorial — **B + C hybrid**                                    |
 | Homepage Hero      | THRESHOLD                                                                     |
@@ -39,7 +39,8 @@ them without an architecture-level decision (see §7).
 Canonical reference assets — compare against these, do not replace them:
 
 ```
-quartz/static/assets/v6/brand/threshold-mark.svg      brand reference
+quartz/static/assets/v6/brand/icon-mark.svg           brand mark (current)
+quartz/static/assets/v6/brand/threshold-mark.svg      historical — OG fallback only
 quartz/static/assets/v6/hero/hero-threshold.svg       hero reference
 quartz/static/assets/v6/editorial/ccp-system-transformation.webp
 quartz/static/assets/v6/social/og-fallback.svg        OG reference
@@ -50,7 +51,7 @@ quartz/static/assets/v6/social/og-fallback.svg        OG reference
 Not to be modified as a side effect of an unrelated task. Changing any of these
 is an architecture-level decision, not a normal task:
 
-Homepage IA · Article IA · Navigation IA · Threshold Mark · Brand identity ·
+Homepage IA · Article IA · Navigation IA · Icon Mark · Brand identity ·
 V6 canonical palette · Typography system · Core Judgment · Reading Footer ·
 TOC · Cover infrastructure · OG precedence · Hero copy · URL architecture ·
 slug architecture

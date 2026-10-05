@@ -13,12 +13,13 @@ has fewer, wider-spaced members — the order being prepared.
 Geometry, rationale, the ratio argument and the rendering-model note live in the
 file's own header comment.
 
-The filename still refers to the threshold idea the Hero and the brand mark
-share. `../brand/threshold-mark.svg` is that idea as a compact symbol; the Hero
-is the same idea spatialised. They are deliberately **different forms** — the
-mark must not be enlarged into the Hero, and the Hero must not shrink into a
-mark. **This artwork is not a logo** and does not replace the wordmark, the
-Threshold Mark, the favicon or the app icons.
+The filename still refers to the threshold idea the Hero shares with the
+historical Threshold Mark (`../brand/threshold-mark.svg`), which is no longer the
+Civic Orderism mark — see `../SPEC.md` §1b. The Hero is that idea spatialised.
+They are deliberately **different forms** — the mark must not be enlarged into
+the Hero, and the Hero must not shrink into a mark. **This artwork is not a logo**
+and does not replace the wordmark, the Icon Mark (`../brand/icon-mark.svg`), the
+favicon or the app icons.
 
 ## Not here
 

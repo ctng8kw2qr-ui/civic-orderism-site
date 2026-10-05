@@ -37,8 +37,9 @@
 
 /* ── Brand: 两行，中文主 / 英文辅 ─────────────────────────────── */
 /* Header wordmark: the name alone, as real text, inside one home link.
-   The Threshold Mark is no longer shown in the header (display decision); it
-   remains the brand asset for the favicon, application icons and OG fallback.
+   No mark is shown in the header (display decision). The Civic Orderism mark is
+   `brand/icon-mark.svg`, used for the favicon and application icons; the older
+   Threshold Mark is historical and survives only in the OG fallback.
    Stacked column, unchanged typography and unchanged hover/focus behaviour. */
 .v6-nav__brand {
   display: flex;

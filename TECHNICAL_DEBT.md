@@ -33,7 +33,8 @@ production.
 
 `quartz/static/logo.png` is **782.2 KB** (1254 × 1254). It predates V6, uses the
 old navy palette (`#102549`), and is **not** part of the V6 brand identity — the
-site's identity is the Threshold Mark plus a typographic wordmark.
+site's identity is the Icon Mark (`brand/icon-mark.svg`) plus a typographic
+wordmark.
 
 **It still has real consumers** (verified — this is why it was not removed):
 
@@ -126,6 +127,44 @@ consumer inside article scope.
 section**, the way the homepage was migrated — not in one sweep. A full
 replacement of `custom.scss` with V6 tokens is a real maintenance task, not a
 side effect.
+
+## A5. Two sources for `favicon.ico`
+
+**Status:** harmless today; deliberately not resolved during the icon-mark
+change.
+
+Two emitters write `public/favicon.ico`, and the later one silently wins:
+
+| Step                        | Source                                        | Output               |
+| --------------------------- | --------------------------------------------- | -------------------- |
+| `Plugin.Favicon()`          | `quartz/static/icon.png`, resized to 48px PNG | `public/favicon.ico` |
+| `RootStatic()` (runs after) | committed `quartz/static/favicon.ico`         | overwrites the above |
+
+Verified: `public/favicon.ico` is byte-identical to the committed three-frame
+ICO, so the 48px PNG from the emitter never ships. Both paths currently read the
+same mark, so the outcome is correct — but the emitter's work is dead, and a
+future change to `icon.png` alone would silently do nothing.
+
+**Repayment action:** drop `favicon.ico` from either `RootStatic`'s
+`rootStaticFiles` list or the `Favicon` plugin, and keep one documented source
+of truth. Low risk, small change, but out of scope for a brand-documentation
+pass.
+
+## A6. OG fallback still draws the historical Threshold Mark
+
+**Status:** known divergence, deferred deliberately.
+
+The Civic Orderism mark is now `brand/icon-mark.svg` (three blocks, `#435B63`).
+`social/og-fallback.svg` still draws the historical Threshold Mark — circle,
+arch and horizon in wine `#7a2430` — and its own comment now says so.
+
+It was left alone when the icon mark landed because that change was scoped to the
+browser, bookmark and home-screen icons. Changing social card art is a visible
+brand change and needs its own decision, not a side effect.
+
+**Repayment action:** redraw `og-fallback.svg` from `brand/icon-mark.svg` at the
+same 60/100 scale, or confirm that the OG fallback intentionally keeps the
+historical mark. Either way, decide it explicitly.
 
 ---
 

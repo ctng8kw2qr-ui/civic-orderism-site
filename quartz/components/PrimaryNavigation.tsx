@@ -60,11 +60,11 @@ const PrimaryNavigation: QuartzComponent = ({
           data-router-ignore
           aria-label="公民秩序主义首页"
         >
-          {/* Header wordmark. The Threshold Mark was removed from the header as
-              a display decision, and the browser/bookmark/home-screen icons now
-              use the separate slate icon mark (`brand/icon-mark.svg`) — the
-              Threshold Mark still serves the OG fallback. See
-              quartz/static/assets/v6/SPEC.md §1b.
+          {/* Header wordmark. The mark was removed from the header as a display
+              decision, so the name stands alone here. The Civic Orderism mark is
+              `brand/icon-mark.svg` (the three-block slate Icon Mark); the older
+              Threshold Mark is historical and survives only in the OG fallback.
+              See quartz/static/assets/v6/SPEC.md §1b.
 
               What remains is the name alone, in real text, inside this single
               link so the whole wordmark is one home click target. The
