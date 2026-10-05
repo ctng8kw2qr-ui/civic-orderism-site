@@ -35,6 +35,8 @@ relatedArticles:
   - china/ccp-2018-xi-era-local-growth-space
 slug: china/security-led-governance-model
 status: published
+cover: /static/assets/v6/editorial/editorial-security-recentralization.webp
+coverAlt: "一条平整宽阔的路横贯画面，中间两团素面土石靠得很近、只留一个窄口；整幅路面的磨损都收束成一条抛光的小径穿过窄口，两侧宽阔的路面干净、平整、完全没有被使用。"
 ---
 
 # 安全化、再集中与治理边界

@@ -16,6 +16,8 @@ coreJudgments:
   - 信息化时代的国家应成为可记录、可还原、可解释、可追责的系统。
   - 行政线负责做事，委员会线负责看事，共同构成带有反馈回路的国家系统。
 status: published
+cover: /static/assets/v6/editorial/editorial-civic-orderism-manual.webp
+coverAlt: "一道很薄的独立隔墙横贯画面，墙上只有一个普通人宽高的开口，墙后的空间远大于这道墙所能容纳的尺度。"
 ---
 
 # 公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案

@@ -32,6 +32,8 @@ relatedArticles:
   - china/route-transition-why-ccp-keeps-purging-officials
   - civic-orderism/why-civic-orderism-is-easier-to-succeed
   - theory/internal-change-external-change
+cover: /static/assets/v6/editorial/editorial-peaceful-transition-possibility.webp
+coverAlt: "一排短桩横过几乎静止的水面，左侧桩身干燥露出，右侧水面已没过桩身中段，水位线在三之二处越过桩列，两岸无人。"
 ---
 
 # 中国和平政治转型的可能性

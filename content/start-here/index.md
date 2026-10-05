@@ -10,10 +10,16 @@ folderListed: true
 noindex: false
 aliases:
   - start
+cover: /static/assets/v6/editorial/editorial-start-here.webp
+coverAlt: "一只手按在一排七个相同素面操纵杆中的第四个上，第五个仍被第四个刚刚抽开的插销挡住，最后两个还倒着；机器最右端唯一的输出件还没有任何动作。"
 ---
 
 <div class="start-page start-here-page">
-  <header class="start-page__header"><p class="resource-label">新读者入口</p><h1>5分钟了解公民秩序主义</h1><p>用七个步骤建立基础认识：它是什么、为什么是现在、政治转轨意味着什么、准备怎么做、最终想建立什么、现在做到哪里，以及接下来读什么。</p></header>
+  <header class="start-page__header"><p class="resource-label">新读者入口</p><h1>5分钟了解公民秩序主义</h1><p>用七个步骤建立基础认识：它是什么、为什么是现在、政治转轨意味着什么、准备怎么做、最终想建立什么、现在做到哪里，以及接下来读什么。</p><figure class="v6-primary-visual">
+  <img src="/static/assets/v6/editorial/editorial-start-here.webp" alt="一只手按在一排七个相同素面操纵杆中的第四个上，第五个仍被第四个刚刚抽开的插销挡住，最后两个还倒着；机器最右端唯一的输出件还没有任何动作。" width="1600" height="842" loading="lazy" decoding="async" />
+</figure>
+
+</header>
   <div class="start-page__sections">
     <section><span>01</span><div><h2>公民秩序主义是什么？</h2><p>公民秩序主义不是普通政治评论项目，也不是只提供文章和观点的内容平台。它是一条面向中国未来政治转轨的政治路线：理论研究为路线提供判断基础，组织建设为路线建立现实承接能力。</p><p>它要回答的不是哪一种制度听起来最理想，而是在降低冲突与社会代价的前提下，中国怎样完成下一次政治转轨。</p><p class="start-roadmap__line">政治路线 → 组织承接能力 → 和平政治转轨</p></div></section>
     <section><span>02</span><div><h2>为什么是现在？</h2><p>过去几十年，中国社会普遍相信明天会比今天更好：普通人相信收入会增加，企业相信生意还能扩大，年轻人相信机会还会更多。</p><p>今天，越来越多阶层、行业和群体开始重新计算自己的未来，中共也越来越难回答整个社会都在追问的那个问题：明天到底会怎样？</p><p>当旧秩序越来越难继续创造新的受益者，而越来越多社会群体开始承受损失，寻找新的政治答案就已经成为现实需要。政治转轨不是未来某一天才需要面对的问题，它已经成为今天必须开始准备的问题。</p><p class="start-roadmap__line">明天会比今天更好 → 明天到底会怎样？ → 提前准备政治答案</p><p>更深入的理论解释，例如工业时代形成的治理方式与信息化社会之间的结构性失配，属于后续的研究内容：<a href="/civic-orderism/information-age-and-political-transition">信息化时代与政治转型</a>。</p></div></section>

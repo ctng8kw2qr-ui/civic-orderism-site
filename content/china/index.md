@@ -8,6 +8,8 @@ status: published
 listed: true
 folderListed: true
 noindex: false
+cover: /static/assets/v6/editorial/editorial-china-analysis.webp
+coverAlt: "一片裸露的台地地面向下收成一条阶梯状的通道，两侧土壁高出人头，一个很小的素面物件停在高而宽的通道入口，下方整段阶梯空空荡荡、越往下越窄。"
 ---
 
 <div class="inst4 inst4l inst4l-china">
@@ -259,7 +261,11 @@ noindex: false
 </div>
   </section>
 
-  <section class="inst4l-section">
+  <figure class="v6-primary-visual">
+  <img src="/static/assets/v6/editorial/editorial-china-analysis.webp" alt="一片裸露的台地地面向下收成一条阶梯状的通道，两侧土壁高出人头，一个很小的素面物件停在高而宽的通道入口，下方整段阶梯空空荡荡、越往下越窄。" width="1600" height="842" loading="lazy" decoding="async" />
+</figure>
+
+<section class="inst4l-section">
 <div class="inst4l-section__head">
 <p class="inst4-eyebrow">全部研究</p>
 <h2 class="inst4l-section__title">浏览全部解析中共文章</h2>

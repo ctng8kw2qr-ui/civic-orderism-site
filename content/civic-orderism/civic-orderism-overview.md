@@ -35,6 +35,8 @@ relatedArticles:
   - civic-orderism/possibility-of-peaceful-political-transition-in-china
   - civic-orderism/civic-orderism-manual
   - civic-orderism/why-civic-orderism
+cover: /static/assets/v6/editorial/editorial-civic-orderism-overview.webp
+coverAlt: "平剖面：运转中的机器旁，一名工人在脚手架上双手抬起调速器，替换件停在下方，传动轴贯穿画面未中断。"
 ---
 
 # 公民秩序主义总论：保留国家，改变政治

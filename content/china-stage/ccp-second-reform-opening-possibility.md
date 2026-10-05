@@ -35,6 +35,8 @@ key_points:
   - 二次改开的真正门槛，是中共是否已经走到不改革、所有核心集团都会一起失去退路的时刻。
 slug: china-stage/ccp-second-reform-opening-possibility
 status: published
+cover: /static/assets/v6/editorial/editorial-second-reform-window.webp
+coverAlt: "三块巨大的平板各在自己的浅槽里，身后留着长长磨亮的痕迹，前方地面未动；三者最近的角彼此没有合拢，中间留下一小片干净的空白地面。"
 ---
 
 # 中共还有没有二次改开的可能？

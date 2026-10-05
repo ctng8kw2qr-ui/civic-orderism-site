@@ -8,6 +8,8 @@ status: published
 listed: true
 folderListed: true
 noindex: false
+cover: /static/assets/v6/editorial/editorial-institution-design.webp
+coverAlt: "在一个完全完好、闭合的沉重框架内，多根素面受拉构件沿一条竖轴向内汇聚、共同夹住轴线上一根很小的试件，这根试件刚在中段断开，其余构件仍然绷直未动。"
 ---
 
 <div class="institution-page">
@@ -27,6 +29,10 @@ noindex: false
 <li>政治官员统合与授权</li>
 <li>行政系统执行</li>
 <li>司法、透明与责任系统纠错</li></ol>
+<figure class="v6-primary-visual">
+  <img src="/static/assets/v6/editorial/editorial-institution-design.webp" alt="在一个完全完好、闭合的沉重框架内，多根素面受拉构件沿一条竖轴向内汇聚、共同夹住轴线上一根很小的试件，这根试件刚在中段断开，其余构件仍然绷直未动。" width="1600" height="842" loading="lazy" decoding="async" />
+</figure>
+
 </section>
 
 <section class="institution-first-reading" aria-labelledby="institution-first-reading-title">

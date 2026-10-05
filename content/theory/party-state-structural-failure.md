@@ -14,6 +14,8 @@ tags:
   - 去党国化
 description: 理解中共的未来，存在两种常见误区。
 status: published
+cover: /static/assets/v6/editorial/editorial-party-state-structural-failure.webp
+coverAlt: "一根极粗的中心柱托起整条屋顶，两侧横梁在到达边缘前止住、悬在空中，下方地面空无一物，结构保持站立。"
 ---
 # 党国系统的结构性失效：一个组织诊断
 

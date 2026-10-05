@@ -8,11 +8,17 @@ status: published
 listed: true
 folderListed: true
 noindex: false
+cover: /static/assets/v6/editorial/editorial-china-stage.webp
+coverAlt: "一根素面无刻度的测量杆只带一道窄环，垂入一缸静止的液体中，液体已分成浅色上层与致密深色下层，窄环正落在两层的交界处，液面保持完全平静。"
 ---
 
 # 中国阶段判断
 
 本页汇集关于财政压力、改革窗口、社会心理与未来路径的阶段性研究。第一次访问本站，建议先从 [[articles|阅读地图]] 建立整体认识；希望继续研究未来秩序的读者，可以进入 [[china-future|中国未来]]。
+
+<figure class="v6-primary-visual">
+  <img src="/static/assets/v6/editorial/editorial-china-stage.webp" alt="一根素面无刻度的测量杆只带一道窄环，垂入一缸静止的液体中，液体已分成浅色上层与致密深色下层，窄环正落在两层的交界处，液面保持完全平静。" width="1600" height="842" loading="lazy" decoding="async" />
+</figure>
 
 <div class="knowledge-browser" data-knowledge-browser data-page-size="10">
 <div class="knowledge-filters" aria-label="文章筛选">

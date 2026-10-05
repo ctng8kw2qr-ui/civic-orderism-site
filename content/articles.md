@@ -8,6 +8,8 @@ status: published
 listed: true
 folderListed: true
 noindex: false
+cover: /static/assets/v6/editorial/editorial-reading-map.webp
+coverAlt: "一面裸露的坡地占满画面，四条各自完整的小路横过坡面，每条都自行从坡底通到坡顶，四条路彼此从不相交，中间的空白地面始终没有被任何一条经过。"
 ---
 
 <div class="inst4 inst4l inst4l-reading-map">
@@ -17,7 +19,11 @@ noindex: false
 <p class="inst4l-lead">根据你现在最想理解的问题，选择一条阅读路径。这里不是完整文章目录，而是为不同问题准备的入口。</p>
   </section>
 
-  <section class="inst4l-section">
+  <figure class="v6-primary-visual">
+  <img src="/static/assets/v6/editorial/editorial-reading-map.webp" alt="一面裸露的坡地占满画面，四条各自完整的小路横过坡面，每条都自行从坡底通到坡顶，四条路彼此从不相交，中间的空白地面始终没有被任何一条经过。" width="1600" height="842" loading="lazy" decoding="async" />
+</figure>
+
+<section class="inst4l-section">
   <div class="inst4l-section__head">
 <p class="inst4-eyebrow">路线 A · 认识公民秩序主义</p>
 <h2 class="inst4l-section__title">第一次认识公民秩序主义</h2>

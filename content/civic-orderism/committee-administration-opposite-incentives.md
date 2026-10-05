@@ -18,6 +18,8 @@ coreJudgments:
   - 两种相反激励不是相互敌对，而是防止国家陷入自我解释和系统性失明的功能互补。
   - 委员会必须有质询和纠偏能力，但不得替代行政、干预司法或成为新的权力中心。
 status: published
+cover: /static/assets/v6/editorial/editorial-opposite-incentives.webp
+coverAlt: "一只沉重的带齿铁轮停在即将推进的一瞬，上方一个实心叉形擒纵件一端牢牢卡在齿间，另一端抬起，与下一齿之间留出一道细缝。"
 ---
 
 # 委员会与行政机关激励结构相反的意义：为什么公民秩序主义必须把“做事的人”和“看事的人”分开

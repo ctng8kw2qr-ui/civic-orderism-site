@@ -8,6 +8,8 @@ status: published
 listed: true
 folderListed: true
 noindex: false
+cover: /static/assets/v6/editorial/editorial-china-future.webp
+coverAlt: "一道明显较新的拱圈紧贴原有深色拱圈之下、连续全面接触，两者共同承压于拱顶同一块重物，没有任何一段悬空，跨度保持水平。"
 ---
 
 <div class="inst4 inst4l inst4l-future">
@@ -16,7 +18,11 @@ noindex: false
 <h1 class="inst4l-title">中国未来</h1>
 <p class="inst4l-lead">政治变化之后，中国如何继续运行？这里讨论的不是新闻预测，而是政治变化发生时，国家能否保持连续运行、公共服务能否不中断、社会秩序能否不失控。</p>
 <p class="inst4l-status">3 篇正式研究 · 8 个研究框架</p>
-  </section>
+  <figure class="v6-primary-visual">
+  <img src="/static/assets/v6/editorial/editorial-china-future.webp" alt="一道明显较新的拱圈紧贴原有深色拱圈之下、连续全面接触，两者共同承压于拱顶同一块重物，没有任何一段悬空，跨度保持水平。" width="1600" height="842" loading="lazy" decoding="async" />
+</figure>
+
+</section>
 
   <section class="inst4l-section">
   <div class="inst4l-section__head">

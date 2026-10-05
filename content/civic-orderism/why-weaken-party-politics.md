@@ -14,6 +14,8 @@ coreJudgments:
   - 政党成为国家中轴后，问题处理容易被阵营、传播和身份竞争重新编码。
   - 公共分歧应通过社会组织、委员会、议案链和正式程序表达，各国家系统保持自身功能边界。
 status: published
+cover: /static/assets/v6/editorial/editorial-weaken-party-politics.webp
+coverAlt: "一排相同的细柱在近处成对栽立、彼此微微靠近，而其中一处只有单独立着的一根，与它成对的那根不在，只剩一个空的基座。"
 ---
 
 # 公民秩序主义为什么刻意弱化政党政治

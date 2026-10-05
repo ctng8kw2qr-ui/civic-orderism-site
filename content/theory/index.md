@@ -8,6 +8,8 @@ status: published
 listed: true
 folderListed: true
 noindex: false
+cover: /static/assets/v6/editorial/editorial-research-program.webp
+coverAlt: "一条素的带坠细线从一枚简单的支架上垂直垂下、完全静止，线上没有任何刻度与标记；旁边三根素面构件以明显不同的角度立着，都还没有对齐它。"
 ---
 
 <div class="inst4 inst4l inst4l-research">
@@ -17,7 +19,11 @@ noindex: false
 <p class="inst4l-lead">研究中国政治为什么正在变化、变化可以如何发生，以及变化之后国家如何继续运行。</p>
   </section>
 
-  <section class="inst4l-section" id="research-index">
+  <figure class="v6-primary-visual">
+  <img src="/static/assets/v6/editorial/editorial-research-program.webp" alt="一条素的带坠细线从一枚简单的支架上垂直垂下、完全静止，线上没有任何刻度与标记；旁边三根素面构件以明显不同的角度立着，都还没有对齐它。" width="1600" height="842" loading="lazy" decoding="async" />
+</figure>
+
+<section class="inst4l-section" id="research-index">
 <div class="inst4l-section__head">
 <p class="inst4-eyebrow">RESEARCH SECTIONS · 研究栏目索引</p>
 <h2 class="inst4l-section__title">研究由哪些栏目组成</h2>

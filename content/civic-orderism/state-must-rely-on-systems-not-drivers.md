@@ -12,6 +12,8 @@ coreJudgments:
   - 政党集权让各子系统共用同一信号源，使错误被政治加工、拖延和累积。
   - 国家可靠性不能依赖领导人英明，而要依靠子系统独立、结构约束和持续自我修复。
 status: published
+cover: /static/assets/v6/editorial/editorial-systems-not-drivers.webp
+coverAlt: "一只无刻度的大表盘上，指针稳稳停在一个小标记上，而这个标记由一根细杆连回右侧的控制杆——它指向的正是它要测量的机构。"
 ---
 
 # 国家不能只靠驾驶员：为什么现代治理必须依赖系统

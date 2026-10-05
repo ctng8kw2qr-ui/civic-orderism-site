@@ -1,0 +1,54 @@
+/**
+ * V6 — Institutional Editorial · Site Primary Visual
+ * ================================================================
+ *
+ * 栏目落地页（/civic-orderism、/china、/theory、/concepts、/topics、
+ * /china-stage、/china-future、/institution-design、/start-here、/articles）
+ * 与首页 SECTION 03 的主视觉插画位置。
+ *
+ * 这是**页面文案的一部分**，不是文章封面：不套用 .article-inst__cover，
+ * 也不参与 cover/coverAlt 的单一来源机制。图片以渐进增强方式接入，
+ * 缺席时页面保持原有的纯排版形态（SPEC.md §0）。
+ *
+ * 比例：素材是 5:2 master 的无拉伸 1.9:1 派生件，因此这里沿用站点
+ * 既有的 --v6-cover（1.9），不引入第二套比例令牌。
+ *
+ * 克制要求：不加大图序号、不加说明文字、不加卡片、不加圆角与阴影；
+ * 只用一条上分隔线与既有版心对齐，保持机构出版物的阅读节奏。
+ */
+
+.v6-primary-visual {
+  /* 落在页面既有的版心与 gutter 内，不新建第二套容器宽度 */
+  max-width: 100%;
+  margin: clamp(2.5rem, 5vw, 4rem) auto 0;
+  padding: 0;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* 与站点文章封面共用同一个 canonical 比例令牌 */
+    aspect-ratio: var(--v6-cover);
+    object-fit: cover;
+    /* 上缘一条细线：把插画读成版面上的一段，而不是一张漂浮的图 */
+    border-top: 1px solid var(--v6-border);
+  }
+}
+
+/* 首页各 Section 已在 .v6__container 内，主视觉不再叠加外边距 */
+.v6-section .v6-primary-visual {
+  margin-top: clamp(1.75rem, 3.5vw, 2.75rem);
+}
+
+@media (max-width: 800px) {
+  .v6-primary-visual {
+    margin-top: clamp(1.75rem, 7vw, 2.5rem);
+  }
+}
+
+/* 深色主题下图片自带暖白底，不额外加边框或底衬，避免出现第二层画框 */
+@media (prefers-color-scheme: dark) {
+  .v6-primary-visual img {
+    border-top-color: var(--v6-border);
+  }
+}

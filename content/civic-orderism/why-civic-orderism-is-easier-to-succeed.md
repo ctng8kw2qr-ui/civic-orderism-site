@@ -17,6 +17,8 @@ coreJudgments:
   - 它不以摧毁国家机器或政党夺权为前提，而是保留行政能力并增加入口、判断、留痕和纠偏机制。
   - 它以责任链和精准追责取代情绪化清算，同时为普通人和体制内人员保留制度化转轨通道。
 status: published
+cover: /static/assets/v6/editorial/editorial-transition-replacement.webp
+coverAlt: "一条长柜台前，两名相同的工人在两端交接同一个位置，一人退开、一人接手，台面上的工作始终没有离开人。"
 ---
 
 # 为什么公民秩序主义在未来接替难度最小：它不是推倒国家，而是接管、校正和重组国家运行系统

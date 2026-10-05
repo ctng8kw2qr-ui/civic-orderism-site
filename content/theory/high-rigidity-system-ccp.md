@@ -13,6 +13,8 @@ tags:
   - 替代秩序
 description: 中共体制无以为继的根因，并不在外部环境，也不在所谓敌对势力的反对。
 status: published
+cover: /static/assets/v6/editorial/editorial-high-rigidity.webp
+coverAlt: "一名工人用大锤击打一根贯通场地的无缝钢梁一端，而在另一端，同一击已经把垛顶的板打歪——钢梁全长没有弯曲、屈服或移动。"
 ---
 # 解析高刚性体制：中共无以为继的结构性根因
 

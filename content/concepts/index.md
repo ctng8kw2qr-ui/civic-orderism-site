@@ -8,6 +8,8 @@ status: published
 listed: true
 folderListed: true
 noindex: false
+cover: /static/assets/v6/editorial/editorial-core-concepts.webp
+coverAlt: "一只手从一面素面嵌入式柜子中拉出一个抽屉；同样的柜面处在明显不同的深度上，少数几个在伸手可及处，多数退在深处远超一臂之外，另有三只抽屉被取出、摊在地上。"
 ---
 
 <div class="inst4 inst4l inst4l-concepts">
@@ -15,7 +17,11 @@ noindex: false
 <p class="inst4-eyebrow">CORE CONCEPTS</p>
 <h1 class="inst4l-title">核心概念</h1>
 <p class="inst4l-lead">研究专题回答正在研究什么问题；核心概念回答公民秩序主义使用什么概念理解这些问题。概念按分析功能分组，而不是全部平铺为同一层级。</p>
-  </section>
+  <figure class="v6-primary-visual">
+  <img src="/static/assets/v6/editorial/editorial-core-concepts.webp" alt="一只手从一面素面嵌入式柜子中拉出一个抽屉；同样的柜面处在明显不同的深度上，少数几个在伸手可及处，多数退在深处远超一臂之外，另有三只抽屉被取出、摊在地上。" width="1600" height="842" loading="lazy" decoding="async" />
+</figure>
+
+</section>
 
   <section class="inst4l-section">
   <div class="inst4l-section__head">
