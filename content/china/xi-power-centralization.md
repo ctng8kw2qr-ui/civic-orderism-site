@@ -12,6 +12,8 @@ tags:
   - 官僚系统
 description: 从中共官僚系统的资源收缩、风险感知与组织防御逻辑，解释习近平权力集中的结构性来源。
 status: published
+cover: /static/assets/v6/editorial/editorial-xi-power-centralization.webp
+coverAlt: "两块浅色圆石从两侧抵住蓝灰膜，膜内的完整模块围绕低位圆形节点聚拢，浅色底座外圈留有空槽。"
 ---
 # 习近平权力集中背后的系统逻辑
 

@@ -11,6 +11,8 @@ tags:
   - 制度信用
 description: 本文从组织成员心理预期结构出发，分析中共内部从信仰型组织、利益型组织到黑箱型组织的三次心态断裂，并提出可观察、可证伪的判断指标。
 status: published
+cover: /static/assets/v6/editorial/editorial-ccp-from-faith-community-to-black-box-post.webp
+coverAlt: "同一深色横梁下，三枚浅色球体分别由蓝灰绳结、两片咬合圆形构件和深色封闭套筒悬挂。"
 ---
 
 # 从“信仰共同体”到“黑箱岗位”：中共内部成员心态的三次断裂
