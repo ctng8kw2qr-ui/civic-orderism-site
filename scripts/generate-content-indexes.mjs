@@ -173,7 +173,42 @@ function renderLinkCard(heading, description, items) {
   return `<section class="article-category-card">\n\n### ${heading}\n\n<p class="article-category-description">${description}</p>\n\n${bulletList(items)}\n\n</section>`;
 }
 
+/**
+ * Pages this script must no longer rewrite.
+ *
+ * Each of these is a live page whose committed source has moved on to a newer
+ * design and structure than the templates below still emit (V6 institutional
+ * markup, `knowledge-browser` cards, `inst4l` index rows). When the templates
+ * were allowed to run they overwrote the live pages with the older layout —
+ * the homepage alone lost 124 of its 206 lines and, across the set, 139 links,
+ * including the homepage's required founding-board-brief PDF entry. That made
+ * `npm run build` destructive, because `build` runs this script first.
+ *
+ * These pages are now hand-maintained, exactly like the other institutional
+ * landing pages (`start-here`, `china-future`, `concepts`, `topics`,
+ * `institution-design`) which were never generated. The templates below are
+ * left in place but no longer write, so the retirement is one reviewable list
+ * rather than a scattering of commented-out call sites.
+ *
+ * Do not re-enable a target without first reconciling its template with the
+ * committed page and diffing the result.
+ */
+const retiredTargets = new Set([
+  "index.md",
+  "theory/index.md",
+  "china/index.md",
+  "china-stage/index.md",
+  "civic-orderism/index.md",
+  "institution/index.md",
+  "articles.md",
+  "articles/all.md",
+]);
+
 function writeFile(filePath, body) {
+  if (retiredTargets.has(filePath)) {
+    console.log(`  · retired, left untouched: content/${filePath}`);
+    return;
+  }
   const targetPath = path.join(contentDir, filePath);
   fs.mkdirSync(path.dirname(targetPath), { recursive: true });
   fs.writeFileSync(targetPath, `${body.trimEnd()}\n`, "utf8");
