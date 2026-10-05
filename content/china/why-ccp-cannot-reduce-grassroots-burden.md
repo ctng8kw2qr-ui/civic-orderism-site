@@ -34,6 +34,8 @@ key_points:
   - 中共不是没有能力为基层减负，而是没有人愿意承担基层真正减负以后产生的全部政治后果。
 slug: china/why-ccp-cannot-reduce-grassroots-burden
 status: published
+cover: /static/assets/v6/editorial/editorial-grassroots-burden.webp
+coverAlt: "浅色盘与多个小容器由细带相连，盘下的深色重片共同压在一个窄支点上。"
 ---
 
 # 中共为什么永远无法真正为基层减负？

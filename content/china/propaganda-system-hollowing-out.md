@@ -13,6 +13,8 @@ tags:
   - 体制空心化
 description: 这些年，中文舆论场上一个越来越明显的现象是：
 status: published
+cover: /static/assets/v6/editorial/editorial-propaganda-hollowing.webp
+coverAlt: "滚轮装置接收层叠空白带材并输出重复矩形，回返带从旁侧导环经过，与上方调整器留有间隙。"
 ---
 # 不是不会宣传，而是不敢承担：中宣系统“翻车常态化”背后的空心化逻辑
 
