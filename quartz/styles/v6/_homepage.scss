@@ -271,10 +271,14 @@
    the row's own vertical rhythm without touching any other page's links. */
 .v6 a.v6-areas__route {
   display: grid;
-  grid-template-columns: auto minmax(9rem, 0.7fr) minmax(0, 1.6fr) auto;
-  gap: var(--v6-space-md);
+  /* Typographic grid: number | stage | title | description | arrow.
+     The first three tracks are fixed so the three rows form identical,
+     stable columns; the description starts from the same x on every row. */
+  grid-template-columns: 2rem 4.5rem 5.5rem minmax(0, 1fr) auto;
+  grid-template-areas: "num phase title desc arrow";
+  gap: 0.25rem var(--v6-space-sm);
   align-items: baseline;
-  padding: clamp(0.5rem, 0.55vw, var(--v6-space-sm)) 0;
+  padding: clamp(0.9rem, 1.15vw, var(--v6-space-md)) 0;
   border-bottom: 1px solid var(--v6-border);
   color: inherit;
   text-decoration: none;
@@ -291,6 +295,7 @@
 }
 
 .v6-areas__route-num {
+  grid-area: num;
   color: var(--v6-text-muted);
   font-size: 0.78rem;
   font-variant-numeric: tabular-nums;
@@ -298,18 +303,18 @@
 }
 
 .v6-areas__route-cell {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
+  display: contents;
 }
 
 .v6-areas__route-phase {
+  grid-area: phase;
   color: var(--v6-text-muted);
   font-size: 0.76rem;
   line-height: 1.5;
 }
 
 .v6-areas__route-title {
+  grid-area: title;
   color: var(--v6-text-primary);
   font-size: 1.02rem;
   font-weight: 600;
@@ -318,12 +323,14 @@
 }
 
 .v6-areas__route-desc {
+  grid-area: desc;
   color: var(--v6-text-secondary);
   font-size: 0.88rem;
   line-height: 1.7;
 }
 
 .v6-areas__route-arrow {
+  grid-area: arrow;
   color: var(--v6-text-muted);
   font-size: 0.95rem;
   transition:
