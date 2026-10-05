@@ -62,42 +62,51 @@ Full rationale and concept history: `reports/phase-4a-brand-foundation/README.md
 
 ### The mark
 
-**Threshold Mark** — `brand/threshold-mark.svg` (+ `-reverse`). Selected from
-three concepts; it was the only one identifiable at **8px**, because its
-silhouette is a single shape rather than parallel bars.
+**Icon Mark** — `brand/icon-mark.svg`. The official mark of Civic Orderism:
+three flat blocks separated by one continuous light channel.
 
 Geometry is normative, not decorative:
 
-|              |                                                            |
-| ------------ | ---------------------------------------------------------- |
-| viewBox      | `0 0 100 100`                                              |
-| stroke-width | `4` (min stroke at 16px = 0.64px)                          |
-| element 1    | `circle cx 50 cy 50 r 48`                                  |
-| element 2    | `path M36 70 L36 48 A14 14 0 0 1 64 48 L64 70`             |
-| element 3    | `line 28 70 - 72 70`                                       |
-| clear space  | 12% of mark height on all sides                            |
-| minimum      | 16px (favicon floor); 24px alone in UI; 48px with the seal |
+|             |                                                                                                      |
+| ----------- | ---------------------------------------------------------------------------------------------------- |
+| viewBox     | `0 0 940 940`                                                                                        |
+| fill        | `#435B63` — low-saturation deep slate, flat, single colour                                           |
+| stroke      | none                                                                                                 |
+| element 1   | left block `M0 0 L0 776 L280.5 938 L280.5 534 L536.5 398 L536.5 291 Z`                               |
+| element 2   | upper block `M327.5 0 L327.5 91 L657.5 303 L657.5 554 L939 409 L939 0 Z`                             |
+| element 3   | lower block `M939 473 L545 669 L314 543 L314 930 L939 930 Z`                                         |
+| clear space | 8% for the 16/32/48 favicons; 15% for apple-touch-icon; 12% for `icon.png` / `icon-192` / `icon-512` |
+| minimum     | 16px favicon floor (silhouette holds, narrowest channel softens); 32px comfortable floor             |
 
-**Exactly three elements.** Do not add columns, text, values, seal, `C/O`
-letterforms, extra rules, gradient or fill. The mark must stay abstract — its
-meaning is never drawn into it.
+The light channel is the space **between** the polygons. It is not drawn and
+must never be filled or stroked.
 
-### Variants — two only
+**Exactly three polygons.** No stroke, outline, gradient, shadow, second colour
+or red, no fourth block, no letterforms, no background inside the master. The
+mark must stay abstract — its meaning is never drawn into it.
 
-| Variant | Colour                                             | Use         |
-| ------- | -------------------------------------------------- | ----------- |
-| Primary | wine `#7a2430` on warm white `#faf8f5`             | default     |
-| Reverse | warm white `#faf8f5` on charcoal `#1b1c1f` or wine | dark fields |
+### Variants — colour and ground
+
+One colour only: `#435B63`. There is no reverse and no second colour version.
+
+| Ground               | Use                                                                 |
+| -------------------- | ------------------------------------------------------------------- |
+| transparent          | `icon.png`, `icon-192`, `icon-512`                                  |
+| warm white `#F4F3EF` | `favicon.ico`, `favicon-16x16`, `favicon-32x32`, `apple-touch-icon` |
 
 Do not create further colour versions.
 
 ### Lockups
 
-| Form               | Composition                              | Use                                  |
-| ------------------ | ---------------------------------------- | ------------------------------------ |
-| **Icon only**      | the mark                                 | favicon, app icon, avatars, small UI |
-| **Compact lockup** | mark + `公民秩序主义`                    | site header / footer                 |
-| **Full lockup**    | mark + `公民秩序主义` + `CIVIC ORDERISM` | PDF, document headers, OG, print     |
+| Form               | Composition                                   | Use                                  |
+| ------------------ | --------------------------------------------- | ------------------------------------ |
+| **Icon only**      | `brand/icon-mark.svg`                         | favicon, app icon, avatars, small UI |
+| **Compact lockup** | icon mark + `公民秩序主义`                    | material showing mark + name         |
+| **Full lockup**    | icon mark + `公民秩序主义` + `CIVIC ORDERISM` | PDF, document headers, OG, print     |
+
+Every lockup uses `brand/icon-mark.svg` as its mark. The site header and footer
+currently render the name alone — the mark was removed from the header as a
+display decision, recorded in `quartz/components/PrimaryNavigation.tsx`.
 
 `CIVIC ORDERISM` is the **formal institutional English identifier** and is
 always uppercase. Title-case `Civic Orderism` is not a lockup form; it may
@@ -126,10 +135,9 @@ a one-glyph simplification could misrepresent a four-value device.
 
 ### Application icons
 
-Rendered from `brand/icon-mark.svg` — the three-block slate mark, flat `#435B63`.
-The Threshold Mark above stays the brand asset for the OG fallback and for
-anything that shows a mark in prose; it no longer supplies the browser, bookmark
-or home-screen icons.
+Rendered from `brand/icon-mark.svg`. The Threshold Mark is now a historical asset
+and no longer supplies the browser, bookmark or home-screen icons — see the
+legacy note below.
 
 The small favicons (`favicon.ico`, `favicon-16x16`, `favicon-32x32`) and
 `apple-touch-icon` are **flattened onto warm white `#F4F3EF`** deliberately: at
@@ -140,7 +148,26 @@ faint smear on browser chrome. Larger icons (`icon.png`, `icon-192`,
 `favicon.ico` is a committed three-frame ICO (16/32/48). Note the ordering:
 `quartz/plugins/emitters/favicon.ts` derives a 48px PNG from `static/icon.png`,
 then `RootStatic()` copies the committed `static/favicon.ico` over it — so the
-static ICO is what ships. Both paths read the new mark.
+static ICO is what ships. Both paths read the current mark. This redundancy is
+logged for separate maintenance and is not to be resolved as part of a brand
+documentation change.
+
+### Legacy mark — Threshold Mark (historical)
+
+**`brand/threshold-mark.svg`** (+ `-reverse`): a wine `#7a2430` circle, arch and
+horizon, selected in Phase 4A and used as the site's mark until the Icon Mark
+above replaced it.
+
+|                  |                                                                        |
+| ---------------- | ---------------------------------------------------------------------- |
+| Status           | **historical — no longer the Civic Orderism mark**                     |
+| Do not use for   | new icons, new lockups, new publications, navigation, small UI         |
+| Still referenced | the OG fallback raster, whose geometry mirrors it deliberately         |
+| Colour variants  | wine primary / warm-white reverse — retained with the file, not active |
+
+The files stay in `brand/` because the OG fallback asset still renders that
+geometry; migrating it is a separate change and must not be done implicitly.
+Concept history lives in `reports/phase-4a-brand-foundation/README.md`.
 
 ---
 
@@ -269,7 +296,8 @@ brand/         wordmark-primary.svg
 ## 8. Theme (light / dark)
 
 Assets must survive both themes. The palette is fixed: warm white `#faf8f5`,
-charcoal, restrained wine accent. **Do not introduce a new palette.**
+charcoal, restrained wine accent, and the Icon Mark's slate `#435B63`.
+**Do not introduce a new palette.**
 
 - SVG line work should use `currentColor` so it themes automatically.
 - Raster covers must remain legible on both backgrounds — avoid pure-white or
