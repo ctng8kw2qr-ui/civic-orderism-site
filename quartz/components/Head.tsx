@@ -220,7 +220,7 @@ export default (() => {
           </>
         )}
 
-        {/* Website icons, all declared from the brand directory so that every
+        {/* Website icons, all declared from a unique version directory so every
             icon URL is a path Safari has never stored. A version query on the
             old filenames was not enough: Safari's touch-icon and favicon stores
             are keyed by URL it has seen, and it also probes the conventional
@@ -233,31 +233,34 @@ export default (() => {
         <link
           rel="icon"
           type="image/svg+xml"
-          href="/static/assets/v6/brand/icon-mark.svg"
+          href="/static/assets/v6/brand/icons-e7b4c91a/icon-mark.svg"
         />
         <link
           rel="icon"
           type="image/x-icon"
-          href="/static/assets/v6/brand/icon-mark.ico"
+          href="/static/assets/v6/brand/icons-e7b4c91a/icon-mark.ico"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/static/assets/v6/brand/icon-mark-16x16.png"
+          href="/static/assets/v6/brand/icons-e7b4c91a/icon-mark-16x16.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/static/assets/v6/brand/icon-mark-32x32.png"
+          href="/static/assets/v6/brand/icons-e7b4c91a/icon-mark-32x32.png"
         />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/static/assets/v6/brand/icon-mark-180x180.png"
+          href="/static/assets/v6/brand/icons-e7b4c91a/icon-mark-180x180.png"
         />
-        <link rel="manifest" href="/site.webmanifest?v=5" />
+        <link
+          rel="manifest"
+          href="/static/assets/v6/brand/icons-e7b4c91a/site-icons.webmanifest"
+        />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content="公民秩序主义" />
         {/* Browser chrome colour follows the page background token in both

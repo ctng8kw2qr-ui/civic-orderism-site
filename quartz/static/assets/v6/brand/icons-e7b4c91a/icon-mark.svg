@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Civic Orderism — Icon Mark
+  ================================================================
+  The browser / bookmark / home-screen icon. Traced from the approved
+  mark and kept as three flat polygons: no stroke, no gradient, no
+  shadow, no perspective. This file is the master — every raster icon
+  (favicon.ico, favicon-16x16, favicon-32x32, apple-touch-icon,
+  icon-192, icon-512) is exported from it.
+
+  GEOMETRY (3 elements, exact)
+  ================================================================
+  viewBox            0 0 940 940
+  fill               #435B63  (low-saturation deep slate)
+  stroke             none
+  artboard           940 x 940, mark runs edge to edge with no bleed
+
+  element 1  left block     M0 0 L0 776 L280.5 938 L280.5 534
+                            L536.5 398 L536.5 291 Z
+  element 2  upper block    M327.5 0 L327.5 91 L657.5 303 L657.5 554
+                            L939 409 L939 0 Z
+  element 3  lower block    M939 473 L545 669 L314 543 L314 930
+                            L939 930 Z
+
+  The three blocks are separated by a continuous light channel that
+  runs from the top edge, down through the centre and out to the
+  lower right. The channel is the white space BETWEEN the polygons —
+  it is not drawn, and must never be filled or stroked.
+
+  COLOUR
+  ================================================================
+  #435B63 only. No red, no second colour, no gradient, no tonal
+  variation. Flat fill, exactly as above.
+
+  CLEAR SPACE
+  ================================================================
+  The polygons already sit inside the artboard edge to edge. Optical
+  clear space is added per export: 8% for the 16/32/48 favicons, 15%
+  for apple-touch-icon, 12% for icon-192 / icon-512 / icon.png.
+
+  GROUNDS
+  ================================================================
+  favicon.ico, favicon-16x16, favicon-32x32, apple-touch-icon
+      flattened onto warm white #F4F3EF. At 16px the narrowest channel
+      is sub-pixel and would otherwise read as a faint smear on
+      browser chrome.
+  icon-192, icon-512, icon.png
+      keep alpha (transparent), matching SPEC.md §1b.
+
+  MINIMUM SIZE
+  ================================================================
+  32px  production floor for this mark
+  16px  silhouette still reads (three blocks, one channel) but the
+        narrow vertical channel between the left and lower blocks is
+        below one pixel and softens into a join. Verified, not
+        promised as sharp.
+
+  DO NOT ADD
+  ================================================================
+  stroke · outline · gradient · shadow · red · a fourth block ·
+  letterforms · a background inside this file. Exactly three filled
+  polygons.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 940" width="940" height="940" fill="#435B63">
+  <path d="M0 0 L0 776 L280.5 938 L280.5 534 L536.5 398 L536.5 291 Z"/>
+  <path d="M327.5 0 L327.5 91 L657.5 303 L657.5 554 L939 409 L939 0 Z"/>
+  <path d="M939 473 L545 669 L314 543 L314 930 L939 930 Z"/>
+</svg>
