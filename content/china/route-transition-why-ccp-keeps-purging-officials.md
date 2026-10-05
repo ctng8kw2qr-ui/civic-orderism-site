@@ -35,6 +35,8 @@ relatedArticles:
   - china/ccp-2018-xi-era-local-growth-space
 slug: china/route-transition-why-ccp-keeps-purging-officials
 status: published
+cover: /static/assets/v6/editorial/editorial-route-transition-why-ccp-keeps-purging.webp
+coverAlt: "底座旁放着带有完整管状分支的移出节点，另一节点安装在底座上，其分支连接多个接收位置。"
 ---
 
 # 路线转换：中共为什么必须不断清洗自己的官员

@@ -34,6 +34,8 @@ relatedArticles:
   - china/xi-solved-organization-not-reality
 slug: china/party-state-stress-neither-party-nor-state
 status: published
+cover: /static/assets/v6/editorial/editorial-neither-party-nor-state.webp
+coverAlt: "浅色与蓝灰带状构件相互穿绕，在深色闭合套环处弯曲、压平，仍保持完整。"
 ---
 
 # 既不党，也不国：党国体制最终会变成什么？

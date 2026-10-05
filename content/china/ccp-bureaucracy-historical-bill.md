@@ -13,6 +13,8 @@ tags:
   - 历史总账
 description: 很多人谈基层问题，都会说一句话：
 status: published
+cover: /static/assets/v6/editorial/editorial-ccp-bureaucracy-historical-bill.webp
+coverAlt: "不规则深色块件沿三级浅色斜槽向下排列，底端封闭托盘收纳规则块件，上方覆有平板。"
 ---
 # 当历史总账开始结算：高刚性官僚体系如何把系统性责任层层压向中基层
 
