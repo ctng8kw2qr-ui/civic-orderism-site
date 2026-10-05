@@ -7474,7 +7474,23 @@ body[data-slug="index"] article {
    element matching it here is a block-level row, index entry or card, where a
    rounded backdrop is never right. Articles and prose were measured first: they
    have zero such elements, so this cannot affect them. Never !important. */
-article a.internal {
+/* Scoped away from the button components. `.v2-button` and `.resource-button`
+   are the two canonical button base classes, and each paints its own primary
+   background; this reset was erasing them wherever a primary CTA is also an
+   internal link, leaving white text on a transparent ground — a button that
+   renders as an empty bordered box.
+
+   Order is deliberately not relied on. `article a.internal` and
+   `article a.v2-button--primary` have identical (0,1,2) specificity, so before
+   this change the outcome depended only on which block happened to be written
+   last, and a future component-CSS reorder would have silently reintroduced the
+   bug. Excluding the components makes the separation explicit and
+   order-independent.
+
+   The exclusion is exactly two classes wide: every generic `.internal` link
+   still receives the reset below, and only anchors that opt into a button base
+   class keep their own component styling. Never !important. */
+article a.internal:not(.v2-button):not(.resource-button) {
   background: none;
   border-radius: 0;
   box-shadow: none;
