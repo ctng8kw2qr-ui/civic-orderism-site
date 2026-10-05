@@ -9,6 +9,8 @@ tags:
 summary: 本文以“情感链接的断裂”为分析框架，通过明末、清末与当代中共的对比，分析当体制成员不再认为体制属于自己，并与体制失去情感连接时，政权如何从内部进入心理冷却、执行空转和结构性衰减。
 status: published
 slug: china/emotional-link-breakdown-and-regime-collapse
+cover: /static/assets/v6/editorial/editorial-emotional-link-breakdown-regime-collapse.webp
+coverAlt: "中央石质绕线柱与三个石质构件由上方细硬杆连接，蓝灰软带松弛地落在地面，末端没有连接中央。"
 ---
 
 # 情感链接的断裂与体制坍塌机制

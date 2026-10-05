@@ -37,6 +37,8 @@ relatedArticles:
   - china/route-transition-why-ccp-keeps-purging-officials
 slug: china/what-happens-when-security-becomes-the-top-priority
 status: published
+cover: /static/assets/v6/editorial/editorial-what-happens-security-becomes-top-priority.webp
+coverAlt: "同一底座上，规则蓝灰几何分支向上展开；旁侧浅色不规则分支靠近带有直槽的深色低顶板，顶部生长空间有限。"
 ---
 
 # 中共全面进入安全叙事后，中国会怎么样？

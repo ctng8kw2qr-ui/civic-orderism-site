@@ -33,6 +33,8 @@ key_points:
   - 这个判断不是封闭结论，而是一个需要用未来财政、经济和干部行为变化来检验的假说。
 slug: china/why-ccp-will-not-relax-party-pressure
 status: published
+cover: /static/assets/v6/editorial/editorial-why-ccp-will-not-relax-party-pressure.webp
+coverAlt: "浅色承载板下，一侧是压缩的蓝灰弹簧，另一侧是深色螺杆支点，两者同时接触承载板。"
 ---
 
 # 中共为什么不会真正放松党内高压？

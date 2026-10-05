@@ -9,6 +9,8 @@ tags:
 summary: 本文以“政治机器”为框架，分析中共如何通过奖罚机制、意义叙事、地方权力重组、反腐集权和机器自保逻辑维持自身运行，并说明为什么习近平修复后的机器短期更稳、长期更脆。
 status: published
 slug: china/political-machine-rewards-and-limits
+cover: /static/assets/v6/editorial/editorial-political-machine-rewards-and-limits.webp
+coverAlt: "深色轮形装置的蓝灰控制柄受浅色加固构件限制，底座旁放着一个弯曲接头。"
 ---
 
 # 机器的奖赏与机器的尽头

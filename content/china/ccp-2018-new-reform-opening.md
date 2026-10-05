@@ -13,6 +13,8 @@ tags:
   - 防御型党国
 description: 如果说1978年的“改革开放”，是中共在资源匮乏、制度僵化、社会停滞之后，为了重新获得发展能力而打开社会、释放市场、放权地方；那么2018年前后的路线转向，则可以被理解为中共面对另一种历史困境……
 status: published
+cover: /static/assets/v6/editorial/editorial-ccp-2018-new-reform-opening.webp
+coverAlt: "同一底座上，左侧蓝灰片围绕核心向外展开，右侧同类片向内收拢，旁边放着不规则石块。"
 ---
 # 2018新“改革开放”：从开放社会到封闭风险
 

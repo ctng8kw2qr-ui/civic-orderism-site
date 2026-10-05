@@ -9,6 +9,8 @@ tags:
 summary: 本文从政党作为组织的权力逻辑出发，分析中共在长期垄断国家最高权力之后所面临的目标真空、信念断层、制度信任崩塌和自我维持型衰变，说明一个完成夺权目标的政党如何从使命导向转向防御性维稳。
 status: published
 slug: china/party-power-logic-and-ccp-goal-vacuum
+cover: /static/assets/v6/editorial/editorial-party-power-logic-and-ccp-goal-vacuum.webp
+coverAlt: "完整的深色椭圆带环围绕空白中心排列，导轮与浅色束环约束带环沿闭合路径运行。"
 ---
 
 # 政党存在的权力逻辑与中共的目标困境
