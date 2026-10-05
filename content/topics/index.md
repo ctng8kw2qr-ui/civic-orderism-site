@@ -8,6 +8,8 @@ status: published
 listed: true
 folderListed: true
 noindex: false
+cover: /static/assets/v6/editorial/editorial-research-topics.webp
+coverAlt: "一条拉紧的无标记细线绷在两根素面锚桩之间，笔直不弯；它下方的地面沉成一长条浅槽，因此线在中段的净空最大，两端锚桩固定不动。"
 ---
 
 <div class="inst4 inst4l inst4l-topics">
@@ -15,7 +17,11 @@ noindex: false
 <p class="inst4-eyebrow">RESEARCH TOPICS</p>
 <h1 class="inst4l-title">研究专题</h1>
 <p class="inst4l-lead">围绕持续性政治问题组织长期研究，而不是按照新闻事件分类文章。每个专题对应一组正在被持续研究的问题。</p>
-  </section>
+  <figure class="v6-primary-visual">
+  <img src="/static/assets/v6/editorial/editorial-research-topics.webp" alt="一条拉紧的无标记细线绷在两根素面锚桩之间，笔直不弯；它下方的地面沉成一长条浅槽，因此线在中段的净空最大，两端锚桩固定不动。" width="1600" height="842" loading="lazy" decoding="async" />
+</figure>
+
+</section>
 
   <section class="inst4l-section">
   <div class="inst4l-section__head">

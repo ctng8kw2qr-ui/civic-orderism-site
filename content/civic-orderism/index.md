@@ -8,6 +8,8 @@ status: published
 listed: true
 folderListed: true
 noindex: false
+cover: /static/assets/v6/editorial/editorial-political-route.webp
+coverAlt: "一只小船停在平整静止的水面上，水线笔直；船体一侧的船板已经换新，一名工人跪在尚未更换的一段旁，正把一块新板嵌进船身，水始终没有进到船里。"
 ---
 
 <div class="inst4 inst4l inst4l-route">
@@ -24,7 +26,11 @@ noindex: false
 </div>
   </section>
 
-  <section class="inst4l-section">
+  <figure class="v6-primary-visual">
+  <img src="/static/assets/v6/editorial/editorial-political-route.webp" alt="一只小船停在平整静止的水面上，水线笔直；船体一侧的船板已经换新，一名工人跪在尚未更换的一段旁，正把一块新板嵌进船身，水始终没有进到船里。" width="1600" height="842" loading="lazy" decoding="async" />
+</figure>
+
+<section class="inst4l-section">
 <div class="inst4l-section__head">
 <p class="inst4-eyebrow">THE QUESTION</p>
 <h2 class="inst4l-section__title">中国真正面对的问题是什么？</h2>

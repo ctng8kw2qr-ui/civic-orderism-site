@@ -18,6 +18,8 @@ coreJudgments:
   - 委员会不是为了取代行政，而是为国家建立正式的反馈线、观察线和纠偏线。
   - 秘书处负责让问题进入制度，委员会负责判断问题如何处理。
 status: published
+cover: /static/assets/v6/editorial/editorial-committee-system.webp
+coverAlt: "一条不规则的撕下纸条横放在一条无刻度的参考面上，一端明显没有到达它本应对齐的那道线，参考面继续向前延伸。"
 ---
 
 # 什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构

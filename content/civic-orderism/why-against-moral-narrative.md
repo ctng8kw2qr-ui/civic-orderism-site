@@ -14,6 +14,8 @@ coreJudgments:
   - 公职评价应回到职责、程序、边界和责任记录，而不是扩张为私人生活与人格纯洁审判。
   - 反对道德审判不等于取消伦理底线，而是把伦理底线落实为纪律、法律和可追责的制度责任。
 status: published
+cover: /static/assets/v6/editorial/editorial-against-moral-narrative.webp
+coverAlt: "一杆悬挂的市秤上，秤盘里一件很小的随身物品与滑到无刻度秤杆最外端的秤砣恰好平衡，而真正造成整个局面的那块大重物一直放在地上，从未被抬上秤。"
 ---
 
 # 为什么公民秩序主义反对道德叙事，也反对对公职人员的道德审判

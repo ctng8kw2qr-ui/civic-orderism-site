@@ -9,6 +9,8 @@ tags:
 summary: 本文从门阀政治、九品中正制、东晋政治与《红楼梦》中的贾府败落出发，分析当制度信任被关系依附取代后，组织如何逐渐空心化、犬儒化，并最终在看似突然的危机中坍塌。
 status: published
 slug: theory/organizational-collapse-begins-with-loss-of-institutional-trust
+cover: /static/assets/v6/editorial/editorial-institutional-trust-collapse.webp
+coverAlt: "两根并排贴合的长构件以一排手绑的索具固定，绳、布条、细丝、扁带各不相同、疏密不齐；右侧一名工人刚系完最新的一处，手还停在上面。"
 ---
 
 # 组织的坍塌，始于制度信任的瓦解

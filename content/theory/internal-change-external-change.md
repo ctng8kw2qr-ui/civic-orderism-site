@@ -10,6 +10,8 @@ description: 现代政治已经走到了一个历史性的十字路口。
 status: published
 aliases:
   - articles/internal-change-external-change
+cover: /static/assets/v6/editorial/editorial-internal-external-change.webp
+coverAlt: "一只密闭的容器停在水面上，内部隔板立在正中：左侧舱内的液体压向隔板使整体倾斜，右侧舱完全空着、干燥，水面保持水平。"
 ---
 # 内变引外变：现代政治为何走到十字路口
 

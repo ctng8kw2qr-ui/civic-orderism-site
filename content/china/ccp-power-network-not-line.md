@@ -11,6 +11,8 @@ tags:
   - 组织运行
 description: 本文区分中共权力的展示形态与运行形态，指出中共权力在表面上像一条垂直权力线，但在实际运行中更像一张多节点、多阀门、多路径的权力网。
 status: published
+cover: /static/assets/v6/editorial/editorial-power-network.webp
+coverAlt: "一整幅由许多短绳编成的网面占据画面，每一根都在交叉处与下一根相接，没有一根能贯通两端，也没有比邻结更大或更靠中心的结，网面上方空无一物。"
 ---
 
 # 中共的权力布局不是一条线，而是一张网

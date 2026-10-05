@@ -23,6 +23,8 @@ keywords:
   - 秩序蒸发
 slug: china-stage/three-cleans-era-political-economic-cultural-contraction
 status: published
+cover: /static/assets/v6/editorial/editorial-era-contraction.webp
+coverAlt: "一间空荡的室内，地面上留出一圈明显更大的浅槽，三块高板紧贴着其中三边立在里面、各自退进的距离相同，中间只剩一小块空间。"
 ---
 
 # 时代何至如此：政治清人，经济清账，文化清声

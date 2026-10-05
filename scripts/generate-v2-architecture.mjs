@@ -576,7 +576,43 @@ fs.writeFileSync(
   ),
 );
 
+/**
+ * Pages this generator must no longer rewrite.
+ *
+ * Same reason as the retirement list in `generate-content-indexes.mjs`: these
+ * are live pages whose committed source has moved on to a newer design and
+ * structure than the templates below still emit, so writing them replaced the
+ * current page with an older layout and silently dropped its links and its
+ * editorial imagery. `npm run build` runs this generator, which made a normal
+ * build destructive for the landing pages.
+ *
+ * These pages are hand-maintained now. The templates are left in place; only
+ * the write is suppressed, so the retirement is one reviewable list.
+ */
+const retiredContentTargets = new Set([
+  "index.md",
+  "theory/index.md",
+  "china/index.md",
+  "china-stage/index.md",
+  "civic-orderism/index.md",
+  "institution/index.md",
+  "articles.md",
+  "articles/all.md",
+  "about.md",
+  "participate.md",
+  "preparation.md",
+  "start-here/index.md",
+  "china-future/index.md",
+  "concepts/index.md",
+  "topics/index.md",
+  "institution-design/index.md",
+]);
+
 function writeContent(relativePath, body) {
+  if (retiredContentTargets.has(relativePath)) {
+    console.log(`  · retired, left untouched: content/${relativePath}`);
+    return;
+  }
   const target = path.join(contentDir, relativePath);
   fs.mkdirSync(path.dirname(target), { recursive: true });
   fs.writeFileSync(target, `${body.trim()}\n`, "utf8");

@@ -13,6 +13,8 @@ tags:
   - 宏观叙事
 description: 谈到中共的未来，人们习惯在两个极端之间摇摆：
 status: published
+cover: /static/assets/v6/editorial/editorial-high-fragility.webp
+coverAlt: "一整块完好未裂的面板上，一串小块补丁沿着对角线错落铺开、没有两块落在同一处，右下角一名工人正双手把最新的一块压上去。"
 ---
 # 它还在，但越来越靠不住：为什么中共更可能“失灵”而非“倒台”
 

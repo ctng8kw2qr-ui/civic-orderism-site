@@ -19,6 +19,8 @@ coreJudgments:
   - 它通过公共入口、委员会判断、行政执行和责任留痕，防止国家权力陷入黑箱与自我循环。
   - 它要让国家成为普通人可以进入、理解、追问和信任的共同生活框架。
 status: published
+cover: /static/assets/v6/editorial/editorial-order-relationship.webp
+coverAlt: "一段直梯的中间踏板缺失，只剩两侧梯梁和一排空的固定孔，而外侧扶手完整不断，越过缺口继续向上。"
 ---
 
 # 公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系
