@@ -30,10 +30,9 @@ coverAlt: "一根连续不断的长横梁横贯画面，上面在四个位置承
       <h2 class="v6-section__title">我们长期研究的四个方向</h2>
       <p class="v6-section__lead">研究提供判断基础，组织承接政治责任。四个方向共同回答同一个问题：政治变化如何被提前准备。</p>
     </div>
-<figure class="v6-primary-visual">
-  <img src="/static/assets/v6/editorial/editorial-research-areas.webp" alt="一根连续不断的长横梁横贯画面，上面在四个位置承载四块形状各不相同的重物，彼此之间留出宽阔均匀的空隙，两端各垫在一个简单的支座上。" width="1600" height="842" loading="lazy" decoding="async" />
-</figure>
-
+    <figure class="v6-primary-visual">
+      <img src="/static/assets/v6/editorial/editorial-research-areas.webp" alt="一根连续不断的长横梁横贯画面，上面在四个位置承载四块形状各不相同的重物，彼此之间留出宽阔均匀的空隙，两端各垫在一个简单的支座上。" width="1600" height="842" loading="lazy" decoding="async" />
+    </figure>
     <ol class="v6-areas">
       <li class="v6-areas__item">
         <p class="v6-areas__num" aria-hidden="true">01</p>
