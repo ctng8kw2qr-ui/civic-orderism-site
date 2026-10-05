@@ -272,15 +272,28 @@ charcoal, restrained wine accent. **Do not introduce a new palette.**
 
 ## 9. Photos and illustration
 
-| Directory       | Photos                      | Illustration         | AI-generated |
-| --------------- | --------------------------- | -------------------- | ------------ |
-| `brand/`        | ✗                           | ✓ (as SVG marks)     | ✗            |
-| `hero/`         | ✓ restrained, architectural | ✓                    | ✗            |
-| `editorial/`    | ✓ restrained                | ✓ abstract geometry  | ✗            |
-| `organization/` | ✓ **real only**             | ✓ documents/diagrams | ✗            |
-| `social/`       | ✓ restrained                | ✓                    | ✗            |
+| Directory       | Photos                      | Illustration         | AI-generated     |
+| --------------- | --------------------------- | -------------------- | ---------------- |
+| `brand/`        | ✗                           | ✓ (as SVG marks)     | ✗                |
+| `hero/`         | ✓ restrained, architectural | ✓                    | ✗                |
+| `editorial/`    | ✓ restrained                | ✓ abstract geometry  | ✓ under §11      |
+| `organization/` | ✓ **real only**             | ✓ documents/diagrams | ✗                |
+| `social/`       | ✓ restrained                | ✓                    | ✓ under §11      |
 
-AI-generated imagery is governed by §11, not prohibited outright.
+The AI-generated column is **not** a blanket permission or prohibition. AI
+artwork is governed by **§11**, which permits it when it is unmistakably
+editorial — abstract editorial artwork, architectural abstraction, structural
+composition, texture or material study — and forbids anything that could be read
+as documentary evidence.
+
+`✓ under §11` means permitted within §11's constraints. `✗` means this directory
+has a stricter, specific rule that §11 does not override:
+
+- `brand/` — marks are hand-authored SVG geometry; the mark rules in §1b are normative.
+- `hero/` — the Hero is an institutional visual slot (§2), and the slot is
+  hand-authored rather than generated; see `TECHNICAL_DEBT.md` B4.
+- `organization/` — **real material only** (§10). Generated depictions of people,
+  meetings or institutions are never permitted here.
 
 ---
 

@@ -68,6 +68,6 @@ wine). Use `currentColor` for SVG so it themes automatically.
 | ------------ | ------------ | ------------ |
 | ✓ restrained | ✓            | ✗            |
 
-**AI-generated imagery is not permitted.**
+AI-assisted or generated artwork is governed by the AI artwork policy in `../SPEC.md` §11, which permits abstract editorial artwork under constraint and forbids anything that could be read as documentary evidence. Note that the fallback card is a publication card, not an advertisement: no article title, photograph, personnel or call to action (SPEC §3).
 
 Full rules, size budgets and the forbidden-content list: `../SPEC.md`.
