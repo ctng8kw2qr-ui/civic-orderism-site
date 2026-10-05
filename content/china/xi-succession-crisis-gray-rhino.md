@@ -14,6 +14,8 @@ tags:
   - 灰犀牛
 description: 分析中共的政治风险，首先必须正确识别影响其稳定性的核心变量。
 status: published
+cover: /static/assets/v6/editorial/editorial-xi-succession-crisis-gray-rhino.webp
+coverAlt: "密集卷绕的蓝灰带材由深色轴与浅色轴座承托，旁侧隔着一段明显空隙放着顶面平滑、没有匹配接口的低台。"
 ---
 # 中共高层政治的灰犀牛：习近平交权困境与继承危机
 

@@ -20,6 +20,8 @@ coreJudgments:
   - 委员会负责判断、质询和纠偏，行政系统负责整改、资源配置和公共服务执行。
   - 大议会只确认重大事项，司法和廉正系统划定法定边界，秘书处持续追踪复盘。
 status: published
+cover: /static/assets/v6/editorial/editorial-state-operation-process-under-civic.webp
+coverAlt: "一只手把蓝灰石块轻放进浅色托带，连续托带由不同开放陶瓷托座支撑，托带中的石块保持可见，蓝灰绳从右侧托座回连中部调节座。"
 ---
 
 # 公民秩序主义下国家运行的大概流程：从普通人的问题，到国家的判断、执行与纠偏

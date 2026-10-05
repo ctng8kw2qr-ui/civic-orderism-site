@@ -18,6 +18,8 @@ coreJudgments:
   - 培训是公共岗位能力建设，不是思想筛选或由少数人长期托管社会的训政。
   - 后台系统只能支撑岗位、记录责任和照亮问题，不能替代委员会的公共判断或形成技术官僚垄断。
 status: published
+cover: /static/assets/v6/editorial/editorial-backend-system-under-civic-orderism.webp
+coverAlt: "薄陶瓷台面上放着石块、浅碗和拱形构件；下方由陶瓷支座与编织承重件托住，蓝灰绳沿底座凹槽贯穿，旁侧放有配合件与试载块。"
 ---
 
 # 公民秩序主义对后台系统的重视：为什么培训、秘书处、专业事务与留痕系统，是现代国家真正的底座
