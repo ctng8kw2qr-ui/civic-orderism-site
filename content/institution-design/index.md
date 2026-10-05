@@ -197,7 +197,23 @@ coverAlt: "在一个完全完好、闭合的沉重框架内，多根素面受拉
   <p class="knowledge-card__section">制度模块：<strong>法治、透明与责任</strong></p>
   <h3><a href="/civic-orderism/why-information-transparency">为什么公民秩序主义强调信息透明及信息发布</a></h3>
   <p class="knowledge-card__summary">解释信息公开和正式发布如何把责任链、程序链与纠偏链延伸到社会。</p>
-  <p class="knowledge-card__meta"><span>2026-05-10</span><span>11 分钟阅读</span></p>
+<article class="knowledge-card knowledge-card--institution" data-knowledge-card data-topics="" data-concepts="" data-institution-section="parliament">
+  <p class="knowledge-card__section">制度模块：<strong>议会与社会授权</strong></p>
+  <h3><a href="/civic-orderism/why-weaken-party-politics">公民秩序主义为什么刻意弱化政党政治</a></h3>
+  <p class="knowledge-card__summary">解释公共政治为何不必依赖常设政党竞争，以及弱化政党政治后授权、判断与责任如何仍然成立。</p>
+  <p class="knowledge-card__meta"><span>2026-05-10</span><span>12 分钟阅读</span></p>
+</article>
+<article class="knowledge-card knowledge-card--institution" data-knowledge-card data-topics="" data-concepts="" data-institution-section="rule-of-law">
+  <p class="knowledge-card__section">制度模块：<strong>法治、透明与责任</strong></p>
+  <h3><a href="/civic-orderism/why-focus-on-invisible-power-nodes">公民秩序主义为什么更加注意现代社会的隐形权力节点（社会组织、平台企业）</a></h3>
+  <p class="knowledge-card__summary">说明正式国家机构之外的隐形权力节点如何影响公共生活，以及制度为何必须把这些节点纳入责任范围。</p>
+  <p class="knowledge-card__meta"><span>2026-05-10</span><span>13 分钟阅读</span></p>
+</article>
+<article class="knowledge-card knowledge-card--institution" data-knowledge-card data-topics="" data-concepts="" data-institution-section="rule-of-law">
+  <p class="knowledge-card__section">制度模块：<strong>法治、透明与责任</strong></p>
+  <h3><a href="/civic-orderism/why-emphasize-reciprocity-and-equality">为什么公民秩序主义强调的是对等、平等，而非照顾、怜悯</a></h3>
+  <p class="knowledge-card__summary">解释为什么把公民当作需要被照顾的对象会削弱责任关系，而对等与平等才是可持续的秩序基础。</p>
+  <p class="knowledge-card__meta"><span>2026-05-10</span><span>10 分钟阅读</span></p>
 </article>
 </div>
 <div class="knowledge-pagination" aria-label="文章分页"><button type="button" data-page-prev>上一页</button><span data-page-status></span><button type="button" data-page-next>下一页</button></div>

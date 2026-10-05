@@ -168,10 +168,8 @@ coverAlt: "一根连续不断的长横梁横贯画面，上面在四个位置承
         <div class="v6-org__ways">
           <p class="v6-org__ways-label">参与长期建设</p>
           <ul>
-            <li><a href="/preparation">了解组织结构与筹备进度 <span aria-hidden="true">→</span></a></li>
-            <li><a href="/preparation/board">了解董事会筹备 <span aria-hidden="true">→</span></a></li>
-            <li><a href="/participate">参与董事会与组织筹备 <span aria-hidden="true">→</span></a></li>
-            <li><a href="/about">联系我们 <span aria-hidden="true">→</span></a></li>
+            <li><a href="/preparation">了解组织筹备与法律边界 <span aria-hidden="true">→</span></a></li>
+            <li><a href="/participate">了解需要哪些能力与如何联系 <span aria-hidden="true">→</span></a></li>
           </ul>
         </div>
       </div>
