@@ -56,6 +56,6 @@ wine). Use `currentColor` for SVG so it themes automatically.
 | ----------- | -------------------- | ------------ |
 | ✓ real only | ✓ documents/diagrams | ✗            |
 
-**AI-generated imagery is not permitted.**
+The **real material only** rule above is unaffected: photography in this directory must be genuine, and generated depictions of people, meetings or institutions remain forbidden. Generated illustration is governed by `../SPEC.md` §11 and is permitted only as abstract editorial artwork, never as anything that could be read as a record of an actual event.
 
 Full rules, size budgets and the forbidden-content list: `../SPEC.md`.

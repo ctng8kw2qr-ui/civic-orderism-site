@@ -56,6 +56,6 @@ wine). Use `currentColor` for SVG so it themes automatically.
 | ------ | ---------------- | ------------ |
 | ✗      | ✓ (as SVG marks) | ✗            |
 
-**AI-generated imagery is not permitted.**
+AI-assisted or generated imagery is governed by the AI artwork policy in `../SPEC.md` §11, which permits abstract editorial artwork under constraint and forbids anything that could be read as documentary evidence. It is not prohibited outright. Generating artwork for this directory is still discouraged: marks here are hand-authored SVG geometry and the mark rules in SPEC §1b are normative.
 
 Full rules, size budgets and the forbidden-content list: `../SPEC.md`.

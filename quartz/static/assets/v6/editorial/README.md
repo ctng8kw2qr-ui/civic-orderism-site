@@ -59,6 +59,6 @@ wine). Use `currentColor` for SVG so it themes automatically.
 | ------------ | ------------------- | ------------ |
 | ✓ restrained | ✓ abstract geometry | ✗            |
 
-**AI-generated imagery is not permitted.**
+Editorial artwork may be AI-assisted or generated. It is governed by the AI artwork policy in `../SPEC.md` §11 — abstract editorial artwork, architectural abstraction, structural composition and material study are permitted; anything that could be read as documentary evidence is forbidden. The test in §11 applies: if a viewer could mistake the image for a news photograph, it fails. Existing editorial covers were made this way and are approved.
 
 Full rules, size budgets and the forbidden-content list: `../SPEC.md`.
