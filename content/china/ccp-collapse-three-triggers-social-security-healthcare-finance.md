@@ -10,6 +10,8 @@ tags:
   - 金融系统
 description: 本文从社保、医保与金融系统三个领域，分析中共未来危机如何从国家信用事件转化为社会预期和官僚系统的连锁崩解。
 status: published
+cover: /static/assets/v6/editorial/editorial-ccp-collapse-three-triggers.webp
+coverAlt: "三个不同容器的底部连为共同腔体，活塞占据部分共享空间，蓝灰物料连通三者。"
 ---
 
 # 中共崩解的三大导火索：社保、医保与金融系统

@@ -33,6 +33,8 @@ relatedArticles:
   - china/political-machine-rewards-and-limits
 slug: china/supply-side-reform-state-can-scale-not-discover-future
 status: published
+cover: /static/assets/v6/editorial/editorial-supply-side-reform-state-can-scale.webp
+coverAlt: "同一模具旁有大量完整方块，部分落入方槽，旁边不同形状的圆槽仍为空。"
 ---
 
 # 供给侧改革之后：国家能放大产业，却未必能发现未来

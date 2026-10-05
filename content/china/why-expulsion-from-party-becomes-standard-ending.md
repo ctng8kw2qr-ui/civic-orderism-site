@@ -34,6 +34,8 @@ key_points:
   - 真正瓦解的不是某个人的党籍，而是党内长期信用和“做事留一线”的政治预期。
 slug: china/why-expulsion-from-party-becomes-standard-ending
 status: published
+cover: /static/assets/v6/editorial/editorial-party-expulsion-standard-ending.webp
+coverAlt: "成组槽位的中央留有一个深色空腔，薄封板遮住下部；右上方的手持有一块已经脱离槽位的完整嵌件。"
 ---
 
 # 为什么“开除党籍”正在成为中共处理高级干部的标准结局？

@@ -34,6 +34,8 @@ key_points:
   - 中共从依靠地方弹性创造增长，转向依靠中央穿透维持控制。
 slug: china/ccp-2018-xi-era-local-growth-space
 status: published
+cover: /static/assets/v6/editorial/editorial-ccp-2018-xi-era-local-growth-space.webp
+coverAlt: "三层不同构件沿共同竖直轴固定，旁边保留侧向弧形导座。"
 ---
 
 # 中共2018：习近平元年
