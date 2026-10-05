@@ -191,11 +191,28 @@ for (const topic of publicTopics) {
   }
 }
 
+/**
+ * Finder / iCloud conflict copies are byte-copies of an existing document, not
+ * documents. Left in the scan they become extra pages and break the
+ * "unclassified article" check with slugs like `china/index-2`.
+ *
+ * Exact-name test rather than a wildcard, so no real article can be excluded.
+ * Mirrors the same guard in `generate-content-indexes.mjs`.
+ */
+const FINDER_DUPLICATE_NAME = /(?: \d+| copy(?: \d+)?)\.md$/i;
+
 function walk(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) return walk(full);
-    return entry.isFile() && entry.name.endsWith(".md") ? [full] : [];
+    if (!entry.isFile() || !entry.name.endsWith(".md")) return [];
+    if (FINDER_DUPLICATE_NAME.test(entry.name)) {
+      console.log(
+        `  · skipped Finder duplicate: ${path.relative(rootDir, full)}`,
+      );
+      return [];
+    }
+    return [full];
   });
 }
 

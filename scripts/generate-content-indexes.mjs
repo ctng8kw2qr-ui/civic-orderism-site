@@ -16,12 +16,39 @@ const articleDirectories = [
 const siteDescription =
   "公民秩序主义关注工业时代旧秩序在信息化时代的失效，并尝试提出一种面向中国现实、可进入、可解释、可纠错、可追责的公共秩序方案。";
 
+/**
+ * Exact filename forms that Finder / iCloud produce when the same document is
+ * copied into a folder that already holds it.
+ *
+ * These are byte-copies of an existing page, not pages. They survive as `.md`,
+ * and the space-to-hyphen slug rule turns `index 2.md` into a second
+ * `index-2` entry — which is how they reached the architecture generator and
+ * collided with the real pages.
+ *
+ * Deliberately an exact-name test rather than a wildcard: no real article is
+ * named `… 2.md`, so this cannot exclude genuine content, while a broad
+ * `*2*` style guess could.
+ */
+const FINDER_DUPLICATE_NAME = /(?: \d+| copy(?: \d+)?)\.md$/i;
+
+function isFinderDuplicate(fileName) {
+  return FINDER_DUPLICATE_NAME.test(fileName);
+}
+
 function walk(dir) {
   if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) return walk(fullPath);
-    if (entry.isFile() && entry.name.endsWith(".md")) return [fullPath];
+    if (entry.isFile() && entry.name.endsWith(".md")) {
+      if (isFinderDuplicate(entry.name)) {
+        console.log(
+          `  · skipped Finder duplicate: content/${toPosix(path.relative(contentDir, fullPath))}`,
+        );
+        return [];
+      }
+      return [fullPath];
+    }
     return [];
   });
 }
