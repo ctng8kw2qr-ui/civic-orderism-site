@@ -13,6 +13,8 @@ tags:
   - 功能性衰竭
 description: 在任何长期执政型组织中，真正构成稳定基础的，从来不是全民支持，而是一个相对封闭的核心群体。
 status: published
+cover: /static/assets/v6/editorial/editorial-organization-credit-retired-officials.webp
+coverAlt: "长卷带的厚重终端悬在承接座上方，几条较短卷带朝向同一终点。"
 ---
 # 组织信用的最后一关：退休官员、终身承诺与中共的功能性衰竭
 

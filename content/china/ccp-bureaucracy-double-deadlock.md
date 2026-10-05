@@ -12,6 +12,8 @@ tags:
   - 运动式治理
 description: 很多人谈中国官僚体系的问题，喜欢把原因简单归结为一句话：
 status: published
+cover: /static/assets/v6/editorial/editorial-ccp-bureaucracy-double-deadlock.webp
+coverAlt: "同种蓝灰带材在左侧夹具中松垂，在右侧夹具中被挤成折叠，中间承接座为空。"
 ---
 # 不抓人就躺平，一抓人就失真：中共官僚体系为何陷入双重死结
 

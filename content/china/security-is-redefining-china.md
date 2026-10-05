@@ -35,6 +35,8 @@ relatedArticles:
   - china/ccp-2018-xi-era-local-growth-space
 slug: china/security-is-redefining-china
 status: published
+cover: /static/assets/v6/editorial/editorial-security-is-redefining-china.webp
+coverAlt: "一个缺口模板置于多种不同形体之前，各形体带有相似的小方形接口。"
 ---
 
 # 安全，正在重新定义中国

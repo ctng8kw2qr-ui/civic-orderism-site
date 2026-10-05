@@ -11,6 +11,8 @@ tags:
   - 反腐
 description: 一个体制是否稳定，看的从来不只是它还能不能抓人，而是它为什么越来越需要抓人。
 status: published
+cover: /static/assets/v6/editorial/editorial-high-officials-no-longer-safe.webp
+coverAlt: "大圆盘上分布多根完整立柱，小套环仅围住中心柱，外圈槽位仍清晰可见。"
 ---
 # 当高位者也不再安全：这不是普通反腐，而是权力的深度焦虑
 
