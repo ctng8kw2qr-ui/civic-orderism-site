@@ -9,6 +9,8 @@ tags:
 slug: china/information-age-impact-on-ccp-mechanisms
 summary: 本文分析信息化时代对中共的冲击并不是单纯的信息传播问题，而是全球利润结构、资本偏好、外贸形态、地方财政、社会预期、信息控制、组织反馈、创新环境、规模优势和合法性基础同时发生变化后，对中共增长与治理体系形成的机制性冲击。
 status: published
+cover: /static/assets/v6/editorial/editorial-information-age-ccp-mechanisms.webp
+coverAlt: "浅色核心周围有四块完整曲面，蓝灰纤维连接层在多处接触面之间变形和错开。"
 ---
 
 # 信息化时代冲击中共的机制

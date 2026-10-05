@@ -16,6 +16,8 @@ coreJudgments:
   - 制度发布必须来自统一、可追踪的正式程序，官员或委员个人表态不能替代正式文本与版本。
   - 透明不是无限公开，而是要求正式制度动作留下符合法定边界、可供社会检视的公开部分。
 status: published
+cover: /static/assets/v6/editorial/editorial-why-information-transparency.webp
+coverAlt: "开放浅色结构内的蓝灰接触带连续穿过多处连接，延伸至外部圆形接收面，左侧另有一块独立壳体。"
 ---
 
 # 为什么公民秩序主义强调信息透明及信息发布

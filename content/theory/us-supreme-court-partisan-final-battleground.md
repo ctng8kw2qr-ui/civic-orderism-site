@@ -11,6 +11,8 @@ tags:
   - 信息化时代
 description: 本文从三权分立、终身制、席位争夺、立法失能和信息化放大效应出发，分析美国最高法院为什么正承受从中立裁判者滑向党争终局战场的结构性压力。
 status: published
+cover: /static/assets/v6/editorial/editorial-us-supreme-court-partisan-final.webp
+coverAlt: "多个完整弧形重件从不同方向压向浅色缓冲件，蓝灰薄带持续接入其接触部位。"
 ---
 
 # 美国最高法院为何滑向党争终局战场

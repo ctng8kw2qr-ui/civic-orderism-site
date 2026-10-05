@@ -8,6 +8,8 @@ tags:
   - 西方政党政治
 summary: 本文以加拿大为样本，分析信息化时代西方政党政治正在面对的结构性困境：政党垄断议题入口、与大资本形成共生、被算法推向空洞化，而公民又被碎片化和原子化困住，导致民主程序仍在，却越来越难真正穿透现实结构。
 status: published
+cover: /static/assets/v6/editorial/editorial-democracy-still-exists-but-cannot.webp
+coverAlt: "完整开放外框内有多层逐渐收窄的曲面，前方不规则实体接近这些层次，深处有一块小工作面。"
 ---
 
 # 民主还在，但越来越难穿透现实

@@ -9,6 +9,8 @@ description: 高生产力时代的制度摩擦与生活窒息
 status: published
 aliases:
   - articles/trapped-by-process
+cover: /static/assets/v6/editorial/editorial-trapped-by-process.webp
+coverAlt: "后方大浅盘内堆着多种完整材料，前方一块小型蓝灰不规则实体被多个较大的浅色套环围住。"
 ---
 # 我们不是被贫穷困住，而是被流程困住
 

@@ -34,6 +34,8 @@ key_points:
   - 习近平制造了一个必须依赖习近平才能维持的秩序。
 slug: china/mao-death-release-xi-death-weightlessness
 status: published
+cover: /static/assets/v6/editorial/editorial-mao-release-xi-weightlessness.webp
+coverAlt: "左侧浅色重件离开弯曲托面，右侧数个深色弧形构件悬在共同中心周围，彼此角度不同。"
 ---
 
 # 如果习近平去世会发生什么？

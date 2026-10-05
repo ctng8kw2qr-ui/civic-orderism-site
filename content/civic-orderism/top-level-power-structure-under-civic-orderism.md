@@ -20,6 +20,8 @@ coreJudgments:
   - 大议会承担重大事项、重大任命和重大问责的公开确认，不负责日常指挥行政。
   - 司法独立裁判并划定程序边界，委员会不得干预个案，秘书处负责流转而不能最终判断。
 status: published
+cover: /static/assets/v6/editorial/editorial-top-level-power-structure-under-civic.webp
+coverAlt: "多个不同形态的独立托件位于共同蓝灰底面，之间保持间隙，共同承接一块浅色弯曲上件。"
 ---
 
 # 公民秩序主义下顶层权力结构的布局：为什么国家最高层不能只有一个权力中心，也不能碎片化成互相消耗的多头政治

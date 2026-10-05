@@ -10,6 +10,8 @@ tags:
   - 制度失配
 description: 本文指出美国三权分立的真正危机不在于分权原则本身，而在于支撑分权稳定运行的统合性前提正在系统性流失。
 status: published
+cover: /static/assets/v6/editorial/editorial-us-separation-powers-integrative-capacity.webp
+coverAlt: "三个不同形态的完整实体留在共同底面，蓝灰接合层在底部部分剥离，旁侧还有一块较小构件。"
 ---
 
 # 美国三权分立的真正危机，不是分权，而是失去统合能力

@@ -16,6 +16,8 @@ coreJudgments:
   - 兼职不等于不专业，而是要求秘书处、专业事务和制度留痕提供更可靠的履职支持。
   - 兼职制并非绝对排斥全职安排，关键是让公共代表持续接受现实检验并承担正式责任。
 status: published
+cover: /static/assets/v6/editorial/editorial-why-part-time-representatives.webp
+coverAlt: "同一浅色双端构件一侧接触粗糙石面，另一侧承接平整工作面，中间有可调蓝灰连接。"
 ---
 
 # 为什么议员主要应采取兼职制，而非全职制

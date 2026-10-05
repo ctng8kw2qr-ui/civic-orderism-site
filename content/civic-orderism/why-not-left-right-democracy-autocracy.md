@@ -14,6 +14,8 @@ coreJudgments:
   - 信息化时代的制度失灵更常发生在入口、后台、责任链和程序可见性，而非单纯立场分布。
   - 更换制度标签不会自动升级国家，真正需要重建的是能够接住问题并持续纠偏的运行结构。
 status: published
+cover: /static/assets/v6/editorial/editorial-why-not-left-right-democracy-autocracy.webp
+coverAlt: "不同浅色外套放在旁侧，前方重建的开放接口与蓝灰不规则实体贴合。"
 ---
 
 # 为什么公民秩序主义不纠结于左右、民主专制之争

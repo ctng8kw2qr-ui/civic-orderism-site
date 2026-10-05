@@ -13,6 +13,8 @@ tags:
   - 制度偏见
 description: 关于“用 AI 降低组织内部摩擦、提高节点效率”的设想，常见叙事是：
 status: published
+cover: /static/assets/v6/editorial/editorial-ai-monitoring-organizational-friction.webp
+coverAlt: "半透明平面显露下方多处连接，完整支撑之间积着密集蓝灰折叠垫层。"
 ---
 # AI监控并不降低组织摩擦：一份冷静推演
 

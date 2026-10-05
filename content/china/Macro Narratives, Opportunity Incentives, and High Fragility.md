@@ -10,6 +10,8 @@ tags:
   - 制度信用
 description: 本文从宏观叙事、机会结构、合规安全、靠山化、免责型合规和制度信用破产出发，解释中共为何更可能进入“还在，但越来越靠不住”的功能性失灵状态。
 status: published
+cover: /static/assets/v6/editorial/editorial-macro-narratives-opportunity-incentives.webp
+coverAlt: "完整而复杂的浅色上件只通过很窄的底部接触落在蓝灰托盘内，旁侧多个完整支撑件已经分开。"
 ---
 
 # 宏观叙事、机会激励与高脆弱态

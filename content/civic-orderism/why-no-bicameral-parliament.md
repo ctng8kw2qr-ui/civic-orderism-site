@@ -16,6 +16,8 @@ coreJudgments:
   - 制度复核应由不同系统从不同角度完成，而不是依靠一个天然更高的议院再次审视。
   - 问题可以沿层级上移，议会地位不必垂直上移，重大表决仍应保持责任清晰。
 status: published
+cover: /static/assets/v6/editorial/editorial-why-no-bicameral-parliament.webp
+coverAlt: "不同形态的浅色接触块围绕一块蓝灰不规则实体，从多个侧面与它接触。"
 ---
 
 # 为什么公民秩序主义议会不采取上下两院制

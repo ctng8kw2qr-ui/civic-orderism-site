@@ -10,6 +10,8 @@ tags:
   - 共同现实
 description: 本文分析信息化时代如何通过共同现实破碎、平台奖励机制、媒体中枢衰退、地方整合层空心化和妥协空间压缩，系统性瓦解美国的统合能力。
 status: published
+cover: /static/assets/v6/editorial/editorial-information-age-erodes-us-integrative.webp
+coverAlt: "多个不同碗形实体在共同底面上接触，连续蓝灰带材在它们之间折返穿绕。"
 ---
 
 # 为什么信息化时代正在系统性瓦解美国的统合能力

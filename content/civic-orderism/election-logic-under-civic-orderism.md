@@ -18,6 +18,8 @@ coreJudgments:
   - 越基层越重开放性和生活感，越高层越重履历、能力、责任记录和结构判断。
   - 选举不是一次性授权，而是与任期、留痕、问责和纠偏相连的责任周期。
 status: published
+cover: /static/assets/v6/editorial/editorial-election-logic-under-civic-orderism.webp
+coverAlt: "一块蓝灰承托件托着浅色球体，周围有不同凹形座位与完整构件，中央接触痕迹向底座延伸。"
 ---
 
 # 公民秩序主义下的选举逻辑：它与传统选举的区别，以及制度优势

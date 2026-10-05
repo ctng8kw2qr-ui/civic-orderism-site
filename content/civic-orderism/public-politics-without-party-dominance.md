@@ -12,6 +12,8 @@ coreJudgments:
   - 利益冲突需要经过正式入口、秘书处流转、委员会判断、公开听证和行政司法处理。
   - 重大政策的合法性来自真实问题、正式程序、公开确认与结果追踪，而不是一次性授权。
   - 失败治理团队应通过选举、议会问责、委员会触发、司法廉正程序和依法调整得到更换。
+cover: /static/assets/v6/editorial/editorial-public-politics-without-party-dominance.webp
+coverAlt: "多种不同形态的完整实体位于开放浅盘内，各自形状保留，一条蓝灰带连接外缘与共同托面。"
 ---
 
 # 弱化政党政治之后，公共政治如何继续存在

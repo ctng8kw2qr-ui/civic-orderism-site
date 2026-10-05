@@ -10,6 +10,8 @@ description: 本文以外交是内政的延续为理论起点，分析中共近�
 status: published
 aliases:
   - articles/diplomacy-root
+cover: /static/assets/v6/editorial/editorial-diplomacy-root.webp
+coverAlt: "浅色开放侧面的空腔内，蓝灰材料形成密集折褶并向外延伸为突出的折角。"
 ---
 # 外交的根源
 

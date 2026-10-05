@@ -17,6 +17,8 @@ coreJudgments:
   - 委员会负责判断、质询、纠偏和问责，不能直接接收未经制度入口处理的社会个案。
   - 入口权由前端机构承担，判断权由委员会承担，执行权由行政系统承担，三者必须分拆。
   - 委员会要保持对社会现实的感知，同时与私人接案和非制度个案保持距离。
+cover: /static/assets/v6/editorial/editorial-why-committees-cannot-directly-take-cases.webp
+coverAlt: "左侧开放浅盘接住一块不规则石块，浅色带材延伸到右侧独立曲形托座，接收盘入口没有被封住。"
 ---
 
 # 为什么委员会不能直接接案

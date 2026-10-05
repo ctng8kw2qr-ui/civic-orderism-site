@@ -35,6 +35,8 @@ relatedArticles:
   - china-stage/ccp-second-reform-opening-possibility
 slug: china/an-era-change-beginning-in-the-united-states
 status: published
+cover: /static/assets/v6/editorial/editorial-us-era-change-beginning.webp
+coverAlt: "两块外形不同的浅色实体由蓝灰带材在凹入接口相连，旁侧放着未参与连接的浅色圆环。"
 ---
 
 # 一场起始于美国的时代变革

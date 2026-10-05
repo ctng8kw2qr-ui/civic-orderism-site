@@ -19,6 +19,8 @@ coreJudgments:
   - 越高层的判断越需要层级经验和路径证明，但基层入口仍应向普通人保持开放。
   - 训练和履历用于降低能力风险，不构成保送资格，经验本身也必须接受留痕和制度检验。
 status: published
+cover: /static/assets/v6/editorial/editorial-why-civic-orderism-emphasizes-experience.webp
+coverAlt: "左侧浅色承托件表面保留明显磨压痕迹并托着深色石块，右侧同形构件光滑且没有荷载。"
 ---
 
 # 为什么公民秩序主义强调履历、经验：因为现代国家不能把高位判断交给空降、表演和单一激情
