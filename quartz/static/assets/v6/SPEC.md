@@ -126,13 +126,21 @@ a one-glyph simplification could misrepresent a four-value device.
 
 ### Application icons
 
-Rendered from `brand/threshold-mark.svg`. The favicon and app-icon sizes are
-**flattened onto warm white** deliberately: at 16px the 4-unit stroke
-rasterises to partial alpha (measured max alpha 178) and reads faint. Larger
-icons (`icon.png`, `icon-192`, `icon-512`) keep alpha.
+Rendered from `brand/icon-mark.svg` — the three-block slate mark, flat `#435B63`.
+The Threshold Mark above stays the brand asset for the OG fallback and for
+anything that shows a mark in prose; it no longer supplies the browser, bookmark
+or home-screen icons.
 
-`quartz/plugins/emitters/favicon.ts` is unchanged — it still reads
-`static/icon.png` and derives `favicon.ico`.
+The small favicons (`favicon.ico`, `favicon-16x16`, `favicon-32x32`) and
+`apple-touch-icon` are **flattened onto warm white `#F4F3EF`** deliberately: at
+16px the channel between the blocks is sub-pixel and would otherwise read as a
+faint smear on browser chrome. Larger icons (`icon.png`, `icon-192`,
+`icon-512`) keep alpha.
+
+`favicon.ico` is a committed three-frame ICO (16/32/48). Note the ordering:
+`quartz/plugins/emitters/favicon.ts` derives a 48px PNG from `static/icon.png`,
+then `RootStatic()` copies the committed `static/favicon.ico` over it — so the
+static ICO is what ships. Both paths read the new mark.
 
 ---
 
