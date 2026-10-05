@@ -139,18 +139,39 @@ Rendered from `brand/icon-mark.svg`. The Threshold Mark is now a historical asse
 and no longer supplies the browser, bookmark or home-screen icons — see the
 legacy note below.
 
-The small favicons (`favicon.ico`, `favicon-16x16`, `favicon-32x32`) and
-`apple-touch-icon` are **flattened onto warm white `#F4F3EF`** deliberately: at
-16px the channel between the blocks is sub-pixel and would otherwise read as a
-faint smear on browser chrome. Larger icons (`icon.png`, `icon-192`,
-`icon-512`) keep alpha.
+**Declared from `brand/`, at two sets of paths.** The `Head` links and the
+manifest point at `brand/icon-mark-*`, so every icon URL is a path Safari has
+never stored:
 
-`favicon.ico` is a committed three-frame ICO (16/32/48). Note the ordering:
+| Declared reference (what the HTML uses)       | Size / ground              |
+| --------------------------------------------- | -------------------------- |
+| `brand/icon-mark.svg`                         | vector master              |
+| `brand/icon-mark.ico`                         | ICO 16/32/48, `#F4F3EF`    |
+| `brand/icon-mark-16x16.png`, `-32x32.png`     | `#F4F3EF`                  |
+| `brand/icon-mark-180x180.png`                 | `#F4F3EF`, 15% clear space |
+| `brand/icon-mark-192x192.png`, `-512x512.png` | alpha                      |
+
+The conventional root files (`/favicon.ico`, `/favicon-16x16.png`,
+`/favicon-32x32.png`, `/apple-touch-icon.png`, `/icon-192.png`, `/icon-512.png`)
+are **still published with the same mark**, because Safari probes those paths on
+its own even when links are declared; answering them with a 404 would cost the
+icon. They are byte-identical to the `brand/` exports. **Both sets must be
+regenerated together whenever the mark changes.**
+
+A version query on the old filenames was tried first and was not sufficient: the
+URLs still resolved to the paths Safari already had stored. Prefer a new path
+over a new query string for any future icon change.
+
+The small favicons (`icon-mark.ico`, `icon-mark-16x16`, `icon-mark-32x32`) and
+`icon-mark-180x180` are **flattened onto warm white `#F4F3EF`** deliberately: at
+16px the channel between the blocks is sub-pixel and would otherwise read as a
+faint smear on browser chrome. The 192 and 512 exports keep alpha.
+
+`icon-mark.ico` is a committed three-frame ICO (16/32/48). Note the ordering:
 `quartz/plugins/emitters/favicon.ts` derives a 48px PNG from `static/icon.png`,
 then `RootStatic()` copies the committed `static/favicon.ico` over it — so the
-static ICO is what ships. Both paths read the current mark. This redundancy is
-logged for separate maintenance and is not to be resolved as part of a brand
-documentation change.
+static ICO is what ships. That redundancy is logged as technical debt (A5) and is
+not to be resolved as part of an icon or brand-documentation change.
 
 ### Legacy mark — Threshold Mark (historical)
 
