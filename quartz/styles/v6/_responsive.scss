@@ -57,13 +57,15 @@
     max-width: 640px;
   }
 
-  /* 研究栏目索引：说明文字换到第二行，避免四列过窄。 */
-  .v6-areas__route {
-    grid-template-columns: auto minmax(0, 1fr) auto;
+  /* 研究栏目索引：说明文字换到第二行，五列 grid 保持到 1100px。 */
+  .v6 a.v6-areas__route {
+    grid-template-columns: 2rem 4.5rem 5.5rem minmax(0, 1fr) auto;
+    grid-template-areas:
+      "num phase title desc arrow"
+      "num .    .     desc arrow";
   }
 
   .v6-areas__route-desc {
-    grid-column: 2 / -1;
     margin-top: 0.45rem;
   }
 
@@ -166,20 +168,22 @@
     max-width: none;
   }
 
-  /* 研究栏目索引：改为两列（编号 + 内容），箭头隐藏。 */
-  .v6-areas__route {
-    grid-template-columns: auto minmax(0, 1fr);
+  /* 研究栏目索引：两列，箭头隐藏；三行使用完全相同的模板。
+     phase 与 title 直接是 grid item，各自占一个命名的单元格，保证三行结构一致。 */
+  .v6 a.v6-areas__route {
+    grid-template-columns: 2rem minmax(0, 1fr);
+    grid-template-areas:
+      "num phase"
+      "num title"
+      "num desc";
     gap: 0.2rem var(--v6-space-sm);
-    padding: var(--v6-space-md) 0;
   }
 
   .v6-areas__route-num {
-    grid-row: span 2;
     padding-top: 0.15rem;
   }
 
   .v6-areas__route-desc {
-    grid-column: 2;
     margin-top: 0.4rem;
   }
 
