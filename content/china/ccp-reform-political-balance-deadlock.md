@@ -11,6 +11,8 @@ tags:
   - 政治平衡
 description: 一个政权最危险的时刻，不是问题最多的时候，而是它已经看清问题，却发现所有出路都比问题本身更危险的时候。
 status: published
+cover: /static/assets/v6/editorial/editorial-reform-balance-deadlock.webp
+coverAlt: "两块浅色折角构件交错相接，分别立在小支点上，蓝灰楔块抵近接合处。"
 ---
 # 中共的真正死局：改革未必救经济，却一定先打破政治平衡
 

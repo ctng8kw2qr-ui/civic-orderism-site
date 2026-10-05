@@ -40,6 +40,8 @@ aliases:
   - civic-orderism/core-political-statement
 slug: civic-orderism/this-time-let-china-be-your-pride
 status: published
+cover: /static/assets/v6/editorial/editorial-china-pride.webp
+coverAlt: "宽阔屋盖由两侧石柱支撑，中央明亮的开放空间里，一名匿名行人经过石凳和盆栽。"
 ---
 
 # 这一次，让中国成为你的骄傲

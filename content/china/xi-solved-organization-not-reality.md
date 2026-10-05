@@ -13,6 +13,8 @@ tags:
   - 组织问题
 description: 评价习近平，不能只停留在“强”或者“弱”、“聪明”或者“愚蠢”这种简单判断上。
 status: published
+cover: /static/assets/v6/editorial/editorial-organization-vs-reality.webp
+coverAlt: "深色框架中的四个探头整齐悬挂在共同横杆上，与下方不规则石块之间留有空隙。"
 ---
 # 习近平解决了组织的问题，却解决不了组织面临的问题
 

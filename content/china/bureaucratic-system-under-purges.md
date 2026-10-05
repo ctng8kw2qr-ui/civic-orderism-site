@@ -14,6 +14,8 @@ slug: china/bureaucratic-system-under-purges
 summary: 省部级官员密集落马，表面上看是反腐问题，深层看则是官僚系统安全感与运行逻辑的变化。高位安全边界后退、经济低预期和责任倒查叠加，会推动官僚群体进入避责、观望、伪执行和系统性自保状态，使官僚系统从主动型系统转向防御型系统。
 description: 省部级官员密集落马背后的安全感、避责逻辑与系统性衰退。
 status: published
+cover: /static/assets/v6/editorial/editorial-purge-psychology.webp
+coverAlt: "连续主轴贯穿成组模块，深色套筒与浅色输出盘之间留有间隙，各模块仍完整地留在底座上。"
 ---
 
 # 高位清洗如何改变中共官僚系统
