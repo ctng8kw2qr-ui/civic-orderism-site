@@ -26,10 +26,10 @@
   img {
     display: block;
     width: 100%;
+    /* 比例只由 intrinsic width/height 属性承担（二者已写在标记里）。
+       这里不再叠加 aspect-ratio：它与 height:auto 冲突，会把图拉高到
+       1.39:1，等于破坏了“无拉伸”这一硬约束。 */
     height: auto;
-    /* 与站点文章封面共用同一个 canonical 比例令牌 */
-    aspect-ratio: var(--v6-cover);
-    object-fit: cover;
     /* 上缘一条细线：把插画读成版面上的一段，而不是一张漂浮的图 */
     border-top: 1px solid var(--v6-border);
   }

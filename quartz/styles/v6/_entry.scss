@@ -21,6 +21,8 @@
 @use "./base";
 @use "./homepage";
 @use "./article";
+/* Site Primary Visual figures on the institutional landing pages. */
+@use "./primaryVisual";
 @use "./responsive";
 /* Hero E3 放在最后：它是 .v6-hero--e3 的完整定义，
    需要压过 homepage 中旧 .v6-hero 规则的同等特异性。 */
