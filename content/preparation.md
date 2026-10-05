@@ -1,7 +1,7 @@
 ---
 title: "北美非营利法人及首届董事会筹备"
 date: 2026-07-19
-updated: 2026-08-11
+updated: 2026-10-05
 description: "公民秩序主义正在为正式出版、政治与治理研究、公共传播、人才协作和数字资产保护建立依法运行的承接结构。"
 contentType: "筹备页面"
 status: published
@@ -17,7 +17,17 @@ aliases:
 <p class="inst4-eyebrow">CURRENT WORK</p>
 <h1 class="inst4l-title">北美非营利法人及<br>首届董事会筹备</h1>
 <p class="inst4l-lead">公民秩序主义正在为正式出版、政治与治理研究、公共传播、人才协作和数字资产保护建立依法运行的承接结构。现阶段同时推进北美非营利法人和首届董事会的前期准备。</p>
-<p class="inst4l-status">当前处于北美非营利法人及首届董事会前期筹备阶段，法人尚未完成注册，首届董事会尚未依法产生。</p>
+<p class="inst4l-status">当前处于法人及首届董事会前期筹备阶段。筹备不等于已经成立，完整法律边界见下方「组织边界」。</p>
+  </section>
+
+  <section class="inst4l-section">
+  <div class="inst4l-section__head">
+<p class="inst4-eyebrow">WHY ORGANIZE NOW</p>
+<h2 class="inst4l-section__title">为什么现在进入组织建设</h2>
+    
+  </div>
+  <p>政治转轨不仅需要观点，也需要能够承担法律、财务、人员与长期政治责任的组织。公民秩序主义当前正在推进北美非营利法人及首届董事会筹备，从理论表达进入组织基础建设阶段。</p>
+<p>现阶段重点是理论建设、公共传播以及北美非营利法人和首届董事会筹备，而不是追求短期声势或迅速扩大参与规模。</p>
   </section>
 
   <section class="inst4l-section">
@@ -28,18 +38,7 @@ aliases:
   </div>
   <p>北美非营利法人不是公民秩序主义的政治目标，而是当前阶段承载政治路线、政治信誉与长期组织责任的法律与组织基础设施。</p>
 <p>公民秩序主义正在形成能够长期承担政治责任的组织雏形。</p>
-<p>这一步不等于政治代表权已经形成：在法人依法成立、董事会依法产生之前，公民秩序主义不声称拥有法人身份、治理机构或对外代表权。任何对外代表行为，都必须建立在明确的组织授权基础上。</p>
-</section>
-
-  <section class="inst4l-section">
-  <div class="inst4l-section__head">
-<p class="inst4-eyebrow">WHY ORGANIZE NOW</p>
-<h2 class="inst4l-section__title">为什么现在进入组织建设</h2>
-    
-  </div>
-  <p>政治转轨不仅需要观点，也需要能够承担法律、财务、人员与长期政治责任的组织。公民秩序主义当前正在推进北美非营利法人及首届董事会筹备，从理论表达进入组织基础建设阶段。</p>
-<p>现阶段重点是理论建设、公共传播以及北美非营利法人和首届董事会筹备，而不是追求短期声势或迅速扩大参与规模。</p>
-</section>
+  </section>
 
   <div class="inst4l-grid2">
 <section class="inst4l-section">
@@ -79,13 +78,14 @@ aliases:
 </ol>
 </section>
 
-  <section class="inst4l-section">
+  <section class="inst4l-section" id="boundaries">
   <div class="inst4l-section__head">
 <p class="inst4-eyebrow">组织边界</p>
 <h2 class="inst4l-section__title">筹备不等于已经成立</h2>
-    
+<p class="inst4l-section__desc">这一节是全站关于组织法律状态的完整说明。</p>
   </div>
   <p>截至目前，北美非营利法人尚未依法成立，具体注册法域尚未确定，首届董事会尚未依法产生。本站所称“法人筹备”和“董事会筹备”仅描述正在进行的准备工作，不表示已经取得任何法人、慈善或免税资格。</p>
+<p>在法人依法成立、董事会依法产生之前，公民秩序主义不声称拥有法人身份、治理机构或对外代表权。</p>
 <p><strong>参与筹备不自动产生董事身份或治理权限。</strong>董事、法定成员、官方代表及其他正式治理职务，均须在制度准备完成后，依照适用法律、章程与正式程序产生。</p>
 <p><strong>任何对外代表行为都必须建立在明确授权基础上。</strong>未经正式授权，任何人不得代表公民秩序主义或筹备中的组织进行对外沟通、表态、联络或建立政治关系。</p>
 </section>
@@ -115,6 +115,6 @@ aliases:
   <p class="inst4l-contact__entry"><span>主联系邮箱</span><a href="mailto:civicorderism@gmail.com">civicorderism@gmail.com</a></p>
   <p class="inst4l-contact__entry"><span>备用邮箱</span><a href="mailto:citizenorder@proton.me">citizenorder@proton.me</a></p>
 </div>
-<div class="preparation-actions"><a class="v2-button v2-button--primary" href="/preparation/board">了解首届董事会筹备</a><a class="v2-button v2-button--secondary" href="/civic-orderism/">了解这条路线要承载什么</a><a class="v2-button v2-button--secondary" href="/participate">了解参与方式</a></div>
+<div class="preparation-actions"><a class="v2-button v2-button--primary" href="/preparation/board">了解首届董事会筹备</a><a class="v2-button v2-button--secondary" href="/participate">了解参与方式与所需能力</a></div>
 </section>
 </div>
