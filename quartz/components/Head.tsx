@@ -220,25 +220,34 @@ export default (() => {
           </>
         )}
 
-        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
+        {/* Website icons. The SVG leads because it is a new path, so browsers
+            that support it (and Safari, which caches raster favicons hard)
+            fetch a file they have never stored. The v=4 query is the second
+            line of defence for the raster fallbacks and the manifest. */}
+        <link
+          rel="icon"
+          type="image/svg+xml"
+          href="/static/assets/v6/brand/icon-mark.svg?v=4"
+        />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=4" />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/favicon-16x16.png?v=2"
+          href="/favicon-16x16.png?v=4"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/favicon-32x32.png?v=2"
+          href="/favicon-32x32.png?v=4"
         />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/apple-touch-icon.png?v=2"
+          href="/apple-touch-icon.png?v=4"
         />
-        <link rel="manifest" href="/site.webmanifest?v=2" />
+        <link rel="manifest" href="/site.webmanifest?v=4" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content="公民秩序主义" />
         {/* Browser chrome colour follows the page background token in both

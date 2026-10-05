@@ -61,8 +61,9 @@ const PrimaryNavigation: QuartzComponent = ({
           aria-label="公民秩序主义首页"
         >
           {/* Header wordmark. The Threshold Mark was removed from the header as
-              a display decision — it is still the brand asset, and still serves
-              the favicon, the application icons and the OG fallback. See
+              a display decision, and the browser/bookmark/home-screen icons now
+              use the separate slate icon mark (`brand/icon-mark.svg`) — the
+              Threshold Mark still serves the OG fallback. See
               quartz/static/assets/v6/SPEC.md §1b.
 
               What remains is the name alone, in real text, inside this single
