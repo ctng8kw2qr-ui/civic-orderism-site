@@ -145,6 +145,22 @@
     padding-block: var(--v6-section-space-tight);
   }
 
+  /* 首页区块节奏（Final Polish）：移动端同样保留叙事层次，只是整体收紧。
+     04 仍不带分隔线（连续阅读的开始），05 仍是留白最大的区块。 */
+  .v6-section--reading {
+    padding-block: calc(var(--v6-section-space-tight) * 1.25)
+      var(--v6-section-space-tight);
+  }
+
+  .v6-section--path {
+    padding-block: calc(var(--v6-section-space-tight) * 1.3);
+  }
+
+  .v6-section--closing {
+    padding-block: var(--v6-section-space-tight)
+      calc(var(--v6-section-space-tight) * 1.15);
+  }
+
   .v6-section__head {
     margin-bottom: var(--v6-space-lg);
   }
@@ -204,7 +220,8 @@
     flex-direction: row;
     gap: var(--v6-space-sm);
     align-items: baseline;
-    padding: 0.6rem 0 0.6rem var(--v6-space-md);
+    /* 五步路线是首页最重要的差异化内容，手机端同样不该读成密集脚注。 */
+    padding: 0.85rem 0 0.85rem var(--v6-space-md);
     border-bottom: 1px solid var(--v6-border);
     background: transparent;
   }
@@ -309,6 +326,23 @@
 
   .v6-section__head {
     margin-bottom: var(--v6-space-xl);
+  }
+
+  /* 首页区块节奏（Final Polish）：本文件在 _homepage.scss 之后加载，
+     `.v6-section` 与 `.v6-section--*` 同特异度，上面的规则会覆盖首页
+     的角色化留白，因此必须在大桌面断点显式重申。 */
+  .v6-section--reading {
+    padding-block: calc(clamp(4rem, 6.2vw, 6.5rem) * 1.22)
+      clamp(4rem, 6.2vw, 6.5rem);
+  }
+
+  .v6-section--path {
+    padding-block: calc(clamp(4rem, 6.2vw, 6.5rem) * 1.34);
+  }
+
+  .v6-section--closing {
+    padding-block: var(--v6-section-space-tight)
+      calc(clamp(4rem, 6.2vw, 6.5rem) * 1.1);
   }
 }
 
