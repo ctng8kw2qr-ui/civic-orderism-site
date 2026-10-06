@@ -238,7 +238,8 @@
 
 /* 07 · WHO WE ARE —— 收束段：内容精简后同步收紧上下留白 */
 .v6-section--closing {
-  padding-block: var(--v6-section-space-tight) calc(var(--v6-section-space) * 1.1);
+  padding-block: var(--v6-section-space-tight)
+    calc(var(--v6-section-space) * 1.1);
 }
 
 /* ══ 03 · CORE RESEARCH AREAS ════════════════════════════════ */
