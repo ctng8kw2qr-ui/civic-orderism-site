@@ -12,31 +12,33 @@ noindex: false
 
 <div class="inst4 inst4l inst4l-initiator">
   <section class="inst4l-hero inst4l-hero--portrait">
-<div class="inst4l-hero__text">
+<div class="inst4l-hero__identity">
 <p class="inst4-eyebrow">INITIATOR</p>
 <h1 class="inst4l-title">发起人</h1>
 <p class="inst4l-lead">赵鹏博 · 公民秩序主义路线发起人</p>
 </div>
+<div class="inst4l-hero__body">
+<div class="inst4l-hero__opening">
+<p>我叫赵鹏博。</p>
+<p>公民秩序主义最初由我提出，也是由我决定把它从一套个人政治判断，逐步变成一条公开的政治路线和一个正在筹备中的正式组织。</p>
+<p>我不准备在这里把自己包装成一个没有野心的人。</p>
+<p>恰恰相反，我一直希望做成一件足够重要、能够真正改变一些事情的事业。</p>
+<p>但政治与个人事业不同。</p>
+<p>一个人可以有野心，一条政治路线却不能只服务于一个人的野心。</p>
+<p>所以，当我决定发起公民秩序主义之后，一个问题也随之出现：</p>
+<p>为什么别人应该相信我？</p>
+<p>我的答案不是要求任何人相信我的人格，也不是要求任何人相信我的承诺。</p>
+<p>而是把路线、组织、边界以及未来的权力安排逐步公开，让它们接受检验。</p>
+</div>
 <figure class="inst4l-portrait">
 <img src="/static/assets/v6/people/zhao-pengbo-initiator.webp" alt="赵鹏博，公民秩序主义路线发起人" width="1024" height="1536" loading="eager" decoding="async" fetchpriority="high" />
 </figure>
+</div>
   </section>
 
   <div class="inst4l-body">
 <div class="inst4l-main">
 
-  <section class="inst4l-section">
-  <p>我叫赵鹏博。</p>
-  <p>公民秩序主义最初由我提出，也是由我决定把它从一套个人政治判断，逐步变成一条公开的政治路线和一个正在筹备中的正式组织。</p>
-  <p>我不准备在这里把自己包装成一个没有野心的人。</p>
-  <p>恰恰相反，我一直希望做成一件足够重要、能够真正改变一些事情的事业。</p>
-  <p>但政治与个人事业不同。</p>
-  <p>一个人可以有野心，一条政治路线却不能只服务于一个人的野心。</p>
-  <p>所以，当我决定发起公民秩序主义之后，一个问题也随之出现：</p>
-  <p>为什么别人应该相信我？</p>
-  <p>我的答案不是要求任何人相信我的人格，也不是要求任何人相信我的承诺。</p>
-  <p>而是把路线、组织、边界以及未来的权力安排逐步公开，让它们接受检验。</p>
-  </section>
 
   <section class="inst4l-section">
   <div class="inst4l-section__head">
