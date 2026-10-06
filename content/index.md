@@ -13,6 +13,7 @@ aliases:
   - article_summaries
 cover: /static/assets/v6/editorial/editorial-research-areas.webp
 coverAlt: "一根连续不断的长横梁横贯画面，上面在四个位置承载四块形状各不相同的重物，彼此之间留出宽阔均匀的空隙，两端各垫在一个简单的支座上。"
+socialImage: /static/assets/v6/social/civic-orderism-home-social-v1.webp
 ---
 
 <!-- V6 Institutional Editorial homepage.
