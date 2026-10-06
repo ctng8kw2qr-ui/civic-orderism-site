@@ -114,6 +114,7 @@ export const sharedPageComponents: SharedLayout = {
       { label: "政治路线", href: "/civic-orderism" },
       { label: "组织建设", href: "/preparation" },
       { label: "董事会筹备", href: "/preparation/board" },
+      { label: "发起人", href: "/about/initiator" },
       { label: "参与组织筹备", href: "/participate" },
     ],
     contact: {
