@@ -10758,3 +10758,41 @@ body:has(.inst4l) {
     margin-bottom: 0.5rem;
   }
 }
+
+/* ══ Initiator portrait（/about/initiator）═══════════════════════════
+   这张照片是身份确认元素，不是主视觉。它回答「谁发起了这条路线」，
+   不承担页面表达。因此刻意让它在视觉上明显次于标题与正文。
+
+   全部规则作用域限定在 .inst4l-hero--portrait / .inst4l-portrait ——
+   这两个类只在本页使用，不触碰任何全局 img 规则，也不影响其他页面。
+   只复用既有变量（--inst4-line）与既有边框语言；不新增颜色、字体、
+   阴影、圆角或卡片体系。 */
+.inst4l-hero--portrait {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(200px, 26%, 330px);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.inst4l-portrait {
+  margin: 0;
+}
+
+.inst4l-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--inst4-line);
+}
+
+/* 窄屏：文字在上、照片在下，并限制照片尺寸，避免占据整屏或把正文推远。 */
+@media (max-width: 900px) {
+  .inst4l-hero--portrait {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.2rem;
+  }
+
+  .inst4l-portrait {
+    max-width: 15rem;
+  }
+}

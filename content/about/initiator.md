@@ -11,10 +11,15 @@ noindex: false
 ---
 
 <div class="inst4 inst4l inst4l-initiator">
-  <section class="inst4l-hero">
+  <section class="inst4l-hero inst4l-hero--portrait">
+<div class="inst4l-hero__text">
 <p class="inst4-eyebrow">INITIATOR</p>
 <h1 class="inst4l-title">发起人</h1>
 <p class="inst4l-lead">赵鹏博 · 公民秩序主义路线发起人</p>
+</div>
+<figure class="inst4l-portrait">
+<img src="/static/assets/v6/people/zhao-pengbo-initiator.webp" alt="赵鹏博，公民秩序主义路线发起人" width="1024" height="1536" loading="eager" decoding="async" fetchpriority="high" />
+</figure>
   </section>
 
   <div class="inst4l-body">
