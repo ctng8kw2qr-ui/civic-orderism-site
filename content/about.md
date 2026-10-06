@@ -53,6 +53,16 @@ noindex: false
 
 <section class="inst4l-section">
   <div class="inst4l-section__head">
+<p class="inst4-eyebrow">INITIATOR</p>
+<h2 class="inst4l-section__title">路线由谁发起</h2>
+    
+  </div>
+  <p>公民秩序主义由赵鹏博发起。发起人已公开说明这条路线为什么发起、为什么明确反对革命与政治清算，以及他本人愿意提前接受的政治责任与权力边界。</p>
+<p class="inst4l-link"><a href="/about/initiator">了解发起人 <span aria-hidden="true">→</span></a></p>
+</section>
+
+<section class="inst4l-section">
+  <div class="inst4l-section__head">
 <p class="inst4-eyebrow">路线</p>
 <h2 class="inst4l-section__title">政治路线</h2>
     
@@ -119,6 +129,7 @@ noindex: false
 <p class="inst4l-status__year">2026</p>
 </div>
 <nav class="inst4l-quicklinks" aria-label="快速入口">
+        <a href="/about/initiator">发起人 <span aria-hidden="true">→</span></a>
         <a href="/start-here/">5分钟了解 <span aria-hidden="true">→</span></a>
         <a href="/articles/">阅读地图 <span aria-hidden="true">→</span></a>
         <a href="/preparation/">董事会筹备 <span aria-hidden="true">→</span></a>
