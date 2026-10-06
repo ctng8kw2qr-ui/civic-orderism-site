@@ -10718,7 +10718,8 @@ body:has(.inst4l) {
    全部规则作用域限定在 .inst4l-commitments 之下——该父类只在公开承诺
    页面使用，因此对 homepage、initiator 及其他任何已冻结页面零影响。
    只复用既有变量与既有字体刻度；不新增颜色、字体或图标。 */
-.inst4l-commitments__meta {
+.inst4l-commitments__meta,
+.inst4l-architecture__meta {
   display: grid;
   grid-template-columns: max-content minmax(0, 1fr);
   gap: 0.35rem clamp(1rem, 2.5vw, 2rem);
@@ -10730,12 +10731,14 @@ body:has(.inst4l) {
   line-height: 1.7;
 }
 
-.inst4l-commitments__meta dt {
+.inst4l-commitments__meta dt,
+.inst4l-architecture__meta dt {
   color: var(--inst4-gray);
   font-weight: 460;
 }
 
-.inst4l-commitments__meta dd {
+.inst4l-commitments__meta dd,
+.inst4l-architecture__meta dd {
   margin: 0;
   color: var(--inst4-ink-2);
   font-variant-numeric: tabular-nums;
@@ -10743,13 +10746,15 @@ body:has(.inst4l) {
 
 /* 窄屏：改为上下堆叠，避免长标签被压缩换行。 */
 @media (max-width: 800px) {
-  .inst4l-commitments__meta {
+  .inst4l-commitments__meta,
+  .inst4l-architecture__meta {
     grid-template-columns: minmax(0, 1fr);
     gap: 0.15rem;
     max-width: none;
   }
 
-  .inst4l-commitments__meta dd {
+  .inst4l-commitments__meta dd,
+  .inst4l-architecture__meta dd {
     margin-bottom: 0.5rem;
   }
 }

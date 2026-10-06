@@ -341,6 +341,7 @@ coverAlt: "一只小船停在平整静止的水面上，水线笔直；船体一
 </div>
 <p class="inst4-route__intro">19 篇制度研究文章的完整档案按制度机制分类陈列，统一维护在制度设计入口，本页不再重复列出。</p>
 <p class="inst4l-link"><a href="/institution-design/">进入制度研究档案（19 篇） <span aria-hidden="true">→</span></a></p>
+<p class="inst4l-link"><a href="/institutional-architecture">查看制度架构：从过渡到退出的整体地图 <span aria-hidden="true">→</span></a></p>
 <p class="inst4-route__actor-line">制度设计回答的是政治变化之后国家如何运行；路线研究回答的是中国怎样走到那一步。当前优先保证后者。</p>
   </section>
 

@@ -23,6 +23,7 @@ coverAlt: "在一个完全完好、闭合的沉重框架内，多根素面受拉
 
 <section class="institution-map" aria-labelledby="institution-map-title">
   <div class="institution-section-heading"><p class="resource-label">从输入到纠错</p><h2 id="institution-map-title">制度运行地图</h2></div>
+  <p class="inst4l-link"><a href="/institutional-architecture">本页是新制度稳定运行时的机制地图；从旧制度到新制度、直到临时权力退出的整体架构，见制度架构 <span aria-hidden="true">→</span></a></p>
   <ol><li>社会问题与公共需求</li>
 <li>前端机构与秘书处整理</li>
 <li>委员会判断、监督与纠偏</li>
