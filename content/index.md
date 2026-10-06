@@ -28,7 +28,7 @@ coverAlt: "一根连续不断的长横梁横贯画面，上面在四个位置承
     <div class="v6-section__head">
       <p class="v6-eyebrow"><span class="v6-eyebrow__num">03</span>RESEARCH AREAS<span aria-hidden="true"> · </span>核心研究领域</p>
       <h2 class="v6-section__title">我们长期研究的四个方向</h2>
-      <p class="v6-section__lead">研究提供判断基础，组织承接政治责任。四个方向共同回答同一个问题：政治变化如何被提前准备。</p>
+      <p class="v6-section__lead">四个方向共同回答同一个问题：政治变化如何被提前准备。</p>
     </div>
     <figure class="v6-primary-visual">
       <img src="/static/assets/v6/editorial/editorial-research-areas.webp" alt="一根连续不断的长横梁横贯画面，上面在四个位置承载四块形状各不相同的重物，彼此之间留出宽阔均匀的空隙，两端各垫在一个简单的支座上。" width="1600" height="842" loading="lazy" decoding="async" />
@@ -64,7 +64,7 @@ coverAlt: "一根连续不断的长横梁横贯画面，上面在四个位置承
       </li>
     </ol>
     <div class="v6-areas__routes">
-      <p class="v6-areas__routes-label">RESEARCH PROGRAM<span aria-hidden="true"> · </span>研究栏目</p>
+      <p class="v6-areas__routes-label">研究栏目</p>
       <a class="v6-areas__route" href="/china">
         <span class="v6-areas__route-num" aria-hidden="true">01</span>
         <span class="v6-areas__route-cell">
@@ -98,7 +98,7 @@ coverAlt: "一根连续不断的长横梁横贯画面，上面在四个位置承
 </section>
 
 <!-- SECTION 04 / WHY NOW -->
-<section class="v6-section" id="why-now">
+<section class="v6-section v6-section--reading" id="why-now">
   <div class="v6__container">
     <div class="v6-section__head">
       <p class="v6-eyebrow"><span class="v6-eyebrow__num">04</span>WHY NOW<span aria-hidden="true"> · </span>为什么是现在</p>
@@ -121,7 +121,7 @@ coverAlt: "一根连续不断的长横梁横贯画面，上面在四个位置承
 </section>
 
 <!-- SECTION 05 / THE TRANSITION PATH -->
-<section class="v6-section" id="transition">
+<section class="v6-section v6-section--path" id="transition">
   <div class="v6__container">
     <div class="v6-section__head">
       <p class="v6-eyebrow"><span class="v6-eyebrow__num">05</span>THE TRANSITION PATH<span aria-hidden="true"> · </span>和平转轨路线</p>
@@ -135,7 +135,7 @@ coverAlt: "一根连续不断的长横梁横贯画面，上面在四个位置承
       <li><span>04</span><p>保持国家连续运行</p></li>
       <li><span>05</span><p>逐步完成政治换轨</p></li>
     </ol>
-    <p class="v6-transition__note">公民秩序主义不等待旧体系自己完成改革，也不依靠社会失控推动政治变化。新的政治承接力量必须提前形成，在降低转轨阻力的同时保持国家继续运行。</p>
+    <p class="v6-transition__note">公民秩序主义不等待旧体系自己完成改革，也不依靠社会失控推动政治变化。</p>
     <p class="v6-section__more"><a class="v6-link" href="/civic-orderism/">查看完整和平转轨路线 <span class="v6-link__arrow" aria-hidden="true">→</span></a></p>
   </div>
 </section>
@@ -178,7 +178,7 @@ coverAlt: "一根连续不断的长横梁横贯画面，上面在四个位置承
 </section>
 
 <!-- SECTION 07 / WHO WE ARE -->
-<section class="v6-section" id="organization">
+<section class="v6-section v6-section--closing" id="organization">
   <div class="v6__container">
     <div class="v6-who__grid">
       <div class="v6-who__intro">
@@ -186,8 +186,7 @@ coverAlt: "一根连续不断的长横梁横贯画面，上面在四个位置承
         <h2 class="v6-who__title">一个正在长期建设中的公共事务机构</h2>
       </div>
       <div class="v6-who__body">
-        <p>公民秩序主义是一个研究中国政治转轨、并同时建设组织承接能力的公共事务项目。我们研究旧秩序为什么正在失效，也研究政治变化之后国家如何继续运行。</p>
-        <p>我们正在建立的，是一条可以被公开检验的政治路线，以及一个能够承担长期政治责任的形式组织。我们希望解决的问题是：当政治变化真正到来时，是否已经存在一支有能力、有信誉、可被追责的承接力量。</p>
+        <p>公民秩序主义正在建设一条可以被公开检验的政治路线，以及一个能够承担长期政治责任的正式组织。我们希望解决的问题是：当政治变化真正到来时，是否已经存在一支有能力、有信誉、可被追责的承接力量。</p>
       </div>
     </div>
     <div class="v6-who__statement">
