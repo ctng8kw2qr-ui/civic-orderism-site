@@ -10781,7 +10781,7 @@ body:has(.inst4l) {
   grid-template-columns: minmax(0, 1fr) clamp(340px, 25vw, 360px);
   gap: clamp(2rem, 5vw, 4rem);
   align-items: start;
-  margin-top: clamp(2rem, 4vw, 3.2rem);
+  margin-top: clamp(1.25rem, 1.8vw, 1.6rem);
 }
 
 .inst4l-hero__opening > p {
@@ -10796,6 +10796,10 @@ body:has(.inst4l) {
   display: block;
   width: 100%;
   height: auto;
+  /* 站点全局 img 规则带 margin: 1rem 0，会把照片在 figure 内下推 16px，
+     使肖像顶边无法与左侧开场声明的顶边对齐。此处仅在作用域内清零，
+     不修改任何全局 img 规则，也不影响其他页面的图片。 */
+  margin: 0;
   border: 1px solid var(--inst4-line);
 }
 
