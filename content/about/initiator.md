@@ -295,6 +295,7 @@ noindex: false
 </div>
 <nav class="inst4l-quicklinks" aria-label="相关页面">
         <a href="/about/">关于公民秩序主义 <span aria-hidden="true">→</span></a>
+        <a href="/about/commitments">查看公开承诺 <span aria-hidden="true">→</span></a>
         <a href="/civic-orderism/">阅读政治路线 <span aria-hidden="true">→</span></a>
         <a href="/preparation/">组织建设与筹备状态 <span aria-hidden="true">→</span></a>
 </nav>
