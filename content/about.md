@@ -63,6 +63,16 @@ noindex: false
 
 <section class="inst4l-section">
   <div class="inst4l-section__head">
+<p class="inst4-eyebrow">PUBLIC COMMITMENTS</p>
+<h2 class="inst4l-section__title">公开接受什么约束</h2>
+    
+  </div>
+  <p>公民秩序主义公开接受一组政治与制度边界，并为其建立稳定编号、版本号与修订记录，以便未来被公开检查。</p>
+<p class="inst4l-link"><a href="/about/commitments">查看公开承诺 <span aria-hidden="true">→</span></a></p>
+</section>
+
+<section class="inst4l-section">
+  <div class="inst4l-section__head">
 <p class="inst4-eyebrow">路线</p>
 <h2 class="inst4l-section__title">政治路线</h2>
     
@@ -130,6 +140,7 @@ noindex: false
 </div>
 <nav class="inst4l-quicklinks" aria-label="快速入口">
         <a href="/about/initiator">发起人 <span aria-hidden="true">→</span></a>
+        <a href="/about/commitments">公开承诺 <span aria-hidden="true">→</span></a>
         <a href="/start-here/">5分钟了解 <span aria-hidden="true">→</span></a>
         <a href="/articles/">阅读地图 <span aria-hidden="true">→</span></a>
         <a href="/preparation/">董事会筹备 <span aria-hidden="true">→</span></a>
