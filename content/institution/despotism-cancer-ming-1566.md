@@ -15,6 +15,8 @@ tags:
   - 历史镜像
 description: 《大明王朝1566》中，有一句被无数观众记住的台词。
 status: published
+cover: /static/assets/v6/editorial/editorial-despotism-cancer-ming-1566.webp
+coverAlt: "浅色互接构件之间嵌有多处深色紧结，外围调整环也与这些接合位置相连。"
 ---
 
 # 专制之癌：从《大明王朝1566》到结构性腐败的宿命

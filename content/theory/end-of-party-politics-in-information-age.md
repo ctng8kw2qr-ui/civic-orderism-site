@@ -8,6 +8,8 @@ tags:
   - 政党政治
 summary: 本文分析政党政治在低信息、低流动、低技术时代的历史合理性，并指出信息化时代已经部分替代政党的政治基础设施功能，而政党的组织约束功能也可以由公共制度承接。因此，政党可以继续存在，但不应继续垄断政治入口。
 status: published
+cover: /static/assets/v6/editorial/editorial-end-of-party-politics-in-information-age.webp
+coverAlt: "多种不同实体位于开放承接面上的独立位置，旧大套筒仍在后方，一条蓝灰连续带跨过多个承接位置。"
 ---
 
 # 政党的历史终结：信息化时代为什么不再需要政党垄断政治入口

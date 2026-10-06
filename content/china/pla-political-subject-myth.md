@@ -13,6 +13,8 @@ tags:
   - 组织诊断
 description: 外界谈解放军，最大的错觉来自一个字：
 status: published
+cover: /static/assets/v6/editorial/editorial-pla-political-subject-myth.webp
+coverAlt: "浅色长构件托着一组完整荷载，两端关键蓝灰带材接向主体之外的两个独立锚座。"
 ---
 # 外界对解放军的迷思：把“军”当成政治主体，是第一层误判
 

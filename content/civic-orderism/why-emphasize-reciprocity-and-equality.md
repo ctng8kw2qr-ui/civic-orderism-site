@@ -13,6 +13,8 @@ coreJudgments:
   - 帮助、扶助、救济和照护可以存在，但必须从正式权利出发，而不是依赖高位者施恩。
   - 对等和平等不取消角色分工和弱势保障，而是拒绝把任何人降格为等待怜悯的对象。
 status: published
+cover: /static/assets/v6/editorial/editorial-why-emphasize-reciprocity-and-equality.webp
+coverAlt: "两只同等高度的浅色托碗由蓝灰带材交叉相连，中央蓝灰接触座上托着一块较小石块。"
 ---
 
 # 为什么公民秩序主义强调的是对等、平等，而非照顾、怜悯

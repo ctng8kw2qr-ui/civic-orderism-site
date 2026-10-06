@@ -16,6 +16,8 @@ coreJudgments:
   - 社会组织并非天然高尚，但比个人更可能持续承接问题并把现实整理成制度语言。
   - 个人仍可通过组织化过程进入议案体系，议员则负责认领、推进和兑现，而不是垄断议案来源。
 status: published
+cover: /static/assets/v6/editorial/editorial-why-proposals-from-social-organizations.webp
+coverAlt: "不同大小和形状的石块聚在开放蓝灰承托面内，下面另有一块浅色完整托件。"
 ---
 
 # 为什么议案应主要来自社会组织，而不是某个议员、某个人

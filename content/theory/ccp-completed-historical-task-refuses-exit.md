@@ -10,6 +10,8 @@ slug: theory/ccp-completed-historical-task-refuses-exit
 summary: 本文从文明发展史角度重新定位中共，认为它不是中国历史的偶然灾难，而是中国迟到工业化过程中形成的高压组织工具。它曾经完成把农业中国压入工业时代的历史任务，但在信息化时代拒绝退场，因此从历史工具变成文明阻碍。
 status: published
 folderListed: false
+cover: /static/assets/v6/editorial/editorial-ccp-completed-historical-task-refuses-exit.webp
+coverAlt: "浅色完整外壳内排列着已经成形的规则方块，右侧蓝灰异形片材在同一开口处拥挤。"
 ---
 
 # 中共完成了历史任务，但拒绝被历史淘汰

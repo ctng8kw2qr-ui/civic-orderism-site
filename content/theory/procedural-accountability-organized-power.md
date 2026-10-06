@@ -10,6 +10,8 @@ description: 加拿大式代议政治的深层困境
 status: published
 aliases:
   - articles/procedural-accountability-organized-power
+cover: /static/assets/v6/editorial/editorial-procedural-accountability-organized-power.webp
+coverAlt: "深色连续环带由许多接触垫支撑，一块浅色修正件只在很窄的位置接触环带。"
 ---
 # 为什么程序性问责，常常敌不过组织化权力
 

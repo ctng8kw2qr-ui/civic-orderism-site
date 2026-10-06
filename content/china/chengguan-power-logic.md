@@ -41,6 +41,8 @@ relatedArticles:
   - china/xi-solved-organization-not-reality
 slug: china/chengguan-power-logic
 status: published
+cover: /static/assets/v6/editorial/editorial-chengguan-power-logic.webp
+coverAlt: "深色连续主体内部保留固定连接，外侧多个浅色曲形接触垫处在可调接触面上。"
 ---
 
 # 城管背后的权力逻辑：中共如何制度化统治，又如何灵活化治理

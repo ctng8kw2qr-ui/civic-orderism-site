@@ -30,6 +30,8 @@ relatedArticles:
   - civic-orderism/possibility-of-peaceful-political-transition-in-china
   - civic-orderism/why-civic-orderism-is-easier-to-succeed
   - civic-orderism/what-civic-orderism-solves-if-you-read-only-one
+cover: /static/assets/v6/editorial/editorial-nonprofit-board-preparation.webp
+coverAlt: "低矮浅色基础上部分构件已经就位，另一些完整构件放在旁侧，连接带尚未覆盖全部结构。"
 ---
 
 # 公民秩序主义北美非营利法人及董事会筹备宣言

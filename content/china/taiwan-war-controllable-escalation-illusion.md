@@ -14,6 +14,8 @@ slug: china/taiwan-war-controllable-escalation-illusion
 summary: 本文分析台海战争真正的危险并不一定来自一次性发动全面战争的决策，而更可能来自一连串被认为可控的渐进升级。文章从台海困境的结构性本质、威权体制的信息过滤机制、准封锁、外岛行动、经济制裁、精英问责以及晚年统治者心理等角度，解释“可控升级的幻觉”如何把决策者推向战争临界点。
 description: 本文分析台海战争真正的危险并不一定来自一次性发动全面战争的决策，而更可能来自一连串被认为可控的渐进升级。
 status: published
+cover: /static/assets/v6/editorial/editorial-taiwan-controllable-escalation.webp
+coverAlt: "连续蓝灰带材经过逐渐收紧的弯折，末端被前面的折返夹窄，起点旁有一块小型调节构件。"
 ---
 
 # 台海战争的真正危险：可控升级的幻觉

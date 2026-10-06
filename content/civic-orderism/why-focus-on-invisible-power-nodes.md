@@ -14,6 +14,8 @@ coreJudgments:
   - 判断权力不能只看国家或私人名义，而要看谁能持续塑造普通人的机会、成本和生活流程。
   - 国家既不能吞并这些社会节点，也不能将其浪漫化，而应建立看得见、接得住、能纠偏的制度关系。
 status: published
+cover: /static/assets/v6/editorial/editorial-why-focus-on-invisible-power-nodes.webp
+coverAlt: "半透明弯曲表面由多处可调浅色接触垫承托，下方是开放的弧形底座。"
 ---
 
 # 公民秩序主义为什么更加注意现代社会的隐形权力节点（社会组织、平台企业）

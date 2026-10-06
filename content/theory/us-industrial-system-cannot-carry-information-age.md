@@ -10,6 +10,8 @@ tags:
   - 国家治理
 description: 本文从制度适配角度分析美国危机：问题不只是民主或专制之争，而是工业时代形成的政治机器，正在难以承载信息化时代的社会结构、传播结构与冲突结构。
 status: published
+cover: /static/assets/v6/editorial/editorial-us-industrial-system-cannot-carry.webp
+coverAlt: "厚重深色承接面上方是一块连续起伏的蓝灰片材，多个浅色接触垫位于两层之间。"
 ---
 
 # 美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代

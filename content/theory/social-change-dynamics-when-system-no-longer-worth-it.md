@@ -9,6 +9,8 @@ tags:
 summary: 本文从利益链条、外部环境、精英分裂、信息透明、集体行动困境与情感链接断裂等角度，分析社会变革不是浪漫的觉醒，而是当维持旧体系的代价超过推倒旧体系的代价后，社会进入倒计时的动力学过程。
 status: published
 slug: theory/social-change-dynamics-when-system-no-longer-worth-it
+cover: /static/assets/v6/editorial/editorial-social-change-dynamics-system-no-longer.webp
+coverAlt: "多块完整构件靠绷紧带材与重件维持拱形，旁边低位托座和松弛材料尚未投入支撑。"
 ---
 
 # 社会变革动力学：当所有人都觉得“不值了”

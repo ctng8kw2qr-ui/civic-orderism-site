@@ -16,6 +16,8 @@ coreJudgments:
   - 即使没有直接贿赂，筹资竞赛也会抬高高资源节点、扭曲议题结构并异化社会组织。
   - 选举应依靠平准化制度支持和可验证的公共信誉，而不是以私人融资能力决定政治可见度。
 status: published
+cover: /static/assets/v6/editorial/editorial-why-elections-reject-political-donations.webp
+coverAlt: "不同浅色构件放在同等宽度的承托座上，旁侧深色重件的辅助牵引带没有接入它们。"
 ---
 
 # 为什么公民秩序主义下的选举会天然排斥政治献金

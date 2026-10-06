@@ -9,6 +9,8 @@ description: 当权力从“城堡”变成“网”，普通人为何越来越�
 status: published
 aliases:
   - articles/modern-social-syndrome
+cover: /static/assets/v6/editorial/editorial-modern-social-syndrome.webp
+coverAlt: "多片独立半透明曲面围绕一块浅色不规则实体相互重叠，蓝灰带在相邻曲面之间受限。"
 ---
 # 现代社会候群症
 

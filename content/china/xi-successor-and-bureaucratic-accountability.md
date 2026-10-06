@@ -24,6 +24,8 @@ keywords:
   - 和平政治改革
 slug: china/xi-successor-and-bureaucratic-accountability
 status: published
+cover: /static/assets/v6/editorial/editorial-xi-successor-accountability.webp
+coverAlt: "完整浅色弯曲上部由多个不同倾角的独立构件承托，下方部分接触垫与桌面留有间隙。"
 ---
 
 # 习近平到底有没有接班人？

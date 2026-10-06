@@ -9,6 +9,8 @@ tags:
   - 组织摩擦
 description: 本文从工业型治理的历史合理性出发，分析它在信息化时代为什么会压制反馈、尝试与协作信任，并把越来越高的系统成本转移给普通人。
 status: published
+cover: /static/assets/v6/editorial/editorial-costly-industrial-governance-information.webp
+coverAlt: "浅色对齐框内不同构件之间填入蓝灰垫层，部分位置垫层更厚，旁侧另有未使用的开放托面。"
 ---
 
 # 一套正在变贵的管理方式

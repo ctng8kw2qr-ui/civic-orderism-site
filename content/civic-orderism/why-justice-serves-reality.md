@@ -16,6 +16,8 @@ coreJudgments:
   - 司法独立不是脱离国家运行，而是在国家运行中守住个案裁判和程序边界。
   - 司法应专业、严谨而可理解，既保护普通人与弱者，也不能成为脱离现实的概念高塔。
 status: published
+cover: /static/assets/v6/editorial/editorial-why-justice-serves-reality.webp
+coverAlt: "浅色连续弯曲面沿着多块不规则石块延伸，两端由独立支架固定，右侧有一块较大深色石块。"
 ---
 
 # 为什么公民秩序主义强调司法是为现实服务的

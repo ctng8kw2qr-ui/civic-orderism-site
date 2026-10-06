@@ -9,6 +9,8 @@ tags:
 slug: china/industrial-system-failure-in-information-age
 summary: 本文通过清朝洋务运动与中共“数字中国”的结构类比，分析一种为工业时代设计的党国治理机器，为什么无法真正适配信息化时代的价值创造、组织协作、社会结构和反馈机制。
 status: published
+cover: /static/assets/v6/editorial/editorial-industrial-failure-information-age.webp
+coverAlt: "完整浅色主体带有外接构件，内部保留整齐窄槽，蓝灰异形片无法自然嵌入其中。"
 ---
 
 # 中共基于工业化的社会制度，在信息化时代的必然失效

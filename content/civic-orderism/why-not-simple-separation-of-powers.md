@@ -16,6 +16,8 @@ coreJudgments:
   - 前台权力边界之外，国家还需要问题入口、秘书处流转、责任留痕、层级上移和系统纠偏。
   - 多轴分工必须保留相互约束，也需要由民选政治官员承担最终统合与公开责任。
 status: published
+cover: /static/assets/v6/editorial/editorial-why-not-simple-separation-of-powers.webp
+coverAlt: "数条独立起伏承托件平行排列，透明接触块将它们与同一蓝灰弯曲面连接。"
 ---
 
 # 为什么公民秩序主义不采取简单的三权分立

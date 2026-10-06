@@ -10,6 +10,8 @@ description: 本文基于战争四驱动框架，从意识形态动员、内部�
 status: published
 aliases:
   - articles/taiwan-war-risk
+cover: /static/assets/v6/editorial/editorial-taiwan-war-risk.webp
+coverAlt: "一只浅色托盘接住单块深色重石与多块被连在一起的小石块，蓝灰接触杆从旁侧接近荷载。"
 ---
 # 台海是否会走向战争
 
