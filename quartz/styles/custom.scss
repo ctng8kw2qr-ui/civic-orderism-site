@@ -10769,7 +10769,7 @@ body:has(.inst4l) {
    阴影、圆角或卡片体系。 */
 .inst4l-hero--portrait {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(200px, 26%, 330px);
+  grid-template-columns: minmax(0, 1fr) clamp(340px, 26vw, 380px);
   gap: clamp(2rem, 5vw, 4rem);
   align-items: start;
 }
@@ -10793,6 +10793,6 @@ body:has(.inst4l) {
   }
 
   .inst4l-portrait {
-    max-width: 15rem;
+    max-width: min(82vw, 330px);
   }
 }
