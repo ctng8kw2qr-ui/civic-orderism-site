@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Homepage institutional identity card. V6 tokens, not an article cover.
+     Safe area: x=128..1472, y=104..744. No text is near the crop boundary.
+     Mark paths are copied exactly from ../brand/icon-mark.svg.
+     Export: node scripts/generate-home-social-card.mjs (requires local CJK sans fonts).
+     Do not overwrite the editorial cover or global fallback. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="840" viewBox="0 0 1600 840">
+  <title>公民秩序主义 · CIVIC ORDERISM</title>
+  <desc>中国和平政治转轨与制度承接 · civicorderism.com</desc>
+  <rect width="1600" height="840" fill="#faf8f5"/>
+  <g transform="translate(128 104) scale(0.0680851)" fill="#435B63">
+    <path d="M0 0 L0 776 L280.5 938 L280.5 534 L536.5 398 L536.5 291 Z"/>
+    <path d="M327.5 0 L327.5 91 L657.5 303 L657.5 554 L939 409 L939 0 Z"/>
+    <path d="M939 473 L545 669 L314 543 L314 930 L939 930 Z"/>
+  </g>
+  <g font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, Helvetica Neue, Arial, sans-serif">
+    <text x="128" y="316" fill="#1b1c1f" font-size="88" font-weight="600" letter-spacing="2">公民秩序主义</text>
+    <text x="132" y="384" fill="#63676f" font-size="30" font-weight="500" letter-spacing="5">CIVIC ORDERISM</text>
+    <line x1="128" y1="458" x2="192" y2="458" stroke="#7a2430" stroke-width="3"/>
+    <text x="128" y="542" fill="#45484f" font-size="42" font-weight="500" letter-spacing="1">中国和平政治转轨与制度承接</text>
+    <line x1="128" y1="658" x2="1472" y2="658" stroke="#e0dcd5" stroke-width="2"/>
+    <text x="128" y="720" fill="#63676f" font-size="25" font-weight="400" letter-spacing="1.5">civicorderism.com</text>
+  </g>
+</svg>

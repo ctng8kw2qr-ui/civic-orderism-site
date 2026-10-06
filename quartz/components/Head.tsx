@@ -58,17 +58,40 @@ export default (() => {
     //   2. otherwise            -> the single branded fallback
     // Reuses cfg.baseUrl (quartz.config.ts configuration.baseUrl), so the
     // origin is configured in one place and never hardcoded per component.
-    const cover = resolveCover(fileData);
+    // Homepage identity card is independent of its in-page editorial cover.
+    // Other pages keep the existing cover/fallback contract unchanged.
+    const homepageSocialImage =
+      fileData.slug === "index" ? fileData.frontmatter?.socialImage : undefined;
+    const cover = homepageSocialImage
+      ? resolveCover({
+          ...fileData,
+          frontmatter: {
+            ...fileData.frontmatter,
+            title: fileData.frontmatter?.title ?? "",
+            cover: homepageSocialImage,
+            coverAlt:
+              "公民秩序主义 · CIVIC ORDERISM · 中国和平政治转轨与制度承接",
+          },
+        })
+      : resolveCover(fileData);
     const coverOgUrl = absoluteCoverUrl(cfg, cover);
     const ogImagePath =
       coverOgUrl ??
       `https://${(cfg.baseUrl ?? "").replace(/\/+$/, "")}${FALLBACK_OG_IMAGE}`;
     const ogImageAlt = coverOgUrl && cover.alt ? cover.alt : description;
-    // Width/height are only known for the branded fallback (measured 1200x630).
+    // Dimensions are known for the homepage card and branded fallback.
     // Cover dimensions are editor-supplied and not resolvable at build time, so
     // we omit them there rather than assert values we cannot verify.
-    const ogImageWidth = coverOgUrl ? undefined : FALLBACK_OG_WIDTH;
-    const ogImageHeight = coverOgUrl ? undefined : FALLBACK_OG_HEIGHT;
+    const ogImageWidth = homepageSocialImage
+      ? 1600
+      : coverOgUrl
+        ? undefined
+        : FALLBACK_OG_WIDTH;
+    const ogImageHeight = homepageSocialImage
+      ? 840
+      : coverOgUrl
+        ? undefined
+        : FALLBACK_OG_HEIGHT;
     const slug = fileData.slug!;
     const shouldNoIndex =
       slug.startsWith("tags/") ||
