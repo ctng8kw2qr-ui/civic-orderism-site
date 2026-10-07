@@ -121,11 +121,33 @@ socialImage: /static/assets/v6/social/civic-orderism-home-social-v1.webp
   </div>
 </section>
 
-<!-- SECTION 05 / THE TRANSITION PATH -->
+<!-- SECTION 05 / FOUNDER -->
+<section class="v6-section v6-founder" id="founder">
+  <div class="v6__container">
+    <div class="v6-founder__grid">
+      <div class="v6-founder__main">
+        <p class="v6-eyebrow"><span class="v6-eyebrow__num">05</span>FOUNDER<span aria-hidden="true"> · </span>发起人</p>
+        <h2 class="v6-founder__title v6-section__title">谁在提出这条路线</h2>
+        <p class="v6-founder__name">赵鹏博</p>
+        <p class="v6-founder__role">公民秩序主义发起人</p>
+        <p class="v6-founder__statement">我提出这条路线，也公开为它的判断、承诺与后果承担责任。</p>
+        <div class="v6-founder__body">
+          <p>公民秩序主义不是匿名账号背后的一组政治观点，而是一条由具体的人提出、解释并承担责任的政治路线。赵鹏博是公民秩序主义的发起人。面对中国未来可能出现的政治变化，他主张反对革命、清算与社会失序，以沟通、信任和协商推动政治制度转轨，同时尽可能保持国家、社会与行政体系的连续运行。</p>
+        </div>
+        <p class="v6-founder__links"><a class="v6-link" href="/about/initiator">了解发起人 <span class="v6-link__arrow" aria-hidden="true">→</span></a></p>
+      </div>
+      <figure class="v6-founder__portrait">
+        <img src="/static/assets/v6/people/zhao-pengbo-initiator.webp" alt="赵鹏博，公民秩序主义发起人" width="1024" height="1536" loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 06 / THE TRANSITION PATH -->
 <section class="v6-section v6-section--path" id="transition">
   <div class="v6__container">
     <div class="v6-section__head">
-      <p class="v6-eyebrow"><span class="v6-eyebrow__num">05</span>THE TRANSITION PATH<span aria-hidden="true"> · </span>和平转轨路线</p>
+      <p class="v6-eyebrow"><span class="v6-eyebrow__num">06</span>THE TRANSITION PATH<span aria-hidden="true"> · </span>和平转轨路线</p>
       <h2 class="v6-section__title">政治转轨怎么展开？</h2>
       <p class="v6-transition__scope">以下五个步骤是路线主线的摘要；完整方案分为六个阶段，见政治路线。</p>
     </div>
@@ -141,12 +163,12 @@ socialImage: /static/assets/v6/social/civic-orderism-home-social-v1.webp
   </div>
 </section>
 
-<!-- SECTION 06 / ORGANIZATION BUILDING -->
+<!-- SECTION 07 / ORGANIZATION BUILDING -->
 <section class="v6-section v6-org" id="current-work">
   <div class="v6__container">
     <div class="v6-org__grid">
       <div class="v6-org__intro">
-        <p class="v6-eyebrow"><span class="v6-eyebrow__num">06</span>CURRENT WORK<span aria-hidden="true"> · </span>组织建设</p>
+        <p class="v6-eyebrow"><span class="v6-eyebrow__num">07</span>CURRENT WORK<span aria-hidden="true"> · </span>组织建设</p>
         <h2 class="v6-org__title">当前组织建设</h2>
         <p class="v6-org__lead">公民秩序主义不只是一个发表观点的地方。政治责任需要由正式组织承担，因此组织建设是与研究同时进行的长期工作。</p>
       </div>
@@ -178,12 +200,12 @@ socialImage: /static/assets/v6/social/civic-orderism-home-social-v1.webp
   </div>
 </section>
 
-<!-- SECTION 07 / WHO WE ARE -->
+<!-- SECTION 08 / WHO WE ARE -->
 <section class="v6-section v6-section--closing" id="organization">
   <div class="v6__container">
     <div class="v6-who__grid">
       <div class="v6-who__intro">
-        <p class="v6-eyebrow"><span class="v6-eyebrow__num">07</span>WHO WE ARE<span aria-hidden="true"> · </span>我们是谁</p>
+        <p class="v6-eyebrow"><span class="v6-eyebrow__num">08</span>WHO WE ARE<span aria-hidden="true"> · </span>我们是谁</p>
         <h2 class="v6-who__title">一个正在长期建设中的公共事务机构</h2>
       </div>
       <div class="v6-who__body">
