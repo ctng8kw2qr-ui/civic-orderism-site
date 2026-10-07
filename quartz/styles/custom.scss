@@ -10784,8 +10784,17 @@ body:has(.inst4l) {
   margin-top: clamp(1.25rem, 1.8vw, 1.6rem);
 }
 
+/* 首屏自述的正文排版。此前该容器只设了 max-width：既没有段落间距，
+   也没有 line-height，因此 10 个单句 <p> 会紧贴成一片，读起来像手动
+   换行的连续文本。这里补齐真正的段落排版，沿用站点既有 token 与
+   .v6-who__body 的同一套做法（正文行高 1.8、段间距 --v6-space-md）。 */
 .inst4l-hero__opening > p {
-  max-width: var(--inst4-measure, 68ch);
+  max-width: 62ch; /* ≈663px：落在 620–700px 的可读行长区间 */
+  line-height: var(--v6-leading-body);
+}
+
+.inst4l-hero__opening > p + p {
+  margin-top: var(--v6-space-md);
 }
 
 .inst4l-portrait {
