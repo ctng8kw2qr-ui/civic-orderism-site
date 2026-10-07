@@ -16,9 +16,19 @@ import path from "node:path";
  * Markdown parsing: the source looks like ordinary markup and every other gate
  * passed while production was visibly broken.
  *
- * Deliberately narrow: it fails only when a V6 structural class appears inside a
- * `<pre>`/`<code>` block. Legitimate code samples in articles do not contain
- * these class names.
+ * A second, related leak has the same cause and the same symptom. Any HTML
+ * comment left indented inside a page — a development note explaining why a
+ * block was written a certain way — is also parsed as an indented code block
+ * when a blank line precedes it, and ships as visible escaped text. `/about`
+ * had exactly that: a six-line note about the research section rendered above
+ * the section itself, escaped inside `<pre><code>`, in production.
+ *
+ * Both defects are "page source became reader-visible text", so both are
+ * checked here rather than in a separate script.
+ *
+ * Deliberately narrow: it fails only when a V6 structural class or an escaped
+ * HTML comment appears inside a `<pre>`/`<code>` block. Legitimate code samples
+ * in articles contain neither.
  */
 
 const root = path.resolve(".");
@@ -73,6 +83,13 @@ if (!fs.existsSync(publicDir)) {
           break;
         }
       }
+
+      // 转义后的 `<!--`：开发注释被当成缩进代码块渲染成读者可见文字。
+      if (block.includes("&lt;!--")) {
+        errors.push(
+          `${path.relative(root, filePath)} 把 HTML 注释渲染成了可见代码块（开发备注泄漏到前端）`,
+        );
+      }
     }
   }
 
@@ -81,7 +98,7 @@ if (!fs.existsSync(publicDir)) {
     process.exitCode = 1;
   } else {
     console.log(
-      `Raw markup check passed: no V6 structural markup inside <pre>/<code> across ${htmlFiles.length} HTML pages.`,
+      `Raw markup check passed: no V6 structural markup and no leaked HTML comments inside <pre>/<code> across ${htmlFiles.length} HTML pages.`,
     );
   }
 }

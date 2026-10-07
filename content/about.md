@@ -81,12 +81,6 @@ noindex: false
 <p class="inst4l-link"><a href="/civic-orderism/">阅读政治路线 <span aria-hidden="true">→</span></a></p>
 </section>
 
-      <!-- About answers "who are we", not "what does the research say". The
-           three direction cards used to be reproduced here word for word from
-           /theory/ (identical hrefs, phases, titles and descriptions), so a
-           reader arriving from Research learned nothing new. About now keeps
-           its own stance as a research programme and links down; the framework
-           itself and the nine-column index live on the research page. -->
 <section class="inst4l-section">
   <div class="inst4l-section__head">
 <p class="inst4-eyebrow">研究体系</p>
