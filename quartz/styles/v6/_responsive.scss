@@ -70,9 +70,17 @@
   }
 
   .v6-org__grid,
+  .v6-founder__grid,
   .v6-who__grid {
     grid-template-columns: minmax(0, 1fr);
     gap: var(--v6-space-lg);
+  }
+
+  /* 发起人照片：单列后限制宽度，保留人物存在感但不占据整个视口，
+     也不把正文推到远处。doubling class 用于压过 `.v6 img { max-width: 100% }`，
+     理由同 1100px 断点处的说明。 */
+  .v6 .v6-founder__portrait img {
+    max-width: min(82vw, 300px);
   }
 
   .v6-org__lead,
