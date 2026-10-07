@@ -788,31 +788,34 @@
   background: var(--v6-surface-sunken);
 }
 
-/* ══ 05 / FOUNDER — 发起人 ═══════════════════════════════════════════
+/* ══ 05 / INITIATOR — 发起人 ═════════════════════════════════════════
    路线仍然是主角，发起人是路线的责任主体。本模块只回答一个问题：
    这条路线由谁提出、由谁公开承担责任，以及去哪里了解这个人。
 
-   因此它是首页的一级信息模块，而不是身份海报：姓名有明确层级，但
-   明显低于 Hero 的机构主张；照片沿用发起人详情页已批准的正式肖像，
-   克制、不占满列宽、不做英雄式构图。
+   因此它是首页的一级信息模块，而不是身份海报：姓名与其余 section 标题
+   同级（明显低于 Hero 的机构主张）；照片沿用发起人详情页已批准的正式
+   肖像，克制、不占满列宽、不做英雄式构图。
 
-   全部规则复用既有 V6 变量、间距节奏、分隔线与链接语言；未引入新
-   字体、新颜色、渐变、阴影或大圆角卡片。 */
+   全部规则复用既有 V6 变量、间距节奏、分隔线与链接语言；未引入新字体、
+   新颜色、渐变、阴影或大圆角卡片。 */
 .v6-founder__grid {
   display: grid;
   grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
-  gap: clamp(2rem, 5vw, 4.5rem);
+  column-gap: clamp(2rem, 5vw, 4.5rem);
+  row-gap: var(--v6-space-md);
   align-items: start;
 }
 
-/* 姓名：清晰的身份层级，但保持在 Hero 主标题之下。 */
-.v6-founder__name {
-  max-width: 14ch;
-  margin-top: var(--v6-space-md);
-  font-size: clamp(1.6rem, 3.1vw, 2.15rem);
-  font-weight: var(--v6-weight-heading);
-  letter-spacing: var(--v6-tracking-heading);
-  line-height: 1.2;
+/* 左列把身份与责任叙述收在一个 stack 里。
+   不能让照片跨两行来实现「人物与整段叙述并置」：跨行项目会把两行
+   一起撑高，实测在身份块与正文之间留下约 187px 的空白。 */
+.v6-founder__stack {
+  grid-column: 1;
+}
+
+.v6-founder__portrait {
+  grid-column: 2;
+  margin: 0;
 }
 
 .v6-founder__role {
@@ -823,30 +826,23 @@
   line-height: 1.7;
 }
 
-/* 核心声明：发起人公开承担责任的句子，是本模块的重心。 */
-.v6-founder__statement {
-  max-width: 34ch;
-  margin-top: var(--v6-space-lg);
-  padding-top: var(--v6-space-md);
-  border-top: 1px solid var(--v6-border);
-  font-size: var(--v6-text-h3);
-  font-weight: var(--v6-weight-strong);
-  line-height: 1.55;
+/* 身份块与责任叙述之间留出层级间距，避免身份行与正文首行读成一段。 */
+.v6-founder__body {
+  margin-top: var(--v6-space-md);
 }
 
 .v6-founder__body > p {
   max-width: var(--v6-measure);
-  margin-top: var(--v6-space-md);
   color: var(--v6-text-secondary);
   line-height: var(--v6-leading-body);
 }
 
-.v6-founder__links {
-  margin-top: var(--v6-space-lg);
+.v6-founder__body > p + p {
+  margin-top: var(--v6-space-sm);
 }
 
-.v6-founder__portrait {
-  margin: 0;
+.v6-founder__links {
+  margin-top: var(--v6-space-lg);
 }
 
 /* Doubled class 是必需的，不是风格选择：通用的 `.v6 img { max-width: 100% }`

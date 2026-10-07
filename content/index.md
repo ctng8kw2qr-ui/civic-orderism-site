@@ -121,23 +121,24 @@ socialImage: /static/assets/v6/social/civic-orderism-home-social-v1.webp
   </div>
 </section>
 
-<!-- SECTION 05 / FOUNDER -->
+<!-- SECTION 05 / INITIATOR -->
 <section class="v6-section v6-founder" id="founder">
   <div class="v6__container">
     <div class="v6-founder__grid">
-      <div class="v6-founder__main">
-        <p class="v6-eyebrow"><span class="v6-eyebrow__num">05</span>FOUNDER<span aria-hidden="true"> · </span>发起人</p>
-        <h2 class="v6-founder__title v6-section__title">谁在提出这条路线</h2>
-        <p class="v6-founder__name">赵鹏博</p>
-        <p class="v6-founder__role">公民秩序主义发起人</p>
-        <p class="v6-founder__statement">我提出这条路线，也公开为它的判断、承诺与后果承担责任。</p>
-        <div class="v6-founder__body">
-          <p>公民秩序主义不是匿名账号背后的一组政治观点，而是一条由具体的人提出、解释并承担责任的政治路线。赵鹏博是公民秩序主义的发起人。面对中国未来可能出现的政治变化，他主张反对革命、清算与社会失序，以沟通、信任和协商推动政治制度转轨，同时尽可能保持国家、社会与行政体系的连续运行。</p>
+      <div class="v6-founder__stack">
+        <div class="v6-founder__identity">
+          <p class="v6-eyebrow"><span class="v6-eyebrow__num">05</span>INITIATOR<span aria-hidden="true"> · </span>发起人</p>
+          <h2 class="v6-founder__title v6-section__title">赵鹏博</h2>
+          <p class="v6-founder__role">公民秩序主义路线发起人</p>
         </div>
-        <p class="v6-founder__links"><a class="v6-link" href="/about/initiator">了解发起人 <span class="v6-link__arrow" aria-hidden="true">→</span></a></p>
+        <div class="v6-founder__body">
+          <p>公民秩序主义最初由我提出。</p>
+          <p>我决定公开站出来，为这条路线承担责任，也接受社会对它的检验。</p>
+          <p class="v6-founder__links"><a class="v6-link" href="/about/initiator">了解发起人 <span class="v6-link__arrow" aria-hidden="true">→</span></a></p>
+        </div>
       </div>
       <figure class="v6-founder__portrait">
-        <img src="/static/assets/v6/people/zhao-pengbo-initiator.webp" alt="赵鹏博，公民秩序主义发起人" width="1024" height="1536" loading="lazy" decoding="async" />
+        <img src="/static/assets/v6/people/zhao-pengbo-initiator.webp" alt="赵鹏博，公民秩序主义路线发起人" width="1024" height="1536" loading="lazy" decoding="async" />
       </figure>
     </div>
   </div>
