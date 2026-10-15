@@ -45,6 +45,12 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">一个难以言说的防线：从“液压维稳”到当代的马其诺防线的结构分析与研究笔记。</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：危机管理</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
+  <p class="knowledge-card__meta"><span>2026-10-15</span><span>15 分钟阅读</span></p>
+  <h3><a href="/china/bureaucratic-responsibility-cycle">官场“文革”：从增长政治到责任政治</a></h3>
+  <p class="knowledge-card__summary">当增长无法继续延期旧账，官僚体系开始面对责任结算。本文从地方债、房地产、纪检监察与官员避责机制出发，分析中国官场如何从“增量政治”进入“责任政治”。</p>
+  <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚系统休克</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-08-25</span><span>8 分钟阅读</span></p>
   <h3><a href="/china/chengguan-power-logic">城管背后的权力逻辑：中共如何制度化统治，又如何灵活化治理</a></h3>
@@ -104,12 +110,6 @@ publicationStatus: reviewing
   <h3><a href="/china/mao-death-release-xi-death-weightlessness">如果习近平去世会发生什么？</a></h3>
   <p class="knowledge-card__summary">本文比较毛泽东与习近平两种个人化权力的差异：毛泽东之死释放了压在中共组织上的最高压力源，而习近平若在没有完成稳定交接时突然去世，消失的可能是中共内部唯一仍然有效的秩序中心。</p>
   <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：官僚系统休克</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="xi-era" data-concepts="security-purge-recentralization-cycle political-control-governance-divergence security-recentralization party-state-stress bureaucratic-shock crisis-management">
-  <p class="knowledge-card__meta"><span>2026-07-10</span><span>23 分钟阅读</span></p>
-  <h3><a href="/china/ccp-2018-xi-era-local-growth-space">中共2018：习近平元年</a></h3>
-  <p class="knowledge-card__summary">2018年并不是最喧闹的年份，却可能是习近平时代真正制度化的年份。修宪、党和国家机构改革、国地税合并三条制度线路，分别改变权力的时间结构、组织结构与利益结构，共同推动中共从依靠地方弹性创造增长，转向依靠中央穿透维持控制。</p>
-  <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：安全化—清洗—再集中—再失灵模型</span></p>
 </article>
 </div>
 

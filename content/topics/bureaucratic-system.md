@@ -15,7 +15,7 @@ noindex: false
 <p class="inst4-eyebrow">RESEARCH TOPIC</p>
 <h1 class="inst4l-title">官僚系统</h1>
 <p class="inst4l-lead">研究整肃、问责、避责与多头治理如何改变官僚系统的行为。</p>
-<p class="inst4l-status">4 篇研究 · 更新至 2026-07-12</p>
+<p class="inst4l-status">5 篇研究 · 更新至 2026-10-15</p>
   </section>
 
   <section class="inst4l-section">

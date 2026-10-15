@@ -58,19 +58,21 @@ export default (() => {
     //   2. otherwise            -> the single branded fallback
     // Reuses cfg.baseUrl (quartz.config.ts configuration.baseUrl), so the
     // origin is configured in one place and never hardcoded per component.
-    // Homepage identity card is independent of its in-page editorial cover.
-    // Other pages keep the existing cover/fallback contract unchanged.
-    const homepageSocialImage =
-      fileData.slug === "index" ? fileData.frontmatter?.socialImage : undefined;
-    const cover = homepageSocialImage
+    // An explicit socialImage is a crop variant of the page's cover. Pages
+    // without one retain the shared cover/fallback contract.
+    const socialImage = fileData.frontmatter?.socialImage;
+    const homepageSocialImage = fileData.slug === "index" && socialImage;
+    const cover = socialImage
       ? resolveCover({
           ...fileData,
           frontmatter: {
             ...fileData.frontmatter,
             title: fileData.frontmatter?.title ?? "",
-            cover: homepageSocialImage,
+            cover: socialImage,
             coverAlt:
-              "公民秩序主义 · CIVIC ORDERISM · 中国和平政治转轨与制度承接",
+              fileData.slug === "index"
+                ? "公民秩序主义 · CIVIC ORDERISM · 中国和平政治转轨与制度承接"
+                : fileData.frontmatter?.coverAlt,
           },
         })
       : resolveCover(fileData);

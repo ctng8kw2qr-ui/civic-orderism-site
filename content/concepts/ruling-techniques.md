@@ -57,6 +57,12 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">这些年，中文舆论场上一个越来越明显的现象是：</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：官僚系统休克</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
+  <p class="knowledge-card__meta"><span>2026-10-15</span><span>15 分钟阅读</span></p>
+  <h3><a href="/china/bureaucratic-responsibility-cycle">官场“文革”：从增长政治到责任政治</a></h3>
+  <p class="knowledge-card__summary">当增长无法继续延期旧账，官僚体系开始面对责任结算。本文从地方债、房地产、纪检监察与官员避责机制出发，分析中国官场如何从“增量政治”进入“责任政治”。</p>
+  <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚系统休克</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="ccp-governance" data-concepts="ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-08-25</span><span>8 分钟阅读</span></p>
   <h3><a href="/china/chengguan-power-logic">城管背后的权力逻辑：中共如何制度化统治，又如何灵活化治理</a></h3>
@@ -104,12 +110,6 @@ publicationStatus: reviewing
   <h3><a href="/china/xi-successor-and-bureaucratic-accountability">习近平到底有没有接班人？</a></h3>
   <p class="knowledge-card__summary">习近平有没有接班人，表面上是中南海的人事问题，实质上关系整个中共官场如何计算未来。随着习近平年龄增长、中国进入经济与财政偿债阶段，官员真正担心的已不是谁会接班，而是谁会重新解释习近平时代、谁会承担这个时代留下的责任。毛泽东去世后，“四人帮”曾承担一个时代被切割和终结的政治责任。类似的责任转移逻辑，可能使今天庞大的中高级官僚集团成为未来最方便的责任承担者。正是这种共同的不安全感，正在为一种更稳定、更可预期的和平制度转轨创造现实基础。</p>
   <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：官僚系统休克</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="political-transition" data-concepts="political-route nonviolent-transition state-system-upgrade bureaucratic-shock ruling-techniques crisis-management">
-  <p class="knowledge-card__meta"><span>2026-07-19</span><span>14 分钟阅读</span></p>
-  <h3><a href="/civic-orderism/peaceful-state-transition">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</a></h3>
-  <p class="knowledge-card__summary">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不按政治身份实施普遍追责的转轨道路。</p>
-  <p class="knowledge-card__chips"><span>专题：中国政治转型</span><span>概念：政治路线</span></p>
 </article>
 </div>
 

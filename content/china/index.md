@@ -173,7 +173,12 @@ coverAlt: "一片裸露的台地地面向下收成一条阶梯状的通道，两
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
 </div>
-  <details class="china-analysis-more"><summary>查看这一阶段的全部研究（11）</summary><div class="inst4l-list">
+  <details class="china-analysis-more"><summary>查看这一阶段的全部研究（12）</summary><div class="inst4l-list">
+<a class="inst4l-row" href="/china/bureaucratic-responsibility-cycle">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">本阶段研究</span><span class="inst4l-row__title">官场“文革”：从增长政治到责任政治</span></span>
+  <span class="inst4l-row__desc">当增长无法继续延期旧账，官僚体系开始面对责任结算。本文从地方债、房地产、纪检监察与官员避责机制出发，分析中国官场如何从“增量政治”进入“责任政治”。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
 <a class="inst4l-row" href="/china/security-led-governance-model">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">本阶段研究</span><span class="inst4l-row__title">安全化、再集中与治理边界</span></span>
   <span class="inst4l-row__desc">当安全、统一和组织控制在中共治理排序中的权重持续上升，一个“安全化—清洗—再集中—再失灵”的循环正在形成。本文区分选择型与分配型问题，解释控制能力为何可能上升而治理效能反而下降。</span>
@@ -254,7 +259,7 @@ coverAlt: "一片裸露的台地地面向下收成一条阶梯状的通道，两
 </div>
 <div class="inst4l-topic-grid">
       <a class="inst4l-topic" href="/topics/ccp-governance"><strong>权力与党国结构</strong><span>党国关系、权力运行、中央地方、制度授权与国家能力的边界。</span><small>9 篇研究</small></a>
-<a class="inst4l-topic" href="/topics/bureaucratic-system"><strong>官僚系统与组织成员</strong><span>官员、组织成员、晋升、退休、组织信用与官僚行为。</span><small>12 篇研究</small></a>
+<a class="inst4l-topic" href="/topics/bureaucratic-system"><strong>官僚系统与组织成员</strong><span>官员、组织成员、晋升、退休、组织信用与官僚行为。</span><small>13 篇研究</small></a>
 <a class="inst4l-topic" href="/topics/local-finance"><strong>财政、利益与组织失灵</strong><span>财政、地方债、社保、房地产、利益分配、高脆弱态与治理失灵。</span><small>8 篇研究</small></a>
 <a class="inst4l-topic" href="/topics/xi-era"><strong>安全治理与习近平时代</strong><span>习近平、权力集中、反腐、清洗、安全叙事与纪律政治。</span><small>12 篇研究</small></a>
 <a class="inst4l-topic" href="/articles/all"><strong>外交、军事与外溢风险</strong><span>外交、台湾、军事、国际关系与内部政治逻辑的外溢。</span><small>5 篇研究</small></a>
