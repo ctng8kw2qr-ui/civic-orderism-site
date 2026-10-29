@@ -45,6 +45,12 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">一个难以言说的防线：从“液压维稳”到当代的马其诺防线的结构分析与研究笔记。</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：危机管理</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="xi-era" data-concepts="bureaucratic-shock crisis-management order-evaporation ruling-techniques">
+  <p class="knowledge-card__meta"><span>2026-10-29</span><span>18 分钟阅读</span></p>
+  <h3><a href="/china/the-world-xi-jinping-sees">习近平眼中的世界</a></h3>
+  <p class="knowledge-card__summary">最高权力并不直接观察整个中国，而是通过官僚体系获得经过筛选的现实。本文从信息过滤、压力上交、问题放大与调查验证出发，分析风险认知如何塑造安全政策，又如何反过来改变官僚体系的信息生产。</p>
+  <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：官僚系统休克</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-10-15</span><span>15 分钟阅读</span></p>
   <h3><a href="/china/bureaucratic-responsibility-cycle">官场“文革”：从增长政治到责任政治</a></h3>
@@ -104,12 +110,6 @@ publicationStatus: reviewing
   <h3><a href="/china/why-ccp-cannot-reduce-grassroots-burden">中共为什么永远无法真正为基层减负？</a></h3>
   <p class="knowledge-card__summary">本文认为，中共基层减负长期无法真正完成，并不是因为中央缺少组织能力，而是因为真正减负意味着重新分配政治责任。减负的收益分散而隐性，事故风险却集中而具体，最终没有人愿意为改革后的偶发事故承担无边界的政治后果。</p>
   <p class="knowledge-card__chips"><span>专题：官僚系统</span><span>概念：官僚系统休克</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="xi-era" data-concepts="bureaucratic-shock crisis-management order-evaporation">
-  <p class="knowledge-card__meta"><span>2026-07-11</span><span>11 分钟阅读</span></p>
-  <h3><a href="/china/mao-death-release-xi-death-weightlessness">如果习近平去世会发生什么？</a></h3>
-  <p class="knowledge-card__summary">本文比较毛泽东与习近平两种个人化权力的差异：毛泽东之死释放了压在中共组织上的最高压力源，而习近平若在没有完成稳定交接时突然去世，消失的可能是中共内部唯一仍然有效的秩序中心。</p>
-  <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：官僚系统休克</span></p>
 </article>
 </div>
 

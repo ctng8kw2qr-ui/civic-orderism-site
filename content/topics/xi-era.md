@@ -14,7 +14,7 @@ noindex: false
 
 追踪权力集中、组织防御化与接班风险如何共同塑造习近平时代。
 
-<div class="topic-hero-note"><strong>核心判断</strong><p>个人权力集中并未消除组织问题，而是把反馈、责任与继承风险进一步压缩到最高层。</p><small>6 篇相关文章 · 最近更新 2026-07-21</small></div>
+<div class="topic-hero-note"><strong>核心判断</strong><p>个人权力集中并未消除组织问题，而是把反馈、责任与继承风险进一步压缩到最高层。</p><small>7 篇相关文章 · 最近更新 2026-10-29</small></div>
 
 ## 推荐阅读顺序
 
@@ -25,6 +25,12 @@ noindex: false
 ## 全部相关文章
 
 <div class="knowledge-grid">
+<article class="knowledge-card" data-knowledge-card data-topics="xi-era" data-concepts="bureaucratic-shock crisis-management order-evaporation ruling-techniques">
+  <p class="knowledge-card__meta"><span>2026-10-29</span><span>18 分钟阅读</span></p>
+  <h3><a href="/china/the-world-xi-jinping-sees">习近平眼中的世界</a></h3>
+  <p class="knowledge-card__summary">最高权力并不直接观察整个中国，而是通过官僚体系获得经过筛选的现实。本文从信息过滤、压力上交、问题放大与调查验证出发，分析风险认知如何塑造安全政策，又如何反过来改变官僚体系的信息生产。</p>
+  <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：官僚系统休克</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="xi-era" data-concepts="bureaucratic-shock crisis-management order-evaporation ruling-techniques">
   <p class="knowledge-card__meta"><span>2026-07-21</span><span>16 分钟阅读</span></p>
   <h3><a href="/china/xi-successor-and-bureaucratic-accountability">习近平到底有没有接班人？</a></h3>

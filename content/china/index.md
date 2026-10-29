@@ -21,7 +21,7 @@ coverAlt: "一片裸露的台地地面向下收成一条阶梯状的通道，两
 <p class="inst4l-statement">中共正在从一个依靠增长、利益和未来预期维持合作的发展型政治组织，转变为一个越来越依靠安全、纪律、控制和损失分配维持自身的防御型政治系统。</p>
 <p class="inst4l-statement inst4l-statement--result">政治控制能力不断上升，国家治理效能却不断下降。</p>
 </div>
-<p class="inst4l-status">50 篇研究 · 更新至 2026-08-25</p>
+<p class="inst4l-status">52 篇研究 · 更新至 2026-10-29</p>
   </section>
 
   <section class="inst4l-section inst4l-pillar">
@@ -173,7 +173,12 @@ coverAlt: "一片裸露的台地地面向下收成一条阶梯状的通道，两
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
 </div>
-  <details class="china-analysis-more"><summary>查看这一阶段的全部研究（12）</summary><div class="inst4l-list">
+  <details class="china-analysis-more"><summary>查看这一阶段的全部研究（13）</summary><div class="inst4l-list">
+<a class="inst4l-row" href="/china/the-world-xi-jinping-sees">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">本阶段研究</span><span class="inst4l-row__title">习近平眼中的世界</span></span>
+  <span class="inst4l-row__desc">最高权力并不直接观察整个中国，而是通过官僚体系获得经过筛选的现实。本文从信息过滤、压力上交、问题放大与调查验证出发，分析风险认知如何塑造安全政策，又如何反过来改变官僚体系的信息生产。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
 <a class="inst4l-row" href="/china/bureaucratic-responsibility-cycle">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">本阶段研究</span><span class="inst4l-row__title">官场“文革”：从增长政治到责任政治</span></span>
   <span class="inst4l-row__desc">当增长无法继续延期旧账，官僚体系开始面对责任结算。本文从地方债、房地产、纪检监察与官员避责机制出发，分析中国官场如何从“增量政治”进入“责任政治”。</span>
