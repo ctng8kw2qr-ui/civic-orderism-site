@@ -57,6 +57,12 @@ publicationStatus: reviewing
   <p class="knowledge-card__summary">这些年，中文舆论场上一个越来越明显的现象是：</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：官僚系统休克</span></p>
 </article>
+<article class="knowledge-card" data-knowledge-card data-topics="xi-era" data-concepts="bureaucratic-shock crisis-management order-evaporation ruling-techniques">
+  <p class="knowledge-card__meta"><span>2026-10-29</span><span>18 分钟阅读</span></p>
+  <h3><a href="/china/the-world-xi-jinping-sees">习近平眼中的世界</a></h3>
+  <p class="knowledge-card__summary">最高权力并不直接观察整个中国，而是通过官僚体系获得经过筛选的现实。本文从信息过滤、压力上交、问题放大与调查验证出发，分析风险认知如何塑造安全政策，又如何反过来改变官僚体系的信息生产。</p>
+  <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：官僚系统休克</span></p>
+</article>
 <article class="knowledge-card" data-knowledge-card data-topics="bureaucratic-system" data-concepts="bureaucratic-shock ruling-techniques crisis-management">
   <p class="knowledge-card__meta"><span>2026-10-15</span><span>15 分钟阅读</span></p>
   <h3><a href="/china/bureaucratic-responsibility-cycle">官场“文革”：从增长政治到责任政治</a></h3>
@@ -104,12 +110,6 @@ publicationStatus: reviewing
   <h3><a href="/china/supply-side-reform-state-can-scale-not-discover-future">供给侧改革之后：国家能放大产业，却未必能发现未来</a></h3>
   <p class="knowledge-card__summary">新能源汽车、光伏和动力电池的成功，说明中国国家体系能够把制造业中的产业信号迅速放大为全国性产能；芯片烂尾、造车淘汰和周期性过剩则提醒我们，放大能力不等于发现能力。本文讨论供给侧改革如何改变中央、地方、企业与市场之间的分工。</p>
   <p class="knowledge-card__chips"><span>专题：中共统治术</span><span>概念：政治控制—治理效能背离</span></p>
-</article>
-<article class="knowledge-card" data-knowledge-card data-topics="xi-era" data-concepts="bureaucratic-shock crisis-management order-evaporation ruling-techniques">
-  <p class="knowledge-card__meta"><span>2026-07-21</span><span>16 分钟阅读</span></p>
-  <h3><a href="/china/xi-successor-and-bureaucratic-accountability">习近平到底有没有接班人？</a></h3>
-  <p class="knowledge-card__summary">习近平有没有接班人，表面上是中南海的人事问题，实质上关系整个中共官场如何计算未来。随着习近平年龄增长、中国进入经济与财政偿债阶段，官员真正担心的已不是谁会接班，而是谁会重新解释习近平时代、谁会承担这个时代留下的责任。毛泽东去世后，“四人帮”曾承担一个时代被切割和终结的政治责任。类似的责任转移逻辑，可能使今天庞大的中高级官僚集团成为未来最方便的责任承担者。正是这种共同的不安全感，正在为一种更稳定、更可预期的和平制度转轨创造现实基础。</p>
-  <p class="knowledge-card__chips"><span>专题：习近平时代</span><span>概念：官僚系统休克</span></p>
 </article>
 </div>
 

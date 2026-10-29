@@ -1,5 +1,41 @@
 [
   {
+    "title": "习近平眼中的世界",
+    "slug": "china/the-world-xi-jinping-sees",
+    "date": "2026-10-29",
+    "updated": "2026-10-29",
+    "summary": "最高权力并不直接观察整个中国，而是通过官僚体系获得经过筛选的现实。本文从信息过滤、压力上交、问题放大与调查验证出发，分析风险认知如何塑造安全政策，又如何反过来改变官僚体系的信息生产。",
+    "originalSection": "解析中共",
+    "section": "解析中共",
+    "chinaAnalysisSection": "04 为什么越自救，反而越失灵？",
+    "tags": [
+      "解析中共",
+      "习近平",
+      "官僚体系",
+      "信息过滤",
+      "风险认知",
+      "安全化"
+    ],
+    "status": "published",
+    "primaryTopic": "xi-era",
+    "relatedTopics": ["bureaucratic-system"],
+    "topics": ["xi-era", "bureaucratic-system"],
+    "concepts": [
+      "bureaucratic-shock",
+      "crisis-management",
+      "order-evaporation",
+      "ruling-techniques"
+    ],
+    "primaryCoreModel": null,
+    "associatedCoreModels": [],
+    "featured": false,
+    "recommended": false,
+    "readingLevel": "进阶",
+    "readingOrder": 999,
+    "author": "公民秩序主义",
+    "needsReview": false
+  },
+  {
     "title": "官场“文革”：从增长政治到责任政治",
     "slug": "china/bureaucratic-responsibility-cycle",
     "date": "2026-10-15",
