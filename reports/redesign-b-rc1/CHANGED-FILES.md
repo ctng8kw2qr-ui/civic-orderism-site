@@ -1,6 +1,6 @@
 # RC1修改文件
 
-仅相对于052aeb6；包括报告自身。
+相对于052aeb6；包含报告自身。没有正式文章、PDF、部署配置或scroll restoration修改。
 
 - `content/institution-design/index.md`
 - `content/preparation.md`
@@ -26,6 +26,7 @@
 - `reports/redesign-b-rc1/additional-seo.json`
 - `reports/redesign-b-rc1/interactions.json`
 - `reports/redesign-b-rc1/performance-summary.json`
+- `reports/redesign-b-rc1/preview-http.json`
 - `reports/redesign-b-rc1/responsive-results.json`
 - `reports/redesign-b-rc1/safari-summary.json`
 - `reports/redesign-b-rc1/scroll-integrity.json`
@@ -35,4 +36,5 @@
 - `scripts/generate-v2-architecture.mjs`
 - `scripts/lib/release-contracts.mjs`
 - `scripts/lib/release-contracts.test.mjs`
+- `scripts/preview-local.mjs`
 - `scripts/validate-v2-architecture.mjs`

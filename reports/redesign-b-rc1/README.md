@@ -11,7 +11,7 @@
 - 仓库：`/Users/zhaopengbo/网站/civic-orderism-official-redesign`。
 - 分支：`feature/official-site-redesign-b`；本轮起点 `052aeb6b60f0012bd3677b656d3bdc5d821e90e0`，起始工作区干净。
 - 已只读核对远端 main：`36fb221963f7aa84b8a0d97b051c59aa7631c23a`。原有052aeb6是独立开发提交。
-- 最终准确 HEAD / 本轮 commit 记录在交付包 `RELEASE-MANIFEST.json`，并可用本地 `git rev-parse redesign-b-rc1` 复核；本报告随RC提交，避免自引用哈希。
+- 最终准确 HEAD / 本轮 commit 记录在交付包 `RELEASE-MANIFEST.json`，并可用本地 `git rev-parse redesign-b-rc1-verified` 复核；本报告随RC提交，避免自引用哈希。
 - 原 checkout `/Users/zhaopengbo/网站/civic-orderism-site` 的3,616条已有暂存状态保留；无reset/clean/破坏性checkout。
 - Quartz 4.5.2 / Preact / TypeScript / SCSS保留。无新依赖、无正式域名/密钥/部署配置改动。
 - `.github/workflows/deploy.yml` 仍由push main、PR main及workflow_dispatch触发；PR只构建，非PR可部署Pages。Workers配置仍以public为资产源；仓库外Cloudflare自动触发配置无法从代码核实，未推送任何分支。
@@ -26,7 +26,8 @@
 5. 筹备PDF实际15页，入口误写22页；仅将页数配置化并更正显示，正式PDF未改。
 6. 为已批准原始WebP母版追加四个AVIF分发尺寸，保留原WebP回退、原人物/背景/构图。首页picture与preload共用同一srcset/sizes，`fetchpriority=high`，首屏不懒加载。
 7. 手机近期文章摘要最多2行，重点文章仍3行，标题、政治路线与正式声明不截断。
-8. 将31项过期/失效v2规则更新为现行语义及真实入口契约；增加四个含负向变异的自动化测试。没有删测试或跳过断言。
+8. 本地静态预览的旧MIME数据库不认识AVIF，补齐仅本地服务器的image/avif响应头；生产Workers配置不变。
+9. 将31项过期/失效v2规则更新为现行语义及真实入口契约；增加四个含负向变异的自动化测试。没有删测试或跳过断言。
 
 完整文件清单：`CHANGED-FILES.md`。无正式文章正文、frontmatter、组织法律身份、政治承诺、导航目标、部署流程改动。
 
@@ -69,20 +70,20 @@
 
 | 指标（3次中位数） | 优化前手机 | RC手机 | 优化前桌面 | RC桌面 |
 | ----------------- | ---------: | -----: | ---------: | -----: |
-| Performance       |         96 |     99 |        100 |    100 |
+| Performance       |         97 |     99 |        100 |    100 |
 | Accessibility     |        100 |    100 |        100 |    100 |
 | Best Practices    |        100 |    100 |        100 |    100 |
 | SEO               |        100 |    100 |        100 |    100 |
-| LCP秒             |      2.563 |  2.036 |      0.429 |  0.409 |
+| LCP秒             |      2.488 |  2.038 |      0.429 |  0.410 |
 | CLS               |          0 |      0 |          0 |      0 |
-| TBT毫秒           |         84 |     88 |          0 |      0 |
+| TBT毫秒           |         85 |     85 |          0 |      0 |
 
 每次原始结果：
 
 | Profile | Before score / LCP秒（1、2、3）       | RC score / LCP秒（1、2、3）           |
 | ------- | ------------------------------------- | ------------------------------------- |
-| mobile  | 96 / 2.563；97 / 2.486；96 / 2.563    | 99 / 2.036；99 / 2.037；99 / 2.035    |
-| desktop | 100 / 0.429；100 / 0.429；100 / 0.430 | 100 / 0.409；100 / 0.409；100 / 0.409 |
+| mobile  | 97 / 2.492；97 / 2.488；97 / 2.488    | 99 / 2.039；99 / 2.038；99 / 2.037    |
+| desktop | 100 / 0.432；100 / 0.429；100 / 0.429 | 100 / 0.411；100 / 0.410；100 / 0.410 |
 
 实际LCP元素为 `.hero-portrait picture img`，Lighthouse确认可在首HTML发现、priority=high、非lazy。原WebP母版哈希不变，AVIF quality70由母版编码，无人像修图/重绘。脸部裁片PSNR约38.77dB，视觉比较未见明显退化。AVIF不支持时跳过type preload，picture回退原WebP；本地隔离picture回退实验成功。5个宽度/DPR组合均只下载一张人像，没有preload与picture双下载。
 

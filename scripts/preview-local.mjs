@@ -61,7 +61,17 @@ http
         /* Fall through to normal static error handling. */
       }
     }
-    return handler(req, res, { public: publicDir, cleanUrls: true });
+    return handler(req, res, {
+      public: publicDir,
+      cleanUrls: true,
+      // This legacy server's MIME database predates AVIF; production uses Workers assets.
+      headers: [
+        {
+          source: "**/*.avif",
+          headers: [{ key: "Content-Type", value: "image/avif" }],
+        },
+      ],
+    });
   })
   .listen(port, "127.0.0.1", () =>
     console.log(`Local-only preview: http://127.0.0.1:${port}`),

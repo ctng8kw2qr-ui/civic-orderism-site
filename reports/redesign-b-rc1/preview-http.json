@@ -1,0 +1,27 @@
+[
+  {
+    "path": "static/assets/v6/people/zhao-pengbo-b-portrait-590.avif",
+    "status": 200,
+    "type": "image/avif",
+    "byteEqual": true
+  },
+  {
+    "path": "static/assets/v6/people/zhao-pengbo-b-desktop-1086.avif",
+    "status": 200,
+    "type": "image/avif",
+    "byteEqual": true
+  },
+  {
+    "path": "static/assets/v6/people/zhao-pengbo-b-portrait-590.webp",
+    "status": 200,
+    "type": "image/webp",
+    "byteEqual": true
+  },
+  {
+    "path": "index.css",
+    "status": 200,
+    "type": "text/css; charset=utf-8",
+    "encoding": "gzip",
+    "decodedByteEqual": true
+  }
+]
