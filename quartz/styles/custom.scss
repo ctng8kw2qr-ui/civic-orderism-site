@@ -11279,3 +11279,31 @@ body[data-page-kind="article"] .article-inst__meta {
 .inst4-route__research[open] {
   padding-bottom: 0.35rem;
 }
+
+/* Phase 5 — economic-redemption mobile reading rhythm.
+   Scoped to this page only. The political definition, arguments and
+   boundaries are untouched; this only opens space around headings,
+   paragraphs, lists and the footer transition. */
+@media (max-width: 760px) {
+  body[data-slug="civic-orderism/economic-redemption/index"] {
+    .inst4l-section {
+      padding-block: 2.1rem;
+    }
+
+    .inst4l-section__head + :is(p, ul, ol) {
+      margin-top: 0.95rem;
+    }
+
+    .inst4l-section p + p {
+      margin-top: 1rem;
+    }
+
+    .inst4-route__list li {
+      padding-block: 0.64rem;
+    }
+
+    .inst4l-section:last-of-type {
+      padding-bottom: 2.85rem;
+    }
+  }
+}

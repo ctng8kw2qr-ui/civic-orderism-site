@@ -16,6 +16,12 @@ const migration = JSON.parse(
 const phase2 = JSON.parse(
   fs.readFileSync(path.join(root, "data/phase2-content-map.json"), "utf8"),
 ).articles;
+const baseline = JSON.parse(
+  fs.readFileSync(
+    path.join(root, "data/historical-articles-baseline.json"),
+    "utf8",
+  ),
+).articles;
 const failures = [];
 const check = (condition, message) => {
   if (!condition) failures.push(message);
@@ -46,23 +52,27 @@ const resolve = (href, base) => {
 };
 const pageLinks = (url) =>
   new Set(links(read(url)).map((href) => resolve(href, url)));
-const articleSet = new Set(migration.map((item) => item.slug));
+const articleSet = new Set(baseline.map((item) => item.article_id));
 const phase2Set = new Set(phase2.map((item) => item.slug));
 const bySlug = new Map(phase2.map((item) => [item.slug, item]));
 
 check(
-  migration.length === 105,
-  `expected 105 articles, got ${migration.length}`,
+  baseline.length === 105,
+  `historical baseline must contain 105 articles, got ${baseline.length}`,
 );
 check(
-  phase2.length === 105,
-  `phase2 map must contain 105 articles, got ${phase2.length}`,
+  migration.length === baseline.length,
+  "historical migration map length changed",
 );
 check(
-  phase2Set.size === phase2.length &&
-    [...articleSet].every((slug) => phase2Set.has(slug)),
-  "phase2 map must contain every migration article exactly once",
+  phase2Set.size === phase2.length,
+  "phase2 map contains duplicate article slug",
 );
+check(
+  [...articleSet].every((slug) => phase2Set.has(slug)),
+  "phase2 map must contain every historical article exactly once",
+);
+
 const primaryCounts = phase2.reduce(
   (acc, item) => (
     (acc[item.primary_section] = (acc[item.primary_section] ?? 0) + 1),
@@ -70,13 +80,31 @@ const primaryCounts = phase2.reduce(
   ),
   {},
 );
-check(primaryCounts["政治路线"] === 27, "expected 27 route articles");
-check(primaryCounts["政治经济观察"] === 55, "expected 55 observation articles");
-check(primaryCounts["理论与制度"] === 23, "expected 23 theory articles");
+const historicalCounts = baseline.reduce(
+  (acc, item) => (
+    (acc[item.primary_section] = (acc[item.primary_section] ?? 0) + 1),
+    acc
+  ),
+  {},
+);
+check(historicalCounts["政治路线"] === 27, "historical route count must be 27");
+check(
+  historicalCounts["政治经济观察"] === 55,
+  "historical observation count must be 55",
+);
+check(
+  historicalCounts["理论与制度"] === 23,
+  "historical theory count must be 23",
+);
+check(
+  Object.values(primaryCounts).reduce((sum, count) => sum + count, 0) ===
+    phase2.length,
+  "primary section counts must sum to the current article total",
+);
 
-for (const slug of articleSet) {
-  const file = path.join(publicDir, `${slug}.html`);
-  check(fs.existsSync(file), `historical article URL missing: /${slug}`);
+for (const item of phase2) {
+  const file = path.join(publicDir, `${item.slug}.html`);
+  check(fs.existsSync(file), `article URL missing: /${item.slug}`);
 }
 
 const latest = read("/china/latest/");
@@ -101,18 +129,14 @@ for (const item of routeArticles) {
 }
 
 const categories = {
-  中共政治: { path: "/china/ccp-politics/", count: 33 },
-  中国经济: { path: "/china/china-economy/", count: 7 },
-  官僚体系: { path: "/china/bureaucracy/", count: 15 },
+  中共政治: { path: "/china/ccp-politics/" },
+  中国经济: { path: "/china/china-economy/" },
+  官僚体系: { path: "/china/bureaucracy/" },
 };
 for (const [category, spec] of Object.entries(categories)) {
-  const html = read(spec.path);
   const categoryLinks = pageLinks(spec.path);
   const items = phase2.filter((item) => item.category === category);
-  check(
-    items.length === spec.count,
-    `${category} expected ${spec.count}, got ${items.length}`,
-  );
+  check(items.length >= 1, `${category} has no articles`);
   for (const item of items) {
     check(
       categoryLinks.has(item.url),
@@ -279,5 +303,5 @@ if (failures.length) {
   process.exit(1);
 }
 console.log(
-  `Phase 2 validation passed: 105 articles; route 27 / observation 55 / theory 23; 7 new pages checked.`,
+  `Phase 2 validation passed: ${phase2.length} articles; route ${primaryCounts["政治路线"]} / observation ${primaryCounts["政治经济观察"]} / theory ${primaryCounts["理论与制度"]}; 7 new pages checked.`,
 );

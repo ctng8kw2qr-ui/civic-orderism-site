@@ -1467,13 +1467,13 @@
   .route-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    margin-top: 26px;
+    gap: 10px;
+    margin-top: 22px;
     border: 0;
   }
   .route-item {
     display: flex;
-    min-height: 196px;
+    min-height: 176px;
     flex-direction: column;
     padding: 24px 26px;
     border: 1px solid rgb(255 255 255 / 22%);
@@ -1489,26 +1489,26 @@
     letter-spacing: 0.12em;
   }
   .route-item__head h3 {
-    margin-top: 7px;
-    font-size: 23px;
+    margin-top: 4px;
+    font-size: 22px;
     font-weight: 500;
     line-height: 1.4;
   }
   .route-item__body {
     max-width: 38em;
-    margin-top: 14px;
+    margin-top: 9px;
     padding-top: 0;
     color: #e1e9ec;
-    font-size: 15px;
-    line-height: 1.8;
+    font-size: 14.5px;
+    line-height: 1.72;
   }
   .route-item__more {
     display: inline-flex;
     align-items: center;
     align-self: flex-start;
-    min-height: 32px;
+    min-height: 28px;
     margin-top: auto;
-    padding-top: 16px;
+    padding-top: 10px;
     color: #fff;
     font-size: 13px;
     font-weight: 500;
@@ -1611,12 +1611,12 @@
       font-size: 21px;
     }
     .route-item__body {
-      margin-top: 12px;
-      font-size: 14.5px;
-      line-height: 1.8;
+      margin-top: 8px;
+      font-size: 14px;
+      line-height: 1.7;
     }
     .route-item__more {
-      padding-top: 14px;
+      padding-top: 10px;
       font-size: 12.5px;
     }
     .section-heading h2 {
