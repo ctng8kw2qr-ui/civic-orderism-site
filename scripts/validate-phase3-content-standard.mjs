@@ -23,7 +23,14 @@ const map = JSON.parse(
 const migration = JSON.parse(
   fs.readFileSync(path.join(root, "content-migration-map.json"), "utf8"),
 );
+const baseline = JSON.parse(
+  fs.readFileSync(
+    path.join(root, "data/historical-articles-baseline.json"),
+    "utf8",
+  ),
+).articles;
 const migrationBySlug = new Map(migration.map((item) => [item.slug, item]));
+const baselineBySlug = new Map(baseline.map((item) => [item.article_id, item]));
 const reviewSlugs = new Set(
   migration
     .filter((item) => item.needsReview === true)
@@ -79,16 +86,44 @@ for (const item of map) {
     item.phase3_reviewed === (reviewSlugs.has(item.slug) || undefined),
     `${item.slug}: phase3_reviewed flag must match the 13 historical review items`,
   );
-  const original = migrationBySlug.get(item.slug);
-  check(Boolean(original), `${item.slug}: no historical article entry`);
-  if (original) {
+  const historical = baselineBySlug.get(item.slug);
+  if (historical) {
     check(
-      item.title === original.title,
-      `${item.slug}: title differs from historical source`,
+      item.source === "content-migration-map.json",
+      `${item.slug}: historical article must use source=content-migration-map.json`,
     );
     check(
-      item.date === original.date,
-      `${item.slug}: date differs from historical source`,
+      item.title === historical.title,
+      `${item.slug}: title differs from frozen historical baseline`,
+    );
+    check(
+      item.date === historical.date,
+      `${item.slug}: date differs from frozen historical baseline`,
+    );
+    check(
+      item.url === historical.canonical_url,
+      `${item.slug}: URL differs from frozen historical baseline`,
+    );
+    check(
+      item.primary_section === historical.primary_section,
+      `${item.slug}: primary section differs from frozen historical baseline`,
+    );
+    check(
+      Boolean(migrationBySlug.get(item.slug)),
+      `${item.slug}: historical article missing from migration map`,
+    );
+  } else {
+    check(
+      item.source === "editorial",
+      `${item.slug}: new article must use source=editorial`,
+    );
+    check(
+      !migrationBySlug.has(item.slug),
+      `${item.slug}: new article must not be added to historical migration map`,
+    );
+    check(
+      item.phase3_reviewed === undefined,
+      `${item.slug}: new article must not carry historical phase3_reviewed`,
     );
   }
 }

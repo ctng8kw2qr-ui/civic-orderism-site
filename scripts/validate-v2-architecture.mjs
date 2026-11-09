@@ -1225,24 +1225,22 @@ const completeArticlesHtml = fs.readFileSync(
   "utf8",
 );
 const completeArticlesText = visiblePageText(completeArticlesHtml);
-const publishedCount = migration.filter(
-  (item) => item.status === "published" && item.corePoliticalStatement !== true,
-).length;
+const currentArticleCount = phase3Content.length;
 assert(
   completeArticlesText.includes("全部研究") &&
     completeArticlesHtml.includes("RESEARCH ARCHIVE") &&
-    completeArticlesText.includes(`${publishedCount} 篇研究`) &&
-    completeArticlesText.includes("解析中共") &&
-    completeArticlesText.includes("公民秩序主义") &&
-    completeArticlesText.includes("中国未来") &&
-    completeArticlesText.includes("制度设计") &&
+    completeArticlesText.includes(`${currentArticleCount} 篇研究`) &&
+    completeArticlesText.includes("3 个一级主栏目") &&
+    completeArticlesText.includes("政治路线") &&
+    completeArticlesText.includes("政治经济观察") &&
+    completeArticlesText.includes("理论与制度") &&
     completeArticlesHtml.includes(
       'data-slug="china/party-state-stress-neither-party-nor-state"',
     ) &&
     completeArticlesHtml.includes(
       'data-slug="civic-orderism/peaceful-state-transition"',
     ) &&
-    !completeArticlesText.includes(site.corePoliticalStatement.title) &&
+    completeArticlesText.includes(site.corePoliticalStatement.title) &&
     !completeArticlesText.includes("一、旧世界为什么失效") &&
     !completeArticlesHtml.includes('class="content-meta"'),
   "独立完整文章索引缺少栏目分组、文章列表或混入文章元信息",

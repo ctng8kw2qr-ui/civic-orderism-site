@@ -21,7 +21,7 @@ coverAlt: "一片裸露的台地地面向下收成一条阶梯状的通道，两
 <p class="inst4l-statement">中共正在从一个依靠增长、利益和未来预期维持合作的发展型政治组织，转变为一个越来越依靠安全、纪律、控制和损失分配维持自身的防御型政治系统。</p>
 <p class="inst4l-statement inst4l-statement--result">政治控制能力不断上升，国家治理效能却不断下降。</p>
 </div>
-<p class="inst4l-status">52 篇研究 · 更新至 2026-10-29</p>
+<p class="inst4l-status">52 篇系列研究 · 代表性文章与阶段性阅读入口</p>
 <p class="inst4l-link"><a href="/china/">返回中国政治经济观察 <span aria-hidden="true">→</span></a></p>
   </section>
 

@@ -578,9 +578,17 @@ for (const model of coreModelsConfig.models) {
     }
   }
 }
-const migrationMap = articles.map(
-  ({ body: _body, readingMinutes: _readingMinutes, ...article }) => article,
+// Historical migration records are frozen. New editorial articles must not
+// be injected into this file by a build; they live only in
+// data/phase2-content-map.json with source=editorial.
+const historicalMigrationSlugs = new Set(
+  existingMigrationMap.map((item) => item.slug),
 );
+const migrationMap = articles
+  .filter((article) => historicalMigrationSlugs.has(article.slug))
+  .map(
+    ({ body: _body, readingMinutes: _readingMinutes, ...article }) => article,
+  );
 fs.writeFileSync(
   path.join(rootDir, "content-migration-map.json"),
   await prettier.format(JSON.stringify(migrationMap), { parser: "json" }),

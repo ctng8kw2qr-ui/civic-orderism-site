@@ -1,0 +1,741 @@
+{
+  "version": "phase5-2026-11-09",
+  "description": "Frozen 105-article historical baseline. These URLs/titles/primary sections must never disappear or be silently reassigned. New articles use source=editorial and are not added here.",
+  "articles": [
+    {
+      "article_id": "china/the-world-xi-jinping-sees",
+      "canonical_url": "/china/the-world-xi-jinping-sees",
+      "title": "习近平眼中的世界",
+      "primary_section": "政治经济观察",
+      "date": "2026-10-29"
+    },
+    {
+      "article_id": "china/bureaucratic-responsibility-cycle",
+      "canonical_url": "/china/bureaucratic-responsibility-cycle",
+      "title": "官场“文革”：从增长政治到责任政治",
+      "primary_section": "政治经济观察",
+      "date": "2026-10-15"
+    },
+    {
+      "article_id": "civic-orderism/this-time-let-china-be-your-pride",
+      "canonical_url": "/civic-orderism/this-time-let-china-be-your-pride",
+      "title": "这一次，让中国成为你的骄傲",
+      "primary_section": "政治路线",
+      "date": "2026-08-26"
+    },
+    {
+      "article_id": "china/chengguan-power-logic",
+      "canonical_url": "/china/chengguan-power-logic",
+      "title": "城管背后的权力逻辑：中共如何制度化统治，又如何灵活化治理",
+      "primary_section": "政治经济观察",
+      "date": "2026-08-25"
+    },
+    {
+      "article_id": "civic-orderism/civic-orderism-overview",
+      "canonical_url": "/civic-orderism/civic-orderism-overview",
+      "title": "公民秩序主义总论：保留国家，改变政治",
+      "primary_section": "政治路线",
+      "date": "2026-08-25"
+    },
+    {
+      "article_id": "china/what-is-the-ccp-becoming",
+      "canonical_url": "/china/what-is-the-ccp-becoming",
+      "title": "中共正在变成什么？",
+      "primary_section": "政治经济观察",
+      "date": "2026-08-25"
+    },
+    {
+      "article_id": "china/party-state-stress-neither-party-nor-state",
+      "canonical_url": "/china/party-state-stress-neither-party-nor-state",
+      "title": "既不党，也不国：党国体制最终会变成什么？",
+      "primary_section": "政治经济观察",
+      "date": "2026-08-22"
+    },
+    {
+      "article_id": "china/security-led-governance-model",
+      "canonical_url": "/china/security-led-governance-model",
+      "title": "安全化、再集中与治理边界",
+      "primary_section": "政治经济观察",
+      "date": "2026-08-12"
+    },
+    {
+      "article_id": "china/an-era-change-beginning-in-the-united-states",
+      "canonical_url": "/china/an-era-change-beginning-in-the-united-states",
+      "title": "一场起始于美国的时代变革",
+      "primary_section": "政治经济观察",
+      "date": "2026-08-11"
+    },
+    {
+      "article_id": "china/security-is-redefining-china",
+      "canonical_url": "/china/security-is-redefining-china",
+      "title": "安全，正在重新定义中国",
+      "primary_section": "政治经济观察",
+      "date": "2026-08-10"
+    },
+    {
+      "article_id": "china/why-ccp-feels-less-secure-when-everyone-claims-loyalty",
+      "canonical_url": "/china/why-ccp-feels-less-secure-when-everyone-claims-loyalty",
+      "title": "当所有人都说忠诚：中共为什么反而越来越没有安全感",
+      "primary_section": "政治经济观察",
+      "date": "2026-08-10"
+    },
+    {
+      "article_id": "china/what-happens-when-security-becomes-the-top-priority",
+      "canonical_url": "/china/what-happens-when-security-becomes-the-top-priority",
+      "title": "中共全面进入安全叙事后，中国会怎么样？",
+      "primary_section": "政治经济观察",
+      "date": "2026-08-10"
+    },
+    {
+      "article_id": "civic-orderism/north-america-nonprofit-board-preparation-manifesto",
+      "canonical_url": "/civic-orderism/north-america-nonprofit-board-preparation-manifesto",
+      "title": "公民秩序主义北美非营利法人及董事会筹备宣言",
+      "primary_section": "政治路线",
+      "date": "2026-08-05"
+    },
+    {
+      "article_id": "civic-orderism/possibility-of-peaceful-political-transition-in-china",
+      "canonical_url": "/civic-orderism/possibility-of-peaceful-political-transition-in-china",
+      "title": "中国和平政治转型的可能性",
+      "primary_section": "政治路线",
+      "date": "2026-08-05"
+    },
+    {
+      "article_id": "china/route-transition-why-ccp-keeps-purging-officials",
+      "canonical_url": "/china/route-transition-why-ccp-keeps-purging-officials",
+      "title": "路线转换：中共为什么必须不断清洗自己的官员",
+      "primary_section": "政治经济观察",
+      "date": "2026-07-31"
+    },
+    {
+      "article_id": "china/supply-side-reform-state-can-scale-not-discover-future",
+      "canonical_url": "/china/supply-side-reform-state-can-scale-not-discover-future",
+      "title": "供给侧改革之后：国家能放大产业，却未必能发现未来",
+      "primary_section": "政治经济观察",
+      "date": "2026-07-28"
+    },
+    {
+      "article_id": "civic-orderism/information-age-and-political-transition",
+      "canonical_url": "/civic-orderism/information-age-and-political-transition",
+      "title": "信息化时代与政治转型",
+      "primary_section": "政治路线",
+      "date": "2026-07-24"
+    },
+    {
+      "article_id": "china/xi-successor-and-bureaucratic-accountability",
+      "canonical_url": "/china/xi-successor-and-bureaucratic-accountability",
+      "title": "习近平到底有没有接班人？",
+      "primary_section": "政治经济观察",
+      "date": "2026-07-21"
+    },
+    {
+      "article_id": "civic-orderism/peaceful-state-transition",
+      "canonical_url": "/civic-orderism/peaceful-state-transition",
+      "title": "国家如何平稳转轨：公民秩序主义不是中共官僚的敌人",
+      "primary_section": "政治路线",
+      "date": "2026-07-19"
+    },
+    {
+      "article_id": "china-stage/three-cleans-era-political-economic-cultural-contraction",
+      "canonical_url": "/china-stage/three-cleans-era-political-economic-cultural-contraction",
+      "title": "时代何至如此：政治清人，经济清账，文化清声",
+      "primary_section": "政治经济观察",
+      "date": "2026-07-19"
+    },
+    {
+      "article_id": "china-stage/ccp-second-reform-opening-possibility",
+      "canonical_url": "/china-stage/ccp-second-reform-opening-possibility",
+      "title": "中共还有没有二次改开的可能？",
+      "primary_section": "政治经济观察",
+      "date": "2026-07-19"
+    },
+    {
+      "article_id": "china/why-expulsion-from-party-becomes-standard-ending",
+      "canonical_url": "/china/why-expulsion-from-party-becomes-standard-ending",
+      "title": "为什么“开除党籍”正在成为中共处理高级干部的标准结局？",
+      "primary_section": "政治经济观察",
+      "date": "2026-07-14"
+    },
+    {
+      "article_id": "china/why-ccp-cannot-reduce-grassroots-burden",
+      "canonical_url": "/china/why-ccp-cannot-reduce-grassroots-burden",
+      "title": "中共为什么永远无法真正为基层减负？",
+      "primary_section": "政治经济观察",
+      "date": "2026-07-12"
+    },
+    {
+      "article_id": "china/mao-death-release-xi-death-weightlessness",
+      "canonical_url": "/china/mao-death-release-xi-death-weightlessness",
+      "title": "如果习近平去世会发生什么？",
+      "primary_section": "政治经济观察",
+      "date": "2026-07-11"
+    },
+    {
+      "article_id": "china/ccp-2018-xi-era-local-growth-space",
+      "canonical_url": "/china/ccp-2018-xi-era-local-growth-space",
+      "title": "中共2018：习近平元年",
+      "primary_section": "政治经济观察",
+      "date": "2026-07-10"
+    },
+    {
+      "article_id": "china/why-ccp-will-not-relax-party-pressure",
+      "canonical_url": "/china/why-ccp-will-not-relax-party-pressure",
+      "title": "中共为什么不会真正放松党内高压？",
+      "primary_section": "政治经济观察",
+      "date": "2026-07-09"
+    },
+    {
+      "article_id": "civic-orderism/why-civic-orderism",
+      "canonical_url": "/civic-orderism/why-civic-orderism",
+      "title": "为什么是公民秩序主义？",
+      "primary_section": "政治路线",
+      "date": "2026-07-08"
+    },
+    {
+      "article_id": "china/ccp-no-real-base",
+      "canonical_url": "/china/ccp-no-real-base",
+      "title": "中共最大的秘密：它根本没有基本盘",
+      "primary_section": "政治经济观察",
+      "date": "2026-07-01"
+    },
+    {
+      "article_id": "china-stage/china-manufacturing-cannot-stop",
+      "canonical_url": "/china-stage/china-manufacturing-cannot-stop",
+      "title": "中国制造业不是造不出来，而是停不下来",
+      "primary_section": "政治经济观察",
+      "date": "2026-06-16"
+    },
+    {
+      "article_id": "theory/democracy-still-exists-but-cannot-penetrate-reality",
+      "canonical_url": "/theory/democracy-still-exists-but-cannot-penetrate-reality",
+      "title": "民主还在，但越来越难穿透现实",
+      "primary_section": "理论与制度",
+      "date": "2026-06-13"
+    },
+    {
+      "article_id": "civic-orderism/state-must-rely-on-systems-not-drivers",
+      "canonical_url": "/civic-orderism/state-must-rely-on-systems-not-drivers",
+      "title": "国家不能只靠驾驶员：为什么现代治理必须依赖系统",
+      "primary_section": "政治路线",
+      "date": "2026-06-08"
+    },
+    {
+      "article_id": "theory/end-of-party-politics-in-information-age",
+      "canonical_url": "/theory/end-of-party-politics-in-information-age",
+      "title": "政党的历史终结：信息化时代为什么不再需要政党垄断政治入口",
+      "primary_section": "理论与制度",
+      "date": "2026-06-08"
+    },
+    {
+      "article_id": "china/political-machine-rewards-and-limits",
+      "canonical_url": "/china/political-machine-rewards-and-limits",
+      "title": "机器的奖赏与机器的尽头",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-30"
+    },
+    {
+      "article_id": "china/emotional-link-breakdown-and-regime-collapse",
+      "canonical_url": "/china/emotional-link-breakdown-and-regime-collapse",
+      "title": "情感链接的断裂与体制坍塌机制",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-30"
+    },
+    {
+      "article_id": "theory/social-change-dynamics-when-system-no-longer-worth-it",
+      "canonical_url": "/theory/social-change-dynamics-when-system-no-longer-worth-it",
+      "title": "社会变革动力学：当所有人都觉得“不值了”",
+      "primary_section": "政治路线",
+      "date": "2026-05-30"
+    },
+    {
+      "article_id": "china/party-power-logic-and-ccp-goal-vacuum",
+      "canonical_url": "/china/party-power-logic-and-ccp-goal-vacuum",
+      "title": "政党存在的权力逻辑与中共的目标困境",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-30"
+    },
+    {
+      "article_id": "theory/ccp-completed-historical-task-refuses-exit",
+      "canonical_url": "/theory/ccp-completed-historical-task-refuses-exit",
+      "title": "中共完成了历史任务，但拒绝被历史淘汰",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-30"
+    },
+    {
+      "article_id": "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
+      "canonical_url": "/theory/organizational-collapse-begins-with-loss-of-institutional-trust",
+      "title": "组织的坍塌，始于制度信任的瓦解",
+      "primary_section": "政治路线",
+      "date": "2026-05-30"
+    },
+    {
+      "article_id": "china/industrial-system-failure-in-information-age",
+      "canonical_url": "/china/industrial-system-failure-in-information-age",
+      "title": "中共基于工业化的社会制度，在信息化时代的必然失效",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-28"
+    },
+    {
+      "article_id": "china/taiwan-war-controllable-escalation-illusion",
+      "canonical_url": "/china/taiwan-war-controllable-escalation-illusion",
+      "title": "台海战争的真正危险：可控升级的幻觉",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-19"
+    },
+    {
+      "article_id": "china/information-age-impact-on-ccp-mechanisms",
+      "canonical_url": "/china/information-age-impact-on-ccp-mechanisms",
+      "title": "信息化时代冲击中共的机制",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-19"
+    },
+    {
+      "article_id": "china/bureaucratic-system-under-purges",
+      "canonical_url": "/china/bureaucratic-system-under-purges",
+      "title": "高位清洗如何改变中共官僚系统",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-17"
+    },
+    {
+      "article_id": "civic-orderism/why-committees-cannot-directly-take-cases",
+      "canonical_url": "/civic-orderism/why-committees-cannot-directly-take-cases",
+      "title": "为什么委员会不能直接接案：公民秩序主义中“入口权”与“判断权”必须分开",
+      "primary_section": "理论与制度",
+      "date": "2026-05-17"
+    },
+    {
+      "article_id": "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+      "canonical_url": "/civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+      "title": "如果你只读一篇：公民秩序主义到底想解决什么",
+      "primary_section": "政治路线",
+      "date": "2026-05-14"
+    },
+    {
+      "article_id": "theory/why-party-politics-is-becoming-a-low-dimensional-function",
+      "canonical_url": "/theory/why-party-politics-is-becoming-a-low-dimensional-function",
+      "title": "为什么政党政治越来越像低维函数",
+      "primary_section": "政治路线",
+      "date": "2026-05-14"
+    },
+    {
+      "article_id": "china/ccp-from-faith-community-to-black-box-post",
+      "canonical_url": "/china/ccp-from-faith-community-to-black-box-post",
+      "title": "从“信仰共同体”到“黑箱岗位”：中共内部成员心态的三次断裂",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-13"
+    },
+    {
+      "article_id": "china/Macro-Narratives,-Opportunity-Incentives,-and-High-Fragility",
+      "canonical_url": "/china/Macro-Narratives,-Opportunity-Incentives,-and-High-Fragility",
+      "title": "宏观叙事、机会激励与高脆弱态：中共为何更可能“失灵”而非“倒台”",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-13"
+    },
+    {
+      "article_id": "china/ccp-power-network-not-line",
+      "canonical_url": "/china/ccp-power-network-not-line",
+      "title": "中共的权力布局不是一条线，而是一张网",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-13"
+    },
+    {
+      "article_id": "theory/us-industrial-system-cannot-carry-information-age",
+      "canonical_url": "/theory/us-industrial-system-cannot-carry-information-age",
+      "title": "美国的问题不在于民主或专制，而在于工业时代制度已无法承载信息化时代",
+      "primary_section": "理论与制度",
+      "date": "2026-05-12"
+    },
+    {
+      "article_id": "theory/us-separation-of-powers-integrative-capacity-crisis",
+      "canonical_url": "/theory/us-separation-of-powers-integrative-capacity-crisis",
+      "title": "美国三权分立的真正危机，不是分权，而是失去统合能力",
+      "primary_section": "理论与制度",
+      "date": "2026-05-12"
+    },
+    {
+      "article_id": "theory/information-age-erodes-us-integrative-capacity",
+      "canonical_url": "/theory/information-age-erodes-us-integrative-capacity",
+      "title": "为什么信息化时代正在系统性瓦解美国的统合能力",
+      "primary_section": "政治路线",
+      "date": "2026-05-12"
+    },
+    {
+      "article_id": "theory/us-supreme-court-partisan-final-battleground",
+      "canonical_url": "/theory/us-supreme-court-partisan-final-battleground",
+      "title": "美国最高法院为何滑向党争终局战场",
+      "primary_section": "理论与制度",
+      "date": "2026-05-11"
+    },
+    {
+      "article_id": "theory/costly-industrial-governance-information-age",
+      "canonical_url": "/theory/costly-industrial-governance-information-age",
+      "title": "一套正在变贵的管理方式：论工业型治理的历史合理性与信息化时代的结构性代价",
+      "primary_section": "政治路线",
+      "date": "2026-05-11"
+    },
+    {
+      "article_id": "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+      "canonical_url": "/china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+      "title": "中共崩解的三大导火索：社保、医保与金融系统",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-11"
+    },
+    {
+      "article_id": "china/ccp-2018-new-reform-opening",
+      "canonical_url": "/china/ccp-2018-new-reform-opening",
+      "title": "2018新“改革开放”：从开放社会到封闭风险",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "china/propaganda-system-hollowing-out",
+      "canonical_url": "/china/propaganda-system-hollowing-out",
+      "title": "不是不会宣传，而是不敢承担：中宣系统“翻车常态化”背后的空心化逻辑",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "china/ccp-bureaucracy-double-deadlock",
+      "canonical_url": "/china/ccp-bureaucracy-double-deadlock",
+      "title": "不抓人就躺平，一抓人就失真：中共官僚体系为何陷入双重死结",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "china/when-high-ranking-officials-are-no-longer-safe",
+      "canonical_url": "/china/when-high-ranking-officials-are-no-longer-safe",
+      "title": "当高位者也不再安全：这不是普通反腐，而是权力的深度焦虑",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "china/ccp-bureaucracy-historical-bill",
+      "canonical_url": "/china/ccp-bureaucracy-historical-bill",
+      "title": "当历史总账开始结算：高刚性官僚体系如何把系统性责任层层压向中基层",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "theory/party-state-structural-failure",
+      "canonical_url": "/theory/party-state-structural-failure",
+      "title": "党国系统的结构性失效：一个组织诊断",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/backend-system-under-civic-orderism",
+      "canonical_url": "/civic-orderism/backend-system-under-civic-orderism",
+      "title": "公民秩序主义对后台系统的重视：为什么培训、秘书处、专业事务与留痕系统，是现代国家真正的底座",
+      "primary_section": "理论与制度",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/civic-orderism-manual",
+      "canonical_url": "/civic-orderism/civic-orderism-manual",
+      "title": "公民秩序主义说明书：一套面向中国现实与信息化时代的现代国家治理方案",
+      "primary_section": "政治路线",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/why-focus-on-invisible-power-nodes",
+      "canonical_url": "/civic-orderism/why-focus-on-invisible-power-nodes",
+      "title": "公民秩序主义为什么更加注意现代社会的隐形权力节点（社会组织、平台企业）",
+      "primary_section": "政治路线",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/why-weaken-party-politics",
+      "canonical_url": "/civic-orderism/why-weaken-party-politics",
+      "title": "公民秩序主义为什么刻意弱化政党政治",
+      "primary_section": "政治路线",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/election-logic-under-civic-orderism",
+      "canonical_url": "/civic-orderism/election-logic-under-civic-orderism",
+      "title": "公民秩序主义下的选举逻辑：它与传统选举的区别，以及制度优势",
+      "primary_section": "理论与制度",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/top-level-power-structure-under-civic-orderism",
+      "canonical_url": "/civic-orderism/top-level-power-structure-under-civic-orderism",
+      "title": "公民秩序主义下顶层权力结构的布局：为什么国家最高层不能只有一个权力中心，也不能碎片化成互相消耗的多头政治",
+      "primary_section": "理论与制度",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/state-operation-process-under-civic-orderism",
+      "canonical_url": "/civic-orderism/state-operation-process-under-civic-orderism",
+      "title": "公民秩序主义下国家运行的大概流程：从普通人的问题，到国家的判断、执行与纠偏",
+      "primary_section": "理论与制度",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/what-civic-orderism-ultimately-solves",
+      "canonical_url": "/civic-orderism/what-civic-orderism-ultimately-solves",
+      "title": "公民秩序主义最终要解决的问题：它不是为了换一批人掌权，而是为了重建国家与普通人之间的秩序关系",
+      "primary_section": "政治路线",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "theory/overseas-political-movements-fail",
+      "canonical_url": "/theory/overseas-political-movements-fail",
+      "title": "海外政治运动为什么一事无成？",
+      "primary_section": "政治路线",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "theory/high-rigidity-system-ccp",
+      "canonical_url": "/theory/high-rigidity-system-ccp",
+      "title": "解析高刚性体制：中共无以为继的结构性根因",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "theory/internal-change-external-change",
+      "canonical_url": "/theory/internal-change-external-change",
+      "title": "内变引外变：现代政治为何走到十字路口",
+      "primary_section": "政治路线",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/public-politics-without-party-dominance",
+      "canonical_url": "/civic-orderism/public-politics-without-party-dominance",
+      "title": "弱化政党政治之后，公共政治如何继续存在",
+      "primary_section": "政治路线",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "china/elite-sandification-ming-bureaucrats-ccp",
+      "canonical_url": "/china/elite-sandification-ming-bureaucrats-ccp",
+      "title": "沙化的忠诚：中共精英原子化与明代士大夫的历史镜像",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/what-is-committee-system",
+      "canonical_url": "/civic-orderism/what-is-committee-system",
+      "title": "什么是委员会：公民秩序主义中的委员会体系、工作流程与制度架构",
+      "primary_section": "理论与制度",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "theory/ccp-high-fragility-dysfunction",
+      "canonical_url": "/theory/ccp-high-fragility-dysfunction",
+      "title": "它还在，但越来越靠不住：为什么中共更可能“失灵”而非“倒台”",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "china/taiwan-war-risk",
+      "canonical_url": "/china/taiwan-war-risk",
+      "title": "台海是否会走向战争：基于战争四驱动的组织决策风险评估",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "china/diplomacy-root",
+      "canonical_url": "/china/diplomacy-root",
+      "title": "外交的根源：从中共内政逻辑看其外交激进化",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "china/pla-political-subject-myth",
+      "canonical_url": "/china/pla-political-subject-myth",
+      "title": "外界对解放军的迷思：把“军”当成政治主体，是第一层误判",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/committee-administration-opposite-incentives",
+      "canonical_url": "/civic-orderism/committee-administration-opposite-incentives",
+      "title": "委员会与行政机关激励结构相反的意义：为什么公民秩序主义必须把“做事的人”和“看事的人”分开",
+      "primary_section": "理论与制度",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "theory/no-accountability-lie-flat-mentality",
+      "canonical_url": "/theory/no-accountability-lie-flat-mentality",
+      "title": "为什么“无人担责的躺平心态”会从根本上摧毁一个超大型执政组织",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "theory/procedural-accountability-organized-power",
+      "canonical_url": "/theory/procedural-accountability-organized-power",
+      "title": "为什么程序性问责，常常敌不过组织化权力",
+      "primary_section": "政治路线",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/why-dual-track-committee-administration",
+      "canonical_url": "/civic-orderism/why-dual-track-committee-administration",
+      "title": "为什么公民秩序主义必须采取委员会—行政双轨制，但最终仍由民选政治官员统合国家",
+      "primary_section": "理论与制度",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/why-not-simple-separation-of-powers",
+      "canonical_url": "/civic-orderism/why-not-simple-separation-of-powers",
+      "title": "为什么公民秩序主义不采取简单的三权分立",
+      "primary_section": "理论与制度",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/why-not-left-right-democracy-autocracy",
+      "canonical_url": "/civic-orderism/why-not-left-right-democracy-autocracy",
+      "title": "为什么公民秩序主义不纠结于左右、民主专制之争",
+      "primary_section": "政治路线",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/why-against-moral-narrative",
+      "canonical_url": "/civic-orderism/why-against-moral-narrative",
+      "title": "为什么公民秩序主义反对道德叙事，也反对对公职人员的道德审判",
+      "primary_section": "政治路线",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/why-emphasize-reciprocity-and-equality",
+      "canonical_url": "/civic-orderism/why-emphasize-reciprocity-and-equality",
+      "title": "为什么公民秩序主义强调的是对等、平等，而非照顾、怜悯",
+      "primary_section": "政治路线",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/why-civic-orderism-emphasizes-experience-and-records",
+      "canonical_url": "/civic-orderism/why-civic-orderism-emphasizes-experience-and-records",
+      "title": "为什么公民秩序主义强调履历、经验：因为现代国家不能把高位判断交给空降、表演和单一激情",
+      "primary_section": "理论与制度",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/why-justice-serves-reality",
+      "canonical_url": "/civic-orderism/why-justice-serves-reality",
+      "title": "为什么公民秩序主义强调司法是为现实服务的",
+      "primary_section": "理论与制度",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/why-information-transparency",
+      "canonical_url": "/civic-orderism/why-information-transparency",
+      "title": "为什么公民秩序主义强调信息透明及信息发布",
+      "primary_section": "理论与制度",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/why-elections-reject-political-donations",
+      "canonical_url": "/civic-orderism/why-elections-reject-political-donations",
+      "title": "为什么公民秩序主义下的选举会天然排斥政治献金",
+      "primary_section": "理论与制度",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/why-no-bicameral-parliament",
+      "canonical_url": "/civic-orderism/why-no-bicameral-parliament",
+      "title": "为什么公民秩序主义议会不采取上下两院制",
+      "primary_section": "理论与制度",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/why-civic-orderism-is-easier-to-succeed",
+      "canonical_url": "/civic-orderism/why-civic-orderism-is-easier-to-succeed",
+      "title": "为什么公民秩序主义在未来接替难度最小：它不是推倒国家，而是接管、校正和重组国家运行系统",
+      "primary_section": "政治路线",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/why-proposals-from-social-organizations",
+      "canonical_url": "/civic-orderism/why-proposals-from-social-organizations",
+      "title": "为什么议案应主要来自社会组织，而不是某个议员、某个人",
+      "primary_section": "理论与制度",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "civic-orderism/why-part-time-representatives",
+      "canonical_url": "/civic-orderism/why-part-time-representatives",
+      "title": "为什么议员主要应采取兼职制，而非全职制",
+      "primary_section": "理论与制度",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "theory/trapped-by-process",
+      "canonical_url": "/theory/trapped-by-process",
+      "title": "我们不是被贫穷困住，而是被流程困住",
+      "primary_section": "政治路线",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "china/xi-solved-organization-not-reality",
+      "canonical_url": "/china/xi-solved-organization-not-reality",
+      "title": "习近平解决了组织的问题，却解决不了组织面临的问题",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "china/xi-power-centralization",
+      "canonical_url": "/china/xi-power-centralization",
+      "title": "习近平权力集中背后的系统逻辑",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "theory/modern-social-syndrome",
+      "canonical_url": "/theory/modern-social-syndrome",
+      "title": "现代社会候群症",
+      "primary_section": "理论与制度",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "china/chicken-and-cage",
+      "canonical_url": "/china/chicken-and-cage",
+      "title": "养鸡与换笼：民营经济被整肃的结构逻辑",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "china/maginot-line-of-stability-maintenance",
+      "canonical_url": "/china/maginot-line-of-stability-maintenance",
+      "title": "一个难以言说的防线：从“液压维稳”到当代的马其诺防线",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "china/ccp-reform-political-balance-deadlock",
+      "canonical_url": "/china/ccp-reform-political-balance-deadlock",
+      "title": "中共的真正死局：改革未必救经济，却一定先打破政治平衡",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "china/xi-succession-crisis-gray-rhino",
+      "canonical_url": "/china/xi-succession-crisis-gray-rhino",
+      "title": "中共高层政治的灰犀牛：习近平交权困境与继承危机",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "institution/despotism-cancer-ming-1566",
+      "canonical_url": "/institution/despotism-cancer-ming-1566",
+      "title": "专制之癌：从《大明王朝1566》到结构性腐败的宿命",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "china/organization-credit-retired-officials",
+      "canonical_url": "/china/organization-credit-retired-officials",
+      "title": "组织信用的最后一关：退休官员、终身承诺与中共的功能性衰竭",
+      "primary_section": "政治经济观察",
+      "date": "2026-05-10"
+    },
+    {
+      "article_id": "theory/ai-monitoring-organizational-friction",
+      "canonical_url": "/theory/ai-monitoring-organizational-friction",
+      "title": "AI监控并不降低组织摩擦：一份冷静推演",
+      "primary_section": "理论与制度",
+      "date": "2026-05-10"
+    }
+  ]
+}
