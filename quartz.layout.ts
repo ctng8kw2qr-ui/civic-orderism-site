@@ -81,6 +81,7 @@ export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [Component.PrimaryNavigation()],
   afterBody: [
+    Component.KnowledgeBrowser(),
     Component.ArticleSeriesNavigation(),
     Component.ArticleReadingFooter(),
     Component.ConditionalRender({
@@ -135,12 +136,10 @@ export const sharedPageComponents: SharedLayout = {
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
-    // V6 Institutional Editorial homepage opening (01 Hero + 02 最新研究).
-    // Quartz only renders components declared in the layout, so the hero and
-    // the build-time latest-research list live here; sections 03-07 stay in
-    // content/index.md so editors keep maintaining copy in Markdown.
+    Component.PoliticalRouteContext(),
+    // Approved B homepage renders six sections from Quartz content data.
     Component.ConditionalRender({
-      component: Component.V6HomeHero(),
+      component: Component.OfficialHome(),
       condition: (page) => page.fileData.slug === "index",
     }),
     Component.ConditionalRender({
@@ -200,6 +199,7 @@ export const defaultContentPageLayout: PageLayout = {
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [
+    Component.PoliticalRouteContext(),
     Component.Breadcrumbs({ rootName: "首页", spacerSymbol: "/" }),
     Component.ConditionalRender({
       component: Component.ContentMeta(),

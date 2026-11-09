@@ -15,7 +15,7 @@ coverAlt: "一片裸露的台地地面向下收成一条阶梯状的通道，两
 <div class="inst4 inst4l inst4l-china">
   <section class="inst4l-hero">
 <p class="inst4-eyebrow">UNDERSTANDING THE PRESENT</p>
-<h1 class="inst4l-title">解析中共</h1>
+<h1 class="inst4l-title">中国政治经济观察</h1>
 <p class="inst4l-lead">把中共视为一个现实运行中的政治组织，沿一条因果链理解它：为什么曾经有效、为何开始失效、如何自救、为什么越自救越失灵。</p>
 <div class="inst4l-hero__judgments">
 <p class="inst4l-statement">中共正在从一个依靠增长、利益和未来预期维持合作的发展型政治组织，转变为一个越来越依靠安全、纪律、控制和损失分配维持自身的防御型政治系统。</p>

@@ -1,0 +1,1003 @@
+{
+  "htmlPages": 499,
+  "errors": [
+    [
+      "static/files/civic-orderism-introduction-manual-source.html",
+      "canonical count",
+      0
+    ],
+    [
+      "static/files/civic-orderism-introduction-manual-source.html",
+      "missing description"
+    ],
+    [
+      "static/files/civic-orderism-introduction-manual-source.html",
+      "missing og:title"
+    ],
+    [
+      "static/files/civic-orderism-introduction-manual-source.html",
+      "missing og:description"
+    ],
+    [
+      "static/files/civic-orderism-introduction-manual-source.html",
+      "missing og:image"
+    ],
+    [
+      "static/files/civic-orderism-introduction-manual-source.html",
+      "missing twitter:card"
+    ],
+    [
+      "static/files/civic-orderism-introduction-manual-source.html",
+      "missing twitter:title"
+    ],
+    [
+      "static/files/civic-orderism-introduction-manual-source.html",
+      "missing twitter:description"
+    ],
+    [
+      "static/files/civic-orderism-introduction-manual-source.html",
+      "missing twitter:image"
+    ],
+    [
+      "files/civic-orderism-introduction-manual-source.html",
+      "canonical count",
+      0
+    ],
+    [
+      "files/civic-orderism-introduction-manual-source.html",
+      "missing description"
+    ],
+    [
+      "files/civic-orderism-introduction-manual-source.html",
+      "missing og:title"
+    ],
+    [
+      "files/civic-orderism-introduction-manual-source.html",
+      "missing og:description"
+    ],
+    [
+      "files/civic-orderism-introduction-manual-source.html",
+      "missing og:image"
+    ],
+    [
+      "files/civic-orderism-introduction-manual-source.html",
+      "missing twitter:card"
+    ],
+    [
+      "files/civic-orderism-introduction-manual-source.html",
+      "missing twitter:title"
+    ],
+    [
+      "files/civic-orderism-introduction-manual-source.html",
+      "missing twitter:description"
+    ],
+    [
+      "files/civic-orderism-introduction-manual-source.html",
+      "missing twitter:image"
+    ]
+  ],
+  "redirects": {
+    "article_priority_index.html": "index.html",
+    "organization-manual.html": "preparation.html",
+    "start.html": "start-here//index.html",
+    "article_summaries.html": "index.html",
+    "core-political-statement.html": "civic-orderism/this-time-let-china-be-your-pride.html",
+    "civic-orderism/core-political-statement.html": "civic-orderism/this-time-let-china-be-your-pride.html",
+    "civic-orderism/what-civic-orderism-solves.html": "civic-orderism/what-civic-orderism-ultimately-solves.html",
+    "articles/no-accountability-lie-flat-mentality.html": "theory/no-accountability-lie-flat-mentality.html",
+    "articles/taiwan-war-risk.html": "china/taiwan-war-risk.html",
+    "articles/internal-change-external-change.html": "theory/internal-change-external-change.html",
+    "articles/chicken-and-cage.html": "china/chicken-and-cage.html",
+    "articles/procedural-accountability-organized-power.html": "theory/procedural-accountability-organized-power.html",
+    "articles/trapped-by-process.html": "theory/trapped-by-process.html",
+    "articles/modern-social-syndrome.html": "theory/modern-social-syndrome.html",
+    "articles/diplomacy-root.html": "china/diplomacy-root.html",
+    "reality/overseas-political-movements-fail.html": "theory/overseas-political-movements-fail.html"
+  },
+  "canonicalRepeatedArtifactGroups": {
+    "/": ["article_priority_index.html", "article_summaries.html"],
+    "https://civicorderism.com/articles": [
+      "articles.html",
+      "articles/index.html"
+    ],
+    "https://civicorderism.com/about": ["about.html", "about/index.html"],
+    "/civic-orderism/this-time-let-china-be-your-pride": [
+      "core-political-statement.html",
+      "civic-orderism/core-political-statement.html"
+    ],
+    "https://civicorderism.com/preparation": [
+      "preparation.html",
+      "preparation/index.html"
+    ]
+  },
+  "feeds": [
+    {
+      "file": "sitemap.xml",
+      "differences": [
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-10-06T04:00:00.000Z",
+          "production": "2026-10-06T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-10-06T04:00:00.000Z",
+          "production": "2026-10-06T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-19T04:00:00.000Z",
+          "production": "2026-07-19T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-06-16T04:00:00.000Z",
+          "production": "2026-06-16T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-19T04:00:00.000Z",
+          "production": "2026-07-19T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-13T04:00:00.000Z",
+          "production": "2026-05-13T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-08-11T04:00:00.000Z",
+          "production": "2026-08-11T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-17T04:00:00.000Z",
+          "production": "2026-05-17T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-10T04:00:00.000Z",
+          "production": "2026-07-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-11T04:00:00.000Z",
+          "production": "2026-05-11T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-13T04:00:00.000Z",
+          "production": "2026-05-13T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-01T04:00:00.000Z",
+          "production": "2026-07-01T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-13T04:00:00.000Z",
+          "production": "2026-05-13T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-30T04:00:00.000Z",
+          "production": "2026-05-30T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-28T04:00:00.000Z",
+          "production": "2026-05-28T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-19T04:00:00.000Z",
+          "production": "2026-05-19T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-11T04:00:00.000Z",
+          "production": "2026-07-11T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-30T04:00:00.000Z",
+          "production": "2026-05-30T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-08-22T04:00:00.000Z",
+          "production": "2026-08-22T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-30T04:00:00.000Z",
+          "production": "2026-05-30T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-31T04:00:00.000Z",
+          "production": "2026-07-31T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-08-10T04:00:00.000Z",
+          "production": "2026-08-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-08-12T04:00:00.000Z",
+          "production": "2026-08-12T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-28T04:00:00.000Z",
+          "production": "2026-07-28T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-19T04:00:00.000Z",
+          "production": "2026-05-19T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-08-10T04:00:00.000Z",
+          "production": "2026-08-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-12T04:00:00.000Z",
+          "production": "2026-07-12T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-08-10T04:00:00.000Z",
+          "production": "2026-08-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-09T04:00:00.000Z",
+          "production": "2026-07-09T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-14T04:00:00.000Z",
+          "production": "2026-07-14T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-21T04:00:00.000Z",
+          "production": "2026-07-21T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-08-25T04:00:00.000Z",
+          "production": "2026-08-25T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-24T04:00:00.000Z",
+          "production": "2026-07-24T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-08-05T04:00:00.000Z",
+          "production": "2026-08-05T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-19T04:00:00.000Z",
+          "production": "2026-07-19T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-08-05T04:00:00.000Z",
+          "production": "2026-08-05T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-06-08T04:00:00.000Z",
+          "production": "2026-06-08T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-08-26T04:00:00.000Z",
+          "production": "2026-08-26T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-14T04:00:00.000Z",
+          "production": "2026-05-14T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-08T04:00:00.000Z",
+          "production": "2026-07-08T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-17T04:00:00.000Z",
+          "production": "2026-05-17T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-09-23T04:00:00.000Z",
+          "production": "2026-09-23T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-10-06T04:00:00.000Z",
+          "production": "2026-10-06T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-10-05T04:00:00.000Z",
+          "production": "2026-10-05T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-10-05T04:00:00.000Z",
+          "production": "2026-10-05T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-08-27T04:00:00.000Z",
+          "production": "2026-08-27T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-30T04:00:00.000Z",
+          "production": "2026-05-30T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-11T04:00:00.000Z",
+          "production": "2026-05-11T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-06-13T04:00:00.000Z",
+          "production": "2026-06-13T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-06-08T04:00:00.000Z",
+          "production": "2026-06-08T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-12T04:00:00.000Z",
+          "production": "2026-05-12T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-30T04:00:00.000Z",
+          "production": "2026-05-30T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-30T04:00:00.000Z",
+          "production": "2026-05-30T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-10T04:00:00.000Z",
+          "production": "2026-05-10T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-12T04:00:00.000Z",
+          "production": "2026-05-12T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-12T04:00:00.000Z",
+          "production": "2026-05-12T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-11T04:00:00.000Z",
+          "production": "2026-05-11T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-05-14T04:00:00.000Z",
+          "production": "2026-05-14T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/urlset/url/lastmod",
+          "RC": "2026-07-20T04:00:00.000Z",
+          "production": "2026-07-20T00:00:00.000Z",
+          "dateOnlyEquivalent": true
+        }
+      ],
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "index.xml",
+      "differences": [
+        {
+          "path": "/rss/channel/item/pubDate",
+          "RC": "Tue, 25 Aug 2026 04:00:00 GMT",
+          "production": "Tue, 25 Aug 2026 00:00:00 GMT",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/rss/channel/item/pubDate",
+          "RC": "Sat, 22 Aug 2026 04:00:00 GMT",
+          "production": "Sat, 22 Aug 2026 00:00:00 GMT",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/rss/channel/item/pubDate",
+          "RC": "Wed, 12 Aug 2026 04:00:00 GMT",
+          "production": "Wed, 12 Aug 2026 00:00:00 GMT",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/rss/channel/item/pubDate",
+          "RC": "Tue, 11 Aug 2026 04:00:00 GMT",
+          "production": "Tue, 11 Aug 2026 00:00:00 GMT",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/rss/channel/item/pubDate",
+          "RC": "Mon, 10 Aug 2026 04:00:00 GMT",
+          "production": "Mon, 10 Aug 2026 00:00:00 GMT",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/rss/channel/item/pubDate",
+          "RC": "Mon, 10 Aug 2026 04:00:00 GMT",
+          "production": "Mon, 10 Aug 2026 00:00:00 GMT",
+          "dateOnlyEquivalent": true
+        },
+        {
+          "path": "/rss/channel/item/pubDate",
+          "RC": "Mon, 10 Aug 2026 04:00:00 GMT",
+          "production": "Mon, 10 Aug 2026 00:00:00 GMT",
+          "dateOnlyEquivalent": true
+        }
+      ],
+      "onlyCalendarEquivalentDates": true
+    }
+  ]
+}

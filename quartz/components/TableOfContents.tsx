@@ -64,7 +64,7 @@ export default ((opts?: Partial<Options>) => {
           aria-controls={id}
           aria-expanded={!initiallyCollapsed}
         >
-          <h3>{title}</h3>
+          <span class="toc-label">{title}</span>
           {/* Unified icon system: 18x18 at stroke-width 1.5. The previous
               24x24 at stroke-width 2 was the heaviest icon on the site —
               roughly a third more optical weight than the 18px icons beside

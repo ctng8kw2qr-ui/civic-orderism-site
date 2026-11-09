@@ -99,7 +99,7 @@ aliases:
   <div class="inst4l-doc">
   <p class="inst4l-doc__label">OFFICIAL DOCUMENT <span aria-hidden="true">·</span> CO—2026—002</p>
   <h3 class="inst4l-doc__title"><a href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">公民秩序主义<br>北美非营利法人及<br>首届董事会筹备说明</a></h3>
-  <p class="inst4l-doc__meta">2026 · PDF · 22 PAGES</p>
+  <p class="inst4l-doc__meta">2026 · PDF · 15 PAGES</p>
   <p class="inst4l-doc__cta"><a href="/files/civic-orderism-founding-board-brief-2026.pdf" target="_blank" rel="noopener">阅读正式文件 <span aria-hidden="true">→</span></a></p>
 </div>
 </section>

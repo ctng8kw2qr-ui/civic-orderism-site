@@ -1,0 +1,520 @@
+{
+  "liveAudit": {
+    "prior": 499,
+    "RC": 499,
+    "production200": 499,
+    "productionFailures": 0,
+    "rcMetadataDifferences": 0,
+    "productionMetadataDifferences": 121
+  },
+  "dateTimezoneDifferences": [
+    {
+      "file": "about.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "about/commitments.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "about/index.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "about/initiator.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "articles.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "articles/all.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "articles/index.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china-stage/ccp-second-reform-opening-possibility.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china-stage/china-manufacturing-cannot-stop.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china-stage/index.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china-stage/three-cleans-era-political-economic-cultural-contraction.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/Macro-Narratives,-Opportunity-Incentives,-and-High-Fragility.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/an-era-change-beginning-in-the-united-states.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/bureaucratic-system-under-purges.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/ccp-2018-new-reform-opening.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/ccp-2018-xi-era-local-growth-space.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/ccp-bureaucracy-double-deadlock.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/ccp-bureaucracy-historical-bill.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/ccp-collapse-three-triggers-social-security-healthcare-finance.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/ccp-from-faith-community-to-black-box-post.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/ccp-no-real-base.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/ccp-power-network-not-line.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/ccp-reform-political-balance-deadlock.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/chicken-and-cage.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/diplomacy-root.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/elite-sandification-ming-bureaucrats-ccp.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/emotional-link-breakdown-and-regime-collapse.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/industrial-system-failure-in-information-age.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/information-age-impact-on-ccp-mechanisms.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/maginot-line-of-stability-maintenance.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/mao-death-release-xi-death-weightlessness.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/organization-credit-retired-officials.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/party-power-logic-and-ccp-goal-vacuum.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/party-state-stress-neither-party-nor-state.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/pla-political-subject-myth.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/political-machine-rewards-and-limits.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/propaganda-system-hollowing-out.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/route-transition-why-ccp-keeps-purging-officials.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/security-is-redefining-china.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/security-led-governance-model.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/supply-side-reform-state-can-scale-not-discover-future.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/taiwan-war-controllable-escalation-illusion.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/taiwan-war-risk.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/what-happens-when-security-becomes-the-top-priority.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/when-high-ranking-officials-are-no-longer-safe.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/why-ccp-cannot-reduce-grassroots-burden.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/why-ccp-feels-less-secure-when-everyone-claims-loyalty.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/why-ccp-will-not-relax-party-pressure.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/why-expulsion-from-party-becomes-standard-ending.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/xi-power-centralization.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/xi-solved-organization-not-reality.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/xi-succession-crisis-gray-rhino.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "china/xi-successor-and-bureaucratic-accountability.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/backend-system-under-civic-orderism.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/civic-orderism-manual.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/civic-orderism-overview.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/committee-administration-opposite-incentives.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/election-logic-under-civic-orderism.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/information-age-and-political-transition.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/north-america-nonprofit-board-preparation-manifesto.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/peaceful-state-transition.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/possibility-of-peaceful-political-transition-in-china.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/public-politics-without-party-dominance.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/state-must-rely-on-systems-not-drivers.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/state-operation-process-under-civic-orderism.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/this-time-let-china-be-your-pride.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/top-level-power-structure-under-civic-orderism.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/what-civic-orderism-solves-if-you-read-only-one.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/what-civic-orderism-ultimately-solves.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/what-is-committee-system.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/why-against-moral-narrative.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/why-civic-orderism-emphasizes-experience-and-records.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/why-civic-orderism-is-easier-to-succeed.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/why-civic-orderism.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/why-committees-cannot-directly-take-cases.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/why-dual-track-committee-administration.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/why-elections-reject-political-donations.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/why-emphasize-reciprocity-and-equality.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/why-focus-on-invisible-power-nodes.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/why-information-transparency.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/why-justice-serves-reality.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/why-no-bicameral-parliament.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/why-not-left-right-democracy-autocracy.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/why-not-simple-separation-of-powers.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/why-part-time-representatives.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/why-proposals-from-social-organizations.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "civic-orderism/why-weaken-party-politics.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "concepts/bureaucratic-shock.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "copyright.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "index.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "institution/despotism-cancer-ming-1566.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "institution/index.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "institutional-architecture.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "introduction-manual.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "participate.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "preparation.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "preparation/board.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "preparation/index.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "privacy.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "start-here/index.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/ai-monitoring-organizational-friction.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/ccp-completed-historical-task-refuses-exit.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/ccp-high-fragility-dysfunction.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/costly-industrial-governance-information-age.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/democracy-still-exists-but-cannot-penetrate-reality.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/end-of-party-politics-in-information-age.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/high-rigidity-system-ccp.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/information-age-erodes-us-integrative-capacity.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/internal-change-external-change.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/modern-social-syndrome.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/no-accountability-lie-flat-mentality.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/organizational-collapse-begins-with-loss-of-institutional-trust.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/overseas-political-movements-fail.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/party-state-structural-failure.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/procedural-accountability-organized-power.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/social-change-dynamics-when-system-no-longer-worth-it.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/trapped-by-process.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/us-industrial-system-cannot-carry-information-age.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/us-separation-of-powers-integrative-capacity-crisis.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/us-supreme-court-partisan-final-battleground.html",
+      "onlyCalendarEquivalentDates": true
+    },
+    {
+      "file": "theory/why-party-politics-is-becoming-a-low-dimensional-function.html",
+      "onlyCalendarEquivalentDates": true
+    }
+  ],
+  "calendarEquivalentCount": 121,
+  "feeds": {
+    "sitemap.xml": {
+      "mainBuildEqual": true,
+      "liveProductionEqual": false,
+      "bytes": 20945,
+      "sha256": "108fa4345dfbc553c3194c2ba40396abfef3d9f69b83f21e07e36928846be27a",
+      "locsEqual": true,
+      "locCount": 143,
+      "uniqueLocCount": 143
+    },
+    "index.xml": {
+      "mainBuildEqual": true,
+      "liveProductionEqual": false,
+      "bytes": 5867,
+      "sha256": "a294fd040d5fb6f9d7cacfa48da99eb594489d4dbfef7cc8fac9b7bd119326db"
+    },
+    "robots.txt": {
+      "mainBuildEqual": true,
+      "liveProductionEqual": true,
+      "bytes": 71,
+      "sha256": "ead65629f2ba78cea68f39fae8c6044c1dd499b2bbb5ca4e956cb1145a2de4b7"
+    }
+  }
+}

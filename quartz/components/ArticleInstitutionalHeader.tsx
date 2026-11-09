@@ -151,7 +151,9 @@ const ArticleInstitutionalHeader: QuartzComponent = ({
     : section || primaryTopic?.name || "";
 
   return (
-    <header
+    <div
+      role="region"
+      aria-label="文章信息"
       class={`article-inst${isCorePoliticalStatement ? " article-inst--core-statement" : ""}`}
     >
       <nav class="article-inst__context" aria-label="研究路径">
@@ -228,7 +230,7 @@ const ArticleInstitutionalHeader: QuartzComponent = ({
           <span>研究项目：{programName}</span>
         ) : null}
       </p>
-    </header>
+    </div>
   );
 };
 

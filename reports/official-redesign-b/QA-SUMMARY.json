@@ -1,0 +1,139 @@
+{
+  "environment": {
+    "browser": "Google Chrome via Playwright / local loopback gzip static server",
+    "safari": "27.2 WebDriver session creation timed out after 12s; pending manual testing",
+    "productionTouched": false
+  },
+  "responsive": {
+    "views": 126,
+    "widths": [320, 360, 375, 390, 430, 768, 1024, 1440, 1920],
+    "pageTypes": [
+      "home",
+      "china",
+      "initiator",
+      "theory",
+      "organization",
+      "article",
+      "route"
+    ],
+    "themes": ["light", "dark"],
+    "overflow": 0,
+    "consoleOrImageFailures": 0,
+    "maxCLS": 0,
+    "portraitFilters": ["none"]
+  },
+  "accessibility": {
+    "axeViews": 28,
+    "violations": [],
+    "interactions": [
+      {
+        "width": 320,
+        "skip": true,
+        "focusMain": true,
+        "menu": true
+      },
+      {
+        "width": 390,
+        "skip": true,
+        "focusMain": true,
+        "menu": true
+      },
+      {
+        "width": 1440,
+        "skip": true,
+        "focusMain": true,
+        "menu": null
+      }
+    ]
+  },
+  "searchAndNavigation": {
+    "timing": {
+      "loadAt": 155.40000000596046,
+      "index": [
+        {
+          "start": 155.40000000596046,
+          "end": 191.40000000596046
+        }
+      ],
+      "photos": [
+        "http://127.0.0.1:8780/static/assets/v6/people/zhao-pengbo-b-desktop-768.webp"
+      ],
+      "y": 0
+    },
+    "search": {
+      "visible": true,
+      "results": 14,
+      "text": "文章\n\n习近平解决了组织的问题，却解决不了组织面临的问题\n\n文章\n\n习近平眼中的世界\n\n文章\n\n习近平权力集中背后的系统逻辑\n\n文章\n\n习近平到底有没有接班人？\n\n专题\n\n习近平时代\n\n文章\n\n如果习近平去世会发生什么？\n\n文章\n\n中共2018：习近平元年\n\n文章\n\n中共高层政治的灰犀牛：习近平交权困境与继承危机\n\n文章索引\n\n全部文章\n\n文章\n\n中共还有没有二次改开的可能？\n\n文章\n\n2018新“改革开放”：从开放社会到封闭风险\n\n文章\n\n城管背后的权力逻辑：中共如何制度化统治，又如何灵活化治"
+    },
+    "articleNav": {
+      "width": 1440,
+      "skipOpacity": "0"
+    },
+    "brandHome": "http://127.0.0.1:8780/"
+  },
+  "compatibility": {
+    "base": "36fb221963f7aa84b8a0d97b051c59aa7631c23a",
+    "pages_before": 499,
+    "pages_after": 499,
+    "removed": [],
+    "added": [],
+    "metadata_changed": [],
+    "source_changes": [
+      "content/index.md",
+      "content/about/initiator.md",
+      "content/china/index.md",
+      "quartz/components/renderPage.tsx",
+      "quartz/components/Head.tsx",
+      "package.json"
+    ],
+    "sitemap.xml": {
+      "present": true,
+      "identical": true
+    },
+    "index.xml": {
+      "present": true,
+      "identical": true
+    },
+    "robots.txt": {
+      "present": true,
+      "identical": true
+    },
+    "PR32_scroll_script_byte_identical": true,
+    "PR32_scroll_sha256": "9ddede729fbfd707ac95f8706bf371562aae87ae15297958892966f71736c9bc"
+  },
+  "performance": {
+    "desktop": {
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "LCP_ms": 429.94780000000003,
+      "CLS": 0,
+      "TBT_ms": 0
+    },
+    "mobile": {
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "LCP_ms": 2562.3886,
+      "CLS": 0,
+      "TBT_ms": 79
+    }
+  },
+  "tests": {
+    "build": "PASS",
+    "tests": "85/85 PASS",
+    "typescript": "PASS",
+    "typography": "105/105 PASS",
+    "links": "22488 across 499 pages PASS",
+    "contentSafety": "PASS",
+    "validateV2": "31 inherited failures / 0 new failures; baseline 40",
+    "wholeRepositoryFormatting": "180 inherited warning files; baseline 183; zero new warning files. No bulk formatting."
+  },
+  "evidenceDirectory": "/private/tmp/co-official-redesign-review"
+}

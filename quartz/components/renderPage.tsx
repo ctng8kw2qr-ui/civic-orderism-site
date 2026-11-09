@@ -31,7 +31,12 @@ export function pageResources(
   isHome = false,
 ): StaticResources {
   const contentIndexPath = joinSegments(baseDir, "static/contentIndex.json")
-  const contentIndexScript = `const fetchData = fetch("${contentIndexPath}").then(data => data.json())`
+  // Keep the shared Promise API; the search index must not compete with LCP media.
+  const contentIndexScript = `const fetchData = new Promise(function (resolve, reject) {
+  function loadIndex() { fetch("${contentIndexPath}").then(data => data.json()).then(resolve, reject); }
+  if (document.readyState === "complete") loadIndex();
+  else addEventListener("load", loadIndex, {once: true});
+})`
 
   /**
    * 首页新文档导航的 scroll restoration 收口（范围极窄）。

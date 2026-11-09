@@ -22,7 +22,8 @@ button.toc-header {
   display: flex;
   align-items: center;
 
-  & h3 {
+  & .toc-label {
+    font-weight: 600;
     font-size: 1rem;
     display: inline-block;
     margin: 0;
@@ -169,7 +170,7 @@ footer .toc {
     justify-content: space-between;
   }
 
-  .toc-desktop button.toc-header h3 {
+  .toc-desktop button.toc-header .toc-label {
     font-size: 0.95rem;
     font-weight: 600;
     letter-spacing: 0.04em;

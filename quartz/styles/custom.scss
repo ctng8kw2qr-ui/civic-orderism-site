@@ -1179,6 +1179,19 @@ article .reading-route-card h3 {
   text-align: right;
 }
 
+/* The four-column minimum exceeds the reading width on small laptops. */
+@media (max-width: 1100px) {
+  .institution-hero {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    align-items: start;
+  }
+
+  .institution-hero .section-stats {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
 @media (max-width: 900px) {
   .topic-entry-grid,
   .concept-grid,
@@ -1200,16 +1213,6 @@ article .reading-route-card h3 {
 
   .institution-map li:nth-child(3)::after {
     content: none;
-  }
-
-  .institution-hero {
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-    align-items: start;
-  }
-
-  .institution-hero .section-stats {
-    flex-direction: row;
-    align-items: flex-start;
   }
 }
 
@@ -9105,9 +9108,9 @@ body[data-slug="preparation"] {
 .inst4l {
   box-sizing: border-box;
   width: 100%;
-  max-width: 1360px;
+  max-width: var(--v6-container);
   margin: 0 auto;
-  padding: 0 clamp(1.25rem, 4vw, 3.5rem);
+  padding: 0 var(--v6-gutter);
   background: var(--v6-surface);
   color: var(--inst4-ink);
   font-size: 17px;
@@ -9142,6 +9145,7 @@ body[data-slug="preparation"] {
 }
 
 .inst4l-title {
+  font-family: var(--v6-font-serif);
   max-width: 12em;
   margin: 1.6rem 0 0;
   color: var(--inst4-ink);
@@ -10558,7 +10562,7 @@ body[data-page-kind="article"] .page > #quartz-body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 3rem;
-  padding: 0 clamp(1rem, 4vw, 3.5rem);
+  padding: var(--official-nav-space) clamp(1rem, 4vw, 3.5rem) 0;
 }
 
 body[data-page-kind="article"] .page > #quartz-body .inst4-footer {
@@ -10585,7 +10589,7 @@ body[data-page-kind="article"] .page > #quartz-body .sidebar.right {
 @media (max-width: 1100px) {
   body[data-page-kind="article"] .page > #quartz-body {
     gap: 2rem;
-    padding: 0 clamp(1rem, 3vw, 2rem);
+    padding: var(--official-nav-space) clamp(1rem, 3vw, 2rem) 0;
   }
 
   body[data-page-kind="article"] .page > #quartz-body .sidebar.right {
@@ -10596,7 +10600,7 @@ body[data-page-kind="article"] .page > #quartz-body .sidebar.right {
 @media (max-width: 800px) {
   body[data-page-kind="article"] .page > #quartz-body {
     display: block !important;
-    padding: 0 1rem;
+    padding: var(--official-nav-space) 1rem 0;
   }
 
   body[data-page-kind="article"] .page > #quartz-body .sidebar.right {

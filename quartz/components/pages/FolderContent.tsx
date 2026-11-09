@@ -66,11 +66,17 @@ export default ((opts?: Partial<FolderContentOptions>) => {
     if (hasInstitutionalLanding) {
       // Render the landing page body itself (institutional content)
       // instead of the Quartz folder listing.
-      const content = htmlToJsx(
-        fileData.filePath!,
-        tree,
-      ) as ComponentChildren;
-      return <article class="popover-hint">{content}</article>;
+      const content = htmlToJsx(fileData.filePath!, tree) as ComponentChildren;
+      return (
+        <article
+          class="popover-hint"
+          id="main-content"
+          role="main"
+          tabIndex={-1}
+        >
+          {content}
+        </article>
+      );
     }
 
     const trie = (props.ctx.trie ??= trieFromAllFiles(allFiles));
@@ -170,7 +176,7 @@ export default ((opts?: Partial<FolderContentOptions>) => {
     ) as ComponentChildren;
 
     return (
-      <div class="popover-hint">
+      <div class="popover-hint" id="main-content" role="main" tabIndex={-1}>
         <article class={classes}>{content}</article>
         {isConceptIndex || !hasListedPages ? null : isPrimarySection ? (
           <details class="page-listing section-archive" data-section-archive>

@@ -237,7 +237,7 @@ for (const filename of documents) {
 }
 
 const requiredDocumentLinks = new Map([
-  ["content/index.md", ["civic-orderism-founding-board-brief-2026.pdf"]],
+  ["public/index.html", ["civic-orderism-founding-board-brief-2026.pdf"]],
   ["content/about.md", documents],
 ]);
 for (const [page, filenames] of requiredDocumentLinks) {

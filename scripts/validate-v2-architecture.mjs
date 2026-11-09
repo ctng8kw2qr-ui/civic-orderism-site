@@ -1,6 +1,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import { getPrimaryTopicArticles } from "./lib/topic-relations.mjs";
+import {
+  contactBoundaryContract,
+  institutionArchiveContract,
+  elementById,
+  elementsByClass,
+  linkedSlugs,
+} from "./lib/release-contracts.mjs";
 
 const root = path.resolve(".");
 const publicDir = path.join(root, "public");
@@ -899,379 +906,132 @@ const homepageMainHtml =
     /<article class="popover-hint">([\s\S]*?)<\/article><hr/,
   )?.[1] ?? homepageHtml;
 const homepageMainText = visiblePageText(homepageMainHtml);
-// V5.1 newcomer reading order:
-// V6 Institutional Editorial reading order:
-//   01 HERO → 02 LATEST RESEARCH → 03 RESEARCH AREAS → 04 WHY NOW
-//   → 05 THE TRANSITION PATH → 06 ORGANIZATION BUILDING → 07 WHO WE ARE
-//
-// The hero and the latest-research block are emitted by the layout component
-// quartz/components/V6HomeHero.tsx; sections 03-07 come from content/index.md.
-// Both land in the same document, just not under the same parent, so the order
-// is asserted against the whole page rather than the article body.
+// Approved B homepage: preserve content/identity contracts, not retired E3 geometry.
 const homepageSectionIds = [
-  'id="identity"',
-  'id="latest"',
-  'id="research-axes"',
-  'id="why-now"',
-  'id="transition"',
-  'id="current-work"',
-  'id="organization"',
+  "identity",
+  "route",
+  "research",
+  "economic-redemption",
+  "theory",
+  "organization",
 ];
 let previousHomepageSectionPosition = -1;
-for (const marker of homepageSectionIds) {
+for (const id of homepageSectionIds) {
+  const marker = `id="${id}"`;
   const position = homepageHtml.indexOf(marker);
   assert(
     position > previousHomepageSectionPosition,
-    `首页机构章节顺序错误或缺少：${marker}`,
+    `首页章节顺序错误或缺少：${id}`,
   );
   previousHomepageSectionPosition = position;
 }
-// V6 home is a continuous institutional landing page: seven sections and no
-// numbered-report blocks.
-//
-// Images: the Hero artwork was REMOVED when the Hero moved to the E3
-// "Radical Minimal" composition, which deliberately carries no standalone
-// graphic — that page is built from the headline, brand typography, rules,
-// numerals, metadata and whitespace. Exactly ONE image therefore remains:
-// the "latest research" lead cover. The rule is inverted rather than dropped:
-// the Hero must NOT reintroduce an <img>, and any second image on the
-// homepage is a regression. (Replaces the Phase 4B rule that required a
-// decorative Hero artwork image.)
-const homeImgs = homepageHtml.match(/<img\b[^>]*>/g) ?? [];
-const heroImgs = homeImgs.filter((tag) => tag.includes("v6-hero__art"));
-const leadCoverFigures = (homepageHtml.match(/v6-latest__lead-cover/g) ?? [])
-  .length;
 assert(
-  !homepageHtml.includes('id="approach"') &&
-    !homepageHtml.includes('id="contact"') &&
-    (homepageHtml.match(/<section class="v6-/g) ?? []).length === 7 &&
-    !homepageHtml.includes("home-institution-") &&
-    homeImgs.length === 1 &&
-    heroImgs.length === 0 &&
-    leadCoverFigures === 1,
-  "首页未保持为连续机构 landing page（七个区域、无编号章节；图片仅限最新研究主文章封面，Hero 不得引入独立图形）",
+  (homepageHtml.match(/<section\b/g) ?? []).length === 6,
+  "B 首页必须保持六个主要区域",
 );
-// SECTION 1 / IDENTITY
-// 选择器匹配「class 以 v6-hero 开头」，而不是精确等于 class="v6-hero"：
-// Hero 现在带 E3 变体修饰符（<section class="v6-hero v6-hero--e3">），
-// 精确匹配会静默匹配不到，使下面全部 Hero 断言在空字符串上失败。
 const heroHtml =
-  homepageHtml.match(
-    /<section class="v6-hero\b[^"]*"[\s\S]*?<\/section>/,
-  )?.[0] ?? "";
-const heroText = visiblePageText(heroHtml);
-assert(
-  heroText.includes("CIVIC ORDERISM") &&
-    heroText.includes("公民秩序主义") &&
-    // V6 headline: 为中国和平政治转轨 / 准备承接力量
-    heroText.includes("为中国和平政治转轨") &&
-    heroText.includes("准备承接力量") &&
-    heroText.includes(
-      "不革命、不清算，在保持国家连续运行的前提下，为中国未来建立一条低阻力、低风险的政治转轨路径。",
-    ) &&
-    // The institutional self-description required by the V6 brief.
-    heroText.includes("我们研究未来，也为未来建立组织。") &&
-    // Primary and secondary calls to action.
-    // 了解 → 路线, 参与 → 行动. The secondary CTA points at /participate
-    // (the action page), not /preparation (the status page).
-    /<a[^>]+href="\/civic-orderism"[^>]*>\s*了解我们的路线/.test(heroHtml) &&
-    /<a[^>]+href="\/participate"[^>]*>\s*参与组织建设/.test(heroHtml) &&
-    heroHtml.includes(site.currentPhase.label) &&
-    heroText.includes(site.currentPhase.labelZh) &&
-    heroText.includes(site.currentPhase.title) &&
-    heroText.includes(site.currentPhase.year) &&
-    !heroText.includes("North American Nonprofit") &&
-    !heroText.includes("Founding Board Preparation"),
-  "首页首屏机构定位（IDENTITY）、双 CTA 或当前阶段状态块缺失",
-);
-// Newcomer entry in the hero: a quiet text link, not a primary CTA.
-assert(
-  /<a[^>]+href="[^"]*start-here\/?"[^>]*>\s*第一次来？5分钟了解公民秩序主义/.test(
-    heroHtml,
-  ),
-  "首页首屏缺少新读者入口（第一次来？5分钟了解公民秩序主义）",
-);
-// SECTION 2 / WHY NOW — why Chinese society needs a political answer today.
-// It must stay a short social argument: no state-continuity service lists
-// (police / hospitals / banks) and no full transition argument.
-const whyNowHtml =
-  homepageMainHtml.match(
-    /<section class="v6-section" id="why-now"[\s\S]*?<\/section>/,
-  )?.[0] ?? "";
-const whyNowText = visiblePageText(whyNowHtml);
-assert(
-  whyNowHtml.length > 0 &&
-    whyNowHtml.includes(civicOrderismConfig.homeWhyNow.englishLabel) &&
-    whyNowText.includes(civicOrderismConfig.homeWhyNow.title) &&
-    whyNowHtml.includes('class="v6-why__body"') &&
-    (whyNowHtml.match(/v6-why__emphasis/g) ?? []).length === 2 &&
-    whyNowText.includes(civicOrderismConfig.homeWhyNow.answer.emphasis) &&
-    whyNowText.includes(civicOrderismConfig.homeWhyNow.change.emphasis) &&
-    whyNowText.includes(civicOrderismConfig.homeWhyNow.judgment) &&
-    civicOrderismConfig.homeWhyNow.closing.every((line) =>
-      whyNowText.includes(line),
-    ) &&
-    !whyNowHtml.includes("<img") &&
-    !whyNowHtml.includes("<ul"),
-  "首页 WHY NOW（为什么是现在）未按要求组织",
-);
-assert(
-  homepageMainHtml.indexOf('id="identity"') <
-    homepageMainHtml.indexOf('id="why-now"') &&
-    homepageMainHtml.indexOf('id="why-now"') <
-      homepageMainHtml.indexOf('id="transition"'),
-  "WHY NOW 未放在首屏之后、政治转轨路径之前",
-);
-for (const forbidden of [
-  "警察",
-  "医院",
-  "银行",
-  "公务员",
-  "财政",
-  "社会保障",
+  homepageHtml.match(/<section class="hero"[\s\S]*?<\/section>/)?.[0] ?? "";
+for (const text of [
+  "赵鹏博",
+  "公民秩序主义发起人",
+  "经济赎买",
+  "不革命 · 不清算",
+  "在保持国家连续运行的前提下",
+  "了解政治路线",
+  "阅读政治经济观察",
 ]) {
   assert(
-    !whyNowText.includes(forbidden),
-    `WHY NOW 不应讨论国家承接细节：${forbidden}`,
+    visiblePageText(heroHtml).includes(text),
+    `B 首页身份或政治路线缺失：${text}`,
   );
 }
-
-// SECTION 3 / TRANSITION PATH — the homepage carries the route model only.
-const transitionHtml =
-  homepageMainHtml.match(
-    /<section class="v6-section" id="transition"[\s\S]*?<\/section>/,
-  )?.[0] ?? "";
 assert(
-  transitionHtml.includes(civicOrderismConfig.homeTransition.englishLabel) &&
-    visiblePageText(transitionHtml).includes(
-      civicOrderismConfig.homeTransition.title,
-    ) &&
-    (transitionHtml.match(/<li><span>\d{2}<\/span>/g) ?? []).length ===
-      civicOrderismConfig.homeTransition.steps.length &&
-    transitionHtml.includes('class="v6-route__chain v6-transition__flow"') &&
-    visiblePageText(transitionHtml).includes(
-      civicOrderismConfig.homeTransition.summary,
-    ) &&
-    transitionHtml.includes('data-slug="civic-orderism/index"') &&
-    /href="[^"]*civic-orderism\/?"/.test(transitionHtml) &&
-    visiblePageText(transitionHtml).includes(
-      civicOrderismConfig.homeTransition.entryLabel,
-    ),
-  "首页政治转轨路线模块（五步链条、简短说明或完整路线入口）不符合要求",
+  heroHtml.includes("zhao-pengbo-b-desktop-1086.webp") &&
+    heroHtml.includes("zhao-pengbo-b-portrait-590.webp") &&
+    heroHtml.includes('fetchPriority="high"'),
+  "B 首屏必须使用批准的真实照片和响应式资源",
 );
-for (const step of civicOrderismConfig.homeTransition.steps) {
-  assert(
-    visiblePageText(transitionHtml).includes(step),
-    `首页路线模块缺少步骤：${step}`,
-  );
-}
-// The four "why" arguments belong to /civic-orderism/, not the homepage.
-for (const forbidden of [
-  "为什么不能等待内部改革",
-  "为什么需要外部政治承接",
-  "为什么和平转轨存在现实基础",
-  "政治变化以后怎么办",
-]) {
-  assert(
-    !homepageMainText.includes(forbidden),
-    `首页不应展开完整转轨论证：${forbidden}`,
-  );
-}
-// SECTION 03 / CORE RESEARCH AREAS — the four long-term research directions
-// plus the three research programme rows (理解现在 → 准备转轨 → 准备未来).
-const areasHtml =
-  homepageMainHtml.match(
-    /<section class="v6-section" id="research-axes"[\s\S]*?<\/section>/,
-  )?.[0] ?? "";
-const areasText = visiblePageText(areasHtml);
 assert(
-  areasHtml.includes("RESEARCH AREAS") &&
-    areasText.includes("核心研究领域") &&
-    areasText.includes("我们长期研究的四个方向") &&
-    (areasHtml.match(/<li class="v6-areas__item">/g) ?? []).length === 4,
-  "首页核心研究领域模块未按要求组织",
+  !homepageHtml.includes("v6-hero__mark") &&
+    !homepageHtml.includes("v6-hero__art"),
+  "不得恢复已删除的巨型装饰 artwork",
 );
-for (const [index, name] of [
-  "政治判断",
-  "制度分析",
-  "历史观察",
-  "组织建设",
-].entries()) {
-  assert(
-    areasHtml.includes(
-      `class="v6-areas__num" aria-hidden="true">${String(index + 1).padStart(2, "0")}<`,
-    ) && areasText.includes(name),
-    `首页核心研究领域缺少方向：${name}`,
-  );
-}
+const homepagePrinciplesHtml =
+  homepageHtml.match(/<section class="route band"[\s\S]*?<\/section>/)?.[0] ??
+  "";
 assert(
-  (areasHtml.match(/class="v6-areas__route[ "]/g) ?? []).length === 3 &&
-    // CrawlLinks rewrites internal links relative to the page, so on the
-    // homepage an absolute /china link is emitted as ./china.
-    /href="(?:\.\/|\/)china"/.test(areasHtml) &&
-    /href="(?:\.\/|\/)civic-orderism"/.test(areasHtml) &&
-    /href="(?:\.\/|\/)china-future"/.test(areasHtml) &&
-    areasText.includes("理解现在") &&
-    areasText.includes("准备转轨") &&
-    areasText.includes("准备未来") &&
-    areasText.includes("解析中共") &&
-    areasText.includes("政治路线") &&
-    areasText.includes("中国未来") &&
-    areasText.includes(
-      "理解现有政治系统为什么正在逐渐失去持续提供利益、预期与共识的能力",
+  visiblePageText(homepagePrinciplesHtml)
+    .replace(/\s+/g, "")
+    .includes("改变政治，不把国家一起砸碎。") &&
+    homepagePrinciplesHtml.includes(
+      `href="/${site.corePoliticalStatement.slug}"`,
     ) &&
-    areasText.includes("研究如何降低政治变化的阻力、风险与社会成本") &&
-    areasText.includes("讨论政治变化之后国家如何继续运行") &&
-    areasText.includes("浏览全部研究与出版") &&
-    /href="[^"]*\/theory\/?"/.test(areasHtml) &&
-    !areasHtml.includes("<img"),
-  "首页研究栏目索引（三行编辑索引）未按要求组织",
-);
-// SECTION 4 / FUTURE (VALUE GOAL) — after the transition path the reader must
-// immediately see what the transition is finally for; organizational work
-// (CURRENT WORK) no longer interrupts that narrative.
-// V6 merges the value-goal statement into SECTION 07 / WHO WE ARE, so the
-// copy is asserted against the whole rendered homepage rather than a
-// dedicated value-goal section.
-const coreStatementHomepageHtml = homepageMainHtml;
-assert(
-  coreStatementHomepageHtml.includes(
-    site.corePoliticalStatement.englishLabel,
-  ) &&
-    visiblePageText(coreStatementHomepageHtml).includes(
-      site.corePoliticalStatement.roleLabel,
-    ) &&
-    visiblePageText(coreStatementHomepageHtml).includes(
-      site.corePoliticalStatement.roleQuestion,
-    ) &&
-    visiblePageText(coreStatementHomepageHtml).includes(
+    visiblePageText(homepagePrinciplesHtml).includes(
       site.corePoliticalStatement.title,
-    ) &&
-    visiblePageText(coreStatementHomepageHtml).includes(
-      site.corePoliticalStatement.question,
-    ) &&
-    visiblePageText(coreStatementHomepageHtml).includes(
-      site.corePoliticalStatement.judgment,
-    ) &&
-    coreStatementHomepageHtml.includes(
-      `data-slug="${site.corePoliticalStatement.slug}"`,
-    ) &&
-    visiblePageText(coreStatementHomepageHtml).includes(
-      `阅读${site.corePoliticalStatement.roleLabel}全文`,
-    ) &&
-    !visiblePageText(coreStatementHomepageHtml).includes("阅读核心政治总论"),
-  "首页缺少价值目标区或其正式文案（价值目标入口不得再写作“核心政治总论”）",
+    ),
+  "政治原则或固定核心政治文本入口缺失",
 );
-// SECTION 6 / CURRENT WORK — compressed: one statement, one project, two quiet
-// entries. Documents, rules and page counts live on /preparation/.
-const workHtml =
-  homepageMainHtml.match(
-    /<section class="v6-section v6-org" id="current-work"[\s\S]*?<\/section>/,
+const researchHtml =
+  homepageHtml.match(
+    /<section class="research band"[\s\S]*?<\/section>/,
   )?.[0] ?? "";
 assert(
-  workHtml.includes("CURRENT WORK") &&
-    visiblePageText(workHtml).includes(
-      civicOrderismConfig.organizationPositioning.homeLabel,
-    ) &&
-    visiblePageText(workHtml).includes(
-      civicOrderismConfig.organizationPositioning.homeItemTitle,
-    ) &&
-    visiblePageText(workHtml).includes(site.currentPhase.note) &&
-    workHtml.includes('class="v6-org__item"') &&
-    // V5.1 freeze kept in V6: the immediate status line must resolve the
-    // ambiguity of "北美非营利法人及首届董事会筹备" (entity still being prepared).
-    workHtml.includes('class="v6-org__item-status"') &&
-    visiblePageText(workHtml).includes(
-      civicOrderismConfig.organizationPositioning.homeStatus,
-    ) &&
-    /href="[^"]*\/preparation\/?"/.test(workHtml) &&
-    visiblePageText(workHtml).includes(
-      civicOrderismConfig.organizationPositioning.homeEntryLabel,
-    ) &&
-    workHtml.includes(
-      civicOrderismConfig.organizationPositioning.homeDocumentHref,
-    ) &&
-    visiblePageText(workHtml).includes(
-      civicOrderismConfig.organizationPositioning.homeDocumentLabel,
-    ) &&
-    !workHtml.includes("OFFICIAL DOCUMENT") &&
-    !workHtml.includes("CURRENT INITIATIVE") &&
-    !workHtml.includes("22 PAGES") &&
-    !workHtml.includes("CO—2026—002") &&
-    !workHtml.includes("建立能够承接") &&
-    !workHtml.includes("<img") &&
-    (
-      workHtml.match(/inst4-work__(initiative|points|point\b|number|lead)/g) ??
-      []
-    ).length === 0,
-  "首页当前工作（CURRENT WORK）未压缩为简短的组织建设说明",
+  visiblePageText(researchHtml).includes("中国政治经济观察") &&
+    researchHtml.includes('class="lead"') &&
+    researchHtml.includes('class="latest"') &&
+    researchHtml.includes('class="topics"'),
+  "研究区必须保留重点 / 近期 / 专题编辑式结构",
 );
-for (const removedHomepageText of [
-  "信任 × 能力 × 人才",
-  "街头动员组织",
-  "网络情绪共同体",
-  "党国应力",
-  "安全化循环",
-  "当前组织工作",
-  "CURRENT STATUS / 当前阶段",
-]) {
-  assert(
-    !homepageMainText.includes(removedHomepageText),
-    `首页仍保留应收束的内容：${removedHomepageText}`,
-  );
-}
+const articleTargets = [...researchHtml.matchAll(/data-slug="([^"]+)"/g)].map(
+  (m) => m[1],
+);
+assert(
+  articleTargets.length === 3 &&
+    new Set(articleTargets).size === 3 &&
+    articleTargets.every((slug) => fs.existsSync(publicHtml(slug))),
+  "研究区必须展示三篇不同的真实文章",
+);
+const workHtml =
+  homepageHtml.match(
+    /<section class="organization band"[\s\S]*?<\/section>/,
+  )?.[0] ?? "";
+assert(
+  visiblePageText(workHtml).includes(
+    "尚未完成法人注册及首届董事会设立，也不以政党身份运行",
+  ) &&
+    workHtml.includes('href="/preparation"') &&
+    workHtml.includes(site.documents[0].href),
+  "组织状态、筹备入口或正式文件链接不完整",
+);
 assert(
   homepageHtml.includes(`name="description" content="${site.description}"`),
-  "首页 metadata description 未同步当前组织阶段",
+  "首页 SEO description 不得因视觉改版改变",
 );
-// V5.1: the primary nav keeps long-term entries; board preparation is now the
-// current project inside 建立联系 (/participate) and stays reachable from there,
-// the footer and the homepage CURRENT WORK section.
-// V6 primary navigation: 首页 / 研究 / 政治路线 / 组织建设 / 关于 + 搜索.
-// The long-term entries only; board preparation now lives inside 组织建设
-// (/preparation, /preparation/board) instead of occupying a top-level slot.
 const instNavHtml =
   homepageHtml.match(/<nav class="v6-nav"[\s\S]*?<\/nav>/)?.[0] ?? "";
 const instNavText = visiblePageText(instNavHtml);
 assert(
-  // Phase 4A: the formal institutional English identifier is uppercase
-  // ("CIVIC ORDERISM"), matching the V6 uppercase micro-label language.
-  // Prose occurrences of "Civic Orderism" in content are intentionally
-  // unchanged, so only this brand-display assertion is updated.
   instNavHtml.includes("CIVIC ORDERISM") &&
-    instNavHtml.includes("公民秩序主义") &&
     instNavHtml.includes('href="/"') &&
-    instNavHtml.includes('href="/about"') &&
-    instNavHtml.includes('href="/theory"') &&
-    instNavHtml.includes('href="/civic-orderism"') &&
-    instNavHtml.includes('href="/preparation"') &&
     instNavHtml.includes('class="v6-nav__toggle"') &&
-    instNavHtml.includes('id="v6-nav-links"') &&
-    instNavText.includes("首页") &&
-    instNavText.includes("关于") &&
-    instNavText.includes("研究") &&
-    instNavText.includes("政治路线") &&
-    instNavText.includes("组织建设") &&
-    instNavText.includes("搜索") &&
-    !instNavHtml.includes("About") &&
-    !instNavHtml.includes("Founding Board") &&
-    !instNavHtml.includes(">EN<"),
-  "机构 Header（v6-nav）一级导航未保持长期入口（首页 / 研究 / 政治路线 / 组织建设 / 关于 + 搜索）",
+    instNavText.includes("搜索"),
+  "品牌、首页链接、移动菜单与搜索必须保留",
 );
-// V6 navigation order: 首页 → 研究 → 政治路线 → 组织建设 → 关于
-const navHomeIndex = instNavHtml.indexOf('class="v6-nav__link" href="/"');
-const navResearchIndex = instNavHtml.indexOf('href="/theory"');
-const navRouteIndex = instNavHtml.indexOf('href="/civic-orderism"');
-const navOrgIndex = instNavHtml.indexOf('href="/preparation"');
-const navAboutIndex = instNavHtml.indexOf('href="/about"');
-assert(
-  navHomeIndex >= 0 &&
-    navHomeIndex < navResearchIndex &&
-    navResearchIndex < navRouteIndex &&
-    navRouteIndex < navOrgIndex &&
-    navOrgIndex < navAboutIndex,
-  "主导航顺序不是 首页 → 研究 → 政治路线 → 组织建设 → 关于",
-);
+let previousNav = -1;
+for (const [url, label] of [
+  ["/civic-orderism", "政治路线"],
+  ["/china", "政治经济观察"],
+  ["/theory", "理论与制度"],
+  ["/about/initiator", "关于赵鹏博"],
+  ["/preparation", "组织建设"],
+]) {
+  const position = instNavHtml.indexOf(`href="${url}"`);
+  assert(
+    position > previousNav && instNavText.includes(label),
+    `正式导航缺失或顺序错误：${label}`,
+  );
+  previousNav = position;
+}
 const footerHtml = homepageHtml.match(/<footer[\s\S]*?<\/footer>/)?.[0] ?? "";
 const footerText = visiblePageText(footerHtml);
 assert(
@@ -1457,7 +1217,7 @@ const coreStatementText = visiblePageText(coreStatementHtml);
 // metadata and is mapped at the display layer.
 const coreStatementHeaderHtml =
   coreStatementHtml.match(
-    /<header class="article-inst article-inst--core-statement"[\s\S]*?<\/header>/,
+    /<(header|div)\b[^>]*class="article-inst article-inst--core-statement"[\s\S]*?<\/\1>/,
   )?.[0] ?? "";
 assert(
   coreStatementHeaderHtml.length > 0 &&
@@ -1510,24 +1270,42 @@ assert(
 
 const participateHtml = fs.readFileSync(publicHtml("participate"), "utf8");
 const participateText = visiblePageText(participateHtml);
+const preparationHtml = fs.readFileSync(publicHtml("preparation"), "utf8");
+const preparationText = visiblePageText(preparationHtml);
+const contactContract = contactBoundaryContract(
+  participateHtml,
+  preparationHtml,
+);
 for (const requiredText of [
   "建立联系",
   "建立联系不等于加入组织",
-  "提供意见不产生组织身份",
   "未经正式授权，任何人不得代表公民秩序主义进行对外沟通、表态、联络或建立政治关系",
   "了解与传播",
-  "建立长期联系",
-  "建立联系不构成成员、志愿者、工作人员、组织代表或任何正式身份",
   "北美非营利法人及首届董事会筹备",
-  "了解董事会筹备",
-  "董事不会通过公开报名直接产生",
-  "筹备接触不构成任命",
 ]) {
   assert(
     participateText.includes(requiredText),
     `建立联系页缺少内容：${requiredText}`,
   );
 }
+// Preserve each original safety intent against the approved wording and linked
+// governing boundary; never require a retired marketing sentence verbatim.
+for (const [name, valid] of [
+  ["提供意见不产生组织身份", contactContract.opinionsDoNotGrantIdentity],
+  ["建立长期联系", contactContract.longTermContact],
+  [
+    "建立联系不构成成员、志愿者、工作人员、组织代表或任何正式身份",
+    contactContract.contactDoesNotGrantRole,
+  ],
+  ["了解董事会筹备", contactContract.boardEntry],
+  ["董事不会通过公开报名直接产生", contactContract.noPublicAppointment],
+  ["筹备接触不构成任命", contactContract.contactIsNotAppointment],
+])
+  assert(valid, `建立联系页语义边界失效：${name}`);
+assert(
+  contactContract.authorization,
+  "建立联系页必须明确禁止未经授权的对外代表行为",
+);
 const primaryEmailPosition = participateHtml.indexOf(
   "mailto:civicorderism@gmail.com",
 );
@@ -1539,8 +1317,6 @@ assert(
   "建立联系页邮箱缺失或主备顺序错误",
 );
 
-const preparationHtml = fs.readFileSync(publicHtml("preparation"), "utf8");
-const preparationText = visiblePageText(preparationHtml);
 const boardHtml = fs.readFileSync(publicHtml("preparation/board"), "utf8");
 const boardText = visiblePageText(boardHtml);
 const manifestoHtml = fs.readFileSync(
@@ -1590,7 +1366,7 @@ for (const requiredText of [
   "其他正式治理职务，均须在制度准备完成后，依照适用法律、章程与正式程序产生",
   "OFFICIAL DOCUMENT",
   "CO—2026—002",
-  "2026 · PDF · 22 PAGES",
+  `2026 · PDF · ${site.documents[0].pageCount} PAGES`,
   "阅读正式文件",
   "进一步了解或建立联系",
   "组织定位",
@@ -1607,17 +1383,28 @@ for (const requiredText of [
     `法人筹备页缺少内容：${requiredText}`,
   );
 }
+// The approved short status points to the complete, on-page legal boundary.
+const preparationStatus = visiblePageText(
+  elementsByClass(preparationHtml, "p", "inst4l-status")[0] ?? "",
+);
+const preparationBoundary = elementById(preparationHtml, "boundaries");
+const boundaryText = visiblePageText(preparationBoundary);
 assert(
-  preparationText.includes(
-    "当前处于北美非营利法人及首届董事会前期筹备阶段，法人尚未完成注册，首届董事会尚未依法产生",
-  ),
-  "法人筹备页顶部状态说明未收紧",
+  preparationStatus.includes("法人及首届董事会前期筹备阶段") &&
+    preparationStatus.includes("筹备不等于已经成立") &&
+    preparationStatus.includes("组织边界") &&
+    boundaryText.includes("北美非营利法人尚未依法成立") &&
+    boundaryText.includes("首届董事会尚未依法产生") &&
+    boundaryText.includes("不表示已经取得任何法人、慈善或免税资格"),
+  "法人筹备页顶部状态及完整法律边界不一致",
 );
 const whyNowPosition = preparationHtml.indexOf("为什么现在进入组织建设");
 const whyLegalPosition = preparationHtml.indexOf("为什么需要法人");
 const whyBoardPosition = preparationHtml.indexOf("为什么需要董事会");
 const workPosition = preparationHtml.indexOf("先建立规则，再扩大参与");
-const boundaryPosition = preparationHtml.indexOf("筹备不等于已经成立");
+const boundaryPosition = preparationBoundary
+  ? preparationHtml.indexOf(preparationBoundary)
+  : -1;
 const docPosition = preparationHtml.indexOf("OFFICIAL DOCUMENT");
 const contactPosition = preparationHtml.indexOf("进一步了解或建立联系");
 assert(
@@ -1634,11 +1421,10 @@ assert(
 const positioningPosition =
   preparationHtml.indexOf("北美非营利法人不是政治目标");
 assert(
-  positioningPosition > 0 &&
-    positioningPosition < whyNowPosition &&
-    preparationHtml.lastIndexOf("任何对外代表行为都必须建立在明确授权基础上") >
-      boundaryPosition,
-  "法人筹备页未按“组织定位 → 为什么现在 → … → 组织边界”排列定位与法律状态说明",
+  positioningPosition > whyNowPosition &&
+    positioningPosition < whyLegalPosition &&
+    boundaryText.includes("任何对外代表行为都必须建立在明确授权基础上"),
+  "法人筹备页未按现行“为什么现在 → 组织定位 → 法人与治理 → 组织边界”保持定位与法律说明",
 );
 for (const misleading of [
   "已经取得政治代表权",
@@ -1654,8 +1440,11 @@ for (const misleading of [
 // Not a dead end: the page must offer a next step and a way back to the route.
 assert(
   preparationText.includes("了解首届董事会筹备") &&
-    preparationText.includes("了解这条路线要承载什么") &&
-    /href="[^"]*preparation\/board/.test(preparationHtml),
+    linkedSlugs(preparationHtml).includes("civic-orderism") &&
+    linkedSlugs(preparationHtml.slice(contactPosition)).includes(
+      "preparation/board",
+    ) &&
+    linkedSlugs(preparationHtml.slice(contactPosition)).includes("participate"),
   "法人筹备页缺少下一步入口或返回路线的路径",
 );
 // /civic-orderism/ — six-stage peaceful transition route, five settled
@@ -1701,25 +1490,52 @@ assert(
     !lastStageHtml.includes("inst4l-row"),
   "第 06 阶段必须只呈现过渡制度研究状态与研究方向，不得填充旧制度设计文章",
 );
+// The published route delegates its complete archive to /institution-design/.
+// Verify actual reachable cards in that single directory, not obsolete data-slug
+// duplicates on the route. No content/card may silently disappear from the hub.
+const institutionDirectoryHtml = fs.readFileSync(
+  publicHtml("institution-design/index"),
+  "utf8",
+);
+const archiveContract = institutionArchiveContract(
+  institutionDirectoryHtml,
+  institutionSections,
+  civicOrderismConfig.institutionArchive.extraItems,
+);
+const archiveHub = elementById(routeHtml, "future-institutional-research");
+const archiveEntryPresent = linkedSlugs(
+  archiveHub,
+  "https://civicorderism.com/civic-orderism/",
+).includes("institution-design");
+const transitionLinks = linkedSlugs(
+  transitionRouteHtml,
+  "https://civicorderism.com/civic-orderism/",
+);
+assert(
+  archiveContract.flat,
+  "制度档案卡片不得嵌套，否则筛选与分页会隐藏其他文章",
+);
+assert(
+  archiveContract.complete,
+  "统一制度档案必须包含全部配置文章，且每张卡片唯一",
+);
 const institutionSlugs = institutionSections.flatMap(
   (section) => section.articles,
 );
 for (const slug of institutionSlugs) {
   assert(
-    !transitionRouteHtml.includes(`data-slug="${slug}"`),
+    !transitionLinks.includes(slug),
     `制度设计文章仍出现在六阶段路线中：${slug}`,
   );
   assert(
-    (routeHtml.match(new RegExp(`data-slug="${slug}"`, "g")) ?? []).length ===
-      1,
-    `制度设计文章未且仅未出现一次于 /civic-orderism/：${slug}`,
+    archiveEntryPresent && archiveContract.one(slug) && publicRouteExists(slug),
+    `制度设计文章未通过路线入口到达唯一档案卡片：${slug}`,
   );
 }
 for (const slug of civicOrderismConfig.institutionArchive.extraItems) {
   assert(
-    (routeHtml.match(new RegExp(`data-slug="${slug}"`, "g")) ?? []).length ===
-      1,
-    `制度研究延伸文章在 /civic-orderism/ 出现次数不为 1：${slug}`,
+    archiveEntryPresent && archiveContract.one(slug) && publicRouteExists(slug),
+    `制度研究延伸文章未通过路线入口到达唯一档案卡片：${slug}`,
   );
 }
 // Why the route can happen — chain plus the four judgments.
@@ -1768,11 +1584,8 @@ for (const principle of civicOrderismConfig.establishedPrinciples.items) {
     `已确定原则缺少文案或解释文字：${principle.name}`,
   );
 }
-// Future institutional research archive (folded), kept out of the route path.
-const archiveHtml =
-  routeHtml.match(
-    /<section class="inst4l-section" id="future-institutional-research">[\s\S]*?<\/section>/,
-  )?.[0] ?? "";
+// Same complete archive, intentionally centralized rather than duplicated.
+const archiveHtml = archiveHub;
 assert(
   archiveHtml.includes(civicOrderismConfig.institutionArchive.englishLabel) &&
     visiblePageText(archiveHtml).includes(
@@ -1781,12 +1594,14 @@ assert(
     visiblePageText(archiveHtml).includes(
       civicOrderismConfig.institutionArchive.note,
     ) &&
-    /href="[^"]*institution-design\/?"/.test(archiveHtml) &&
-    (archiveHtml.match(/<a class="inst4l-row\b/g) ?? []).length ===
-      institutionSlugs.length +
-        civicOrderismConfig.institutionArchive.extraItems.length &&
-    /<details class="china-analysis-more">/.test(archiveHtml),
-  "未来制度研究档案未按要求折叠组织",
+    archiveEntryPresent &&
+    archiveContract.complete &&
+    archiveContract.flat &&
+    visiblePageText(archiveHtml).includes(
+      `${archiveContract.expected.length} 篇`,
+    ) &&
+    !archiveHtml.includes("inst4l-row"),
+  "未来制度研究入口必须指向完整且唯一的统一档案，不得重复陈列或遗漏文章",
 );
 // Layer order: route -> principles -> institution research -> value goal.
 assert(
@@ -2207,10 +2022,7 @@ for (const routeArticle of [
   );
 }
 
-const institutionHtml = fs.readFileSync(
-  path.join(publicDir, "institution-design", "index.html"),
-  "utf8",
-);
+const institutionHtml = institutionDirectoryHtml;
 const institutionText = visiblePageText(institutionHtml);
 assert(
   institutionText.includes("制度运行地图") &&
@@ -2227,9 +2039,7 @@ assert(
   "制度设计页缺少模块卡片或一级筛选",
 );
 assert(
-  [...institutionHtml.matchAll(/data-institution-section="([^"]+)"/g)].every(
-    (match) => institutionSectionIds.has(match[1]),
-  ),
+  archiveContract.knownModules && archiveContract.correctAssignments,
   "制度设计页文章卡片包含未知制度模块",
 );
 assert(
