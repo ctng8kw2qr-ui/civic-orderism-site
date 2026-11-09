@@ -1,0 +1,881 @@
+{
+  "markdownCounts": {
+    "main": 159,
+    "start": 159,
+    "RC": 159
+  },
+  "addedMarkdown": [],
+  "removedMarkdown": [],
+  "formalArticles": 105,
+  "articleChangesVsMain": [],
+  "articleChangesVsStart": [],
+  "sourceChangesVsStart": [
+    "content/institution-design/index.md",
+    "content/preparation.md"
+  ],
+  "protected": {
+    "quartz/components/renderPage.tsx": {
+      "sameSinceStart": true,
+      "sameSinceMain": false
+    },
+    "quartz.config.ts": {
+      "sameSinceStart": true,
+      "sameSinceMain": true
+    },
+    "wrangler.jsonc": {
+      "sameSinceStart": true,
+      "sameSinceMain": true
+    },
+    ".github/workflows/deploy.yml": {
+      "sameSinceStart": true,
+      "sameSinceMain": true
+    },
+    "package-lock.json": {
+      "sameSinceStart": true,
+      "sameSinceMain": true
+    },
+    "data/organization.config.json": {
+      "sameSinceStart": true,
+      "sameSinceMain": true
+    },
+    "data/navigation.config.json": {
+      "sameSinceStart": true,
+      "sameSinceMain": true
+    }
+  },
+  "pdfs": [
+    {
+      "file": "quartz/static/files/civic-orderism-founding-board-brief-2026.pdf",
+      "mainEqual": true,
+      "startEqual": true,
+      "publicEqual": true,
+      "sha256": "d9589cda9414d6b90484b0b21b7584d9c26d9f1549b85d7ddc8817b44c9b81f0"
+    },
+    {
+      "file": "quartz/static/files/civic-orderism-introduction-manual.pdf",
+      "mainEqual": true,
+      "startEqual": true,
+      "publicEqual": true,
+      "sha256": "172c9176badff38b26343114bea68eba869de5d87b3f5dbe2c88b7d472b67ef7"
+    }
+  ],
+  "assets": {
+    "before": {
+      "index.css": {
+        "bytes": 305908,
+        "gzip": 46708
+      },
+      "prescript.js": {
+        "bytes": 923,
+        "gzip": 384
+      },
+      "postscript.js": {
+        "bytes": 83837,
+        "gzip": 27961
+      }
+    },
+    "after": {
+      "index.css": {
+        "bytes": 305975,
+        "gzip": 46715
+      },
+      "prescript.js": {
+        "bytes": 923,
+        "gzip": 384
+      },
+      "postscript.js": {
+        "bytes": 86013,
+        "gzip": 28574
+      }
+    },
+    "portraits": {
+      "zhao-pengbo-b-portrait-590.avif": {
+        "bytes": 47451,
+        "sha256": "377a16fbd745e8a814337828192dd1713c0eb9f46031d031f865c9adef3344e2",
+        "sameSinceStart": null
+      },
+      "zhao-pengbo-b-desktop-768.webp": {
+        "bytes": 46016,
+        "sha256": "90490f97bfac0f19ac4793b7828fa75838a3d3d9ed1b3ecf3d31b75616ec362f",
+        "sameSinceStart": true
+      },
+      "zhao-pengbo-b-portrait-400.avif": {
+        "bytes": 22801,
+        "sha256": "31d9a96bf2d00b3dc32b805028b7cf421f247ba123bfef2050f7ea3d07e48c87",
+        "sameSinceStart": null
+      },
+      "zhao-pengbo-b-portrait.webp": {
+        "bytes": 386560,
+        "sha256": "72618af539b47d147754cbc15c0328792216d2ea38dcbb229b0c1334ffccd321",
+        "sameSinceStart": true
+      },
+      "zhao-pengbo-b-desktop-1086.webp": {
+        "bytes": 103856,
+        "sha256": "0e0807bdb4fc36d113ebe349a0a0625f55f15ca01928a660f2211d8d37af20ce",
+        "sameSinceStart": true
+      },
+      "zhao-pengbo-b-desktop-1086.avif": {
+        "bytes": 53535,
+        "sha256": "31b8b437540319801f881395c7cd4293f37ccf74544b385779c75be3690eb6e7",
+        "sameSinceStart": null
+      },
+      "zhao-pengbo-b-desktop-768.avif": {
+        "bytes": 28057,
+        "sha256": "614df1a0975acfd600c26a367e8896d975b82133266f9a2c333094009cf494f0",
+        "sameSinceStart": null
+      },
+      "zhao-pengbo-b-portrait-400.webp": {
+        "bytes": 34818,
+        "sha256": "469a121b97afe6ca07bcc10bdfca649adf53780d072df47ec387e40cbfb06244",
+        "sameSinceStart": true
+      },
+      "zhao-pengbo-b-portrait-590.webp": {
+        "bytes": 82276,
+        "sha256": "9100dc6a80ddfbb36386d0a00d738c9e37ad30f5bc44791303360b27cd6365eb",
+        "sameSinceStart": true
+      },
+      "zhao-pengbo-b-desktop.webp": {
+        "bytes": 615534,
+        "sha256": "0de2b978cd82f038de9467acf2c5abb95662605b748ce67d2de92d8204e5bb57",
+        "sameSinceStart": true
+      }
+    }
+  },
+  "articles": [
+    {
+      "slug": "china/the-world-xi-jinping-sees",
+      "file": "content/china/the-world-xi-jinping-sees.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "aca74843b6c5a8788bb27b7cf50547e3419e8fe8fdcfd1b921480bc8b712b67a"
+    },
+    {
+      "slug": "china/bureaucratic-responsibility-cycle",
+      "file": "content/china/bureaucratic-responsibility-cycle.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "26f8e941c5e162c780d61b6ba38120013067113430eb8cb544f177a9e9842f8a"
+    },
+    {
+      "slug": "civic-orderism/this-time-let-china-be-your-pride",
+      "file": "content/civic-orderism/this-time-let-china-be-your-pride.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "b2884fd385a97a8c286e425b8a7e32693acae111019fcb2857562de698a39205"
+    },
+    {
+      "slug": "china/chengguan-power-logic",
+      "file": "content/china/chengguan-power-logic.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "97b9d6320e2abf1f009a7ed4bd8137e5d02cb2d2ea70e2d7f407546a0afcb795"
+    },
+    {
+      "slug": "civic-orderism/civic-orderism-overview",
+      "file": "content/civic-orderism/civic-orderism-overview.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "1fad6949d261f28b84f3204ff8cfd5100c63f007a67d4d9edb6dd643e9fe7f5e"
+    },
+    {
+      "slug": "china/what-is-the-ccp-becoming",
+      "file": "content/china/what-is-the-ccp-becoming.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "54613c2e533018f42afe9ac166bdaf7a052c7921632257ee6a77fc87363acfaa"
+    },
+    {
+      "slug": "china/party-state-stress-neither-party-nor-state",
+      "file": "content/china/party-state-stress-neither-party-nor-state.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "9fc6c75275504dad91c48de7d27f09434636ea4d73b37a43c6905b9665671532"
+    },
+    {
+      "slug": "china/security-led-governance-model",
+      "file": "content/china/security-led-governance-model.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "7a97b8e29124ff2d0b22b0e63328d2a34dde7ad2d85f0acd1f31705320f5ddad"
+    },
+    {
+      "slug": "china/an-era-change-beginning-in-the-united-states",
+      "file": "content/china/an-era-change-beginning-in-the-united-states.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "7608d8f9d868d5a89931573d087c6336d4bbc6f8f97147858c0a45f2a3d34ee3"
+    },
+    {
+      "slug": "china/security-is-redefining-china",
+      "file": "content/china/security-is-redefining-china.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "f1c7df331e3f47422e9b3b6ebaccdef5d36fc07af86e97c0277a391ca3d439f4"
+    },
+    {
+      "slug": "china/why-ccp-feels-less-secure-when-everyone-claims-loyalty",
+      "file": "content/china/why-ccp-feels-less-secure-when-everyone-claims-loyalty.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "b084a7287a1402ef634c082750b4e2a6b4357a69d3be48a6e941784be06269e2"
+    },
+    {
+      "slug": "china/what-happens-when-security-becomes-the-top-priority",
+      "file": "content/china/what-happens-when-security-becomes-the-top-priority.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "708a92f1f0ab35c841691ebf97ac37cd4230e8ca9b801e871d0f355c2a46207f"
+    },
+    {
+      "slug": "civic-orderism/north-america-nonprofit-board-preparation-manifesto",
+      "file": "content/civic-orderism/north-america-nonprofit-board-preparation-manifesto.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "c76befc1f40b99b980abd31f343fb5ff3a858b7d27fca541c2ef116298c02fc2"
+    },
+    {
+      "slug": "civic-orderism/possibility-of-peaceful-political-transition-in-china",
+      "file": "content/civic-orderism/possibility-of-peaceful-political-transition-in-china.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "f0d6ca871844b2c4012ca82cc6b04e1a0d3fce58bccdbe45df648d0a474cc699"
+    },
+    {
+      "slug": "china/route-transition-why-ccp-keeps-purging-officials",
+      "file": "content/china/route-transition-why-ccp-keeps-purging-officials.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "56687f628b819803ec19b8de0e1dd3ff42232cc702874bd9f9d3ec886c2755c0"
+    },
+    {
+      "slug": "china/supply-side-reform-state-can-scale-not-discover-future",
+      "file": "content/china/supply-side-reform-state-can-scale-not-discover-future.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "5c6e788f8c023413c7e1e010d721f662e6b597be4a312a0da4fa09f8eb0064e9"
+    },
+    {
+      "slug": "civic-orderism/information-age-and-political-transition",
+      "file": "content/civic-orderism/information-age-and-political-transition.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "69eda07953fddabf646c828ab23d97f502faf0205296f356619d0a638bf128a0"
+    },
+    {
+      "slug": "china/xi-successor-and-bureaucratic-accountability",
+      "file": "content/china/xi-successor-and-bureaucratic-accountability.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "15fe69ab1bb41671d3f031c33fa03b8f764be0b54e1a1ed9c40f9de026ca6fb1"
+    },
+    {
+      "slug": "civic-orderism/peaceful-state-transition",
+      "file": "content/civic-orderism/peaceful-state-transition.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "f839c81e8bd62b5e4d9f24edde5c60df6273f690e6dfb31c9800a3bcaa3fc759"
+    },
+    {
+      "slug": "china-stage/three-cleans-era-political-economic-cultural-contraction",
+      "file": "content/china-stage/three-cleans-era-political-economic-cultural-contraction.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "98409de61cd60c1dc54e408ff805ccb9f2aa7823326c78e3f8337265c6b7d8d6"
+    },
+    {
+      "slug": "china-stage/ccp-second-reform-opening-possibility",
+      "file": "content/china-stage/ccp-second-reform-opening-possibility.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "6bc65e616c2fad07d6b6468166a8c374be2b47fa1a63d506e85deb046c8de1ee"
+    },
+    {
+      "slug": "china/why-expulsion-from-party-becomes-standard-ending",
+      "file": "content/china/why-expulsion-from-party-becomes-standard-ending.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "bfe2944dbdda0aca72274838d14a22f392f7ab22d35d1b5545ff0f368b0fa9d6"
+    },
+    {
+      "slug": "china/why-ccp-cannot-reduce-grassroots-burden",
+      "file": "content/china/why-ccp-cannot-reduce-grassroots-burden.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "c74536480724d035ba0b7c8c38871de899796c2838c20743de28fd2da13b1073"
+    },
+    {
+      "slug": "china/mao-death-release-xi-death-weightlessness",
+      "file": "content/china/mao-death-release-xi-death-weightlessness.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "266788808e44d0b1c2880b3fe36cb313f9acad20a64eebeda750c49b19200236"
+    },
+    {
+      "slug": "china/ccp-2018-xi-era-local-growth-space",
+      "file": "content/china/ccp-2018-xi-era-local-growth-space.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "ba663218aa4dfb037dbd1b1a4622ca903e30a4b16a51e28829424ffd27801235"
+    },
+    {
+      "slug": "china/why-ccp-will-not-relax-party-pressure",
+      "file": "content/china/why-ccp-will-not-relax-party-pressure.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "4352f7a0472c965b3facad9960a053f331dd1912c7beb1f97bd3d14a808c9072"
+    },
+    {
+      "slug": "civic-orderism/why-civic-orderism",
+      "file": "content/civic-orderism/why-civic-orderism.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "c533e4591a8579b8ead419720b4fcefdd5c91b28316d2e29496507feb925ba4d"
+    },
+    {
+      "slug": "china/ccp-no-real-base",
+      "file": "content/china/ccp-no-real-base.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "2593dfd246971869261fd7b08f9bcd69c43720e0ed1753dfe8ef7d7a702d5170"
+    },
+    {
+      "slug": "china-stage/china-manufacturing-cannot-stop",
+      "file": "content/china-stage/china-manufacturing-cannot-stop.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "d884906a7c91574a24210f01207e68b1751dcd8e0700a85fc072fd807a0c0db1"
+    },
+    {
+      "slug": "theory/democracy-still-exists-but-cannot-penetrate-reality",
+      "file": "content/theory/democracy-still-exists-but-cannot-penetrate-reality.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "b0bfc1561911236d2f01690812d9bfa50438ade5f72ff43df571a6ccb904c512"
+    },
+    {
+      "slug": "civic-orderism/state-must-rely-on-systems-not-drivers",
+      "file": "content/civic-orderism/state-must-rely-on-systems-not-drivers.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "402253b35454a9712b0ee9093169327cfebf7b56878677a1141f3e497666ed22"
+    },
+    {
+      "slug": "theory/end-of-party-politics-in-information-age",
+      "file": "content/theory/end-of-party-politics-in-information-age.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "af1dd985ff1cad6ada465e2e795d7f13ca7dd2b967a467f717ed619945139173"
+    },
+    {
+      "slug": "china/political-machine-rewards-and-limits",
+      "file": "content/china/political-machine-rewards-and-limits.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "b7dc0a354e39d542fbb4e85a0cf7c21f38331eabacd656f30590c368e8f9c895"
+    },
+    {
+      "slug": "china/emotional-link-breakdown-and-regime-collapse",
+      "file": "content/china/emotional-link-breakdown-and-regime-collapse.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "0db469f6dcd620ce15a7e29e9cc53e4dbcd778cf7d369f82b0d40115c20c4e17"
+    },
+    {
+      "slug": "theory/social-change-dynamics-when-system-no-longer-worth-it",
+      "file": "content/theory/social-change-dynamics-when-system-no-longer-worth-it.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "18cb9e7201b19101a6827a263e9acbfb436938ab85bbe11ac6af097ff12bea13"
+    },
+    {
+      "slug": "china/party-power-logic-and-ccp-goal-vacuum",
+      "file": "content/china/party-power-logic-and-ccp-goal-vacuum.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "3f1789c7ab3e2577a93254b29160135351b2e5acf00556659863c73feb7832e5"
+    },
+    {
+      "slug": "theory/ccp-completed-historical-task-refuses-exit",
+      "file": "content/theory/ccp-completed-historical-task-refuses-exit.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "823f7c22411472142993992b5c5756c90ea098b9231dc3b76563f246d1a902bc"
+    },
+    {
+      "slug": "theory/organizational-collapse-begins-with-loss-of-institutional-trust",
+      "file": "content/theory/organizational-collapse-begins-with-loss-of-institutional-trust.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "12c4d32a9d7a4df1783ee6e979251f4d7e16557e94361b37d435facd87018da6"
+    },
+    {
+      "slug": "china/industrial-system-failure-in-information-age",
+      "file": "content/china/industrial-system-failure-in-information-age.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "566286e981b2ba928d3782a4d0a2e7f72827d36a3d905155928b55e6be677ef6"
+    },
+    {
+      "slug": "china/taiwan-war-controllable-escalation-illusion",
+      "file": "content/china/taiwan-war-controllable-escalation-illusion.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "40d996766fd70ca6ce0727c3e3e8f5626926cc7d47b82da13e195b3301a2bbd2"
+    },
+    {
+      "slug": "china/information-age-impact-on-ccp-mechanisms",
+      "file": "content/china/information-age-impact-on-ccp-mechanisms.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "d45fa1e157c9e6fb69cbe980eb16fffdab6030b0a35fb94cd924db0cb302844d"
+    },
+    {
+      "slug": "china/bureaucratic-system-under-purges",
+      "file": "content/china/bureaucratic-system-under-purges.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "167b9559a76251bb8754d6c70881ecd0b355a13b3d56a8b71d58a30bf394fb34"
+    },
+    {
+      "slug": "civic-orderism/why-committees-cannot-directly-take-cases",
+      "file": "content/civic-orderism/why-committees-cannot-directly-take-cases.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "379ec43b7b227640fbb14b979b9fe471174fe697614bda15ed37c3f554abcd47"
+    },
+    {
+      "slug": "civic-orderism/what-civic-orderism-solves-if-you-read-only-one",
+      "file": "content/civic-orderism/what-civic-orderism-solves-if-you-read-only-one.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "5b4f612e8ec47b45864f0db6937d5898600727b601d5339fa781a3d240f969c7"
+    },
+    {
+      "slug": "theory/why-party-politics-is-becoming-a-low-dimensional-function",
+      "file": "content/theory/why-party-politics-is-becoming-a-low-dimensional-function.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "f5e240576260e7185a047fb87bf1aeb59a00c6c74ad5d3f48bdb10832ef7930d"
+    },
+    {
+      "slug": "china/ccp-from-faith-community-to-black-box-post",
+      "file": "content/china/ccp-from-faith-community-to-black-box-post.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "aaa048160182709b0c7754a2dec12b4775f0d3239cf9bbc739affedafb3d3ffa"
+    },
+    {
+      "slug": "china/Macro-Narratives,-Opportunity-Incentives,-and-High-Fragility",
+      "file": "content/china/Macro Narratives, Opportunity Incentives, and High Fragility.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "cca80b71e861f51d05e51f3bb643967b950d2416bdf378d3676e99c5880725bb"
+    },
+    {
+      "slug": "china/ccp-power-network-not-line",
+      "file": "content/china/ccp-power-network-not-line.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "a5ab64c4fba23f210cf13682977849211bfcefe4f314db862c8e610d992ab2c9"
+    },
+    {
+      "slug": "theory/us-industrial-system-cannot-carry-information-age",
+      "file": "content/theory/us-industrial-system-cannot-carry-information-age.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "10a495986ef73b949f53e8e42a546eaffd154072b602ab6cf022544257974f8c"
+    },
+    {
+      "slug": "theory/us-separation-of-powers-integrative-capacity-crisis",
+      "file": "content/theory/us-separation-of-powers-integrative-capacity-crisis.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "8a77aebafad8d706ec9a40c5ac159a81ee53b7f452e95fcb7e3441f4e98206d6"
+    },
+    {
+      "slug": "theory/information-age-erodes-us-integrative-capacity",
+      "file": "content/theory/information-age-erodes-us-integrative-capacity.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "dbb510e661f0b30f524c7603ff7e353efb0e7dea27854c0042c44036f58cff37"
+    },
+    {
+      "slug": "theory/us-supreme-court-partisan-final-battleground",
+      "file": "content/theory/us-supreme-court-partisan-final-battleground.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "252b3d9797b6d8805617502db281d32a8898d9f7529889469f100187fa71fa18"
+    },
+    {
+      "slug": "theory/costly-industrial-governance-information-age",
+      "file": "content/theory/costly-industrial-governance-information-age.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "b3ad0eabffa6b6ca427ec2e15220acfb2b4ccbec69d4c3e6a9396d412ce4259f"
+    },
+    {
+      "slug": "china/ccp-collapse-three-triggers-social-security-healthcare-finance",
+      "file": "content/china/ccp-collapse-three-triggers-social-security-healthcare-finance.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "477c6fc3a13e886e9cf092c03bcd07dd08c772bdb0b668d2a052b1113337317b"
+    },
+    {
+      "slug": "china/ccp-2018-new-reform-opening",
+      "file": "content/china/ccp-2018-new-reform-opening.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "32bce3b9cdd498cf066b6fb84d9eea0d72aed846a82fe3db4ef822fc48d8b675"
+    },
+    {
+      "slug": "china/propaganda-system-hollowing-out",
+      "file": "content/china/propaganda-system-hollowing-out.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "00c2e5760373b44457890f61b32b07e93904608b99871f1407c326c1b19be469"
+    },
+    {
+      "slug": "china/ccp-bureaucracy-double-deadlock",
+      "file": "content/china/ccp-bureaucracy-double-deadlock.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "68f9fb2726b822de3282df0d739cdaa1a8ddcb0f46b840acea004aa55ba6d6d8"
+    },
+    {
+      "slug": "china/when-high-ranking-officials-are-no-longer-safe",
+      "file": "content/china/when-high-ranking-officials-are-no-longer-safe.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "468f8850f64324099c5fc2571117d031891b72a1cd73c1e05b52d0e4c1375c89"
+    },
+    {
+      "slug": "china/ccp-bureaucracy-historical-bill",
+      "file": "content/china/ccp-bureaucracy-historical-bill.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "9b3cb786ea034cacfaec603fb3ef0180e2217c50b70fae3c3cbce0d69c19c448"
+    },
+    {
+      "slug": "theory/party-state-structural-failure",
+      "file": "content/theory/party-state-structural-failure.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "13062ef5beb443ebd6c34076c64b4b4fea86c036cb715ed6bc78e52cfe8d63d9"
+    },
+    {
+      "slug": "civic-orderism/backend-system-under-civic-orderism",
+      "file": "content/civic-orderism/backend-system-under-civic-orderism.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "4db721f63ec384ed79e03e7a05a3f3c6671b81fe55dc8ffc08fef7e0885781fd"
+    },
+    {
+      "slug": "civic-orderism/civic-orderism-manual",
+      "file": "content/civic-orderism/civic-orderism-manual.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "3f9ec2e44c82c5149a389b63219b849accb46efe4026c2289b0faf3ad5441e21"
+    },
+    {
+      "slug": "civic-orderism/why-focus-on-invisible-power-nodes",
+      "file": "content/civic-orderism/why-focus-on-invisible-power-nodes.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "246e555a2aea440f1100db0afabe0a88af27fff3e3f364e5eb9c0149b8f5e6d5"
+    },
+    {
+      "slug": "civic-orderism/why-weaken-party-politics",
+      "file": "content/civic-orderism/why-weaken-party-politics.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "407e2a5e481f53e5590d58c839dbb5fd3c03aa96cdf4421a661d59ccd32b3c39"
+    },
+    {
+      "slug": "civic-orderism/election-logic-under-civic-orderism",
+      "file": "content/civic-orderism/election-logic-under-civic-orderism.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "d632970965adcbe36c977c76f74c1272f58731b2aac9ad55e2e646614b7e7b1e"
+    },
+    {
+      "slug": "civic-orderism/top-level-power-structure-under-civic-orderism",
+      "file": "content/civic-orderism/top-level-power-structure-under-civic-orderism.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "46d223dde3912468eb538fb6dd6ff772420281dc9e1e19eb597de257cbd52760"
+    },
+    {
+      "slug": "civic-orderism/state-operation-process-under-civic-orderism",
+      "file": "content/civic-orderism/state-operation-process-under-civic-orderism.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "545f59e788491f4b36236b1a3e71b754b8427492c55a38dbb277e11bd5ce489b"
+    },
+    {
+      "slug": "civic-orderism/what-civic-orderism-ultimately-solves",
+      "file": "content/civic-orderism/what-civic-orderism-ultimately-solves.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "d05c3a9a4c19ac0f9bc60eca141aa63ca39a11c8e2f4e3e918e0aa1fad4bcd01"
+    },
+    {
+      "slug": "theory/overseas-political-movements-fail",
+      "file": "content/theory/overseas-political-movements-fail.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "c623a70506292f02d98d9aabafb696067330ecb07c4d3794449f17a06ac93104"
+    },
+    {
+      "slug": "theory/high-rigidity-system-ccp",
+      "file": "content/theory/high-rigidity-system-ccp.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "a4ead723f51bc1a7268823828ecca2d7b8a4871207e5c8281810c0355189a9e2"
+    },
+    {
+      "slug": "theory/internal-change-external-change",
+      "file": "content/theory/internal-change-external-change.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "46a06edd7f8319afa0954726f47a767df3da11e05157289b1d4178f83e60ed44"
+    },
+    {
+      "slug": "civic-orderism/public-politics-without-party-dominance",
+      "file": "content/civic-orderism/public-politics-without-party-dominance.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "50190cc9490dcb7d8bdf2fccefbb0814c888dba707bd3ff9d0c21870cdfb887a"
+    },
+    {
+      "slug": "china/elite-sandification-ming-bureaucrats-ccp",
+      "file": "content/china/elite-sandification-ming-bureaucrats-ccp.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "99d1cf12129311459ac41624907e8a1232e36ecb6b93a695c8c591f0009e1237"
+    },
+    {
+      "slug": "civic-orderism/what-is-committee-system",
+      "file": "content/civic-orderism/what-is-committee-system.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "26b98d8cebc94fcb3a560ca79de65d60760596050bcf3682a58ac9947f3b22a0"
+    },
+    {
+      "slug": "theory/ccp-high-fragility-dysfunction",
+      "file": "content/theory/ccp-high-fragility-dysfunction.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "ba2cb1ebed38db3ad4b76cf38bef0e3c4286b29bb2e156a25513f9415169ea5a"
+    },
+    {
+      "slug": "china/taiwan-war-risk",
+      "file": "content/china/taiwan-war-risk.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "a0fbcc7ae112ee041829114041e947a6fc39e235b4dca58bb2582fb43a13e25a"
+    },
+    {
+      "slug": "china/diplomacy-root",
+      "file": "content/china/diplomacy-root.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "aa0a8e36b652e599b85c769b3f2a696a607e175b1d0b2ae7640073f545bfe859"
+    },
+    {
+      "slug": "china/pla-political-subject-myth",
+      "file": "content/china/pla-political-subject-myth.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "f2e71ad6c41bcc44bdffff44fa097531420b930079e1be267a144e071acf9ffb"
+    },
+    {
+      "slug": "civic-orderism/committee-administration-opposite-incentives",
+      "file": "content/civic-orderism/committee-administration-opposite-incentives.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "fd25c4cd994f962984d13d348296a0cc276a4680f07850ff86a3f39c841cbef7"
+    },
+    {
+      "slug": "theory/no-accountability-lie-flat-mentality",
+      "file": "content/theory/no-accountability-lie-flat-mentality.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "76094beb5bba15656126e617c9fa2a1aadf756151e11adbfc20938781b7c12ed"
+    },
+    {
+      "slug": "theory/procedural-accountability-organized-power",
+      "file": "content/theory/procedural-accountability-organized-power.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "543e25c346a438f801552e97db498cea84b7d08a0b967969d190fed85c54e8c9"
+    },
+    {
+      "slug": "civic-orderism/why-dual-track-committee-administration",
+      "file": "content/civic-orderism/why-dual-track-committee-administration.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "2e855c5eec3dc9cf515d904e65d906dd7fccfa5f3799d5264ab06d04519155d6"
+    },
+    {
+      "slug": "civic-orderism/why-not-simple-separation-of-powers",
+      "file": "content/civic-orderism/why-not-simple-separation-of-powers.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "10cc169f8bdbbeabe50053c127e8047fe7f24a788b521d4acecae857651d64e9"
+    },
+    {
+      "slug": "civic-orderism/why-not-left-right-democracy-autocracy",
+      "file": "content/civic-orderism/why-not-left-right-democracy-autocracy.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "f7157a720f941cf6247ede5f5fa0e21a53b851bb8fdd49c704a510f167f11ea1"
+    },
+    {
+      "slug": "civic-orderism/why-against-moral-narrative",
+      "file": "content/civic-orderism/why-against-moral-narrative.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "1a09dd5de1758abedaef63bbb281d3dc152eedf5623139dbb9578217a1fbd593"
+    },
+    {
+      "slug": "civic-orderism/why-emphasize-reciprocity-and-equality",
+      "file": "content/civic-orderism/why-emphasize-reciprocity-and-equality.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "4e1467d94ba9e47fabbb1688adde2b2a822d611c699232fe5652c460c7605a7d"
+    },
+    {
+      "slug": "civic-orderism/why-civic-orderism-emphasizes-experience-and-records",
+      "file": "content/civic-orderism/why-civic-orderism-emphasizes-experience-and-records.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "bb64c1f9f5637a62264f8ee0720f823cf76620c3c249cc5e7e92b681afb6c70e"
+    },
+    {
+      "slug": "civic-orderism/why-justice-serves-reality",
+      "file": "content/civic-orderism/why-justice-serves-reality.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "ddc4c10a71e6eca35f81139cfe676df1289f03998afacaba81f90385a355e700"
+    },
+    {
+      "slug": "civic-orderism/why-information-transparency",
+      "file": "content/civic-orderism/why-information-transparency.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "b4e6166d78477ce4a2fb395a211e3aa60fba54d020cdfe4f41b634b3864b07d0"
+    },
+    {
+      "slug": "civic-orderism/why-elections-reject-political-donations",
+      "file": "content/civic-orderism/why-elections-reject-political-donations.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "f3575f9c827c01f8161e482e1938376a1577f46940c54777a4e4acda399dd13a"
+    },
+    {
+      "slug": "civic-orderism/why-no-bicameral-parliament",
+      "file": "content/civic-orderism/why-no-bicameral-parliament.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "25109f36ea782ca8f75863de5e7d67e8c89cf9a424de20b4b54c5ce37b8549ef"
+    },
+    {
+      "slug": "civic-orderism/why-civic-orderism-is-easier-to-succeed",
+      "file": "content/civic-orderism/why-civic-orderism-is-easier-to-succeed.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "9b99ba2abcbef9a0dc8e65ccc54908a57e7a1b959b2f0db94eab75398f51823d"
+    },
+    {
+      "slug": "civic-orderism/why-proposals-from-social-organizations",
+      "file": "content/civic-orderism/why-proposals-from-social-organizations.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "8512f959f70ea878c2d362a170d721dfa3e5f08bcd75457efaa827fbb668283d"
+    },
+    {
+      "slug": "civic-orderism/why-part-time-representatives",
+      "file": "content/civic-orderism/why-part-time-representatives.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "473d8a51821823cf7069b6faebd6c42e2679c83ad17f86139fdf8a88f200373f"
+    },
+    {
+      "slug": "theory/trapped-by-process",
+      "file": "content/theory/trapped-by-process.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "b5255ef99f7e0283086f46007fb76ec8ce499c0f6b863cd124d21e877f91739e"
+    },
+    {
+      "slug": "china/xi-solved-organization-not-reality",
+      "file": "content/china/xi-solved-organization-not-reality.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "086cb923b20c0ef609c414d5a82279069ae65f9f0cb381cfd3fd25b296341651"
+    },
+    {
+      "slug": "china/xi-power-centralization",
+      "file": "content/china/xi-power-centralization.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "efc05a6ab5b89dd692f61efb2201c321b7cd531d497cba3b6cc922d257dd56f3"
+    },
+    {
+      "slug": "theory/modern-social-syndrome",
+      "file": "content/theory/modern-social-syndrome.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "be51c3829aadd77519dabab34eb16959e996f405df9461172ec679984134d144"
+    },
+    {
+      "slug": "china/chicken-and-cage",
+      "file": "content/china/chicken-and-cage.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "5dc88f2c3827af6e34db589e4d6f734cded7553c0112a41365a003c73f05ab59"
+    },
+    {
+      "slug": "china/maginot-line-of-stability-maintenance",
+      "file": "content/china/maginot-line-of-stability-maintenance.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "9b492389689f2a374fcc5d376b5f4593b636ab4a2b078e306f2a2ccf942c8935"
+    },
+    {
+      "slug": "china/ccp-reform-political-balance-deadlock",
+      "file": "content/china/ccp-reform-political-balance-deadlock.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "bf98c58212c7248b3bad281f34b2d361ec718222c6ef199f5656fa9dfcb1d038"
+    },
+    {
+      "slug": "china/xi-succession-crisis-gray-rhino",
+      "file": "content/china/xi-succession-crisis-gray-rhino.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "ab701fd9dc222d0f696c2b5980cf936031a1f31a0c00c64af566ffe6c4a810a6"
+    },
+    {
+      "slug": "institution/despotism-cancer-ming-1566",
+      "file": "content/institution/despotism-cancer-ming-1566.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "dac860d811311e1e2a071a75f9234f08c2b51657e0d59f5ff95ab47ce59f7169"
+    },
+    {
+      "slug": "china/organization-credit-retired-officials",
+      "file": "content/china/organization-credit-retired-officials.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "088bc4e4ad3b6506d70f44affc2f7266a6c8e2f40c97156cc908a527f2c28121"
+    },
+    {
+      "slug": "theory/ai-monitoring-organizational-friction",
+      "file": "content/theory/ai-monitoring-organizational-friction.md",
+      "mainEqual": true,
+      "startEqual": true,
+      "sha256": "9ee6d82b22d895080de0d99f215b34183a1f202683ab26d28ec4a94b6bb219b1"
+    }
+  ]
+}

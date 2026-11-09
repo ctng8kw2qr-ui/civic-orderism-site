@@ -1,0 +1,114 @@
+{
+  "pagination": {
+    "first": 10,
+    "second": 9,
+    "unique": 19
+  },
+  "filters": [
+    {
+      "id": "overview",
+      "count": 4
+    },
+    {
+      "id": "committee",
+      "count": 3
+    },
+    {
+      "id": "administration",
+      "count": 1
+    },
+    {
+      "id": "election",
+      "count": 3
+    },
+    {
+      "id": "council",
+      "count": 4
+    },
+    {
+      "id": "rule-of-law",
+      "count": 4
+    }
+  ],
+  "concept": "state-system-upgrade",
+  "moduleLink": true,
+  "spaReentry": true,
+  "portrait": [
+    {
+      "width": 320,
+      "dpr": 1,
+      "file": "zhao-pengbo-b-portrait-400.avif",
+      "priority": "high",
+      "loading": "auto",
+      "requests": [
+        {
+          "file": "zhao-pengbo-b-portrait-400.avif",
+          "transfer": 23101
+        }
+      ],
+      "leadClamp": "3",
+      "latestClamp": "2"
+    },
+    {
+      "width": 390,
+      "dpr": 2,
+      "file": "zhao-pengbo-b-portrait-590.avif",
+      "priority": "high",
+      "loading": "auto",
+      "requests": [
+        {
+          "file": "zhao-pengbo-b-portrait-590.avif",
+          "transfer": 47751
+        }
+      ],
+      "leadClamp": "3",
+      "latestClamp": "2"
+    },
+    {
+      "width": 768,
+      "dpr": 1,
+      "file": "zhao-pengbo-b-portrait-400.avif",
+      "priority": "high",
+      "loading": "auto",
+      "requests": [
+        {
+          "file": "zhao-pengbo-b-portrait-400.avif",
+          "transfer": 23101
+        }
+      ],
+      "leadClamp": "3",
+      "latestClamp": "2"
+    },
+    {
+      "width": 1024,
+      "dpr": 1,
+      "file": "zhao-pengbo-b-desktop-768.avif",
+      "priority": "high",
+      "loading": "auto",
+      "requests": [
+        {
+          "file": "zhao-pengbo-b-desktop-768.avif",
+          "transfer": 28357
+        }
+      ],
+      "leadClamp": "3",
+      "latestClamp": "3"
+    },
+    {
+      "width": 1440,
+      "dpr": 2,
+      "file": "zhao-pengbo-b-desktop-1086.avif",
+      "priority": "high",
+      "loading": "auto",
+      "requests": [
+        {
+          "file": "zhao-pengbo-b-desktop-1086.avif",
+          "transfer": 53835
+        }
+      ],
+      "leadClamp": "3",
+      "latestClamp": "3"
+    }
+  ],
+  "webpFallback": "zhao-pengbo-b-portrait-400.webp"
+}

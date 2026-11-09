@@ -60,11 +60,27 @@ const OfficialHome: QuartzComponent = ({ allFiles }: QuartzComponentProps) => {
             <figure class="hero-portrait">
               <picture>
                 <source
+                  type="image/avif"
+                  media={portrait.mobile.media}
+                  srcset={portrait.mobile.avifSrcset}
+                  sizes={portrait.mobile.sizes}
+                  width="590"
+                  height="674"
+                />
+                <source
                   media={portrait.mobile.media}
                   srcset={portrait.mobile.srcset}
                   sizes={portrait.mobile.sizes}
                   width="590"
                   height="674"
+                />
+                <source
+                  type="image/avif"
+                  media={portrait.desktop.media}
+                  srcset={portrait.desktop.avifSrcset}
+                  sizes={portrait.desktop.sizes}
+                  width="1086"
+                  height="724"
                 />
                 <img
                   src={portrait.desktop.src}

@@ -189,9 +189,9 @@ export default (() => {
             <link
               rel="preload"
               as="image"
-              type="image/webp"
-              href={image.src}
-              imageSrcSet={image.srcset}
+              type="image/avif"
+              href={image.avifSrc}
+              imageSrcSet={image.avifSrcset}
               {...{ imagesizes: image.sizes }}
               media={image.media}
               fetchPriority="high"

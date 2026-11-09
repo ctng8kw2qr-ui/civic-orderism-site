@@ -854,6 +854,9 @@
     }
   }
   @media (max-width: 768px) {
+    .latest p {
+      -webkit-line-clamp: 2;
+    }
     .compact .hero-grid {
       display: grid;
       grid-template-columns: minmax(0, 1fr);

@@ -1179,6 +1179,19 @@ article .reading-route-card h3 {
   text-align: right;
 }
 
+/* The four-column minimum exceeds the reading width on small laptops. */
+@media (max-width: 1100px) {
+  .institution-hero {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    align-items: start;
+  }
+
+  .institution-hero .section-stats {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
 @media (max-width: 900px) {
   .topic-entry-grid,
   .concept-grid,
@@ -1200,16 +1213,6 @@ article .reading-route-card h3 {
 
   .institution-map li:nth-child(3)::after {
     content: none;
-  }
-
-  .institution-hero {
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-    align-items: start;
-  }
-
-  .institution-hero .section-stats {
-    flex-direction: row;
-    align-items: flex-start;
   }
 }
 

@@ -198,7 +198,8 @@ coverAlt: "在一个完全完好、闭合的沉重框架内，多根素面受拉
   <p class="knowledge-card__section">制度模块：<strong>法治、透明与责任</strong></p>
   <h3><a href="/civic-orderism/why-information-transparency">为什么公民秩序主义强调信息透明及信息发布</a></h3>
   <p class="knowledge-card__summary">解释信息公开和正式发布如何把责任链、程序链与纠偏链延伸到社会。</p>
-<article class="knowledge-card knowledge-card--institution" data-knowledge-card data-topics="" data-concepts="" data-institution-section="parliament">
+</article>
+<article class="knowledge-card knowledge-card--institution" data-knowledge-card data-topics="" data-concepts="" data-institution-section="council">
   <p class="knowledge-card__section">制度模块：<strong>议会与社会授权</strong></p>
   <h3><a href="/civic-orderism/why-weaken-party-politics">公民秩序主义为什么刻意弱化政党政治</a></h3>
   <p class="knowledge-card__summary">解释公共政治为何不必依赖常设政党竞争，以及弱化政党政治后授权、判断与责任如何仍然成立。</p>

@@ -1,6 +1,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import { getPrimaryTopicArticles } from "./lib/topic-relations.mjs";
+import {
+  contactBoundaryContract,
+  institutionArchiveContract,
+  elementById,
+  elementsByClass,
+  linkedSlugs,
+} from "./lib/release-contracts.mjs";
 
 const root = path.resolve(".");
 const publicDir = path.join(root, "public");
@@ -1263,24 +1270,42 @@ assert(
 
 const participateHtml = fs.readFileSync(publicHtml("participate"), "utf8");
 const participateText = visiblePageText(participateHtml);
+const preparationHtml = fs.readFileSync(publicHtml("preparation"), "utf8");
+const preparationText = visiblePageText(preparationHtml);
+const contactContract = contactBoundaryContract(
+  participateHtml,
+  preparationHtml,
+);
 for (const requiredText of [
   "建立联系",
   "建立联系不等于加入组织",
-  "提供意见不产生组织身份",
   "未经正式授权，任何人不得代表公民秩序主义进行对外沟通、表态、联络或建立政治关系",
   "了解与传播",
-  "建立长期联系",
-  "建立联系不构成成员、志愿者、工作人员、组织代表或任何正式身份",
   "北美非营利法人及首届董事会筹备",
-  "了解董事会筹备",
-  "董事不会通过公开报名直接产生",
-  "筹备接触不构成任命",
 ]) {
   assert(
     participateText.includes(requiredText),
     `建立联系页缺少内容：${requiredText}`,
   );
 }
+// Preserve each original safety intent against the approved wording and linked
+// governing boundary; never require a retired marketing sentence verbatim.
+for (const [name, valid] of [
+  ["提供意见不产生组织身份", contactContract.opinionsDoNotGrantIdentity],
+  ["建立长期联系", contactContract.longTermContact],
+  [
+    "建立联系不构成成员、志愿者、工作人员、组织代表或任何正式身份",
+    contactContract.contactDoesNotGrantRole,
+  ],
+  ["了解董事会筹备", contactContract.boardEntry],
+  ["董事不会通过公开报名直接产生", contactContract.noPublicAppointment],
+  ["筹备接触不构成任命", contactContract.contactIsNotAppointment],
+])
+  assert(valid, `建立联系页语义边界失效：${name}`);
+assert(
+  contactContract.authorization,
+  "建立联系页必须明确禁止未经授权的对外代表行为",
+);
 const primaryEmailPosition = participateHtml.indexOf(
   "mailto:civicorderism@gmail.com",
 );
@@ -1292,8 +1317,6 @@ assert(
   "建立联系页邮箱缺失或主备顺序错误",
 );
 
-const preparationHtml = fs.readFileSync(publicHtml("preparation"), "utf8");
-const preparationText = visiblePageText(preparationHtml);
 const boardHtml = fs.readFileSync(publicHtml("preparation/board"), "utf8");
 const boardText = visiblePageText(boardHtml);
 const manifestoHtml = fs.readFileSync(
@@ -1343,7 +1366,7 @@ for (const requiredText of [
   "其他正式治理职务，均须在制度准备完成后，依照适用法律、章程与正式程序产生",
   "OFFICIAL DOCUMENT",
   "CO—2026—002",
-  "2026 · PDF · 22 PAGES",
+  `2026 · PDF · ${site.documents[0].pageCount} PAGES`,
   "阅读正式文件",
   "进一步了解或建立联系",
   "组织定位",
@@ -1360,17 +1383,28 @@ for (const requiredText of [
     `法人筹备页缺少内容：${requiredText}`,
   );
 }
+// The approved short status points to the complete, on-page legal boundary.
+const preparationStatus = visiblePageText(
+  elementsByClass(preparationHtml, "p", "inst4l-status")[0] ?? "",
+);
+const preparationBoundary = elementById(preparationHtml, "boundaries");
+const boundaryText = visiblePageText(preparationBoundary);
 assert(
-  preparationText.includes(
-    "当前处于北美非营利法人及首届董事会前期筹备阶段，法人尚未完成注册，首届董事会尚未依法产生",
-  ),
-  "法人筹备页顶部状态说明未收紧",
+  preparationStatus.includes("法人及首届董事会前期筹备阶段") &&
+    preparationStatus.includes("筹备不等于已经成立") &&
+    preparationStatus.includes("组织边界") &&
+    boundaryText.includes("北美非营利法人尚未依法成立") &&
+    boundaryText.includes("首届董事会尚未依法产生") &&
+    boundaryText.includes("不表示已经取得任何法人、慈善或免税资格"),
+  "法人筹备页顶部状态及完整法律边界不一致",
 );
 const whyNowPosition = preparationHtml.indexOf("为什么现在进入组织建设");
 const whyLegalPosition = preparationHtml.indexOf("为什么需要法人");
 const whyBoardPosition = preparationHtml.indexOf("为什么需要董事会");
 const workPosition = preparationHtml.indexOf("先建立规则，再扩大参与");
-const boundaryPosition = preparationHtml.indexOf("筹备不等于已经成立");
+const boundaryPosition = preparationBoundary
+  ? preparationHtml.indexOf(preparationBoundary)
+  : -1;
 const docPosition = preparationHtml.indexOf("OFFICIAL DOCUMENT");
 const contactPosition = preparationHtml.indexOf("进一步了解或建立联系");
 assert(
@@ -1387,11 +1421,10 @@ assert(
 const positioningPosition =
   preparationHtml.indexOf("北美非营利法人不是政治目标");
 assert(
-  positioningPosition > 0 &&
-    positioningPosition < whyNowPosition &&
-    preparationHtml.lastIndexOf("任何对外代表行为都必须建立在明确授权基础上") >
-      boundaryPosition,
-  "法人筹备页未按“组织定位 → 为什么现在 → … → 组织边界”排列定位与法律状态说明",
+  positioningPosition > whyNowPosition &&
+    positioningPosition < whyLegalPosition &&
+    boundaryText.includes("任何对外代表行为都必须建立在明确授权基础上"),
+  "法人筹备页未按现行“为什么现在 → 组织定位 → 法人与治理 → 组织边界”保持定位与法律说明",
 );
 for (const misleading of [
   "已经取得政治代表权",
@@ -1407,8 +1440,11 @@ for (const misleading of [
 // Not a dead end: the page must offer a next step and a way back to the route.
 assert(
   preparationText.includes("了解首届董事会筹备") &&
-    preparationText.includes("了解这条路线要承载什么") &&
-    /href="[^"]*preparation\/board/.test(preparationHtml),
+    linkedSlugs(preparationHtml).includes("civic-orderism") &&
+    linkedSlugs(preparationHtml.slice(contactPosition)).includes(
+      "preparation/board",
+    ) &&
+    linkedSlugs(preparationHtml.slice(contactPosition)).includes("participate"),
   "法人筹备页缺少下一步入口或返回路线的路径",
 );
 // /civic-orderism/ — six-stage peaceful transition route, five settled
@@ -1454,25 +1490,52 @@ assert(
     !lastStageHtml.includes("inst4l-row"),
   "第 06 阶段必须只呈现过渡制度研究状态与研究方向，不得填充旧制度设计文章",
 );
+// The published route delegates its complete archive to /institution-design/.
+// Verify actual reachable cards in that single directory, not obsolete data-slug
+// duplicates on the route. No content/card may silently disappear from the hub.
+const institutionDirectoryHtml = fs.readFileSync(
+  publicHtml("institution-design/index"),
+  "utf8",
+);
+const archiveContract = institutionArchiveContract(
+  institutionDirectoryHtml,
+  institutionSections,
+  civicOrderismConfig.institutionArchive.extraItems,
+);
+const archiveHub = elementById(routeHtml, "future-institutional-research");
+const archiveEntryPresent = linkedSlugs(
+  archiveHub,
+  "https://civicorderism.com/civic-orderism/",
+).includes("institution-design");
+const transitionLinks = linkedSlugs(
+  transitionRouteHtml,
+  "https://civicorderism.com/civic-orderism/",
+);
+assert(
+  archiveContract.flat,
+  "制度档案卡片不得嵌套，否则筛选与分页会隐藏其他文章",
+);
+assert(
+  archiveContract.complete,
+  "统一制度档案必须包含全部配置文章，且每张卡片唯一",
+);
 const institutionSlugs = institutionSections.flatMap(
   (section) => section.articles,
 );
 for (const slug of institutionSlugs) {
   assert(
-    !transitionRouteHtml.includes(`data-slug="${slug}"`),
+    !transitionLinks.includes(slug),
     `制度设计文章仍出现在六阶段路线中：${slug}`,
   );
   assert(
-    (routeHtml.match(new RegExp(`data-slug="${slug}"`, "g")) ?? []).length ===
-      1,
-    `制度设计文章未且仅未出现一次于 /civic-orderism/：${slug}`,
+    archiveEntryPresent && archiveContract.one(slug) && publicRouteExists(slug),
+    `制度设计文章未通过路线入口到达唯一档案卡片：${slug}`,
   );
 }
 for (const slug of civicOrderismConfig.institutionArchive.extraItems) {
   assert(
-    (routeHtml.match(new RegExp(`data-slug="${slug}"`, "g")) ?? []).length ===
-      1,
-    `制度研究延伸文章在 /civic-orderism/ 出现次数不为 1：${slug}`,
+    archiveEntryPresent && archiveContract.one(slug) && publicRouteExists(slug),
+    `制度研究延伸文章未通过路线入口到达唯一档案卡片：${slug}`,
   );
 }
 // Why the route can happen — chain plus the four judgments.
@@ -1521,11 +1584,8 @@ for (const principle of civicOrderismConfig.establishedPrinciples.items) {
     `已确定原则缺少文案或解释文字：${principle.name}`,
   );
 }
-// Future institutional research archive (folded), kept out of the route path.
-const archiveHtml =
-  routeHtml.match(
-    /<section class="inst4l-section" id="future-institutional-research">[\s\S]*?<\/section>/,
-  )?.[0] ?? "";
+// Same complete archive, intentionally centralized rather than duplicated.
+const archiveHtml = archiveHub;
 assert(
   archiveHtml.includes(civicOrderismConfig.institutionArchive.englishLabel) &&
     visiblePageText(archiveHtml).includes(
@@ -1534,12 +1594,14 @@ assert(
     visiblePageText(archiveHtml).includes(
       civicOrderismConfig.institutionArchive.note,
     ) &&
-    /href="[^"]*institution-design\/?"/.test(archiveHtml) &&
-    (archiveHtml.match(/<a class="inst4l-row\b/g) ?? []).length ===
-      institutionSlugs.length +
-        civicOrderismConfig.institutionArchive.extraItems.length &&
-    /<details class="china-analysis-more">/.test(archiveHtml),
-  "未来制度研究档案未按要求折叠组织",
+    archiveEntryPresent &&
+    archiveContract.complete &&
+    archiveContract.flat &&
+    visiblePageText(archiveHtml).includes(
+      `${archiveContract.expected.length} 篇`,
+    ) &&
+    !archiveHtml.includes("inst4l-row"),
+  "未来制度研究入口必须指向完整且唯一的统一档案，不得重复陈列或遗漏文章",
 );
 // Layer order: route -> principles -> institution research -> value goal.
 assert(
@@ -1960,10 +2022,7 @@ for (const routeArticle of [
   );
 }
 
-const institutionHtml = fs.readFileSync(
-  path.join(publicDir, "institution-design", "index.html"),
-  "utf8",
-);
+const institutionHtml = institutionDirectoryHtml;
 const institutionText = visiblePageText(institutionHtml);
 assert(
   institutionText.includes("制度运行地图") &&
@@ -1980,9 +2039,7 @@ assert(
   "制度设计页缺少模块卡片或一级筛选",
 );
 assert(
-  [...institutionHtml.matchAll(/data-institution-section="([^"]+)"/g)].every(
-    (match) => institutionSectionIds.has(match[1]),
-  ),
+  archiveContract.knownModules && archiveContract.correctAssignments,
   "制度设计页文章卡片包含未知制度模块",
 );
 assert(

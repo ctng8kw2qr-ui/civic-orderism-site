@@ -1,0 +1,244 @@
+{
+  "environment": {
+    "macOS": "27.2 (26B123)",
+    "Safari": "27.2 (22625.2.8.11.9)"
+  },
+  "webdriver": {
+    "statusReady": true,
+    "attempts": 2,
+    "HTTP": 500,
+    "timeoutSeconds": 30,
+    "error": "session not created: timed out while connecting to a Safari instance / Request creation of a new automation session"
+  },
+  "method": "Real macOS Safari UI via native application controls and native Web Inspector. Responsive Design Mode is macOS Safari, not a physical iPhone.",
+  "securitySettingsChanged": false,
+  "developerSettingsObserved": {
+    "remoteAutomationAndExternalAgents": "already enabled",
+    "JavaScriptFromAppleEvents": false,
+    "JavaScriptFromSmartSearchField": false,
+    "localFileRestrictionsDisabled": false,
+    "crossOriginRestrictionsDisabled": false
+  },
+  "desktopMatrix": [
+    {
+      "path": "/",
+      "width": 1439,
+      "height": 899,
+      "theme": "dark",
+      "overflow": false,
+      "font": "Songti SC",
+      "scrollY": 0,
+      "images": [
+        {
+          "file": "zhao-pengbo-b-desktop-1086.avif",
+          "loaded": true,
+          "filter": "none",
+          "priority": "high",
+          "loading": null
+        }
+      ]
+    },
+    {
+      "path": "/civic-orderism",
+      "width": 1439,
+      "height": 899,
+      "theme": "dark",
+      "overflow": false,
+      "font": "Songti SC",
+      "scrollY": 0,
+      "images": []
+    },
+    {
+      "path": "/china",
+      "width": 1439,
+      "height": 899,
+      "theme": "dark",
+      "overflow": false,
+      "font": "Songti SC",
+      "scrollY": 0,
+      "images": []
+    },
+    {
+      "path": "/china/the-world-xi-jinping-sees",
+      "width": 1439,
+      "height": 899,
+      "theme": "dark",
+      "overflow": false,
+      "font": "Songti SC",
+      "scrollY": 0,
+      "images": []
+    },
+    {
+      "path": "/about/initiator",
+      "width": 1439,
+      "height": 899,
+      "theme": "dark",
+      "overflow": false,
+      "font": "Songti SC",
+      "scrollY": 0,
+      "images": [
+        {
+          "file": "zhao-pengbo-b-portrait-590.webp",
+          "loaded": true,
+          "filter": "none",
+          "priority": "high",
+          "loading": "eager"
+        }
+      ]
+    },
+    {
+      "path": "/theory",
+      "width": 1439,
+      "height": 899,
+      "theme": "dark",
+      "overflow": false,
+      "font": "Songti SC",
+      "scrollY": 0,
+      "images": []
+    },
+    {
+      "path": "/preparation",
+      "width": 1439,
+      "height": 899,
+      "theme": "dark",
+      "overflow": false,
+      "font": "Songti SC",
+      "scrollY": 0,
+      "images": []
+    },
+    {
+      "path": "/",
+      "width": 1439,
+      "height": 899,
+      "theme": "light",
+      "overflow": false,
+      "font": "Songti SC",
+      "scrollY": 0,
+      "images": [
+        {
+          "file": "zhao-pengbo-b-desktop-1086.avif",
+          "loaded": true,
+          "filter": "none",
+          "priority": "high",
+          "loading": null
+        }
+      ]
+    },
+    {
+      "path": "/civic-orderism",
+      "width": 1439,
+      "height": 899,
+      "theme": "light",
+      "overflow": false,
+      "font": "Songti SC",
+      "scrollY": 0,
+      "images": []
+    },
+    {
+      "path": "/china",
+      "width": 1439,
+      "height": 899,
+      "theme": "light",
+      "overflow": false,
+      "font": "Songti SC",
+      "scrollY": 0,
+      "images": []
+    },
+    {
+      "path": "/china/the-world-xi-jinping-sees",
+      "width": 1439,
+      "height": 899,
+      "theme": "light",
+      "overflow": false,
+      "font": "Songti SC",
+      "scrollY": 0,
+      "images": []
+    },
+    {
+      "path": "/about/initiator",
+      "width": 1439,
+      "height": 899,
+      "theme": "light",
+      "overflow": false,
+      "font": "Songti SC",
+      "scrollY": 0,
+      "images": [
+        {
+          "file": "zhao-pengbo-b-portrait-590.webp",
+          "loaded": true,
+          "filter": "none",
+          "priority": "high",
+          "loading": "eager"
+        }
+      ]
+    },
+    {
+      "path": "/theory",
+      "width": 1439,
+      "height": 899,
+      "theme": "light",
+      "overflow": false,
+      "font": "Songti SC",
+      "scrollY": 0,
+      "images": []
+    },
+    {
+      "path": "/preparation",
+      "width": 1439,
+      "height": 899,
+      "theme": "light",
+      "overflow": false,
+      "font": "Songti SC",
+      "scrollY": 0,
+      "images": []
+    }
+  ],
+  "interactions": {
+    "mobileMenu": "Open/close, Esc returns focus to toggle; Return reopens; China menu navigation succeeds",
+    "articleTOC": {
+      "expanded": true,
+      "hash": "#一最高权力看到的从来不是未经处理的现实",
+      "scrollY": 2071,
+      "targetTop": 63.9375
+    },
+    "institutionCouncil": {
+      "bound": true,
+      "visible": 4,
+      "status": "第 1 / 1 页 · 4 篇",
+      "overflow": false
+    },
+    "narrowHome": {
+      "width": 320,
+      "height": 900,
+      "overflow": false,
+      "photo": "zhao-pengbo-b-portrait-590.avif",
+      "loaded": true,
+      "filter": "none",
+      "priority": "high",
+      "loading": null
+    },
+    "pageZoom": {
+      "nativeZoomPercent": 125,
+      "innerWidth": 500,
+      "clientWidth": 501,
+      "scrollWidth": 501,
+      "offendingElements": 0,
+      "explanation": "Safari rounds innerWidth by one CSS pixel at fractional page zoom; document clientWidth and scrollWidth are equal, so there is no content overflow."
+    }
+  },
+  "darkMode": "Local preview site preference only; original theme=null / system light restored. No macOS appearance change.",
+  "restored": {
+    "pageZoomPercent": 100,
+    "theme": null,
+    "responsiveMode": "exited",
+    "localTestTab": "closed",
+    "originalStartTab": "preserved"
+  },
+  "notVerified": [
+    "Physical iPhone/iPad Safari hardware and touch rendering",
+    "SafariDriver automated session/machine-readable full console error collection",
+    "Native Safari exhaustive nine-width matrix (Chrome covers all nine)",
+    "OS dark-preference change in native Safari (site dark styling was tested; Chrome covers prefers-color-scheme)"
+  ],
+  "console": "No JavaScript error observed in inspected native console; informational CDN preconnect messages. Do not equate this with an automated all-page Safari error counter."
+}

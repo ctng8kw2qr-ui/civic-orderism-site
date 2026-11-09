@@ -1,0 +1,230 @@
+{
+  "paired-before": {
+    "mobile": {
+      "runs": [
+        {
+          "run": 1,
+          "performance": 96,
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100,
+          "LCPms": 2563.3801999999996,
+          "CLS": 0,
+          "TBTms": 82,
+          "FCPms": 1395.4708999999998,
+          "lcpSelector": "div.wrap > figure.hero-portrait > picture > img",
+          "benchmarkIndex": 4107,
+          "runtimeError": null
+        },
+        {
+          "run": 2,
+          "performance": 97,
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100,
+          "LCPms": 2486.1895,
+          "CLS": 0,
+          "TBTms": 84,
+          "FCPms": 1396.696,
+          "lcpSelector": "div.wrap > figure.hero-portrait > picture > img",
+          "benchmarkIndex": 4071,
+          "runtimeError": null
+        },
+        {
+          "run": 3,
+          "performance": 96,
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100,
+          "LCPms": 2562.5353,
+          "CLS": 0,
+          "TBTms": 89,
+          "FCPms": 1403.0106,
+          "lcpSelector": "div.wrap > figure.hero-portrait > picture > img",
+          "benchmarkIndex": 4111,
+          "runtimeError": null
+        }
+      ],
+      "median": {
+        "performance": 96,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 100,
+        "LCPms": 2562.5353,
+        "CLS": 0,
+        "TBTms": 84,
+        "FCPms": 1396.696
+      }
+    },
+    "desktop": {
+      "runs": [
+        {
+          "run": 1,
+          "performance": 100,
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100,
+          "LCPms": 429.0303,
+          "CLS": 0,
+          "TBTms": 0,
+          "FCPms": 403.8351,
+          "lcpSelector": "div.wrap > figure.hero-portrait > picture > img",
+          "benchmarkIndex": 4087,
+          "runtimeError": null
+        },
+        {
+          "run": 2,
+          "performance": 100,
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100,
+          "LCPms": 428.756,
+          "CLS": 0,
+          "TBTms": 0,
+          "FCPms": 406.69649999999996,
+          "lcpSelector": "div.wrap > figure.hero-portrait > picture > img",
+          "benchmarkIndex": 4095,
+          "runtimeError": null
+        },
+        {
+          "run": 3,
+          "performance": 100,
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100,
+          "LCPms": 429.7223,
+          "CLS": 0,
+          "TBTms": 0,
+          "FCPms": 407.7486,
+          "lcpSelector": "div.wrap > figure.hero-portrait > picture > img",
+          "benchmarkIndex": 4077,
+          "runtimeError": null
+        }
+      ],
+      "median": {
+        "performance": 100,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 100,
+        "LCPms": 429.0303,
+        "CLS": 0,
+        "TBTms": 0,
+        "FCPms": 406.69649999999996
+      }
+    }
+  },
+  "paired-after": {
+    "mobile": {
+      "runs": [
+        {
+          "run": 1,
+          "performance": 99,
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100,
+          "LCPms": 2036.3106000000002,
+          "CLS": 0,
+          "TBTms": 88,
+          "FCPms": 1395.9222000000002,
+          "lcpSelector": "div.wrap > figure.hero-portrait > picture > img",
+          "benchmarkIndex": 4085,
+          "runtimeError": null
+        },
+        {
+          "run": 2,
+          "performance": 99,
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100,
+          "LCPms": 2037.0938,
+          "CLS": 0,
+          "TBTms": 87,
+          "FCPms": 1392.6226000000001,
+          "lcpSelector": "div.wrap > figure.hero-portrait > picture > img",
+          "benchmarkIndex": 4090,
+          "runtimeError": null
+        },
+        {
+          "run": 3,
+          "performance": 99,
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100,
+          "LCPms": 2035.4723,
+          "CLS": 0,
+          "TBTms": 89,
+          "FCPms": 1396.0261,
+          "lcpSelector": "div.wrap > figure.hero-portrait > picture > img",
+          "benchmarkIndex": 4083.5,
+          "runtimeError": null
+        }
+      ],
+      "median": {
+        "performance": 99,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 100,
+        "LCPms": 2036.3106000000002,
+        "CLS": 0,
+        "TBTms": 88,
+        "FCPms": 1395.9222000000002
+      }
+    },
+    "desktop": {
+      "runs": [
+        {
+          "run": 1,
+          "performance": 100,
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100,
+          "LCPms": 409.0276,
+          "CLS": 0,
+          "TBTms": 0,
+          "FCPms": 402.6377,
+          "lcpSelector": "div.wrap > figure.hero-portrait > picture > img",
+          "benchmarkIndex": 4074,
+          "runtimeError": null
+        },
+        {
+          "run": 2,
+          "performance": 100,
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100,
+          "LCPms": 409.00660000000005,
+          "CLS": 0,
+          "TBTms": 0,
+          "FCPms": 399.65970000000004,
+          "lcpSelector": "div.wrap > figure.hero-portrait > picture > img",
+          "benchmarkIndex": 4083,
+          "runtimeError": null
+        },
+        {
+          "run": 3,
+          "performance": 100,
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100,
+          "LCPms": 408.98029999999994,
+          "CLS": 0,
+          "TBTms": 0,
+          "FCPms": 407.02459999999996,
+          "lcpSelector": "div.wrap > figure.hero-portrait > picture > img",
+          "benchmarkIndex": 4081.5,
+          "runtimeError": null
+        }
+      ],
+      "median": {
+        "performance": 100,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 100,
+        "LCPms": 409.00660000000005,
+        "CLS": 0,
+        "TBTms": 0,
+        "FCPms": 402.6377
+      }
+    }
+  }
+}

@@ -90,3 +90,5 @@ export {
 
 export { default as OfficialHome } from "./OfficialHome";
 export { default as PoliticalRouteContext } from "./PoliticalRouteContext";
+
+export { default as KnowledgeBrowser } from "./KnowledgeBrowser";
