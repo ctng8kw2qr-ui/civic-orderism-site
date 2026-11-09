@@ -33,7 +33,8 @@
     "format": "npx prettier . --write",
     "test": "tsx --test",
     "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "preview:local": "node ./scripts/preview-local.mjs"
   },
   "engines": {
     "npm": ">=10.9.2",

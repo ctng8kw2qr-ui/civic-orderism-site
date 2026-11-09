@@ -6,20 +6,14 @@
  *
  * 规则：
  *   1. 组件只能引用语义 token，禁止在组件内 hardcode hex。
- *   2. 命名空间统一为 --v6-*，与历史 --inst4-* / --inst-* / Quartz 主题色
- *      并存，互不覆盖。历史 token 仍然服务尚未迁移的文章系统与落地页。
- *   3. 深酒红只用于品牌识别、按钮、细线、栏目编号、Hover 与小型强调元素。
- *      它不是页面背景色。
- *
- * 对比度（WCAG 2.1，light mode）：
- *   text-primary   on background  17.2:1  (AAA)
- *   text-secondary on background   9.2:1  (AAA)
- *   text-muted     on background   5.8:1  (AA)
- *   brand          on background   7.9:1  (AAA)
- *   on-brand (白)  on brand        8.7:1  (AAA)
+ *   2. --v6-* 为单一事实源，历史 --inst4-* / --inst-* 由下文兼容映射。
+ *   3. 正式 B 方案：深蓝 #142D3D、石墨灰 #272E33、暖白 #FAF8F5。
+ *      深蓝用于路线模块、文字与按钮，深色模式分离文字和色块用途。
+ *   4. 实际对比度由开发分支浏览器审查报告记录。
  */
 
 :root {
+  color-scheme: light;
   /* ---- Background & surfaces ---------------------------------- */
   /* 暖白 / 纸张色：机构出版物的底，不是纯白。 */
   --v6-background: #faf8f5;
@@ -42,28 +36,28 @@
 
   /* ---- Text hierarchy ----------------------------------------- */
   /* 炭黑 / 深灰，避免纯黑 (#000) 的生硬感。 */
-  --v6-text-primary: #1b1c1f;
-  --v6-text-secondary: #45484f;
-  --v6-text-muted: #63676f;
+  --v6-text-primary: #272e33;
+  --v6-text-secondary: #52616b;
+  --v6-text-muted: #52616b;
   --v6-text-on-brand: #ffffff;
   --v6-text-on-inverse: #f2efe9;
 
   /* ---- Borders & rules ---------------------------------------- */
-  --v6-border: #e0dcd5;
+  --v6-border: #cdd3d5;
   --v6-border-strong: #c9c3b9;
 
-  /* ---- Brand: 极克制的深酒红 ---------------------------------
+  /* ---- Brand: 克制的深蓝 ---------------------------------
      --v6-brand       品牌色块与按钮底色（必须承载白字，≥ 4.5:1）
      --v6-brand-text  品牌色文字（在页面底色上 ≥ 4.5:1）
      两个用途的对比度要求相反，因此拆成两个 token，不要混用。 */
-  --v6-brand: #7a2430;
-  --v6-brand-text: #7a2430;
-  --v6-brand-hover: #5e1a24;
-  --v6-brand-subtle: #f4eaeb;
-  --v6-brand-line: #d9c4c7;
+  --v6-brand: #142d3d;
+  --v6-brand-text: #142d3d;
+  --v6-brand-hover: #254453;
+  --v6-brand-subtle: #e9edef;
+  --v6-brand-line: #cdd3d5;
 
   /* ---- Focus ring (accessibility, not decoration) ------------- */
-  --v6-focus: #7a2430;
+  --v6-focus: #296c9c;
   --v6-focus-offset: #faf8f5;
 
   /* ---- Spacing scale (4px base) ------------------------------- */
@@ -94,11 +88,11 @@
   --v6-measure-narrow: 52ch;
   /* One shared content column: navigation, page sections and footer all
      align to the same left/right edge.
-     Visual polish: 1240 -> 1320px so the desktop hero and sections carry
+     Approved B: 1200px content plus page gutters so sections carry
      more presence. Still inside the wider V4-era 1360px, and every consumer
      (nav / sections / footer) moves together so edges stay aligned. */
-  --v6-container: 1320px;
-  --v6-gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --v6-container: calc(1200px + 2 * var(--v6-gutter));
+  --v6-gutter: 48px;
   --v6-header-height: 4.25rem;
 
   /* ---- Typography --------------------------------------------- */
@@ -154,9 +148,9 @@
      --v6-nav-hit-pad-x is the invisible clickable padding inside each item, so
      the visible gap between two labels is 14 + 16 + 14 = 44px while the
      header stays an editorial navigation row rather than a button bar. */
-  --v6-nav-hit-pad-x: 14px;
-  --v6-nav-item-gap: 16px;
-  --v6-nav-link-h: 40px;
+  --v6-nav-hit-pad-x: 10px;
+  --v6-nav-item-gap: 8px;
+  --v6-nav-link-h: 44px;
   /* Drawer rows. 52px keeps the existing comfortable rhythm; the target
      minimum is 44px and the search row uses the same value so every row in the
      drawer shares one rhythm. */
@@ -169,7 +163,7 @@
 }
 
 /* Dark mode keeps the same semantic names; only the values change.
-   深酒红在深色底上提亮，以保证 ≥ 4.5:1。 */
+   深蓝文字在深色底上提亮，以保证 ≥ 4.5:1。 */
 /* ══════════════════════════════════════════════════════════════════════
    Legacy palette remap — one visual language for the whole site.
 
@@ -240,6 +234,7 @@ html:root {
 }
 
 html:root[saved-theme="dark"] {
+  color-scheme: dark;
   /* Same mapping. The values are --v6-* tokens, which already resolve to the
      dark palette under this theme, so repeating them keeps the two legacy
      layers aligned in dark mode instead of letting their navy variants win. */
@@ -291,14 +286,29 @@ html:root[saved-theme="dark"] {
   --v6-border: #2c2f35;
   --v6-border-strong: #3d4149;
 
-  /* Dark mode: the button keeps a deep wine surface so white text stays
-     legible (8.1:1), while brand *text* is lightened (7.0:1 on the page). */
-  --v6-brand: #8f2c3a;
-  --v6-brand-text: #d98b96;
-  --v6-brand-hover: #a13644;
-  --v6-brand-subtle: #2a1e21;
-  --v6-brand-line: #4a3237;
+  /* Dark mode separates the deep-blue button surface from pale brand text. */
+  --v6-brand: #223f50;
+  --v6-brand-text: #c9dee9;
+  --v6-brand-hover: #2b5065;
+  --v6-brand-subtle: #1e2c35;
+  --v6-brand-line: #3b515f;
 
-  --v6-focus: #d98b96;
+  --v6-focus: #badfff;
   --v6-focus-offset: #141518;
+}
+
+@media (max-width: 1100px) {
+  :root {
+    --v6-gutter: 32px;
+  }
+}
+@media (max-width: 768px) {
+  :root {
+    --v6-gutter: 22px;
+  }
+}
+@media (max-width: 359px) {
+  :root {
+    --v6-gutter: 18px;
+  }
 }

@@ -5,7 +5,7 @@
 // 以免出现「桌面误判为折叠」的状态。
 
 function setupV6Navigation() {
-  const mobileQuery = window.matchMedia("(max-width: 800px)");
+  const mobileQuery = window.matchMedia("(max-width: 1100px)");
 
   for (const nav of document.querySelectorAll<HTMLElement>(".v6-nav")) {
     const toggle = nav.querySelector<HTMLButtonElement>(".v6-nav__toggle");

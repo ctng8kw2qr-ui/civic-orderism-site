@@ -199,6 +199,7 @@ body[data-page-kind="article"] {
   /* 文章标题：出版物的重心。加宽可用行长，收紧字距，
      但刻意不做成 Landing Page 级别的巨型标题。 */
   .article-inst__title {
+    font-family: var(--v6-font-serif);
     max-width: 26ch;
     margin-top: var(--v6-space-sm);
     color: var(--v6-text-primary);

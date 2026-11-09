@@ -12,15 +12,13 @@
  */
 
 .v6-nav {
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 60;
   box-sizing: border-box;
   width: 100%;
   border-bottom: 1px solid var(--v6-border);
-  background: color-mix(in srgb, var(--v6-background) 92%, transparent);
-  -webkit-backdrop-filter: saturate(180%) blur(8px);
-  backdrop-filter: saturate(180%) blur(8px);
+  background: var(--v6-background);
 }
 
 .v6-nav__inner {
@@ -32,20 +30,18 @@
   width: 100%;
   max-width: var(--v6-container);
   margin: 0 auto;
-  padding: 0.85rem var(--v6-gutter);
+  min-height: 102px;
+  padding: 0 var(--v6-gutter);
 }
 
 /* ── Brand: 两行，中文主 / 英文辅 ─────────────────────────────── */
-/* Header wordmark: the name alone, as real text, inside one home link.
-   No mark is shown in the header (display decision). The Civic Orderism mark is
-   `brand/icon-mark.svg`, used for the favicon and application icons; the older
-   Threshold Mark is historical and survives only in the OG fallback.
-   Stacked column, unchanged typography and unchanged hover/focus behaviour. */
+/* Approved icon mark and bilingual wordmark share a single home link. */
 .v6-nav__brand {
   display: flex;
   flex: 0 0 auto;
-  flex-direction: column;
-  gap: 0.1rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
   color: var(--v6-text-primary);
   text-decoration: none;
   background-image: none;
@@ -163,9 +159,7 @@
 }
 
 /* ── Hamburger / Close (mobile only) ─────────────────────────── */
-/* 44x44 touch target retained; the visible glyph stays ~18px and the box
-   itself carries no border, radius or background — consistent with the
-   search trigger and with the rest of the icon system. */
+/* Explicit menu label, 44px touch target and visible focus. */
 .v6-nav__toggle {
   display: none;
   align-items: center;
@@ -174,71 +168,19 @@
   width: 2.75rem;
   height: 2.75rem;
   padding: 0;
-  border: 0;
-  border-radius: 0;
+  border: 1px solid var(--v6-border);
+  border-radius: 2px;
+  font-size: 14px;
   background: transparent;
   color: var(--v6-text-primary);
   cursor: pointer;
   transition: color var(--v6-duration) var(--v6-ease);
 }
 
-/* The glyph: two 1.5px round-capped bars in an 18x18 box. Both pseudo
-   elements are absolutely centred on the same origin, so the closed (two
-   bars) and open (an X) states share one optical centre and the glyph never
-   shifts when it toggles. */
-.v6-nav__toggle-bars {
-  position: relative;
-  display: block;
-  width: 1.125rem; /* 18px */
-  height: 1.125rem; /* 18px */
-}
-
-.v6-nav__toggle-bars::before,
-.v6-nav__toggle-bars::after {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 1.5px;
-  border-radius: 1px;
-  background: currentcolor;
-  content: "";
-  transition:
-    transform var(--v6-duration) var(--v6-ease),
-    opacity var(--v6-duration) var(--v6-ease);
-}
-
-/* closed: Menu — two bars, 8px apart */
-.v6-nav__toggle-bars::before {
-  transform: translateY(-4.75px);
-}
-
-.v6-nav__toggle-bars::after {
-  transform: translateY(3.25px);
-}
-
-/* open: Close — the same two bars become an X about the shared centre */
-.v6-nav[data-open="true"] .v6-nav__toggle-bars::before {
-  transform: rotate(45deg);
-}
-
-.v6-nav[data-open="true"] .v6-nav__toggle-bars::after {
-  transform: rotate(-45deg);
-}
-
-/* Reduced motion: the state change must not depend on an animation to be
-   legible. With the transition removed the two states still swap instantly
-   and unambiguously — Menu (two bars) or Close (an X). */
-@media (prefers-reduced-motion: reduce) {
-  .v6-nav__toggle-bars::before,
-  .v6-nav__toggle-bars::after {
-    transition: none;
-  }
-}
-
-@media all and ($mobile) {
+@media (max-width: 1100px) {
   .v6-nav__inner {
-    padding: 0.7rem var(--v6-gutter);
+    min-height: 78px;
+    padding: 0 var(--v6-gutter);
   }
 
   .v6-nav__toggle {
@@ -333,5 +275,57 @@
     border-radius: 0;
     justify-content: flex-start;
     font-size: 1rem;
+  }
+}
+
+.v6-nav__brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.v6-nav__mark {
+  width: 32px;
+  height: 32px;
+  margin: 0;
+}
+
+.v6-nav__skip {
+  position: absolute;
+  inset: 8px auto auto 8px;
+  transform: translateY(-200%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+  padding: 10px 16px;
+  background: var(--v6-background);
+  color: var(--v6-text-primary);
+}
+.v6-nav__skip:focus-visible {
+  transform: none;
+  opacity: 1;
+  pointer-events: auto;
+  outline: 2px solid var(--v6-focus);
+  outline-offset: 2px;
+}
+
+// Article reading columns must never constrain the shared site navigation.
+body[data-page-kind="article"] {
+  --official-nav-space: 142px;
+  .v6-nav {
+    position: absolute;
+    inset: 0 0 auto;
+    width: 100%;
+  }
+  .page > #quartz-body .page-header {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .page-header > header {
+    display: contents;
+  }
+}
+@media (max-width: 1100px) {
+  body[data-page-kind="article"] {
+    --official-nav-space: 118px;
   }
 }

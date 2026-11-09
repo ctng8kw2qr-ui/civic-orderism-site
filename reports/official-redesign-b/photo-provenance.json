@@ -1,0 +1,37 @@
+{
+  "approved_source": "/private/tmp/civic-orderism-photo-b-final-20261109",
+  "approved_copies_byte_identical": true,
+  "derivation": "Width-only 768px desktop / 400px portrait at WebP quality 90; same-size 1086px desktop / 590px portrait delivery copies at quality 92. Approved originals retained byte-identically. No face/background edits, new crop or generation.",
+  "files": [
+    {
+      "file": "quartz/static/assets/v6/people/zhao-pengbo-b-desktop-1086.webp",
+      "bytes": 103856,
+      "sha256": "0e0807bdb4fc36d113ebe349a0a0625f55f15ca01928a660f2211d8d37af20ce"
+    },
+    {
+      "file": "quartz/static/assets/v6/people/zhao-pengbo-b-desktop-768.webp",
+      "bytes": 46016,
+      "sha256": "90490f97bfac0f19ac4793b7828fa75838a3d3d9ed1b3ecf3d31b75616ec362f"
+    },
+    {
+      "file": "quartz/static/assets/v6/people/zhao-pengbo-b-desktop.webp",
+      "bytes": 615534,
+      "sha256": "0de2b978cd82f038de9467acf2c5abb95662605b748ce67d2de92d8204e5bb57"
+    },
+    {
+      "file": "quartz/static/assets/v6/people/zhao-pengbo-b-portrait-400.webp",
+      "bytes": 34818,
+      "sha256": "469a121b97afe6ca07bcc10bdfca649adf53780d072df47ec387e40cbfb06244"
+    },
+    {
+      "file": "quartz/static/assets/v6/people/zhao-pengbo-b-portrait-590.webp",
+      "bytes": 82276,
+      "sha256": "9100dc6a80ddfbb36386d0a00d738c9e37ad30f5bc44791303360b27cd6365eb"
+    },
+    {
+      "file": "quartz/static/assets/v6/people/zhao-pengbo-b-portrait.webp",
+      "bytes": 386560,
+      "sha256": "72618af539b47d147754cbc15c0328792216d2ea38dcbb229b0c1334ffccd321"
+    }
+  ]
+}

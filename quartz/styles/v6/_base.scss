@@ -26,6 +26,7 @@ body:has(.v6) {
 
   .page > #quartz-body {
     display: block !important;
+    padding-inline: 0 !important;
   }
 
   .page > #quartz-body .sidebar.left,
@@ -47,8 +48,7 @@ body:has(.v6) {
   }
 
   .page > #quartz-body .center > article,
-  .center > article,
-  article {
+  .center > article {
     width: 100% !important;
     max-width: none !important;
     padding: 0 !important;
@@ -306,4 +306,10 @@ html {
   .v6 .v6-link:hover .v6-link__arrow {
     transform: none;
   }
+}
+
+// Homepage body is rendered by OfficialHome, so no empty article chrome.
+body[data-slug="index"] .center > article,
+body[data-slug="index"] .center > hr {
+  display: none;
 }

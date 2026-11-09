@@ -25,7 +25,7 @@ noindex: false
 <p>我的答案不是要求任何人相信我的人格，也不是要求任何人相信我的承诺。而是把路线、组织、边界以及未来的权力安排逐步公开，让它们接受检验。</p>
 </div>
 <figure class="inst4l-portrait">
-<img src="/static/assets/v6/people/zhao-pengbo-initiator.webp" alt="赵鹏博，公民秩序主义路线发起人" width="1024" height="1536" loading="eager" decoding="async" fetchpriority="high" />
+<img src="/static/assets/v6/people/zhao-pengbo-b-portrait-590.webp" alt="赵鹏博，公民秩序主义路线发起人" width="590" height="674" loading="eager" decoding="async" fetchpriority="high" />
 </figure>
 </div>
   </section>

@@ -81,7 +81,16 @@ const Content: QuartzComponent = ({ fileData, tree }: QuartzComponentProps) => {
 
   if (!isArticleSlug(fileData.slug) || !isRootNode(tree)) {
     const content = htmlToJsx(fileData.filePath!, tree) as ComponentChildren;
-    return <article class={classString}>{content}</article>;
+    return (
+      <article
+        class={classString}
+        id={fileData.slug === "index" ? undefined : "main-content"}
+        role={fileData.slug === "index" ? undefined : "main"}
+        tabIndex={-1}
+      >
+        {content}
+      </article>
+    );
   }
 
   const titleIndex = tree.children.findIndex(
@@ -106,7 +115,12 @@ const Content: QuartzComponent = ({ fileData, tree }: QuartzComponentProps) => {
   ) as ComponentChildren;
 
   return (
-    <article class={`${classString} article-page`}>
+    <article
+      class={`${classString} article-page`}
+      id="main-content"
+      role="main"
+      tabIndex={-1}
+    >
       <div class="article-content">{articleBody}</div>
     </article>
   );
