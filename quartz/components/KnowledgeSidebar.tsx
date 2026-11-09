@@ -1,4 +1,5 @@
 import migration from "../../content-migration-map.json";
+import navigation from "../../data/navigation.config.json";
 import sections from "../../data/sections.config.json";
 import topics from "../../data/topics.config.json";
 import {
@@ -7,23 +8,21 @@ import {
   QuartzComponentProps,
 } from "./types";
 
-const primaryLinks = [
-  { label: "首页", href: "/" },
-  { label: "董事会筹备", href: "/preparation" },
-  { label: "政治路线", href: "/civic-orderism" },
-  { label: "理论研究", href: "/theory" },
-  { label: "关于", href: "/about" },
-];
+const primaryLinks = navigation.primary.map(({ label, href }) => ({
+  label,
+  href,
+}));
 
 const researchSubLinks = [
-  { label: "解析中共", href: "/china" },
-  { label: "中国未来", href: "/china-future" },
-  { label: "专题", href: "/topics" },
-  { label: "核心概念", href: "/concepts" },
+  { label: "中国政治经济观察", href: "/china/" },
+  { label: "解析中共", href: "/china/analysis/" },
+  { label: "中国未来", href: "/china-future/" },
+  { label: "研究专题", href: "/topics/" },
+  { label: "核心概念", href: "/concepts/" },
 ];
 
 const furtherReadingLinks = [
-  { label: "5分钟了解", href: "/start-here" },
+  { label: "5分钟了解", href: "/start-here/" },
   { label: "阅读地图", href: "/articles" },
 ];
 
@@ -49,17 +48,18 @@ const KnowledgeSidebar: QuartzComponent = ({
   const slug = fileData.slug ?? "";
   const currentSection = activeSection(slug);
   const isActive = (href: string) => {
-    const target = href.replace(/^\//, "");
+    const target = href.replace(/^\/+|\/+$/g, "");
     if (
       slug === "civic-orderism/peaceful-state-transition" &&
-      href === "/civic-orderism"
+      target === "civic-orderism"
     )
       return false;
-    if (currentSection && href === `/${currentSection.slug}`) return true;
+    if (currentSection && target === currentSection.slug) return true;
     return slug === target || slug.startsWith(`${target}/`);
   };
   const researchExpanded =
-    isActive("/theory") || researchSubLinks.some((link) => isActive(link.href));
+    isActive("/theory/") ||
+    researchSubLinks.some((link) => isActive(link.href));
 
   // The institutional homepage does not carry the knowledge sidebar.
   if (slug === "index") return null;
@@ -70,7 +70,8 @@ const KnowledgeSidebar: QuartzComponent = ({
       <ul>
         {primaryLinks.map((item) => {
           const section = sections.find(
-            (candidate) => `/${candidate.slug}` === item.href,
+            (candidate) =>
+              item.href.replace(/^\/+|\/+$/g, "") === candidate.slug,
           );
           const expanded = section?.slug === currentSection?.slug;
           const sectionTopics =
@@ -86,7 +87,7 @@ const KnowledgeSidebar: QuartzComponent = ({
               class={
                 expanded
                   ? "knowledge-sidebar__section is-expanded"
-                  : researchExpanded && item.href === "/theory"
+                  : researchExpanded && item.href === "/theory/"
                     ? "knowledge-sidebar__section is-expanded"
                     : undefined
               }
@@ -97,20 +98,20 @@ const KnowledgeSidebar: QuartzComponent = ({
               >
                 {item.label}
               </a>
-              {item.href === "/theory" && researchExpanded ? (
+              {item.href === "/theory/" && researchExpanded ? (
                 <div class="knowledge-sidebar__section-links">
                   {researchSubLinks.map((link) => (
                     <a href={link.href}>{link.label}</a>
                   ))}
                 </div>
               ) : null}
-              {item.href === "/civic-orderism" && expanded && section ? (
+              {item.href === "/civic-orderism/" && expanded && section ? (
                 <div class="knowledge-sidebar__section-links">
-                  <a href="/civic-orderism#推荐文章">推荐阅读</a>
+                  <a href="/civic-orderism/#推荐文章">推荐阅读</a>
                   {sectionTopics.map((topic) => (
                     <a href={`/topics/${topic!.slug}`}>{topic!.name}</a>
                   ))}
-                  <a href="/civic-orderism#全部文章">查看全部文章</a>
+                  <a href="/civic-orderism/#全部文章">查看全部文章</a>
                 </div>
               ) : null}
             </li>

@@ -17,7 +17,7 @@
     "generate:introduction-manual-pdf": "node ./scripts/generate-introduction-manual-pdf.cjs",
     "generate:article-structure-review": "node ./scripts/generate-article-structure-review.mjs && prettier ./reports/article-structure-review.md --write",
     "dev": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build --serve --host 0.0.0.0 --port 8080",
-    "build": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build && node ./scripts/generate-static-security-files.mjs && npm run validate:markup && npm run validate:cta-visibility && npm run validate:favicons && npm run validate:commitments && npm run validate:architecture",
+    "build": "npm run generate:indexes && node ./quartz/bootstrap-cli.mjs build && node ./scripts/generate-static-security-files.mjs && node ./scripts/postbuild-phase2.mjs && npm run validate:markup && npm run validate:cta-visibility && npm run validate:favicons && npm run validate:commitments && npm run validate:architecture && npm run validate:phase2 && npm run validate:phase3",
     "validate:favicons": "node ./scripts/validate-favicon-urls.mjs",
     "validate:commitments": "node ./scripts/validate-public-commitments.mjs",
     "validate:architecture": "node ./scripts/validate-institutional-architecture.mjs",
@@ -34,7 +34,11 @@
     "test": "tsx --test",
     "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1",
     "deploy": "wrangler deploy",
-    "preview:local": "node ./scripts/preview-local.mjs"
+    "preview:local": "node ./scripts/preview-local.mjs",
+    "validate:phase2": "node ./scripts/validate-phase2-architecture.mjs",
+    "validate:phase3-content": "node ./scripts/validate-phase3-content-standard.mjs",
+    "validate:phase3-recommendations": "node ./scripts/validate-phase3-recommendations.mjs",
+    "validate:phase3": "npm run validate:phase3-content && npm run validate:phase3-recommendations"
   },
   "engines": {
     "npm": ">=10.9.2",

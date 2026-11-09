@@ -65,7 +65,7 @@ coverAlt: "一面裸露的坡地占满画面，四条各自完整的小路横过
   <span class="inst4l-row__desc">解析中共总论：旧政治秩序为什么正在失去制造共同未来的能力。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
-<a class="inst4l-row" href="/china/">
+<a class="inst4l-row" href="/china/analysis/">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">研究框架</span><span class="inst4l-row__title">解析中共研究程序</span></span>
   <span class="inst4l-row__desc">进入核心分析框架、结构判断与代表研究。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
@@ -75,7 +75,7 @@ coverAlt: "一面裸露的坡地占满画面，四条各自完整的小路横过
   <span class="inst4l-row__desc">用于理解中共具体政治现象的分析工具。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
-<a class="inst4l-row" href="/china/">
+<a class="inst4l-row" href="/china/analysis/">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">代表研究</span><span class="inst4l-row__title">解析中共代表研究</span></span>
   <span class="inst4l-row__desc">从四阶段进入代表研究。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>

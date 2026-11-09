@@ -103,7 +103,7 @@ const V6HomeHero: QuartzComponent = ({
               </a>
             </p>
             <p class="v6-hero__nav">
-              <a class="v6-hero__nav-link" href="/civic-orderism">
+              <a class="v6-hero__nav-link" href="/civic-orderism/">
                 了解我们的路线 <span aria-hidden="true">→</span>
               </a>
               <a class="v6-hero__nav-link" href="/participate">

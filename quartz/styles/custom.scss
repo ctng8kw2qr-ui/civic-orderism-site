@@ -10835,3 +10835,46 @@ body:has(.inst4l) {
     max-width: min(82vw, 300px);
   }
 }
+
+/* Political route in-page section navigation. Text-only; no cards, icons,
+   animation, or sticky overlay. It mirrors the existing section anchors. */
+.inst4-route__section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.7rem;
+  margin: 1.5rem 0 0;
+  padding: 0.95rem 0;
+  border-top: 1px solid var(--inst4-line);
+  border-bottom: 1px solid var(--inst4-line);
+}
+
+.inst4-route__section-nav a {
+  color: var(--inst4-ink-2);
+  font-size: 0.9rem;
+  font-weight: 480;
+  line-height: 1.5;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 0.12rem;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.inst4-route__section-nav a:hover,
+.inst4-route__section-nav a:focus-visible {
+  color: var(--inst4-ink);
+  border-bottom-color: var(--inst4-ink);
+  outline: none;
+}
+
+@media (max-width: 700px) {
+  .inst4-route__section-nav {
+    gap: 0.35rem 1.1rem;
+    padding: 0.8rem 0;
+  }
+
+  .inst4-route__section-nav a {
+    font-size: 0.84rem;
+  }
+}

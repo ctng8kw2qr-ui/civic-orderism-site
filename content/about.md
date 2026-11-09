@@ -89,7 +89,7 @@ noindex: false
   </div>
   <p>公民秩序主义不只是一个发表判断的地方。我们把研究当作政治路线的前置条件：没有对现有秩序为什么失效的完整判断，路线就只能停留在主张层面。</p>
 <p>研究围绕三个方向展开：理解现在，对应解析中共；准备转轨，对应政治路线；准备未来，对应中国未来。三个方向分别回答旧秩序为什么走不下去、和平转轨如何成为可能，以及政治变化之后国家如何继续运行。</p>
-<p class="inst4l-link"><a href="/theory">进入研究体系：三个方向与九个研究栏目 <span aria-hidden="true">→</span></a></p>
+<p class="inst4l-link"><a href="/theory/">进入研究体系：三个方向与九个研究栏目 <span aria-hidden="true">→</span></a></p>
 </section>
 
 <section class="inst4l-section">

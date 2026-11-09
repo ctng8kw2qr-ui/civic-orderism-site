@@ -13,6 +13,7 @@ import conceptsConfig from "../../data/concepts.config.json";
 import sectionsConfig from "../../data/sections.config.json";
 import readingSequencesConfig from "../../data/reading-sequences.config.json";
 import coreModelsConfig from "../../data/core-models.config.json";
+import contentMap from "../../data/phase2-content-map.json";
 import {
   getConceptPublicationStatus,
   isVisibleConcept,
@@ -73,6 +74,35 @@ const conceptBySlug = new Map(
 const sectionByName = new Map(
   sectionsConfig.map((section) => [section.name, section]),
 );
+type ContentEntry = {
+  slug: string;
+  primary_section?: string;
+  category?: string;
+  subcategory?: string;
+};
+const contentBySlug = new Map<string, ContentEntry>(
+  (contentMap.articles as ContentEntry[]).map((entry) => [entry.slug, entry]),
+);
+
+function contentFor(file: QuartzPluginData) {
+  return contentBySlug.get(file.slug ?? "");
+}
+function primarySectionFor(file: QuartzPluginData) {
+  return contentFor(file)?.primary_section;
+}
+function primaryCategoryFor(file: QuartzPluginData) {
+  return contentFor(file)?.category;
+}
+function samePrimaryCategory(a: QuartzPluginData, b: QuartzPluginData) {
+  const ac = primaryCategoryFor(a);
+  const bc = primaryCategoryFor(b);
+  return Boolean(ac && bc && ac === bc);
+}
+function samePrimaryTopic(a: QuartzPluginData, b: QuartzPluginData) {
+  const at = knowledgeFor(a)?.primaryTopic;
+  const bt = knowledgeFor(b)?.primaryTopic;
+  return Boolean(at && bt && at === bt);
+}
 
 function knowledgeFor(file: QuartzPluginData) {
   return migrationBySlug.get(file.slug ?? "");
@@ -233,7 +263,6 @@ function isEligibleRecommendation(file: QuartzPluginData) {
   return Boolean(
     knowledge &&
     knowledge.status === "published" &&
-    !knowledge.needsReview &&
     file.frontmatter?.status !== "draft" &&
     file.frontmatter?.status !== "archived" &&
     file.frontmatter?.published !== false,
@@ -287,9 +316,10 @@ function institutionalArticleType(
   fileData: QuartzPluginData,
 ): InstitutionalArticleType | undefined {
   const fm = (fileData.frontmatter ?? {}) as Record<string, unknown>;
-  const category = typeof fm.category === "string" ? fm.category : "";
   const section = typeof fm.section === "string" ? fm.section : "";
-  if (section === "价值与路线" || category === "公民秩序主义") return "route";
+  const primary = primarySectionFor(fileData);
+  if (primary === "政治路线" || section === "价值与路线") return "route";
+  if (primary === "理论与制度") return "topic";
   if (coreModelConceptForArticle(fileData, knowledgeFor(fileData))) {
     return "model";
   }
@@ -323,7 +353,6 @@ const CONCEPT_TYPES: Record<string, string> = {
 };
 const NON_CONCEPT_TYPES = new Set(["ROUTE", "PRINCIPLE", "TOPIC"]);
 
-
 function byRecommendationScore(
   current: QuartzPluginData,
   currentSeries?: string,
@@ -335,24 +364,30 @@ function byRecommendationScore(
       let total = 0;
       const currentKnowledge = knowledgeFor(current);
       const candidateKnowledge = knowledgeFor(file);
-      if (file.slug && manualRelated.has(file.slug)) total += 60000;
+      if (file.slug && manualRelated.has(file.slug)) total += 100000;
+      // Priority 1: the same primary topic; Priority 2: shared topics.
+      if (samePrimaryTopic(current, file)) total += 90000;
+      const sharedTopics = sharedTopicCount(current, file);
+      if (sharedTopics > 0) total += 60000 + Math.min(sharedTopics, 3) * 1000;
+      // Priority 3: the same content category; Priority 4: the same primary section.
+      if (samePrimaryCategory(current, file)) total += 30000;
+      if (sameSection(current, file)) total += 10000;
+      // Content relations remain secondary to the desired topic/category order.
       if (
         currentKnowledge?.primaryCoreModel &&
         currentKnowledge.primaryCoreModel ===
           candidateKnowledge?.primaryCoreModel
       )
-        total += 50000;
+        total += 5000;
       if (sharesAssociatedCoreModel(currentKnowledge, candidateKnowledge))
-        total += 40000;
-      if (file.slug && sequenceRelated.has(file.slug)) total += 30000;
+        total += 3000;
+      if (file.slug && sequenceRelated.has(file.slug)) total += 2000;
       if (
         currentSeries &&
         getSeries(file.frontmatter?.series) === currentSeries
       )
-        total += 25000;
-      total += sharedConceptCount(current, file) * 8000;
-      total += sharedTopicCount(current, file) * 2000;
-      if (sameSection(current, file)) total += 200;
+        total += 4000;
+      total += sharedConceptCount(current, file) * 1000;
       if (knowledgeFor(file)?.recommended) total += 10;
       const time =
         file.dates?.published?.getTime() ?? file.dates?.created?.getTime() ?? 0;
@@ -374,6 +409,16 @@ export const KnowledgeContext: QuartzComponent = ({
   const corePoliticalStatement =
     fileData.frontmatter?.corePoliticalStatement === true;
   const section = sectionByName.get(knowledge.section);
+  const content = contentFor(fileData);
+  const primary = content?.primary_section;
+  const primaryMeta: Record<string, { label: string; href: string }> = {
+    政治路线: { label: "政治路线", href: "/civic-orderism/" },
+    政治经济观察: { label: "政治经济观察", href: "/china/" },
+    理论与制度: { label: "理论与制度", href: "/theory/" },
+  };
+  const sectionMeta = primary ? primaryMeta[primary] : undefined;
+  const sectionHref = sectionMeta?.href;
+  const sectionLabel = sectionMeta?.label ?? section?.name;
   const primaryTopic = knowledge.primaryTopic
     ? topicBySlug.get(knowledge.primaryTopic)
     : undefined;
@@ -396,8 +441,8 @@ export const KnowledgeContext: QuartzComponent = ({
       <div class="article-knowledge__group">
         <h2>本文属于</h2>
         <p class="article-knowledge__links">
-          {section ? (
-            <a href={`/${section.slug}`}>{section.name}</a>
+          {sectionLabel ? (
+            <a href={sectionHref}>{sectionLabel}</a>
           ) : (
             <span>
               {corePoliticalStatement
@@ -615,16 +660,26 @@ export const ContinueReading: QuartzComponent = ({
     .filter((file) => {
       const sharedTopics = sharedTopicCount(fileData, file);
       const sharedConcepts = sharedConceptCount(fileData, file);
-      return (
+      const samePrimary = sameSection(fileData, file);
+      const explicitRelation =
         (currentSeries &&
           getSeries(file.frontmatter?.series) === currentSeries) ||
-        sharedTopics > 0 ||
-        sharedConcepts > 0 ||
-        sameSection(fileData, file) ||
         (file.slug !== undefined && adjacentSequenceSlugs.has(file.slug)) ||
-        (file.slug !== undefined && manualRelated.has(file.slug))
+        (file.slug !== undefined && manualRelated.has(file.slug));
+      // Keep automatic recommendations inside the same primary section.
+      // Topic/category/section priorities are applied inside that boundary;
+      // this prevents a theory article from being displaced by an unrelated
+      // route or economic article.
+      return (
+        samePrimary &&
+        (explicitRelation ||
+          sharedTopics > 0 ||
+          sharedConcepts > 0 ||
+          samePrimaryTopic(fileData, file) ||
+          samePrimaryCategory(fileData, file))
       );
     })
+    .filter((file) => primarySectionFor(file) === primarySectionFor(fileData))
     .sort(
       byRecommendationScore(
         fileData,
@@ -706,8 +761,7 @@ export const ContinueReading: QuartzComponent = ({
           0,
           Math.max(
             0,
-            (institutionalArticle ? 3 : 4) -
-              coreModelRecommendations.length,
+            (institutionalArticle ? 3 : 4) - coreModelRecommendations.length,
           ),
         )
     : [];
@@ -721,13 +775,11 @@ export const ContinueReading: QuartzComponent = ({
           .filter((file) => file.slug !== fileData.slug)
           .filter((file) => {
             const fm = (file.frontmatter ?? {}) as Record<string, unknown>;
-            const category =
-              typeof fm.category === "string" ? fm.category : "";
             const section = typeof fm.section === "string" ? fm.section : "";
             return (
               CORE_MODEL_ROUTE_SLUGS.includes(file.slug ?? "") ||
               section === "价值与路线" ||
-              category === "公民秩序主义"
+              primarySectionFor(file) === "政治路线"
             );
           })
           .sort((a, b) => {
@@ -755,8 +807,7 @@ export const ContinueReading: QuartzComponent = ({
     institutionalType === "route"
       ? routeArticleRecommendations.length > 0
       : institutionalType === "model"
-        ? coreModelRecommendations.length > 0 ||
-          routeRecommendations.length > 0
+        ? coreModelRecommendations.length > 0 || routeRecommendations.length > 0
         : recommendations.length > 0;
   if (!hasValidRelated) return null;
 
@@ -836,6 +887,7 @@ export const ContinueReading: QuartzComponent = ({
   }
 
   if (
+    institutionalType === "model" &&
     coreModel &&
     (coreModelRecommendations.length > 0 || routeRecommendations.length > 0)
   ) {
@@ -943,7 +995,7 @@ export const ArticleCta: QuartzComponent = ({
         <div class="article-cta__item">
           <span class="article-cta__label">理论与路线</span>
           <span class="article-cta__value">
-            <a href="/start-here">5分钟了解公民秩序主义</a>
+            <a href="/start-here/">5分钟了解公民秩序主义</a>
           </span>
         </div>
       </div>

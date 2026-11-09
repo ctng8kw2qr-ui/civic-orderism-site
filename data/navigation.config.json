@@ -1,6 +1,73 @@
-[
-  { "label": "当前工作", "href": "/preparation" },
-  { "label": "政治路线", "href": "/civic-orderism" },
-  { "label": "研究与出版", "href": "/theory" },
-  { "label": "关于", "href": "/about" }
-]
+{
+  "primary": [
+    {
+      "label": "政治路线",
+      "href": "/civic-orderism/",
+      "match": ["civic-orderism"]
+    },
+    {
+      "label": "政治经济观察",
+      "href": "/china/",
+      "match": ["china", "china-future", "china-stage", "topics"]
+    },
+    {
+      "label": "理论与制度",
+      "href": "/theory/",
+      "match": [
+        "theory",
+        "institution",
+        "institution-design",
+        "institutional-architecture",
+        "concepts",
+        "articles"
+      ]
+    },
+    {
+      "label": "关于赵鹏博",
+      "href": "/about/initiator",
+      "match": ["about"]
+    },
+    {
+      "label": "组织建设",
+      "href": "/preparation",
+      "match": ["preparation", "participate"]
+    }
+  ],
+  "footerSecondary": [
+    {
+      "label": "5分钟了解",
+      "href": "/start-here/"
+    },
+    {
+      "label": "阅读地图",
+      "href": "/articles"
+    },
+    {
+      "label": "公开承诺",
+      "href": "/about/commitments"
+    },
+    {
+      "label": "董事会筹备",
+      "href": "/preparation/board"
+    },
+    {
+      "label": "参与组织筹备",
+      "href": "/participate"
+    },
+    {
+      "label": "关于本站",
+      "href": "/about"
+    },
+    {
+      "label": "隐私与数据处理",
+      "href": "/privacy"
+    }
+  ],
+  "articleSectionNav": {
+    "解析中共": "/china/",
+    "公民秩序主义": "/civic-orderism/",
+    "制度设计": "/theory/",
+    "中国未来": "/china/",
+    "核心政治总论": "/civic-orderism/"
+  }
+}

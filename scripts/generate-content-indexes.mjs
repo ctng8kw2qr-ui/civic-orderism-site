@@ -224,6 +224,7 @@ const retiredTargets = new Set([
   "index.md",
   "theory/index.md",
   "china/index.md",
+  "china/analysis/index.md",
   "china-stage/index.md",
   "civic-orderism/index.md",
   "institution/index.md",

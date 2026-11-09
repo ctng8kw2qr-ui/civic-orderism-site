@@ -17,7 +17,8 @@ coverAlt: "在一个完全完好、闭合的沉重框架内，多根素面受拉
   <p class="resource-label">制度地图</p>
   <h1>制度设计</h1>
   <p class="institution-hero__description">将理论转化为可讨论、可修正、可检验的具体制度机制。</p>
-  <div class="section-stats"><span>16 篇已发布文章</span><span>6 个制度模块</span><span>更新至 2026-05-17</span></div>
+  <p class="inst4l-link"><a href="/theory/">所属栏目：理论与制度 <span aria-hidden="true">→</span></a> · <a href="/institution/">查看制度机制说明 <span aria-hidden="true">→</span></a></p>
+  <div class="section-stats"><span>19 篇制度研究文章（16 设计 + 3 延伸）</span><span>6 个制度模块</span><span>更新至 2026-05-17</span></div>
   <div class="section-core-judgment"><strong>栏目核心判断</strong><p>制度设计必须同时回答问题如何进入、谁来判断、谁来执行、错误如何纠正，以及责任如何被识别与更替。</p></div>
 </header>
 
