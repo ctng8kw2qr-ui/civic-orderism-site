@@ -98,13 +98,13 @@ coverAlt: "一只小船停在平整静止的水面上，水线笔直；船体一
 <p class="inst4-route__readstage-desc">现有政治、经济、官僚与社会运行机制为什么越来越难以持续。</p>
 </div>
       
-<div class="inst4l-list">
+<details class="inst4-route__research"><summary>本阶段代表研究（1 篇）</summary><div class="inst4l-list">
 <a class="inst4l-row" href="/china/what-is-the-ccp-becoming">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">代表文章</span><span class="inst4l-row__title">中共正在变成什么？</span></span>
   <span class="inst4l-row__desc">中共今天真正发生的变化，不是简单的强大或衰落，而是它正在从一个能够制造增长、分配利益、组织合作和提供未来预期的政治组织，逐渐转变为一个以安全、控制、组织防御和损失分配为主要任务的政治系统。理解这一变化，是公民秩序主义解析今天中共的起点。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
-</div>
+</div></details>
 <details class="china-analysis-more"><summary>查看这一阶段的延伸研究（5）</summary><div class="inst4l-list">
 <a class="inst4l-row" href="/civic-orderism/civic-orderism-overview">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">延伸阅读</span><span class="inst4l-row__title">公民秩序主义总论：保留国家，改变政治</span></span>
@@ -140,7 +140,7 @@ coverAlt: "一只小船停在平整静止的水面上，水线笔直；船体一
 <p class="inst4-route__readstage-desc">问题不是中共看不到问题，而是改革的风险由推动者立即承担，不改革的风险却可以继续向后转移。局内人因此存在拖延与自保的结构性动力。</p>
 </div>
       
-<div class="inst4l-list">
+<details class="inst4-route__research"><summary>本阶段代表研究（2 篇）</summary><div class="inst4l-list">
 <a class="inst4l-row" href="/china/ccp-reform-political-balance-deadlock">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">代表文章</span><span class="inst4l-row__title">中共的真正死局：改革未必救经济，却一定先打破政治平衡</span></span>
   <span class="inst4l-row__desc">一个政权最危险的时刻，不是问题最多的时候，而是它已经看清问题，却发现所有出路都比问题本身更危险的时候。</span>
@@ -151,7 +151,7 @@ coverAlt: "一只小船停在平整静止的水面上，水线笔直；船体一
   <span class="inst4l-row__desc">本文认为，讨论中共是否可能二次改开，真正关键不是领导人是否愿意改革，而是中共是否再次走到类似1978年的组织绝境。第一次改革开放来自旧路线破产、共同求生和全球化窗口；今天面对的则是繁荣退潮后的损失分配，因此二次改开的门槛更高。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
-</div>
+</div></details>
 <details class="china-analysis-more"><summary>查看这一阶段的延伸研究（3）</summary><div class="inst4l-list">
 <a class="inst4l-row" href="/china/why-ccp-cannot-reduce-grassroots-burden">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">延伸阅读</span><span class="inst4l-row__title">中共为什么永远无法真正为基层减负？</span></span>
@@ -177,7 +177,7 @@ coverAlt: "一只小船停在平整静止的水面上，水线笔直；船体一
 <p class="inst4-route__readstage-desc">当所有局内人都被原有权力、责任与利益关系锁住，结束旧游戏的方案只能由旧体系之外提前形成。</p>
 </div>
       
-<div class="inst4l-list">
+<details class="inst4-route__research"><summary>本阶段代表研究（2 篇）</summary><div class="inst4l-list">
 <a class="inst4l-row" href="/theory/internal-change-external-change">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">代表文章</span><span class="inst4l-row__title">内变引外变：现代政治为何走到十字路口</span></span>
   <span class="inst4l-row__desc">现代政治已经走到了一个历史性的十字路口。</span>
@@ -188,7 +188,7 @@ coverAlt: "一只小船停在平整静止的水面上，水线笔直；船体一
   <span class="inst4l-row__desc">公民秩序主义在未来如果面对中国秩序重建问题，它的接替难度相对最小，原因不在于它最激进，也不在于它口号最响，而在于它最接近中国现实国家机器的真实形态。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
-</div>
+</div></details>
 <details class="china-analysis-more"><summary>查看这一阶段的延伸研究（3）</summary><div class="inst4l-list">
 <a class="inst4l-row" href="/civic-orderism/why-civic-orderism">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">延伸阅读</span><span class="inst4l-row__title">为什么是公民秩序主义？</span></span>
@@ -214,7 +214,7 @@ coverAlt: "一只小船停在平整静止的水面上，水线笔直；船体一
 <p class="inst4-route__readstage-desc">和平转轨不要求整个官僚系统倒戈，也不要求所有人接受同一种政治理想。真正需要降低的是继续阻止政治变化的收益，提高接受和平承接的安全感与可预期性。</p>
 </div>
       
-<div class="inst4l-list">
+<details class="inst4-route__research"><summary>本阶段代表研究（2 篇）</summary><div class="inst4l-list">
 <a class="inst4l-row" href="/civic-orderism/peaceful-state-transition">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">代表文章</span><span class="inst4l-row__title">国家如何平稳转轨：公民秩序主义不是中共官僚的敌人</span></span>
   <span class="inst4l-row__desc">社会需要尊严与秩序，官僚需要保障与预期，国家需要行政连续性。公民秩序主义试图在三者之间建立一条清晰、稳健、不按政治身份实施普遍追责的转轨道路。</span>
@@ -225,7 +225,7 @@ coverAlt: "一只小船停在平整静止的水面上，水线笔直；船体一
   <span class="inst4l-row__desc">中国的未来并非只有维持现状与失控崩塌两种结局。如果旧体系越来越难以提供长期预期，而新的政治道路能够保障国家运行、划清责任边界并为体制成员提供可信退路，合作就可能逐步取代对抗。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
-</div>
+</div></details>
 <details class="china-analysis-more"><summary>查看这一阶段的延伸研究（2）</summary><div class="inst4l-list">
 <a class="inst4l-row" href="/civic-orderism/why-against-moral-narrative">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">延伸阅读</span><span class="inst4l-row__title">为什么公民秩序主义反对道德叙事，也反对对公职人员的道德审判</span></span>
@@ -246,13 +246,13 @@ coverAlt: "一只小船停在平整静止的水面上，水线笔直；船体一
 <p class="inst4-route__readstage-desc">保留国家，改变政治。国家行政体系不是革命对象，政治转轨不等于国家停摆。没有完成调整的制度继续运行，调整一样，修改一样。</p>
 </div>
       
-<div class="inst4l-list">
+<details class="inst4-route__research"><summary>本阶段代表研究（1 篇）</summary><div class="inst4l-list">
 <a class="inst4l-row" href="/civic-orderism/state-must-rely-on-systems-not-drivers">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">代表文章</span><span class="inst4l-row__title">国家不能只靠驾驶员：为什么现代治理必须依赖系统</span></span>
   <span class="inst4l-row__desc">本文以现代汽车系统为比喻，说明国家作为复杂系统不能依赖单一领导人的英明，而必须依靠行政、司法、监督、财政、媒体、信息和立法等子系统的相对独立、差异性反馈与自我修复能力。文章以中共集权为反面案例，论证政党集权为何会破坏国家系统可靠性。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
-</div>
+</div></details>
 <details class="china-analysis-more"><summary>查看这一阶段的延伸研究（2）</summary><div class="inst4l-list">
 <a class="inst4l-row" href="/civic-orderism/public-politics-without-party-dominance">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">延伸阅读</span><span class="inst4l-row__title">弱化政党政治之后，公共政治如何继续存在</span></span>

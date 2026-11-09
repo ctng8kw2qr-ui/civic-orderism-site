@@ -939,20 +939,42 @@ assert(
 );
 const heroHtml =
   homepageHtml.match(/<section class="hero"[\s\S]*?<\/section>/)?.[0] ?? "";
+// Phase 4 intentionally re-grouped the hero into three visible levels:
+// identity → political route → political goal. Keep the same content
+// contract, but assert the new hierarchy rather than the retired line
+// "以经济赎买为核心机制" and the retired research CTA.
 for (const text of [
   "赵鹏博",
   "公民秩序主义发起人",
-  "和平政治转轨",
-  "以经济赎买为核心机制",
+  "中国政治经济观察",
+  "经济赎买",
   "不革命 · 不清算",
+  "保留国家，改变政治。",
+  "和平政治转轨",
   "阅读政治路线",
-  "阅读中国政治经济观察",
 ]) {
   assert(
     visiblePageText(heroHtml).includes(text),
     `B 首页身份或政治路线缺失：${text}`,
   );
 }
+const heroText = visiblePageText(heroHtml);
+let heroOrder = -1;
+for (const text of [
+  "赵鹏博",
+  "公民秩序主义发起人",
+  "经济赎买",
+  "不革命 · 不清算",
+  "保留国家，改变政治。",
+]) {
+  const position = heroText.indexOf(text);
+  assert(position > heroOrder, `首页三层信息顺序错误：${text}`);
+  heroOrder = position;
+}
+assert(
+  heroHtml.includes('href="/civic-orderism/economic-redemption/"'),
+  "首页必须直接链接经济赎买独立页面",
+);
 assert(
   heroHtml.includes("zhao-pengbo-b-desktop-1086.webp") &&
     heroHtml.includes("zhao-pengbo-b-portrait-590.webp") &&

@@ -41,17 +41,26 @@ const OfficialHome: QuartzComponent = ({ allFiles }: QuartzComponentProps) => {
                 </p>
               </div>
               <div class="hero-route">
-                <p class="hero-statement">保留国家，改变政治。</p>
-                <p class="hero-goal">和平政治转轨</p>
-                <p class="hero-mechanism">以经济赎买为核心机制</p>
-                <p class="hero-principles">不革命 · 不清算</p>
+                <p class="hero-kicker">政治路线</p>
+                <p
+                  class="hero-route-line"
+                  aria-label="经济赎买、不革命、不清算"
+                >
+                  <span>经济赎买</span>
+                  <span aria-hidden="true">·</span>
+                  <span>不革命</span>
+                  <span aria-hidden="true">·</span>
+                  <span>不清算</span>
+                </p>
+                <p class="hero-goal">保留国家，改变政治。</p>
+                <p class="hero-goal-note">和平政治转轨</p>
               </div>
               <div class="hero-actions">
                 <a class="button" href="/civic-orderism/">
                   阅读政治路线
                 </a>
-                <a class="link" href="#research">
-                  阅读中国政治经济观察
+                <a class="outline" href="/civic-orderism/economic-redemption/">
+                  经济赎买
                 </a>
               </div>
             </div>
@@ -119,6 +128,12 @@ const OfficialHome: QuartzComponent = ({ allFiles }: QuartzComponentProps) => {
                 <p class="route-item__body">
                   通过制度化的利益重新安排，对依靠政治权力、公共资源和不正当利益形成的资产进行处理，使符合条件的部分资产获得合法产权，为和平权力交接创造条件。
                 </p>
+                <a
+                  class="route-item__more"
+                  href="/civic-orderism/economic-redemption/"
+                >
+                  了解经济赎买 <span aria-hidden="true">→</span>
+                </a>
               </article>
               <article class="route-item">
                 <div class="route-item__head">

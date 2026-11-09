@@ -10878,3 +10878,404 @@ body:has(.inst4l) {
     font-size: 0.84rem;
   }
 }
+
+/* ════════════════════════════════════════════════════════════════════
+   PHASE 4 — Landing / reading rhythm refinement
+   Reuses the V6 tokens and existing components. No new palette, font,
+   shadow system or navigation structure. Scoped to .inst4l / article
+   pages so the approved homepage component remains independent.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ---- Shared institutional landing rhythm ------------------------- */
+.inst4l .inst4l-hero {
+  padding-top: clamp(3.4rem, 6vw, 5.25rem);
+  padding-bottom: clamp(2.2rem, 4vw, 3.35rem);
+}
+
+.inst4l .inst4l-title {
+  max-width: 13em;
+  margin-top: 1.35rem;
+  font-size: clamp(2.75rem, 4.7vw, 3.75rem);
+  font-weight: 520;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.inst4l .inst4l-lead {
+  max-width: 45em;
+  margin-top: 1.3rem;
+  font-size: clamp(1.02rem, 1.45vw, 1.12rem);
+  line-height: 1.85;
+}
+
+.inst4l .inst4l-status {
+  margin-top: 1.45rem;
+  padding-top: 0.85rem;
+}
+
+.inst4l .inst4l-section {
+  padding-top: clamp(2.75rem, 4.8vw, 4.2rem);
+  padding-bottom: clamp(2.75rem, 4.8vw, 4.2rem);
+}
+
+.inst4l .inst4l-section__head {
+  max-width: 720px;
+}
+
+.inst4l .inst4l-section__title {
+  margin-top: 0.75rem;
+  font-size: clamp(1.5rem, 2.35vw, 1.95rem);
+  line-height: 1.28;
+}
+
+.inst4l .inst4l-section__desc {
+  margin-top: 0.65rem;
+  line-height: 1.75;
+}
+
+.inst4l .inst4l-list {
+  margin-top: 1.5rem;
+}
+
+.inst4l .inst4l-row {
+  transition: background-color 160ms ease;
+}
+
+.inst4l .inst4l-row:hover,
+.inst4l .inst4l-row:focus-visible {
+  background: color-mix(in srgb, var(--v6-brand) 3.5%, transparent);
+}
+
+.inst4l .inst4l-row__title {
+  font-size: 1.04rem;
+  line-height: 1.48;
+}
+
+.inst4l .inst4l-row__desc {
+  font-size: 0.92rem;
+  line-height: 1.72;
+}
+
+.inst4l .inst4l-secindex__item {
+  min-height: 7.6rem;
+  padding: 1.15rem 1.05rem;
+}
+
+.inst4l .inst4l-secindex__title {
+  font-size: 1.18rem;
+}
+
+.inst4l .inst4l-secindex__desc {
+  margin-top: 0.55rem;
+  line-height: 1.65;
+}
+
+/* ---- China landing: latest research as editorial cards ----------- */
+.inst4l-china #latest .inst4l-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 1.6rem;
+  border-top: 0;
+}
+
+.inst4l-china #latest .inst4l-row {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.35rem 1.35rem 1.15rem;
+  margin: 0;
+  border: 1px solid var(--v6-border);
+  background: var(--v6-surface);
+}
+
+.inst4l-china #latest .inst4l-row__cell {
+  width: 100%;
+}
+
+.inst4l-china #latest .inst4l-row__meta {
+  color: var(--v6-text-muted);
+  font-size: 0.69rem;
+  letter-spacing: 0.06em;
+}
+
+.inst4l-china #latest .inst4l-row__title {
+  margin-top: 0.6rem;
+  font-size: 1.08rem;
+  line-height: 1.45;
+}
+
+.inst4l-china #latest .inst4l-row__desc {
+  display: -webkit-box;
+  margin-top: 0.7rem;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.inst4l-china #latest .inst4l-row__arrow {
+  margin-top: auto;
+  padding-top: 0.8rem;
+  align-self: flex-end;
+}
+
+/* ---- Political route: calmer section turns, less vertical drift --- */
+.inst4l-route .inst4l-hero {
+  padding-bottom: clamp(2rem, 3.5vw, 2.75rem);
+}
+
+.inst4l-route .inst4l-title {
+  font-size: clamp(2.65rem, 4.4vw, 3.55rem);
+}
+
+.inst4l-route .inst4-route__judgment {
+  margin-top: 1.6rem;
+  font-size: clamp(1.7rem, 3vw, 2.45rem);
+  line-height: 1.28;
+}
+
+.inst4l-route .inst4-route__intro {
+  margin-top: 1.15rem;
+}
+
+.inst4l-route .inst4-route__cta {
+  margin-top: 1.5rem;
+}
+
+.inst4l-route .inst4-route__section-nav {
+  margin-top: 1.15rem;
+  padding-block: 0.8rem;
+}
+
+.inst4l-route .inst4-route__readstage {
+  margin-top: 2rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--inst4-line);
+}
+
+.inst4l-route .inst4-route__readstage-head {
+  margin-bottom: 0.25rem;
+}
+
+.inst4l-route .inst4-route__readstage-title {
+  font-size: 1.22rem;
+}
+
+.inst4l-route .inst4-route__readstage-desc {
+  max-width: 720px;
+  margin-top: 0.35rem;
+  line-height: 1.7;
+}
+
+.inst4l-route .inst4-route__readstage > .inst4l-list {
+  margin-top: 0.9rem;
+}
+
+.inst4l-route .inst4-route__quote {
+  margin-top: 1.55rem;
+  padding: 1.15rem 1.35rem;
+}
+
+.inst4l-route .inst4-route__options {
+  margin-top: 1.4rem;
+}
+
+.inst4l-route .inst4-route__principles {
+  margin-top: 1.45rem;
+}
+
+.inst4l-route .inst4-route__state-grid {
+  margin-top: 1.45rem;
+}
+
+.inst4l-route .inst4-route__big {
+  font-size: clamp(1.5rem, 2.7vw, 2.1rem);
+}
+
+/* ---- Theory: section separation without more boxes ----------------- */
+.inst4l-research .inst4l-section__title {
+  max-width: 20em;
+}
+
+/* ---- Article: reading column and section turns -------------------- */
+body[data-page-kind="article"] {
+  --article-reading-width: 740px;
+  --article-font-size: 17.5px;
+  --article-line-height: 1.92;
+  --article-paragraph-spacing: 1.32em;
+  --article-h2-spacing: 2.25em;
+  --article-h3-spacing: 1.9em;
+}
+
+body[data-page-kind="article"] .article-content h2 {
+  padding-top: 1.05em;
+  border-top: 1px solid var(--v6-border);
+}
+
+body[data-page-kind="article"] .article-content > h2:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+body[data-page-kind="article"] .article-content p {
+  text-wrap: pretty;
+}
+
+body[data-page-kind="article"] .article-content figcaption {
+  text-align: left;
+}
+
+body[data-page-kind="article"] .article-inst__title {
+  font-size: clamp(2.05rem, 3.25vw, 2.75rem);
+  line-height: 1.2;
+}
+
+body[data-page-kind="article"] .article-inst__deck {
+  max-width: 48ch;
+}
+
+body[data-page-kind="article"] .article-inst__meta {
+  margin-top: 1.65rem;
+}
+
+/* ---- Responsive: cards collapse before they become cramped -------- */
+@media (max-width: 1100px) {
+  .inst4l-china #latest .inst4l-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .inst4l .inst4l-hero {
+    padding-top: clamp(2rem, 7vw, 3rem);
+    padding-bottom: 1.6rem;
+  }
+
+  .inst4l .inst4l-title {
+    margin-top: 1.1rem;
+    font-size: clamp(2.3rem, 8.5vw, 3rem);
+    line-height: 1.12;
+  }
+
+  .inst4l .inst4l-section {
+    padding-block: 2.35rem;
+  }
+
+  .inst4l .inst4l-secindex__item {
+    min-height: 0;
+  }
+
+  .inst4l-china #latest .inst4l-list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .inst4l-china #latest .inst4l-row {
+    padding: 1.15rem 1.1rem;
+  }
+
+  .inst4l-china #latest .inst4l-row__desc {
+    -webkit-line-clamp: 3;
+  }
+
+  .inst4l-route .inst4-route__judgment {
+    margin-top: 1.2rem;
+    font-size: 1.8rem;
+  }
+
+  .inst4l-route .inst4-route__cta {
+    gap: 1rem;
+    margin-top: 1.2rem;
+  }
+
+  .inst4l-route .inst4-route__readstage {
+    margin-top: 1.65rem;
+    padding-top: 1.1rem;
+  }
+
+  .inst4-route__readstage-title {
+    font-size: 1.15rem;
+  }
+
+  body[data-page-kind="article"] {
+    --article-font-size: 16.5px;
+    --article-line-height: 1.88;
+    --article-paragraph-spacing: 1.28em;
+  }
+
+  body[data-page-kind="article"] .article-inst__title {
+    font-size: clamp(1.9rem, 8vw, 2.35rem);
+  }
+}
+
+@media (max-width: 375px) {
+  .inst4l .inst4l-title {
+    font-size: 2.25rem;
+  }
+}
+
+/* Research folding on the long political-route page.
+   The representative articles stay in the DOM and keep their URLs; the
+   summary is the only new visible control. This prevents the route page
+   from presenting every research row before the reader has chosen a stage. */
+.inst4-route__research {
+  margin-top: 0.65rem;
+  border-top: 1px solid var(--inst4-line-soft);
+}
+
+.inst4-route__research > summary {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 0;
+  color: var(--inst4-gray);
+  font-size: 0.86rem;
+  font-weight: 500;
+  line-height: 1.5;
+  list-style: none;
+  cursor: pointer;
+}
+
+.inst4-route__research > summary::-webkit-details-marker {
+  display: none;
+}
+
+.inst4-route__research > summary::before {
+  content: "+";
+  display: inline-flex;
+  width: 1rem;
+  justify-content: center;
+  color: var(--inst4-accent);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.inst4-route__research[open] > summary::before {
+  content: "−";
+}
+
+.inst4-route__research > summary:hover,
+.inst4-route__research > summary:focus-visible {
+  color: var(--inst4-ink);
+  outline: none;
+}
+
+.inst4-route__research > summary:focus-visible {
+  outline: 2px solid var(--v6-focus);
+  outline-offset: 2px;
+}
+
+.inst4-route__research .inst4l-list {
+  margin-top: 0;
+  border-top: 1px solid var(--inst4-line-soft);
+  border-bottom: 0;
+}
+
+.inst4-route__research[open] {
+  padding-bottom: 0.35rem;
+}
