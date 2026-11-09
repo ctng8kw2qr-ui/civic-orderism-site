@@ -16,7 +16,10 @@ function setupV6Navigation() {
     const setOpen = (open: boolean) => {
       nav.dataset.open = String(open);
       toggle.setAttribute("aria-expanded", String(open));
-      toggle.setAttribute("aria-label", open ? "关闭导航" : "打开导航");
+      toggle.setAttribute(
+        "aria-label",
+        open ? "菜单：关闭导航" : "菜单：打开导航",
+      );
     };
 
     const close = () => setOpen(false);

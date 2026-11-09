@@ -13,7 +13,7 @@ coverAlt: "一只小船停在平整静止的水面上，水线笔直；船体一
 ---
 
 <div class="inst4 inst4l inst4l-route">
-  <section class="inst4l-hero">
+  <section class="inst4l-hero" id="overview">
 <p class="inst4-eyebrow">CIVIC ORDERISM · 政治路线</p>
 <h1 class="inst4l-title">公民秩序主义</h1>
 <p class="inst4-route__en">Civic Orderism</p>
@@ -29,6 +29,14 @@ coverAlt: "一只小船停在平整静止的水面上，水线笔直；船体一
   <figure class="v6-primary-visual">
   <img src="/static/assets/v6/editorial/editorial-political-route.webp" alt="一只小船停在平整静止的水面上，水线笔直；船体一侧的船板已经换新，一名工人跪在尚未更换的一段旁，正把一块新板嵌进船身，水始终没有进到船里。" width="1600" height="842" loading="lazy" decoding="async" />
 </figure>
+
+<nav class="inst4-route__section-nav" aria-label="政治路线章节">
+  <a href="#overview">政治路线总论</a>
+  <a href="/civic-orderism/economic-redemption/">经济赎买</a>
+  <a href="#peaceful-transition">和平政治转轨</a>
+  <a href="#established-principles">不革命、不清算</a>
+  <a href="#state-continuity">国家连续性</a>
+</nav>
 
 <section class="inst4l-section">
 <div class="inst4l-section__head">
@@ -73,6 +81,7 @@ coverAlt: "一只小船停在平整静止的水面上，水线笔直；船体一
 <h2 class="inst4l-section__title">经济赎买</h2>
 </div>
 <p class="inst4-route__intro">通过制度化的利益重新安排，对依靠政治权力、公共资源和不正当利益形成的资产进行处理，使符合条件的部分资产获得合法产权，为和平权力交接创造条件。</p>
+<p class="inst4l-link"><a href="/civic-orderism/economic-redemption/">阅读经济赎买完整说明 <span aria-hidden="true">→</span></a></p>
   </section>
 
   <section class="inst4l-section" id="peaceful-transition">
@@ -334,7 +343,7 @@ coverAlt: "一只小船停在平整静止的水面上，水线笔直；船体一
 <div class="inst4-route__principles">
 <div class="inst4-route__principle"><span class="inst4-route__principle-num">01</span><h3>不革命</h3><p>不以社会失控和大规模政治动员作为政治转轨手段。</p><p>反对以社会失控推动政治变化。</p><p>政治转轨的代价不应由普通人的生活、安全和社会秩序承担。</p></div>
 <div class="inst4-route__principle"><span class="inst4-route__principle-num">02</span><h3>不清算</h3><p>不以群体性政治报复作为新政治秩序的起点。</p><p>反对大规模政治清算；责任依据具体行为、证据和法律认定。</p><p>普通旧体系成员不因身份本身受到政治追究；明确犯罪进入公开司法程序。</p></div>
-<div class="inst4-route__principle"><span class="inst4-route__principle-num">03</span><h3>保留国家</h3><p>政治制度可以改变，国家行政体系不能停摆。</p><p>政治制度改变不能以国家停摆为代价。</p><p>行政、财政、教育、医疗、交通、司法、社保与基本公共服务保持连续。</p><p>反对把整个国家机器作为革命对象。</p></div>
+<div class="inst4-route__principle" id="state-continuity"><span class="inst4-route__principle-num">03</span><h3>保留国家</h3><p>政治制度可以改变，国家行政体系不能停摆。</p><p>政治制度改变不能以国家停摆为代价。</p><p>行政、财政、教育、医疗、交通、司法、社保与基本公共服务保持连续。</p><p>反对把整个国家机器作为革命对象。</p></div>
 <div class="inst4-route__principle"><span class="inst4-route__principle-num">04</span><h3>和平承接</h3><p>通过政治沟通、利益协调与制度过渡降低政治转轨阻力。</p><p>不要求整个官僚系统倒戈，而是降低继续阻止政治变化的收益。</p><p>提高接受和平承接的安全感与可预期性，建立新旧政治力量之间最低限度的信任。</p></div>
 <div class="inst4-route__principle"><span class="inst4-route__principle-num">05</span><h3>提前准备</h3><p>新的政治路线、政治信誉与组织承接能力必须在政治变化以前形成。</p><p>政治信誉必须能够被识别、被验证、被追责。</p><p>组织能力与国家承接准备必须由正式组织承担，不能在政治变化发生时临时形成。</p></div>
 </div>
@@ -347,8 +356,8 @@ coverAlt: "一只小船停在平整静止的水面上，水线笔直；船体一
 <h2 class="inst4l-section__title">未来制度研究</h2>
 <p class="inst4l-section__desc">委员会、行政、议会、选举、司法、透明与责任等具体制度机制的方案研究。这些内容属于制度研究和方案储备，不代表当前已经形成最终正式组织纲领。</p>
 </div>
-<p class="inst4-route__intro">19 篇制度研究文章的完整档案按制度机制分类陈列，统一维护在制度设计入口，本页不再重复列出。</p>
-<p class="inst4l-link"><a href="/institution-design/">进入制度研究档案（19 篇） <span aria-hidden="true">→</span></a></p>
+<p class="inst4-route__intro">19 篇制度研究文章的完整档案按制度机制分类陈列：16 篇制度设计文章，加 3 篇制度研究延伸文章，统一维护在制度设计入口，本页不再重复列出。</p>
+<p class="inst4l-link"><a href="/institution-design/">进入制度研究档案（19 篇：16 设计 + 3 延伸） <span aria-hidden="true">→</span></a></p>
 <p class="inst4l-link"><a href="/institutional-architecture">查看制度架构：从过渡到退出的整体地图 <span aria-hidden="true">→</span></a></p>
 <p class="inst4-route__actor-line">制度设计回答的是政治变化之后国家如何运行；路线研究回答的是中国怎样走到那一步。当前优先保证后者。</p>
   </section>
@@ -381,11 +390,11 @@ coverAlt: "一只小船停在平整静止的水面上，水线笔直；船体一
 
   <section class="inst4l-section">
 <div class="inst4l-section__head">
-<p class="inst4-eyebrow">全部研究</p>
-<h2 class="inst4l-section__title">浏览全部公民秩序主义研究</h2>
-<p class="inst4l-section__desc">进入完整文章索引，按专题与概念继续筛选阅读。</p>
+<p class="inst4-eyebrow">EXTENDED RESEARCH · 延伸研究</p>
+<h2 class="inst4l-section__title">浏览全部路线研究</h2>
+<p class="inst4l-section__desc">27 篇公民秩序主义政治路线文章，按发布日期排列。制度设计研究归入“理论与制度”，不再混入路线文章列表。</p>
 </div>
-<p class="inst4l-link"><a href="/articles/all">浏览全部公民秩序主义研究 <span aria-hidden="true">→</span></a></p>
+<p class="inst4l-link"><a href="/civic-orderism/research/">浏览全部路线研究 <span aria-hidden="true">→</span></a></p>
   </section>
 
   <section class="inst4l-section inst4-route__final">

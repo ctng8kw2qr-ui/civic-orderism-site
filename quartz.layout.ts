@@ -2,6 +2,7 @@ import { PageLayout, SharedLayout } from "./quartz/cfg";
 import * as Component from "./quartz/components";
 import { QuartzComponentProps } from "./quartz/components/types";
 import { isArticleSlug } from "./quartz/util/articlePage";
+import navigation from "./data/navigation.config.json";
 
 const isArticleContentPage = (page: QuartzComponentProps) => {
   return isArticleSlug(page.fileData.slug ?? "");
@@ -65,8 +66,15 @@ const landingPageSlugs = new Set([
   "theory",
   "civic-orderism",
   "china",
+  "china/analysis",
+  "china/latest",
+  "china/ccp-politics",
+  "china/china-economy",
+  "china/bureaucracy",
   "china-future",
   "china-stage",
+  "civic-orderism/economic-redemption",
+  "civic-orderism/research",
   "institution",
   "institution-design",
   "topics",
@@ -109,15 +117,7 @@ export const sharedPageComponents: SharedLayout = {
       "首届董事会尚未依法产生",
       "法人尚未完成注册，具体法域尚未确定",
     ],
-    navLinks: [
-      { label: "关于", href: "/about" },
-      { label: "研究", href: "/theory" },
-      { label: "政治路线", href: "/civic-orderism" },
-      { label: "组织建设", href: "/preparation" },
-      { label: "董事会筹备", href: "/preparation/board" },
-      { label: "发起人", href: "/about/initiator" },
-      { label: "参与组织筹备", href: "/participate" },
-    ],
+    navLinks: navigation.primary.map(({ label, href }) => ({ label, href })),
     contact: {
       email: "civicorderism@gmail.com",
       emailLabel: "civicorderism@gmail.com",
@@ -129,7 +129,7 @@ export const sharedPageComponents: SharedLayout = {
       youtubeLabel: "Civic Orderism",
     },
     copyright: "© 2026 Civic Orderism",
-    secondaryNavLinks: [{ label: "隐私与数据处理", href: "/privacy" }],
+    secondaryNavLinks: navigation.footerSecondary,
   }),
 };
 

@@ -21,6 +21,7 @@ noindex: false
 <div class="inst4l-main">
 
   <section class="inst4l-section">
+  <p class="inst4l-link"><a href="/theory/">所属栏目：理论与制度 <span aria-hidden="true">→</span></a> · <a href="/institution-design/">制度设计主入口 <span aria-hidden="true">→</span></a></p>
   <p>本页是公民秩序主义制度体系的整体地图。它回答的不是「新制度应该是什么样」，而是：从旧制度到新制度，这条路线在制度上由哪几个部分组成，它们之间是什么关系。</p>
   <p>本页<b>不复制</b>制度研究的正文。每一项只给出摘要、当前成熟度、受哪些公开承诺约束，以及可以进入的正式文本位置。</p>
   <p><strong>与「制度设计」的分工：</strong>「制度设计」栏目呈现的是新制度<b>稳定运行</b>时的六个机制模块；本页呈现的是<b>从旧到新的整个架构与生命周期</b>，并在「代表与选举」「权力制约与责任」「法律与司法」三层指向该栏目。两者不是同一张地图，也不互相替代。</p>
@@ -59,7 +60,7 @@ noindex: false
   <dl class="inst4l-architecture__meta">
     <dt>成熟度</dt><dd>已公开（六阶段与步骤名称）· 研究中（具体方案）</dd>
     <dt>受约束于</dt><dd>PC-001 · PC-003 · PC-005</dd>
-    <dt>正式文本</dt><dd><a href="/civic-orderism">和平转轨路线：六个阶段</a></dd>
+    <dt>正式文本</dt><dd><a href="/civic-orderism/">和平转轨路线：六个阶段</a></dd>
   </dl>
   </section>
 
@@ -74,7 +75,7 @@ noindex: false
   <dl class="inst4l-architecture__meta">
     <dt>成熟度</dt><dd>已公开（原则与覆盖范围）</dd>
     <dt>受约束于</dt><dd>PC-003</dd>
-    <dt>正式文本</dt><dd><a href="/about/commitments#pc-003">PC-003 政治变化不能以国家失序为代价</a><br><a href="/civic-orderism">和平转轨路线 · 阶段 05 政治变化发生后，怎样保持国家运行</a></dd>
+    <dt>正式文本</dt><dd><a href="/about/commitments#pc-003">PC-003 政治变化不能以国家失序为代价</a><br><a href="/civic-orderism/">和平转轨路线 · 阶段 05 政治变化发生后，怎样保持国家运行</a></dd>
   </dl>
   </section>
 
@@ -89,7 +90,7 @@ noindex: false
   <dl class="inst4l-architecture__meta">
     <dt>成熟度</dt><dd>已公开（机制方向与理由）· 研究中（过渡期选举准备的具体安排）</dd>
     <dt>受约束于</dt><dd>PC-001 · PC-007</dd>
-    <dt>正式文本</dt><dd><a href="/institution-design">制度设计 · 模块 04 选举与政治官员</a><br><a href="/institution-design">制度设计 · 模块 05 议会与社会授权</a><br><a href="/civic-orderism/election-logic-under-civic-orderism">公民秩序主义下的选举逻辑</a></dd>
+    <dt>正式文本</dt><dd><a href="/institution-design/">制度设计 · 模块 04 选举与政治官员</a><br><a href="/institution-design/">制度设计 · 模块 05 议会与社会授权</a><br><a href="/civic-orderism/election-logic-under-civic-orderism">公民秩序主义下的选举逻辑</a></dd>
   </dl>
   </section>
 
@@ -104,7 +105,7 @@ noindex: false
   <dl class="inst4l-architecture__meta">
     <dt>成熟度</dt><dd>已公开（机制方向与责任原则）</dd>
     <dt>受约束于</dt><dd>PC-002 · PC-005 · PC-006 · PC-007</dd>
-    <dt>正式文本</dt><dd><a href="/institution-design">制度设计 · 模块 02 委员会体系</a><br><a href="/institution-design">制度设计 · 模块 06 法治、透明与责任</a><br><a href="/civic-orderism/top-level-power-structure-under-civic-orderism">顶层权力结构的布局</a></dd>
+    <dt>正式文本</dt><dd><a href="/institution-design/">制度设计 · 模块 02 委员会体系</a><br><a href="/institution-design/">制度设计 · 模块 06 法治、透明与责任</a><br><a href="/civic-orderism/top-level-power-structure-under-civic-orderism">顶层权力结构的布局</a></dd>
   </dl>
   </section>
 

@@ -24,6 +24,12 @@ const organization = readJson("data/organization.config.json");
 const navigation = readJson("data/navigation.config.json");
 const site = readJson("data/site.config.json");
 const civicOrderismConfig = readJson("data/civic-orderism.config.json");
+const phase3Content = readJson("data/phase2-content-map.json").articles;
+const phase3ReviewedSlugs = new Set(
+  phase3Content
+    .filter((item) => item.phase3_reviewed === true)
+    .map((item) => item.slug),
+);
 const topicSlugs = new Set(topics.map((item) => item.slug));
 const conceptSlugs = new Set(concepts.map((item) => item.slug));
 const coreModelSlugs = new Set(
@@ -149,9 +155,12 @@ const walkHtmlFiles = (directory) =>
 const chinaAnalysisConfig = JSON.parse(
   fs.readFileSync(path.join(root, "data/china-analysis.config.json"), "utf8"),
 );
-const chinaPageHtml = fs.readFileSync(publicRouteHtml("china"), "utf8");
+const chinaPageHtml = fs.readFileSync(
+  publicRouteHtml("china/analysis"),
+  "utf8",
+);
 const chinaPageSource = fs.readFileSync(
-  path.join(root, "content/china/index.md"),
+  path.join(root, "content/china/analysis/index.md"),
   "utf8",
 );
 const expectedChinaStageCounts = [2, 3, 3, 3];
@@ -375,7 +384,8 @@ for (const article of migration) {
       `推荐阅读目标未知：${article.slug} -> ${recommendedSlug}`,
     );
     assert(
-      target?.status === "published" && !target?.needsReview,
+      target?.status === "published" &&
+        (!target?.needsReview || phase3ReviewedSlugs.has(recommendedSlug)),
       `推荐阅读包含未确认、草稿或归档文章：${article.slug} -> ${recommendedSlug}`,
     );
   }
@@ -1005,7 +1015,7 @@ assert(
     "尚未完成法人注册及首届董事会设立，也不以政党身份运行",
   ) &&
     workHtml.includes('href="/preparation"') &&
-    workHtml.includes('href="/theory"') &&
+    workHtml.includes('href="/theory/"') &&
     workHtml.includes('href="/about/initiator"') &&
     workHtml.includes('href="/civic-orderism/civic-orderism-overview"'),
   "组织状态或理论与组织入口不完整",
@@ -1026,9 +1036,9 @@ assert(
 );
 let previousNav = -1;
 for (const [url, label] of [
-  ["/civic-orderism", "政治路线"],
-  ["/china", "政治经济观察"],
-  ["/theory", "理论与制度"],
+  ["/civic-orderism/", "政治路线"],
+  ["/china/", "政治经济观察"],
+  ["/theory/", "理论与制度"],
   ["/about/initiator", "关于赵鹏博"],
   ["/preparation", "组织建设"],
 ]) {
@@ -1057,8 +1067,10 @@ assert(
     footerText.includes("主联系邮箱") &&
     footerText.includes("备用邮箱") &&
     footerText.includes("关于") &&
-    footerText.includes("研究") &&
     footerText.includes("政治路线") &&
+    footerText.includes("政治经济观察") &&
+    footerText.includes("理论与制度") &&
+    footerText.includes("关于赵鹏博") &&
     footerText.includes("组织建设") &&
     footerText.includes("董事会筹备") &&
     footerHtml.includes("mailto:civicorderism@gmail.com") &&
@@ -1643,29 +1655,33 @@ const theoryHubBody =
   theoryHubHtml.match(/<article[^>]*>([\s\S]*?)<\/article>/)?.[1] ?? "";
 const theoryHubText = visiblePageText(theoryHubBody);
 assert(
-  theoryHubText.includes("理解现在") &&
-    theoryHubText.includes("准备转轨") &&
-    theoryHubText.includes("准备未来") &&
-    /href="[^"]*china\/?"/.test(theoryHubBody) &&
-    /href="[^"]*civic-orderism\/?"/.test(theoryHubBody) &&
-    /href="[^"]*china-future\/?"/.test(theoryHubBody),
-  "研究页缺少三个研究方向或方向入口链接",
+  theoryHubText.includes("理论总论") &&
+    theoryHubText.includes("国家权力结构") &&
+    theoryHubText.includes("行政与监督") &&
+    theoryHubText.includes("司法与宪政") &&
+    theoryHubText.includes("制度研究档案") &&
+    /href="[^"]*institution-design\/?"/.test(theoryHubBody) &&
+    /href="[^"]*institution\/?"/.test(theoryHubBody) &&
+    /href="[^"]*institutional-architecture\/?"/.test(theoryHubBody),
+  "理论与制度页缺少五个栏目或制度研究入口",
 );
 for (const [label, pattern] of [
-  ["专题", /href="[^"]*topics\/?"/],
+  ["研究专题", /href="[^"]*topics\/?"/],
   ["核心概念", /href="[^"]*concepts\/?"/],
   ["阅读地图", /href="[^"]*articles?"/],
+  ["解析中共", /href="[^"]*china\/analysis\/?"/],
+  ["中国政治经济观察", /href="[^"]*china\/?"/],
 ]) {
   assert(
     theoryHubText.includes(label) && pattern.test(theoryHubBody),
-    `研究页缺少辅助入口：${label}`,
+    `理论与制度页缺少延伸入口：${label}`,
   );
 }
 
 // Phase 2A — institutional landing pages share the V4 shell
 for (const [label, pageFile, expectTitle, expectLabel] of [
   ["about", "about", "关于公民秩序主义", "CURRENT PHASE"],
-  ["research", "theory/index", "研究", "RESEARCH &amp; POLITICAL WORK"],
+  ["research", "theory/index", "理论与制度", "THEORY &amp; INSTITUTIONS"],
   ["route", "civic-orderism/index", "公民秩序主义", "CIVIC ORDERISM"],
   [
     "preparation",

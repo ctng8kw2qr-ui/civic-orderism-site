@@ -47,7 +47,7 @@ const OfficialHome: QuartzComponent = ({ allFiles }: QuartzComponentProps) => {
                 <p class="hero-principles">不革命 · 不清算</p>
               </div>
               <div class="hero-actions">
-                <a class="button" href="/civic-orderism">
+                <a class="button" href="/civic-orderism/">
                   阅读政治路线
                 </a>
                 <a class="link" href="#research">
@@ -139,7 +139,7 @@ const OfficialHome: QuartzComponent = ({ allFiles }: QuartzComponentProps) => {
                 </p>
               </article>
             </div>
-            <a class="link route-more" href="/civic-orderism">
+            <a class="link route-more" href="/civic-orderism/">
               阅读路线全文
             </a>
           </div>
@@ -152,7 +152,7 @@ const OfficialHome: QuartzComponent = ({ allFiles }: QuartzComponentProps) => {
           <div class="wrap">
             <div class="section-heading">
               <h2 id="home-research">中国政治经济观察</h2>
-              <a class="link" href="/china">
+              <a class="link" href="/china/">
                 浏览全部观察
               </a>
             </div>
@@ -228,7 +228,7 @@ const OfficialHome: QuartzComponent = ({ allFiles }: QuartzComponentProps) => {
                   <h4>安全与治理</h4>
                   <p>组织回应与治理边界</p>
                 </a>
-                <a href="/china">
+                <a href="/china/">
                   <h4>理解今天的中共</h4>
                   <p>现实与结构的总体解释</p>
                 </a>
@@ -253,7 +253,7 @@ const OfficialHome: QuartzComponent = ({ allFiles }: QuartzComponentProps) => {
                 <h3>公民秩序主义</h3>
                 <p>理论总论</p>
               </a>
-              <a class="theory-org-entry" href="/theory">
+              <a class="theory-org-entry" href="/theory/">
                 <h3>理论与制度</h3>
                 <p>研究框架</p>
               </a>

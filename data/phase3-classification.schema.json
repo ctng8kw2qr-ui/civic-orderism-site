@@ -1,0 +1,58 @@
+{
+  "version": "phase3-2026-11-09",
+  "description": "Civic Orderism formal article classification standard. One article has exactly one primary section, one category and one subcategory. primaryTopic is an optional cross-cutting topic, not a substitute for the primary classification.",
+  "requiredFields": [
+    "slug",
+    "title",
+    "date",
+    "url",
+    "primary_section",
+    "category",
+    "subcategory"
+  ],
+  "primarySections": {
+    "政治路线": {
+      "categories": {
+        "政治路线研究": ["路线延伸"]
+      }
+    },
+    "政治经济观察": {
+      "categories": {
+        "中共政治": ["最高权力", "组织运行", "相关研究"],
+        "中国经济": ["财政与债务", "人口与社会保障", "产业与改革"],
+        "官僚体系": ["官员与问责", "组织与执行", "基层与避责"]
+      }
+    },
+    "理论与制度": {
+      "categories": {
+        "制度设计": ["理论总论", "国家权力结构", "行政与监督", "司法与宪政"],
+        "理论总论": ["理论总论"],
+        "司法与宪政": ["司法与宪政"]
+      }
+    }
+  },
+  "primaryTopic": {
+    "required": false,
+    "allowed": [
+      "xi-era",
+      "bureaucratic-system",
+      "order-evaporation",
+      "three-cleans-era",
+      "second-reform",
+      "ccp-governance",
+      "local-finance",
+      "political-transition",
+      "institutional-mechanisms"
+    ],
+    "note": "primaryTopic 只表示跨文章的主要专题；不决定一级栏目，也不替代 primary_section/category/subcategory。专题页与标签可以多入口。"
+  },
+  "newArticleRules": {
+    "primarySectionRequired": true,
+    "categoryRequired": true,
+    "subcategoryRequired": true,
+    "realPublicationDateRequired": true,
+    "uniqueUrlRequired": true,
+    "defaultClassificationForbidden": true,
+    "articleBodyMustNotBeRewrittenByClassification": true
+  }
+}
