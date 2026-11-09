@@ -6,7 +6,6 @@ import {
 import { selectHomepageResearch } from "../util/homepageResearch";
 import { resolveCover } from "../util/cover";
 import { homepagePortrait as portrait } from "../util/homepagePortrait";
-import site from "../../data/site.config.json";
 import style from "./styles/officialHome.scss";
 
 const href = (slug: string) => `/${slug.replace(/\/index$/, "")}`;
@@ -40,20 +39,19 @@ const OfficialHome: QuartzComponent = ({ allFiles }: QuartzComponentProps) => {
                   公民秩序主义发起人<span aria-hidden="true">｜</span>
                   <span>中国政治经济观察</span>
                 </p>
-                <p class="position">
-                  <strong>经济赎买</strong>
-                  <span>不革命 · 不清算</span>
-                </p>
               </div>
-              <p class="hero-summary">
-                以经济赎买降低政治转轨阻力，在保持国家连续运行的前提下，推动和平权力交接与政治制度重建。
-              </p>
+              <div class="hero-route">
+                <p class="hero-statement">保留国家，改变政治。</p>
+                <p class="hero-goal">和平政治转轨</p>
+                <p class="hero-mechanism">以经济赎买为核心机制</p>
+                <p class="hero-principles">不革命 · 不清算</p>
+              </div>
               <div class="hero-actions">
                 <a class="button" href="/civic-orderism">
-                  了解政治路线
+                  阅读政治路线
                 </a>
                 <a class="link" href="#research">
-                  阅读政治经济观察
+                  阅读中国政治经济观察
                 </a>
               </div>
             </div>
@@ -97,37 +95,53 @@ const OfficialHome: QuartzComponent = ({ allFiles }: QuartzComponentProps) => {
           </div>
         </section>
         <section
-          class="route band"
-          id="route"
-          aria-labelledby="home-principles"
+          class="route band political-route"
+          id="political-route"
+          aria-labelledby="home-route"
         >
           <div class="wrap">
-            <h2 id="home-principles">
-              改变政治，<span>不把国家一起砸碎。</span>
-            </h2>
-            <div class="principles">
-              <article>
-                <h3>经济赎买</h3>
-                <p>以利益安排降低转轨阻力。</p>
+            <h2 id="home-route">政治路线</h2>
+            <div class="route-list">
+              <article class="route-item">
+                <div class="route-item__head">
+                  <p class="route-item__label">政治目标</p>
+                  <h3>和平政治转轨</h3>
+                </div>
+                <p class="route-item__body">
+                  以非暴力方式完成中国政治转轨，改变政治制度。
+                </p>
               </article>
-              <article>
-                <h3>不革命</h3>
-                <p>保持国家与社会连续运行。</p>
+              <article class="route-item">
+                <div class="route-item__head">
+                  <p class="route-item__label">核心机制</p>
+                  <h3>经济赎买</h3>
+                </div>
+                <p class="route-item__body">
+                  通过制度化的利益重新安排，对依靠政治权力、公共资源和不正当利益形成的资产进行处理，使符合条件的部分资产获得合法产权，为和平权力交接创造条件。
+                </p>
               </article>
-              <article>
-                <h3>不清算</h3>
-                <p>不按身份清算，具体责任依法处理。</p>
+              <article class="route-item">
+                <div class="route-item__head">
+                  <p class="route-item__label">基本原则</p>
+                  <h3>不革命、不清算</h3>
+                </div>
+                <p class="route-item__body">
+                  不以暴力革命推动政治转轨，不以集体政治报复作为制度重建的起点。
+                </p>
+              </article>
+              <article class="route-item">
+                <div class="route-item__head">
+                  <p class="route-item__label">根本底线</p>
+                  <h3>国家连续运行</h3>
+                </div>
+                <p class="route-item__body">
+                  政治转轨不能以行政体系瘫痪、公共服务中断或社会秩序崩溃为代价。
+                </p>
               </article>
             </div>
-            <aside class="manifesto" aria-label="固定核心政治总论入口">
-              <span>{site.corePoliticalStatement.label}</span>
-              <a
-                class="vision-link"
-                href={`/${site.corePoliticalStatement.slug}`}
-              >
-                {site.corePoliticalStatement.title}。
-              </a>
-            </aside>
+            <a class="link route-more" href="/civic-orderism">
+              阅读路线全文
+            </a>
           </div>
         </section>
         <section
@@ -223,99 +237,38 @@ const OfficialHome: QuartzComponent = ({ allFiles }: QuartzComponentProps) => {
           </div>
         </section>
         <section
-          class="economy band"
-          id="economic-redemption"
-          aria-labelledby="home-economy"
+          class="theory-org band"
+          id="theory-organization"
+          aria-labelledby="home-theory-org"
         >
-          <div class="wrap economy-grid">
-            <h2 id="home-economy">
-              为什么选择
-              <br />
-              经济赎买？
-            </h2>
-            <div>
-              <div class="economy-copy">
-                <article>
-                  <h3>为什么需要经济赎买？</h3>
-                  <p>
-                    既有权力结构不只涉及职位，也涉及经济利益与安全预期。缺少可以讨论的安排，这些因素会增加政治转轨的阻力。
-                  </p>
-                </article>
-                <article>
-                  <h3>经济赎买如何降低政治转轨阻力？</h3>
-                  <p>
-                    通过政治沟通、利益协调与制度过渡降低政治转轨阻力。提高接受和平承接的安全感与可预期性，建立新旧政治力量之间最低限度的信任。
-                  </p>
-                </article>
-              </div>
-              <a class="link" href="/civic-orderism">
-                了解经济赎买政治路线 <span aria-hidden="true">&nbsp;→</span>
-              </a>
-            </div>
-          </div>
-        </section>
-        <section class="theory band" id="theory" aria-labelledby="home-theory">
           <div class="wrap">
             <div class="section-heading">
-              <h2 id="home-theory">理论与制度</h2>
-              <p>让政治方向，有可以检验的制度基础。</p>
+              <h2 id="home-theory-org">理论与组织</h2>
             </div>
-            <div class="theory-grid">
-              <article>
+            <div class="theory-org-grid">
+              <a
+                class="theory-org-entry"
+                href="/civic-orderism/civic-orderism-overview"
+              >
                 <h3>公民秩序主义</h3>
-                <p>理解政治路线、转轨逻辑与整体方案。</p>
-                <a class="link" href="/civic-orderism">
-                  阅读路线总论
-                </a>
-              </article>
-              <article>
-                <h3>政治制度设计</h3>
-                <p>从原则走向制度安排与治理结构。</p>
-                <a class="link" href="/institution-design">
-                  浏览制度设计
-                </a>
-              </article>
-              <article>
-                <h3>国家连续性与责任</h3>
-                <p>在规则、授权与责任中维持公共秩序。</p>
-                <a class="link" href="/institutional-architecture">
-                  理解制度架构
-                </a>
-              </article>
-            </div>
-          </div>
-        </section>
-        <section
-          class="organization band"
-          id="organization"
-          aria-labelledby="home-organization"
-        >
-          <div class="wrap organization-grid">
-            <div>
-              <h2 id="home-organization">组织建设与公开责任</h2>
-              <h3>北美非营利法人及首届董事会筹备</h3>
-              <p>
-                公民秩序主义目前处于组织筹备阶段，尚未完成法人注册及首届董事会设立，也不以政党身份运行。
-              </p>
-              <div class="org-actions">
-                <a class="outline" href="/preparation">
-                  了解组织筹备
-                </a>
-                <a class="link" href={site.documents[0].href}>
-                  阅读正式筹备文件 PDF
-                </a>
-              </div>
-            </div>
-            <aside class="responsibility">
-              <h3>发起人的公开责任</h3>
-              <p>
-                我决定公开站出来，为这条路线承担责任，也接受社会对它的检验。
-              </p>
-              <span>赵鹏博</span>
-              <a class="link" href="/about/initiator">
-                阅读发起人说明
+                <p>理论总论</p>
               </a>
-            </aside>
+              <a class="theory-org-entry" href="/theory">
+                <h3>理论与制度</h3>
+                <p>研究框架</p>
+              </a>
+              <a class="theory-org-entry" href="/preparation">
+                <h3>组织建设</h3>
+                <p>筹备与边界</p>
+              </a>
+              <a class="theory-org-entry" href="/about/initiator">
+                <h3>关于发起人</h3>
+                <p>公开说明</p>
+              </a>
+            </div>
+            <p class="org-status">
+              公民秩序主义目前处于组织筹备阶段，尚未完成法人注册及首届董事会设立，也不以政党身份运行。
+            </p>
           </div>
         </section>
       </div>

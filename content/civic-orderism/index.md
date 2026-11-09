@@ -67,6 +67,14 @@ coverAlt: "一只小船停在平整静止的水面上，水线笔直；船体一
 </div>
   </section>
 
+  <section class="inst4l-section" id="economic-redemption">
+<div class="inst4l-section__head">
+<p class="inst4-eyebrow">CORE MECHANISM · 核心机制</p>
+<h2 class="inst4l-section__title">经济赎买</h2>
+</div>
+<p class="inst4-route__intro">通过制度化的利益重新安排，对依靠政治权力、公共资源和不正当利益形成的资产进行处理，使符合条件的部分资产获得合法产权，为和平权力交接创造条件。</p>
+  </section>
+
   <section class="inst4l-section" id="peaceful-transition">
 <div class="inst4l-section__head">
 <p class="inst4-eyebrow">PEACEFUL TRANSITION ROUTE</p>

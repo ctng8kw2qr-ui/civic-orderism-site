@@ -909,11 +909,9 @@ const homepageMainText = visiblePageText(homepageMainHtml);
 // Approved B homepage: preserve content/identity contracts, not retired E3 geometry.
 const homepageSectionIds = [
   "identity",
-  "route",
+  "political-route",
   "research",
-  "economic-redemption",
-  "theory",
-  "organization",
+  "theory-organization",
 ];
 let previousHomepageSectionPosition = -1;
 for (const id of homepageSectionIds) {
@@ -926,19 +924,19 @@ for (const id of homepageSectionIds) {
   previousHomepageSectionPosition = position;
 }
 assert(
-  (homepageHtml.match(/<section\b/g) ?? []).length === 6,
-  "B 首页必须保持六个主要区域",
+  (homepageHtml.match(/<section\b/g) ?? []).length === 4,
+  "首页必须保持四个主要区域",
 );
 const heroHtml =
   homepageHtml.match(/<section class="hero"[\s\S]*?<\/section>/)?.[0] ?? "";
 for (const text of [
   "赵鹏博",
   "公民秩序主义发起人",
-  "经济赎买",
+  "和平政治转轨",
+  "以经济赎买为核心机制",
   "不革命 · 不清算",
-  "在保持国家连续运行的前提下",
-  "了解政治路线",
-  "阅读政治经济观察",
+  "阅读政治路线",
+  "阅读中国政治经济观察",
 ]) {
   assert(
     visiblePageText(heroHtml).includes(text),
@@ -956,20 +954,27 @@ assert(
     !homepageHtml.includes("v6-hero__art"),
   "不得恢复已删除的巨型装饰 artwork",
 );
-const homepagePrinciplesHtml =
-  homepageHtml.match(/<section class="route band"[\s\S]*?<\/section>/)?.[0] ??
-  "";
+const homepageRouteHtml =
+  homepageHtml.match(
+    /<section class="route band political-route"[\s\S]*?<\/section>/,
+  )?.[0] ?? "";
+const homepageRouteText = visiblePageText(homepageRouteHtml);
 assert(
-  visiblePageText(homepagePrinciplesHtml)
-    .replace(/\s+/g, "")
-    .includes("改变政治，不把国家一起砸碎。") &&
-    homepagePrinciplesHtml.includes(
-      `href="/${site.corePoliticalStatement.slug}"`,
-    ) &&
-    visiblePageText(homepagePrinciplesHtml).includes(
-      site.corePoliticalStatement.title,
-    ),
-  "政治原则或固定核心政治文本入口缺失",
+  [
+    "政治目标",
+    "和平政治转轨",
+    "核心机制",
+    "经济赎买",
+    "基本原则",
+    "不革命、不清算",
+    "根本底线",
+    "国家连续运行",
+  ].every((text) => homepageRouteText.includes(text)) &&
+    homepageRouteText.includes("通过制度化的利益重新安排") &&
+    homepageRouteText.includes("不以暴力革命推动政治转轨") &&
+    homepageRouteText.includes("政治转轨不能以行政体系瘫痪") &&
+    !homepageRouteHtml.includes("具体责任依法处理"),
+  "首页政治路线区四层结构、经济赎买定义或原则边界不完整",
 );
 const researchHtml =
   homepageHtml.match(
@@ -993,15 +998,17 @@ assert(
 );
 const workHtml =
   homepageHtml.match(
-    /<section class="organization band"[\s\S]*?<\/section>/,
+    /<section class="theory-org band"[\s\S]*?<\/section>/,
   )?.[0] ?? "";
 assert(
   visiblePageText(workHtml).includes(
     "尚未完成法人注册及首届董事会设立，也不以政党身份运行",
   ) &&
     workHtml.includes('href="/preparation"') &&
-    workHtml.includes(site.documents[0].href),
-  "组织状态、筹备入口或正式文件链接不完整",
+    workHtml.includes('href="/theory"') &&
+    workHtml.includes('href="/about/initiator"') &&
+    workHtml.includes('href="/civic-orderism/civic-orderism-overview"'),
+  "组织状态或理论与组织入口不完整",
 );
 assert(
   homepageHtml.includes(`name="description" content="${site.description}"`),

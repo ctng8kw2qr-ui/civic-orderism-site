@@ -335,7 +335,7 @@
     color: var(--muted);
     font-size: 15px;
     line-height: 1.85;
-    margin-top: 12px;
+    margin-top: 14px;
   }
   .read {
     min-height: 44px;
@@ -347,21 +347,21 @@
     margin-top: 12px;
   }
   .column-label {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     color: var(--muted);
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
   .latest time {
     font-size: 12px;
     color: var(--muted);
     display: block;
-    margin-bottom: 9px;
+    margin-bottom: 10px;
   }
   .latest article + article {
     border-top: 1px solid var(--line);
-    padding-top: 24px;
-    margin-top: 26px;
+    padding-top: 28px;
+    margin-top: 28px;
   }
   .latest article h3 {
     font: 600 23px/1.5 var(--serif);
@@ -379,13 +379,13 @@
     padding-block: 3px 16px;
   }
   .topics > a + a {
-    padding-top: 16px;
+    padding-top: 18px;
     border-top: 1px solid var(--line);
   }
   .topics p {
     font-size: 13px;
     color: var(--muted);
-    margin-top: 7px;
+    margin-top: 8px;
   }
   .economy {
     padding-block: 54px;
@@ -1009,6 +1009,345 @@
     }
     .band {
       break-inside: avoid;
+    }
+  }
+
+  /* Round 2: four-part homepage. Existing B tokens and typography only. */
+  .hero-route {
+    margin-top: 26px;
+  }
+  .hero-statement {
+    color: var(--navy);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+  .hero-goal {
+    margin-top: 14px;
+    color: var(--navy);
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: 0.04em;
+  }
+  .hero-mechanism {
+    margin-top: 10px;
+    color: var(--navy);
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+  .hero-principles {
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0.04em;
+  }
+  .hero-actions {
+    margin-top: 26px;
+  }
+  .political-route {
+    padding-block: 52px 38px;
+  }
+  .political-route h2 {
+    font-size: 32px;
+    font-weight: 500;
+  }
+  .route-list {
+    margin-top: 27px;
+    border-top: 1px solid #627682;
+  }
+  .route-item {
+    display: grid;
+    grid-template-columns: minmax(150px, 220px) minmax(0, 1fr);
+    gap: 48px;
+    align-items: start;
+    padding: 21px 0;
+    border-bottom: 1px solid #627682;
+  }
+  .route-item:last-child {
+    border-bottom: 0;
+  }
+  .route-item__label {
+    color: #c6d2d8;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+  }
+  .route-item__head h3 {
+    margin-top: 5px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  .route-item__body {
+    max-width: 48em;
+    padding-top: 32px;
+    color: #e6edf0;
+    font-size: 16px;
+    line-height: 1.9;
+  }
+  .route-more {
+    margin-top: 22px;
+    color: #e6edf0;
+    font-size: 15px;
+    text-decoration-color: #c6d2d8;
+  }
+  .route-more:hover {
+    text-decoration-color: currentColor;
+  }
+  .theory-org {
+    background: var(--paper);
+  }
+  .theory-org .section-heading {
+    margin-bottom: 27px;
+  }
+  .theory-org-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 34px;
+  }
+  .theory-org-entry {
+    display: block;
+    min-height: 44px;
+    border-top: 1px solid var(--line);
+    padding-top: 17px;
+  }
+  .theory-org-entry:hover {
+    text-decoration: none;
+  }
+  .theory-org-entry:hover h3 {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+  .theory-org-entry h3 {
+    font-size: 22px;
+  }
+  .theory-org-entry p {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 15px;
+  }
+  .org-status {
+    max-width: 52em;
+    margin-top: 34px;
+    border-top: 1px solid var(--line);
+    padding-top: 17px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.85;
+  }
+  @media (max-width: 1100px) {
+    .hero-route {
+      margin-top: 22px;
+    }
+    .hero-statement {
+      font-size: 24px;
+    }
+    .hero-goal {
+      font-size: 30px;
+    }
+    .hero-mechanism {
+      font-size: 20px;
+    }
+    .hero-principles {
+      font-size: 14px;
+    }
+    .route-item {
+      grid-template-columns: minmax(130px, 180px) minmax(0, 1fr);
+      gap: 36px;
+    }
+    .route-item__head h3 {
+      font-size: 22px;
+    }
+    .route-item__body {
+      padding-top: 30px;
+    }
+    .editorial {
+      gap: 30px;
+    }
+    .theory-org-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px 34px;
+    }
+  }
+  @media (max-width: 768px) {
+    .compact .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: auto auto auto auto auto;
+      gap: 0;
+    }
+    .compact .hero-copy,
+    .compact .identity {
+      display: contents;
+    }
+    .compact .hero h1 {
+      grid-column: 1;
+      grid-row: 1;
+      padding: 0;
+      font-size: 44px;
+      letter-spacing: 0.06em;
+    }
+    .compact .role {
+      grid-column: 1;
+      grid-row: 2;
+      position: static;
+      white-space: normal;
+      margin: 16px 0 0;
+      font-size: 14px;
+    }
+    .compact .hero-route {
+      grid-column: 1;
+      grid-row: 3;
+      margin-top: 22px;
+    }
+    .compact .hero-statement {
+      font-size: 19px;
+    }
+    .compact .hero-goal {
+      margin-top: 8px;
+      font-size: 26px;
+    }
+    .compact .hero-mechanism {
+      margin-top: 7px;
+      font-size: 17px;
+    }
+    .compact .hero-principles {
+      margin-top: 3px;
+      font-size: 13px;
+    }
+    .compact .hero-actions {
+      grid-column: 1;
+      grid-row: 4;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 22px 0 0;
+    }
+    .compact .hero-actions > a {
+      min-height: 48px;
+      padding: 9px 18px;
+      font-size: 14px;
+    }
+    .compact .hero-portrait {
+      grid-column: 1;
+      grid-row: 5;
+      position: relative;
+      align-self: start;
+      width: 100%;
+      height: auto;
+      min-height: 0;
+      margin: 22px 0 0;
+      padding: 0;
+      aspect-ratio: 590 / 674;
+      order: initial;
+    }
+    .compact .hero-portrait img {
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      object-fit: contain;
+      object-position: center;
+    }
+    .political-route {
+      padding-block: 40px 30px;
+    }
+    .political-route h2 {
+      font-size: 26px;
+    }
+    .route-list {
+      margin-top: 26px;
+    }
+    .route-item {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 24px 0;
+    }
+    .route-item__head h3 {
+      margin-top: 4px;
+      font-size: 20px;
+    }
+    .route-item__body {
+      max-width: 34em;
+      padding-top: 0;
+      font-size: 15px;
+      line-height: 1.95;
+    }
+    .route-more {
+      margin-top: 24px;
+    }
+    .section-heading {
+      margin-bottom: 26px;
+    }
+    .section-heading > .link,
+    .section-heading > p {
+      margin-top: 10px;
+    }
+    .article-meta {
+      margin-top: 15px;
+    }
+    .latest {
+      padding-top: 34px;
+    }
+    .column-label {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .latest article + article {
+      padding-top: 30px;
+      margin-top: 30px;
+    }
+    .topics {
+      padding-top: 28px;
+    }
+    .topics .column-label {
+      margin-bottom: 16px;
+    }
+    .topics > a {
+      padding: 12px 0;
+    }
+    .theory-org .section-heading {
+      margin-bottom: 22px;
+    }
+    .theory-org-grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .theory-org-entry {
+      padding-top: 16px;
+    }
+    .theory-org-entry + .theory-org-entry {
+      margin-top: 14px;
+    }
+    .org-status {
+      margin-top: 26px;
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 359px) {
+    .compact .hero h1 {
+      font-size: 40px;
+    }
+    .compact .hero-statement {
+      font-size: 18px;
+    }
+    .compact .hero-goal {
+      font-size: 24px;
+    }
+    .compact .hero-mechanism {
+      font-size: 16px;
+    }
+    .compact .hero-principles {
+      font-size: 12px;
+    }
+    .compact .hero-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
     }
   }
 }
