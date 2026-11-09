@@ -1,36 +1,68 @@
+/* ── Clipboard button ──────────────────────────────────────────────
+   A floating action on a code block. It keeps a modest container on
+   purpose: the block has no other affordance, so a bordered chip is what
+   makes the control discoverable over content. The container is
+   functional, not decorative — this is not a case for borderless icons.
+
+   Phase 4B audit fix:
+     1. `&:focus { outline: 0 }` removed. It killed keyboard focus feedback
+        outright, and it out-specified the shared V6 ring.
+     2. The V6 focus ring is now applied explicitly. The generic
+        `.v6 :focus-visible` rule does not reach this button, because the
+        button lives inside `<pre>` in a `popover-hint` wrapper, outside the
+        `.v6` subtree.
+     3. The button now REVEALS on focus. It is `opacity: 0` until
+        `pre:hover`, so a keyboard user previously tabbed to an invisible
+        control; a ring on a transparent element would still have been
+        invisible.
+     4. `& > svg { fill: var(--light); filter: contrast(0.3) }` removed. The
+        fill repainted the icon's own `fill="none"` and turned the outlined
+        copy glyph into a solid block, and the contrast filter washed the
+        whole thing out to near-invisible.
+   Colours come from V6 tokens so the control belongs to the palette in both
+   themes, instead of the legacy Quartz set which stayed cool-toned in dark
+   mode.                                                             */
 .clipboard-button {
   position: absolute;
   display: flex;
   float: right;
   right: 0;
-  padding: 0.4rem;
+  padding: 0.5rem;
   margin: 0.3rem;
-  color: var(--gray);
-  border-color: var(--dark);
-  background-color: var(--light);
-  border: 1px solid;
-  border-radius: 5px;
+  color: var(--v6-text-muted);
+  background-color: var(--v6-surface-sunken);
+  border: 1px solid var(--v6-border);
+  border-radius: var(--v6-radius-md);
   opacity: 0;
-  transition: 0.2s;
-
-  & > svg {
-    fill: var(--light);
-    filter: contrast(0.3);
-  }
+  cursor: pointer;
+  transition:
+    opacity var(--v6-duration) var(--v6-ease),
+    color var(--v6-duration) var(--v6-ease),
+    border-color var(--v6-duration) var(--v6-ease);
 
   &:hover {
-    cursor: pointer;
-    border-color: var(--secondary);
+    color: var(--v6-text-primary);
+    border-color: var(--v6-border-strong);
   }
 
-  &:focus {
-    outline: 0;
+  /* Keyboard focus: the same ring as the rest of the site. */
+  &:focus-visible {
+    outline: 2px solid var(--v6-focus);
+    outline-offset: 2px;
+    color: var(--v6-text-primary);
   }
 }
 
 pre {
-  &:hover > .clipboard-button {
+  /* Hover for pointer users, focus-within for keyboard users. */
+  &:hover > .clipboard-button,
+  &:focus-within > .clipboard-button {
     opacity: 1;
-    transition: 0.2s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clipboard-button {
+    transition: none;
   }
 }
