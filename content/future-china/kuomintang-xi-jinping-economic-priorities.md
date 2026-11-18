@@ -18,6 +18,8 @@ summary: "从蒋介石与毛泽东的历史取舍出发，结合中国的政府�
 status: "published"
 contentType: "文章"
 slug: "future-china/kuomintang-xi-jinping-economic-priorities"
+cover: /static/assets/v6/editorial/editorial-kuomintang-xi-jinping-economic-priorities.webp
+coverAlt: "灰雾中的混凝土高架桥在前端止步，深蓝色钢撑箍住最前端的桥墩。"
 coreJudgments:
   - "中共仍然会抓经济，但会更加重视经济运行的底线；仍然会要求发展，但不会轻易为了发展调整政治控制的基本结构。"
 ---
