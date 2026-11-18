@@ -438,4 +438,12 @@ body[data-page-kind="article"] {
     border-radius: var(--v6-radius-sm);
     background: var(--v6-surface-sunken);
   }
+
+  /* One supplied cover artwork is 5:2. It is shown at its original
+     proportion instead of being cropped to the canonical 1.9:1 — the
+     override is scoped to that single asset, so every other cover keeps the
+     canonical treatment. */
+  .article-inst__cover img[src$="editorial-economic-future-horizon.webp"] {
+    aspect-ratio: 5 / 2;
+  }
 }

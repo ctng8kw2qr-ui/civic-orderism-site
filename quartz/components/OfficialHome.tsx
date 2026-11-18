@@ -273,10 +273,10 @@ const OfficialHome: QuartzComponent = ({ allFiles }: QuartzComponentProps) => {
             >
               <img
                 class="future-lead__img"
-                src="/static/assets/v6/editorial/editorial-china-economic-future.webp"
-                alt="画面下部是一道由相同深灰砖块砌成的长墙，墙身有四处空出的砖槽；墙前地面上，四块从墙中取出的砖各自独立站立——一块直立、一块横放、一块斜立成菱形，还有一块直立的小金砖。"
+                src="/static/assets/v6/editorial/editorial-economic-future-horizon.webp"
+                alt="左侧是层叠的灰色混凝土块与裸露钢筋，右侧立着一个巨大的圆形拱环；拱环内飘着几块半透明面板，面板上依次是游戏手柄、场记板、写有 AI 的芯片和书本图标；一个人背着背包从左向右走向圆环，远处是淡色山峦与城市天际线。"
                 width="1600"
-                height="842"
+                height="640"
                 loading="lazy"
                 decoding="async"
               />

@@ -1692,7 +1692,9 @@
   .future-lead__img {
     display: block;
     width: 100%;
-    aspect-ratio: 1.9;
+    /* The newest supplied cover artwork is 5:2; keep its original proportion
+       rather than the canonical 1.9:1 crop. */
+    aspect-ratio: 5 / 2;
     object-fit: cover;
     border-radius: 2px;
     margin-bottom: 17px;
