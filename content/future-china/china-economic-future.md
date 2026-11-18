@@ -21,7 +21,7 @@ contentType: "文章"
 featured: true
 slug: "future-china/china-economic-future"
 cover: /static/assets/v6/editorial/editorial-china-economic-future.webp
-coverAlt: "画面下部是一大片排列整齐、彼此相同的深灰方块；其中五个方块各自向上伸出笔直的高柱，最高的中柱顶端顶着一块金色菱形，另外两柱柱顶为金色小方块，两柱柱顶为深灰菱形；方块阵的后排还有单独一块金色方块。"
+coverAlt: "画面下部是一道由相同深灰砖块砌成的长墙，墙身有四处空出的砖槽；墙前地面上，四块从墙中取出的砖各自独立站立——一块直立、一块横放、一块斜立成菱形，还有一块直立的小金砖。"
 coreJudgments:
   - "中国经济真正尚未充分开发的，不是某一片土地，而是14亿人的可能性。"
   - "钢筋水泥的扩张有边界，人的需求、知识与创造力却可以不断开辟新的发展空间。"
