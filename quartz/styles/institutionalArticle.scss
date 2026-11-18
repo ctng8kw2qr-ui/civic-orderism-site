@@ -93,6 +93,16 @@ body[data-article-type="institutional"] {
     opacity: 0.6;
   }
 
+  /* ---- Article author line (quiet byline at the top of the body) ---- */
+  & .article-content .article-authorline {
+    margin: 1.8rem 0 0;
+    color: var(--inst-muted);
+    font-size: 0.92rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+  }
+
   /* ================================================================
      Core Judgment — editorial statement, not a UI widget.
      Article title > Core Judgment text > body.

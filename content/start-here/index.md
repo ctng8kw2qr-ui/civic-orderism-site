@@ -27,9 +27,10 @@ coverAlt: "一只手按在一排七个相同素面操纵杆中的第四个上，
     <section><span>04</span><div><h2>公民秩序主义准备怎么做？</h2><p class="start-roadmap__line">旧体系无法自行改革 → 外部政治承接力量提前形成 → 降低转轨阻力 → 保持国家连续运行 → 逐步进入新的政治秩序</p><p>这是和平转轨路线的主线。它的方法边界，可以先用五条已经确定的政治原则说明。</p><ul><li><strong>不革命：</strong>不以社会失控和大规模政治动员作为政治转轨手段。</li><li><strong>不清算：</strong>不以群体性政治报复作为新政治秩序的起点。</li><li><strong>保留国家：</strong>政治制度可以改变，国家行政体系不能停摆。</li><li><strong>和平承接：</strong>通过政治沟通、利益协调与制度过渡降低政治转轨阻力。</li><li><strong>提前准备：</strong>新的政治路线、政治信誉与组织承接能力必须在政治变化以前形成。</li></ul><p>为什么内部改革无法完成破局、为什么需要外部政治承接、为什么和平转轨存在现实基础，以及政治变化以后怎样保持国家运行，在完整的和平转轨路线中展开。</p><div class="start-page__actions start-page__actions--editorial">
 <a class="start-editorial-link" href="/civic-orderism/"><span>进入完整和平转轨路线</span><span class="start-editorial-link__arrow" aria-hidden="true">→</span></a>
 </div></div></section>
-    <section><span>05</span><div><h2>最终想建立什么？</h2><p>政治转轨的目的，不是结束某一个政权本身。它最终要回答的是：旧政治秩序之后，中国能不能建立一个值得生活、也值得期待未来的国家。</p><p class="start-roadmap__line">有边界的权力 → 有责任的政治 → 有连续性的国家 → 有尊严的公民 → 有纠错能力的制度</p><p>这就是「保留国家，改变政治」：政治制度可以改变，国家行政体系不能停摆。政治变化应当扩大、而不是取消普通人对未来的预期。</p><p>更完整的未来中国与长期制度方向，在「中国未来」与价值目标中展开；当前的组织建设进展另行说明。</p><div class="start-page__actions start-page__actions--editorial">
+    <section><span>05</span><div><h2>最终想建立什么？</h2><p>政治转轨的目的，不是结束某一个政权本身。它最终要回答的是：旧政治秩序之后，中国能不能建立一个值得生活、也值得期待未来的国家。</p><p class="start-roadmap__line">有边界的权力 → 有责任的政治 → 有连续性的国家 → 有尊严的公民 → 有纠错能力的制度</p><p>这就是「保留国家，改变政治」：政治制度可以改变，国家行政体系不能停摆。政治变化应当扩大、而不是取消普通人对未来的预期。</p><p>更完整的未来中国与长期制度方向，在「国家承接与连续运行」与价值目标中展开；从人的发展出发的未来构想，见「未来中国」；当前的组织建设进展另行说明。</p><div class="start-page__actions start-page__actions--editorial">
 <a class="start-editorial-link" href="/civic-orderism/peaceful-state-transition"><span>阅读核心政治路线</span><span class="start-editorial-link__arrow" aria-hidden="true">→</span></a>
-<a class="start-editorial-link" href="/china-future/"><span>中国未来</span><span class="start-editorial-link__arrow" aria-hidden="true">→</span></a>
+<a class="start-editorial-link" href="/china-future/"><span>国家承接与连续运行</span><span class="start-editorial-link__arrow" aria-hidden="true">→</span></a>
+<a class="start-editorial-link" href="/future-china/"><span>未来中国</span><span class="start-editorial-link__arrow" aria-hidden="true">→</span></a>
 <a class="start-editorial-link" href="/articles"><span>阅读地图</span><span class="start-editorial-link__arrow" aria-hidden="true">→</span></a>
 <a class="start-editorial-link" href="/preparation"><span>当前组织建设</span><span class="start-editorial-link__arrow" aria-hidden="true">→</span></a>
 </div></div></section>

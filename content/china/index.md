@@ -93,7 +93,7 @@ coverAlt: "一片裸露的台地地面向下收成一条阶梯状的通道，两
 <h2 class="inst4l-section__title">按问题或阶段继续</h2>
 </div>
 <nav class="inst4l-quicklinks" aria-label="延伸研究">
-  <a href="/china-future/">中国未来 · 政治变化之后国家如何继续运行 <span aria-hidden="true">→</span></a>
+  <a href="/china-future/">国家承接与连续运行 · 政治转轨中的行政与公共服务连续 <span aria-hidden="true">→</span></a>
   <a href="/china-stage/">中国阶段判断 · 从财政、社保与基层治理判断当前阶段 <span aria-hidden="true">→</span></a>
   <a href="/topics/">研究专题 · 按具体政治问题深入 <span aria-hidden="true">→</span></a>
   <a href="/concepts/">核心概念 · 按分析模型与概念深入 <span aria-hidden="true">→</span></a>

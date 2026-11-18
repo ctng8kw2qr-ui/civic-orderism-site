@@ -1,8 +1,8 @@
 ---
 title: "全部文章"
-date: 2026-11-09
-updated: 2026-11-09
-description: "按三个一级主栏目浏览公民秩序主义全部已发布研究。"
+date: 2026-11-18
+updated: 2026-11-18
+description: "按四个一级主栏目浏览公民秩序主义全部已发布研究。"
 contentType: "文章索引"
 status: published
 listed: true
@@ -14,8 +14,8 @@ noindex: false
   <section class="inst4l-hero">
 <p class="inst4-eyebrow">RESEARCH ARCHIVE</p>
 <h1 class="inst4l-title">全部研究</h1>
-<p class="inst4l-lead">按三个一级主栏目浏览全部已发布研究。需要按问题搜索时，可以使用页面上方的搜索入口。</p>
-<p class="inst4l-status">105 篇研究 · 3 个一级主栏目</p>
+<p class="inst4l-lead">按四个一级主栏目浏览全部已发布研究。需要按问题搜索时，可以使用页面上方的搜索入口。</p>
+<p class="inst4l-status">106 篇研究 · 4 个一级主栏目</p>
   </section>
 
 <section class="inst4l-section" id="01">
@@ -566,6 +566,20 @@ noindex: false
 <a class="inst4l-row" href="/theory/ai-monitoring-organizational-friction">
   <span class="inst4l-row__cell"><span class="inst4l-row__meta">2026-05-10 · 理论总论</span><span class="inst4l-row__title">AI监控并不降低组织摩擦：一份冷静推演</span></span>
   <span class="inst4l-row__desc">关于“用 AI 降低组织内部摩擦、提高节点效率”的设想，常见叙事是：</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+</div>
+</section>
+<section class="inst4l-section" id="04">
+<div class="inst4l-section__head">
+<p class="inst4-eyebrow">04 FUTURE CHINA</p>
+<h2 class="inst4l-section__title">未来中国</h2>
+<p class="inst4l-section__desc">1 篇研究 · 按真实发布日期排序</p>
+</div>
+<div class="inst4l-list">
+<a class="inst4l-row" href="/future-china/china-economic-future">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">2026-11-18 · 经济与财富</span><span class="inst4l-row__title">中国经济的未来在哪里？</span></span>
+  <span class="inst4l-row__desc">中国经济的未来不只是房地产与传统投资，而在于14亿人的选择、创造力与AI时代的新生产方式。本文讨论经济增长、组织成本、教育重构与以人为中心的发展道路。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
 </div>

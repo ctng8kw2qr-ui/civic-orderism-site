@@ -73,6 +73,7 @@ const landingPageSlugs = new Set([
   "china/bureaucracy",
   "china-future",
   "china-stage",
+  "future-china",
   "civic-orderism/economic-redemption",
   "civic-orderism/research",
   "institution",

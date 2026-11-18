@@ -1,7 +1,7 @@
 ---
 title: "理论与制度"
 date: 2026-07-19
-updated: 2026-11-09
+updated: 2026-11-18
 description: "公民秩序主义的理论与制度研究：政治转轨之后，国家如何组织权力、运行行政体系、监督公共权力，并建立司法与宪政秩序。"
 contentType: "栏目"
 status: published
@@ -18,7 +18,7 @@ coverAlt: "在一个完全完好、闭合的沉重框架内，多根素面受拉
 <h1 class="inst4l-title">理论与制度</h1>
 <p class="inst4l-lead">政治路线回答如何实现和平政治转轨；理论与制度回答转轨之后，国家如何组织权力、运行行政体系、监督公共权力，并建立司法与宪政秩序。</p>
 <p class="inst4-route__intro">本栏目以现有研究组织入口，不把尚未定稿的制度设想写成已经确定的政治承诺。制度设计、制度机制与制度架构属于研究档案，不等同于正式组织纲领。</p>
-<p class="inst4l-status">5 个栏目 · 23 篇理论/制度文章 · 制度档案 19（16 设计 + 3 延伸）</p>
+<p class="inst4l-status">6 个栏目 · 23 篇理论/制度文章 · 制度档案 19（16 设计 + 3 延伸）</p>
   </section>
 
   <figure class="v6-primary-visual">
@@ -29,7 +29,7 @@ coverAlt: "在一个完全完好、闭合的沉重框架内，多根素面受拉
 <div class="inst4l-section__head">
 <p class="inst4-eyebrow">FIVE SECTIONS · 栏目结构</p>
 <h2 class="inst4l-section__title">从理论到制度</h2>
-<p class="inst4l-section__desc">五个栏目回答不同问题：为什么改变、权力如何组织、行政如何运行、司法如何约束，以及已有制度研究如何归档。</p>
+<p class="inst4l-section__desc">六个栏目回答不同问题：为什么改变、权力如何组织、行政如何运行、司法如何约束、国家如何连续运行，以及已有制度研究如何归档。</p>
 </div>
 <div class="inst4l-secindex">
   <a class="inst4l-secindex__item" href="#theory">
@@ -48,8 +48,12 @@ coverAlt: "在一个完全完好、闭合的沉重框架内，多根素面受拉
     <span class="inst4l-secindex__num" aria-hidden="true">04</span>
     <span class="inst4l-secindex__body"><span class="inst4l-secindex__title">司法与宪政</span><span class="inst4l-secindex__en" lang="en">JUSTICE &amp; CONSTITUTION</span><span class="inst4l-secindex__desc">责任、透明、选举、议会与司法如何构成约束。</span></span>
   </a>
-  <a class="inst4l-secindex__item" href="#archive">
+  <a class="inst4l-secindex__item" href="#continuity">
     <span class="inst4l-secindex__num" aria-hidden="true">05</span>
+    <span class="inst4l-secindex__body"><span class="inst4l-secindex__title">国家承接与连续运行</span><span class="inst4l-secindex__en" lang="en">STATE CONTINUITY</span><span class="inst4l-secindex__desc">政治转轨中，行政、公共服务、财政与法治如何保持连续。</span></span>
+  </a>
+  <a class="inst4l-secindex__item" href="#archive">
+    <span class="inst4l-secindex__num" aria-hidden="true">06</span>
     <span class="inst4l-secindex__body"><span class="inst4l-secindex__title">制度研究档案</span><span class="inst4l-secindex__en" lang="en">INSTITUTIONAL ARCHIVE</span><span class="inst4l-secindex__desc">制度设计、制度机制与制度架构的完整入口。</span></span>
   </a>
 </div>
@@ -200,9 +204,24 @@ coverAlt: "在一个完全完好、闭合的沉重框架内，多根素面受拉
 </div>
 </section>
 
+<section class="inst4l-section" id="continuity">
+<div class="inst4l-section__head">
+<p class="inst4-eyebrow">05 STATE CONTINUITY · 国家承接与连续运行</p>
+<h2 class="inst4l-section__title">政治转轨中，国家如何保持连续运行</h2>
+<p class="inst4l-section__desc">研究政治转轨过程中，行政体系、公共服务、财政、法治与国家运行如何保持连续，社会秩序如何不失控。</p>
+</div>
+<div class="inst4l-list">
+<a class="inst4l-row" href="/china-future/">
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">专题主入口</span><span class="inst4l-row__title">国家承接与连续运行</span></span>
+  <span class="inst4l-row__desc">3 篇正式研究 · 8 个研究框架：国家连续、行政连续、公共服务连续、法律连续性、地方治理、财政与社会保障、社会秩序、政治责任。</span>
+  <span class="inst4l-row__arrow" aria-hidden="true">→</span>
+</a>
+</div>
+</section>
+
 <section class="inst4l-section" id="archive">
 <div class="inst4l-section__head">
-<p class="inst4-eyebrow">05 INSTITUTIONAL ARCHIVE · 制度研究档案</p>
+<p class="inst4-eyebrow">06 INSTITUTIONAL ARCHIVE · 制度研究档案</p>
 <h2 class="inst4l-section__title">制度研究主入口</h2>
 <p class="inst4l-section__desc">制度研究以“制度设计”为主入口；制度机制提供机制说明与归档；制度架构提供从过渡到退出的整体地图。</p>
 </div>
@@ -234,7 +253,8 @@ coverAlt: "在一个完全完好、闭合的沉重框架内，多根素面受拉
 <nav class="inst4l-quicklinks" aria-label="研究总览">
   <a href="/china/">中国政治经济观察 · 研究分类首页 <span aria-hidden="true">→</span></a>
   <a href="/china/analysis/">解析中共 · 52 篇研究程序 <span aria-hidden="true">→</span></a>
-  <a href="/china-future/">中国未来 · 政治变化之后国家如何继续运行 <span aria-hidden="true">→</span></a>
+  <a href="/china-future/">国家承接与连续运行 · 政治转轨中的行政与公共服务连续 <span aria-hidden="true">→</span></a>
+  <a href="/future-china/">未来中国 · 从人的发展出发研究中国未来的经济、教育与科技 <span aria-hidden="true">→</span></a>
   <a href="/china-stage/">中国阶段判断 · 从财政、社保与基层治理判断当前阶段 <span aria-hidden="true">→</span></a>
   <a href="/topics/">研究专题 <span aria-hidden="true">→</span></a>
   <a href="/concepts/">核心概念 <span aria-hidden="true">→</span></a>

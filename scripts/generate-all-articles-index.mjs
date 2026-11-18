@@ -18,6 +18,7 @@ const sections = [
   ["政治路线", "01", "POLITICAL ROUTE"],
   ["政治经济观察", "02", "POLITICAL & ECONOMIC OBSERVATION"],
   ["理论与制度", "03", "THEORY & INSTITUTIONS"],
+  ["未来中国", "04", "FUTURE CHINA"],
 ];
 
 const escape = (value) =>
@@ -63,9 +64,9 @@ ${rows(items)}
 
 const page = `---
 title: "全部文章"
-date: 2026-11-09
-updated: 2026-11-09
-description: "按三个一级主栏目浏览公民秩序主义全部已发布研究。"
+date: 2026-11-18
+updated: 2026-11-18
+description: "按四个一级主栏目浏览公民秩序主义全部已发布研究。"
 contentType: "文章索引"
 status: published
 listed: true
@@ -77,8 +78,8 @@ noindex: false
   <section class="inst4l-hero">
 <p class="inst4-eyebrow">RESEARCH ARCHIVE</p>
 <h1 class="inst4l-title">全部研究</h1>
-<p class="inst4l-lead">按三个一级主栏目浏览全部已发布研究。需要按问题搜索时，可以使用页面上方的搜索入口。</p>
-<p class="inst4l-status">${map.length} 篇研究 · 3 个一级主栏目</p>
+<p class="inst4l-lead">按四个一级主栏目浏览全部已发布研究。需要按问题搜索时，可以使用页面上方的搜索入口。</p>
+<p class="inst4l-status">${map.length} 篇研究 · 4 个一级主栏目</p>
   </section>
 
 ${sectionHtml}

@@ -1,7 +1,7 @@
 ---
 title: "公民秩序主义"
 date: 2026-07-19
-updated: 2026-09-23
+updated: 2026-11-18
 description: "公民秩序主义正在建设中国和平政治转轨的政治路线与组织承接能力，推进北美非营利法人及首届董事会筹备。"
 contentType: "首页"
 status: published

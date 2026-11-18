@@ -8,7 +8,7 @@
     {
       "label": "政治经济观察",
       "href": "/china/",
-      "match": ["china", "china-future", "china-stage", "topics"]
+      "match": ["china", "china-stage", "topics"]
     },
     {
       "label": "理论与制度",
@@ -19,8 +19,14 @@
         "institution-design",
         "institutional-architecture",
         "concepts",
-        "articles"
+        "articles",
+        "china-future"
       ]
+    },
+    {
+      "label": "未来中国",
+      "href": "/future-china/",
+      "match": ["future-china"]
     },
     {
       "label": "关于赵鹏博",
@@ -67,7 +73,7 @@
     "解析中共": "/china/",
     "公民秩序主义": "/civic-orderism/",
     "制度设计": "/theory/",
-    "中国未来": "/china/",
+    "中国未来": "/theory/",
     "核心政治总论": "/civic-orderism/"
   }
 }

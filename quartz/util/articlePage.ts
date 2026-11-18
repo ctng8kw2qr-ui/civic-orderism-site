@@ -4,6 +4,7 @@ const articlePrefixes = [
   "china-stage/",
   "civic-orderism/",
   "institution/",
+  "future-china/",
 ];
 
 export function isArticleSlug(slug = ""): boolean {

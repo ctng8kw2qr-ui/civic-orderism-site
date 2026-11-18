@@ -252,6 +252,54 @@ const OfficialHome: QuartzComponent = ({ allFiles }: QuartzComponentProps) => {
           </div>
         </section>
         <section
+          class="future band"
+          id="future-china"
+          aria-labelledby="home-future"
+        >
+          <div class="wrap">
+            <div class="section-heading">
+              <h2 id="home-future">未来中国</h2>
+              <a class="link" href="/future-china/">
+                进入未来中国
+              </a>
+            </div>
+            <p class="future-intro">
+              从人的发展出发，探索中国未来的经济、AI、教育与社会生活——通过技术进步、制度改善和市场创新，让更多普通人拥有选择生活与创造财富的能力。
+            </p>
+            <a
+              class="article-link future-lead"
+              href="/future-china/china-economic-future"
+              data-slug="future-china/china-economic-future"
+            >
+              <div class="article-meta">
+                <span>栏目首篇基础文章</span>
+                <time datetime="2026-11-18">2026-11-18</time>
+              </div>
+              <h3>中国经济的未来在哪里？</h3>
+              <p>从钢筋水泥到14亿人的创造力：一条以人为中心的经济发展道路。</p>
+              <span class="read">阅读全文</span>
+            </a>
+            <div class="theory-org-grid" aria-label="未来中国研究方向">
+              <a class="theory-org-entry" href="/future-china/#directions">
+                <h3>经济与财富</h3>
+                <p>增长、产业与财富创造</p>
+              </a>
+              <a class="theory-org-entry" href="/future-china/#directions">
+                <h3>AI与技术</h3>
+                <p>组织成本与个人生产力</p>
+              </a>
+              <a class="theory-org-entry" href="/future-china/#directions">
+                <h3>教育与人的发展</h3>
+                <p>AI时代的学习与创造</p>
+              </a>
+              <a class="theory-org-entry" href="/future-china/#directions">
+                <h3>社会与文化</h3>
+                <p>选择、兴趣与文化产品</p>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section
           class="theory-org band"
           id="theory-organization"
           aria-labelledby="home-theory-org"

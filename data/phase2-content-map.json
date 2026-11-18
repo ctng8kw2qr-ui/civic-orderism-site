@@ -1,5 +1,5 @@
 {
-  "version": "phase3-2026-11-09",
+  "version": "phase3-2026-11-18",
   "generated_from": "content-migration-map.json",
   "articles": [
     {
@@ -2628,6 +2628,28 @@
       "phase3_reviewed": true,
       "phase3_review_decision": "moved",
       "phase3_review_note": "Moved to 理论与制度/理论总论: the article analyzes organizational monitoring and administrative friction."
+    },
+    {
+      "slug": "future-china/china-economic-future",
+      "title": "中国经济的未来在哪里？",
+      "date": "2026-11-18",
+      "updated": "2026-11-18",
+      "summary": "中国经济的未来不只是房地产与传统投资，而在于14亿人的选择、创造力与AI时代的新生产方式。本文讨论经济增长、组织成本、教育重构与以人为中心的发展道路。",
+      "primary_section": "未来中国",
+      "section": "经济与财富",
+      "category": "经济与财富",
+      "subcategory": "经济增长",
+      "primary_topic": null,
+      "topics": [],
+      "tags": [
+        "未来中国",
+        "经济与财富",
+        "AI与技术",
+        "教育与人的发展",
+        "社会与文化"
+      ],
+      "url": "/future-china/china-economic-future",
+      "source": "editorial"
     }
   ],
   "classification_revision": "Phase 3 full-text review of 13 needs-review articles; 7 moved to 理论与制度."

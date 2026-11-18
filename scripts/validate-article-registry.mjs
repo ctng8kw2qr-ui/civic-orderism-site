@@ -57,7 +57,12 @@ check(
   "historical migration map and baseline article sets differ",
 );
 
-const allowedSections = new Set(["政治路线", "政治经济观察", "理论与制度"]);
+const allowedSections = new Set([
+  "政治路线",
+  "政治经济观察",
+  "理论与制度",
+  "未来中国",
+]);
 for (const item of baseline) {
   const now = currentBySlug.get(item.article_id);
   check(Boolean(now), `historical article disappeared: ${item.article_id}`);

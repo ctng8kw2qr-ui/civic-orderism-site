@@ -16,7 +16,7 @@ const primaryLinks = navigation.primary.map(({ label, href }) => ({
 const researchSubLinks = [
   { label: "中国政治经济观察", href: "/china/" },
   { label: "解析中共", href: "/china/analysis/" },
-  { label: "中国未来", href: "/china-future/" },
+  { label: "国家承接与连续运行", href: "/china-future/" },
   { label: "研究专题", href: "/topics/" },
   { label: "核心概念", href: "/concepts/" },
 ];

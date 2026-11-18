@@ -52,6 +52,7 @@ const PrimaryNavigation: QuartzComponent = ({
       政治路线: "/civic-orderism/",
       政治经济观察: "/china/",
       理论与制度: "/theory/",
+      未来中国: "/future-china/",
     };
     if (primary && primaryHref[primary]) return primaryHref[primary] === href;
 

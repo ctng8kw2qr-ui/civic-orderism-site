@@ -106,8 +106,8 @@ coverAlt: "一面裸露的坡地占满画面，四条各自完整的小路横过
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
 <a class="inst4l-row" href="/china-future/">
-  <span class="inst4l-row__cell"><span class="inst4l-row__meta">中国未来</span><span class="inst4l-row__title">中国未来</span></span>
-  <span class="inst4l-row__desc">政治变化之后国家如何继续运行。</span>
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">理论与制度 · 专题</span><span class="inst4l-row__title">国家承接与连续运行</span></span>
+  <span class="inst4l-row__desc">政治转轨过程中，行政体系、公共服务、财政与法治如何保持连续。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>
 </div>

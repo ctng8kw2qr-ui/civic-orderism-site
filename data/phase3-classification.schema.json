@@ -1,5 +1,5 @@
 {
-  "version": "phase3-2026-11-09",
+  "version": "phase3-2026-11-18",
   "description": "Civic Orderism formal article classification standard. One article has exactly one primary section, one category and one subcategory. primaryTopic is an optional cross-cutting topic, not a substitute for the primary classification.",
   "requiredFields": [
     "slug",
@@ -28,6 +28,39 @@
         "制度设计": ["理论总论", "国家权力结构", "行政与监督", "司法与宪政"],
         "理论总论": ["理论总论"],
         "司法与宪政": ["司法与宪政"]
+      }
+    },
+    "未来中国": {
+      "categories": {
+        "经济与财富": [
+          "经济增长",
+          "产业发展",
+          "新市场",
+          "财富创造",
+          "个人创业",
+          "历史债务化解"
+        ],
+        "AI与技术": [
+          "AI降低组织成本",
+          "个人生产力",
+          "技术普惠",
+          "人工智能基础设施",
+          "新技术应用制度"
+        ],
+        "教育与人的发展": [
+          "AI基础教育",
+          "教育制度改革",
+          "个性化学习",
+          "创造力培养",
+          "人才发展"
+        ],
+        "社会与文化": [
+          "个人选择",
+          "兴趣经济",
+          "影视与游戏产业",
+          "文化产品",
+          "社会生活与人的发展"
+        ]
       }
     }
   },

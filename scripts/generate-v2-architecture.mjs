@@ -16,6 +16,7 @@ const articlePrefixes = [
   "china-stage/",
   "civic-orderism/",
   "institution/",
+  "future-china/",
 ];
 
 const readJson = (name) =>
@@ -233,6 +234,7 @@ function newSection(slug) {
     return "制度设计";
   if (slug.startsWith("civic-orderism/")) return "公民秩序主义";
   if (slug.startsWith("china-stage/")) return "中国未来";
+  if (slug.startsWith("future-china/")) return "未来中国";
   if (slug.startsWith("china/") || ccpTheorySlugs.has(slug)) return "解析中共";
   return "公民秩序主义";
 }

@@ -1,8 +1,8 @@
 ---
-title: "中国未来"
+title: "国家承接与连续运行"
 date: 2026-07-19
-updated: 2026-07-20
-description: "如果旧政治秩序发生变化，中国接下来如何继续运行？讨论政治转型之后的国家连续性、治理秩序与长期政治稳定。"
+updated: 2026-11-18
+description: "研究政治转轨过程中，行政体系、公共服务、财政、法治与国家运行如何保持连续。本专题属于理论与制度栏目。"
 contentType: "栏目"
 status: published
 listed: true
@@ -14,9 +14,9 @@ coverAlt: "一道明显较新的拱圈紧贴原有深色拱圈之下、连续全
 
 <div class="inst4 inst4l inst4l-future">
   <section class="inst4l-hero">
-<p class="inst4-eyebrow">PREPARING THE FUTURE</p>
-<h1 class="inst4l-title">中国未来</h1>
-<p class="inst4l-lead">政治变化之后，中国如何继续运行？这里讨论的不是新闻预测，而是政治变化发生时，国家能否保持连续运行、公共服务能否不中断、社会秩序能否不失控。</p>
+<p class="inst4-eyebrow">STATE CONTINUITY · 理论与制度</p>
+<h1 class="inst4l-title">国家承接与连续运行</h1>
+<p class="inst4l-lead">政治转轨过程中，行政体系、公共服务、财政、法治与国家运行如何保持连续？这里讨论的不是新闻预测，而是政治变化发生时，国家能否保持连续运行、公共服务能否不中断、社会秩序能否不失控。</p>
 <p class="inst4l-status">3 篇正式研究 · 8 个研究框架</p>
   <figure class="v6-primary-visual">
   <img src="/static/assets/v6/editorial/editorial-china-future.webp" alt="一道明显较新的拱圈紧贴原有深色拱圈之下、连续全面接触，两者共同承压于拱顶同一块重物，没有任何一段悬空，跨度保持水平。" width="1600" height="842" loading="lazy" decoding="async" />
@@ -107,7 +107,7 @@ coverAlt: "一道明显较新的拱圈紧贴原有深色拱圈之下、连续全
   <section class="inst4l-section">
 <div class="inst4l-section__head">
 <p class="inst4-eyebrow">全部研究</p>
-<h2 class="inst4l-section__title">浏览全部中国未来研究</h2>
+<h2 class="inst4l-section__title">浏览全部国家承接与连续运行研究</h2>
 <p class="inst4l-section__desc">进入独立文章索引，继续浏览转型窗口与国家治理研究。</p>
 </div>
 <p class="inst4l-link"><a href="/articles/all">进入文章索引 <span aria-hidden="true">→</span></a></p>

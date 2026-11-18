@@ -1660,3 +1660,57 @@
     object-position: 58% 30%;
   }
 }
+
+/* 未来中国 homepage band — reuses the band / theory-org grid system so the
+   new entry keeps the existing visual rhythm instead of adding new cards. */
+.co-home {
+  .future {
+    background: var(--white);
+  }
+  .future-intro {
+    max-width: 56em;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 26px;
+  }
+  .future-lead {
+    display: block;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background: var(--paper);
+    padding: 22px 26px 20px;
+    margin-bottom: 30px;
+  }
+  .future-lead:hover {
+    text-decoration: none;
+  }
+  .future-lead:hover h3 {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+  .future-lead .article-meta {
+    margin: 0 0 8px;
+  }
+  .future-lead h3 {
+    font: 600 24px/1.45 var(--serif);
+  }
+  .future-lead p {
+    max-width: 60em;
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.85;
+  }
+  @media (max-width: 768px) {
+    .future-lead {
+      padding: 18px 18px 16px;
+    }
+    .future-lead h3 {
+      font-size: 21px;
+    }
+    .future-intro {
+      font-size: 15px;
+    }
+  }
+}

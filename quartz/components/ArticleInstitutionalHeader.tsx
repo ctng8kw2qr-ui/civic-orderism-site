@@ -66,29 +66,40 @@ const SECTION_HREF: Record<string, string> = {
   制度设计: "/institution-design/",
   理论总论: "/theory/",
   司法与宪政: "/theory/",
+  未来中国: "/future-china/",
+  经济与财富: "/future-china/",
+  AI与技术: "/future-china/",
+  教育与人的发展: "/future-china/",
+  社会与文化: "/future-china/",
 };
 
 // 文章面包屑：首页 → 所属一级栏目 → 研究程序 → 子类。
 // 解析中共/中国未来属于政治经济观察；公民秩序主义/核心价值属于政治路线；
-// 制度设计属于理论与制度。历史文章 URL 不参与此判断。
+// 制度设计属于理论与制度；未来中国为独立栏目。历史文章 URL 不参与此判断。
 const PRIMARY_CONTEXT: Record<string, { label: string; href: string }> = {
   政治经济观察: { label: "政治经济观察", href: "/china/" },
   政治路线: { label: "政治路线", href: "/civic-orderism/" },
   理论与制度: { label: "理论与制度", href: "/theory/" },
   解析中共: { label: "政治经济观察", href: "/china/" },
-  中国未来: { label: "政治经济观察", href: "/china/" },
+  中国未来: { label: "理论与制度", href: "/theory/" },
   公民秩序主义: { label: "政治路线", href: "/civic-orderism/" },
   核心政治总论: { label: "政治路线", href: "/civic-orderism/" },
   制度设计: { label: "理论与制度", href: "/theory/" },
+  未来中国: { label: "未来中国", href: "/future-china/" },
 };
 
 const PROGRAM_LABELS: Record<string, string> = {
   解析中共: "UNDERSTANDING THE PRESENT",
   公民秩序主义: "POLITICAL ROUTE",
-  中国未来: "CHINA'S FUTURE",
+  中国未来: "STATE CONTINUITY",
   制度设计: "INSTITUTIONAL DESIGN",
   理论总论: "THEORY",
   司法与宪政: "JUSTICE & CONSTITUTION",
+  未来中国: "FUTURE CHINA",
+  经济与财富: "FUTURE CHINA · ECONOMY & WEALTH",
+  AI与技术: "FUTURE CHINA · AI & TECHNOLOGY",
+  教育与人的发展: "FUTURE CHINA · EDUCATION",
+  社会与文化: "FUTURE CHINA · SOCIETY & CULTURE",
 };
 
 const migrationBySlug = new Map<string, MigrationEntry>(

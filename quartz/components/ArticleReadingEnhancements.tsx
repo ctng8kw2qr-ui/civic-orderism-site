@@ -29,6 +29,7 @@ const ARTICLE_PREFIXES = [
   "china-stage/",
   "civic-orderism/",
   "institution/",
+  "future-china/",
 ];
 
 type MigrationEntry = (typeof migrationMap)[number];

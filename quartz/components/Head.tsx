@@ -106,6 +106,7 @@ export default (() => {
       "china-stage/",
       "civic-orderism/",
       "institution/",
+      "future-china/",
     ];
     const isArticle =
       !slug.endsWith("/index") &&
