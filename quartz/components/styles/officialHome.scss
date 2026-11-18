@@ -1464,20 +1464,33 @@
   .route h2 {
     font-size: 30px;
   }
-  /* 2×2 policy overview. Content-driven heights: no fixed min-height, no
-     space-between; each card flows label → title → one short paragraph,
-     with one shared padding and rhythm. */
+  /* 2×2 policy overview — strict uniform grid.
+     Root causes addressed here:
+       - align-items: start kept per-card heights (row tops/bottoms drifted);
+         stretch makes both cards in a row exactly equal in height.
+       - the retired two-column rule still carried gap: 48px into the card;
+         gap: 0 neutralizes it, margins own the internal rhythm.
+       - display: block prevented the card from filling its grid cell;
+         flex column + justify-content: flex-start pins content to the top
+         without any space-between distribution. */
   .route-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: start;
-    gap: 14px;
+    align-items: stretch;
+    gap: 12px;
     margin-top: 22px;
     border: 0;
   }
   .route-item {
     position: relative;
-    display: block;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
     min-height: 0;
     padding: 24px;
     border: 1px solid rgb(255 255 255 / 16%);
@@ -1602,11 +1615,13 @@
       font-size: 27px;
     }
     .route-list {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
+      align-items: start;
       gap: 12px;
       margin-top: 22px;
     }
     .route-item {
+      height: auto;
       min-height: 0;
       padding: 20px;
     }

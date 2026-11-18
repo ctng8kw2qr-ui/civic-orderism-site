@@ -122,7 +122,7 @@ const OfficialHome: QuartzComponent = ({ allFiles }: QuartzComponentProps) => {
                 <p class="route-item__label">核心机制</p>
                 <h3>经济赎买</h3>
                 <p class="route-item__body">
-                  通过制度化的利益重新安排，对依靠政治权力、公共资源和不正当利益形成的资产进行处理，使符合条件的部分资产获得合法产权，为和平权力交接创造条件。
+                  通过制度化利益安排，为和平权力交接创造条件。
                 </p>
                 <a
                   class="route-item__link"
@@ -134,14 +134,14 @@ const OfficialHome: QuartzComponent = ({ allFiles }: QuartzComponentProps) => {
                 <p class="route-item__label">基本原则</p>
                 <h3>不革命、不清算</h3>
                 <p class="route-item__body">
-                  不以暴力革命推动政治转轨，不以集体政治报复作为制度重建的起点。
+                  不以暴力革命或集体政治报复作为制度重建的起点。
                 </p>
               </article>
               <article class="route-item">
                 <p class="route-item__label">根本底线</p>
                 <h3>国家连续运行</h3>
                 <p class="route-item__body">
-                  政治转轨不能以行政体系瘫痪、公共服务中断或社会秩序崩溃为代价。
+                  保障行政体系、公共服务与社会秩序的连续性。
                 </p>
               </article>
             </div>
