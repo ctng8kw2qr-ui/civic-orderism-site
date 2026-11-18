@@ -112,50 +112,41 @@ const OfficialHome: QuartzComponent = ({ allFiles }: QuartzComponentProps) => {
             <h2 id="home-route">政治路线</h2>
             <div class="route-list">
               <article class="route-item">
-                <div class="route-item__head">
-                  <p class="route-item__label">政治目标</p>
-                  <h3>和平政治转轨</h3>
-                </div>
+                <p class="route-item__label">政治目标</p>
+                <h3>和平政治转轨</h3>
                 <p class="route-item__body">
                   以非暴力方式完成中国政治转轨，改变政治制度。
                 </p>
               </article>
-              <article class="route-item">
-                <div class="route-item__head">
-                  <p class="route-item__label">核心机制</p>
-                  <h3>经济赎买</h3>
-                </div>
+              <article class="route-item route-item--linked">
+                <p class="route-item__label">核心机制</p>
+                <h3>经济赎买</h3>
                 <p class="route-item__body">
                   通过制度化的利益重新安排，对依靠政治权力、公共资源和不正当利益形成的资产进行处理，使符合条件的部分资产获得合法产权，为和平权力交接创造条件。
                 </p>
                 <a
-                  class="route-item__more"
+                  class="route-item__link"
                   href="/civic-orderism/economic-redemption/"
-                >
-                  了解经济赎买 <span aria-hidden="true">→</span>
-                </a>
+                  aria-label="经济赎买：了解完整说明"
+                ></a>
               </article>
               <article class="route-item">
-                <div class="route-item__head">
-                  <p class="route-item__label">基本原则</p>
-                  <h3>不革命、不清算</h3>
-                </div>
+                <p class="route-item__label">基本原则</p>
+                <h3>不革命、不清算</h3>
                 <p class="route-item__body">
                   不以暴力革命推动政治转轨，不以集体政治报复作为制度重建的起点。
                 </p>
               </article>
               <article class="route-item">
-                <div class="route-item__head">
-                  <p class="route-item__label">根本底线</p>
-                  <h3>国家连续运行</h3>
-                </div>
+                <p class="route-item__label">根本底线</p>
+                <h3>国家连续运行</h3>
                 <p class="route-item__body">
                   政治转轨不能以行政体系瘫痪、公共服务中断或社会秩序崩溃为代价。
                 </p>
               </article>
             </div>
             <a class="link route-more" href="/civic-orderism/">
-              阅读路线全文
+              阅读完整政治路线
             </a>
           </div>
         </section>

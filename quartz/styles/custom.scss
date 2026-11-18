@@ -6648,7 +6648,7 @@ body[data-slug="index"] .center .page-header header {
 
 body[data-slug="index"] .page > #quartz-body .center > article,
 body[data-slug="index"] .center > article,
-body[data-slug="index"] article {
+body[data-slug="index"] article:not(.route-item) {
   width: 100% !important;
   max-width: none !important;
   padding: 0 !important;
