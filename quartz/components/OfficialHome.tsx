@@ -271,6 +271,15 @@ const OfficialHome: QuartzComponent = ({ allFiles }: QuartzComponentProps) => {
               href="/future-china/china-economic-future"
               data-slug="future-china/china-economic-future"
             >
+              <img
+                class="future-lead__img"
+                src="/static/assets/v6/editorial/editorial-china-economic-future.webp"
+                alt="画面下部是一大片排列整齐、彼此相同的深灰方块；其中五个方块各自向上伸出笔直的高柱，最高的中柱顶端顶着一块金色菱形，另外两柱柱顶为金色小方块，两柱柱顶为深灰菱形；方块阵的后排还有单独一块金色方块。"
+                width="1600"
+                height="842"
+                loading="lazy"
+                decoding="async"
+              />
               <div class="article-meta">
                 <span>栏目首篇基础文章</span>
                 <time datetime="2026-11-18">2026-11-18</time>

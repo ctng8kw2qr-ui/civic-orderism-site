@@ -1689,6 +1689,14 @@
     text-decoration: underline;
     text-underline-offset: 5px;
   }
+  .future-lead__img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1.9;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-bottom: 17px;
+  }
   .future-lead .article-meta {
     margin: 0 0 8px;
   }

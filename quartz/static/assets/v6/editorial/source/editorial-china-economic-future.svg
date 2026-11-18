@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1263">
+  <!--
+    Editorial cover master — 《中国经济的未来在哪里？》
+    Motif: a uniform field of identical blocks (steel & concrete) from which
+    individual columns rise to different heights, each crowned by a distinct
+    form; the tallest carries the restrained brand gold. One block in the
+    field is already gold. Flat structural abstraction, paper ground, no
+    gradients, no glow — house editorial language per SPEC.md §1/§12.
+  -->
+  <defs>
+    <filter id="contact" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+
+  <!-- paper ground -->
+  <rect width="2400" height="1263" fill="#f6f3ed"/>
+
+  <!-- contact shadows under the slab field -->
+  <g fill="#1c1a17" opacity="0.07" filter="url(#contact)">
+    <g>
+      <rect x="385" y="891" width="1629" height="26"/>
+      <rect x="385" y="996" width="1629" height="26"/>
+      <rect x="385" y="1101" width="1629" height="26"/>
+    </g>
+  </g>
+
+  <!-- ground band -->
+  <rect x="0" y="850" width="2400" height="413" fill="#e9e3d9"/>
+  <rect x="0" y="850" width="2400" height="3" fill="#dcd5c7"/>
+
+  <!-- slab field: 9 x 3 identical units, x = 385 + 183c, rows at y = 900/1005/1110 -->
+  <g>
+    <!-- rows 0 -->
+    <g>
+      <rect x="385"  y="900"  width="165" height="87" fill="#2e3031"/><rect x="385"  y="900"  width="165" height="16" fill="#43464a"/>
+      <rect x="568"  y="900"  width="165" height="87" fill="#2e3031"/><rect x="568"  y="900"  width="165" height="16" fill="#43464a"/>
+      <rect x="751"  y="900"  width="165" height="87" fill="#2e3031"/><rect x="751"  y="900"  width="165" height="16" fill="#43464a"/>
+      <rect x="934"  y="900"  width="165" height="87" fill="#2e3031"/><rect x="934"  y="900"  width="165" height="16" fill="#43464a"/>
+      <rect x="1117" y="900"  width="165" height="87" fill="#2e3031"/><rect x="1117" y="900"  width="165" height="16" fill="#43464a"/>
+      <rect x="1300" y="900"  width="165" height="87" fill="#2e3031"/><rect x="1300" y="900"  width="165" height="16" fill="#43464a"/>
+      <rect x="1483" y="900"  width="165" height="87" fill="#2e3031"/><rect x="1483" y="900"  width="165" height="16" fill="#43464a"/>
+      <rect x="1666" y="900"  width="165" height="87" fill="#2e3031"/><rect x="1666" y="900"  width="165" height="16" fill="#43464a"/>
+      <rect x="1849" y="900"  width="165" height="87" fill="#2e3031"/><rect x="1849" y="900"  width="165" height="16" fill="#43464a"/>
+    </g>
+    <!-- rows 1 -->
+    <g>
+      <rect x="385"  y="1005" width="165" height="87" fill="#2e3031"/><rect x="385"  y="1005" width="165" height="16" fill="#43464a"/>
+      <rect x="568"  y="1005" width="165" height="87" fill="#2e3031"/><rect x="568"  y="1005" width="165" height="16" fill="#43464a"/>
+      <rect x="751"  y="1005" width="165" height="87" fill="#2e3031"/><rect x="751"  y="1005" width="165" height="16" fill="#43464a"/>
+      <rect x="934"  y="1005" width="165" height="87" fill="#2e3031"/><rect x="934"  y="1005" width="165" height="16" fill="#43464a"/>
+      <rect x="1117" y="1005" width="165" height="87" fill="#2e3031"/><rect x="1117" y="1005" width="165" height="16" fill="#43464a"/>
+      <rect x="1300" y="1005" width="165" height="87" fill="#2e3031"/><rect x="1300" y="1005" width="165" height="16" fill="#43464a"/>
+      <rect x="1483" y="1005" width="165" height="87" fill="#2e3031"/><rect x="1483" y="1005" width="165" height="16" fill="#43464a"/>
+      <rect x="1666" y="1005" width="165" height="87" fill="#2e3031"/><rect x="1666" y="1005" width="165" height="16" fill="#43464a"/>
+      <rect x="1849" y="1005" width="165" height="87" fill="#2e3031"/><rect x="1849" y="1005" width="165" height="16" fill="#43464a"/>
+    </g>
+    <!-- rows 2 -->
+    <g>
+      <rect x="385"  y="1110" width="165" height="87" fill="#2e3031"/><rect x="385"  y="1110" width="165" height="16" fill="#43464a"/>
+      <rect x="568"  y="1110" width="165" height="87" fill="#2e3031"/><rect x="568"  y="1110" width="165" height="16" fill="#43464a"/>
+      <!-- the one already gold -->
+      <rect x="751"  y="1110" width="165" height="87" fill="#9d8a63"/><rect x="751"  y="1110" width="165" height="16" fill="#b3a076"/>
+      <rect x="934"  y="1110" width="165" height="87" fill="#2e3031"/><rect x="934"  y="1110" width="165" height="16" fill="#43464a"/>
+      <rect x="1117" y="1110" width="165" height="87" fill="#2e3031"/><rect x="1117" y="1110" width="165" height="16" fill="#43464a"/>
+      <rect x="1300" y="1110" width="165" height="87" fill="#2e3031"/><rect x="1300" y="1110" width="165" height="16" fill="#43464a"/>
+      <rect x="1483" y="1110" width="165" height="87" fill="#2e3031"/><rect x="1483" y="1110" width="165" height="16" fill="#43464a"/>
+      <rect x="1666" y="1110" width="165" height="87" fill="#2e3031"/><rect x="1666" y="1110" width="165" height="16" fill="#43464a"/>
+      <rect x="1849" y="1110" width="165" height="87" fill="#2e3031"/><rect x="1849" y="1110" width="165" height="16" fill="#43464a"/>
+    </g>
+  </g>
+
+  <!-- rising columns (front row only), each with a darker right facet -->
+  <g>
+    <!-- c1: 150 -->
+    <rect x="568"  y="750" width="117" height="150" fill="#2e3031"/>
+    <rect x="685"  y="750" width="48"  height="150" fill="#212324"/>
+    <rect x="608.5" y="708" width="84" height="84" transform="rotate(45 650.5 750)" fill="#2e3031"/>
+    <!-- c3: 240, gold square top -->
+    <rect x="934"  y="660" width="117" height="240" fill="#2e3031"/>
+    <rect x="1051" y="660" width="48"  height="240" fill="#212324"/>
+    <rect x="983.5" y="594" width="66" height="66" fill="#b3925a"/>
+    <!-- c4: tallest, gold diamond top -->
+    <rect x="1117" y="520" width="117" height="380" fill="#2e3031"/>
+    <rect x="1234" y="520" width="48"  height="380" fill="#212324"/>
+    <rect x="1144.5" y="465" width="110" height="110" transform="rotate(45 1199.5 520)" fill="#a8874d"/>
+    <!-- c6: 170 -->
+    <rect x="1483" y="730" width="117" height="170" fill="#2e3031"/>
+    <rect x="1600" y="730" width="48"  height="170" fill="#212324"/>
+    <rect x="1523.5" y="688" width="84" height="84" transform="rotate(45 1565.5 730)" fill="#2e3031"/>
+    <!-- c8: 200, gold square top -->
+    <rect x="1849" y="700" width="117" height="200" fill="#2e3031"/>
+    <rect x="1966" y="700" width="48"  height="200" fill="#212324"/>
+    <rect x="1898.5" y="634" width="66" height="66" fill="#b3925a"/>
+  </g>
+</svg>
