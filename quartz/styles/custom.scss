@@ -10457,6 +10457,78 @@ body[data-slug="preparation"] {
   line-height: 1.7;
 }
 
+/* Future China landing — slim, content-dense variant.
+   Two equal direction columns; section padding tightened with the same
+   tokens so the page stays inside the shared design system. */
+.inst4l-future--slim .inst4l-section {
+  padding: clamp(2.2rem, 4vw, 3.2rem) 0;
+}
+
+.inst4l-future--slim .inst4l-list {
+  margin-top: 1.4rem;
+}
+
+.inst4l-future--slim .inst4l-section__desc {
+  margin-top: 0.6rem;
+}
+
+.inst4-future-directions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(1.5rem, 3vw, 2.75rem);
+  row-gap: 1.4rem;
+  margin-top: 1.4rem;
+}
+
+.inst4-future-direction {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+  padding: 1.15rem 0 0;
+  border-top: 1px solid var(--v6-border);
+}
+
+.inst4-future-direction__link {
+  position: absolute;
+  inset: 0;
+  border-radius: 2px;
+}
+
+.inst4-future-direction__link:focus-visible {
+  outline: 2px solid var(--v6-brand);
+  outline-offset: 3px;
+}
+
+.inst4-future-direction:hover h3 {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.inst4-future-direction h3 {
+  margin: 0;
+  color: var(--inst4-ink);
+  font-size: 1rem;
+  font-weight: 540;
+  line-height: 1.5;
+}
+
+.inst4-future-direction p {
+  margin: 0;
+  color: var(--inst4-gray);
+  font-size: 0.9rem;
+  font-weight: 440;
+  line-height: 1.75;
+}
+
+@media (max-width: 768px) {
+  .inst4-future-directions {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 1.15rem;
+  }
+}
+
 .inst4-route__closing {
   max-width: 720px;
   margin: 2.2rem 0 0;

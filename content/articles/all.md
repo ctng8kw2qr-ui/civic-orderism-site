@@ -578,7 +578,7 @@ noindex: false
 </div>
 <div class="inst4l-list">
 <a class="inst4l-row" href="/future-china/china-economic-future">
-  <span class="inst4l-row__cell"><span class="inst4l-row__meta">2026-11-18 · 经济与财富</span><span class="inst4l-row__title">中国经济的未来在哪里？</span></span>
+  <span class="inst4l-row__cell"><span class="inst4l-row__meta">2026-11-18 · 经济与发展</span><span class="inst4l-row__title">中国经济的未来在哪里？</span></span>
   <span class="inst4l-row__desc">中国经济的未来不只是房地产与传统投资，而在于14亿人的选择、创造力与AI时代的新生产方式。本文讨论经济增长、组织成本、教育重构与以人为中心的发展道路。</span>
   <span class="inst4l-row__arrow" aria-hidden="true">→</span>
 </a>

@@ -1710,6 +1710,9 @@
     font-size: 15px;
     line-height: 1.85;
   }
+  .future-grid--pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   @media (max-width: 768px) {
     .future-lead {
       padding: 18px 18px 16px;
@@ -1719,6 +1722,9 @@
     }
     .future-intro {
       font-size: 15px;
+    }
+    .future-grid--pair {
+      grid-template-columns: minmax(0, 1fr);
     }
   }
 }

@@ -288,20 +288,15 @@ const OfficialHome: QuartzComponent = ({ allFiles }: QuartzComponentProps) => {
               <p>从钢筋水泥到14亿人的创造力：一条以人为中心的经济发展道路。</p>
               <span class="read">阅读全文</span>
             </a>
-            <div class="theory-org-grid" aria-label="未来中国研究方向">
-              <a class="theory-org-entry" href="/future-china/#directions">
-                <h3>经济与财富</h3>
-                <p>增长、产业与财富创造</p>
+            <div
+              class="theory-org-grid future-grid--pair"
+              aria-label="未来中国研究方向"
+            >
+              <a class="theory-org-entry" href="/tags/经济与发展">
+                <h3>经济与发展</h3>
+                <p>增长、AI与个人创业</p>
               </a>
-              <a class="theory-org-entry" href="/future-china/#directions">
-                <h3>AI与技术</h3>
-                <p>组织成本与个人生产力</p>
-              </a>
-              <a class="theory-org-entry" href="/future-china/#directions">
-                <h3>教育与人的发展</h3>
-                <p>AI时代的学习与创造</p>
-              </a>
-              <a class="theory-org-entry" href="/future-china/#directions">
+              <a class="theory-org-entry" href="/tags/社会与文化">
                 <h3>社会与文化</h3>
                 <p>选择、兴趣与文化产品</p>
               </a>

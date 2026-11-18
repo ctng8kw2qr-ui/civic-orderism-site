@@ -67,9 +67,7 @@ const SECTION_HREF: Record<string, string> = {
   理论总论: "/theory/",
   司法与宪政: "/theory/",
   未来中国: "/future-china/",
-  经济与财富: "/future-china/",
-  AI与技术: "/future-china/",
-  教育与人的发展: "/future-china/",
+  经济与发展: "/future-china/",
   社会与文化: "/future-china/",
 };
 
@@ -96,9 +94,7 @@ const PROGRAM_LABELS: Record<string, string> = {
   理论总论: "THEORY",
   司法与宪政: "JUSTICE & CONSTITUTION",
   未来中国: "FUTURE CHINA",
-  经济与财富: "FUTURE CHINA · ECONOMY & WEALTH",
-  AI与技术: "FUTURE CHINA · AI & TECHNOLOGY",
-  教育与人的发展: "FUTURE CHINA · EDUCATION",
+  经济与发展: "FUTURE CHINA · ECONOMY & DEVELOPMENT",
   社会与文化: "FUTURE CHINA · SOCIETY & CULTURE",
 };
 
